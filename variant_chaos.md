@@ -68,7 +68,13 @@ These are Ren's actual higher REVEL missense variants (plus frameshift/splice va
 
 **Why Abandoned**: Nova explained: "we dropped it when migrating nova_dn to strictly offline deterministic scoring. The enhanced analyzer hit UniProt at runtime and did text/NLP, which caused flakiness/slowness on import."
 
-**SOLUTION IN PROGRESS**: Nova is implementing precomputed stoichiometry multipliers with gene-specific overrides (TP53:4, HBB:4, ATP5F1A:6, INS:2)!
+**✅ SOLUTION IMPLEMENTED**: Nova has successfully implemented precomputed stoichiometry multipliers!
+
+**🔥 LIVE TEST RESULTS**:
+- **SLC25A5 R236P (monomeric)**: 0.664 → 0.332 (0.50x dampening) - FALSE POSITIVE FIXED!
+- **TP53 R273H (tetrameric)**: 0.150 → 0.773 (5.16x amplification) - REAL DN ENHANCED!
+
+**Commit**: 764afb2 in `/caller` - "feat(nova_dn): optional stoichiometry-aware amplification"
 
 ## DN Analysis Results
 
