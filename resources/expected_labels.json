@@ -1,0 +1,11 @@
+[
+  {"variant": "p.R273H", "protein": "TP53", "expected_top": "active_site_jamming", "pathogenic": true},
+  {"variant": "p.R248Q", "protein": "TP53", "expected_top": "active_site_jamming", "pathogenic": true},
+  {"variant": "p.P72R", "protein": "TP53", "expected_top": "none", "pathogenic": false},
+  {"variant": "p.G380R", "protein": "FGFR3", "expected_top": "interface_poisoning", "pathogenic": true},
+  {"variant": "p.G1076S", "protein": "COL1A1", "expected_top": "lattice_disruption", "pathogenic": true},
+  {"variant": "p.C788Y", "protein": "VWF", "expected_top": "trafficking_maturation", "pathogenic": true},
+  {"variant": "p.F2561Y", "protein": "VWF", "expected_top": "active_site_jamming", "pathogenic": true},
+  {"variant": "p.Y1699N", "protein": "FBN1", "expected_top": "trafficking_maturation", "pathogenic": true},
+  {"variant": "p.H484R", "protein": "VWF", "expected_top": "none", "pathogenic": false}
+]

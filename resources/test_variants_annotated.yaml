@@ -1,0 +1,125 @@
+# Test Variants with Expected DN Mechanisms
+# For validating Nova's DN Analyzer
+
+test_variants:
+  # TP53 - Active Site Jamming (DNA contact disruption)
+  - gene: TP53
+    variant: p.Arg273His
+    uniprot_pos: 273
+    ref_aa: R
+    alt_aa: H
+    expected_mechanism: active_site_jamming
+    expected_score: high
+    rationale: "R273 is critical DNA contact residue in major groove. R→H disrupts positive charge needed for phosphate backbone binding while preserving tetramerization."
+    grantham_distance: 29
+    clinical_significance: pathogenic
+    
+  - gene: TP53
+    variant: p.Arg248Gln
+    uniprot_pos: 248
+    ref_aa: R
+    alt_aa: Q
+    expected_mechanism: active_site_jamming
+    expected_score: high
+    rationale: "R248 is another critical DNA contact residue. R→Q eliminates positive charge essential for DNA binding."
+    grantham_distance: 43
+    clinical_significance: pathogenic
+
+  - gene: TP53
+    variant: p.Pro72Arg
+    uniprot_pos: 72
+    ref_aa: P
+    alt_aa: R
+    expected_mechanism: none
+    expected_score: low
+    rationale: "P72 is in flexible loop region away from DNA binding domain and tetramer interface. Common benign polymorphism."
+    grantham_distance: 103
+    clinical_significance: benign
+
+  # FGFR3 - Interface Poisoning (transmembrane dimer disruption)
+  - gene: FGFR3
+    variant: p.Gly380Arg
+    uniprot_pos: 380
+    ref_aa: G
+    alt_aa: R
+    expected_mechanism: interface_poisoning
+    expected_score: high
+    rationale: "G380 in transmembrane helix. G→R introduces large charged residue in hydrophobic membrane environment, disrupting dimer formation and causing constitutive activation."
+    grantham_distance: 125
+    clinical_significance: pathogenic
+
+  # COL1A1 - Structural Lattice Disruption (collagen triple helix)
+  - gene: COL1A1
+    variant: p.Gly1076Ser
+    uniprot_pos: 1076
+    ref_aa: G
+    alt_aa: S
+    expected_mechanism: structural_lattice
+    expected_score: high
+    rationale: "G1076 is in mandatory Gly-X-Y collagen repeat. Glycine is required every 3rd position for triple helix formation. G→S disrupts helix geometry."
+    grantham_distance: 100
+    clinical_significance: pathogenic
+
+  # VWF - Trafficking/Maturation Mischief (disulfide disruption)
+  - gene: VWF
+    variant: p.Cys788Tyr
+    uniprot_pos: 788
+    ref_aa: C
+    alt_aa: Y
+    expected_mechanism: trafficking_maturation
+    expected_score: high
+    rationale: "C788 forms critical disulfide bond in D3 domain. Cys loss disrupts protein folding and secretion, causing dominant negative effect on multimer assembly."
+    grantham_distance: 194
+    clinical_significance: pathogenic
+
+  - gene: VWF
+    variant: p.Phe2561Tyr
+    uniprot_pos: 2561
+    ref_aa: F
+    alt_aa: Y
+    expected_mechanism: active_site_jamming
+    expected_score: high
+    rationale: "F2561 is in Walker A motif (2555-2564) critical for ATP binding. F→Y disrupts hydrophobic core of nucleotide binding pocket."
+    grantham_distance: 100
+    clinical_significance: pathogenic
+
+  - gene: VWF
+    variant: p.His484Arg
+    uniprot_pos: 484
+    ref_aa: H
+    alt_aa: R
+    expected_mechanism: none
+    expected_score: low
+    rationale: "H484 is in flexible surface region away from critical domains. Conservative charge change with minimal functional impact."
+    grantham_distance: 29
+    clinical_significance: benign
+
+  # FBN1 - Trafficking/Maturation Mischief (phosphorylation disruption)
+  - gene: FBN1
+    variant: p.Tyr1699Asn
+    uniprot_pos: 1699
+    ref_aa: Y
+    alt_aa: N
+    expected_mechanism: trafficking_maturation
+    expected_score: high
+    rationale: "Y1699 is phosphorylation site. Y→N eliminates phosphorylation capacity and disrupts aromatic interactions in EGF-like domain."
+    grantham_distance: 143
+    clinical_significance: pathogenic
+
+  - gene: FBN1
+    variant: p.Tyr798Cys
+    uniprot_pos: 798
+    ref_aa: Y
+    alt_aa: C
+    expected_mechanism: trafficking_maturation
+    expected_score: moderate
+    rationale: "Y798 is phosphorylation site but Y→C creates new disulfide potential. Mixed trafficking effects."
+    grantham_distance: 194
+    clinical_significance: benign
+
+# Summary Statistics:
+# Pathogenic variants: 7 (TP53: 2, FGFR3: 1, COL1A1: 1, VWF: 2, FBN1: 1)
+# Benign variants: 3 (TP53: 1, VWF: 1, FBN1: 1)
+# Grantham range pathogenic: 29-194
+# Grantham range benign: 29-194
+# Expected mechanisms: active_site_jamming (4), interface_poisoning (1), structural_lattice (1), trafficking_maturation (3), none (3)

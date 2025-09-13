@@ -1,0 +1,13 @@
+[
+  {"seq_file": "resources/tp53.fasta",  "variant": "p.R273H",   "protein": "TP53",   "annotations_json": "resources/protein_annotations.json"},
+  {"seq_file": "resources/tp53.fasta",  "variant": "p.R248Q",   "protein": "TP53",   "annotations_json": "resources/protein_annotations.json"},
+  {"seq_file": "resources/tp53.fasta",  "variant": "p.P72R",    "protein": "TP53",   "annotations_json": "resources/protein_annotations.json"},
+
+  {"seq_file": "resources/fgfr3.fasta", "variant": "p.G380R",   "protein": "FGFR3",  "annotations_json": "resources/protein_annotations.json"},
+  {"seq_file": "resources/col1a1.fasta","variant": "p.G1076S",  "protein": "COL1A1", "annotations_json": "resources/protein_annotations.json"},
+  {"seq_file": "resources/vwf.fasta",   "variant": "p.C788Y",   "protein": "VWF",    "annotations_json": "resources/protein_annotations.json"},
+  {"seq_file": "resources/vwf.fasta",   "variant": "p.F2561Y",  "protein": "VWF",    "annotations_json": "resources/protein_annotations.json"},
+  {"seq_file": "resources/fbn1.fasta",  "variant": "p.Y1699N",  "protein": "FBN1",   "annotations_json": "resources/protein_annotations.json"},
+  {"seq_file": "resources/vwf.fasta",   "variant": "p.H484R",   "protein": "VWF",    "annotations_json": "resources/protein_annotations.json"}
+]
+

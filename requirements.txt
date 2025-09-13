@@ -1,0 +1,11 @@
+# Core dependencies for Nova DN Analyzer
+# No external dependencies required - uses only Python standard library
+
+# Optional dependencies for extended functionality:
+# requests>=2.25.0  # For future UniProt API integration
+# pyyaml>=5.4.0     # For YAML annotation files (already handled in code)
+# numpy>=1.20.0     # For future statistical analysis features
+
+# Development dependencies:
+# pytest>=6.0.0     # For testing framework
+# black>=21.0.0     # For code formatting
