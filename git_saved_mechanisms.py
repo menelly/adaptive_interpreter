@@ -94,8 +94,6 @@ def score_active_site_jamming(seq: str, pos1: int, ref: str, alt: str, context: 
         feats.append({"feature": "catalytic_motif_near", "value": 1, "weight": _w(ctx, "active_site_jamming.catalytic_motif_near", 0.3)})
     # Volume/aromatic/proline in core (approximate)
     feats.append({"feature": "|d_volume|", "value": d["norm_abs_vol"], "weight": _w(ctx, "active_site_jamming.|d_volume|", 0.2)})
-    # Charge changes critical for DNA-binding and catalytic sites
-    feats.append({"feature": "|d_charge|", "value": d["norm_abs_chg"], "weight": _w(ctx, "active_site_jamming.|d_charge|", 0.3)})
     if d["aromatic_gain"] or d["aromatic_loss"]:
         feats.append({"feature": "aromatic_swap", "value": 1, "weight": _w(ctx, "active_site_jamming.aromatic_swap", 0.15)})
     if d["proline_introduced"]:
@@ -200,4 +198,3 @@ def score_trafficking_maturation(seq: str, pos1: int, ref: str, alt: str, contex
     score = max(0.0, min(1.0, score))
     one = " + ".join(_top_features(feats)) or "mild trafficking risk"
     return score, feats, f"trafficking/maturation mischief via {one}"
-

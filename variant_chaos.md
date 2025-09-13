@@ -6,46 +6,46 @@ These are Ren's actual higher REVEL missense variants (plus frameshift/splice va
 
 ## Variants to Test
 
-| Gene | cDNA Change | Protein Change |
-|------|-------------|----------------|
-| ACBD5 | c.1165G>A | p.Gly389Arg |
-| ACMSD | c.523C>A | p.Pro175Thr |
-| AFAP1 | c.253C>G | p.Pro85Ala |
-| BAG6 | c.122A>G | p.Glu41Gly |
-| BMPR2 | c.2431G>A | p.Gly811Ser |
-| CACNA1I | c.961C>T | p.Arg321Cys |
-| CHRM5 | c.1328C>T | p.Thr443Ile |
-| CLASP1 | c.3095C>T | p.Pro1032Leu |
-| DLD | c.100A>G | p.Thr34Ala |
-| FKRP | c.826C>A | p.Leu276Ile |
-| FTCD | c.1363G>A | p.Ala455Thr |
-| G6PD | c.620T>C | p.Met207Thr |
-| GADL1 | c.815C>T | p.Thr272Ile |
-| HFE | c.845G>A | p.Cys282Tyr |
-| KRT18 | c.112G>T | p.Gly38Cys |
-| MMAA | c.761C>T | p.Ala254Val |
-| MTCH2 | c.807G>A | p.Trp269* |
-| MYH15 | c.4007G>A | p.Arg1336Gln |
-| MYL6B | c.475G>C | p.Gly159Arg |
-| MYO7A | c.658C>T | p.His220Tyr |
-| NCAPD3 | c.2873G>A | p.Arg958His |
-| NPHS2 | c.413G>A | p.Arg138Gln |
-| PDE6B | c.2326G>A | p.Asp776Asn |
-| POLQ | c.7390G>A | p.Ala2464Thr |
-| RPLP0 | c.652G>A | p.Gly218Ser |
-| SETDB1 | c.3223C>T | p.Arg1075Cys |
-| SLC25A5 | c.518T>C | p.Leu173Pro |
-| SLC25A5 | c.707G>C | p.Arg236Pro |
-| SPTB | c.5209C>T | p.Arg1737Trp |
-| TFG | c.64C>T | p.Arg22Trp |
-| WDFY3 | c.1613C>T | p.Ser538Leu |
-| ZSWIM6 | c.122C>T | p.Ala41Val |
-| KCNMA1 | c.1599C>G | p.Phe533Leu |
-| ATP5F1A | c.389T>G | p.Ile130Arg |
-| NSMCE3 | c.277G>T | p.Val93Leu |
-| KMT2B | c.7030G>A | p.Ala2344Thr |
-| GET1-SH3BGR | c.542C>T | p.Ser181Phe |
-| DYSF | c.386G>A | p.Gly129Glu |
+| Gene | cDNA Change | Protein Change | Protein Function | Quaternary Structure | Interface Poisoning | Active Site Jamming | Lattice Disruption | Trafficking/Maturation |
+|------|-------------|----------------|------------------|---------------------|-------------------|-------------------|------------------|---------------------|
+| ACBD5 | c.1165G>A | p.Gly389Arg | Acyl-CoA binding | Monomer | Low | Low | Low | Medium |
+| ACMSD | c.523C>A | p.Pro175Thr | Enzyme (kynurenine) | Monomer | Low | High | Low | Medium |
+| AFAP1 | c.253C>G | p.Pro85Ala | Actin filament protein | Monomer/Complex | Medium | Low | Medium | Low |
+| BAG6 | c.122A>G | p.Glu41Gly | Protein quality control | Complex | High | Medium | Low | High |
+| BMPR2 | c.2431G>A | p.Gly811Ser | Receptor kinase | Dimer | High | High | Low | High |
+| CACNA1I | c.961C>T | p.Arg321Cys | Calcium channel | Complex | High | Medium | High | High |
+| CHRM5 | c.1328C>T | p.Thr443Ile | GPCR | Monomer | Low | Medium | Low | High |
+| CLASP1 | c.3095C>T | p.Pro1032Leu | Microtubule binding | Complex | Medium | Low | Medium | Low |
+| DLD | c.100A>G | p.Thr34Ala | Enzyme (lipoamide) | Complex | High | High | Medium | Medium |
+| FKRP | c.826C>A | p.Leu276Ile | Glycosyltransferase | Monomer | Low | High | Low | High |
+| FTCD | c.1363G>A | p.Ala455Thr | Enzyme (folate) | Monomer | Low | High | Low | Medium |
+| G6PD | c.620T>C | p.Met207Thr | Enzyme (glucose-6-P) | Dimer/Tetramer | High | High | Medium | Medium |
+| GADL1 | c.815C>T | p.Thr272Ile | Enzyme (glutamate) | Monomer | Low | High | Low | Medium |
+| HFE | c.845G>A | p.Cys282Tyr | Iron regulation | Monomer/Complex | Medium | Low | Low | High |
+| KRT18 | c.112G>T | p.Gly38Cys | Structural (keratin) | Filament | High | Low | High | Medium |
+| MMAA | c.761C>T | p.Ala254Val | B12 metabolism | Monomer | Low | Medium | Low | High |
+| MTCH2 | c.807G>A | p.Trp269* | Mitochondrial carrier | Complex | High | N/A | High | High |
+| MYH15 | c.4007G>A | p.Arg1336Gln | Motor protein | Dimer | High | High | High | Medium |
+| MYL6B | c.475G>C | p.Gly159Arg | Myosin light chain | Complex | High | Medium | High | Low |
+| MYO7A | c.658C>T | p.His220Tyr | Motor protein | Dimer | High | High | High | Medium |
+| NCAPD3 | c.2873G>A | p.Arg958His | Condensin complex | Complex | High | Low | High | Medium |
+| NPHS2 | c.413G>A | p.Arg138Gln | Podocin (kidney) | Complex | High | Low | Medium | High |
+| PDE6B | c.2326G>A | p.Asp776Asn | Phosphodiesterase | Complex | High | High | Medium | Medium |
+| POLQ | c.7390G>A | p.Ala2464Thr | DNA polymerase | Monomer | Low | High | Low | Medium |
+| RPLP0 | c.652G>A | p.Gly218Ser | Ribosomal protein | Complex | High | Medium | High | High |
+| SETDB1 | c.3223C>T | p.Arg1075Cys | Histone methyltransferase | Complex | High | High | Low | Medium |
+| SLC25A5 | c.518T>C | p.Leu173Pro | ANT (mitochondrial) | Monomer | Low | Medium | Low | High |
+| SLC25A5 | c.707G>C | p.Arg236Pro | ANT (mitochondrial) | Monomer | Low | Medium | Low | High |
+| SPTB | c.5209C>T | p.Arg1737Trp | Spectrin (cytoskeleton) | Tetramer | High | Low | High | Medium |
+| TFG | c.64C>T | p.Arg22Trp | ER-Golgi transport | Complex | High | Low | Medium | High |
+| WDFY3 | c.1613C>T | p.Ser538Leu | Autophagy regulator | Complex | High | Low | Medium | High |
+| ZSWIM6 | c.122C>T | p.Ala41Val | Transcriptional regulator | Complex | High | Medium | Low | Medium |
+| KCNMA1 | c.1599C>G | p.Phe533Leu | Potassium channel | Tetramer | High | High | High | High |
+| ATP5F1A | c.389T>G | p.Ile130Arg | ATP synthase subunit | Hexamer | High | High | High | High |
+| NSMCE3 | c.277G>T | p.Val93Leu | SMC complex | Complex | High | Low | High | Medium |
+| KMT2B | c.7030G>A | p.Ala2344Thr | Histone methyltransferase | Complex | High | High | Low | Medium |
+| GET1-SH3BGR | c.542C>T | p.Ser181Phe | ER membrane insertion | Complex | High | Low | Medium | High |
+| DYSF | c.386G>A | p.Gly129Glu | Membrane repair | Monomer | Low | Medium | Low | High |
 
 ## 🚀 BREAKTHROUGH DISCOVERY: FALSE POSITIVE DETECTION IN ACTION!
 

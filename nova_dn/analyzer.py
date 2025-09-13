@@ -29,6 +29,12 @@ try:
 except ImportError:
     UNIVERSAL_AVAILABLE = False
 
+try:
+    from .dn_mechanism_filter import DNMechanismFilter
+    FILTER_AVAILABLE = True
+except ImportError:
+    FILTER_AVAILABLE = False
+
 
 AA_SET = set("ARNDCEQGHILKMFPSTWYV")
 
@@ -56,8 +62,10 @@ class MechanismOutcome:
 
 
 class NovaDNAnalyzer:
-    def __init__(self):
+    def __init__(self, use_smart_filtering: bool = True):
         self.universal_context = UniversalContext() if UNIVERSAL_AVAILABLE else None
+        self.dn_filter = DNMechanismFilter() if FILTER_AVAILABLE and use_smart_filtering else None
+        self.use_smart_filtering = use_smart_filtering
 
     def analyze(self, sequence: str, variant: str, context: Optional[Dict] = None,
                 gene_name: Optional[str] = None, uniprot_id: Optional[str] = None) -> Dict:
@@ -95,41 +103,76 @@ class NovaDNAnalyzer:
         elif context is None:
             context = {}
 
-        # Compute mechanism scores
-        m_if = score_interface_poisoning(sequence, pos1, ref, alt, context)
-        m_as = score_active_site_jamming(sequence, pos1, ref, alt, context)
-        m_ld = score_structural_lattice_disruption(sequence, pos1, ref, alt, context)
-        m_tr = score_trafficking_maturation(sequence, pos1, ref, alt, context)
+        # Smart filtering: determine which mechanisms to run
+        relevant_mechanisms = ["interface_poisoning", "active_site_jamming", "lattice_disruption", "trafficking_maturation"]
+        filter_info = None
 
-        mech_scores = {
-            "interface_poisoning": m_if[0],
-            "active_site_jamming": m_as[0],
-            "lattice_disruption": m_ld[0],
-            "trafficking_maturation": m_tr[0],
-        }
+        if self.dn_filter and gene_name:
+            print(f"🧠 Smart filtering for {gene_name}...")
+            filter_result = self.dn_filter.filter_and_score(gene_name, sequence, variant, uniprot_id)
+            relevant_mechanisms = filter_result["relevant_mechanisms"]
+            filter_info = {
+                "dn_likelihood": filter_result["dn_likelihood"],
+                "recommendation": filter_result["recommendation"],
+                "reasoning": filter_result["mechanism_evidence"]["reasoning"]
+            }
+            print(f"   DN likelihood: {filter_result['dn_likelihood']:.2f}")
+            print(f"   Relevant mechanisms: {relevant_mechanisms}")
+
+        # Compute only relevant mechanism scores
+        mech_scores = {}
+        all_explanations = {}
+
+        if "interface_poisoning" in relevant_mechanisms:
+            m_if = score_interface_poisoning(sequence, pos1, ref, alt, context)
+            mech_scores["interface_poisoning"] = m_if[0]
+            all_explanations["interface_poisoning"] = m_if[2]
+        else:
+            mech_scores["interface_poisoning"] = 0.0
+            all_explanations["interface_poisoning"] = "mechanism filtered out"
+
+        if "active_site_jamming" in relevant_mechanisms:
+            m_as = score_active_site_jamming(sequence, pos1, ref, alt, context)
+            mech_scores["active_site_jamming"] = m_as[0]
+            all_explanations["active_site_jamming"] = m_as[2]
+        else:
+            mech_scores["active_site_jamming"] = 0.0
+            all_explanations["active_site_jamming"] = "mechanism filtered out"
+
+        if "lattice_disruption" in relevant_mechanisms:
+            m_ld = score_structural_lattice_disruption(sequence, pos1, ref, alt, context)
+            mech_scores["lattice_disruption"] = m_ld[0]
+            all_explanations["lattice_disruption"] = m_ld[2]
+        else:
+            mech_scores["lattice_disruption"] = 0.0
+            all_explanations["lattice_disruption"] = "mechanism filtered out"
+
+        if "trafficking_maturation" in relevant_mechanisms:
+            m_tr = score_trafficking_maturation(sequence, pos1, ref, alt, context)
+            mech_scores["trafficking_maturation"] = m_tr[0]
+            all_explanations["trafficking_maturation"] = m_tr[2]
+        else:
+            mech_scores["trafficking_maturation"] = 0.0
+            all_explanations["trafficking_maturation"] = "mechanism filtered out"
         top_mech = max(mech_scores.items(), key=lambda kv: kv[1])[0]
+        explanation = all_explanations[top_mech]
 
-        # Build explanation: pick the one-liner from the top mechanism
-        expl_map = {
-            "interface_poisoning": m_if[2],
-            "active_site_jamming": m_as[2],
-            "lattice_disruption": m_ld[2],
-            "trafficking_maturation": m_tr[2],
-        }
-        explanation = expl_map[top_mech]
-
-        # Collect contributing features (trim for readability)
+        # Collect contributing features from relevant mechanisms only
         contrib = []
-        for name, tup in (
-            ("interface_poisoning", m_if),
-            ("active_site_jamming", m_as),
-            ("lattice_disruption", m_ld),
-            ("trafficking_maturation", m_tr),
-        ):
-            for f in tup[1][:4]:
-                contrib.append({"mechanism": name, **f})
+        if "interface_poisoning" in relevant_mechanisms and "m_if" in locals():
+            for f in m_if[1][:4]:
+                contrib.append({"mechanism": "interface_poisoning", **f})
+        if "active_site_jamming" in relevant_mechanisms and "m_as" in locals():
+            for f in m_as[1][:4]:
+                contrib.append({"mechanism": "active_site_jamming", **f})
+        if "lattice_disruption" in relevant_mechanisms and "m_ld" in locals():
+            for f in m_ld[1][:4]:
+                contrib.append({"mechanism": "lattice_disruption", **f})
+        if "trafficking_maturation" in relevant_mechanisms and "m_tr" in locals():
+            for f in m_tr[1][:4]:
+                contrib.append({"mechanism": "trafficking_maturation", **f})
 
-        return {
+        result = {
             "variant": variant,
             "position": pos1,
             "ref": ref,
@@ -140,6 +183,13 @@ class NovaDNAnalyzer:
             "explanation": explanation,
             "notes": {"sequence_ref_mismatch": bool((context or {}).get("sequence_ref_mismatch", False))},
         }
+
+        # Add smart filtering information if available
+        if filter_info:
+            result["smart_filtering"] = filter_info
+            result["relevant_mechanisms"] = relevant_mechanisms
+
+        return result
 
 
 # --- CLI ---
