@@ -1,0 +1,14 @@
+HGVS,gnomAD frequency,ClinVar_Classification
+NM_000492.4(CFTR):c.1521_1523delCTT (p.Phe508del),0.0001,Pathogenic
+NM_000492.4(CFTR):c.1652G>A (p.Gly551Asp),0.00001,Pathogenic
+NM_001042351.3(G6PD):c.202G>A (p.Val68Met),0.001,Pathogenic
+NM_000142.5(FGFR3):c.1138G>A (p.Gly380Arg),0.0,Pathogenic
+NM_000142.5(FGFR3):c.742C>T (p.Arg248Cys),0.0,Pathogenic
+NM_020975.6(RET):c.1900T>C (p.Cys634Arg),0.0,Pathogenic
+NM_000088.4(COL1A1):c.3226G>A (p.Gly1076Ser),0.0,Pathogenic
+NM_000138.5(FBN1):c.3725G>A (p.Cys1242Tyr),0.0,Pathogenic
+NM_000546.6(TP53):c.817C>T (p.Arg273His),0.0001,Pathogenic
+NM_007294.4(BRCA1):c.181T>G (p.Cys61Gly),0.0,Pathogenic
+NM_000540.3(RYR1):c.7523G>A (p.Arg2508His),0.0,VUS
+NM_000546.6(TP53):c.215C>G (p.Pro72Arg),0.25,Benign
+NM_000492.4(CFTR):c.1408A>G (p.Met470Val),0.5,Benign

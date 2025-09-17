@@ -1,0 +1,2037 @@
+gene	variant	gnomad_freq	status	dn_likelihood	interface_poisoning	active_site_jamming	lattice_disruption	trafficking_maturation	top_mechanism	explanation	error
+RYR1	p.R2241Ter	0.00013	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: R2241Ter"
+RYR1	p.V4842M	0.00011	SUCCESS	1.0	0.15111111111111114	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.R614C	0.00011	SUCCESS	1.0	0.65	0.30588235294117644	0.25	0.5	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R1469W	0.0001	SUCCESS	1.0	0.43	0.44999999999999996	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.R3550W	8e-05	SUCCESS	1.0	0.43	0.44999999999999996	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.V2214I	6e-05	SUCCESS	1.0	0.10666666666666667	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.C3193W	6e-05	SUCCESS	1.0	0.3755555555555556	0.36941176470588233	0.25	0.5	trafficking_maturation	trafficking/maturation mischief via disulfide_network_change	
+RYR1	p.C3402G	5e-05	SUCCESS	1.0	0.36444444444444446	0.15	0.0	0.5	trafficking_maturation	trafficking/maturation mischief via disulfide_network_change	
+RYR1	p.G4782R	5e-05	SUCCESS	1.0	0.4411111111111111	0.3623529411764706	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R109W	5e-05	SUCCESS	1.0	0.43	0.44999999999999996	0.25	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.G2434R	5e-05	SUCCESS	1.0	0.4411111111111111	0.3623529411764706	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.Y3921Ter	4e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Y3921Ter"
+RYR1	p.L417P	4e-05	SUCCESS	1.0	0.45	0.4	0.5	0.0	lattice_disruption	lattice disruption via coiled_coil_flag + proline_in_helix/strand	
+RYR1	p.T4709M	4e-05	SUCCESS	1.0	0.1577777777777778	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.T2206M	4e-05	SUCCESS	1.0	0.1577777777777778	0.15	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R4564Q	3e-05	SUCCESS	1.0	0.37222222222222223	0.3	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.F4976L	3e-05	SUCCESS	1.0	0.12222222222222223	0.3	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.R530H	3e-05	SUCCESS	1.0	0.1288888888888889	0.3	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.A1577T	3e-05	SUCCESS	1.0	0.15555555555555556	0.15	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R1707H	3e-05	SUCCESS	1.0	0.1288888888888889	0.3	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.G2365R	3e-05	SUCCESS	1.0	0.4411111111111111	0.3623529411764706	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.E2404K	3e-05	SUCCESS	1.0	0.6088888888888889	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.A3298T	3e-05	SUCCESS	1.0	0.15555555555555556	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.R3772W	2e-05	SUCCESS	1.0	0.43	0.44999999999999996	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.R401C	2e-05	SUCCESS	1.0	0.65	0.30588235294117644	0.0	0.5	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R4825H	2e-05	SUCCESS	1.0	0.1288888888888889	0.3	0.25	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.P4973L	2e-05	SUCCESS	1.0	0.2	0.15	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.E1175K	2e-05	SUCCESS	1.0	0.6088888888888889	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.A2200V	2e-05	SUCCESS	1.0	0.15333333333333335	0.15	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.V2280I	2e-05	SUCCESS	1.0	0.10666666666666667	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.C35R	1e-05	SUCCESS	1.0	0.65	0.30588235294117644	0.25	0.5	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.Q3485Ter	1e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q3485Ter"
+RYR1	p.Y3540Ter	1e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Y3540Ter"
+RYR1	p.R3629W	1e-05	SUCCESS	1.0	0.43	0.44999999999999996	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.R3772Q	1e-05	SUCCESS	1.0	0.37222222222222223	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R3903Q	1e-05	SUCCESS	1.0	0.37222222222222223	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.F41S	1e-05	SUCCESS	1.0	0.18	0.34705882352941175	0.25	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.S427L	1e-05	SUCCESS	1.0	0.2	0.16999999999999998	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R44H	1e-05	SUCCESS	1.0	0.1288888888888889	0.3	0.25	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.R4558W	1e-05	SUCCESS	1.0	0.43	0.44999999999999996	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.R4558Q	1e-05	SUCCESS	1.0	0.37222222222222223	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R4704Ter	1e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: R4704Ter"
+RYR1	p.K4724Q	1e-05	SUCCESS	1.0	0.3588888888888889	0.3	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R4737W	1e-05	SUCCESS	1.0	0.43	0.44999999999999996	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.R4737Q	1e-05	SUCCESS	1.0	0.37222222222222223	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.V4849I	1e-05	SUCCESS	1.0	0.10666666666666667	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.S4867N	1e-05	SUCCESS	1.0	0.16000000000000003	0.15	0.25	0.25	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.T4882M	1e-05	SUCCESS	1.0	0.1577777777777778	0.15	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.A4940T	1e-05	SUCCESS	1.0	0.15555555555555556	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.R4945Ter	1e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: R4945Ter"
+RYR1	p.T4980M	1e-05	SUCCESS	1.0	0.1577777777777778	0.15	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R533C	1e-05	SUCCESS	1.0	0.65	0.30588235294117644	0.25	0.5	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.Q55Ter	1e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q55Ter"
+RYR1	p.R552Q	1e-05	SUCCESS	1.0	0.37222222222222223	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.D60N	1e-05	SUCCESS	1.0	0.35	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R651Ter	1e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: R651Ter"
+RYR1	p.W661Ter	1e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: W661Ter"
+RYR1	p.G705R	1e-05	SUCCESS	1.0	0.4411111111111111	0.3623529411764706	0.6	0.0	lattice_disruption	lattice disruption via collagen_Gly_site	
+RYR1	p.Q734Ter	1e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q734Ter"
+RYR1	p.R75Ter	1e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: R75Ter"
+RYR1	p.G765R	1e-05	SUCCESS	1.0	0.4411111111111111	0.3623529411764706	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R817Ter	1e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: R817Ter"
+RYR1	p.R1075W	1e-05	SUCCESS	1.0	0.43	0.44999999999999996	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.R1075Q	1e-05	SUCCESS	1.0	0.37222222222222223	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.V1101M	1e-05	SUCCESS	1.0	0.15111111111111114	0.15	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.Y1121C	1e-05	SUCCESS	1.0	0.3844444444444445	0.32941176470588235	0.0	0.5	trafficking_maturation	trafficking/maturation mischief via disulfide_network_change	
+RYR1	p.Q1230Ter	1e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q1230Ter"
+RYR1	p.R1409Ter	1e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: R1409Ter"
+RYR1	p.S1728F	1e-05	SUCCESS	1.0	0.18	0.34705882352941175	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.R177C	1e-05	SUCCESS	1.0	0.65	0.30588235294117644	0.25	0.5	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R1772G	1e-05	SUCCESS	1.0	0.4411111111111111	0.3623529411764706	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.Q1970Ter	1e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q1970Ter"
+RYR1	p.R2163C	1e-05	SUCCESS	1.0	0.65	0.30588235294117644	0.25	0.5	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.P2195L	1e-05	SUCCESS	1.0	0.2	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.R2234C	1e-05	SUCCESS	1.0	0.65	0.30588235294117644	0.0	0.5	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R2336H	1e-05	SUCCESS	1.0	0.1288888888888889	0.3	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.R2355W	1e-05	SUCCESS	1.0	0.43	0.44999999999999996	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.M2423K	1e-05	SUCCESS	1.0	0.45	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.A2428T	1e-05	SUCCESS	1.0	0.15555555555555556	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.R2452Q	1e-05	SUCCESS	1.0	0.37222222222222223	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R2454C	1e-05	SUCCESS	1.0	0.65	0.30588235294117644	0.25	0.5	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R2454H	1e-05	SUCCESS	1.0	0.1288888888888889	0.3	0.25	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.R2458C	1e-05	SUCCESS	1.0	0.65	0.30588235294117644	0.25	0.5	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R2458H	1e-05	SUCCESS	1.0	0.1288888888888889	0.3	0.25	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.Q2620Ter	1e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q2620Ter"
+RYR1	p.R2676W	1e-05	SUCCESS	1.0	0.43	0.44999999999999996	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.R280Ter	1e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: R280Ter"
+RYR1	p.H283R	1e-05	SUCCESS	1.0	0.1288888888888889	0.3	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.Q2924Ter	1e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q2924Ter"
+RYR1	p.R2939K	1e-05	SUCCESS	1.0	0.11333333333333334	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.R2985Ter	1e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: R2985Ter"
+RYR1	p.R3053Ter	1e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: R3053Ter"
+RYR1	p.Q3127Ter	1e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q3127Ter"
+RYR1	p.P3138L	1e-05	SUCCESS	1.0	0.2	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.G3191R	1e-05	SUCCESS	1.0	0.4411111111111111	0.3623529411764706	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.P3202L	1e-05	SUCCESS	1.0	0.2	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.P3208L	1e-05	SUCCESS	1.0	0.2	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.R3283Ter	1e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: R3283Ter"
+RYR1	p.Q3355Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q3355Ter"
+RYR1	p.K3367R	0.0	SUCCESS	1.0	0.11333333333333334	0.15	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.E3391Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: E3391Ter"
+RYR1	p.G341R	0.0	SUCCESS	1.0	0.4411111111111111	0.3623529411764706	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.G341R	0.0	SUCCESS	1.0	0.4411111111111111	0.3623529411764706	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.W3445Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: W3445Ter"
+RYR1	p.S3448F	0.0	SUCCESS	1.0	0.18	0.34705882352941175	0.25	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.Q3461Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q3461Ter"
+RYR1	p.Q3491Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q3491Ter"
+RYR1	p.K3515Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: K3515Ter"
+RYR1	p.P3527S	0.0	SUCCESS	1.0	0.11777777777777779	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.Y3540Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Y3540Ter"
+RYR1	p.W355Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: W355Ter"
+RYR1	p.S3600Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: S3600Ter"
+RYR1	p.L3606P	0.0	SUCCESS	1.0	0.45	0.4	0.5	0.0	lattice_disruption	lattice disruption via coiled_coil_flag + proline_in_helix/strand	
+RYR1	p.Y3613Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Y3613Ter"
+RYR1	p.A3709V	0.0	SUCCESS	1.0	0.15333333333333335	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.T3711M	0.0	SUCCESS	1.0	0.1577777777777778	0.15	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.E3749Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: E3749Ter"
+RYR1	p.E3776Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: E3776Ter"
+RYR1	p.Q3812Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q3812Ter"
+RYR1	p.Q3832Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q3832Ter"
+RYR1	p.Q3888Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q3888Ter"
+RYR1	p.Q3926Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q3926Ter"
+RYR1	p.K3958Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: K3958Ter"
+RYR1	p.Q3977Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q3977Ter"
+RYR1	p.R3983C	0.0	SUCCESS	1.0	0.65	0.30588235294117644	0.25	0.5	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.D3986E	0.0	SUCCESS	1.0	0.1	0.15	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.G3990V	0.0	SUCCESS	1.0	0.2	0.17352941176470588	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.A400T	0.0	SUCCESS	1.0	0.15555555555555556	0.15	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.Q4004Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q4004Ter"
+RYR1	p.Q4008Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q4008Ter"
+RYR1	p.R401H	0.0	SUCCESS	1.0	0.1288888888888889	0.3	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.R401L	0.0	SUCCESS	1.0	0.45	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.M402T	0.0	SUCCESS	1.0	0.1577777777777778	0.15	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.S4028L	0.0	SUCCESS	1.0	0.2	0.16999999999999998	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.I403M	0.0	SUCCESS	1.0	0.1577777777777778	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.S4050Y	0.0	SUCCESS	1.0	0.11111111111111112	0.351764705882353	0.25	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.C4124Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: C4124Ter"
+RYR1	p.E4167Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: E4167Ter"
+RYR1	p.G4178S	0.0	SUCCESS	1.0	0.10888888888888891	0.15	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.F4194L	0.0	SUCCESS	1.0	0.12222222222222223	0.3	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.F4194L	0.0	SUCCESS	1.0	0.12222222222222223	0.3	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.Q4203Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q4203Ter"
+RYR1	p.W4204Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: W4204Ter"
+RYR1	p.E4205Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: E4205Ter"
+RYR1	p.V4234L	0.0	SUCCESS	1.0	0.10888888888888891	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.V4234L	0.0	SUCCESS	1.0	0.10888888888888891	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.E4243K	0.0	SUCCESS	1.0	0.6088888888888889	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.E4256Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: E4256Ter"
+RYR1	p.E4277Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: E4277Ter"
+RYR1	p.R4306Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: R4306Ter"
+RYR1	p.A4329D	0.0	SUCCESS	1.0	0.45	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.W4337Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: W4337Ter"
+RYR1	p.R44C	0.0	SUCCESS	1.0	0.65	0.30588235294117644	0.25	0.5	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.E4410Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: E4410Ter"
+RYR1	p.I448F	0.0	SUCCESS	1.0	0.13777777777777778	0.3	0.25	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.E4494Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: E4494Ter"
+RYR1	p.E4500Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: E4500Ter"
+RYR1	p.E4512Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: E4512Ter"
+RYR1	p.Q4525Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q4525Ter"
+RYR1	p.Y4555Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Y4555Ter"
+RYR1	p.R4558G	0.0	SUCCESS	1.0	0.4411111111111111	0.3623529411764706	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R4564W	0.0	SUCCESS	1.0	0.43	0.44999999999999996	0.25	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.L4568P	0.0	SUCCESS	1.0	0.45	0.4	0.5	0.0	lattice_disruption	lattice disruption via coiled_coil_flag + proline_in_helix/strand	
+RYR1	p.Y4581Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Y4581Ter"
+RYR1	p.E461Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: E461Ter"
+RYR1	p.Y4631N	0.0	SUCCESS	1.0	0.1488888888888889	0.3223529411764706	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.Y4631S	0.0	SUCCESS	1.0	0.11111111111111112	0.351764705882353	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.Y4631C	0.0	SUCCESS	1.0	0.3844444444444445	0.32941176470588235	0.0	0.5	trafficking_maturation	trafficking/maturation mischief via disulfide_network_change	
+RYR1	p.Y4631Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Y4631Ter"
+RYR1	p.E4634K	0.0	SUCCESS	1.0	0.6088888888888889	0.3	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.E4634Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: E4634Ter"
+RYR1	p.E4635K	0.0	SUCCESS	1.0	0.6088888888888889	0.3	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.T4637A	0.0	SUCCESS	1.0	0.15555555555555556	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.T4637I	0.0	SUCCESS	1.0	0.2	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.G4638S	0.0	SUCCESS	1.0	0.10888888888888891	0.15	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.G4638D	0.0	SUCCESS	1.0	0.41888888888888887	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.M4640R	0.0	SUCCESS	1.0	0.45	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.L4650P	0.0	SUCCESS	1.0	0.45	0.4	0.5	0.0	lattice_disruption	lattice disruption via coiled_coil_flag + proline_in_helix/strand	
+RYR1	p.H4651P	0.0	SUCCESS	1.0	0.6355555555555555	0.7	0.5	0.0	active_site_jamming	active-site jamming via |d_charge| + proline_introduced	
+RYR1	p.H4651R	0.0	SUCCESS	1.0	0.1288888888888889	0.3	0.25	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.L4665P	0.0	SUCCESS	1.0	0.45	0.4	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + proline_introduced	
+RYR1	p.L4793P	0.0	SUCCESS	1.0	0.45	0.4	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + proline_introduced	
+RYR1	p.W4795Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: W4795Ter"
+RYR1	p.W4795Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: W4795Ter"
+RYR1	p.Y4796C	0.0	SUCCESS	1.0	0.3844444444444445	0.32941176470588235	0.25	0.5	trafficking_maturation	trafficking/maturation mischief via disulfide_network_change	
+RYR1	p.N4806D	0.0	SUCCESS	1.0	0.35	0.3	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.F4808N	0.0	SUCCESS	1.0	0.2	0.3176470588235294	0.25	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.F4808Y	0.0	SUCCESS	1.0	0.19111111111111112	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.F4808L	0.0	SUCCESS	1.0	0.12222222222222223	0.3	0.25	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.H4813Y	0.0	SUCCESS	1.0	0.39222222222222225	0.3	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.L4814F	0.0	SUCCESS	1.0	0.12222222222222223	0.3	0.25	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.D4816G	0.0	SUCCESS	1.0	0.41888888888888887	0.3	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.L4824P	0.0	SUCCESS	1.0	0.45	0.4	0.5	0.0	lattice_disruption	lattice disruption via coiled_coil_flag + proline_in_helix/strand	
+RYR1	p.R4825C	0.0	SUCCESS	1.0	0.65	0.30588235294117644	0.25	0.5	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.T4826I	0.0	SUCCESS	1.0	0.2	0.15	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.T4832N	0.0	SUCCESS	1.0	0.16222222222222224	0.15	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.H4833Y	0.0	SUCCESS	1.0	0.39222222222222225	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.A4846V	0.0	SUCCESS	1.0	0.15333333333333335	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.V4847L	0.0	SUCCESS	1.0	0.10888888888888891	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.L4851P	0.0	SUCCESS	1.0	0.45	0.4	0.5	0.0	lattice_disruption	lattice disruption via coiled_coil_flag + proline_in_helix/strand	
+RYR1	p.Y4852C	0.0	SUCCESS	1.0	0.3844444444444445	0.32941176470588235	0.25	0.5	trafficking_maturation	trafficking/maturation mischief via disulfide_network_change	
+RYR1	p.T4853N	0.0	SUCCESS	1.0	0.16222222222222224	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.T4853I	0.0	SUCCESS	1.0	0.2	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.F4857L	0.0	SUCCESS	1.0	0.12222222222222223	0.3	0.25	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.F4857S	0.0	SUCCESS	1.0	0.18	0.34705882352941175	0.25	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.N4858D	0.0	SUCCESS	1.0	0.35	0.3	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.F4860Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: F4860Ter"
+RYR1	p.R4861C	0.0	SUCCESS	1.0	0.65	0.30588235294117644	0.25	0.5	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R4861H	0.0	SUCCESS	1.0	0.1288888888888889	0.3	0.25	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.R4861P	0.0	SUCCESS	1.0	0.6644444444444445	0.5511764705882353	0.5	0.0	interface_poisoning	interface poisoning due to |d_charge| + proline_introduced	
+RYR1	p.K4862T	0.0	SUCCESS	1.0	0.4211111111111111	0.3	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.Y4864C	0.0	SUCCESS	1.0	0.3844444444444445	0.32941176470588235	0.25	0.5	trafficking_maturation	trafficking/maturation mischief via disulfide_network_change	
+RYR1	p.K4876R	0.0	SUCCESS	1.0	0.11333333333333334	0.15	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.H4887Y	0.0	SUCCESS	1.0	0.39222222222222225	0.3	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.Y4889Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Y4889Ter"
+RYR1	p.G4891R	0.0	SUCCESS	1.0	0.4411111111111111	0.3623529411764706	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R4893W	0.0	SUCCESS	1.0	0.43	0.44999999999999996	0.25	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.R4893Q	0.0	SUCCESS	1.0	0.37222222222222223	0.3	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R4893P	0.0	SUCCESS	1.0	0.6644444444444445	0.5511764705882353	0.5	0.0	interface_poisoning	interface poisoning due to |d_charge| + proline_introduced	
+RYR1	p.G4895V	0.0	SUCCESS	1.0	0.2	0.17352941176470588	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.G4896E	0.0	SUCCESS	1.0	0.41888888888888887	0.3211764705882353	0.85	0.0	lattice_disruption	lattice disruption via collagen_Gly_site + coiled_coil_flag	
+RYR1	p.G4897V	0.0	SUCCESS	1.0	0.2	0.17352941176470588	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.I4898T	0.0	SUCCESS	1.0	0.2	0.15	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.G4899E	0.0	SUCCESS	1.0	0.41888888888888887	0.3211764705882353	0.6	0.0	lattice_disruption	lattice disruption via collagen_Gly_site	
+RYR1	p.A4906V	0.0	SUCCESS	1.0	0.15333333333333335	0.15	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.E4911K	0.0	SUCCESS	1.0	0.6088888888888889	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R4914G	0.0	SUCCESS	1.0	0.4411111111111111	0.3623529411764706	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R4914T	0.0	SUCCESS	1.0	0.43444444444444447	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.D4918N	0.0	SUCCESS	1.0	0.35	0.3	0.0	0.3	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.T4920N	0.0	SUCCESS	1.0	0.16222222222222224	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.F4921T	0.0	SUCCESS	1.0	0.17777777777777778	0.31529411764705884	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.F4921S	0.0	SUCCESS	1.0	0.18	0.34705882352941175	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.G4935S	0.0	SUCCESS	1.0	0.10888888888888891	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.G4935D	0.0	SUCCESS	1.0	0.41888888888888887	0.3	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.L4936R	0.0	SUCCESS	1.0	0.45	0.3	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.I4938M	0.0	SUCCESS	1.0	0.1577777777777778	0.15	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.Q4948K	0.0	SUCCESS	1.0	0.3588888888888889	0.3	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.Q4948R	0.0	SUCCESS	1.0	0.37222222222222223	0.3	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.E4949Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: E4949Ter"
+RYR1	p.F4976L	0.0	SUCCESS	1.0	0.12222222222222223	0.3	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.G5006S	0.0	SUCCESS	1.0	0.10888888888888891	0.15	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.G5006D	0.0	SUCCESS	1.0	0.41888888888888887	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.Y522S	0.0	SUCCESS	1.0	0.11111111111111112	0.351764705882353	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.F539L	0.0	SUCCESS	1.0	0.12222222222222223	0.3	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.R552W	0.0	SUCCESS	1.0	0.43	0.44999999999999996	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.E554Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: E554Ter"
+RYR1	p.S557F	0.0	SUCCESS	1.0	0.18	0.34705882352941175	0.25	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.R614L	0.0	SUCCESS	1.0	0.45	0.3	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.W661Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: W661Ter"
+RYR1	p.E669Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: E669Ter"
+RYR1	p.Q677Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q677Ter"
+RYR1	p.Q70Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q70Ter"
+RYR1	p.S71Y	0.0	SUCCESS	1.0	0.11111111111111112	0.351764705882353	0.25	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.Q764Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q764Ter"
+RYR1	p.R819Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: R819Ter"
+RYR1	p.R829Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: R829Ter"
+RYR1	p.E879Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: E879Ter"
+RYR1	p.W881Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: W881Ter"
+RYR1	p.Q888Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q888Ter"
+RYR1	p.E946Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: E946Ter"
+RYR1	p.W995Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: W995Ter"
+RYR1	p.R997Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: R997Ter"
+RYR1	p.D1056H	0.0	SUCCESS	1.0	0.6066666666666667	0.44999999999999996	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.T1162I	0.0	SUCCESS	1.0	0.2	0.15	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.G1165D	0.0	SUCCESS	1.0	0.41888888888888887	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.Q1219Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q1219Ter"
+RYR1	p.R1258Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: R1258Ter"
+RYR1	p.P1267R	0.0	SUCCESS	1.0	0.4144444444444445	0.30117647058823527	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.W1276Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: W1276Ter"
+RYR1	p.Q1295Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q1295Ter"
+RYR1	p.L13R	0.0	SUCCESS	1.0	0.45	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.E1319Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: E1319Ter"
+RYR1	p.Q1362Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q1362Ter"
+RYR1	p.Y1433Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Y1433Ter"
+RYR1	p.W1448Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: W1448Ter"
+RYR1	p.Y1456Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Y1456Ter"
+RYR1	p.Q1458Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q1458Ter"
+RYR1	p.Q1479Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q1479Ter"
+RYR1	p.K1487Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: K1487Ter"
+RYR1	p.Q1558Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q1558Ter"
+RYR1	p.E160G	0.0	SUCCESS	1.0	0.41888888888888887	0.3211764705882353	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.Q1613Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q1613Ter"
+RYR1	p.R163C	0.0	SUCCESS	1.0	0.65	0.30588235294117644	0.0	0.5	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R163L	0.0	SUCCESS	1.0	0.45	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.E1720Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: E1720Ter"
+RYR1	p.E1740Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: E1740Ter"
+RYR1	p.E176D	0.0	SUCCESS	1.0	0.1	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
+RYR1	p.S1770Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: S1770Ter"
+RYR1	p.S1778Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: S1778Ter"
+RYR1	p.Q1837Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q1837Ter"
+RYR1	p.Q1901Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q1901Ter"
+RYR1	p.E1917Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: E1917Ter"
+RYR1	p.Q1938Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q1938Ter"
+RYR1	p.Q1973Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q1973Ter"
+RYR1	p.E1997K	0.0	SUCCESS	1.0	0.6088888888888889	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R1999C	0.0	SUCCESS	1.0	0.65	0.30588235294117644	0.0	0.5	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.Q2011Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q2011Ter"
+RYR1	p.R2028Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: R2028Ter"
+RYR1	p.E2078Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: E2078Ter"
+RYR1	p.G215Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: G215Ter"
+RYR1	p.G215E	0.0	SUCCESS	1.0	0.41888888888888887	0.3211764705882353	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R2163H	0.0	SUCCESS	1.0	0.1288888888888889	0.3	0.25	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.V2168M	0.0	SUCCESS	1.0	0.15111111111111114	0.15	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.Q2173Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q2173Ter"
+RYR1	p.Q2193Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q2193Ter"
+RYR1	p.H2204Q	0.0	SUCCESS	1.0	0.3566666666666667	0.44999999999999996	0.25	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.C2237Y	0.0	SUCCESS	1.0	0.3844444444444445	0.32941176470588235	0.0	0.5	trafficking_maturation	trafficking/maturation mischief via disulfide_network_change	
+RYR1	p.H2253Y	0.0	SUCCESS	1.0	0.39222222222222225	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.N2283H	0.0	SUCCESS	1.0	0.3566666666666667	0.44999999999999996	0.25	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.F2340L	0.0	SUCCESS	1.0	0.12222222222222223	0.3	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.S2345R	0.0	SUCCESS	1.0	0.4322222222222222	0.32823529411764707	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.A2350T	0.0	SUCCESS	1.0	0.15555555555555556	0.15	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.V2354M	0.0	SUCCESS	1.0	0.15111111111111114	0.15	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.E2362K	0.0	SUCCESS	1.0	0.6088888888888889	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.C2363W	0.0	SUCCESS	1.0	0.3755555555555556	0.36941176470588233	0.0	0.5	trafficking_maturation	trafficking/maturation mischief via disulfide_network_change	
+RYR1	p.F2364V	0.0	SUCCESS	1.0	0.13111111111111112	0.3	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.E2371K	0.0	SUCCESS	1.0	0.6088888888888889	0.3	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.E2371G	0.0	SUCCESS	1.0	0.41888888888888887	0.3211764705882353	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.G2375A	0.0	SUCCESS	1.0	0.1488888888888889	0.15	0.6	0.0	lattice_disruption	lattice disruption via collagen_Gly_site	
+RYR1	p.Q240Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q240Ter"
+RYR1	p.E2404Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: E2404Ter"
+RYR1	p.E2413Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: E2413Ter"
+RYR1	p.D2431Y	0.0	SUCCESS	1.0	0.3988888888888889	0.4758823529411764	0.25	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.R2435H	0.0	SUCCESS	1.0	0.1288888888888889	0.3	0.25	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.R2435L	0.0	SUCCESS	1.0	0.45	0.3	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.Q2444Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q2444Ter"
+RYR1	p.G2448D	0.0	SUCCESS	1.0	0.41888888888888887	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R2452W	0.0	SUCCESS	1.0	0.43	0.44999999999999996	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.I2453T	0.0	SUCCESS	1.0	0.2	0.15	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.Y245Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Y245Ter"
+RYR1	p.L2466F	0.0	SUCCESS	1.0	0.12222222222222223	0.3	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.G248R	0.0	SUCCESS	1.0	0.4411111111111111	0.3623529411764706	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.G248R	0.0	SUCCESS	1.0	0.4411111111111111	0.3623529411764706	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R2508G	0.0	SUCCESS	1.0	0.4411111111111111	0.3623529411764706	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R2508C	0.0	SUCCESS	1.0	0.65	0.30588235294117644	0.25	0.5	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R2508H	0.0	SUCCESS	1.0	0.1288888888888889	0.3	0.25	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.E2545D	0.0	SUCCESS	1.0	0.1	0.15	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.W259Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: W259Ter"
+RYR1	p.E262Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: E262Ter"
+RYR1	p.S2617Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: S2617Ter"
+RYR1	p.V2627M	0.0	SUCCESS	1.0	0.15111111111111114	0.15	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.W2661Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: W2661Ter"
+RYR1	p.S2720Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: S2720Ter"
+RYR1	p.Y289Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Y289Ter"
+RYR1	p.Y2908Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Y2908Ter"
+RYR1	p.K2916Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: K2916Ter"
+RYR1	p.R2920Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: R2920Ter"
+RYR1	p.E2925Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: E2925Ter"
+RYR1	p.L2963P	0.0	SUCCESS	1.0	0.45	0.4	0.5	0.0	lattice_disruption	lattice disruption via coiled_coil_flag + proline_in_helix/strand	
+RYR1	p.Q2993Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Q2993Ter"
+RYR1	p.Y3016C	0.0	SUCCESS	1.0	0.3844444444444445	0.32941176470588235	0.0	0.5	trafficking_maturation	trafficking/maturation mischief via disulfide_network_change	
+RYR1	p.E3104K	0.0	SUCCESS	1.0	0.6088888888888889	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R3167Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: R3167Ter"
+RYR1	p.Y3182Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: Y3182Ter"
+RYR1	p.E320K	0.0	SUCCESS	1.0	0.6088888888888889	0.3	0.25	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.K33E	0.0	SUCCESS	1.0	0.6088888888888889	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
+RYR1	p.R328W	0.0	SUCCESS	1.0	0.43	0.44999999999999996	0.25	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
+RYR1	p.W3284Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: W3284Ter"
+RYR1	p.W3284Ter	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/runpy.py"", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
+    exec(code, run_globals)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+    raise SystemExit(main())
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+    result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 90, in analyze
+    ref, pos1, alt = parse_variant(variant)
+  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 53, in parse_variant
+    raise ValueError(f""Unrecognized variant format: {s}"")
+ValueError: Unrecognized variant format: W3284Ter"

@@ -1,0 +1,2 @@
+gene	variant	hgvs	gnomad_freq	status	routing_strategy	routing_confidence	routing_rationale	analyzers_run	summary	dn_score	lof_score	gof_score	dn_classification	lof_classification	gof_classification	final_score	final_classification	explanation
+BMPR2	p.G811S	NM_001204.7(BMPR2):c.2431G>A (p.Gly811Ser)		FAILED														

@@ -21,27 +21,36 @@ class DNMechanismFilter:
         self.universal_context = UniversalContext()
         
         # GO term patterns that indicate DN potential (from GO database)
+        # Enhanced with Nova's suggestions for better coverage and precision
         self.dn_indicating_patterns = {
             # Structural/oligomeric proteins
             'oligomerization': ['oligomer', 'dimer', 'trimer', 'tetramer', 'hexamer', 'multimer'],
             'structural': ['structural', 'cytoskeleton', 'extracellular matrix', 'collagen'],
             'complex_assembly': ['complex assembly', 'protein complex', 'subunit'],
-            
+
             # Transcription factors (often dominant)
             'transcription': ['transcription', 'DNA binding', 'chromatin', 'histone'],
-            
-            # Receptors and channels (often dominant)
+
+            # Receptors and channels (often dominant) - Nova's expansion
             'signaling': ['receptor', 'channel', 'signal transduction'],
-            
-            # Secreted proteins (trafficking issues)
-            'secreted': ['secreted', 'extracellular', 'signal peptide', 'glycoprotein']
+            'gpcr_signaling': ['gpcr', 'g-protein coupled receptor', 'cytokine receptor'],
+            'kinase_signaling': ['tyrosine kinase', 'serine/threonine kinase'],
+
+            # Chaperones - Nova's addition for toxic misfolding
+            'chaperones': ['chaperone', 'heat shock protein', 'foldase'],
+
+            # Secreted proteins (trafficking issues) - Nova's refinement
+            'secreted': ['secreted', 'signal peptide', 'glycoprotein', 'extracellular matrix']
         }
         
-        # Patterns that suggest LOF/recessive (low DN likelihood)
+        # Patterns that suggest LOF/recessive (low DN likelihood) - Nova's refinements
         self.lof_indicating_patterns = {
             'metabolic_enzyme': ['hydrolase', 'transferase', 'oxidoreductase', 'lyase', 'isomerase'],
             'transporter': ['transporter', 'carrier', 'permease', 'antiporter', 'symporter'],
-            'housekeeping': ['ribosomal', 'proteasome', 'mitochondrial matrix', 'translation']
+            # Nova's refinement: more specific housekeeping, separate mitochondrial
+            'housekeeping': ['ribosomal protein', 'proteasome', 'translation factor'],
+            # Nova's addition: distinguish matrix enzymes (LOF) from membrane complexes
+            'mitochondrial_matrix': ['mitochondrial matrix enzyme', 'matrix enzyme']
         }
     
     def assess_dn_likelihood(self, gene_name: str, uniprot_id: Optional[str] = None) -> Tuple[float, Dict]:
@@ -112,19 +121,24 @@ class DNMechanismFilter:
         function_text = annotations.get("function", "").lower()
         sequence = annotations.get("sequence", "")
         
-        # Interface poisoning - for oligomeric/complex proteins
-        if any(pattern in function_text for pattern in 
-               self.dn_indicating_patterns['oligomerization'] + 
+        # Interface poisoning - for oligomeric/complex proteins (Nova's enhanced patterns)
+        if any(pattern in function_text for pattern in
+               self.dn_indicating_patterns['oligomerization'] +
                self.dn_indicating_patterns['complex_assembly'] +
-               self.dn_indicating_patterns['signaling']):
+               self.dn_indicating_patterns['signaling'] +
+               self.dn_indicating_patterns['gpcr_signaling']):
             mechanisms.append("interface_poisoning")
-            evidence["reasoning"].append("Interface poisoning: protein complex/oligomer detected")
+            evidence["reasoning"].append("Interface poisoning: protein complex/oligomer/receptor detected")
         
-        # Active site jamming - for enzymes and DNA-binding proteins
-        if any(pattern in function_text for pattern in 
-               ["enzyme", "catalytic", "kinase", "phosphatase", "DNA binding", "nuclease"]):
+        # Active site jamming - for enzymes and DNA-binding proteins (Nova's enhanced patterns)
+        if (any(pattern in function_text for pattern in
+                ["enzyme", "catalytic", "kinase", "phosphatase", "DNA binding", "nuclease"]) or
+            any(pattern in function_text for pattern in
+                self.dn_indicating_patterns['kinase_signaling']) or
+            any(pattern in function_text for pattern in
+                self.dn_indicating_patterns['chaperones'])):
             mechanisms.append("active_site_jamming")
-            evidence["reasoning"].append("Active site jamming: catalytic/binding activity detected")
+            evidence["reasoning"].append("Active site jamming: catalytic/binding/chaperone activity detected")
         
         # Lattice disruption - for structural proteins
         if any(pattern in function_text for pattern in 
@@ -139,17 +153,35 @@ class DNMechanismFilter:
             evidence["sequence_motifs"]["collagen_repeats"] = True
             evidence["reasoning"].append("Lattice disruption: collagen Gly-X-Y repeats detected")
         
-        # Trafficking/maturation - for secreted proteins, membrane proteins
-        if any(pattern in function_text for pattern in 
-               self.dn_indicating_patterns['secreted'] + 
-               ["membrane", "transmembrane", "glycosylation", "folding"]):
+        # Trafficking/maturation - Nova's enhanced membrane protein disambiguation
+        if any(pattern in function_text for pattern in
+               self.dn_indicating_patterns['secreted'] +
+               ["glycosylation", "folding"]):
             mechanisms.append("trafficking_maturation")
-            evidence["reasoning"].append("Trafficking/maturation: secreted/membrane protein detected")
+            evidence["reasoning"].append("Trafficking/maturation: secreted protein detected")
+
+        # Nova's membrane protein disambiguation logic
+        transporter_detected = False
+        if "membrane" in function_text or "transmembrane" in function_text:
+            if any(w in function_text for w in ["receptor", "channel", "gpcr"]):
+                mechanisms.append("trafficking_maturation")
+                evidence["reasoning"].append("Membrane receptor/channel → DN trafficking possible")
+            elif any(w in function_text for w in ["transporter", "carrier", "antiporter", "symporter"]):
+                transporter_detected = True
+                evidence["reasoning"].append("Membrane transporter → likely LOF, not DN")
+            else:
+                mechanisms.append("trafficking_maturation")
+                evidence["reasoning"].append("Generic membrane protein → default trafficking risk")
         
-        # Default fallback - if no specific mechanisms identified
+        # Default fallback - if no specific mechanisms identified (unless transporter)
         if not mechanisms:
-            mechanisms = ["interface_poisoning", "trafficking_maturation"]
-            evidence["reasoning"].append("Default: using safest mechanism combination")
+            if transporter_detected:
+                # Nova's suggestion: be more aggressive about filtering transporters
+                mechanisms = []  # Return empty list for clear transporters
+                evidence["reasoning"].append("Transporter filtered: no DN mechanisms applied")
+            else:
+                mechanisms = ["interface_poisoning", "trafficking_maturation"]
+                evidence["reasoning"].append("Default: using safest mechanism combination")
         
         return mechanisms, evidence
     

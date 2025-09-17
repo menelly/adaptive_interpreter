@@ -30,7 +30,7 @@ except ImportError:
     UNIVERSAL_AVAILABLE = False
 
 try:
-    from .dn_mechanism_filter import DNMechanismFilter
+    from .dn_mechanism_filter_v2 import DNMechanismFilterV2 as DNMechanismFilter
     FILTER_AVAILABLE = True
 except ImportError:
     FILTER_AVAILABLE = False
@@ -39,11 +39,28 @@ except ImportError:
 AA_SET = set("ARNDCEQGHILKMFPSTWYV")
 
 
+def interpret_dn_score(score: float) -> str:
+    """Interpret DN likelihood score for pathogenicity classification."""
+    if score >= 0.8:
+        return "Likely Pathogenic (LP)"
+    elif score >= 0.5:
+        return "Uncertain Significance - favor pathogenic (VUS-P)"
+    elif score >= 0.3:
+        return "Uncertain Significance (VUS)"
+    else:
+        return "Likely Benign (LB)"
+
+
 def parse_variant(s: str) -> Tuple[str, int, str]:
     """Parse 'R273H' or 'p.R273H' → (ref, pos, alt). Raises ValueError on failure."""
     s = s.strip()
     if s.startswith("p."):
         s = s[2:]
+
+    # Filter out nonsense variants (stop codons) - they can't be dominant negative
+    if 'Ter' in s:
+        raise ValueError("nonsense")
+
     if len(s) < 3:
         raise ValueError(f"Variant too short: {s}")
     ref = s[0].upper()
@@ -262,7 +279,14 @@ def main(argv: Optional[List[str]] = None) -> int:
     for name, sc in rows:
         print(f"| {name} | {sc:.2f} |")
     print()
+
+    # Add scoring interpretation
+    top_score = ms[result['top_mechanism']]
+    interpretation = interpret_dn_score(top_score)
+
     print(f"top_mechanism: {result['top_mechanism']}")
+    print(f"score: {top_score:.3f}")
+    print(f"interpretation: {interpretation}")
     print(f"because: {result['explanation']}")
     return 0
 

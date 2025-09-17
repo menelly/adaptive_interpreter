@@ -1,0 +1,4 @@
+gene	variant	hgvs	gnomad_freq	status	cascade_triggered	analyzers_run	summary	dn_score	lof_score	gof_score	dn_classification	lof_classification	gof_classification	final_score	final_classification	explanation
+TP53	p.R273H	NM_000546.6(TP53):c.817C>T (p.Arg273His)	1e-05	SUCCESS	False	DN	DN:0.70(VUS-P) FINAL:VUS-P	0.7000000000000001	0.0	0.0	VUS-P	NOT_RUN	NOT_RUN			Highest score from DN analyzer
+TP53	p.P72R	NM_000546.6(TP53):c.215C>G (p.Pro72Arg)	5e-05	SUCCESS	True	DN, LOF, GOF	DN:0.20(LB) LOF:0.64(VUS-P) GOF:0.00(LB) FINAL:VUS-P	0.20117647058823526	0.6409923664122137	0.0	LB	VUS-P	LB			Highest score from LOF analyzer
+TP53	p.R248Q	NM_000546.6(TP53):c.743G>A (p.Arg248Gln)	0.0	SUCCESS	False	DN	DN:0.70(VUS-P) FINAL:VUS-P	0.7	0.0	0.0	VUS-P	NOT_RUN	NOT_RUN			Highest score from DN analyzer
