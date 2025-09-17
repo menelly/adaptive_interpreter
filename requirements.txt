@@ -1,11 +1,26 @@
-# Core dependencies for Nova DN Analyzer
-# No external dependencies required - uses only Python standard library
+# 🧬 DNModeling - Domain-Aware Genetics Analysis System
+# Revolutionary breakthrough in genetics variant analysis
+# Authors: Ace (AI), Ren (Human), Nova (AI) - Collaborative Development
 
-# Optional dependencies for extended functionality:
-# requests>=2.25.0  # For future UniProt API integration
-# pyyaml>=5.4.0     # For YAML annotation files (already handled in code)
-# numpy>=1.20.0     # For future statistical analysis features
+# Core Dependencies - REQUIRED
+requests>=2.28.0    # UniProt API integration for domain awareness
+pandas>=1.5.0       # Data processing and batch analysis
+numpy>=1.21.0       # Numerical computations
+scipy>=1.9.0        # Statistical analysis
 
-# Development dependencies:
-# pytest>=6.0.0     # For testing framework
-# black>=21.0.0     # For code formatting
+# Bioinformatics - REQUIRED
+biopython>=1.79     # Sequence analysis and FASTA handling
+
+# Data Processing - REQUIRED
+tqdm>=4.64.0        # Progress bars for batch processing
+
+# Standard Library (included with Python)
+# json, os, sys, re, math, time, typing
+
+# Development and Testing
+pytest>=7.0.0      # Testing framework
+black>=22.0.0       # Code formatting
+
+# Optional: Enhanced Features
+# matplotlib>=3.5.0  # For plotting results
+# seaborn>=0.11.0    # For statistical plots

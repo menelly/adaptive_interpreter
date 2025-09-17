@@ -7,19 +7,40 @@ Automatically extracts protein features from UniProt, Pfam, and sequence analysi
 import requests
 import re
 import json
+import os
 from typing import Dict, List, Tuple, Optional
 import time
 
 class UniversalProteinAnnotator:
-    def __init__(self):
+    def __init__(self, cache_dir="protein_annotations_cache"):
         self.uniprot_base = "https://rest.uniprot.org"
         self.pfam_base = "https://pfam.xfam.org"
+
+        # 🎯 CACHING SYSTEM - Save domain data locally!
+        self.cache_dir = cache_dir
+        import os
+        os.makedirs(self.cache_dir, exist_ok=True)
+        print(f"🔍 Protein annotation cache: {self.cache_dir}")
         
     def get_uniprot_features(self, uniprot_id: str) -> Dict:
-        """Extract all features from UniProt API"""
+        """Extract all features from UniProt API with caching"""
+
+        # 🎯 CHECK CACHE FIRST!
+        cache_file = f"{self.cache_dir}/{uniprot_id}_domains.json"
+        if os.path.exists(cache_file):
+            try:
+                with open(cache_file, 'r') as f:
+                    cached_data = json.load(f)
+                print(f"🔍 Using cached domain data for {uniprot_id}")
+                return cached_data
+            except Exception as e:
+                print(f"⚠️ Cache read error for {uniprot_id}: {e}")
+
+        # Fetch from UniProt API
         url = f"{self.uniprot_base}/uniprotkb/{uniprot_id}.json"
-        
+
         try:
+            print(f"🌐 Fetching domain data from UniProt for {uniprot_id}...")
             response = requests.get(url, timeout=10)
             response.raise_for_status()
             data = response.json()
@@ -38,7 +59,13 @@ class UniversalProteinAnnotator:
                 "coiled_coil": [],
                 "disulfide_bonds": [],
                 "glycosylation": [],
-                "phosphorylation": []
+                "phosphorylation": [],
+                # 🎯 NEW! Critical domain features we were missing
+                "propeptides": [],  # N-terminal and C-terminal propeptides
+                "mature_chain": [],  # The actual functional protein
+                "regions": [],  # Functional regions like triple helix
+                "cleavage_sites": [],  # Where protein gets processed
+                "motifs": []  # Functional motifs
             }
 
             # Debug: print function extraction
@@ -47,7 +74,15 @@ class UniversalProteinAnnotator:
             # Extract features from UniProt annotations
             for feature in data.get("features", []):
                 self._parse_uniprot_feature(feature, features)
-                
+
+            # 🎯 SAVE TO CACHE!
+            try:
+                with open(cache_file, 'w') as f:
+                    json.dump(features, f, indent=2)
+                print(f"💾 Cached domain data for {uniprot_id}")
+            except Exception as e:
+                print(f"⚠️ Cache write error for {uniprot_id}: {e}")
+
             return features
             
         except Exception as e:
@@ -116,6 +151,31 @@ class UniversalProteinAnnotator:
             features["glycosylation"].append(start)
         elif feature_type == "MOD_RES" and "phospho" in description.lower():
             features["phosphorylation"].append(start)
+        # 🎯 NEW! Parse the critical domain features we were missing
+        elif feature_type == "Propeptide":  # Fixed case!
+            features["propeptides"].append({
+                "start": start, "end": end or start,
+                "type": "propeptide", "description": description
+            })
+        elif feature_type == "Chain":  # Fixed case!
+            features["mature_chain"].append({
+                "start": start, "end": end or start,
+                "type": "mature_chain", "description": description
+            })
+        elif feature_type == "Region":  # Fixed case!
+            features["regions"].append({
+                "start": start, "end": end or start,
+                "type": "region", "description": description
+            })
+        elif feature_type == "Site":  # Fixed case!
+            features["cleavage_sites"].append({
+                "position": start, "description": description
+            })
+        elif feature_type == "Motif":  # Fixed case!
+            features["motifs"].append({
+                "start": start, "end": end or start,
+                "type": "motif", "description": description
+            })
     
     def detect_sequence_motifs(self, sequence: str) -> Dict:
         """Detect common sequence motifs"""
