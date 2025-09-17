@@ -58,7 +58,7 @@ Heard. Here’s a calm, bossy, step-by-step “WTF do I do” guide—with paste
 
 ## 7) Outreach (15 min)
 
-* DM/email Lasse: link to release + notebook; invite feedback & pointers to harder edge-cases.
+* Contact industry professionals: link to release + notebook; invite feedback & pointers to harder edge-cases.
 
 ---
 
