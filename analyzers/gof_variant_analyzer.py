@@ -18,8 +18,19 @@ from typing import Dict, Any, List, Tuple
 import re
 import math
 import logging
+import sys
+import os
 from .smart_protein_analyzer import SmartProteinAnalyzer
 from .conservation_database import ConservationDatabase
+
+# 🎯 Add domain awareness system
+try:
+    # Add the parent directory to the path to import universal_protein_annotator
+    sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+    from universal_protein_annotator import UniversalProteinAnnotator
+    DOMAIN_AWARENESS_AVAILABLE = True
+except ImportError:
+    DOMAIN_AWARENESS_AVAILABLE = False
 
 logger = logging.getLogger(__name__)
 
@@ -31,6 +42,9 @@ class GOFVariantAnalyzer:
         self.offline_mode = offline_mode
         self.smart_analyzer = SmartProteinAnalyzer(offline_mode=offline_mode)
         self.conservation_db = ConservationDatabase() if not offline_mode else None
+
+        # 🎯 Initialize domain awareness system
+        self.protein_annotator = UniversalProteinAnnotator() if DOMAIN_AWARENESS_AVAILABLE and not offline_mode else None
 
         if offline_mode:
             logger.info("🔥 GOF Analyzer initialized in OFFLINE MODE - skipping conservation analysis")
@@ -126,6 +140,41 @@ class GOFVariantAnalyzer:
         return min(size_diff + charge_diff, 215)  # Cap at max Grantham distance
     
     def analyze_gof(self, mutation: str, sequence: str, uniprot_id: str = None, **kwargs) -> Dict[str, Any]:
+        """Main GOF analysis with domain awareness wrapper"""
+        # Get the gene symbol from kwargs for domain awareness
+        gene_symbol = kwargs.get('gene_symbol', '')
+
+        # Run the core GOF analysis
+        result = self._analyze_gof_core(mutation, sequence, uniprot_id, **kwargs)
+
+        # Apply domain awareness to the final result
+        if 'gof_score' in result and 'error' not in result:
+            try:
+                # Parse position from mutation for domain awareness
+                match = re.match(r'([A-Z])(\d+)([A-Z])', mutation)
+                if match and uniprot_id:
+                    position = int(match.group(2))
+                    original_score = result['gof_score']
+                    domain_aware_score, domain_multiplier = self._apply_domain_awareness_to_gof_score(
+                        original_score, position, uniprot_id, gene_symbol
+                    )
+
+                    # Update the result with domain-aware score
+                    result['gof_score'] = domain_aware_score
+                    result['domain_multiplier'] = domain_multiplier
+                    result['original_gof_score'] = original_score
+
+                    # Update prediction based on new score
+                    result['prediction'] = ('GOF_LIKELY' if domain_aware_score > 0.6 else
+                                          'GOF_POSSIBLE' if domain_aware_score > 0.3 else 'GOF_UNLIKELY')
+
+            except Exception as e:
+                logger.warning(f"⚠️ Domain awareness application failed: {e}")
+                result['domain_multiplier'] = 1.0
+
+        return result
+
+    def _analyze_gof_core(self, mutation: str, sequence: str, uniprot_id: str = None, **kwargs) -> Dict[str, Any]:
         """
         TRIPLE-GATED GOF ANALYSIS - Revolutionary efficiency!
 
@@ -154,6 +203,37 @@ class GOFVariantAnalyzer:
             # Validate position
             if position < 1 or position > len(sequence):
                 return {'error': f'Position {position} out of range for sequence length {len(sequence)}', 'gof_score': 0.0}
+
+            # 🎯 NOVA'S EARLY MOTIF DETECTION - Check for canonical GOF variants first!
+            try:
+                import sys
+                import os
+                # Add parent directory to path to import motif_detector
+                parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+                if parent_dir not in sys.path:
+                    sys.path.append(parent_dir)
+
+                from motif_detector import detect_regulatory_context
+
+                motif_context = detect_regulatory_context(sequence, original_aa, mutant_aa, position)
+                motif_score = motif_context.get('score', 0.0)
+
+                # If Nova's motif detection gives a high score (0.8+), this is likely a canonical GOF
+                # Return immediately with high confidence
+                if motif_score >= 0.8:
+                    logger.info(f"🎯 CANONICAL GOF DETECTED: {motif_context.get('explanation', 'Unknown')}")
+                    return {
+                        'gof_score': motif_score,
+                        'prediction': 'GOF_LIKELY',
+                        'confidence': 0.95,
+                        'analysis_level': 'NOVA_MOTIF_DETECTION',
+                        'motif_context': motif_context,
+                        'reason': f"Canonical GOF variant detected by motif analysis: {motif_context.get('explanation', 'Unknown')}"
+                    }
+
+            except Exception as e:
+                logger.warning(f"⚠️ Early motif detection failed: {e}")
+                # Continue with normal analysis
 
             # Check if original amino acid matches sequence
             sequence_mismatch = False
@@ -994,6 +1074,34 @@ class GOFVariantAnalyzer:
         """
         disruption_score = 0.0
 
+        # 🎯 NOVA'S MOTIF DETECTION SYSTEM - Universal regulatory motif detection!
+        try:
+            import sys
+            import os
+            # Add parent directory to path to import motif_detector
+            parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            if parent_dir not in sys.path:
+                sys.path.append(parent_dir)
+
+            from motif_detector import detect_regulatory_context
+
+            motif_context = detect_regulatory_context(sequence, original_aa, mutant_aa, position)
+            motif_score = motif_context.get('score', 0.0)
+
+            if motif_score > disruption_score:
+                disruption_score = motif_score
+                logger.info(f"🎯 NOVA'S MOTIF DETECTION: {motif_context.get('explanation', 'Unknown')}")
+
+                # If Nova's motif detection gives a high score (0.8+), this is likely a canonical GOF
+                # Skip the complex mechanism analysis and return the motif score directly
+                if motif_score >= 0.8:
+                    logger.info(f"🎯 HIGH MOTIF SCORE ({motif_score:.3f}) - Canonical GOF detected!")
+                    return motif_score
+
+        except Exception as e:
+            logger.warning(f"⚠️ Motif detection failed: {e}")
+            # Continue with original logic as fallback
+
         # 1. PHOSPHORYLATION SITE DISRUPTION - The ultimate GOF trigger!
         phospho_disruption = self._analyze_phosphorylation_disruption(original_aa, mutant_aa, position, sequence)
         if phospho_disruption > 0.5:
@@ -1530,3 +1638,97 @@ class GOFVariantAnalyzer:
                 'sequence_mismatch': False,
                 'error': f'Structural analysis failed: {str(e)}'
             }
+
+    def _get_domain_context(self, uniprot_id: str, gene_symbol: str) -> Dict[str, Any]:
+        """🎯 Get domain context from UniProt for GOF analysis"""
+        if not self.protein_annotator:
+            return {"domains": [], "signal_peptide": [], "active_sites": [], "binding_sites": []}
+
+        try:
+            domain_data = self.protein_annotator.annotate_protein(gene_symbol, uniprot_id)
+            return domain_data
+        except Exception as e:
+            logger.warning(f"⚠️ Domain annotation error: {e}")
+            return {"domains": [], "signal_peptide": [], "active_sites": [], "binding_sites": []}
+
+    def _get_gof_domain_multiplier(self, position: int, domain_context: Dict[str, Any]) -> float:
+        """🎯 Calculate domain-aware multiplier for GOF scoring
+
+        GOF mechanisms are most dangerous in:
+        - Regulatory regions (autoinhibition domains)
+        - Active sites (constitutive activation)
+        - Binding sites (increased affinity)
+        - Less dangerous in cleavable regions (propeptides)
+        """
+        multiplier = 1.0
+
+        # 🎯 UNIVERSAL PROPEPTIDE LOGIC - Downweight cleavable regions
+        for propeptide in domain_context.get("propeptides", []):
+            if position in range(propeptide["start"], propeptide["end"]+1):
+                if "n-terminal" in propeptide["description"].lower():
+                    multiplier *= 0.5  # N-terminal propeptide - gets cleaved
+                elif "c-terminal" in propeptide["description"].lower():
+                    multiplier *= 0.3  # C-terminal propeptide - less critical for GOF
+
+        # Signal peptides get cleaved off - minimal GOF impact
+        for signal in domain_context.get("signal_peptide", []):
+            if position in range(signal["start"], signal["end"]+1):
+                multiplier *= 0.3
+
+        # 🎯 UPWEIGHT CRITICAL REGIONS FOR GOF MECHANISMS
+
+        # Active sites - critical for constitutive activation
+        for site in domain_context.get("active_sites", []):
+            if position == site:  # Active sites are single positions
+                multiplier *= 2.0  # Strong upweight for GOF activation
+
+        # Binding sites - important for increased affinity
+        for site in domain_context.get("binding_sites", []):
+            if position == site:  # Binding sites are single positions
+                multiplier *= 1.7  # Strong upweight for binding disruption
+
+        # Functional regions - context-dependent
+        for region in domain_context.get("regions", []):
+            if position in range(region["start"], region["end"]+1):
+                desc = region["description"].lower()
+                if any(term in desc for term in ["regulatory", "autoinhibition", "inhibitory"]):
+                    multiplier *= 1.8  # Regulatory regions - prime GOF targets
+                elif any(term in desc for term in ["catalytic", "enzyme", "kinase"]):
+                    multiplier *= 1.5  # Catalytic regions - good GOF targets
+                elif "disordered" in desc:
+                    multiplier *= 0.7  # Disordered regions - less GOF impact
+
+        # Domains - generally important for GOF mechanisms
+        for domain in domain_context.get("domains", []):
+            if position in range(domain["start"], domain["end"]+1):
+                desc = domain["description"].lower()
+                if any(term in desc for term in ["kinase", "catalytic", "enzyme"]):
+                    multiplier *= 1.4  # Catalytic domains - prime GOF targets
+                elif any(term in desc for term in ["regulatory", "inhibitor"]):
+                    multiplier *= 1.6  # Regulatory domains - excellent GOF targets
+                elif any(term in desc for term in ["immunoglobulin", "fibronectin", "repeat"]):
+                    multiplier *= 1.1  # Structural domains - mild GOF risk
+
+        return max(multiplier, 0.1)  # Don't go below 0.1
+
+    def _apply_domain_awareness_to_gof_score(self, gof_score: float, position: int,
+                                           uniprot_id: str, gene_symbol: str) -> Tuple[float, float]:
+        """🎯 Apply domain awareness to final GOF score"""
+        if not uniprot_id or not self.protein_annotator:
+            return gof_score, 1.0
+
+        try:
+            domain_context = self._get_domain_context(uniprot_id, gene_symbol or "")
+            domain_multiplier = self._get_gof_domain_multiplier(position, domain_context)
+
+            # Apply domain multiplier
+            domain_aware_score = min(gof_score * domain_multiplier, 1.0)
+
+            logger.info(f"🎯 GOF Domain multiplier for {gene_symbol or 'unknown'} position {position}: {domain_multiplier:.3f}")
+            logger.info(f"   GOF score: {gof_score:.3f} → {domain_aware_score:.3f}")
+
+            return domain_aware_score, domain_multiplier
+
+        except Exception as e:
+            logger.warning(f"⚠️ Domain awareness failed: {e}")
+            return gof_score, 1.0

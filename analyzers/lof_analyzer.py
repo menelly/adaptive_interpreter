@@ -20,6 +20,10 @@ from sequence_mismatch_handler import create_mismatch_handler
 # Add DOMAIN AWARENESS! 🎯
 from universal_protein_annotator import UniversalProteinAnnotator
 
+# Add NOVA'S FUNCTIONAL DOMAIN WEIGHTING! 🚀
+sys.path.append(os.path.join(os.path.dirname(__file__), '../'))
+from functional_domain_weighter import FunctionalDomainWeighter
+
 class LOFAnalyzer:
     """Analyze loss of function potential - Bin 1 of our two-bin approach"""
     
@@ -31,6 +35,9 @@ class LOFAnalyzer:
         # 🎯 DOMAIN AWARENESS - Universal protein annotation!
         self.domain_annotator = UniversalProteinAnnotator()
         self.domain_cache = {}  # Cache domain info to avoid repeated API calls
+
+        # 🚀 NOVA'S FUNCTIONAL DOMAIN WEIGHTING - Biological intelligence!
+        self.functional_weighter = FunctionalDomainWeighter()
         
         # Amino acid stability/conservation properties
         self.aa_properties = {
@@ -80,75 +87,75 @@ class LOFAnalyzer:
         return {"domains": [], "signal_peptide": [], "active_sites": [], "binding_sites": []}
 
     def _get_domain_multiplier(self, position: int, domain_context: Dict[str, Any]) -> float:
-        """🎯 Calculate domain-aware multiplier for LOF scoring"""
-        multiplier = 1.0
-        gene_name = domain_context.get("gene_name", "").upper()
-        sequence_length = domain_context.get("length", 0)
+        """🚀 NOVA'S FUNCTIONAL DOMAIN WEIGHTING - Biological intelligence!"""
 
-        # 🎯 UNIVERSAL PROPEPTIDE LOGIC - Use real UniProt annotations!
+        # Extract UniProt features from domain context
+        uniprot_features = []
+
+        # Convert our domain context format to UniProt feature format
         for propeptide in domain_context.get("propeptides", []):
-            if propeptide["start"] <= position <= propeptide.get("end", propeptide["start"]):
-                prop_desc = propeptide.get("description", "").lower()
-                if "n-terminal" in prop_desc:
-                    print(f"🔍 Position {position} in N-TERMINAL PROPEPTIDE ({propeptide['start']}-{propeptide.get('end', propeptide['start'])}) - DOWNWEIGHT!")
-                    multiplier *= 0.5  # N-terminal propeptides get cleaved
-                elif "c-terminal" in prop_desc:
-                    print(f"🔍 Position {position} in C-TERMINAL PROPEPTIDE ({propeptide['start']}-{propeptide.get('end', propeptide['start'])}) - HEAVY DOWNWEIGHT!")
-                    multiplier *= 0.3  # C-terminal propeptides get cleaved and are less critical
-                else:
-                    print(f"🔍 Position {position} in PROPEPTIDE ({propeptide['start']}-{propeptide.get('end', propeptide['start'])}) - DOWNWEIGHT!")
-                    multiplier *= 0.4  # Generic propeptide downweight
+            uniprot_features.append({
+                "type": "PROPEP",
+                "description": propeptide.get("description", "propeptide"),
+                "begin": {"position": str(propeptide["start"])},
+                "end": {"position": str(propeptide.get("end", propeptide["start"]))}
+            })
 
-        # 🎯 MATURE CHAIN LOGIC - The functional protein region
         for chain in domain_context.get("mature_chain", []):
-            if chain["start"] <= position <= chain.get("end", chain["start"]):
-                print(f"🔍 Position {position} in MATURE CHAIN ({chain['start']}-{chain.get('end', chain['start'])}) - CRITICAL REGION!")
-                multiplier *= 1.0  # This is the functional protein - normal weight
+            uniprot_features.append({
+                "type": "CHAIN",
+                "description": chain.get("description", "mature chain"),
+                "begin": {"position": str(chain["start"])},
+                "end": {"position": str(chain.get("end", chain["start"]))}
+            })
 
-        # 🎯 FUNCTIONAL REGIONS - Triple helix, catalytic domains, etc.
         for region in domain_context.get("regions", []):
-            if region["start"] <= position <= region.get("end", region["start"]):
-                region_desc = region.get("description", "").lower()
-                if any(term in region_desc for term in ["triple-helical", "catalytic", "active", "binding"]):
-                    print(f"🔍 Position {position} in CRITICAL REGION ({region_desc}) - UPWEIGHT!")
-                    multiplier *= 1.2  # Critical functional regions
-                elif "disordered" in region_desc:
-                    print(f"🔍 Position {position} in DISORDERED REGION - DOWNWEIGHT!")
-                    multiplier *= 0.7  # Disordered regions less critical
+            uniprot_features.append({
+                "type": "REGION",
+                "description": region.get("description", "functional region"),
+                "begin": {"position": str(region["start"])},
+                "end": {"position": str(region.get("end", region["start"]))}
+            })
 
-        # Check if variant is in signal peptide (gets cleaved off)
         for signal in domain_context.get("signal_peptide", []):
-            if signal["start"] <= position <= signal.get("end", signal["start"]):
-                print(f"🔍 Position {position} in UniProt signal peptide ({signal['start']}-{signal.get('end', signal['start'])}) - DOWNWEIGHTING!")
-                multiplier *= 0.3  # Heavily downweight signal peptides
+            uniprot_features.append({
+                "type": "SIGNAL",
+                "description": signal.get("description", "signal peptide"),
+                "begin": {"position": str(signal["start"])},
+                "end": {"position": str(signal.get("end", signal["start"]))}
+            })
 
-        # Check if variant is in active site (critical!)
-        if position in domain_context.get("active_sites", []):
-            print(f"🔍 Position {position} in ACTIVE SITE - UPWEIGHTING!")
-            multiplier *= 1.5  # Upweight active sites
-
-        # Check if variant is in binding site (important!)
-        for binding in domain_context.get("binding_sites", []):
-            if binding["position"] == position:
-                print(f"🔍 Position {position} in binding site ({binding.get('description', 'unknown')}) - UPWEIGHTING!")
-                multiplier *= 1.3  # Upweight binding sites
-
-        # Check if variant is in known domains
         for domain in domain_context.get("domains", []):
-            if domain["start"] <= position <= domain.get("end", domain["start"]):
-                domain_desc = domain.get("description", "").lower()
+            uniprot_features.append({
+                "type": "DOMAIN",
+                "description": domain.get("description", "domain"),
+                "begin": {"position": str(domain["start"])},
+                "end": {"position": str(domain.get("end", domain["start"]))}
+            })
 
-                # Propeptides and signal sequences get downweighted
-                if any(term in domain_desc for term in ["propeptide", "signal", "leader", "transit"]):
-                    print(f"🔍 Position {position} in cleavable domain ({domain_desc}) - DOWNWEIGHTING!")
-                    multiplier *= 0.4
+        # Add active sites as point features
+        for active_site in domain_context.get("active_sites", []):
+            uniprot_features.append({
+                "type": "ACT_SITE",
+                "description": "active site",
+                "begin": {"position": str(active_site)},
+                "end": {"position": str(active_site)}
+            })
 
-                # Catalytic and binding domains get upweighted
-                elif any(term in domain_desc for term in ["catalytic", "kinase", "binding", "active", "enzymatic"]):
-                    print(f"🔍 Position {position} in critical domain ({domain_desc}) - UPWEIGHTING!")
-                    multiplier *= 1.4
+        # Add binding sites
+        for binding in domain_context.get("binding_sites", []):
+            uniprot_features.append({
+                "type": "BINDING",
+                "description": binding.get("description", "binding site"),
+                "begin": {"position": str(binding["position"])},
+                "end": {"position": str(binding["position"])}
+            })
 
-        return max(multiplier, 0.1)  # Don't go below 0.1
+        # 🚀 USE NOVA'S FUNCTIONAL WEIGHTING SYSTEM!
+        print(f"🚀 Using Nova's functional domain weighting for position {position}")
+        functional_weight = self.functional_weighter.weight_variant_position(position, uniprot_features)
+
+        return max(functional_weight, 0.1)  # Don't go below 0.1
 
     def analyze_lof(self, mutation: str, sequence: str, uniprot_id: str = None, gene_symbol: str = "", **kwargs) -> Dict[str, Any]:
         """

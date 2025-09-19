@@ -12,6 +12,8 @@ CLI:
 from __future__ import annotations
 import argparse
 import json
+import sys
+import os
 from dataclasses import dataclass
 from typing import Dict, List, Tuple, Optional
 
@@ -34,6 +36,15 @@ try:
     FILTER_AVAILABLE = True
 except ImportError:
     FILTER_AVAILABLE = False
+
+# 🎯 Add domain awareness system
+try:
+    # Add the parent directory to the path to import universal_protein_annotator
+    sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    from universal_protein_annotator import UniversalProteinAnnotator
+    DOMAIN_AWARENESS_AVAILABLE = True
+except ImportError:
+    DOMAIN_AWARENESS_AVAILABLE = False
 
 
 AA_SET = set("ARNDCEQGHILKMFPSTWYV")
@@ -84,6 +95,9 @@ class NovaDNAnalyzer:
         self.dn_filter = DNMechanismFilter() if FILTER_AVAILABLE and use_smart_filtering else None
         self.use_smart_filtering = use_smart_filtering
 
+        # 🎯 Initialize domain awareness system
+        self.protein_annotator = UniversalProteinAnnotator() if DOMAIN_AWARENESS_AVAILABLE else None
+
     def analyze(self, sequence: str, variant: str, context: Optional[Dict] = None,
                 gene_name: Optional[str] = None, uniprot_id: Optional[str] = None) -> Dict:
         sequence = sequence.strip().upper().replace("\n", "")
@@ -112,6 +126,15 @@ class NovaDNAnalyzer:
             if context is None:
                 context = {}
             context["sequence_ref_mismatch"] = True
+
+        # 🔥 Store variant info for ML proline system
+        self._current_variant_info = {
+            'ref_aa': ref,
+            'alt_aa': alt,
+            'position': pos1,
+            'gene_name': gene_name,
+            'variant_str': variant
+        }
 
         # Auto-generate context if not provided and universal context available
         if context is None and self.universal_context and gene_name:
@@ -171,6 +194,21 @@ class NovaDNAnalyzer:
         else:
             mech_scores["trafficking_maturation"] = 0.0
             all_explanations["trafficking_maturation"] = "mechanism filtered out"
+
+        # 🎯 APPLY DOMAIN AWARENESS TO ALL MECHANISM SCORES
+        domain_multiplier = 1.0
+        if uniprot_id and self.protein_annotator:
+            domain_context = self._get_domain_context(uniprot_id, gene_name or "")
+            domain_multiplier = self._get_dn_domain_multiplier(pos1, domain_context)
+            print(f"🎯 DN Domain multiplier for {gene_name or 'unknown'} position {pos1}: {domain_multiplier:.3f}")
+
+            # Apply domain multiplier to all mechanism scores
+            for mechanism in mech_scores:
+                if mech_scores[mechanism] > 0:  # Only apply to non-zero scores
+                    original_score = mech_scores[mechanism]
+                    mech_scores[mechanism] = min(original_score * domain_multiplier, 1.0)
+                    print(f"   {mechanism}: {original_score:.3f} → {mech_scores[mechanism]:.3f}")
+
         top_mech = max(mech_scores.items(), key=lambda kv: kv[1])[0]
         explanation = all_explanations[top_mech]
 
@@ -198,6 +236,7 @@ class NovaDNAnalyzer:
             "top_mechanism": top_mech,
             "contributing_features": contrib,
             "explanation": explanation,
+            "domain_multiplier": domain_multiplier,  # 🎯 NEW! Track domain awareness
             "notes": {"sequence_ref_mismatch": bool((context or {}).get("sequence_ref_mismatch", False))},
         }
 
@@ -207,6 +246,104 @@ class NovaDNAnalyzer:
             result["relevant_mechanisms"] = relevant_mechanisms
 
         return result
+
+    def _get_domain_context(self, uniprot_id: str, gene_symbol: str) -> Dict[str, Any]:
+        """🎯 Get domain context from UniProt for DN analysis"""
+        if not self.protein_annotator:
+            return {"domains": [], "signal_peptide": [], "active_sites": [], "binding_sites": []}
+
+        try:
+            domain_data = self.protein_annotator.annotate_protein(gene_symbol, uniprot_id)
+            return domain_data
+        except Exception as e:
+            print(f"⚠️ Domain annotation error: {e}")
+            return {"domains": [], "signal_peptide": [], "active_sites": [], "binding_sites": []}
+
+    def _get_dn_domain_multiplier(self, position: int, domain_context: Dict[str, Any]) -> float:
+        """🎯 Calculate domain-aware multiplier for DN scoring
+
+        DN mechanisms are most dangerous in:
+        - Oligomeric/complex regions (interface poisoning)
+        - Active sites (jamming)
+        - Structural domains (lattice disruption)
+        - Less dangerous in cleavable regions (propeptides)
+        """
+        multiplier = 1.0
+
+        # 🎯 UNIVERSAL PROPEPTIDE LOGIC - Downweight cleavable regions
+        for propeptide in domain_context.get("propeptides", []):
+            if position in range(propeptide["start"], propeptide["end"]+1):
+                if "n-terminal" in propeptide["description"].lower():
+                    multiplier *= 0.5  # N-terminal propeptide - gets cleaved
+                elif "c-terminal" in propeptide["description"].lower():
+                    multiplier *= 0.3  # C-terminal propeptide - less critical for DN
+
+        # Signal peptides get cleaved off - minimal DN impact
+        for signal in domain_context.get("signal_peptide", []):
+            if position in range(signal["start"], signal["end"]+1):
+                multiplier *= 0.3
+
+        # 🎯 UPWEIGHT CRITICAL REGIONS FOR DN MECHANISMS
+
+        # Active sites - critical for jamming mechanisms
+        for site in domain_context.get("active_sites", []):
+            if position == site:  # Active sites are single positions
+                multiplier *= 1.8  # Strong upweight for DN jamming
+
+        # Binding sites - important for interface poisoning
+        for site in domain_context.get("binding_sites", []):
+            if position == site:  # Binding sites are single positions
+                multiplier *= 1.5  # Moderate upweight for interface disruption
+
+        # Functional regions - context-dependent
+        for region in domain_context.get("regions", []):
+            if position in range(region["start"], region["end"]+1):
+                desc = region["description"].lower()
+                if any(term in desc for term in ["oligomer", "complex", "interface", "interaction"]):
+                    multiplier *= 1.4  # Interface regions - good for DN
+                elif "triple-helical" in desc:
+                    multiplier *= 1.3  # Structural regions - moderate DN risk
+                elif "disordered" in desc:
+                    multiplier *= 0.8  # Disordered regions - less DN impact
+
+        # Domains - generally important for DN mechanisms
+        for domain in domain_context.get("domains", []):
+            if position in range(domain["start"], domain["end"]+1):
+                desc = domain["description"].lower()
+                if any(term in desc for term in ["kinase", "catalytic", "enzyme"]):
+                    multiplier *= 1.3  # Catalytic domains - good DN targets
+                elif any(term in desc for term in ["immunoglobulin", "fibronectin", "repeat"]):
+                    multiplier *= 1.2  # Structural domains - moderate DN risk
+
+        # 🔥 REVOLUTIONARY ML PROLINE SYSTEM INTEGRATION!
+        # Apply ML-based proline multiplier if this is a proline substitution
+        if hasattr(self, '_current_variant_info'):
+            ref_aa = self._current_variant_info.get('ref_aa')
+            alt_aa = self._current_variant_info.get('alt_aa')
+            gene_name = self._current_variant_info.get('gene_name')
+            variant_str = self._current_variant_info.get('variant_str')
+
+            if ref_aa == 'P' or alt_aa == 'P':  # Proline substitution detected!
+                try:
+                    # Import and use our revolutionary ML system
+                    from proline_ml_integrator import get_ml_proline_multiplier
+                    ml_multiplier = get_ml_proline_multiplier(gene_name, variant_str)
+                    print(f"🔥 REVOLUTIONARY ML PROLINE: {gene_name} {variant_str} -> ML multiplier = {ml_multiplier:.3f}")
+
+                    # Combine domain multiplier with ML proline multiplier
+                    multiplier *= ml_multiplier
+                    print(f"🧬 Combined multiplier: domain({multiplier/ml_multiplier:.3f}) * ML_proline({ml_multiplier:.3f}) = {multiplier:.3f}")
+
+                except Exception as e:
+                    print(f"⚠️ ML proline system error: {e}")
+                    # Fallback to old hardcoded system if ML fails
+                    if ref_aa == 'P':  # Proline loss
+                        multiplier *= 1.2  # Conservative fallback
+                    elif alt_aa == 'P':  # Proline gain
+                        multiplier *= 1.4  # Conservative fallback
+                    print(f"🔄 Using fallback proline multiplier: {multiplier:.3f}")
+
+        return max(multiplier, 0.1)  # Don't go below 0.1
 
 
 # --- CLI ---

@@ -1,0 +1,51 @@
+{
+  "training_results": {
+    "cv_auc_mean": 0.9044444444444444,
+    "cv_auc_std": 0.10173798348675198,
+    "test_auc": 0.7878787878787878,
+    "classification_report": "              precision    recall  f1-score   support\n\n           0       0.80      0.67      0.73         6\n           1       0.83      0.91      0.87        11\n\n    accuracy                           0.82        17\n   macro avg       0.82      0.79      0.80        17\nweighted avg       0.82      0.82      0.82        17\n",
+    "confusion_matrix": [
+      [
+        4,
+        2
+      ],
+      [
+        1,
+        10
+      ]
+    ],
+    "feature_importance": [
+      -0.6676000385679817,
+      0.6676000385679817,
+      -1.3718612590132246,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.532266425537316,
+      0.5322663834811407,
+      -0.5797058317866075,
+      0.32392395898685195,
+      0.16570659886728298
+    ],
+    "n_train": 66,
+    "n_test": 17
+  },
+  "total_variants": 83,
+  "feature_names": [
+    "proline_loss",
+    "proline_gain",
+    "gnomad_freq",
+    "in_triple_helix",
+    "near_cleavage",
+    "near_binding",
+    "near_interface",
+    "absolute_position",
+    "normalized_position",
+    "gene_family_collagen",
+    "gene_family_fibrillin",
+    "gene_family_other"
+  ],
+  "model_type": "LogisticRegression",
+  "mapping_system": "Nova_probability_to_multiplier"
+}

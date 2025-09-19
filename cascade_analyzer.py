@@ -31,6 +31,7 @@ from analyzers.gof_variant_analyzer import GOFVariantAnalyzer
 from nova_dn.alphafold_sequence import AlphaFoldSequenceExtractor
 from nova_dn.sequence_manager import SequenceManager
 from biological_router import BiologicalRouter
+from proline_ml_integrator import ProlineMLIntegrator  # 🔥 REVOLUTIONARY ML SYSTEM!
 
 
 class CascadeAnalyzer:
@@ -42,6 +43,7 @@ class CascadeAnalyzer:
         self.gof_analyzer = GOFVariantAnalyzer(offline_mode=True)
         self.sequence_manager = SequenceManager()
         self.biological_router = BiologicalRouter()  # 🧬 NEW: Smart routing!
+        self.proline_ml = ProlineMLIntegrator(alphafold_path=alphafold_path)  # 🔥 REVOLUTIONARY ML!
         self.temp_files = []
         
         # Gene -> UniProt mappings (expanded for biological routing)
@@ -95,10 +97,29 @@ class CascadeAnalyzer:
         # Get UniProt ID - let BiologicalRouter handle the lookup
         # (BiologicalRouter already uses UniversalContext for gene annotation)
         uniprot_id = self.gene_to_uniprot.get(gene)  # Try hardcoded first for speed
+        print(f"🔍 DEBUG: Initial uniprot_id for {gene}: {uniprot_id}")
 
         # 🧬 STEP 1: Biological Routing Decision
         routing_result = self.biological_router.route_variant(gene, variant, variant_type, uniprot_id)
         analyzers_to_run = routing_result['analyzers_to_run']
+
+        # Update UniProt ID from routing result if available
+        if routing_result.get('uniprot_id'):
+            uniprot_id = routing_result['uniprot_id']
+            print(f"🔍 DEBUG: Updated uniprot_id from router: {uniprot_id}")
+        else:
+            print(f"🔍 DEBUG: Router did not provide uniprot_id")
+            # Fallback: Use the same UniProt lookup that DN analyzer uses
+            try:
+                from universal_protein_annotator import UniversalProteinAnnotator
+                annotator = UniversalProteinAnnotator()
+                uniprot_id = annotator._find_uniprot_id(gene)
+                if uniprot_id:
+                    print(f"🔍 DEBUG: Fallback found uniprot_id: {uniprot_id}")
+                else:
+                    print(f"🔍 DEBUG: Fallback could not find uniprot_id for {gene}")
+            except Exception as e:
+                print(f"🔍 DEBUG: Fallback UniProt lookup failed: {e}")
 
         print(f"🧬 BIOLOGICAL ROUTING for {gene} {variant}")
         print(f"   Strategy: {routing_result['routing_strategy']}")
@@ -153,7 +174,9 @@ class CascadeAnalyzer:
 
         if 'LOF' in analyzers_to_run:
             print(f"🔬 Running LOF analysis...")
+            print(f"🔍 DEBUG: About to call _run_lof_analysis with gene={gene}, variant={variant}")
             analyzer_results['LOF'] = self._run_lof_analysis(gene, variant, sequence, uniprot_id)
+            print(f"🔍 DEBUG: LOF analyzer returned: {analyzer_results['LOF']}")
 
         if 'GOF' in analyzers_to_run:
             print(f"🔥 Running GOF analysis...")
@@ -262,6 +285,75 @@ class CascadeAnalyzer:
 
         print(f"🎯 BIOLOGICAL RESULT: {results['summary']}")
 
+        # Apply Nova's biological plausibility filter
+        try:
+            from plausibility_filter import plausibility_pipeline
+
+            # Get UniProt function from annotation cache
+            uniprot_function = ""
+            if uniprot_id:
+                try:
+                    import json
+                    cache_file = f"protein_annotations_cache/{uniprot_id}_domains.json"
+                    if os.path.exists(cache_file):
+                        with open(cache_file, 'r') as f:
+                            annotation_data = json.load(f)
+                            uniprot_function = annotation_data.get('function', '')
+                            print(f"🔍 Retrieved function for {gene} ({uniprot_id}): {uniprot_function[:100]}...")
+                except Exception as e:
+                    print(f"⚠️ Could not read cached function: {e}")
+                    pass
+
+            # Apply plausibility filter
+            raw_scores = {
+                'DN': results['scores'].get('DN', 0.0),
+                'LOF': results['scores'].get('LOF', 0.0),
+                'GOF': results['scores'].get('GOF', 0.0)
+            }
+
+            print(f"🧬 APPLYING PLAUSIBILITY FILTER to {gene}...")
+            print(f"   Raw scores: DN={raw_scores['DN']:.3f}, LOF={raw_scores['LOF']:.3f}, GOF={raw_scores['GOF']:.3f}")
+
+            plausibility_result = plausibility_pipeline(
+                gene_symbol=gene,
+                raw_scores=raw_scores,
+                uniprot_function=uniprot_function,
+                go_terms=[]
+            )
+
+            # Update results with plausibility-filtered scores
+            filtered_scores = plausibility_result['final_scores']
+            results['plausibility_filtered_scores'] = filtered_scores
+            results['gene_family'] = plausibility_result['gene_family']
+            results['plausibility_rationale'] = plausibility_result.get('rationale', {})
+
+            print(f"🎯 PLAUSIBILITY RESULT: Gene family = {results['gene_family']}")
+            print(f"   Filtered scores: DN={filtered_scores['DN']:.3f}, LOF={filtered_scores['LOF']:.3f}, GOF={filtered_scores['GOF']:.3f}")
+
+            # Recalculate final score and classification with filtered scores
+            max_filtered_score = max(filtered_scores.values())
+            max_filtered_analyzer = max(filtered_scores.keys(), key=lambda k: filtered_scores[k])
+
+            # ALWAYS apply plausibility filter results - biological plausibility is critical!
+            results['final_score_pre_filter'] = results['final_score']
+            results['final_score'] = max_filtered_score
+
+            # Update classification based on filtered scores
+            if max_filtered_score >= 0.8:
+                results['final_classification'] = 'LP'
+            elif max_filtered_score >= 0.5:
+                results['final_classification'] = 'VUS-P'
+            elif max_filtered_score >= 0.3:
+                results['final_classification'] = 'VUS'
+            else:
+                results['final_classification'] = 'LB'
+
+            results['explanation'] += f" | Plausibility filter applied (gene family: {results['gene_family']})"
+
+        except Exception as e:
+            print(f"⚠️ Plausibility filter failed: {e}")
+            # Continue with original results if filter fails
+
         # Cleanup
         self.cleanup()
 
@@ -282,15 +374,26 @@ class CascadeAnalyzer:
             Comprehensive cascade analysis results
         """
         
-        # Get UniProt ID
+        # Get UniProt ID - try hardcoded first, then dynamic lookup
         uniprot_id = self.gene_to_uniprot.get(gene)
         if not uniprot_id:
-            return {
-                'error': f'No UniProt mapping for gene {gene}',
-                'gene': gene,
-                'variant': variant,
-                'status': 'FAILED'
-            }
+            print(f"🔍 Gene {gene} not in hardcoded mappings, searching UniProt...")
+            # Use the existing UniversalProteinAnnotator to find UniProt ID
+            from universal_protein_annotator import UniversalProteinAnnotator
+            annotator = UniversalProteinAnnotator()
+            uniprot_id = annotator._find_uniprot_id(gene)
+
+            if uniprot_id:
+                print(f"✅ Found UniProt ID for {gene}: {uniprot_id}")
+                # Cache it for future use
+                self.gene_to_uniprot[gene] = uniprot_id
+            else:
+                return {
+                    'error': f'No UniProt mapping found for gene {gene}',
+                    'gene': gene,
+                    'variant': variant,
+                    'status': 'FAILED'
+                }
         
         # Get sequence if not provided
         if not sequence:
@@ -488,10 +591,13 @@ class CascadeAnalyzer:
     def _run_lof_analysis(self, gene: str, variant: str, sequence: str, uniprot_id: str) -> Dict:
         """Run LOF analysis and return standardized result"""
         try:
+            print(f"🔍 LOF DEBUG: gene={gene}, variant={variant}, uniprot_id={uniprot_id}, seq_len={len(sequence) if sequence else 'None'}")
             lof_result = self.lof_analyzer.analyze_lof(
-                variant.replace('p.', ''), sequence, uniprot_id, gene
+                variant.replace('p.', ''), sequence, uniprot_id=uniprot_id, gene_symbol=gene
             )
             lof_score = lof_result.get('lof_score', 0.0)
+            domain_mult = lof_result.get('domain_multiplier', 'N/A')
+            print(f"🔍 LOF DEBUG: Got score={lof_score}, domain_multiplier={domain_mult}")
 
             return {
                 'success': True,

@@ -5,10 +5,18 @@ Built by Ace for the revolutionary two-bin approach
 
 This tiny module analyzes whether variants cause dominant negative effects.
 Revolutionary interference prediction - does it poison protein complexes?
+
+🎯 NOW WITH UNIVERSAL DOMAIN AWARENESS!
 """
 
 from typing import Dict, Any
 import re
+import sys
+import os
+
+# Add the parent directory to the path to import universal_protein_annotator
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from universal_protein_annotator import UniversalProteinAnnotator
 
 class DNAnalyzer:
     """Analyze dominant negative potential - Bin 2 of our two-bin approach"""
@@ -16,6 +24,9 @@ class DNAnalyzer:
     def __init__(self, offline_mode=False):
         self.name = "DNAnalyzer"
         self.offline_mode = offline_mode
+
+        # 🎯 Initialize domain awareness system
+        self.protein_annotator = UniversalProteinAnnotator() if not offline_mode else None
         
         # Protein family patterns for DN mechanisms
         self.dn_patterns = {

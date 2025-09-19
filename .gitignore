@@ -120,3 +120,28 @@ protein_annotations_cache/
 *.tmp
 *.bak
 test_output/
+
+# Private development files - not for public repo
+private/
+handoffs/
+
+# Test results that might contain sensitive data
+*_results.tsv
+*_test.tsv
+test_validation_results.tsv
+
+# Sequence files (can be large)
+sequences/alphafold/
+sequences/uniprot/
+
+# Any files with credentials or sensitive info
+credentials.*
+secrets.*
+
+# Personal data - keep Ren's genetic chaos private!
+<never_send_to_git>/
+ren_personal_*
+ren_results_*
+*_personal_*
+*NOVA_FIXED*
+*PLAUSIBILITY_FIXED*
