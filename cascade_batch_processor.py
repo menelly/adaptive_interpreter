@@ -36,6 +36,29 @@ class CascadeBatchProcessor:
         self.cascade_analyzer = CascadeAnalyzer(alphafold_path)
         self.csv_processor = CSVBatchProcessor(alphafold_path)  # For HGVS parsing
 
+        # Gene to chromosome mapping (common genes)
+        self.gene_to_chromosome = {
+            'FBN1': 'chr15',
+            'KCNMA1': 'chr10',
+            'TP53': 'chr17',
+            'BRCA1': 'chr17',
+            'BRCA2': 'chr13',
+            'COL1A1': 'chr17',
+            'COL1A2': 'chr7',
+            'CFTR': 'chr7',
+            'SCN5A': 'chr3',
+            'CACNA1C': 'chr12',
+            'KCNH2': 'chr7',
+            'MYO7A': 'chr11',
+            'RYR1': 'chr19',
+            'TTN': 'chr2',
+            'MYBPC3': 'chr11',
+            'MYH7': 'chr14',
+            'LDLR': 'chr19',
+            'APOB': 'chr2',
+            'PCSK9': 'chr1'
+        }
+
     def detect_clinvar_expectation(self, filename: str) -> str:
         """Detect expected ClinVar classification from filename"""
         filename_lower = filename.lower()
@@ -49,6 +72,39 @@ class CascadeBatchProcessor:
         else:
             return 'UNKNOWN'
 
+    def extract_clinical_significance(self, clinvar_string: str) -> str:
+        """
+        Extract the actual clinical significance from messy ClinVar strings using regex
+
+        🔥 REN'S BRILLIANT IDEA: Look for keywords, ignore the disease names!
+        """
+        import re
+
+        if not clinvar_string:
+            return 'UNKNOWN'
+
+        # Convert to uppercase for matching
+        text = clinvar_string.upper()
+
+        # 🎯 PRIORITY ORDER: More specific matches first
+        patterns = [
+            (r'\bLIKELY\s+PATHOGENIC\b', 'LIKELY_PATHOGENIC'),
+            (r'\bLIKELY\s+BENIGN\b', 'LIKELY_BENIGN'),
+            (r'\bPATHOGENIC\b', 'PATHOGENIC'),
+            (r'\bBENIGN\b', 'BENIGN'),
+            (r'\bUNCERTAIN\s+SIGNIFICANCE\b', 'VUS'),
+            (r'\bVUS\b', 'VUS'),
+            (r'\bNOT\s+PROVIDED\b', 'UNKNOWN'),
+            (r'\bCONFLICTING\s+INTERPRETATIONS\b', 'CONFLICTING'),
+        ]
+
+        # Find the first match (most specific)
+        for pattern, classification in patterns:
+            if re.search(pattern, text):
+                return classification
+
+        return 'UNKNOWN'
+
     def determine_agreement(self, our_classification: str, expected_clinvar: str) -> tuple:
         """
         Determine agreement status between our prediction and ClinVar expectation
@@ -56,24 +112,45 @@ class CascadeBatchProcessor:
         Returns: (agreement_status, agreement_flag)
         """
         our_class = our_classification.upper()
-        expected = expected_clinvar.upper()
 
-        # ✅ AGREEMENT cases
-        if (our_class == 'LB' and expected == 'BENIGN') or \
-           (our_class in ['VUS', 'VUS-P'] and expected == 'VUS') or \
-           (our_class == 'LP' and expected == 'PATHOGENIC'):
+        # 🔥 EXTRACT ACTUAL CLINICAL SIGNIFICANCE from messy ClinVar string
+        expected = self.extract_clinical_significance(expected_clinvar)
+
+        # 🧬 REN'S BRILLIANT INSIGHT: 1 step away = same biological conclusion!
+
+        # Define biological families
+        benign_family = ['B', 'LB']
+        pathogenic_family = ['LP', 'P']
+        uncertain_family = ['VUS', 'VUS-P']
+
+        clinvar_benign = ['BENIGN', 'LIKELY_BENIGN']
+        clinvar_pathogenic = ['PATHOGENIC', 'LIKELY_PATHOGENIC']
+        clinvar_uncertain = ['VUS']
+
+        # ✅ AGREEMENT cases (same biological family)
+        if (our_class in benign_family and expected in clinvar_benign) or \
+           (our_class in pathogenic_family and expected in clinvar_pathogenic) or \
+           (our_class in uncertain_family and expected in clinvar_uncertain):
             return ('AGREE', '✅')
 
-        # 🎯 BETTER DATA cases (not wrong, we have more confidence!)
-        elif (our_class == 'LB' and expected == 'VUS'):
+        # 🎯 BETTER DATA cases (we're more confident, but not wrong!)
+        elif (our_class in benign_family and expected in clinvar_uncertain):
             return ('BETTER_DATA_BENIGN', '🎯')
-        elif (our_class in ['LP', 'VUS-P'] and expected == 'VUS'):
+        elif (our_class in pathogenic_family and expected in clinvar_uncertain):
             return ('BETTER_DATA_PATHOGENIC', '🎯')
+        elif (our_class in uncertain_family and expected in clinvar_benign):
+            return ('BETTER_DATA_UNCERTAIN_VS_BENIGN', '🎯')
+        elif (our_class in uncertain_family and expected in clinvar_pathogenic):
+            return ('BETTER_DATA_UNCERTAIN_VS_PATHOGENIC', '🎯')
 
-        # ❌ DISAGREEMENT cases (real conflicts)
-        elif (our_class == 'LB' and expected == 'PATHOGENIC') or \
-             (our_class == 'LP' and expected == 'BENIGN'):
+        # ❌ DISAGREEMENT cases (opposite biological families - real conflicts!)
+        elif (our_class in benign_family and expected in clinvar_pathogenic) or \
+             (our_class in pathogenic_family and expected in clinvar_benign):
             return ('DISAGREE', '❌')
+
+        # Handle conflicting interpretations as unclear
+        elif expected == 'CONFLICTING':
+            return ('UNCLEAR', '❓')
 
         # Unknown/unclear cases
         else:
@@ -121,51 +198,118 @@ class CascadeBatchProcessor:
         
         try:
             with open(input_path, 'r') as f:
-                reader = csv.DictReader(f)
+                # Detect delimiter (TSV vs CSV)
+                delimiter = '\t' if input_path.endswith('.tsv') else ','
+                reader = csv.DictReader(f, delimiter=delimiter)
+                delimiter_name = 'TAB' if delimiter == '\t' else 'COMMA'
+                print(f"📄 Using delimiter: {delimiter_name}")
                 
                 for row in reader:
                     stats['total_variants'] += 1
-                    
-                    # Parse HGVS using existing CSV processor logic
-                    hgvs = row.get('HGVS', '')
-                    freq_str = row.get('gnomAD frequency', '0')
-                    
-                    # Parse frequency
-                    try:
-                        gnomad_freq = float(freq_str) if freq_str else 0.0
-                    except ValueError:
-                        gnomad_freq = 0.0
-                    
-                    # Apply frequency filter
-                    if gnomad_freq > freq_threshold:
-                        stats['skipped_frequency'] += 1
-                        continue
-                    
-                    # Parse variant using existing logic
-                    parsed = self.csv_processor.parse_hgvs(hgvs)
-                    if not parsed:
-                        stats['skipped_unparseable'] += 1
-                        continue
 
-                    # Skip non-missense variants
-                    if parsed['type'] != 'missense':
-                        skip_reason = parsed.get('skip_reason', 'SKIPPED_OTHER')
-                        if skip_reason == 'SKIPPED_FRAMESHIFT':
-                            stats['skipped_frameshift'] += 1
-                            print(f"⏭️  Skipping {parsed['gene']} {parsed['variant']} (frameshift/nonsense)")
-                        elif skip_reason == 'SKIPPED_SYNONYMOUS':
-                            stats['skipped_synonymous'] += 1
-                            print(f"⏭️  Skipping {parsed['gene']} {parsed['variant']} (synonymous)")
-                        elif skip_reason == 'SKIPPED_INTRONIC':
-                            stats['skipped_intronic'] += 1
-                            print(f"⏭️  Skipping {parsed['gene']} intronic variant")
-                        else:
+                    # 🧬 NEW: Handle Ren's TSV format with coordinates!
+                    if 'Chrpos' in row and 'AA Chg' in row:
+                        # Ren's format: Clinical significance and condition | Chrpos | Variation Name | AA Chg
+                        clinical_sig = row.get('Clinical significance and condition', '')
+                        chrpos = row.get('Chrpos', '')
+                        variation_name = row.get('Variation Name', '')
+                        aa_chg = row.get('AA Chg', '')
+
+                        # Extract gene from variation name (e.g., "NM_000138.5(FBN1):c.5938G>C")
+                        import re
+                        gene_match = re.search(r'\(([A-Z0-9]+)\)', variation_name)
+                        if not gene_match:
                             stats['skipped_unparseable'] += 1
-                            print(f"⏭️  Skipping unparseable variant: {hgvs}")
-                        continue
-                    
-                    gene = parsed['gene']
-                    variant = parsed['variant']
+                            print(f"⏭️  Could not extract gene from: {variation_name}")
+                            continue
+
+                        gene = gene_match.group(1)
+
+                        # Skip if no protein change (synonymous or intronic)
+                        if not aa_chg or aa_chg.strip() == '':
+                            stats['skipped_synonymous'] += 1
+                            print(f"⏭️  Skipping {gene} (no protein change)")
+                            continue
+
+                        # Convert AA change format (E1980Q -> p.Glu1980Gln)
+                        if not aa_chg.startswith('p.'):
+                            # Convert single letter to p. format
+                            aa_match = re.match(r'([A-Z])(\d+)([A-Z])', aa_chg)
+                            if aa_match:
+                                variant = f"p.{aa_match.group(1)}{aa_match.group(2)}{aa_match.group(3)}"
+                            else:
+                                stats['skipped_unparseable'] += 1
+                                print(f"⏭️  Could not parse AA change: {aa_chg}")
+                                continue
+                        else:
+                            variant = aa_chg
+
+                        # Parse coordinates (format: "48,444,640(-)" -> need to add chromosome)
+                        if chrpos:
+                            # Remove commas and parentheses
+                            pos_clean = chrpos.replace(',', '').replace('(', '').replace(')', '').replace('-', '').replace('+', '')
+                            try:
+                                pos = int(pos_clean)
+                                # Get chromosome from mapping
+                                chrom = self.gene_to_chromosome.get(gene, 'chr1')  # Default to chr1 if unknown
+
+                                coord_key = f"{gene}_{variant}"
+
+                                # 🔥 ADD TO CONSERVATION SYSTEM!
+                                if hasattr(self.cascade_analyzer, '_get_conservation_multiplier'):
+                                    # Update the known coordinates in the cascade analyzer
+                                    if not hasattr(self.cascade_analyzer, '_temp_coordinates'):
+                                        self.cascade_analyzer._temp_coordinates = {}
+                                    self.cascade_analyzer._temp_coordinates[coord_key] = (chrom, pos)
+                                    print(f"🎯 Added coordinates for {gene} {variant}: {chrom}:{pos}")
+                            except ValueError:
+                                print(f"⚠️  Could not parse position from: {chrpos}")
+                                continue
+
+                        hgvs = variation_name  # For reference
+                        gnomad_freq = 0.0  # Default for conservation testing
+
+                    else:
+                        # Original format: HGVS | gnomAD frequency
+                        hgvs = row.get('HGVS', '')
+                        freq_str = row.get('gnomAD frequency', '0')
+
+                        # Parse frequency
+                        try:
+                            gnomad_freq = float(freq_str) if freq_str else 0.0
+                        except ValueError:
+                            gnomad_freq = 0.0
+
+                        # Apply frequency filter
+                        if gnomad_freq > freq_threshold:
+                            stats['skipped_frequency'] += 1
+                            continue
+
+                        # Parse variant using existing logic
+                        parsed = self.csv_processor.parse_hgvs(hgvs)
+                        if not parsed:
+                            stats['skipped_unparseable'] += 1
+                            continue
+
+                        # Skip non-missense variants
+                        if parsed['type'] != 'missense':
+                            skip_reason = parsed.get('skip_reason', 'SKIPPED_OTHER')
+                            if skip_reason == 'SKIPPED_FRAMESHIFT':
+                                stats['skipped_frameshift'] += 1
+                                print(f"⏭️  Skipping {parsed['gene']} {parsed['variant']} (frameshift/nonsense)")
+                            elif skip_reason == 'SKIPPED_SYNONYMOUS':
+                                stats['skipped_synonymous'] += 1
+                                print(f"⏭️  Skipping {parsed['gene']} {parsed['variant']} (synonymous)")
+                            elif skip_reason == 'SKIPPED_INTRONIC':
+                                stats['skipped_intronic'] += 1
+                                print(f"⏭️  Skipping {parsed['gene']} intronic variant")
+                            else:
+                                stats['skipped_unparseable'] += 1
+                                print(f"⏭️  Skipping unparseable variant: {hgvs}")
+                            continue
+
+                        gene = parsed['gene']
+                        variant = parsed['variant']
                     
                     print(f"\n🧬 Processing {gene} {variant} (freq: {gnomad_freq:.4f})")
                     
@@ -180,11 +324,20 @@ class CascadeBatchProcessor:
                     # 🎯 Add ClinVar comparison if we have a successful result
                     if result['status'] == 'SUCCESS':
                         our_classification = result.get('final_classification', 'UNKNOWN')
+
+                        # Use actual clinical significance from TSV if available
+                        if 'Chrpos' in row:
+                            expected_clinvar = clinical_sig  # From the TSV row
+
                         agreement_status, agreement_flag = self.determine_agreement(our_classification, expected_clinvar)
 
                         result['expected_clinvar'] = expected_clinvar
                         result['agreement_status'] = agreement_status
                         result['agreement_flag'] = agreement_flag
+
+                        # Add conservation info if available
+                        if hasattr(self.cascade_analyzer, '_temp_coordinates'):
+                            result['coordinates'] = chrpos if 'Chrpos' in row else ''
 
                         # Update agreement stats
                         if agreement_status == 'AGREE':

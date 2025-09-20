@@ -67,13 +67,18 @@ def classify_gene_family(gene_symbol: str, uniprot_function: str, go_terms: List
     function_lower = uniprot_function.lower()
 
     # Check for oncogene keywords first (before general kinase check)
+    # 🔥 FIXED: More specific keywords to avoid false positives like FBN1
     oncogene_keywords = [
         "cell growth", "cell proliferation", "mitogenic signals",
-        "growth factor", "tyrosine kinase", "tyrosine-protein kinase",
+        "growth factor receptor", "tyrosine kinase", "tyrosine-protein kinase",
         "receptor tyrosine kinase", "proto-oncogene", "oncogene",
-        "fibroblast growth factor", "epidermal growth factor",
-        "phosphoinositide-3-kinase", "pi3k", "ras protein"
+        "fibroblast growth factor receptor", "epidermal growth factor receptor",
+        "phosphoinositide-3-kinase", "pi3k", "ras protein",
+        "growth factor signaling", "mitogen-activated protein kinase"
     ]
+    # 🚫 REMOVED: "growth factor" (too broad - matches FBN1 which BINDS growth factors)
+    # 🚫 REMOVED: "fibroblast growth factor" (too broad)
+    # 🚫 REMOVED: "epidermal growth factor" (too broad)
     if any(keyword in function_lower for keyword in oncogene_keywords):
         return "ONCOGENE"
 

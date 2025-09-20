@@ -45,6 +45,10 @@ class BiologicalRouter:
                 'transporter activity', 'carrier activity', 'permease activity',
                 'metabolic process', 'catabolic process', 'biosynthetic process',
                 'ribosomal protein', 'proteasome', 'translation factor',
+                # Ion channels and transporters (loss of function)
+                'ion channel', 'potassium channel', 'sodium channel', 'calcium channel',
+                'chloride channel', 'voltage-gated', 'channel activity', 'ion transport',
+                'membrane transport', 'ion binding', 'cation channel', 'anion channel',
                 # Tumor suppressors (loss of function)
                 'tumor suppressor', 'tumour suppressor', 'negative regulator',
                 'cell cycle arrest', 'apoptosis', 'dna repair',
@@ -70,28 +74,28 @@ class BiologicalRouter:
             ]
         }
     
-    def route_variant(self, gene: str, variant: str, variant_type: str = 'missense', 
+    def route_variant(self, gene: str, variant: str, variant_type: str = 'missense',
                      uniprot_id: Optional[str] = None) -> Dict:
         """
-        Determine which analyzers to run for this variant
-        
+        🔥 NEW APPROACH: Always run all analyzers, let plausibility filter decide!
+
         Args:
             gene: Gene symbol (e.g., 'TP53')
             variant: Variant notation (e.g., 'p.R273H')
             variant_type: Type of variant ('missense', 'frameshift', 'nonsense', etc.)
             uniprot_id: Optional UniProt ID
-            
+
         Returns:
             {
-                'analyzers_to_run': ['DN', 'LOF', 'GOF'],
-                'routing_strategy': 'HIGH_CONFIDENCE' | 'GO_BASED' | 'CONSERVATIVE',
-                'confidence': 0.95,
-                'rationale': 'CFTR is ion channel with recessive inheritance',
-                'gene_classification': 'LOF_ONLY'
+                'analyzers_to_run': ['LOF', 'DN', 'GOF'],  # LOF first for skip-GOF logic!
+                'routing_strategy': 'RUN_ALL_FILTER_LATER',
+                'confidence': 1.0,
+                'rationale': 'Run all mechanisms, let biology decide',
+                'gene_classification': 'COMPREHENSIVE'
             }
         """
-        
-        # Handle non-missense variants first
+
+        # Handle non-missense variants - they can only cause LOF
         if variant_type in ['frameshift', 'nonsense', 'splice']:
             return {
                 'analyzers_to_run': ['LOF'],
@@ -100,38 +104,16 @@ class BiologicalRouter:
                 'rationale': f'{variant_type} variants are almost always loss-of-function',
                 'gene_classification': 'LOF_BY_VARIANT_TYPE'
             }
-        
-        # Check high-confidence gene classifications first
-        for classification, genes in self.high_confidence_genes.items():
-            if gene in genes:
-                analyzers = self._get_analyzers_for_classification(classification)
-                return {
-                    'analyzers_to_run': analyzers,
-                    'routing_strategy': 'HIGH_CONFIDENCE',
-                    'confidence': 0.95,
-                    'rationale': genes[gene],
-                    'gene_classification': classification
-                }
-        
-        # Use GO terms for classification
-        go_result = self._classify_by_go_terms(gene, uniprot_id)
-        if go_result['confidence'] >= 0.65:  # Lowered threshold to catch more tumor suppressors
-            # 🎯 REN'S BRILLIANT IDEA: For medium confidence, run primary + backup analyzers!
-            if go_result['confidence'] < 0.85:
-                go_result['backup_analyzers'] = ['DN', 'LOF', 'GOF']  # Run all for backup
-                go_result['primary_analyzer'] = go_result['analyzers_to_run'][0]  # Primary recommendation
-                go_result['analyzers_to_run'] = ['DN', 'LOF', 'GOF']  # Actually run all
-                go_result['routing_strategy'] = 'GO_BASED_WITH_BACKUP'
-                go_result['rationale'] = f"{go_result['rationale']} (running backup analyzers due to medium confidence)"
-            return go_result
-        
-        # Conservative fallback: run all analyzers
+
+        # 🧬 REN'S BRILLIANT INSIGHT: Run all three, let biology decide later!
+        # This eliminates routing bias and lets the plausibility filter handle biology
+        # LOF first enables the skip-GOF-if-broken optimization
         return {
-            'analyzers_to_run': ['DN', 'LOF', 'GOF'],
-            'routing_strategy': 'CONSERVATIVE',
-            'confidence': 0.5,
-            'rationale': f'Insufficient evidence to classify {gene}, running all analyzers for safety',
-            'gene_classification': 'UNKNOWN'
+            'analyzers_to_run': ['LOF', 'DN', 'GOF'],  # LOF first for the new logic!
+            'routing_strategy': 'RUN_ALL_FILTER_LATER',
+            'confidence': 1.0,
+            'gene_classification': 'COMPREHENSIVE',
+            'rationale': 'Run all mechanisms: LOF first, then DN, skip GOF if LOF≥0.5 (broken proteins cannot be hyperactive)'
         }
     
     def _get_analyzers_for_classification(self, classification: str) -> List[str]:
@@ -161,21 +143,24 @@ class BiologicalRouter:
         
         function_text = annotations.get("function", "").lower()
         go_terms = annotations.get("go_terms", [])
-        
+
         # Score each mechanism type
         scores = {'LOF': 0, 'GOF': 0, 'DN': 0}
-        
+
         for mechanism, patterns in self.go_classification_patterns.items():
             mechanism_type = mechanism.split('_')[0]  # LOF, GOF, or DN
-            
+
             for pattern in patterns:
+                # Check function description (primary source)
                 if pattern in function_text:
-                    scores[mechanism_type] += 1
-                    
-                # Also check GO terms
+                    scores[mechanism_type] += 2  # Weight function description higher
+                    print(f"🎯 Found '{pattern}' in function for {gene} -> {mechanism_type}")
+
+                # Also check GO terms if available
                 for go_term in go_terms:
                     if pattern in go_term.lower():
                         scores[mechanism_type] += 1
+                        print(f"🎯 Found '{pattern}' in GO term for {gene} -> {mechanism_type}")
         
         # Determine classification based on scores
         max_score = max(scores.values())

@@ -1,2 +1,0 @@
-gene	variant	hgvs	gnomad_freq	status	routing_strategy	routing_confidence	routing_rationale	analyzers_run	summary	dn_score	lof_score	gof_score	dn_classification	lof_classification	gof_classification	final_score	final_classification	explanation
-APC	p.I1307K	NM_000038.6(APC):c.3920T>A (p.Ile1307Lys)		FAILED														
