@@ -1,0 +1,186 @@
+{
+  "uniprot_id": "Q99715",
+  "sequence_length": 3063,
+  "function": "Type XII collagen interacts with type I collagen-containing fibrils, the COL1 domain could be associated with the surface of the fibrils, and the COL2 and NC3 domains may be localized in the perifibrillar matrix",
+  "sequence": "MRSRLPPALAALGAALLLSSIEAEVDPPSDLNFKIIDENTVHMSWAKPVDPIVGYRITVDPTTDGPTKEFTLSASTTETLLSELVPETEYVVTITSYDEVEESVPVIGQLTIQTGSSTKPVEKKPGKTEIQKCSVSAWTDLVFLVDGSWSVGRNNFKYILDFIAALVSAFDIGEEKTRVGVVQYSSDTRTEFNLNQYYQRDELLAAIKKIPYKGGNTMTGDAIDYLVKNTFTESAGARVGFPKVAIIITDGKSQDEVEIPARELRNVGVEVFSLGIKAADAKELKQIASTPSLNHVFNVANFDAIVDIQNEIISQVCSGVDEQLGELVSGEEVVEPPSNLIAMEVSSKYVKLNWNPSPSPVTGYKVILTPMTAGSRQHALSVGPQTTTLSVRDLSADTEYQISVSAMKGMTSSEPISIMEKTQPMKVQVECSRGVDIKADIVFLVDGSYSIGIANFVKVRAFLEVLVKSFEISPNRVQISLVQYSRDPHTEFTLKKFTKVEDIIEAINTFPYRGGSTNTGKAMTYVREKIFVPSKGSRSNVPKVMILITDGKSSDAFRDPAIKLRNSDVEIFAVGVKDAVRSELEAIASPPAETHVFTVEDFDAFQRISFELTQSICLRIEQELAAIKKKAYVPPKDLSFSEVTSYGFKTNWSPAGENVFSYHITYKEAAGDDEVTVVEPASSTSVVLSSLKPETLYLVNVTAEYEDGFSIPLAGEETTEEVKGAPRNLKVTDETTDSFKITWTQAPGRVLRYRIIYRPVAGGESREVTTPPNQRRRTLENLIPDTKYEVSVIPEYFSGPGTPLTGNAATEEVRGNPRDLRVSDPTTSTMKLSWSGAPGKVKQYLVTYTPVAGGETQEVTVRGDTTNTVLQGLKEGTQYALSVTALYASGAGDALFGEGTTLEERGSPQDLVTKDITDTSIGAYWTSAPGMVRGYRVSWKSLYDDVDTGEKNLPEDAIHTMIENLQPETKYRISVFATYSSGEGEPLTGDATTELSQDSKTLKVDEETENTMRVTWKPAPGKVVNYRVVYRPHGRGKQMVAKVPPTVTSTVLKRLQPQTTYDITVLPIYKMGEGKLRQGSGTTASRFKSPRNLKTSDPTMSSFRVTWEPAPGEVKGYKVTFHPTGDDRRLGELVVGPYDNTVVLEELRAGTTYKVNVFGMFDGGESSPLVGQEMTTLSDTTVMPILSSGMECLTRAEADIVLLVDGSWSIGRANFRTVRSFISRIVEVFDIGPKRVQIALAQYSGDPRTEWQLNAHRDKKSLLQAVANLPYKGGNTLTGMALNFIRQQNFRTQAGMRPRARKIGVLITDGKSQDDVEAPSKKLKDEGVELFAIGIKNADEVELKMIATDPDDTHAYNVADFESLSRIVDDLTINLCNSVKGPGDLEAPSNLVISERTHRSFRVSWTPPSDSVDRYKVEYYPVSGGKRQEFYVSRMETSTVLKDLKPETEYVVNVYSVVEDEYSEPLKGTEKTLPVPVVSLNIYDVGPTTMHVQWQPVGGATGYILSYKPVKDTEPTRPKEVRLGPTVNDMQLTDLVPNTEYAVTVQAVLHDLTSEPVTVREVTLPLPRPQDLKLRDVTHSTMNVFWEPVPGKVRKYIVRYKTPEEDVKEVEVDRSETSTSLKDLFSQTLYTVSVSAVHDEGESPPVTAQETTRPVPAPTNLKITEVTSEGFRGTWDHGASDVSLYRITWAPFGSSDKMETILNGDENTLVFENLNPNTIYEVSITAIYPDESESDDLIGSERTLPILTTQAPKSGPRNLQVYNATSNSLTVKWDPASGRVQKYRITYQPSTGEGNEQTTTIGGRQNSVVLQKLKPDTPYTITVSSLYPDGEGGRMTGRGKTKPLNTVRNLRVYDPSTSTLNVRWDHAEGNPRQYKLFYAPAAGGPEELVPIPGNTNYAILRNLQPDTSYTVTVVPVYTEGDGGRTSDTGRTLMRGLARNVQVYNPTPNSLDVRWDPAPGPVLQYRVVYSPVDGTRPSESIVVPGNTRMVHLERLIPDTLYSVNLVALYSDGEGNPSPAQGRTLPRSGPRNLRVFGETTNSLSVAWDHADGPVQQYRIIYSPTVGDPIDEYTTVPGRRNNVILQPLQPDTPYKITVIAVYEDGDGGHLTGNGRTVGLLPPQNIHISDEWYTRFRVSWDPSPSPVLGYKIVYKPVGSNEPMEAFVGEMTSYTLHNLNPSTTYDVNVYAQYDSGLSVPLTDQGTTLYLNVTDLKTYQIGWDTFCVKWSPHRAATSYRLKLSPADGTRGQEITVRGSETSHCFTGLSPDTDYGVTVFVQTPNLEGPGVSVKEHTTVKPTEAPTEPPTPPPPPTIPPARDVCKGAKADIVFLTDASWSIGDDNFNKVVKFIFNTVGGFDEISPAGIQVSFVQYSDEVKSEFKLNTYNDKALALGALQNIRYRGGNTRTGKALTFIKEKVLTWESGMRKNVPKVLVVVTDGRSQDEVKKAALVIQQSGFSVFVVGVADVDYNELANIASKPSERHVFIVDDFESFEKIEDNLITFVCETATSSCPLIYLDGYTSPGFKMLEAYNLTEKNFASVQGVSLESGSFPSYSAYRIQKNAFVNQPTADLHPNGLPPSYTIILLFRLLPETPSDPFAIWQITDRDYKPQVGVIADPSSKTLSFFNKDTRGEVQTVTFDTEEVKTLFYGSFHKVHIVVTSKSVKIYIDCYEIIEKDIKEAGNITTDGYEILGKLLKGERKSAAFQIQSFDIVCSPVWTSRDRCCDIPSRRDEGKCPAFPNSCTCTQDSVGPPGPPGPAGGPGAKGPRGERGISGAIGPPGPRGDIGPPGPQGPPGPQGPNGLSIPGEQGRQGMKGDAGEPGLPGRTGTPGLPGPPGPMGPPGDRGFTGKDGAMGPRGPPGPPGSPGSPGVTGPSGKPGKPGDHGRPGPSGLKGEKGDRGDIASQNMMRAVARQVCEQLISGQMNRFNQMLNQIPNDYQSSRNQPGPPGPPGPPGSAGARGEPGPGGRPGFPGTPGMQGPPGERGLPGEKGERGTGSSGPRGLPGPPGPQGESRTGPPGSTGSRGPPGPPGRPGNSGIRGPPGPPGYCDSSQCASIPYNGQGYPGSG",
+  "domains": [
+    {
+      "start": 1,
+      "end": 187,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 227,
+      "end": 413,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 425,
+      "end": 520,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 531,
+      "end": 982,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1002,
+      "end": 1072,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1093,
+      "end": 1520,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1532,
+      "end": 1649,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1668,
+      "end": 1793,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1809,
+      "end": 1829,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1850,
+      "end": 2012,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2031,
+      "end": 2250,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2310,
+      "end": 2726,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2901,
+      "end": 2940,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 114,
+      "end": 291,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 421,
+      "end": 667,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 713,
+      "end": 853,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 933,
+      "end": 972,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 988,
+      "end": 1154,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1195,
+      "end": 1350,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1377,
+      "end": 1455,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1555,
+      "end": 1634,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1745,
+      "end": 1881,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 2205,
+      "end": 2262,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 2363,
+      "end": 2461,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 2602,
+      "end": 2736,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 2877,
+      "end": 2928,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "collagen_repeats": {
+    "start": 2747,
+    "end": 2800
+  },
+  "flexible_loops": [
+    414,
+    415,
+    416,
+    417,
+    418,
+    419,
+    420,
+    521,
+    522,
+    523
+  ],
+  "interface_regions": [
+    4,
+    2912
+  ],
+  "gene": "COL12A1",
+  "cached_at": "2025-01-27"
+}

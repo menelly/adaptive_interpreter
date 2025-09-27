@@ -1,0 +1,49 @@
+{
+  "family": "scaffold_adaptor",
+  "n_samples": 24,
+  "n_features": 17,
+  "feature_columns": [
+    "grantham_distance",
+    "delta_hydrophobicity",
+    "delta_volume",
+    "delta_charge",
+    "ref_hydrophobicity",
+    "alt_hydrophobicity",
+    "ref_volume",
+    "alt_volume",
+    "ref_charge",
+    "alt_charge",
+    "proline_involved",
+    "glycine_involved",
+    "cysteine_involved",
+    "phylop_score",
+    "phastcons_score",
+    "gerp_score",
+    "frequency"
+  ],
+  "feature_importance": {
+    "grantham_distance": 0.002558922558922558,
+    "delta_hydrophobicity": 0.023719532943972724,
+    "delta_volume": 0.06709233711928732,
+    "delta_charge": 0.08586872012467252,
+    "ref_hydrophobicity": 0.0,
+    "alt_hydrophobicity": 0.07511114475575262,
+    "ref_volume": 0.04324857422896639,
+    "alt_volume": 0.1029470844811754,
+    "ref_charge": 0.0,
+    "alt_charge": 0.0,
+    "proline_involved": 0.0,
+    "glycine_involved": 0.002284752284752285,
+    "cysteine_involved": 0.0,
+    "phylop_score": 0.056148904200374786,
+    "phastcons_score": 0.023250553458886793,
+    "gerp_score": 0.3385323301932673,
+    "frequency": 0.1792371436499694
+  },
+  "performance": {
+    "mse": 0.18588,
+    "r2": -0.16174999999999984
+  },
+  "model_path": "resources/family_models/scaffold_adaptor_unified_model.joblib",
+  "scaler_path": "resources/family_models/scaffold_adaptor_unified_scaler.joblib"
+}

@@ -1,0 +1,44 @@
+{
+  "uniprot_id": "P11166",
+  "sequence_length": 492,
+  "function": "Facilitative glucose transporter, which is responsible for constitutive or basal glucose uptake (PubMed:10227690, PubMed:10954735, PubMed:18245775, PubMed:19449892, PubMed:25982116, PubMed:27078104, PubMed:32860739). Has a very broad substrate specificity; can transport a wide range of aldoses including both pentoses and hexoses (PubMed:18245775, PubMed:19449892). Most important energy carrier of the brain: present at the blood-brain barrier and assures the energy-independent, facilitative transport of glucose into the brain (PubMed:10227690). In association with BSG and NXNL1, promotes retinal cone survival by increasing glucose uptake into photoreceptors (By similarity). Required for mesendoderm differentiation (By similarity)",
+  "sequence": "MEPSSKKLTGRLMLAVGGAVLGSLQFGYNTGVINAPQKVIEEFYNQTWVHRYGESILPTTLTTLWSLSVAIFSVGGMIGSFSVGLFVNRFGRRNSMLMMNLLAFVSAVLMGFSKLGKSFEMLILGRFIIGVYCGLTTGFVPMYVGEVSPTALRGALGTLHQLGIVVGILIAQVFGLDSIMGNKDLWPLLLSIIFIPALLQCIVLPFCPESPRFLLINRNEENRAKSVLKKLRGTADVTHDLQEMKEESRQMMREKKVTILELFRSPAYRQPILIAVVLQLSQQLSGINAVFYYSTSIFEKAGVQQPVYATIGSGIVNTAFTVVSLFVVERAGRRTLHLIGLAGMAGCAILMTIALALLEQLPWMSYLSIVAIFGFVAFFEVGPGPIPWFIVAELFSQGPRPAAIAVAGFSNWTSNFIVGMCFQYVEQLCGPYVFIIFTVLLVLFFIFTYFKVPETKGRTFDEIASGFRQGGASQSDKTPEELFHPLGADSQV",
+  "domains": [
+    {
+      "start": 5,
+      "end": 470,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 87,
+      "end": 128,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 191,
+      "end": 288,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "flexible_loops": [
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138
+  ],
+  "interface_regions": [
+    8,
+    488
+  ],
+  "gene": "SLC2A1",
+  "cached_at": "2025-01-27"
+}

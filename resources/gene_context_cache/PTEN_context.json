@@ -1,0 +1,56 @@
+{
+  "uniprot_id": "P60484",
+  "sequence_length": 403,
+  "function": "Dual-specificity protein phosphatase, dephosphorylating tyrosine-, serine- and threonine-phosphorylated proteins (PubMed:9187108, PubMed:9256433, PubMed:9616126). Also functions as a lipid phosphatase, removing the phosphate in the D3 position of the inositol ring of PtdIns(3,4,5)P3/phosphatidylinositol 3,4,5-trisphosphate, PtdIns(3,4)P2/phosphatidylinositol 3,4-diphosphate and PtdIns3P/phosphatidylinositol 3-phosphate with a preference for PtdIns(3,4,5)P3 (PubMed:16824732, PubMed:26504226, PubMed:9593664, PubMed:9811831). Furthermore, this enzyme can also act as a cytosolic inositol 3-phosphatase acting on Ins(1,3,4,5,6)P5/inositol 1,3,4,5,6 pentakisphosphate and possibly Ins(1,3,4,5)P4/1D-myo-inositol 1,3,4,5-tetrakisphosphate (PubMed:11418101, PubMed:15979280). Antagonizes the PI3K-AKT/PKB signaling pathway by dephosphorylating phosphoinositides and thereby modulating cell cycle progression and cell survival (PubMed:31492966, PubMed:37279284). The unphosphorylated form cooperates with MAGI2 to suppress AKT1 activation (PubMed:11707428). In motile cells, suppresses the formation of lateral pseudopods and thereby promotes cell polarization and directed movement (PubMed:22279049). Dephosphorylates tyrosine-phosphorylated focal adhesion kinase and inhibits cell migration and integrin-mediated cell spreading and focal adhesion formation (PubMed:22279049). Required for growth factor-induced epithelial cell migration; growth factor stimulation induces PTEN phosphorylation which changes its binding preference from the p85 regulatory subunit of the PI3K kinase complex to DLC1 and results in translocation of the PTEN-DLC1 complex to the posterior of migrating cells to promote RHOA activation (PubMed:26166433). Meanwhile, TNS3 switches binding preference from DLC1 to p85 and the TNS3-p85 complex translocates to the leading edge of migrating cells to activate RAC1 activation (PubMed:26166433). Plays a role as a key modulator of the AKT-mTOR signaling pathway controlling the tempo of the process of newborn neurons integration during adult neurogenesis, including correct neuron positioning, dendritic development and synapse formation (By similarity). Involved in the regulation of synaptic function in excitatory hippocampal synapses. Recruited to the postsynaptic membrane upon NMDA receptor activation, is required for the modulation of synaptic activity during plasticity. Enhancement of lipid phosphatase activity is able to drive depression of AMPA receptor-mediated synaptic responses, activity required for NMDA receptor-dependent long-term depression (LTD) (By similarity). May be a negative regulator of insulin signaling and glucose metabolism in adipose tissue. The nuclear monoubiquitinated form possesses greater apoptotic potential, whereas the cytoplasmic nonubiquitinated form induces less tumor suppressive ability (PubMed:10468583, PubMed:18716620)",
+  "sequence": "MTAIIKEIVSRNKRRYQEDGFDLDLTYIYPNIIAMGFPAERLEGVYRNNIDDVVRFLDSKHKNHYKIYNLCAERHYDTAKFNCRVAQYPFEDHNPPQLELIKPFCEDLDQWLSEDDNHVAAIHCKAGKGRTGVMICAYLLHRGKFLKAQEALDFYGEVRTRDKKGVTIPSQRRYVYYYSYLLKNHLDYRPVALLFHKMMFETIPMFSGGTCNPQFVVCQLKVKIYSSNSGPTRREDKFMYFEFPQPLPVCGDIKVEFFHKQNKMLKKDKMFHFWVNTFFIPGPEETSEKVENGSLCDQEIDSICSIERADNDKEYLVLTLTKNDLDKANKDKANRYFSPNFKVKLYFTKTVEEPSNPEASSSTSVTPDVSDNEPDHYRYSDTTDSDPENEPFDEDQHTQITKV",
+  "domains": [
+    {
+      "start": 18,
+      "end": 223,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 240,
+      "end": 284,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 303,
+      "end": 353,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2,
+      "end": 203,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 215,
+      "end": 369,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "flexible_loops": [
+    285,
+    286,
+    287,
+    288,
+    289,
+    290,
+    291,
+    292,
+    293,
+    294
+  ],
+  "interface_regions": [
+    1,
+    351
+  ],
+  "gene": "PTEN",
+  "cached_at": "2025-01-27"
+}

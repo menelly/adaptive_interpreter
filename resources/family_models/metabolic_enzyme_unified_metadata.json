@@ -1,0 +1,49 @@
+{
+  "family": "metabolic_enzyme",
+  "n_samples": 293,
+  "n_features": 17,
+  "feature_columns": [
+    "grantham_distance",
+    "delta_hydrophobicity",
+    "delta_volume",
+    "delta_charge",
+    "ref_hydrophobicity",
+    "alt_hydrophobicity",
+    "ref_volume",
+    "alt_volume",
+    "ref_charge",
+    "alt_charge",
+    "proline_involved",
+    "glycine_involved",
+    "cysteine_involved",
+    "phylop_score",
+    "phastcons_score",
+    "gerp_score",
+    "frequency"
+  ],
+  "feature_importance": {
+    "grantham_distance": 0.013058872080247964,
+    "delta_hydrophobicity": 0.09878754518255795,
+    "delta_volume": 0.07759692288024711,
+    "delta_charge": 0.015595870888485873,
+    "ref_hydrophobicity": 0.05297195770253807,
+    "alt_hydrophobicity": 0.04002617784525056,
+    "ref_volume": 0.016107418529297847,
+    "alt_volume": 0.04812107439200022,
+    "ref_charge": 0.0033486344059028695,
+    "alt_charge": 0.009446087841962054,
+    "proline_involved": 0.0008552158011307336,
+    "glycine_involved": 0.0009581765176536637,
+    "cysteine_involved": 0.0008578936189241156,
+    "phylop_score": 0.09956218323832593,
+    "phastcons_score": 0.14610722333279086,
+    "gerp_score": 0.06674365564973826,
+    "frequency": 0.30985509009294604
+  },
+  "performance": {
+    "mse": 0.0849559322033898,
+    "r2": 0.07002641509433971
+  },
+  "model_path": "resources/family_models/metabolic_enzyme_unified_model.joblib",
+  "scaler_path": "resources/family_models/metabolic_enzyme_unified_scaler.joblib"
+}

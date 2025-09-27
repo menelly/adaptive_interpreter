@@ -1,0 +1,50 @@
+{
+  "uniprot_id": "P11310",
+  "sequence_length": 421,
+  "function": "Medium-chain specific acyl-CoA dehydrogenase is one of the acyl-CoA dehydrogenases that catalyze the first step of mitochondrial fatty acid beta-oxidation, an aerobic process breaking down fatty acids into acetyl-CoA and allowing the production of energy from fats (PubMed:1970566, PubMed:21237683, PubMed:2251268, PubMed:8823175). The first step of fatty acid beta-oxidation consists in the removal of one hydrogen from C-2 and C-3 of the straight-chain fatty acyl-CoA thioester, resulting in the formation of trans-2-enoyl-CoA (PubMed:2251268). Electron transfer flavoprotein (ETF) is the electron acceptor that transfers electrons to the main mitochondrial respiratory chain via ETF-ubiquinone oxidoreductase (ETF dehydrogenase) (PubMed:15159392, PubMed:25416781). Among the different mitochondrial acyl-CoA dehydrogenases, medium-chain specific acyl-CoA dehydrogenase acts specifically on acyl-CoAs with saturated 6 to 12 carbons long primary chains (PubMed:1970566, PubMed:21237683, PubMed:2251268, PubMed:8823175)",
+  "sequence": "MAAGFGRCCRVLRSISRFHWRSQHTKANRQREPGLGFSFEFTEQQKEFQATARKFAREEIIPVAAEYDKTGEYPVPLIRRAWELGLMNTHIPENCGGLGLGTFDACLISEELAYGCTGVQTAIEGNSLGQMPIIIAGNDQQKKKYLGRMTEEPLMCAYCVTEPGAGSDVAGIKTKAEKKGDEYIINGQKMWITNGGKANWYFLLARSDPDPKAPANKAFTGFIVEADTPGIQIGRKELNMGQRCSDTRGIVFEDVKVPKENVLIGDGAGFKVAMGAFDKTRPVVAAGAVGLAQRALDEATKYALERKTFGKLLVEHQAISFMLAEMAMKVELARMSYQRAAWEVDSGRRNTYYASIAKAFAGDIANQLATDAVQILGGNGFNTEYPVEKLMRDAKIYQIYEGTSQIQRLIVAREHIDKYKN",
+  "domains": [
+    {
+      "start": 1,
+      "end": 21,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 38,
+      "end": 243,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 260,
+      "end": 419,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1,
+      "end": 92,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 136,
+      "end": 368,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 379,
+      "end": 421,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "interface_regions": [
+    1,
+    416
+  ],
+  "gene": "ACADM",
+  "cached_at": "2025-01-27"
+}

@@ -1,0 +1,164 @@
+{
+  "uniprot_id": "P21359",
+  "sequence_length": 2839,
+  "function": "Stimulates the GTPase activity of Ras. NF1 shows greater affinity for Ras GAP, but lower specific activity. May be a regulator of Ras activity",
+  "sequence": "MAAHRPVEWVQAVVSRFDEQLPIKTGQQNTHTKVSTEHNKECLINISKYKFSLVISGLTTILKNVNNMRIFGEAAEKNLYLSQLIILDTLEKCLAGQPKDTMRLDETMLVKQLLPEICHFLHTCREGNQHAAELRNSASGVLFSLSCNNFNAVFSRISTRLQELTVCSEDNVDVHDIELLQYINVDCAKLKRLLKETAFKFKALKKVAQLAVINSLEKAFWNWVENYPDEFTKLYQIPQTDMAECAEKLFDLVDGFAESTKRKAAVWPLQIILLILCPEIIQDISKDVVDENNMNKKLFLDSLRKALAGHGGSRQLTESAAIACVKLCKASTYINWEDNSVIFLLVQSMVVDLKNLLFNPSKPFSRGSQPADVDLMIDCLVSCFRISPHNNQHFKICLAQNSPSTFHYVLVNSLHRIITNSALDWWPKIDAVYCHSVELRNMFGETLHKAVQGCGAHPAIRMAPSLTFKEKVTSLKFKEKPTDLETRSYKYLLLSMVKLIHADPKLLLCNPRKQGPETQGSTAELITGLVQLVPQSHMPEIAQEAMEALLVLHQLDSIDLWNPDAPVETFWEISSQMLFYICKKLTSHQMLSSTEILKWLREILICRNKFLLKNKQADRSSCHFLLFYGVGCDIPSSGNTSQMSMDHEELLRTPGASLRKGKGNSSMDSAAGCSGTPPICRQAQTKLEVALYMFLWNPDTEAVLVAMSCFRHLCEEADIRCGVDEVSVHNLLPNYNTFMEFASVSNMMSTGRAALQKRVMALLRRIEHPTAGNTEAWEDTHAKWEQATKLILNYPKAKMEDGQAAESLHKTIVKRRMSHVSGGGSIDLSDTDSLQEWINMTGFLCALGGVCLQQRSNSGLATYSPPMGPVSERKGSMISVMSSEGNADTPVSKFMDRLLSLMVCNHEKVGLQIRTNVKDLVGLELSPALYPMLFNKLKNTISKFFDSQGQVLLTDTNTQFVEQTIAIMKNLLDNHTEGSSEHLGQASIETMMLNLVRYVRVLGNMVHAIQIKTKLCQLVEVMMARRDDLSFCQEMKFRNKMVEYLTDWVMGTSNQAADDDVKCLTRDLDQASMEAVVSLLAGLPLQPEEGDGVELMEAKSQLFLKYFTLFMNLLNDCSEVEDESAQTGGRKRGMSRRLASLRHCTVLAMSNLLNANVDSGLMHSIGLGYHKDLQTRATFMEVLTKILQQGTEFDTLAETVLADRFERLVELVTMMGDQGELPIAMALANVVPCSQWDELARVLVTLFDSRHLLYQLLWNMFSKEVELADSMQTLFRGNSLASKIMTFCFKVYGATYLQKLLDPLLRIVITSSDWQHVSFEVDPTRLEPSESLEENQRNLLQMTEKFFHAIISSSSEFPPQLRSVCHCLYQATCHSLLNKATVKEKKENKKSVVSQRFPQNSIGAVGSAMFLRFINPAIVSPYEAGILDKKPPPRIERGLKLMSKILQSIANHVLFTKEEHMRPFNDFVKSNFDAARRFFLDIASDCPTSDAVNHSLSFISDGNVLALHRLLWNNQEKIGQYLSSNRDHKAVGRRPFDKMATLLAYLGPPEHKPVADTHWSSLNLTSSKFEEFMTRHQVHEKEEFKALKTLSIFYQAGTSKAGNPIFYYVARRFKTGQINGDLLIYHVLLTLKPYYAKPYEIVVDLTHTGPSNRFKTDFLSKWFVVFPGFAYDNVSAVYIYNCNSWVREYTKYHERLLTGLKGSKRLVFIDCPGKLAEHIEHEQQKLPAATLALEEDLKVFHNALKLAHKDTKVSIKVGSTAVQVTSAERTKVLGQSVFLNDIYYASEIEEICLVDENQFTLTIANQGTPLTFMHQECEAIVQSIIHIRTRWELSQPDSIPQHTKIRPKDVPGTLLNIALLNLGSSDPSLRSAAYNLLCALTCTFNLKIEGQLLETSGLCIPANNTLFIVSISKTLAANEPHLTLEFLEECISGFSKSSIELKHLCLEYMTPWLSNLVRFCKHNDDAKRQRVTAILDKLITMTINEKQMYPSIQAKIWGSLGQITDLLDVVLDSFIKTSATGGLGSIKAEVMADTAVALASGNVKLVSSKVIGRMCKIIDKTCLSPTPTLEQHLMWDDIAILARYMLMLSFNNSLDVAAHLPYLFHVVTFLVATGPLSLRASTHGLVINIIHSLCTCSQLHFSEETKQVLRLSLTEFSLPKFYLLFGISKVKSAAVIAFRSSYRDRSFSPGSYERETFALTSLETVTEALLEIMEACMRDIPTCKWLDQWTELAQRFAFQYNPSLQPRALVVFGCISKRVSHGQIKQIIRILSKALESCLKGPDTYNSQVLIEATVIALTKLQPLLNKDSPLHKALFWVAVAVLQLDEVNLYSAGTALLEQNLHTLDSLRIFNDKSPEEVFMAIRNPLEWHCKQMDHFVGLNFNSNFNFALVGHLLKGYRHPSPAIVARTVRILHTLLTLVNKHRNCDKFEVNTQSVAYLAALLTVSEEVRSRCSLKHRKSLLLTDISMENVPMDTYPIHHGDPSYRTLKETQPWSSPKGSEGYLAATYPTVGQTSPRARKSMSLDMGQPSQANTKKLLGTRKSFDHLISDTKAPKRQEMESGITTPPKMRRVAETDYEMETQRISSSQQHPHLRKVSVSESNVLLDEEVLTDPKIQALLLTVLATLVKYTTDEFDQRILYEYLAEASVVFPKVFPVVHNLLDSKINTLLSLCQDPNLLNPIHGIVQSVVYHEESPPQYQTSYLQSFGFNGLWRFAGPFSKQTQIPDYAELIVKFLDALIDTYLPGIDEETSEESLLTPTSPYPPALQSQLSITANLNLSNSMTSLATSQHSPGIDKENVELSPTTGHCNSGRTRHGSASQVQKQRSAGSFKRNSIKKIV",
+  "domains": [
+    {
+      "start": 3,
+      "end": 27,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 41,
+      "end": 637,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 676,
+      "end": 814,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 830,
+      "end": 1381,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1394,
+      "end": 2528,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2593,
+      "end": 2782,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 11,
+      "end": 79,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 156,
+      "end": 239,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 258,
+      "end": 336,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 437,
+      "end": 526,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 570,
+      "end": 640,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 744,
+      "end": 835,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 904,
+      "end": 947,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 987,
+      "end": 1064,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1097,
+      "end": 1169,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1350,
+      "end": 1483,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1495,
+      "end": 1639,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1666,
+      "end": 1784,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1929,
+      "end": 2006,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 2021,
+      "end": 2083,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 2140,
+      "end": 2208,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 2230,
+      "end": 2296,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 2385,
+      "end": 2607,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "flexible_loops": [
+    240,
+    241,
+    242,
+    243,
+    244,
+    245,
+    246,
+    247,
+    248,
+    249
+  ],
+  "interface_regions": [
+    1,
+    2778
+  ],
+  "gene": "NF1",
+  "cached_at": "2025-01-27"
+}

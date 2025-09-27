@@ -1,0 +1,74 @@
+{
+  "uniprot_id": "P16278",
+  "sequence_length": 677,
+  "function": "Cleaves beta-linked terminal galactosyl residues from gangliosides, glycoproteins, and glycosaminoglycans",
+  "sequence": "MPGFLVRILPLLLVLLLLGPTRGLRNATQRMFEIDYSRDSFLKDGQPFRYISGSIHYSRVPRFYWKDRLLKMKMAGLNAIQTYVPWNFHEPWPGQYQFSEDHDVEYFLRLAHELGLLVILRPGPYICAEWEMGGLPAWLLEKESILLRSSDPDYLAAVDKWLGVLLPKMKPLLYQNGGPVITVQVENEYGSYFACDFDYLRFLQKRFRHHLGDDVVLFTTDGAHKTFLKCGALQGLYTTVDFGTGSNITDAFLSQRKCEPKGPLINSEFYTGWLDHWGQPHSTIKTEAVASSLYDILARGASVNLYMFIGGTNFAYWNGANSPYAAQPTSYDYDAPLSEAGDLTEKYFALRNIIQKFEKVPEGPIPPSTPKFAYGKVTLEKLKTVGAALDILCPSGPIKSLYPLTFIQVKQHYGFVLYRTTLPQDCSNPAPLSSPLNGVHDRAYVAVDGIPQGVLERNNVITLNITGKAGATLDLLVENMGRVNYGAYINDFKGLVSNLTLSSNILTDWTIFPLDTEDAVRSHLGGWGHRDSGHHDEAWAHNSSNYTLPAFYMGNFSIPSGIPDLPQDTFIQFPGWTKGQVWINGFNLGRYWPARGPQLTLFVPQHILMTSAPNTITVLELEWAPCSSDDPELCAVTFVDRPVIGSSVTYDHPSKPVEKRLMPPPPQKNKDSWLDHV",
+  "domains": [
+    {
+      "start": 1,
+      "end": 243,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 267,
+      "end": 522,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 536,
+      "end": 568,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 585,
+      "end": 656,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 4,
+      "end": 98,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 190,
+      "end": 240,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 337,
+      "end": 410,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 631,
+      "end": 677,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "flexible_loops": [
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108
+  ],
+  "interface_regions": [
+    1,
+    644
+  ],
+  "gene": "GLB1",
+  "cached_at": "2025-01-27"
+}

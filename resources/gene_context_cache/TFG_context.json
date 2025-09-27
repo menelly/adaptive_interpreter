@@ -1,0 +1,56 @@
+{
+  "uniprot_id": "Q92734",
+  "sequence_length": 400,
+  "function": "Plays a role in the normal dynamic function of the endoplasmic reticulum (ER) and its associated microtubules (PubMed:23479643, PubMed:27813252). Required for secretory cargo traffic from the endoplasmic reticulum to the Golgi apparatus (PubMed:21478858)",
+  "sequence": "MNGQLDLSGKLIIKAQLGEDIRRIPIHNEDITYDELVLMMQRVFRGKLLSNDEVTIKYKDEDGDLITIFDSSDLSFAIQCSRILKLTLFVNGQPRPLESSQVKYLRRELIELRNKVNRLLDSLEPPGEPGPSTNIPENDTVDGREEKSASDSSGKQSTQVMAASMSAFDPLKNQDEINKNVMSAFGLTDDQVSGPPSAPAEDRSGTPDSIASSSSAAHPPGVQPQQPPYTGAQTQAGQIEGQMYQQYQQQAGYGAQQPQAPPQQPQQYGIQYSASYSQQTGPQQPQQFQGYGQQPTSQAPAPAFSGQPQQLPAQPPQQYQASNYPAQTYTAQTSQPTNYTVAPASQPGMAPSQPGAYQPRPGFTSLPGSTMTPPPSGPNPYARNRPPFGQGYTQPGPGYR",
+  "domains": [
+    {
+      "start": 7,
+      "end": 129,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 160,
+      "end": 188,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 222,
+      "end": 256,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 339,
+      "end": 369,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 6,
+      "end": 145,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "flexible_loops": [
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139
+  ],
+  "interface_regions": [
+    7,
+    345
+  ],
+  "gene": "TFG",
+  "cached_at": "2025-01-27"
+}

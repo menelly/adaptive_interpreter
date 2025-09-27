@@ -1,0 +1,284 @@
+{
+  "uniprot_id": "P35556",
+  "sequence_length": 2912,
+  "function": "Fibrillins are structural components of 10-12 nm extracellular calcium-binding microfibrils, which occur either in association with elastin or in elastin-free bundles. Fibrillin-2-containing microfibrils regulate the early process of elastic fiber assembly. Regulates osteoblast maturation by controlling TGF-beta bioavailability and calibrating TGF-beta and BMP levels, respectively",
+  "sequence": "MGRRRRLCLQLYFLWLGCVVLWAQGTAGQPQPPPPKPPRPQPPPQQVRSATAGSEGGFLAPEYREEGAAVASRVRRRGQQDVLRGPNVCGSRFHSYCCPGWKTLPGGNQCIVPICRNSCGDGFCSRPNMCTCSSGQISSTCGSKSIQQCSVRCMNGGTCADDHCQCQKGYIGTYCGQPVCENGCQNGGRCIGPNRCACVYGFTGPQCERDYRTGPCFTQVNNQMCQGQLTGIVCTKTLCCATIGRAWGHPCEMCPAQPQPCRRGFIPNIRTGACQDVDECQAIPGICQGGNCINTVGSFECRCPAGHKQSETTQKCEDIDECSIIPGICETGECSNTVGSYFCVCPRGYVTSTDGSRCIDQRTGMCFSGLVNGRCAQELPGRMTKMQCCCEPGRCWGIGTIPEACPVRGSEEYRRLCMDGLPMGGIPGSAGSRPGGTGGNGFAPSGNGNGYGPGGTGFIPIPGGNGFSPGVGGAGVGAGGQGPIITGLTILNQTIDICKHHANLCLNGRCIPTVSSYRCECNMGYKQDANGDCIDVDECTSNPCTNGDCVNTPGSYYCKCHAGFQRTPTKQACIDIDECIQNGVLCKNGRCVNTDGSFQCICNAGFELTTDGKNCVDHDECTTTNMCLNGMCINEDGSFKCICKPGFVLAPNGRYCTDVDECQTPGICMNGHCINSEGSFRCDCPPGLAVGMDGRVCVDTHMRSTCYGGIKKGVCVRPFPGAVTKSECCCANPDYGFGEPCQPCPAKNSAEFHGLCSSGVGITVDGRDINECALDPDICANGICENLRGSYRCNCNSGYEPDASGRNCIDIDECLVNRLLCDNGLCRNTPGSYSCTCPPGYVFRTETETCEDINECESNPCVNGACRNNLGSFNCECSPGSKLSSTGLICIDSLKGTCWLNIQDSRCEVNINGATLKSECCATLGAAWGSPCERCELDTACPRGLARIKGVTCEDVNECEVFPGVCPNGRCVNSKGSFHCECPEGLTLDGTGRVCLDIRMEQCYLKWDEDECIHPVPGKFRMDACCCAVGAAWGTECEECPKPGTKEYETLCPRGAGFANRGDVLTGRPFYKDINECKAFPGMCTYGKCRNTIGSFKCRCNSGFALDMEERNCTDIDECRISPDLCGSGICVNTPGSFECECFEGYESGFMMMKNCMDIDECERNPLLCRGGTCVNTEGSFQCDCPLGHELSPSREDCVDINECSLSDNLCRNGKCVNMIGTYQCSCNPGYQATPDRQGCTDIDECMIMNGGCDTQCTNSEGSYECSCSEGYALMPDGRSCADIDECENNPDICDGGQCTNIPGEYRCLCYDGFMASMDMKTCIDVNECDLNSNICMFGECENTKGSFICHCQLGYSVKKGTTGCTDVDECEIGAHNCDMHASCLNIPGSFKCSCREGWIGNGIKCIDLDECSNGTHQCSINAQCVNTPGSYRCACSEGFTGDGFTCSDVDECAENINLCENGQCLNVPGAYRCECEMGFTPASDSRSCQDIDECSFQNICVFGTCNNLPGMFHCICDDGYELDRTGGNCTDIDECADPINCVNGLCVNTPGRYECNCPPDFQLNPTGVGCVDNRVGNCYLKFGPRGDGSLSCNTEIGVGVSRSSCCCSLGKAWGNPCETCPPVNSTEYYTLCPGGEGFRPNPITIILEDIDECQELPGLCQGGNCINTFGSFQCECPQGYYLSEDTRICEDIDECFAHPGVCGPGTCYNTLGNYTCICPPEYMQVNGGHNCMDMRKSFCYRSYNGTTCENELPFNVTKRMCCCTYNVGKAWNKPCEPCPTPGTADFKTICGNIPGFTFDIHTGKAVDIDECKEIPGICANGVCINQIGSFRCECPTGFSYNDLLLVCEDIDECSNGDNLCQRNADCINSPGSYRCECAAGFKLSPNGACVDRNECLEIPNVCSHGLCVDLQGSYQCICHNGFKASQDQTMCMDVDECERHPCGNGTCKNTVGSYNCLCYPGFELTHNNDCLDIDECSSFFGQVCRNGRCFNEIGSFKCLCNEGYELTPDGKNCIDTNECVALPGSCSPGTCQNLEGSFRCICPPGYEVKSENCIDINECDEDPNICLFGSCTNTPGGFQCLCPPGFVLSDNGRRCFDTRQSFCFTNFENGKCSVPKAFNTTKAKCCCSKMPGEGWGDPCELCPKDDEVAFQDLCPYGHGTVPSLHDTREDVNECLESPGICSNGQCINTDGSFRCECPMGYNLDYTGVRCVDTDECSIGNPCGNGTCTNVIGSFECNCNEGFEPGPMMNCEDINECAQNPLLCAFRCMNTFGSYECTCPIGYALREDQKMCKDLDECAEGLHDCESRGMMCKNLIGTFMCICPPGMARRPDGEGCVDENECRTKPGICENGRCVNIIGSYRCECNEGFQSSSSGTECLDNRQGLCFAEVLQTICQMASSSRNLVTKSECCCDGGRGWGHQCELCPLPGTAQYKKICPHGPGYTTDGRDIDECKVMPNLCTNGQCINTMGSFRCFCKVGYTTDISGTSCIDLDECSQSPKPCNYICKNTEGSYQCSCPRGYVLQEDGKTCKDLDECQTKQHNCQFLCVNTLGGFTCKCPPGFTQHHTACIDNNECGSQPSLCGAKGICQNTPGSFSCECQRGFSLDATGLNCEDVDECDGNHRCQHGCQNILGGYRCGCPQGYIQHYQWNQCVDENECSNPNACGSASCYNTLGSYKCACPSGFSFDQFSSACHDVNECSSSKNPCNYGCSNTEGGYLCGCPPGYYRVGQGHCVSGMGFNKGQYLSLDTEVDEENALSPEACYECKINGYSKKDSRQKRSIHEPDPTAVEQISLESVDMDSPVNMKFNLSHLGSKEHILELRPAIQPLNNHIRYVISQGNDDSVFRIHQRNGLSYLHTAKKKLMPGTYTLEITSIPLYKKKELKKLEESNEDDYLLGELGEALRMRLQIQLY",
+  "domains": [
+    {
+      "start": 2,
+      "end": 33,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 60,
+      "end": 80,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 229,
+      "end": 249,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 266,
+      "end": 299,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 369,
+      "end": 436,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 464,
+      "end": 517,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 752,
+      "end": 793,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 899,
+      "end": 919,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 948,
+      "end": 968,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1048,
+      "end": 1099,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1136,
+      "end": 1170,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1203,
+      "end": 1223,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1299,
+      "end": 1341,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1368,
+      "end": 1388,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1440,
+      "end": 1474,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1499,
+      "end": 1543,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1562,
+      "end": 1589,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1629,
+      "end": 1649,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1695,
+      "end": 1729,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1754,
+      "end": 1826,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1865,
+      "end": 1885,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1908,
+      "end": 1928,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1955,
+      "end": 1997,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2032,
+      "end": 2052,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2105,
+      "end": 2125,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2162,
+      "end": 2182,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2202,
+      "end": 2222,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2248,
+      "end": 2305,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2380,
+      "end": 2411,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2433,
+      "end": 2472,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2653,
+      "end": 2699,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2734,
+      "end": 2773,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2789,
+      "end": 2881,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2892,
+      "end": 2912,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1,
+      "end": 114,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 346,
+      "end": 421,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 678,
+      "end": 734,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1033,
+      "end": 1127,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1731,
+      "end": 1776,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 2084,
+      "end": 2136,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 2306,
+      "end": 2347,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 2739,
+      "end": 2811,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 2822,
+      "end": 2912,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "flexible_loops": [
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43
+  ],
+  "interface_regions": [
+    6,
+    2911
+  ],
+  "gene": "FBN2",
+  "cached_at": "2025-01-27"
+}

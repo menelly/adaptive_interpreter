@@ -20,6 +20,8 @@
       "TRANSPORTER",
       "SCAFFOLD_ADAPTOR",
       "SIGNALING_REGULATOR",
+      "TUMOR_SUPPRESSOR",
+      "ONCOGENE",
       "AUTOSOMAL_RECESSIVE",
       "STRUCTURAL",
       "GENERAL"
@@ -119,7 +121,11 @@
       "collagen type v": 2.0
     },
     "COLLAGEN_NETWORK": {
-      "collagen type iv": 2.0
+      "collagen type iv": 2.0,
+      "type iv collagen": 2.0,
+      "glomerular basement": 1.8,
+      "basement membrane": 1.8,
+      "network forming": 1.5
     },
     "COLLAGEN_ANCHORING": {
       "collagen type vii": 2.0,
@@ -128,14 +134,23 @@
     "COLLAGEN_FACIT": {
       "collagen type ix": 2.0,
       "collagen type xii": 2.0,
-      "collagen type xiv": 2.0
+      "collagen type xiv": 2.0,
+      "type xii collagen": 2.0,
+      "type ix collagen": 2.0,
+      "type xiv collagen": 2.0,
+      "fibril-associated": 1.8,
+      "interacts with type i": 1.5
     },
     "FIBRILLIN": {
       "fibrillin": 2.0,
       "microfibril": 1.5
     },
     "ELASTIN": {
-      "elastin": 2.0
+      "elastin": 2.0,
+      "aorta": 1.5,
+      "nuchal ligament": 1.5,
+      "structural protein": 1.5,
+      "expand rapidly": 1.2
     },
     "INTERMEDIATE_FILAMENT": {
       "keratin": 2.0,
@@ -181,6 +196,10 @@
       "hydroxylase": 1.5,
       "oxidase": 1.5,
       "transferase": 1.5,
+      "galactosidase": 1.8,
+      "cleaves": 1.5,
+      "galactosyl": 1.5,
+      "gangliosides": 1.5,
       "enzyme": 1.0,
       "cofactor": 1.0,
       "metabolic": 1.5,

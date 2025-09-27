@@ -1,0 +1,23 @@
+{
+  "analysis_date": "2025-01-27",
+  "models_analyzed": [
+    "collagen_network",
+    "collagen_facit",
+    "elastin_fibrillin",
+    "signaling_regulator",
+    "cytoskeleton",
+    "collagen_anchoring",
+    "scaffold_adaptor",
+    "transporter",
+    "general",
+    "ion_channel",
+    "collagen_fibrillar",
+    "tumor_suppressor",
+    "metabolic_enzyme"
+  ],
+  "total_cross_patterns": 17,
+  "universal_rules_count": 1,
+  "top_universal_features": [
+    "feature_16"
+  ]
+}

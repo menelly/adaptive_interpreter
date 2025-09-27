@@ -1,0 +1,44 @@
+{
+  "uniprot_id": "P02545",
+  "sequence_length": 664,
+  "function": "Lamins are intermediate filament proteins that assemble into a filamentous meshwork, and which constitute the major components of the nuclear lamina, a fibrous layer on the nucleoplasmic side of the inner nuclear membrane (PubMed:10080180, PubMed:10580070, PubMed:10587585, PubMed:10814726, PubMed:11799477, PubMed:12075506, PubMed:12927431, PubMed:15317753, PubMed:18551513, PubMed:18611980, PubMed:2188730, PubMed:22431096, PubMed:2344612, PubMed:23666920, PubMed:24741066, PubMed:31434876, PubMed:31548606, PubMed:37788673, PubMed:37832547). Lamins provide a framework for the nuclear envelope, bridging the nuclear envelope and chromatin, thereby playing an important role in nuclear assembly, chromatin organization, nuclear membrane and telomere dynamics (PubMed:10080180, PubMed:10580070, PubMed:10587585, PubMed:10814726, PubMed:11799477, PubMed:12075506, PubMed:12927431, PubMed:15317753, PubMed:18551513, PubMed:18611980, PubMed:22431096, PubMed:23666920, PubMed:24741066, PubMed:31548606, PubMed:37788673, PubMed:37832547). Lamin A and C also regulate matrix stiffness by conferring nuclear mechanical properties (PubMed:23990565, PubMed:25127216). The structural integrity of the lamina is strictly controlled by the cell cycle, as seen by the disintegration and formation of the nuclear envelope in prophase and telophase, respectively (PubMed:2188730, PubMed:2344612). Lamin A and C are present in equal amounts in the lamina of mammals (PubMed:10080180, PubMed:10580070, PubMed:10587585, PubMed:10814726, PubMed:11799477, PubMed:12075506, PubMed:12927431, PubMed:15317753, PubMed:18551513, PubMed:18611980, PubMed:22431096, PubMed:23666920, PubMed:31548606). Also invoved in DNA repair: recruited by DNA repair proteins XRCC4 and IFFO1 to the DNA double-strand breaks (DSBs) to prevent chromosome translocation by immobilizing broken DNA ends (PubMed:31548606). Required for normal development of peripheral nervous system and skeletal muscle and for muscle satellite cell proliferation (PubMed:10080180, PubMed:10814726, PubMed:11799477, PubMed:18551513, PubMed:22431096). Required for osteoblastogenesis and bone formation (PubMed:12075506, PubMed:15317753, PubMed:18611980). Also prevents fat infiltration of muscle and bone marrow, helping to maintain the volume and strength of skeletal muscle and bone (PubMed:10587585). Required for cardiac homeostasis (PubMed:10580070, PubMed:12927431, PubMed:18611980, PubMed:23666920)",
+  "sequence": "METPSQRRATRSGAQASSTPLSPTRITRLQEKEDLQELNDRLAVYIDRVRSLETENAGLRLRITESEEVVSREVSGIKAAYEAELGDARKTLDSVAKERARLQLELSKVREEFKELKARNTKKEGDLIAAQARLKDLEALLNSKEAALSTALSEKRTLEGELHDLRGQVAKLEAALGEAKKQLQDEMLRRVDAENRLQTMKEELDFQKNIYSEELRETKRRHETRLVEIDNGKQREFESRLADALQELRAQHEDQVEQYKKELEKTYSAKLDNARQSAERNSNLVGAAHEELQQSRIRIDSLSAQLSQLQKQLAAKEAKLRDLEDSLARERDTSRRLLAEKEREMAEMRARMQQQLDEYQELLDIKLALDMEIHAYRKLLEGEEERLRLSPSPTSQRSRGRASSHSSQTQGGGSVTKKRKLESTESRSSFSQHARTSGRVAVEEVDEEGKFVRLRNKSNEDQSMGNWQIKRQNGDDPLLTYRFPPKFTLKAGQVVTIWAAGAGATHSPPTDLVWKAQNTWGCGNSLRTALINSTGEEVAMRKLVRSVTVVEDDEDEDGDDLLHHHHGSHCSSSGDPAEYNLRSRTVLCGTCGQPADKASASGSGAQVGGPISSGSSASSVTVTRSYRSVGGSGGGSFGDNLVTRSYLLGNSSPRTQSPQNCSIM",
+  "domains": [
+    {
+      "start": 28,
+      "end": 393,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 464,
+      "end": 560,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 6,
+      "end": 496,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "flexible_loops": [
+    394,
+    395,
+    396,
+    397,
+    398,
+    399,
+    400,
+    401,
+    402,
+    403
+  ],
+  "interface_regions": [
+    38,
+    648
+  ],
+  "gene": "LMNA",
+  "cached_at": "2025-01-27"
+}

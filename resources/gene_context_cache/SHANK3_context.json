@@ -1,0 +1,206 @@
+{
+  "uniprot_id": "Q9BYB0",
+  "sequence_length": 1806,
+  "function": "Major scaffold postsynaptic density protein which interacts with multiple proteins and complexes to orchestrate the dendritic spine and synapse formation, maturation and maintenance. Interconnects receptors of the postsynaptic membrane including NMDA-type and metabotropic glutamate receptors via complexes with GKAP/PSD-95 and HOMER, respectively, and the actin-based cytoskeleton. Plays a role in the structural and functional organization of the dendritic spine and synaptic junction through the interaction with Arp2/3 and WAVE1 complex as well as the promotion of the F-actin clusters. By way of this control of actin dynamics, participates in the regulation of developing neurons growth cone motility and the NMDA receptor-signaling. Also modulates GRIA1 exocytosis and GRM5/MGLUR5 expression and signaling to control the AMPA and metabotropic glutamate receptor-mediated synaptic transmission and plasticity. May be required at an early stage of synapse formation and be inhibited by IGF1 to promote synapse maturation",
+  "sequence": "MQLSRAAAAAAAAPAEPPEPLSPAPAPAPAPPGPLPRSAADGAPAGGKGGPGRRAESPGAPFPGASGPGPGPGAGMDGPGASAVVVRVGIPDLQQTKCLRLDPAAPVWAAKQRVLCALNHSLQDALNYGLFQPPSRGRAGKFLDEERLLQEYPPNLDTPLPYLEFRYKRRVYAQNLIDDKQFAKLHTKANLKKFMDYVQLHSTDKVARLLDKGLDPNFHDPDSGECPLSLAAQLDNATDLLKVLKNGGAHLDFRTRDGLTAVHCATRQRNAAALTTLLDLGASPDYKDSRGLTPLYHSALGGGDALCCELLLHDHAQLGITDENGWQEIHQACRFGHVQHLEHLLFYGADMGAQNASGNTALHICALYNQESCARVLLFRGANRDVRNYNSQTAFQVAIIAGNFELAEVIKTHKDSDVVPFRETPSYAKRRRLAGPSGLASPRPLQRSASDINLKGEAQPAASPGPSLRSLPHQLLLQRLQEEKDRDRDADQESNISGPLAGRAGQSKISPSGPGGPGPAPGPGPAPPAPPAPPPRGPKRKLYSAVPGRKFIAVKAHSPQGEGEIPLHRGEAVKVLSIGEGGFWEGTVKGRTGWFPADCVEEVQMRQHDTRPETREDRTKRLFRHYTVGSYDSLTSHSDYVIDDKVAVLQKRDHEGFGFVLRGAKAETPIEEFTPTPAFPALQYLESVDVEGVAWRAGLRTGDFLIEVNGVNVVKVGHKQVVALIRQGGNRLVMKVVSVTRKPEEDGARRRAPPPPKRAPSTTLTLRSKSMTAELEELASIRRRKGEKLDEMLAAAAEPTLRPDIADADSRAATVKQRPTSRRITPAEISSLFERQGLPGPEKLPGSLRKGIPRTKSVGEDEKLASLLEGRFPRSTSMQDPVREGRGIPPPPQTAPPPPPAPYYFDSGPPPAFSPPPPPGRAYDTVRSSFKPGLEARLGAGAAGLYEPGAALGPLPYPERQKRARSMIILQDSAPESGDAPRPPPAATPPERPKRRPRPPGPDSPYANLGAFSASLFAPSKPQRRKSPLVKQLQVEDAQERAALAVGSPGPGGGSFAREPSPTHRGPRPGGLDYGAGDGPGLAFGGPGPAKDRRLEERRRSTVFLSVGAIEGSAPGADLPSLQPSRSIDERLLGTGPTAGRDLLLPSPVSALKPLVSGPSLGPSGSTFIHPLTGKPLDPSSPLALALAARERALASQAPSRSPTPVHSPDADRPGPLFVDVQARDPERGSLASPAFSPRSPAWIPVPARREAEKVPREERKSPEDKKSMILSVLDTSLQRPAGLIVVHATSNGQEPSRLGGAEEERPGTPELAPAPMQSAAVAEPLPSPRAQPPGGTPADAGPGQGSSEEEPELVFAVNLPPAQLSSSDEETREELARIGLVPPPEEFANGVLLATPLAGPGPSPTTVPSPASGKPSSEPPPAPESAADSGVEEADTRSSSDPHLETTSTISTVSSMSTLSSESGELTDTHTSFADGHTFLLEKPPVPPKPKLKSPLGKGPVTFRDPLLKQSSDSELMAQQHHAASAGLASAAGPARPRYLFQRRSKLWGDPVESRGLPGPEDDKPTVISELSSRLQQLNKDTRSLGEEPVGGLGSLLDPAKKSPIAAARLFSSLGELSSISAQRSPGGPGGGASYSVRPSGRYPVARRAPSPVKPASLERVEGLGAGAGGAGRPFGLTPPTILKSSSLSIPHEPKEVRFVVRSVSARSRSPSPSPLPSPASGPGPGAPGPRRPFQQKPLQLWSKFDVGDWLESIHLGEHRDRFEDHEIEGAHLPALTKDDFVELGVTRVGHRMNIERALRQLDGS",
+  "domains": [
+    {
+      "start": 1,
+      "end": 41,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 71,
+      "end": 182,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 197,
+      "end": 257,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 282,
+      "end": 316,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 332,
+      "end": 424,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 451,
+      "end": 481,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 529,
+      "end": 562,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 631,
+      "end": 742,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 761,
+      "end": 825,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 858,
+      "end": 885,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 923,
+      "end": 977,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1004,
+      "end": 1055,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1100,
+      "end": 1127,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1142,
+      "end": 1204,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1218,
+      "end": 1252,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1268,
+      "end": 1332,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1378,
+      "end": 1405,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1457,
+      "end": 1477,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1515,
+      "end": 1546,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1562,
+      "end": 1628,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1640,
+      "end": 1711,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1769,
+      "end": 1802,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 108,
+      "end": 293,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 375,
+      "end": 510,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 528,
+      "end": 659,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 692,
+      "end": 895,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 924,
+      "end": 970,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 994,
+      "end": 1133,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1211,
+      "end": 1299,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1466,
+      "end": 1802,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "flexible_loops": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "interface_regions": [
+    1,
+    1800
+  ],
+  "gene": "SHANK3",
+  "cached_at": "2025-01-27"
+}

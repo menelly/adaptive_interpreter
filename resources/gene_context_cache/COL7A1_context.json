@@ -1,0 +1,150 @@
+{
+  "uniprot_id": "Q02388",
+  "sequence_length": 2944,
+  "function": "Stratified squamous epithelial basement membrane protein that forms anchoring fibrils which may contribute to epithelial basement membrane organization and adherence by interacting with extracellular matrix (ECM) proteins such as type IV collagen",
+  "sequence": "MTLRLLVAALCAGILAEAPRVRAQHRERVTCTRLYAADIVFLLDGSSSIGRSNFREVRSFLEGLVLPFSGAASAQGVRFATVQYSDDPRTEFGLDALGSGGDVIRAIRELSYKGGNTRTGAAILHVADHVFLPQLARPGVPKVCILITDGKSQDLVDTAAQRLKGQGVKLFAVGIKNADPEELKRVASQPTSDFFFFVNDFSILRTLLPLVSRRVCTTAGGVPVTRPPDDSTSAPRDLVLSEPSSQSLRVQWTAASGPVTGYKVQYTPLTGLGQPLPSERQEVNVPAGETSVRLRGLRPLTEYQVTVIALYANSIGEAVSGTARTTALEGPELTIQNTTAHSLLVAWRSVPGATGYRVTWRVLSGGPTQQQELGPGQGSVLLRDLEPGTDYEVTVSTLFGRSVGPATSLMARTDASVEQTLRPVILGPTSILLSWNLVPEARGYRLEWRRETGLEPPQKVVLPSDVTRYQLDGLQPGTEYRLTLYTLLEGHEVATPATVVPTGPELPVSPVTDLQATELPGQRVRVSWSPVPGATQYRIIVRSTQGVERTLVLPGSQTAFDLDDVQAGLSYTVRVSARVGPREGSASVLTVRREPETPLAVPGLRVVVSDATRVRVAWGPVPGASGFRISWSTGSGPESSQTLPPDSTATDITGLQPGTTYQVAVSVLRGREEGPAAVIVARTDPLGPVRTVHVTQASSSSVTITWTRVPGATGYRVSWHSAHGPEKSQLVSGEATVAELDGLEPDTEYTVHVRAHVAGVDGPPASVVVRTAPEPVGRVSRLQILNASSDVLRITWVGVTGATAYRLAWGRSEGGPMRHQILPGNTDSAEIRGLEGGVSYSVRVTALVGDREGTPVSIVVTTPPEAPPALGTLHVVQRGEHSLRLRWEPVPRAQGFLLHWQPEGGQEQSRVLGPELSSYHLDGLEPATQYRVRLSVLGPAGEGPSAEVTARTESPRVPSIELRVVDTSIDSVTLAWTPVSRASSYILSWRPLRGPGQEVPGSPQTLPGISSSQRVTGLEPGVSYIFSLTPVLDGVRGPEASVTQTPVCPRGLADVVFLPHATQDNAHRAEATRRVLERLVLALGPLGPQAVQVGLLSYSHRPSPLFPLNGSHDLGIILQRIRDMPYMDPSGNNLGTAVVTAHRYMLAPDAPGRRQHVPGVMVLLVDEPLRGDIFSPIREAQASGLNVVMLGMAGADPEQLRRLAPGMDSVQTFFAVDDGPSLDQAVSGLATALCQASFTTQPRPEPCPVYCPKGQKGEPGEMGLRGQVGPPGDPGLPGRTGAPGPQGPPGSATAKGERGFPGADGRPGSPGRAGNPGTPGAPGLKGSPGLPGPRGDPGERGPRGPKGEPGAPGQVIGGEGPGLPGRKGDPGPSGPPGPRGPLGDPGPRGPPGLPGTAMKGDKGDRGERGPPGPGEGGIAPGEPGLPGLPGSPGPQGPVGPPGKKGEKGDSEDGAPGLPGQPGSPGEQGPRGPPGAIGPKGDRGFPGPLGEAGEKGERGPPGPAGSRGLPGVAGRPGAKGPEGPPGPTGRQGEKGEPGRPGDPAVVGPAVAGPKGEKGDVGPAGPRGATGVQGERGPPGLVLPGDPGPKGDPGDRGPIGLTGRAGPPGDSGPPGEKGDPGRPGPPGPVGPRGRDGEVGEKGDEGPPGDPGLPGKAGERGLRGAPGVRGPVGEKGDQGDPGEDGRNGSPGSSGPKGDRGEPGPPGPPGRLVDTGPGAREKGEPGDRGQEGPRGPKGDPGLPGAPGERGIEGFRGPPGPQGDPGVRGPAGEKGDRGPPGLDGRSGLDGKPGAAGPSGPNGAAGKAGDPGRDGLPGLRGEQGLPGPSGPPGLPGKPGEDGKPGLNGKNGEPGDPGEDGRKGEKGDSGASGREGRDGPKGERGAPGILGPQGPPGLPGPVGPPGQGFPGVPGGTGPKGDRGETGSKGEQGLPGERGLRGEPGSVPNVDRLLETAGIKASALREIVETWDESSGSFLPVPERRRGPKGDSGEQGPPGKEGPIGFPGERGLKGDRGDPGPQGPPGLALGERGPPGPSGLAGEPGKPGIPGLPGRAGGVGEAGRPGERGERGEKGERGEQGRDGPPGLPGTPGPPGPPGPKVSVDEPGPGLSGEQGPPGLKGAKGEPGSNGDQGPKGDRGVPGIKGDRGEPGPRGQDGNPGLPGERGMAGPEGKPGLQGPRGPPGPVGGHGDPGPPGAPGLAGPAGPQGPSGLKGEPGETGPPGRGLTGPTGAVGLPGPPGPSGLVGPQGSPGLPGQVGETGKPGAPGRDGASGKDGDRGSPGVPGSPGLPGPVGPKGEPGPTGAPGQAVVGLPGAKGEKGAPGGLAGDLVGEPGAKGDRGLPGPRGEKGEAGRAGEPGDPGEDGQKGAPGPKGFKGDPGVGVPGSPGPPGPPGVKGDLGLPGLPGAPGVVGFPGQTGPRGEMGQPGPSGERGLAGPPGREGIPGPLGPPGPPGSVGPPGASGLKGDKGDPGVGLPGPRGERGEPGIRGEDGRPGQEGPRGLTGPPGSRGERGEKGDVGSAGLKGDKGDSAVILGPPGPRGAKGDMGERGPRGLDGDKGPRGDNGDPGDKGSKGEPGDKGSAGLPGLRGLLGPQGQPGAAGIPGDPGSPGKDGVPGIRGEKGDVGFMGPRGLKGERGVKGACGLDGEKGDKGEAGPPGRPGLAGHKGEMGEPGVPGQSGAPGKEGLIGPKGDRGFDGQPGPKGDQGEKGERGTPGIGGFPGPSGNDGSAGPPGPPGSVGPRGPEGLQGQKGERGPPGERVVGAPGVPGAPGERGEQGRPGPAGPRGEKGEAALTEDDIRGFVRQEMSQHCACQGQFIASGSRPLPSYAADTAGSQLHAVPVLRVSHAEEEERVPPEDDEYSEYSEYSVEEYQDPEAPWDSDDPCSLPLDEGSCTAYTLRWYHRAVTGSTEACHPFVYGGCGGNANRFGTREACERRCPPRVVQSQGTGTAQD",
+  "domains": [
+    {
+      "start": 1,
+      "end": 454,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 471,
+      "end": 637,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 661,
+      "end": 732,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 743,
+      "end": 814,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 831,
+      "end": 1246,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1545,
+      "end": 1565,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1888,
+      "end": 1908,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1932,
+      "end": 1976,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2034,
+      "end": 2061,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2305,
+      "end": 2325,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2616,
+      "end": 2636,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2814,
+      "end": 2841,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2880,
+      "end": 2913,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1,
+      "end": 65,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 103,
+      "end": 215,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 411,
+      "end": 484,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 566,
+      "end": 631,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1918,
+      "end": 1990,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 2591,
+      "end": 2645,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 2889,
+      "end": 2929,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "collagen_repeats": {
+    "start": 1254,
+    "end": 1292
+  },
+  "flexible_loops": [
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75
+  ],
+  "interface_regions": [
+    1,
+    2909
+  ],
+  "gene": "COL7A1",
+  "cached_at": "2025-01-27"
+}

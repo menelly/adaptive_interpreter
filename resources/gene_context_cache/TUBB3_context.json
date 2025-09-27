@@ -1,0 +1,44 @@
+{
+  "uniprot_id": "Q13509",
+  "sequence_length": 450,
+  "function": "Tubulin is the major constituent of microtubules, protein filaments consisting of alpha- and beta-tubulin heterodimers (PubMed:34996871, PubMed:38305685, PubMed:38609661). Microtubules grow by the addition of GTP-tubulin dimers to the microtubule end, where a stabilizing cap forms (PubMed:34996871, PubMed:38305685, PubMed:38609661). Below the cap, alpha-beta tubulin heterodimers are in GDP-bound state, owing to GTPase activity of alpha-tubulin (PubMed:34996871, PubMed:38609661). TUBB3 plays a critical role in proper axon guidance and maintenance (PubMed:20074521). Binding of NTN1/Netrin-1 to its receptor UNC5C might cause dissociation of UNC5C from polymerized TUBB3 in microtubules and thereby lead to increased microtubule dynamics and axon repulsion (PubMed:28483977). Plays a role in dorsal root ganglion axon projection towards the spinal cord (PubMed:28483977)",
+  "sequence": "MREIVHIQAGQCGNQIGAKFWEVISDEHGIDPSGNYVGDSDLQLERISVYYNEASSHKYVPRAILVDLEPGTMDSVRSGAFGHLFRPDNFIFGQSGAGNNWAKGHYTEGAELVDSVLDVVRKECENCDCLQGFQLTHSLGGGTGSGMGTLLISKVREEYPDRIMNTFSVVPSPKVSDTVVEPYNATLSIHQLVENTDETYCIDNEALYDICFRTLKLATPTYGDLNHLVSATMSGVTTSLRFPGQLNADLRKLAVNMVPFPRLHFFMPGFAPLTARGSQQYRALTVPELTQQMFDAKNMMAACDPRHGRYLTVATVFRGRMSMKEVDEQMLAIQSKNSSYFVEWIPNNVKVAVCDIPPRGLKMSSTFIGNSTAIQELFKRISEQFTAMFRRKAFLHWYTGEGMDEMEFTEAESNMNDLVSEYQQYQDATAEEEGEMYEDDEEESEAQGPK",
+  "domains": [
+    {
+      "start": 4,
+      "end": 136,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 152,
+      "end": 435,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 281,
+      "end": 401,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "flexible_loops": [
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146
+  ],
+  "interface_regions": [
+    1,
+    400
+  ],
+  "gene": "TUBB3",
+  "cached_at": "2025-01-27"
+}

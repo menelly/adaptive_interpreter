@@ -1,0 +1,50 @@
+{
+  "uniprot_id": "P34059",
+  "sequence_length": 522,
+  "function": "",
+  "sequence": "MAAVVAATRWWQLLLVLSAAGMGASGAPQPPNILLLLMDDMGWGDLGVYGEPSRETPNLDRMAAEGLLFPNFYSANPLCSPSRAALLTGRLPIRNGFYTTNAHARNAYTPQEIVGGIPDSEQLLPELLKKAGYVSKIVGKWHLGHRPQFHPLKHGFDEWFGSPNCHFGPYDNKARPNIPVYRDWEMVGRYYEEFPINLKTGEANLTQIYLQEALDFIKRQARHHPFFLYWAVDATHAPVYASKPFLGTSQRGRYGDAVREIDDSIGKILELLQDLHVADNTFVFFTSDNGAALISAPEQGGSNGPFLCGKQTTFEGGMREPALAWWPGHVTAGQVSHQLGSIMDLFTTSLALAGLTPPSDRAIDGLNLLPTLLQGRLMDRPIFYYRGDTLMAATLGQHKAHFWTWTNSWENFRQGIDFCPGQNVSGVTTHNLEDHTKLPLIFHLGRDPGERFPLSFASAEYQEALSRITSVVQQHQEALVPAQPQLNVCNWAVMNWAPPGCEKLGKCLTPPESIPKKCLWSH",
+  "domains": [
+    {
+      "start": 1,
+      "end": 302,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 315,
+      "end": 514,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 114,
+      "end": 175,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 214,
+      "end": 257,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "flexible_loops": [
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185
+  ],
+  "interface_regions": [
+    1,
+    499
+  ],
+  "gene": "GALNS",
+  "cached_at": "2025-01-27"
+}

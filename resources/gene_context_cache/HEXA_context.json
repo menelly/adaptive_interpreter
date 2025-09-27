@@ -1,0 +1,62 @@
+{
+  "uniprot_id": "P06865",
+  "sequence_length": 529,
+  "function": "Hydrolyzes the non-reducing end N-acetyl-D-hexosamine and/or sulfated N-acetyl-D-hexosamine of glycoconjugates, such as the oligosaccharide moieties from proteins and neutral glycolipids, or from certain mucopolysaccharides (PubMed:11707436, PubMed:8123671, PubMed:8672428, PubMed:9694901). The isozyme S is as active as the isozyme A on the anionic bis-sulfated glycans, the chondroitin-6-sulfate trisaccharide (C6S-3), and the dermatan sulfate pentasaccharide, and the sulfated glycosphingolipid SM2 (PubMed:11707436). The isozyme B does not hydrolyze each of these substrates, however hydrolyzes efficiently neutral oligosaccharide (PubMed:11707436). Only the isozyme A is responsible for the degradation of GM2 gangliosides in the presence of GM2A (PubMed:8123671, PubMed:8672428, PubMed:9694901)",
+  "sequence": "MTSSRLWFSLLLAAAFAGRATALWPWPQNFQTSDQRYVLYPNNFQFQYDVSSAAQPGCSVLDEAFQRYRDLLFGSGSWPRPYLTGKRHTLEKNVLVVSVVTPGCNQLPTLESVENYTLTINDDQCLLLSETVWGALRGLETFSQLVWKSAEGTFFINKTEIEDFPRFPHRGLLLDTSRHYLPLSSILDTLDVMAYNKLNVFHWHLVDDPSFPYESFTFPELMRKGSYNPVTHIYTAQDVKEVIEYARLRGIRVLAEFDTPGHTLSWGPGIPGLLTPCYSGSEPSGTFGPVNPSLNNTYEFMSTFFLEVSSVFPDFYLHLGGDEVDFTCWKSNPEIQDFMRKKGFGEDFKQLESFYIQTLLDIVSSYGKGYVVWQEVFDNKVKIQPDTIIQVWREDIPVNYMKELELVTKAGFRALLSAPWYLNRISYGPDWKDFYIVEPLAFEGTPEQKALVIGGEACMWGEYVDNTNLVPRLWPRAGAVAERLWSNKLTSDLTFAYERLSHFRCELLRRGVQAQPLNVGFCEQEFEQT",
+  "domains": [
+    {
+      "start": 1,
+      "end": 263,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 284,
+      "end": 527,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 53,
+      "end": 106,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 213,
+      "end": 262,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 329,
+      "end": 432,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 465,
+      "end": 522,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "flexible_loops": [
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116
+  ],
+  "interface_regions": [
+    4,
+    501
+  ],
+  "gene": "HEXA",
+  "cached_at": "2025-01-27"
+}
