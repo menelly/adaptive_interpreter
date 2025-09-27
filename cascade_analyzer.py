@@ -31,7 +31,8 @@ from analyzers.gof_variant_analyzer import GOFVariantAnalyzer
 from nova_dn.alphafold_sequence import AlphaFoldSequenceExtractor
 from nova_dn.sequence_manager import SequenceManager
 from biological_router import BiologicalRouter
-from proline_ml_integrator import ProlineMLIntegrator  # 🔥 REVOLUTIONARY ML SYSTEM!
+from proline_ml_integrator import ProlineMLIntegrator
+from gly_cys_simple_integrator import SimplifiedGlyCysIntegrator  # 🔥 REVOLUTIONARY ML SYSTEM!
 from analyzers.conservation_database import ConservationDatabase  # 🧬 EVOLUTIONARY INTELLIGENCE!
 
 
@@ -90,6 +91,7 @@ class CascadeAnalyzer:
         self.sequence_manager = SequenceManager()
         self.biological_router = BiologicalRouter()  # 🧬 NEW: Smart routing!
         self.proline_ml = ProlineMLIntegrator(alphafold_path=alphafold_path)  # 🔥 REVOLUTIONARY ML!
+        self.gly_cys_ml = SimplifiedGlyCysIntegrator()  # 🧬 REVOLUTIONARY GLY/CYS ML SYSTEM!
         self.conservation_db = ConservationDatabase()  # 🧬 EVOLUTIONARY INTELLIGENCE!
         self.hotspot_db = HotspotDatabase()  # 🔥 HOTSPOT INTELLIGENCE!
         self.temp_files = []
@@ -502,10 +504,18 @@ class CascadeAnalyzer:
 
             # 🔥 REN'S BRILLIANT FIX: Apply conservation to FINAL score (fair competition!)
             final_score_with_conservation = final_filtered_score * conservation_multiplier
-            results['final_score'] = final_score_with_conservation
+
+            # 🧬🔥 ACE'S REVOLUTIONARY GLY/CYS ML SYSTEM: Apply biological intelligence!
+            gly_cys_multiplier = self._get_gly_cys_multiplier(gene, variant, gnomad_freq)
+            final_score_with_gly_cys = final_score_with_conservation * gly_cys_multiplier
+
+            results['final_score'] = final_score_with_gly_cys
             results['conservation_multiplier_applied'] = conservation_multiplier
+            results['gly_cys_multiplier_applied'] = gly_cys_multiplier
 
             print(f"🧬 CONSERVATION APPLIED TO FINAL: {final_filtered_score:.3f} × {conservation_multiplier:.1f}x = {final_score_with_conservation:.3f}")
+            if gly_cys_multiplier != 1.0:
+                print(f"🔥 GLY/CYS BIOLOGICAL INTELLIGENCE: {final_score_with_conservation:.3f} × {gly_cys_multiplier:.3f}x = {final_score_with_gly_cys:.3f}")
 
             # Update classification based on conservation-boosted final score
             raw_classification = self.interpret_score(final_score_with_conservation)
@@ -729,6 +739,47 @@ class CascadeAnalyzer:
 
         else:
             return 1.0  # Common variants don't get frequency boost
+
+    def _get_gly_cys_multiplier(self, gene: str, variant: str, gnomad_freq: float = 0.0) -> float:
+        """
+        🧬🔥 REVOLUTIONARY GLY/CYS BIOLOGICAL INTELLIGENCE SYSTEM
+
+        Replaces hardcoded Gly/Cys penalties with context-aware biological intelligence!
+        Built by Ace following the successful Proline ML pattern.
+
+        Args:
+            gene: Gene symbol (e.g., 'COL1A1', 'FBN1')
+            variant: Variant in p.RefPosAlt format (e.g., 'p.G893A', 'p.C628Y')
+            gnomad_freq: Population frequency (0.0-1.0)
+
+        Returns:
+            Gly/Cys multiplier (1.0-2.8x based on biological context)
+        """
+        try:
+            # Parse variant to get amino acids and position
+            import re
+            match = re.match(r'p\.([A-Z])(\d+)([A-Z])', variant)
+            if not match:
+                return 1.0
+
+            ref_aa, pos_str, alt_aa = match.groups()
+            position = int(pos_str)
+
+            # Only apply to Gly/Cys substitutions
+            if ref_aa not in ['G', 'C'] and alt_aa not in ['G', 'C']:
+                return 1.0
+
+            # Get biological intelligence multiplier
+            multiplier = self.gly_cys_ml.get_gly_cys_multiplier(gene, position, ref_aa, alt_aa)
+
+            if multiplier != 1.0:
+                print(f"🧬🔥 GLY/CYS BIOLOGICAL INTELLIGENCE: {gene} {variant} -> {multiplier:.3f}x multiplier")
+
+            return multiplier
+
+        except Exception as e:
+            print(f"⚠️ Gly/Cys analysis failed for {gene} {variant}: {e}")
+            return 1.0
 
     def analyze_cascade(self, gene: str, variant: str, gnomad_freq: float = 0.0,
                        sequence: Optional[str] = None, variant_type: str = 'missense',
@@ -1280,8 +1331,14 @@ class CascadeAnalyzer:
             mult = result['conservation_multiplier_applied']
             conservation_indicator = f" 🧬 {mult:.1f}x"
 
+        # Gly/Cys biological intelligence indicator
+        gly_cys_indicator = ""
+        if result.get('gly_cys_multiplier_applied', 1.0) != 1.0:
+            mult = result['gly_cys_multiplier_applied']
+            gly_cys_indicator = f" 🔥 {mult:.3f}x"
+
         # Format final line
-        return f"{gene:8} {variant:12} | {score_summary:25} | {final_class:6} ({final_score:.3f}){hotspot_indicator}{conservation_indicator}"
+        return f"{gene:8} {variant:12} | {score_summary:25} | {final_class:6} ({final_score:.3f}){hotspot_indicator}{conservation_indicator}{gly_cys_indicator}"
 
     def print_human_summary(self, gene: str, variant: str, result: Dict, clinvar_expected: str = None):
         """Print clean human-readable summary"""
@@ -1314,6 +1371,11 @@ class CascadeAnalyzer:
         if result.get('conservation_multiplier_applied', 1.0) > 1.0:
             mult = result['conservation_multiplier_applied']
             print(f"🧬 CONSERVATION: {mult:.1f}x multiplier applied")
+
+        # Gly/Cys biological intelligence info
+        if result.get('gly_cys_multiplier_applied', 1.0) != 1.0:
+            mult = result['gly_cys_multiplier_applied']
+            print(f"🔥 GLY/CYS BIOLOGICAL INTELLIGENCE: {mult:.3f}x multiplier applied")
 
         # ClinVar comparison
         if clinvar_expected:
