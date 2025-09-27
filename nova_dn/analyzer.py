@@ -21,9 +21,9 @@ from .amino_acid_props import delta
 from .mechanisms import (
     score_interface_poisoning,
     score_active_site_jamming,
-    score_structural_lattice_disruption,
     score_trafficking_maturation,
 )
+from .lattice_disruption import analyze_lattice_disruption
 from .context import load_annotations_json, build_position_context
 try:
     from .universal_context import UniversalContext
@@ -180,9 +180,12 @@ class NovaDNAnalyzer:
             all_explanations["active_site_jamming"] = "mechanism filtered out"
 
         if "lattice_disruption" in relevant_mechanisms:
-            m_ld = score_structural_lattice_disruption(sequence, pos1, ref, alt, context)
-            mech_scores["lattice_disruption"] = m_ld[0]
-            all_explanations["lattice_disruption"] = m_ld[2]
+            # 🧬 NOVA'S UNIVERSAL LATTICE DISRUPTION SYSTEM
+            m_ld_score, m_ld_features, m_ld_explanation = analyze_lattice_disruption(sequence, pos1, ref, alt, context)
+            mech_scores["lattice_disruption"] = m_ld_score
+            all_explanations["lattice_disruption"] = m_ld_explanation
+            # Convert features to old format for compatibility
+            m_ld = (m_ld_score, m_ld_features, m_ld_explanation)
         else:
             mech_scores["lattice_disruption"] = 0.0
             all_explanations["lattice_disruption"] = "mechanism filtered out"

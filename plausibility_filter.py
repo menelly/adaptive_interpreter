@@ -28,14 +28,14 @@ PATHOGENICITY_RULES: Dict[str, Dict[str, float]] = {
     "ENZYME": {"LOF": 1.0, "DN": 1.0, "GOF": 0.0},
     "ION_CHANNEL": {"LOF": 1.0, "DN": 1.0, "GOF": 1.0},
     "STRUCTURAL": {"LOF": 1.0, "DN": 1.0, "GOF": 0.25},
-    # --- Collagen subclasses ---
-    "COLLAGEN_FIBRILLAR": {"LOF": 0.7, "DN": 1.35, "GOF": 0.02},
-    "COLLAGEN_NETWORK": {"LOF": 0.8, "DN": 1.3, "GOF": 0.02},
-    "COLLAGEN_ANCHORING": {"LOF": 1.0, "DN": 1.35, "GOF": 0.0},
-    "COLLAGEN_FACIT": {"LOF": 1.0, "DN": 1.1, "GOF": 0.05},
+    # --- Collagen subclasses (BALANCED for AD inheritance) ---
+    "COLLAGEN_FIBRILLAR": {"LOF": 0.85, "DN": 1.25, "GOF": 0.02},  # Balanced: DN favored but LOF viable
+    "COLLAGEN_NETWORK": {"LOF": 0.85, "DN": 1.25, "GOF": 0.02},    # Same balance
+    "COLLAGEN_ANCHORING": {"LOF": 0.9, "DN": 1.3, "GOF": 0.0},     # Slightly more LOF tolerance
+    "COLLAGEN_FACIT": {"LOF": 0.9, "DN": 1.15, "GOF": 0.05},       # Balanced
     # --- Newly added families ---
     "INTERMEDIATE_FILAMENT": {"LOF": 0.8, "DN": 1.35, "GOF": 0.0},
-    "FIBRILLIN": {"LOF": 0.9, "DN": 1.25, "GOF": 0.05},
+    "FIBRILLIN": {"LOF": 0.85, "DN": 1.2, "GOF": 0.05},  # Balanced for Marfan (AD with both LOF+DN)
     "ELASTIN": {"LOF": 1.2, "DN": 0.9, "GOF": 0.0},
     "CYTOSKELETON_POLYMER": {"LOF": 0.9, "DN": 1.25, "GOF": 0.1},
     "LAMIN": {"LOF": 1.0, "DN": 1.1, "GOF": 0.1},
@@ -45,7 +45,7 @@ PATHOGENICITY_RULES: Dict[str, Dict[str, float]] = {
     "TRANSCRIPTION_FACTOR": {"LOF": 1.0, "DN": 1.0, "GOF": 1.0},
     "TUMOR_SUPPRESSOR": {"LOF": 1.0, "DN": 1.0, "GOF": 0.25},
     "ONCOGENE": {"LOF": 1.0, "DN": 1.0, "GOF": 1.0},  # All mechanisms possible for oncogenes
-    "AUTOSOMAL_RECESSIVE": {"LOF": 1.2, "DN": 0.5, "GOF": 0.0},  # AR diseases: LOF boost - designed to lose function!
+    "AUTOSOMAL_RECESSIVE": {"LOF": 1.3, "DN": 0.4, "GOF": 0.0},  # AR diseases: STRONG LOF boost - designed to lose function!
     "MUSCULAR_DYSTROPHY": {"LOF": 1.0, "DN": 0.5, "GOF": 0.0},  # MD: Let GO terms handle AD vs AR distinction
     "RIBOSOMAL_PROTEIN": {"LOF": 1.0, "DN": 0.5, "GOF": 0.0},  # More ribosomes = good for growth
     "MOTOR_PROTEIN": {"LOF": 1.0, "DN": 1.0, "GOF": 0.25},  # Myosins: GOF rarely pathogenic
@@ -62,9 +62,51 @@ def classify_gene_family(gene_symbol: str, uniprot_function: str, go_terms: List
     """
     Classify gene into pathogenicity-relevant families.
     Uses GO terms + UniProt function + keyword parsing.
+
+    🧬 SMART INHERITANCE PATTERN DETECTION!
     """
     terms = [t.lower() for t in go_terms]
     function_lower = uniprot_function.lower()
+
+    # 🧬 SMART AR DETECTION (based on biological clues)
+    ar_disease_patterns = [
+        # Classic AR diseases
+        "cystic fibrosis", "cf", "cftr",
+        "stargardt", "abca4", "retinal dystrophy",
+        "muscular dystrophy", "limb-girdle", "fkrp", "dysferlin",
+        "sickle cell", "thalassemia", "hemoglobin",
+        "phenylketonuria", "pku", "phenylalanine hydroxylase",
+        "galactosemia", "galt", "galactose-1-phosphate",
+        "glycogen storage", "pompe", "gaucher",
+        # AR functional patterns
+        "enzyme deficiency", "metabolic disorder", "inborn error",
+        "recessive disorder", "autosomal recessive", "compound heterozygous"
+    ]
+
+    # Check if this looks like an AR gene
+    if any(pattern in function_lower for pattern in ar_disease_patterns):
+        return "AUTOSOMAL_RECESSIVE"
+
+    # 🧬 SMART AD STRUCTURAL DETECTION
+    ad_structural_patterns = [
+        # Classic AD structural diseases
+        "marfan", "fibrillin", "connective tissue",
+        "osteogenesis imperfecta", "brittle bone", "collagen",
+        "ehlers-danlos", "eds", "hypermobility",
+        "aortic dilatation", "aortic aneurysm",
+        # AD functional patterns
+        "dominant negative", "poison subunit", "haploinsufficiency",
+        "autosomal dominant", "dominant disorder"
+    ]
+
+    if any(pattern in function_lower for pattern in ad_structural_patterns):
+        # Further classify structural proteins
+        if "collagen" in function_lower:
+            return "COLLAGEN_FIBRILLAR"
+        elif "fibrillin" in function_lower:
+            return "FIBRILLIN"
+        else:
+            return "STRUCTURAL"
 
     # Check for oncogene keywords first (before general kinase check)
     # 🔥 FIXED: More specific keywords to avoid false positives like FBN1
@@ -95,10 +137,10 @@ def classify_gene_family(gene_symbol: str, uniprot_function: str, go_terms: List
     if any(keyword in function_lower for keyword in tumor_suppressor_keywords):
         return "TUMOR_SUPPRESSOR"
 
-    # Check for muscular dystrophy keywords first (specific disease mechanism)
+    # Check for muscular dystrophy keywords (🔥 FIXED: removed "muscle fiber" - too broad!)
     muscular_dystrophy_keywords = [
         "muscular dystrophy", "muscle dystrophy", "limb-girdle", "dysferlin",
-        "dystrophin", "sarcoglycan", "muscle membrane", "muscle fiber"
+        "dystrophin", "sarcoglycan", "muscle membrane"
     ]
     if any(keyword in function_lower for keyword in muscular_dystrophy_keywords):
         return "MUSCULAR_DYSTROPHY"
@@ -169,6 +211,14 @@ def classify_gene_family(gene_symbol: str, uniprot_function: str, go_terms: List
     # --- Negative regulators ---
     if any(keyword in function_lower for keyword in ["negative regulator", "repressor", "patched", "neurofibromin"]):
         return "NEGATIVE_REGULATOR"
+
+    # Check for ion channel keywords (🔥 ADDED: calcium channel detection for RYR1!)
+    ion_channel_keywords = [
+        "calcium channel", "sodium channel", "potassium channel", "chloride channel",
+        "ion channel", "calcium-activated", "voltage-gated", "ligand-gated"
+    ]
+    if any(keyword in function_lower for keyword in ion_channel_keywords):
+        return "ION_CHANNEL"
 
     # Check GO terms and function for other families
     if any("channel" in term or "transport" in term for term in terms):

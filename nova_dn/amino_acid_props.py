@@ -84,3 +84,26 @@ def delta(ref: str, alt: str) -> dict:
         "aromatic_loss": (ref.upper() in AROMATICS) and (alt.upper() not in AROMATICS),
     }
 
+
+# Helper functions for Nova's Universal Lattice Disruption Framework
+
+def get_amino_acid_volume_change(ref: str, alt: str) -> float:
+    """Get volume change in Å³ (positive = expansion, negative = contraction)."""
+    ref_props = get_props(ref)
+    alt_props = get_props(alt)
+    return alt_props["vol"] - ref_props["vol"]
+
+
+def get_charge_change(ref: str, alt: str) -> int:
+    """Get charge change (positive = more positive, negative = more negative)."""
+    ref_props = get_props(ref)
+    alt_props = get_props(alt)
+    return alt_props["chg"] - ref_props["chg"]
+
+
+def get_hydrophobicity_change(ref: str, alt: str) -> float:
+    """Get hydrophobicity change (positive = more hydrophobic)."""
+    ref_props = get_props(ref)
+    alt_props = get_props(alt)
+    return alt_props["hyd"] - ref_props["hyd"]
+

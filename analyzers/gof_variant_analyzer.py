@@ -159,18 +159,43 @@ class GOFVariantAnalyzer:
                         original_score, position, uniprot_id, gene_symbol
                     )
 
-                    # Update the result with domain-aware score
-                    result['gof_score'] = domain_aware_score
+                    # 🔥 REN'S BRILLIANT FIX: ADD ML PROLINE PANIC TO GOF TOO!
+                    ml_proline_multiplier = 1.0
+                    ref_aa = match.group(1)
+                    alt_aa = match.group(3)
+
+                    if ref_aa == 'P' or alt_aa == 'P':  # Proline substitution detected!
+                        try:
+                            # Import and use our revolutionary ML system
+                            from proline_ml_integrator import get_ml_proline_multiplier
+                            variant_str = f"p.{mutation}"
+                            ml_proline_multiplier = get_ml_proline_multiplier(gene_symbol, variant_str)
+                            logger.info(f"🔥 GOF ML PROLINE: {gene_symbol} {variant_str} -> ML multiplier = {ml_proline_multiplier:.3f}")
+
+                        except Exception as e:
+                            logger.warning(f"⚠️ GOF ML proline system error: {e}")
+                            # Fallback to conservative multiplier for GOF
+                            if ref_aa == 'P':  # Proline loss - less likely to cause GOF
+                                ml_proline_multiplier = 0.8  # Reduce GOF score
+                                logger.info(f"🔥 GOF PROLINE FALLBACK: {gene_symbol} {variant_str} -> fallback multiplier = {ml_proline_multiplier:.3f}")
+
+                    # Apply both domain awareness AND ML proline panic
+                    final_gof_score = domain_aware_score * ml_proline_multiplier
+
+                    # Update the result with all multipliers
+                    result['gof_score'] = min(final_gof_score, 1.0)
                     result['domain_multiplier'] = domain_multiplier
+                    result['ml_proline_multiplier'] = ml_proline_multiplier
                     result['original_gof_score'] = original_score
 
                     # Update prediction based on new score
-                    result['prediction'] = ('GOF_LIKELY' if domain_aware_score > 0.6 else
-                                          'GOF_POSSIBLE' if domain_aware_score > 0.3 else 'GOF_UNLIKELY')
+                    result['prediction'] = ('GOF_LIKELY' if result['gof_score'] > 0.6 else
+                                          'GOF_POSSIBLE' if result['gof_score'] > 0.3 else 'GOF_UNLIKELY')
 
             except Exception as e:
                 logger.warning(f"⚠️ Domain awareness application failed: {e}")
                 result['domain_multiplier'] = 1.0
+                result['ml_proline_multiplier'] = 1.0
 
         return result
 

@@ -255,13 +255,34 @@ class LOFAnalyzer:
             domain_multiplier = self._get_domain_multiplier(position, domain_context)
             print(f"🎯 Domain multiplier for {gene_symbol} position {position}: {domain_multiplier:.3f}")
 
+        # 🔥 REN'S BRILLIANT FIX: ADD ML PROLINE PANIC TO LOF TOO!
+        ml_proline_multiplier = 1.0
+        if mutation and len(mutation) >= 3:  # Format: "P840L"
+            ref_aa = mutation[0]
+            alt_aa = mutation[-1]
+
+            if ref_aa == 'P' or alt_aa == 'P':  # Proline substitution detected!
+                try:
+                    # Import and use our revolutionary ML system
+                    from proline_ml_integrator import get_ml_proline_multiplier
+                    variant_str = f"p.{mutation}"
+                    ml_proline_multiplier = get_ml_proline_multiplier(gene_symbol, variant_str)
+                    print(f"🔥 LOF ML PROLINE: {gene_symbol} {variant_str} -> ML multiplier = {ml_proline_multiplier:.3f}")
+
+                except Exception as e:
+                    print(f"⚠️ LOF ML proline system error: {e}")
+                    # Fallback to old hardcoded system if ML fails
+                    if ref_aa == 'P':  # Proline loss
+                        ml_proline_multiplier = 0.7  # Reduce LOF score (less destabilizing than expected)
+                        print(f"🔥 LOF PROLINE FALLBACK: {gene_symbol} {variant_str} -> fallback multiplier = {ml_proline_multiplier:.3f}")
+
         # Calculate overall LOF score with ALL multipliers
         base_lof_score = self._calculate_lof_score(
             stability_impact, conservation_impact, structural_impact, functional_impact
         )
 
-        # Apply ALL multipliers: conservation, smart, AND domain!
-        total_multiplier = smart_multiplier * conservation_multiplier * domain_multiplier
+        # Apply ALL multipliers: conservation, smart, domain, AND ML proline!
+        total_multiplier = smart_multiplier * conservation_multiplier * domain_multiplier * ml_proline_multiplier
         lof_score = base_lof_score * total_multiplier
 
         # Apply sequence mismatch handling if needed
@@ -283,6 +304,7 @@ class LOFAnalyzer:
             'smart_multiplier': smart_multiplier,
             'conservation_multiplier': conservation_multiplier,
             'domain_multiplier': domain_multiplier,  # 🎯 NEW! Domain awareness
+            'ml_proline_multiplier': ml_proline_multiplier,  # 🔥 NEW! ML proline panic
             'total_multiplier': total_multiplier,
             'stability_impact': stability_impact,
             'conservation_impact': conservation_impact,

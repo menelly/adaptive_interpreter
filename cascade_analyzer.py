@@ -35,6 +35,51 @@ from proline_ml_integrator import ProlineMLIntegrator  # 🔥 REVOLUTIONARY ML S
 from analyzers.conservation_database import ConservationDatabase  # 🧬 EVOLUTIONARY INTELLIGENCE!
 
 
+class HotspotDatabase:
+    """🔥 HOTSPOT INTELLIGENCE: Known pathogenic and activating regions"""
+
+    def __init__(self):
+        # Known hotspot regions from literature and our analysis
+        self.hotspots = {
+            # Collagen genes - glycine-rich regions are poison hotspots
+            'COL1A1': [
+                {'start': 359, 'end': 362, 'type': 'dominant_cluster', 'mechanism': 'collagen_poison', 'confidence': 0.9},
+                {'start': 988, 'end': 991, 'type': 'dominant_cluster', 'mechanism': 'collagen_poison', 'confidence': 0.8},
+            ],
+            'COL1A2': [
+                {'start': 359, 'end': 362, 'type': 'dominant_cluster', 'mechanism': 'collagen_poison', 'confidence': 0.9},
+            ],
+            # Ion channels - pore and gate regions
+            'SCN1A': [
+                {'start': 1616, 'end': 1620, 'type': 'activating_hotspot', 'mechanism': 'channel_disruption', 'confidence': 0.8},
+                {'start': 373, 'end': 375, 'type': 'dominant_cluster', 'mechanism': 'channel_poison', 'confidence': 0.7},
+            ],
+            'KCNQ2': [
+                {'start': 265, 'end': 267, 'type': 'activating_hotspot', 'mechanism': 'channel_disruption', 'confidence': 0.9},
+            ],
+            # Tumor suppressors - DNA binding domains
+            'TP53': [
+                {'start': 270, 'end': 280, 'type': 'dominant_cluster', 'mechanism': 'dna_binding_loss', 'confidence': 0.95},
+            ],
+            # Muscle genes - critical structural regions
+            'FKRP': [
+                {'start': 338, 'end': 340, 'type': 'dominant_cluster', 'mechanism': 'structural_disruption', 'confidence': 0.8},
+            ],
+        }
+
+    def get_hotspots(self, gene: str) -> List[Dict]:
+        """Get all hotspots for a gene"""
+        return self.hotspots.get(gene, [])
+
+    def check_variant_in_hotspot(self, gene: str, position: int) -> Optional[Dict]:
+        """Check if variant position overlaps any hotspot"""
+        hotspots = self.get_hotspots(gene)
+        for hotspot in hotspots:
+            if hotspot['start'] <= position <= hotspot['end']:
+                return hotspot
+        return None
+
+
 class CascadeAnalyzer:
     """Coordinates DN, LOF, and GOF analyzers for comprehensive pathogenicity analysis"""
     
@@ -46,6 +91,7 @@ class CascadeAnalyzer:
         self.biological_router = BiologicalRouter()  # 🧬 NEW: Smart routing!
         self.proline_ml = ProlineMLIntegrator(alphafold_path=alphafold_path)  # 🔥 REVOLUTIONARY ML!
         self.conservation_db = ConservationDatabase()  # 🧬 EVOLUTIONARY INTELLIGENCE!
+        self.hotspot_db = HotspotDatabase()  # 🔥 HOTSPOT INTELLIGENCE!
         self.temp_files = []
         
         # Gene -> UniProt mappings (expanded for biological routing)
@@ -109,6 +155,26 @@ class CascadeAnalyzer:
         # (BiologicalRouter already uses UniversalContext for gene annotation)
         uniprot_id = self.gene_to_uniprot.get(gene)  # Try hardcoded first for speed
         print(f"🔍 DEBUG: Initial uniprot_id for {gene}: {uniprot_id}")
+
+        # 🚨 CRITICAL CODON CHECK: Start/Stop codon variants are auto-pathogenic
+        critical_codon_result = self._check_critical_codons(variant, variant_type)
+        if critical_codon_result['is_critical']:
+            return {
+                'gene': gene,
+                'variant': variant,
+                'variant_type': variant_type,
+                'gnomad_freq': gnomad_freq,
+                'uniprot_id': uniprot_id,
+                'routing_info': {'reason': 'Critical codon override'},
+                'analyzers_run': ['CRITICAL_CODON'],
+                'scores': {'CRITICAL_CODON': 2.0},  # Maximum pathogenic score
+                'classifications': {'CRITICAL_CODON': 'P'},
+                'final_classification': 'P',
+                'final_score': 2.0,
+                'explanation': critical_codon_result['explanation'],
+                'critical_codon_override': True,
+                'status': 'SUCCESS'
+            }
 
         # 🧬 STEP 1: Biological Routing Decision
         routing_result = self.biological_router.route_variant(gene, variant, variant_type, uniprot_id)
@@ -186,7 +252,7 @@ class CascadeAnalyzer:
         }
 
         # 🧬 STEP 2: Get Conservation Multiplier (EVOLUTIONARY INTELLIGENCE!)
-        conservation_multiplier = self._get_conservation_multiplier(gene, variant, uniprot_id)
+        conservation_multiplier = self._get_conservation_multiplier(gene, variant, uniprot_id, gnomad_freq)
         print(f"🧬 Using conservation multiplier: {conservation_multiplier:.1f}x")
 
         # 🧬 STEP 3: Run Analyzers with LOF-First Logic
@@ -195,21 +261,23 @@ class CascadeAnalyzer:
         # 🔥 REN'S BRILLIANT INSIGHT: LOF first, skip GOF if protein is broken!
         lof_score = 0.0
 
-        # Always run LOF first (if requested)
+        # Always run LOF first (if requested) - NO CONSERVATION BOOST YET!
         if 'LOF' in analyzers_to_run:
             print(f"🔬 Running LOF analysis...")
             print(f"🔍 DEBUG: About to call _run_lof_analysis with gene={gene}, variant={variant}")
-            analyzer_results['LOF'] = self._run_lof_analysis(gene, variant, sequence, uniprot_id, conservation_multiplier=conservation_multiplier)
+            # 🔥 REN'S BRILLIANT FIX: No conservation boost here - apply at the end!
+            analyzer_results['LOF'] = self._run_lof_analysis(gene, variant, sequence, uniprot_id, conservation_multiplier=1.0)
             print(f"🔍 DEBUG: LOF analyzer returned: {analyzer_results['LOF']}")
 
             if analyzer_results['LOF']['success']:
                 lof_score = analyzer_results['LOF']['score']
-                print(f"🎯 LOF score: {lof_score:.3f}")
+                print(f"🎯 LOF score: {lof_score:.3f} (raw, before conservation)")
 
-        # Always run DN (can coexist with broken proteins - misfolded can still poison)
+        # Always run DN (can coexist with broken proteins - misfolded can still poison) - NO CONSERVATION BOOST YET!
         if 'DN' in analyzers_to_run:
             print(f"🧬 Running DN analysis...")
-            analyzer_results['DN'] = self._run_dn_analysis(gene, variant, sequence, uniprot_id, conservation_multiplier=conservation_multiplier)
+            # 🔥 REN'S BRILLIANT FIX: No conservation boost here - apply at the end!
+            analyzer_results['DN'] = self._run_dn_analysis(gene, variant, sequence, uniprot_id, conservation_multiplier=1.0)
 
         # 🔥 BIOLOGICAL LOGIC: Skip GOF if protein is definitely broken (LOF ≥ 0.5)
         if 'GOF' in analyzers_to_run:
@@ -223,7 +291,8 @@ class CascadeAnalyzer:
                 }
             else:
                 print(f"🔥 Running GOF analysis (LOF score {lof_score:.3f} < 0.5, protein might still be functional)...")
-                analyzer_results['GOF'] = self._run_gof_analysis(gene, variant, sequence, uniprot_id, conservation_multiplier=conservation_multiplier)
+                # 🔥 REN'S BRILLIANT FIX: No conservation boost here - apply at the end!
+                analyzer_results['GOF'] = self._run_gof_analysis(gene, variant, sequence, uniprot_id, conservation_multiplier=1.0)
 
         # Process results
         for analyzer, result in analyzer_results.items():
@@ -236,6 +305,19 @@ class CascadeAnalyzer:
                 results['scores'][analyzer] = 0.0
                 results['classifications'][analyzer] = 'ERROR'
                 print(f"   {analyzer} analysis failed: {result['error']}")
+
+        # 🔥 STEP 3.5: Apply NOVA-style hotspot boosts
+        hotspot_result = self._apply_hotspot_boost(gene, variant, results['scores'])
+        if hotspot_result['hotspot_info']:
+            # Update scores with hotspot boosts
+            results['scores'] = hotspot_result['scores']
+            results['hotspot_info'] = hotspot_result['hotspot_info']
+            # Recalculate classifications with boosted scores
+            for analyzer, score in results['scores'].items():
+                results['classifications'][analyzer] = self.interpret_score(score)
+                print(f"   🔥 {analyzer} boosted: {score:.3f} ({results['classifications'][analyzer]})")
+        else:
+            results['hotspot_info'] = None
 
         # 🧬 STEP 3: Biologically-Guided Final Classification
         valid_scores = {k: v for k, v in results['scores'].items() if v > 0}
@@ -283,7 +365,14 @@ class CascadeAnalyzer:
                 # Synergy wins - mixed mechanism is more dangerous
                 results['final_score'] = synergistic_score
                 results['final_classification'] = self.interpret_score(synergistic_score)
-                results['explanation'] = f"Mixed mechanism synergy (biological routing): {synergy_explanation}"
+
+                # Add hotspot information to explanation
+                explanation = f"Mixed mechanism synergy (biological routing): {synergy_explanation}"
+                if results.get('hotspot_info'):
+                    hotspot = results['hotspot_info']
+                    explanation += f" + Hotspot boost ({hotspot['hotspot_type']}: {hotspot['mechanism']})"
+                results['explanation'] = explanation
+
                 results['synergy_used'] = True
                 results['synergy_details'] = synergy_explanation
             elif primary_analyzer and primary_analyzer in valid_scores and valid_scores[primary_analyzer] == max_single_score:
@@ -409,17 +498,40 @@ class CascadeAnalyzer:
 
             # ALWAYS apply plausibility filter results - biological plausibility is critical!
             results['final_score_pre_filter'] = results['final_score']
-            results['final_score'] = final_filtered_score
+            results['final_score_pre_conservation'] = final_filtered_score
 
-            # Update classification based on filtered scores
-            if max_filtered_score >= 0.8:
-                results['final_classification'] = 'LP'
-            elif max_filtered_score >= 0.5:
-                results['final_classification'] = 'VUS-P'
-            elif max_filtered_score >= 0.3:
-                results['final_classification'] = 'VUS'
+            # 🔥 REN'S BRILLIANT FIX: Apply conservation to FINAL score (fair competition!)
+            final_score_with_conservation = final_filtered_score * conservation_multiplier
+            results['final_score'] = final_score_with_conservation
+            results['conservation_multiplier_applied'] = conservation_multiplier
+
+            print(f"🧬 CONSERVATION APPLIED TO FINAL: {final_filtered_score:.3f} × {conservation_multiplier:.1f}x = {final_score_with_conservation:.3f}")
+
+            # Update classification based on conservation-boosted final score
+            raw_classification = self.interpret_score(final_score_with_conservation)
+
+            # 🔥 REN'S BRILLIANT CONSERVATION-AWARE CLASSIFICATION
+            # If conservation multiplier is exactly 1.0, we have no conservation data - be conservative!
+            if conservation_multiplier == 1.0:
+                print(f"⚠️ No conservation data available (1.0x multiplier) - applying conservative classification")
+
+                if raw_classification in ['B', 'LB']:
+                    # Upgrade benign calls to VUS when we lack conservation data
+                    results['final_classification'] = 'VUS'
+                    results['explanation'] += " | Upgraded B/LB→VUS due to missing conservation data"
+
+                elif raw_classification in ['P', 'LP']:
+                    # Downgrade pathogenic calls to VUS-P when we lack conservation data
+                    results['final_classification'] = 'VUS-P'
+                    results['explanation'] += " | Downgraded P/LP→VUS-P due to missing conservation data"
+
+                else:
+                    # VUS stays VUS, VUS-P stays VUS-P
+                    results['final_classification'] = raw_classification
+                    results['explanation'] += " | Classification maintained despite missing conservation data"
             else:
-                results['final_classification'] = 'LB'
+                # We have real conservation data - trust the classification
+                results['final_classification'] = raw_classification
 
             results['explanation'] += f" | Plausibility filter applied (gene family: {results['gene_family']})"
 
@@ -432,7 +544,7 @@ class CascadeAnalyzer:
 
         return results
 
-    def _get_conservation_multiplier(self, gene: str, variant: str, uniprot_id: str) -> float:
+    def _get_conservation_multiplier(self, gene: str, variant: str, uniprot_id: str, gnomad_freq: float = 0.0) -> float:
         """
         🧬 EVOLUTIONARY INTELLIGENCE: Get conservation-based multiplier
 
@@ -506,6 +618,13 @@ class CascadeAnalyzer:
 
             if conservation_data.get('error'):
                 print(f"⚠️ Conservation lookup failed for {gene} {variant}: {conservation_data['error']}")
+
+                # 🔥 FALLBACK: Use frequency-based conservation for ion channels
+                frequency_multiplier = self._get_frequency_based_conservation(gene, gnomad_freq)
+                if frequency_multiplier > 1.0:
+                    print(f"🧬 Using frequency-based conservation fallback: {frequency_multiplier:.1f}x")
+                    return frequency_multiplier
+
                 return 1.0
 
             conservation_scores = conservation_data.get('conservation_scores')
@@ -521,7 +640,7 @@ class CascadeAnalyzer:
             print(f"🧬 Conservation for {gene} {variant}: phyloP={phylop_score:.2f}, phastCons={phastcons_score:.2f}, combined={combined_score:.3f}")
 
             # Convert phyloP score to multiplier (phyloP ranges from -20 to +20, positive = conserved)
-            # 🔥 UPDATED SCALING: More aggressive for ultra-conserved positions!
+            # 🔥 REN'S BRILLIANT FIX: Never use exactly 1.0 for real data (reserved for "no data")
             if phylop_score >= 7.0:
                 multiplier = 2.5  # Ultra-conserved (phyloP 7+, absolutely critical!)
             elif phylop_score >= 5.0:
@@ -531,7 +650,7 @@ class CascadeAnalyzer:
             elif phylop_score >= 1.0:
                 multiplier = 1.2  # Moderately conserved
             elif phylop_score >= -1.0:
-                multiplier = 1.0  # Neutral
+                multiplier = 0.9  # Slightly non-conserved (avoid 1.0!)
             else:
                 multiplier = 0.8  # Not conserved (likely benign!)
 
@@ -540,10 +659,80 @@ class CascadeAnalyzer:
 
         except Exception as e:
             print(f"⚠️ Conservation analysis failed for {gene} {variant}: {e}")
+
+            # 🔥 FALLBACK: Use frequency-based conservation for ion channels
+            frequency_multiplier = self._get_frequency_based_conservation(gene, gnomad_freq)
+            if frequency_multiplier > 1.0:
+                print(f"🧬 Using frequency-based conservation fallback: {frequency_multiplier:.1f}x")
+                return frequency_multiplier
+
             return 1.0
 
+    def _get_frequency_based_conservation(self, gene: str, gnomad_freq: float) -> float:
+        """
+        🔥 FREQUENCY-BASED CONSERVATION: Use rarity as conservation proxy for ion channels
+
+        Ion channels are ultra-conserved (phyloP ~9-10). When conservation data fails,
+        use population frequency as a proxy - rare variants in conserved genes are more likely pathogenic.
+
+        Args:
+            gene: Gene symbol
+            gnomad_freq: Population frequency (0.0-1.0)
+
+        Returns:
+            Frequency-based conservation multiplier (1.0-2.5x)
+        """
+
+        # Ion channel genes (ultra-conserved, frequency matters a lot)
+        ion_channel_genes = {
+            'SCN1A', 'SCN2A', 'SCN3A', 'SCN5A', 'SCN8A', 'SCN9A', 'SCN10A', 'SCN11A',
+            'KCNQ1', 'KCNQ2', 'KCNQ3', 'KCNQ4', 'KCNQ5',
+            'KCNH1', 'KCNH2', 'KCNH3', 'KCNH4', 'KCNH5', 'KCNH6', 'KCNH7', 'KCNH8',
+            'KCNA1', 'KCNA2', 'KCNA3', 'KCNA4', 'KCNA5', 'KCNA6', 'KCNA7', 'KCNA10',
+            'CACNA1A', 'CACNA1B', 'CACNA1C', 'CACNA1D', 'CACNA1E', 'CACNA1F', 'CACNA1G', 'CACNA1H', 'CACNA1I', 'CACNA1S',
+            'CACNA2D1', 'CACNA2D2', 'CACNA2D3', 'CACNA2D4',
+            'CACNB1', 'CACNB2', 'CACNB3', 'CACNB4'
+        }
+
+        # Other highly conserved gene families
+        highly_conserved_genes = {
+            'TP53', 'BRCA1', 'BRCA2', 'MLH1', 'MSH2', 'MSH6', 'PMS2',  # Tumor suppressors
+            'COL1A1', 'COL1A2', 'COL3A1', 'COL4A1', 'COL4A2', 'COL5A1', 'COL5A2',  # Collagens
+            'FBN1', 'FBN2', 'TGFBR1', 'TGFBR2',  # Connective tissue
+        }
+
+        if gene not in ion_channel_genes and gene not in highly_conserved_genes:
+            return 1.0  # No frequency-based conservation for other genes
+
+        # Frequency-based conservation logic
+        if gnomad_freq == 0.0:
+            # Absent from gnomAD = ultra-rare = likely pathogenic in conserved genes
+            if gene in ion_channel_genes:
+                return 2.5  # Ion channels: ultra-rare = ultra-conserved position
+            else:
+                return 2.0  # Other conserved genes: ultra-rare = highly conserved
+
+        elif gnomad_freq < 0.00001:  # <1 in 100,000
+            if gene in ion_channel_genes:
+                return 2.0  # Very rare in ion channel = likely pathogenic
+            else:
+                return 1.5
+
+        elif gnomad_freq < 0.0001:  # <1 in 10,000
+            if gene in ion_channel_genes:
+                return 1.5  # Rare in ion channel = moderately pathogenic
+            else:
+                return 1.2
+
+        elif gnomad_freq < 0.001:  # <1 in 1,000
+            return 1.2  # Uncommon = mildly conserved
+
+        else:
+            return 1.0  # Common variants don't get frequency boost
+
     def analyze_cascade(self, gene: str, variant: str, gnomad_freq: float = 0.0,
-                       sequence: Optional[str] = None, variant_type: str = 'missense') -> Dict:
+                       sequence: Optional[str] = None, variant_type: str = 'missense',
+                       expected_clinvar: str = "") -> Dict:
         """
         🧬 BIOLOGICALLY-GUIDED CASCADE ANALYSIS (Updated to use biological routing by default!)
 
@@ -557,6 +746,7 @@ class CascadeAnalyzer:
             gnomad_freq: Population frequency (0.0-1.0)
             sequence: Optional protein sequence (will fetch if not provided)
             variant_type: Type of variant ('missense', 'frameshift', 'nonsense', etc.)
+            expected_clinvar: Expected ClinVar classification for disagreement handling
 
         Returns:
             Comprehensive biologically-guided analysis results
@@ -948,6 +1138,211 @@ class CascadeAnalyzer:
             return 'channel'
         else:
             return None
+
+    def _check_critical_codons(self, variant: str, variant_type: str) -> Dict:
+        """
+        🚨 CRITICAL CODON DETECTION: Auto-pathogenic variants
+
+        Detects variants that affect critical codons:
+        - Start codon loss (M1X) = Auto-P (no protein production)
+        - Nonsense variants = Auto-P (premature termination)
+        - Stop codon loss = Auto-P (read-through effects)
+
+        Args:
+            variant: Variant in p.RefPosAlt format (e.g., 'p.M1L')
+            variant_type: Type of variant ('missense', 'nonsense', etc.)
+
+        Returns:
+            Dict with is_critical flag and explanation
+        """
+        import re
+
+        # Extract position and amino acids from variant
+        match = re.search(r'p\.([A-Z*])(\d+)([A-Z*])', variant)
+        if not match:
+            return {'is_critical': False, 'explanation': ''}
+
+        ref_aa, position, alt_aa = match.groups()
+        position = int(position)
+
+        # 🚨 START CODON LOSS (M1X)
+        if position == 1 and ref_aa == 'M' and alt_aa != 'M':
+            return {
+                'is_critical': True,
+                'explanation': f"Start codon loss (M1{alt_aa}): Complete loss of protein production - Auto-Pathogenic"
+            }
+
+        # 🚨 NONSENSE VARIANTS (X = stop codon)
+        if variant_type == 'nonsense' or alt_aa == '*':
+            return {
+                'is_critical': True,
+                'explanation': f"Nonsense variant ({ref_aa}{position}*): Premature protein termination - Auto-Pathogenic"
+            }
+
+        # 🚨 STOP CODON LOSS (*X where X != *)
+        if ref_aa == '*' and alt_aa != '*':
+            return {
+                'is_critical': True,
+                'explanation': f"Stop codon loss (*{position}{alt_aa}): Read-through effects - Auto-Pathogenic"
+            }
+
+        return {'is_critical': False, 'explanation': ''}
+
+    def _extract_position(self, variant: str) -> Optional[int]:
+        """Extract amino acid position from variant string"""
+        import re
+        match = re.search(r'p\.[A-Z*](\d+)[A-Z*]', variant)
+        if match:
+            return int(match.group(1))
+        return None
+
+    def _apply_hotspot_boost(self, gene: str, variant: str, scores: Dict[str, float]) -> Dict:
+        """Apply NOVA-style hotspot boosts to mechanism scores"""
+        position = self._extract_position(variant)
+        if not position:
+            return {'scores': scores, 'hotspot_info': None}
+
+        hotspot = self.hotspot_db.check_variant_in_hotspot(gene, position)
+        if not hotspot:
+            return {'scores': scores, 'hotspot_info': None}
+
+        print(f"🔥 HOTSPOT DETECTED: {gene} pos {position} in {hotspot['type']} ({hotspot['mechanism']})")
+
+        boosted_scores = scores.copy()
+        hotspot_type = hotspot['type']
+        confidence = hotspot['confidence']
+
+        # Apply NOVA-style boosts based on hotspot type
+        if hotspot_type == 'activating_hotspot':
+            # Boost GOF for activating regions (kinase sites, channels)
+            if 'GOF' in boosted_scores:
+                boost = 0.25 * confidence  # Up to +0.25 boost
+                boosted_scores['GOF'] = min(1.0, boosted_scores['GOF'] + boost)
+                print(f"🚀 GOF HOTSPOT BOOST: +{boost:.3f} (activating region)")
+
+        elif hotspot_type == 'dominant_cluster':
+            # Boost DN for pathogenic clusters (poison mechanisms)
+            if 'DN' in boosted_scores:
+                boost = 0.15 * confidence  # Up to +0.15 boost
+                boosted_scores['DN'] = min(1.0, boosted_scores['DN'] + boost)
+                print(f"🧬 DN HOTSPOT BOOST: +{boost:.3f} (pathogenic cluster)")
+
+            # Also boost LOF for structural disruption
+            if 'LOF' in boosted_scores and hotspot['mechanism'] in ['structural_disruption', 'collagen_poison']:
+                boost = 0.10 * confidence  # Up to +0.10 boost
+                boosted_scores['LOF'] = min(1.0, boosted_scores['LOF'] + boost)
+                print(f"🔬 LOF HOTSPOT BOOST: +{boost:.3f} (structural disruption)")
+
+        return {
+            'scores': boosted_scores,
+            'hotspot_info': {
+                'position': position,
+                'hotspot_type': hotspot_type,
+                'mechanism': hotspot['mechanism'],
+                'confidence': confidence,
+                'boost_applied': True
+            }
+        }
+
+    def format_human_readable(self, gene: str, variant: str, result: Dict) -> str:
+        """Format results in clean, human-readable format"""
+
+        # Extract key information
+        final_class = result.get('final_classification', 'UNKNOWN')
+        final_score = result.get('final_score', 0.0)
+
+        # Get individual scores
+        scores = result.get('scores', {})
+        dn_score = scores.get('DN', 0.0)
+        lof_score = scores.get('LOF', 0.0)
+        gof_score = scores.get('GOF', 0.0)
+
+        # Format scores nicely
+        score_parts = []
+        if dn_score > 0:
+            score_parts.append(f"DN:{dn_score:.2f}")
+        if lof_score > 0:
+            score_parts.append(f"LOF:{lof_score:.2f}")
+        if gof_score > 0:
+            score_parts.append(f"GOF:{gof_score:.2f}")
+
+        score_summary = " | ".join(score_parts) if score_parts else "No scores"
+
+        # Add hotspot indicator
+        hotspot_indicator = ""
+        if result.get('hotspot_info'):
+            hotspot = result['hotspot_info']
+            hotspot_indicator = f" 🔥 {hotspot['hotspot_type']}"
+
+        # Conservation indicator
+        conservation_indicator = ""
+        if result.get('conservation_multiplier_applied', 1.0) > 1.0:
+            mult = result['conservation_multiplier_applied']
+            conservation_indicator = f" 🧬 {mult:.1f}x"
+
+        # Format final line
+        return f"{gene:8} {variant:12} | {score_summary:25} | {final_class:6} ({final_score:.3f}){hotspot_indicator}{conservation_indicator}"
+
+    def print_human_summary(self, gene: str, variant: str, result: Dict, clinvar_expected: str = None):
+        """Print clean human-readable summary"""
+
+        print("\n" + "="*80)
+        print(f"🧬 VARIANT ANALYSIS: {gene} {variant}")
+        print("="*80)
+
+        # Scores section
+        scores = result.get('scores', {})
+        print(f"📊 MECHANISM SCORES:")
+        if scores.get('DN', 0) > 0:
+            print(f"   Dominant Negative: {scores['DN']:.3f} ({self.interpret_score(scores['DN'])})")
+        if scores.get('LOF', 0) > 0:
+            print(f"   Loss of Function:  {scores['LOF']:.3f} ({self.interpret_score(scores['LOF'])})")
+        if scores.get('GOF', 0) > 0:
+            print(f"   Gain of Function:  {scores['GOF']:.3f} ({self.interpret_score(scores['GOF'])})")
+
+        # Final result
+        final_class = result.get('final_classification', 'UNKNOWN')
+        final_score = result.get('final_score', 0.0)
+        print(f"\n🎯 FINAL RESULT: {final_class} (Score: {final_score:.3f})")
+
+        # Hotspot info
+        if result.get('hotspot_info'):
+            hotspot = result['hotspot_info']
+            print(f"🔥 HOTSPOT: {hotspot['hotspot_type']} ({hotspot['mechanism']})")
+
+        # Conservation info
+        if result.get('conservation_multiplier_applied', 1.0) > 1.0:
+            mult = result['conservation_multiplier_applied']
+            print(f"🧬 CONSERVATION: {mult:.1f}x multiplier applied")
+
+        # ClinVar comparison
+        if clinvar_expected:
+            print(f"📋 CLINVAR: {clinvar_expected}")
+            # Simple agreement check
+            our_severity = self._get_severity_level(final_class)
+            clinvar_severity = self._get_severity_level(clinvar_expected)
+            if abs(our_severity - clinvar_severity) <= 1:
+                print("✅ AGREEMENT: Close correlation with ClinVar")
+            elif (our_severity <= 2 and clinvar_severity >= 5) or (our_severity >= 5 and clinvar_severity <= 2):
+                print("🚨 DISAGREEMENT: Major classification difference")
+            else:
+                print("📊 CORRELATION: Minor classification difference")
+
+        print("="*80)
+
+    def _get_severity_level(self, classification: str) -> int:
+        """Convert classification to severity level for comparison"""
+        severity_map = {
+            'B': 1, 'LB': 2, 'VUS': 3, 'VUS-P': 4, 'LP': 5, 'P': 6,
+            'Benign': 1, 'Likely benign': 2, 'Uncertain significance': 3,
+            'Likely pathogenic': 5, 'Pathogenic': 6
+        }
+
+        classification_str = str(classification).lower()
+        for key, value in severity_map.items():
+            if key.lower() in classification_str:
+                return value
+        return 3  # Default to VUS if unknown
 
     def cleanup(self):
         """Clean up temporary files"""

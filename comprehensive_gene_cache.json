@@ -1,0 +1,98 @@
+{
+  "CFTR": {
+    "gene_symbol": "CFTR",
+    "uniprot_id": null,
+    "inheritance_pattern": null,
+    "diseases": [],
+    "go_terms": [],
+    "function_description": "",
+    "clinvar_diseases": [],
+    "pathogenic_variants_count": 2109,
+    "benign_variants_count": 3039,
+    "uniprot_data": {},
+    "last_updated": 1758391992.9795563,
+    "ar_score": 0,
+    "ad_score": 0,
+    "xl_score": 0
+  },
+  "FBN1": {
+    "gene_symbol": "FBN1",
+    "uniprot_id": null,
+    "inheritance_pattern": "X_LINKED",
+    "diseases": [],
+    "go_terms": [],
+    "function_description": "",
+    "clinvar_diseases": [
+      "NM_000057.4(BLM):c.543C&gt;T (p.Ser181=)"
+    ],
+    "pathogenic_variants_count": 4462,
+    "benign_variants_count": 4163,
+    "uniprot_data": {},
+    "last_updated": 1758391994.9913812,
+    "ar_score": 0,
+    "ad_score": 1,
+    "xl_score": 1
+  },
+  "COL1A1": {
+    "gene_symbol": "COL1A1",
+    "uniprot_id": null,
+    "inheritance_pattern": null,
+    "diseases": [],
+    "go_terms": [],
+    "function_description": "",
+    "clinvar_diseases": [
+      "NM_000051.3(ATM):c.3446A&gt;G (p.Asn1149Ser)"
+    ],
+    "pathogenic_variants_count": 1627,
+    "benign_variants_count": 1898,
+    "uniprot_data": {},
+    "last_updated": 1758391996.8805852,
+    "ar_score": 0,
+    "ad_score": 0,
+    "xl_score": 0
+  },
+  "BRCA1": {
+    "gene_symbol": "BRCA1",
+    "uniprot_id": null,
+    "inheritance_pattern": "AUTOSOMAL_DOMINANT",
+    "diseases": [],
+    "go_terms": [],
+    "function_description": "",
+    "clinvar_diseases": [
+      "7787G&gt;A",
+      "NM_000059.3(BRCA2):c.7559G&gt;A (p.Arg2520Gln)",
+      "NM_001613.4(ACTA2):c.165C&gt;T (p.Tyr55=)",
+      "R2520Q",
+      "p.R2520Q:CGA&gt;CAA",
+      "NM_000053.4(ATP7B):c.1278C&gt;T (p.Val426=)",
+      "BRCA1:4884C&gt;T (R1589C)",
+      "p.Arg2520Gln"
+    ],
+    "pathogenic_variants_count": 13902,
+    "benign_variants_count": 7960,
+    "uniprot_data": {},
+    "last_updated": 1758391998.8114429,
+    "ar_score": 0,
+    "ad_score": 7,
+    "xl_score": 1
+  },
+  "SCN1A": {
+    "gene_symbol": "SCN1A",
+    "uniprot_id": null,
+    "inheritance_pattern": "X_LINKED",
+    "diseases": [],
+    "go_terms": [],
+    "function_description": "",
+    "clinvar_diseases": [
+      "NM_000051.3(ATM):c.1849A&gt;G (p.Met617Val)",
+      "NM_000051.3(ATM):c.5961T&gt;G (p.Ser1987=)"
+    ],
+    "pathogenic_variants_count": 2759,
+    "benign_variants_count": 2586,
+    "uniprot_data": {},
+    "last_updated": 1758392000.6059868,
+    "ar_score": 0,
+    "ad_score": 2,
+    "xl_score": 2
+  }
+}

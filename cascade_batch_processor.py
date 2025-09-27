@@ -23,10 +23,10 @@ import os
 import sys
 from typing import Dict, List
 from pathlib import Path
+from gnomad_frequency_fetcher import GnomADFrequencyFetcher
 import re
 
 from cascade_analyzer import CascadeAnalyzer
-from nova_dn.csv_batch_processor import CSVBatchProcessor
 
 
 class CascadeBatchProcessor:
@@ -35,6 +35,13 @@ class CascadeBatchProcessor:
     def __init__(self, alphafold_path: str = "/mnt/Arcana/alphafold_human/structures/"):
         self.cascade_analyzer = CascadeAnalyzer(alphafold_path)
         self.csv_processor = CSVBatchProcessor(alphafold_path)  # For HGVS parsing
+
+        # 🧬 NOVA'S UNIFIED MECHANISM RESOLVER
+        self.unified_resolver = UnifiedMechanismResolver()
+
+        # 🔥 REAL FREQUENCY FETCHER (No more hardcoding!)
+        self.frequency_fetcher = GnomADFrequencyFetcher()
+        self.frequency_fetcher.load_cache()  # Load cached frequencies
 
         # Gene to chromosome mapping (common genes)
         self.gene_to_chromosome = {
@@ -133,20 +140,30 @@ class CascadeBatchProcessor:
            (our_class in uncertain_family and expected in clinvar_uncertain):
             return ('AGREE', '✅')
 
-        # 🎯 BETTER DATA cases (we're more confident, but not wrong!)
+        # 🎯 BETTER DATA cases (moving OUTWARD from uncertainty - GOOD!)
         elif (our_class in benign_family and expected in clinvar_uncertain):
-            return ('BETTER_DATA_BENIGN', '🎯')
+            return ('BETTER_DATA_BENIGN', '🎯')  # VUS → LB/B (found benign evidence!)
         elif (our_class in pathogenic_family and expected in clinvar_uncertain):
-            return ('BETTER_DATA_PATHOGENIC', '🎯')
-        elif (our_class in uncertain_family and expected in clinvar_benign):
-            return ('BETTER_DATA_UNCERTAIN_VS_BENIGN', '🎯')
-        elif (our_class in uncertain_family and expected in clinvar_pathogenic):
-            return ('BETTER_DATA_UNCERTAIN_VS_PATHOGENIC', '🎯')
+            return ('BETTER_DATA_PATHOGENIC', '🎯')  # VUS → LP/P (found pathogenic evidence!)
 
-        # ❌ DISAGREEMENT cases (opposite biological families - real conflicts!)
+        # 🩺 CLINICAL CORRELATION NEEDED (one step off - math vs clinical judgment)
+        elif ((our_class == 'VUS-P' and expected in clinvar_pathogenic) or
+              (our_class in pathogenic_family and expected == 'VUS-P') or
+              (our_class == 'VUS' and expected in clinvar_benign) or
+              (our_class in benign_family and expected == 'VUS')):
+            return ('CLINICAL_CORRELATION', '🩺')  # Math is iffy but clinical judgment may differ
+
+        # ❌ REAL DISAGREEMENTS - Only major flips across the neutral line (B/LB ↔ LP/P)
         elif (our_class in benign_family and expected in clinvar_pathogenic) or \
              (our_class in pathogenic_family and expected in clinvar_benign):
-            return ('DISAGREE', '❌')
+            return ('DISAGREE', '❌')  # MAJOR FLIP - True disagreement!
+
+        # 📊 CORRELATIONS - Adjacent classifications (refinements, not errors)
+        # Moving to/from VUS is correlation, not disagreement
+        elif (our_class in uncertain_family and expected in clinvar_benign):
+            return ('CLINICAL_CORRELATION', '🩺')  # LB/B → VUS (being more cautious)
+        elif (our_class in uncertain_family and expected in clinvar_pathogenic):
+            return ('CLINICAL_CORRELATION', '🩺')  # LP/P → VUS (being more cautious)
 
         # Handle conflicting interpretations as unclear
         elif expected == 'CONFLICTING':
@@ -155,8 +172,104 @@ class CascadeBatchProcessor:
         # Unknown/unclear cases
         else:
             return ('UNCLEAR', '❓')
-        
-    def process_csv(self, input_path: str, output_path: str, 
+
+    def run_nova_analysis(self, gene: str, variant: str, cascade_result: Dict) -> Dict:
+        """
+        🧬 RUN NOVA'S UNIFIED MECHANISM RESOLVER
+
+        Extract sequence and position info from cascade result and run
+        Nova's Revolutionary Framework for comparison.
+        """
+        # Get sequence from cascade result or fetch it
+        sequence = cascade_result.get('sequence', '')
+        uniprot_id = cascade_result.get('uniprot_id', '')
+
+        if not sequence and uniprot_id:
+            # Extract position for sequence selection
+            import re
+            pos_match = re.search(r'p\.[A-Z](\d+)[A-Z]', variant)
+            variant_position = int(pos_match.group(1)) if pos_match else None
+
+            try:
+                sequence, source, temp_fasta_path = self.cascade_analyzer.sequence_manager.get_best_sequence(
+                    gene, uniprot_id, variant_position
+                )
+                # Sequence obtained successfully
+            except Exception as e:
+                raise ValueError(f"Could not get sequence for {gene}: {e}")
+        elif not sequence:
+            raise ValueError(f"No sequence or UniProt ID available for {gene}")
+
+        # Parse variant (e.g., "p.P840L" or "P840L" -> pos=840, ref="P", alt="L")
+        import re
+
+        # Remove "p." prefix if present
+        clean_variant = variant.replace('p.', '') if variant.startswith('p.') else variant
+
+        match = re.match(r'([A-Z])(\d+)([A-Z*])', clean_variant)
+        if not match:
+            raise ValueError(f"Cannot parse variant: {variant} (cleaned: {clean_variant})")
+
+        ref, pos_str, alt = match.groups()
+        pos1 = int(pos_str)
+
+        # Build context from cascade result
+        context = {
+            'gene_name': gene,
+            'gene_family': self.get_gene_family(gene),
+            'domains': cascade_result.get('domains', []),
+            'uniprot_id': cascade_result.get('uniprot_id', ''),
+        }
+
+        # Determine variant type (simplified for now)
+        variant_type = "nonsense" if alt == "*" else "missense"
+
+        # Running Nova's analysis
+
+        # Run Nova's Revolutionary Framework!
+        nova_result = self.unified_resolver.resolve_mechanisms(
+            sequence, pos1, ref, alt, context, variant_type
+        )
+
+        return nova_result
+
+    def get_gene_family(self, gene: str) -> str:
+        """
+        🧬 GET GENE FAMILY FOR NOVA'S ANALYSIS WITH INHERITANCE AWARENESS
+
+        Map gene names to protein families for Nova's specialized analyzers.
+        Now includes inheritance pattern detection for proper mechanism weighting!
+        """
+        # 🧬 INHERITANCE-AWARE GENE CLASSIFICATION
+        inheritance_patterns = {
+            # Autosomal Recessive genes (LOF boost!)
+            'CFTR': 'AUTOSOMAL_RECESSIVE',  # Cystic fibrosis - LOF mechanism!
+            'FKRP': 'AUTOSOMAL_RECESSIVE',  # Muscular dystrophy - LOF mechanism!
+            'ABCA4': 'AUTOSOMAL_RECESSIVE', # Stargardt disease - LOF mechanism!
+
+            # Autosomal Dominant structural genes (DN boost!)
+            'COL1A1': 'COLLAGEN_FIBRILLAR',  # OI - DN mechanism!
+            'COL1A2': 'COLLAGEN_FIBRILLAR',  # OI - DN mechanism!
+            'COL3A1': 'COLLAGEN_FIBRILLAR',  # EDS - DN mechanism!
+            'FBN1': 'FIBRILLIN',            # Marfan - DN mechanism!
+
+            # Ion channels (mixed mechanisms)
+            'SCN1A': 'ION_CHANNEL',
+            'KCNQ2': 'ION_CHANNEL',
+            'RYR1': 'ION_CHANNEL',
+            'KCNMA1': 'ION_CHANNEL',
+            'SCN5A': 'ION_CHANNEL',
+            'CACNA1C': 'ION_CHANNEL',
+
+            # Tumor suppressors
+            'TP53': 'TUMOR_SUPPRESSOR',
+            'BRCA1': 'TUMOR_SUPPRESSOR',
+            'BRCA2': 'TUMOR_SUPPRESSOR',
+        }
+
+        return inheritance_patterns.get(gene, 'GENERAL')
+
+    def process_csv(self, input_path: str, output_path: str,
                    freq_threshold: float = 0.01) -> Dict:
         """
         Process CSV file through cascade analysis
@@ -187,6 +300,7 @@ class CascadeBatchProcessor:
             'agreements': 0,
             'better_data_benign': 0,
             'better_data_pathogenic': 0,
+            'clinical_correlation': 0,
             'disagreements': 0,
             'unclear': 0
         }
@@ -267,7 +381,17 @@ class CascadeBatchProcessor:
                                 continue
 
                         hgvs = variation_name  # For reference
-                        gnomad_freq = 0.0  # Default for conservation testing
+
+                        # 🔥 GET REAL FREQUENCY (NO FAKE ESTIMATES!)
+                        clinical_significance = row.get('Clinical significance and condition', '')
+                        print(f"🔍 Looking up real gnomAD frequency...")
+                        freq_result = self.frequency_fetcher.get_frequency_from_clinvar_row(chrpos, variation_name, "")  # No clinical significance = no fake estimates
+                        gnomad_freq = freq_result['frequency']
+
+                        if freq_result['error']:
+                            print(f"⚠️ Frequency fetch issue: {freq_result['error']} (using {gnomad_freq})")
+                        else:
+                            print(f"✅ Real gnomAD frequency: {gnomad_freq:.6f} (source: {freq_result['source']})")
 
                     else:
                         # Original format: HGVS | gnomAD frequency
@@ -313,12 +437,10 @@ class CascadeBatchProcessor:
                     
                     print(f"\n🧬 Processing {gene} {variant} (freq: {gnomad_freq:.4f})")
                     
-                    # 🚀 Run BIOLOGICAL CASCADE analysis (smarter routing!)
+                    # 🚀 Run BIOLOGICAL CASCADE analysis (clean single pipeline)
                     result = self.cascade_analyzer.analyze_cascade_biological(
                         gene, variant, gnomad_freq, 'missense'  # Default to missense
                     )
-                    
-                    # Add original HGVS for reference
                     result['hgvs'] = hgvs
 
                     # 🎯 Add ClinVar comparison if we have a successful result
@@ -346,12 +468,16 @@ class CascadeBatchProcessor:
                             stats['better_data_benign'] += 1
                         elif agreement_status == 'BETTER_DATA_PATHOGENIC':
                             stats['better_data_pathogenic'] += 1
+                        elif agreement_status == 'CLINICAL_CORRELATION':
+                            stats['clinical_correlation'] += 1
                         elif agreement_status == 'DISAGREE':
                             stats['disagreements'] += 1
                         else:
                             stats['unclear'] += 1
 
-                        print(f"   🎯 Our: {our_classification} vs Expected: {expected_clinvar} → {agreement_flag}")
+                        # 🔥 QUICK FIX: Show parsed clinical significance instead of raw messy string
+                        parsed_expected = self.extract_clinical_significance(expected_clinvar)
+                        print(f"   🎯 Our: {our_classification} vs Expected: {parsed_expected} → {agreement_flag}")
 
                     results.append(result)
 
@@ -380,6 +506,12 @@ class CascadeBatchProcessor:
         # 🎯 Calculate and print performance metrics
         self.print_performance_summary(stats, results)
 
+        # 🧬 Print human-friendly summary
+        self.print_human_friendly_summary(results)
+
+        # 💾 Save frequency cache for future runs
+        self.frequency_fetcher.save_cache()
+
         return {'stats': stats, 'results_file': output_path}
 
     def print_performance_summary(self, stats: Dict, results: List[Dict]):
@@ -390,7 +522,7 @@ class CascadeBatchProcessor:
         print("📊 CASCADE PROCESSING SUMMARY")
         print("=" * 60)
         for key, value in stats.items():
-            if not key.startswith(('agreements', 'better_data', 'disagreements', 'unclear')):
+            if not key.startswith(('agreements', 'better_data', 'clinical_correlation', 'disagreements', 'unclear')):
                 print(f"{key.replace('_', ' ').title()}: {value}")
 
         # 🎯 ClinVar Performance Analysis
@@ -403,12 +535,14 @@ class CascadeBatchProcessor:
             agreements = stats['agreements']
             better_benign = stats['better_data_benign']
             better_pathogenic = stats['better_data_pathogenic']
+            clinical_correlation = stats['clinical_correlation']
             disagreements = stats['disagreements']
             unclear = stats['unclear']
 
             print(f"✅ Perfect Agreements: {agreements}/{total_analyzed} ({agreements/total_analyzed*100:.1f}%)")
             print(f"🎯 Better Data (Benign): {better_benign}/{total_analyzed} ({better_benign/total_analyzed*100:.1f}%)")
             print(f"🎯 Better Data (Pathogenic): {better_pathogenic}/{total_analyzed} ({better_pathogenic/total_analyzed*100:.1f}%)")
+            print(f"🩺 Clinical Correlation Needed: {clinical_correlation}/{total_analyzed} ({clinical_correlation/total_analyzed*100:.1f}%)")
             print(f"❌ Disagreements: {disagreements}/{total_analyzed} ({disagreements/total_analyzed*100:.1f}%)")
             print(f"❓ Unclear: {unclear}/{total_analyzed} ({unclear/total_analyzed*100:.1f}%)")
 
@@ -422,6 +556,9 @@ class CascadeBatchProcessor:
             # Performance by classification
             print(f"\n📈 PERFORMANCE BREAKDOWN:")
             self.print_classification_breakdown(results)
+
+            # 📝 Create disagree lists for review
+            self.create_disagree_lists(results, output_path)
         else:
             print("⚠️  No successful analyses to evaluate")
 
@@ -450,7 +587,36 @@ class CascadeBatchProcessor:
 
             print(f"   {our_class}: {agreements + better_data}/{total} ({success_rate:.1f}%) success")
             print(f"      ✅ {agreements} agreements, 🎯 {better_data} better data, ❌ {disagreements} disagreements")
-    
+
+    def create_disagree_lists(self, results: List[Dict], output_path: str):
+        """Create separate files for disagreements and clinical correlation cases"""
+
+        # Separate results by agreement status
+        disagreements = []
+        clinical_correlation = []
+
+        for result in results:
+            if result.get('status') == 'SUCCESS':
+                agreement_flag = result.get('agreement_flag', '')
+                if agreement_flag == '❌':
+                    disagreements.append(result)
+                elif agreement_flag == '🩺':
+                    clinical_correlation.append(result)
+
+        # Write disagreements file
+        if disagreements:
+            disagree_path = output_path.replace('.tsv', '_DISAGREEMENTS.tsv')
+            self.write_results_tsv(disagreements, disagree_path)
+            print(f"\n❌ DISAGREEMENTS written to: {disagree_path}")
+            print(f"   {len(disagreements)} variants need investigation")
+
+        # Write clinical correlation file
+        if clinical_correlation:
+            clinical_path = output_path.replace('.tsv', '_CLINICAL_CORRELATION.tsv')
+            self.write_results_tsv(clinical_correlation, clinical_path)
+            print(f"\n🩺 CLINICAL CORRELATION cases written to: {clinical_path}")
+            print(f"   {len(clinical_correlation)} variants: math vs clinical judgment")
+
     def write_results_tsv(self, results: List[Dict], output_path: str):
         """Write cascade results to TSV file"""
         if not results:
@@ -500,6 +666,65 @@ class CascadeBatchProcessor:
                 writer.writerow(row)
         
         print(f"💾 CASCADE results saved to {output_path}")
+
+    def print_human_friendly_summary(self, results: List[Dict]):
+        """Print clean human-readable summary of results"""
+
+        print("\n" + "🧬" * 30)
+        print("🧬 HUMAN-FRIENDLY VARIANT ANALYSIS RESULTS")
+        print("🧬" * 30)
+        print(f"{'Gene':8} {'Variant':12} | {'Mechanism Scores':25} | {'Result':15} | ClinVar")
+        print("-" * 80)
+
+        for result in results:
+            if result.get('status') != 'SUCCESS':
+                continue
+
+            gene = result.get('gene', 'Unknown')
+            variant = result.get('variant', 'Unknown')
+
+            # Get scores
+            dn_score = result.get('dn_score', 0.0)
+            lof_score = result.get('lof_score', 0.0)
+            gof_score = result.get('gof_score', 0.0)
+
+            # Format scores
+            score_parts = []
+            if dn_score > 0:
+                score_parts.append(f"DN:{dn_score:.2f}")
+            if lof_score > 0:
+                score_parts.append(f"LOF:{lof_score:.2f}")
+            if gof_score > 0:
+                score_parts.append(f"GOF:{gof_score:.2f}")
+
+            score_summary = " | ".join(score_parts) if score_parts else "No scores"
+
+            # Get final result
+            final_class = result.get('final_classification', 'UNKNOWN')
+            final_score = result.get('final_score', 0.0)
+
+            # Add indicators
+            indicators = ""
+            if 'hotspot_info' in result and result['hotspot_info']:
+                hotspot = result['hotspot_info']
+                indicators += f" 🔥 {hotspot.get('hotspot_type', 'hotspot')}"
+
+            if result.get('conservation_multiplier_applied', 1.0) > 1.0:
+                mult = result['conservation_multiplier_applied']
+                indicators += f" 🧬 {mult:.1f}x"
+
+            # ClinVar comparison
+            clinvar = result.get('expected_clinvar', 'Unknown')
+            agreement = result.get('agreement_flag', '')
+
+            # Format line
+            result_col = f"{final_class:6} ({final_score:.3f}){indicators}"
+            print(f"{gene:8} {variant:12} | {score_summary:25} | {result_col:15} | {clinvar} {agreement}")
+
+        print("-" * 80)
+        print("🔥 = Hotspot detected | 🧬 = Conservation boost applied")
+        print("B=Benign, LB=Likely Benign, VUS=Uncertain, VUS-P=VUS-Pathogenic, LP=Likely Pathogenic, P=Pathogenic")
+        print("✅ = Agreement | 🎯 = Better data | 🩺 = Clinical correlation | ❌ = Disagreement")
 
 
 def main():
