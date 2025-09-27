@@ -18,6 +18,10 @@ Author: Nova (with Ren + Ace)
 """
 
 from typing import Dict, Any, List
+import json
+import logging
+from pathlib import Path
+from collections import defaultdict
 
 
 # ======================================================
@@ -55,180 +59,176 @@ PATHOGENICITY_RULES: Dict[str, Dict[str, float]] = {
 
 
 # ======================================================
-# STEP 5: CLASSIFY GENE FAMILY
+# STEP 5: WEIGHTED GENE FAMILY CLASSIFICATION
 # ======================================================
+
+# Load category keywords from JSON configuration
+def load_category_config():
+    """Load category keywords and metadata from JSON file"""
+    config_path = Path(__file__).parent / "category_keywords.json"
+    try:
+        with open(config_path, "r") as f:
+            config = json.load(f)
+            return config.get("categories", {}), config.get("meta", {})
+    except FileNotFoundError:
+        logging.warning(f"Category keywords file not found at {config_path}, using fallback")
+        return {}, {}
+
+# Global category keywords and metadata (loaded once)
+CATEGORY_KEYWORDS, CATEGORY_META = load_category_config()
+PRIORITY_ORDER = CATEGORY_META.get("priority_order", [])
+DEFAULT_THRESHOLD = CATEGORY_META.get("threshold_margin", 0.2)
+
+def classify_protein_weighted(function_text: str, threshold_margin: float = None):
+    """
+    Weighted keyword-based classification of protein families.
+    Returns top category + full score breakdown.
+
+    Based on Nova's brilliant weighted scoring approach!
+    """
+    if threshold_margin is None:
+        threshold_margin = DEFAULT_THRESHOLD
+
+    function_lower = function_text.lower()
+    scores = defaultdict(float)
+
+    # Score each category by keyword hits
+    for category, keywords in CATEGORY_KEYWORDS.items():
+        for kw, weight in keywords.items():
+            if kw in function_lower:
+                scores[category] += weight
+
+    if not scores:
+        return "UNCLASSIFIED", {}
+
+    # Find the best category
+    sorted_scores = sorted(scores.items(), key=lambda x: x[1], reverse=True)
+    top_category, top_score = sorted_scores[0]
+
+    # Check for close competitors (MULTIROLE detection)
+    if len(sorted_scores) > 1:
+        second_category, second_score = sorted_scores[1]
+        if (top_score - second_score) / top_score < threshold_margin:
+            # Use priority order for tie-breaking if available
+            if PRIORITY_ORDER:
+                try:
+                    top_priority = PRIORITY_ORDER.index(top_category)
+                    second_priority = PRIORITY_ORDER.index(second_category)
+                    if top_priority < second_priority:  # Lower index = higher priority
+                        return top_category, dict(sorted_scores)
+                    else:
+                        return second_category, dict(sorted_scores)
+                except ValueError:
+                    # If categories not in priority list, use MULTIROLE
+                    return f"MULTIROLE ({top_category}, {second_category})", dict(sorted_scores)
+            else:
+                return f"MULTIROLE ({top_category}, {second_category})", dict(sorted_scores)
+
+    # Otherwise return single top category
+    return top_category, dict(sorted_scores)
 
 def classify_gene_family(gene_symbol: str, uniprot_function: str, go_terms: List[str]) -> str:
     """
     Classify gene into pathogenicity-relevant families.
-    Uses GO terms + UniProt function + keyword parsing.
+    Uses Nova's weighted scoring approach with biological intelligence!
 
-    🧬 SMART INHERITANCE PATTERN DETECTION!
+    🧬 REVOLUTIONARY WEIGHTED CLASSIFICATION SYSTEM!
     """
     terms = [t.lower() for t in go_terms]
     function_lower = uniprot_function.lower()
 
-    # 🧬 SMART AR DETECTION (based on biological clues)
-    ar_disease_patterns = [
-        # Classic AR diseases
-        "cystic fibrosis", "cf", "cftr",
-        "stargardt", "abca4", "retinal dystrophy",
-        "muscular dystrophy", "limb-girdle", "fkrp", "dysferlin",
-        "sickle cell", "thalassemia", "hemoglobin",
-        "phenylketonuria", "pku", "phenylalanine hydroxylase",
-        "galactosemia", "galt", "galactose-1-phosphate",
-        "glycogen storage", "pompe", "gaucher",
-        # AR functional patterns
-        "enzyme deficiency", "metabolic disorder", "inborn error",
-        "recessive disorder", "autosomal recessive", "compound heterozygous"
-    ]
+    # Combine UniProt function and GO terms for comprehensive analysis
+    combined_text = f"{uniprot_function} {' '.join(go_terms)}"
 
-    # Check if this looks like an AR gene
-    if any(pattern in function_lower for pattern in ar_disease_patterns):
-        return "AUTOSOMAL_RECESSIVE"
+    # Use Nova's weighted scoring system
+    classification, score_breakdown = classify_protein_weighted(combined_text)
 
-    # 🧬 SMART AD STRUCTURAL DETECTION
-    ad_structural_patterns = [
-        # Classic AD structural diseases
-        "marfan", "fibrillin", "connective tissue",
-        "osteogenesis imperfecta", "brittle bone", "collagen",
-        "ehlers-danlos", "eds", "hypermobility",
-        "aortic dilatation", "aortic aneurysm",
-        # AD functional patterns
-        "dominant negative", "poison subunit", "haploinsufficiency",
-        "autosomal dominant", "dominant disorder"
-    ]
+    # Handle MULTIROLE classifications
+    if classification.startswith("MULTIROLE"):
+        # For now, extract the primary classification from MULTIROLE
+        # Format: "MULTIROLE (PRIMARY, SECONDARY)"
+        primary = classification.split("(")[1].split(",")[0].strip()
+        logging.info(f"🔥 MULTIROLE protein detected: {classification}")
+        logging.info(f"📊 Score breakdown: {score_breakdown}")
+        return primary
 
-    if any(pattern in function_lower for pattern in ad_structural_patterns):
-        # Further classify structural proteins
-        if "collagen" in function_lower:
-            return "COLLAGEN_FIBRILLAR"
-        elif "fibrillin" in function_lower:
-            return "FIBRILLIN"
-        else:
+    # Handle UNCLASSIFIED - fall back to legacy patterns for special cases
+    if classification == "UNCLASSIFIED":
+        # 🧬 SMART AR DETECTION (based on biological clues)
+        ar_disease_patterns = [
+            "cystic fibrosis", "cf", "cftr",
+            "stargardt", "abca4", "retinal dystrophy",
+            "muscular dystrophy", "limb-girdle", "fkrp", "dysferlin",
+            "sickle cell", "thalassemia", "hemoglobin",
+            "phenylketonuria", "pku", "phenylalanine hydroxylase",
+            "galactosemia", "galt", "galactose-1-phosphate",
+            "glycogen storage", "pompe", "gaucher",
+            "enzyme deficiency", "metabolic disorder", "inborn error",
+            "recessive disorder", "autosomal recessive", "compound heterozygous"
+        ]
+
+        if any(pattern in function_lower for pattern in ar_disease_patterns):
+            return "AUTOSOMAL_RECESSIVE"
+
+        # 🧬 SMART AD STRUCTURAL DETECTION
+        ad_structural_patterns = [
+            "marfan", "fibrillin", "connective tissue",
+            "osteogenesis imperfecta", "brittle bone", "collagen",
+            "ehlers-danlos", "eds", "hypermobility",
+            "aortic dilatation", "aortic aneurysm",
+            "dominant negative", "poison subunit", "haploinsufficiency",
+            "autosomal dominant", "dominant disorder"
+        ]
+
+        if any(pattern in function_lower for pattern in ad_structural_patterns):
+            # Use gene symbol for collagen subtype detection
+            if "collagen" in function_lower or gene_symbol.startswith("COL"):
+                if any(x in function_lower for x in ["type i", "type ii", "type iii", "type v", "type xi"]):
+                    return "COLLAGEN_FIBRILLAR"
+                elif "type iv" in function_lower:
+                    return "COLLAGEN_NETWORK"
+                elif "type vii" in function_lower or gene_symbol == "COL7A1":
+                    return "COLLAGEN_ANCHORING"
+                elif any(x in function_lower for x in ["type ix", "type xii", "type xiv"]):
+                    return "COLLAGEN_FACIT"
+                else:
+                    return "STRUCTURAL"
+            elif "fibrillin" in function_lower:
+                return "FIBRILLIN"
+            else:
+                return "STRUCTURAL"
+
+        # Additional legacy patterns for special cases
+        muscular_dystrophy_keywords = [
+            "muscular dystrophy", "muscle dystrophy", "limb-girdle", "dysferlin",
+            "dystrophin", "sarcoglycan", "muscle membrane"
+        ]
+        if any(keyword in function_lower for keyword in muscular_dystrophy_keywords):
+            return "MUSCULAR_DYSTROPHY"
+
+        ribosomal_keywords = ["ribosomal protein", "ribosome", "rpl", "rps", "60s ribosomal", "40s ribosomal"]
+        if any(keyword in function_lower for keyword in ribosomal_keywords):
+            return "RIBOSOMAL_PROTEIN"
+
+        motor_keywords = ["myosin", "kinesin", "dynein", "motor protein", "actin-based motor", "microtubule motor"]
+        if any(keyword in function_lower for keyword in motor_keywords):
+            return "MOTOR_PROTEIN"
+
+        # Fall back to GO term analysis
+        if any("channel" in term or "transport" in term for term in terms):
+            return "ION_CHANNEL"
+        elif any(term in terms for term in ["structural", "cytoskeleton", "basement membrane", "extracellular matrix"]):
             return "STRUCTURAL"
-
-    # Check for oncogene keywords first (before general kinase check)
-    # 🔥 FIXED: More specific keywords to avoid false positives like FBN1
-    oncogene_keywords = [
-        "cell growth", "cell proliferation", "mitogenic signals",
-        "growth factor receptor", "tyrosine kinase", "tyrosine-protein kinase",
-        "receptor tyrosine kinase", "proto-oncogene", "oncogene",
-        "fibroblast growth factor receptor", "epidermal growth factor receptor",
-        "phosphoinositide-3-kinase", "pi3k", "ras protein",
-        "growth factor signaling", "mitogen-activated protein kinase"
-    ]
-    # 🚫 REMOVED: "growth factor" (too broad - matches FBN1 which BINDS growth factors)
-    # 🚫 REMOVED: "fibroblast growth factor" (too broad)
-    # 🚫 REMOVED: "epidermal growth factor" (too broad)
-    if any(keyword in function_lower for keyword in oncogene_keywords):
-        return "ONCOGENE"
-
-    # Check for DNA repair keywords FIRST (before tumor suppressor to avoid conflict)
-    dna_repair_keywords = ["dna repair", "dna damage", "homologous recombination", "double-strand break", "mismatch repair"]
-    if any(keyword in function_lower for keyword in dna_repair_keywords):
-        return "DNA_REPAIR"
-
-    # Check for tumor suppressor keywords (after DNA repair check)
-    tumor_suppressor_keywords = [
-        "tumor suppressor", "cell cycle checkpoint",
-        "apoptosis regulation", "growth inhibition"
-    ]
-    if any(keyword in function_lower for keyword in tumor_suppressor_keywords):
-        return "TUMOR_SUPPRESSOR"
-
-    # Check for muscular dystrophy keywords (🔥 FIXED: removed "muscle fiber" - too broad!)
-    muscular_dystrophy_keywords = [
-        "muscular dystrophy", "muscle dystrophy", "limb-girdle", "dysferlin",
-        "dystrophin", "sarcoglycan", "muscle membrane"
-    ]
-    if any(keyword in function_lower for keyword in muscular_dystrophy_keywords):
-        return "MUSCULAR_DYSTROPHY"
-
-    # Check for autosomal recessive disease patterns
-    ar_keywords = [
-        "autosomal recessive", "recessive disorder", "recessive disease",
-        "homozygous", "compound heterozygous"
-    ]
-    if any(keyword in function_lower for keyword in ar_keywords):
-        return "AUTOSOMAL_RECESSIVE"
-
-    # Check for ribosomal protein keywords
-    ribosomal_keywords = ["ribosomal protein", "ribosome", "rpl", "rps", "60s ribosomal", "40s ribosomal"]
-    if any(keyword in function_lower for keyword in ribosomal_keywords):
-        return "RIBOSOMAL_PROTEIN"
-
-    # Check for motor protein keywords
-    motor_keywords = ["myosin", "kinesin", "dynein", "motor protein", "actin-based motor", "microtubule motor"]
-    if any(keyword in function_lower for keyword in motor_keywords):
-        return "MOTOR_PROTEIN"
-
-    # Check for enzyme keywords (after oncogene check to avoid kinase conflicts)
-    enzyme_keywords = ["dehydrogenase", "synthase", "synthetase", "transferase", "hydrolase", "isomerase", "ligase", "catalytic", "phosphatase", "reductase", "oxidase"]
-    if any(keyword in function_lower for keyword in enzyme_keywords):
-        return "ENZYME"
-
-    # --- Collagen overrides ---
-    is_collagen = ("collagen" in function_lower or any("collagen" in t for t in terms) or
-                   gene_symbol.startswith("COL") or "anchoring fibril" in function_lower)
-
-    if is_collagen:
-        if any(x in function_lower for x in ["type i", "type ii", "type iii", "type v", "type xi"]):
-            return "COLLAGEN_FIBRILLAR"
-        elif "type iv" in function_lower:
-            return "COLLAGEN_NETWORK"
-        elif "type vii" in function_lower or gene_symbol == "COL7A1" or "anchoring fibril" in function_lower:
-            return "COLLAGEN_ANCHORING"
-        elif any(x in function_lower for x in ["type ix", "type xii", "type xiv"]):
-            return "COLLAGEN_FACIT"
+        elif any(term in terms for term in ["transcription", "methyltransferase", "dna-binding"]):
+            return "TRANSCRIPTION_FACTOR"
         else:
-            return "STRUCTURAL"
+            return "GENERAL"
 
-    # --- Intermediate filaments ---
-    if any(keyword in function_lower for keyword in ["keratin", "desmin", "vimentin", "intermediate filament"]):
-        return "INTERMEDIATE_FILAMENT"
+    # Log the successful weighted classification
+    logging.info(f"🎯 Weighted classification: {classification}")
+    logging.info(f"📊 Score breakdown: {score_breakdown}")
 
-    # --- Fibrillin / microfibrils ---
-    if "fibrillin" in function_lower or "microfibril" in function_lower:
-        return "FIBRILLIN"
-
-    # --- Elastin ---
-    if "elastin" in function_lower:
-        return "ELASTIN"
-
-    # --- Actins / tubulins ---
-    if any(keyword in function_lower for keyword in ["actin", "tubulin", "microtubule"]):
-        return "CYTOSKELETON_POLYMER"
-
-    # --- Lamins ---
-    if "lamin" in function_lower:
-        return "LAMIN"
-
-    # --- RTKs / MAPK pathway ---
-    if any(keyword in function_lower for keyword in ["receptor tyrosine kinase", "rtk", "ras", "raf", "mapk", "egfr", "fgfr"]):
-        return "RTK_MAPK"
-
-    # --- Negative regulators ---
-    if any(keyword in function_lower for keyword in ["negative regulator", "repressor", "patched", "neurofibromin"]):
-        return "NEGATIVE_REGULATOR"
-
-    # Check for ion channel keywords (🔥 ADDED: calcium channel detection for RYR1!)
-    ion_channel_keywords = [
-        "calcium channel", "sodium channel", "potassium channel", "chloride channel",
-        "ion channel", "calcium-activated", "voltage-gated", "ligand-gated"
-    ]
-    if any(keyword in function_lower for keyword in ion_channel_keywords):
-        return "ION_CHANNEL"
-
-    # Check GO terms and function for other families
-    if any("channel" in term or "transport" in term for term in terms):
-        return "ION_CHANNEL"
-    elif any(term in terms for term in ["structural", "cytoskeleton", "basement membrane", "extracellular matrix"]):
-        return "STRUCTURAL"
-    elif any(term in terms for term in ["transcription", "methyltransferase", "dna-binding"]):
-        return "TRANSCRIPTION_FACTOR"
-    else:
-        return "GENERAL"
+    return classification
 
 
 # ======================================================

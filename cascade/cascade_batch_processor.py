@@ -27,13 +27,15 @@ from gnomad_frequency_fetcher import GnomADFrequencyFetcher
 import re
 
 from cascade_analyzer import CascadeAnalyzer
+from nova_dn.csv_batch_processor import CSVBatchProcessor
+from nova_dn.mixed_mechanism_resolver import UnifiedMechanismResolver
 
 
 class CascadeBatchProcessor:
     """Process CSV files through the complete cascade system with ClinVar comparison"""
 
-    def __init__(self, alphafold_path: str = "/mnt/Arcana/alphafold_human/structures/"):
-        self.cascade_analyzer = CascadeAnalyzer(alphafold_path)
+    def __init__(self, alphafold_path: str = "/mnt/Arcana/alphafold_human/structures/", override_family: str = None):
+        self.cascade_analyzer = CascadeAnalyzer(alphafold_path, override_family)
         self.csv_processor = CSVBatchProcessor(alphafold_path)  # For HGVS parsing
 
         # 🧬 NOVA'S UNIFIED MECHANISM RESOLVER
@@ -743,10 +745,12 @@ Examples:
     
     parser.add_argument('--input', required=True, help='Input CSV file path')
     parser.add_argument('--output', required=True, help='Output TSV file path')
-    parser.add_argument('--freq-filter', type=float, default=0.01, 
+    parser.add_argument('--freq-filter', type=float, default=0.01,
                        help='Skip variants with gnomAD frequency > threshold (default: 0.01)')
     parser.add_argument('--alphafold-path', default="/mnt/Arcana/alphafold_human/structures/",
                        help='Path to AlphaFold structures directory')
+    parser.add_argument('--override-family', type=str,
+                       help='Override gene family classification (e.g., TUMOR_SUPPRESSOR, ION_CHANNEL, COLLAGEN_FIBRILLAR)')
     
     args = parser.parse_args()
     
@@ -761,7 +765,7 @@ Examples:
         os.makedirs(output_dir)
     
     # Process CSV through cascade
-    processor = CascadeBatchProcessor(args.alphafold_path)
+    processor = CascadeBatchProcessor(args.alphafold_path, args.override_family)
     result = processor.process_csv(
         args.input, 
         args.output,

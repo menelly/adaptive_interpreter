@@ -34,6 +34,7 @@ from biological_router import BiologicalRouter
 from proline_ml_integrator import ProlineMLIntegrator
 from gly_cys_simple_integrator import SimplifiedGlyCysIntegrator  # 🔥 REVOLUTIONARY ML SYSTEM!
 from analyzers.conservation_database import ConservationDatabase  # 🧬 EVOLUTIONARY INTELLIGENCE!
+from utils.rsid_frequency_fetcher import RSIDFrequencyFetcher  # 🔑 NOVA'S rsID SOLUTION!
 
 
 class HotspotDatabase:
@@ -84,7 +85,7 @@ class HotspotDatabase:
 class CascadeAnalyzer:
     """Coordinates DN, LOF, and GOF analyzers for comprehensive pathogenicity analysis"""
     
-    def __init__(self, alphafold_path: str = "/mnt/Arcana/alphafold_human/structures/"):
+    def __init__(self, alphafold_path: str = "/mnt/Arcana/alphafold_human/structures/", override_family: str = None):
         self.dn_analyzer = NovaDNAnalyzer(use_smart_filtering=True)
         self.lof_analyzer = LOFAnalyzer(offline_mode=True)
         self.gof_analyzer = GOFVariantAnalyzer(offline_mode=True)
@@ -94,7 +95,9 @@ class CascadeAnalyzer:
         self.gly_cys_ml = SimplifiedGlyCysIntegrator()  # 🧬 REVOLUTIONARY GLY/CYS ML SYSTEM!
         self.conservation_db = ConservationDatabase()  # 🧬 EVOLUTIONARY INTELLIGENCE!
         self.hotspot_db = HotspotDatabase()  # 🔥 HOTSPOT INTELLIGENCE!
+        self.rsid_fetcher = RSIDFrequencyFetcher()  # 🔑 NOVA'S rsID SOLUTION!
         self.temp_files = []
+        self.override_family = override_family  # 🎯 CLI override for gene family classification
         
         # Gene -> UniProt mappings (expanded for biological routing)
         self.gene_to_uniprot = {
@@ -182,6 +185,12 @@ class CascadeAnalyzer:
         routing_result = self.biological_router.route_variant(gene, variant, variant_type, uniprot_id)
         analyzers_to_run = routing_result['analyzers_to_run']
 
+        # 🎯 STEP 1.5: Apply CLI gene family override if provided
+        if self.override_family:
+            print(f"🎯 GENE FAMILY OVERRIDE: {gene} -> {self.override_family} (was: {routing_result.get('gene_family', 'unknown')})")
+            routing_result['gene_family'] = self.override_family
+            routing_result['override_applied'] = True
+
         # Update UniProt ID from routing result if available
         if routing_result.get('uniprot_id'):
             uniprot_id = routing_result['uniprot_id']
@@ -263,12 +272,12 @@ class CascadeAnalyzer:
         # 🔥 REN'S BRILLIANT INSIGHT: LOF first, skip GOF if protein is broken!
         lof_score = 0.0
 
-        # Always run LOF first (if requested) - NO CONSERVATION BOOST YET!
+        # Always run LOF first (if requested) - WITH CONSERVATION BOOST!
         if 'LOF' in analyzers_to_run:
             print(f"🔬 Running LOF analysis...")
             print(f"🔍 DEBUG: About to call _run_lof_analysis with gene={gene}, variant={variant}")
-            # 🔥 REN'S BRILLIANT FIX: No conservation boost here - apply at the end!
-            analyzer_results['LOF'] = self._run_lof_analysis(gene, variant, sequence, uniprot_id, conservation_multiplier=1.0)
+            # 🔥 FIXED BUG: Use the actual conservation multiplier, not hardcoded 1.0!
+            analyzer_results['LOF'] = self._run_lof_analysis(gene, variant, sequence, uniprot_id, conservation_multiplier=conservation_multiplier)
             print(f"🔍 DEBUG: LOF analyzer returned: {analyzer_results['LOF']}")
 
             if analyzer_results['LOF']['success']:
@@ -548,6 +557,14 @@ class CascadeAnalyzer:
         except Exception as e:
             print(f"⚠️ Plausibility filter failed: {e}")
             # Continue with original results if filter fails
+
+        # 🔑 REN'S BRILLIANT INSIGHT: Check for "deleterious but common" patterns
+        # This could reveal widespread undiagnosed conditions!
+        frequency_warning = self._check_deleterious_but_common(gene, variant, results)
+        if frequency_warning:
+            results['frequency_warning'] = frequency_warning
+            results['explanation'] += f" | {frequency_warning}"
+            print(f"⚠️ FREQUENCY WARNING: {frequency_warning}")
 
         # Cleanup
         self.cleanup()
@@ -1238,6 +1255,114 @@ class CascadeAnalyzer:
             }
 
         return {'is_critical': False, 'explanation': ''}
+
+    def _check_deleterious_but_common(self, gene: str, variant: str, results: Dict) -> Optional[str]:
+        """
+        🔑 REN'S BRILLIANT INSIGHT: Check for deleterious variants that are common in population
+
+        This could reveal widespread undiagnosed conditions where we've been ignoring
+        causative variants because we renamed the disease (e.g., Bethlem → "fibromyalgia")
+
+        Args:
+            gene: Gene symbol
+            variant: Variant string
+            results: Analysis results
+
+        Returns:
+            Warning message if variant is deleterious but common, None otherwise
+        """
+
+        # Only check if we have a deleterious classification
+        final_classification = results.get('final_classification', '')
+        if final_classification not in ['LP', 'P', 'VUS-P']:
+            return None
+
+        # Extract rsID from variant if available
+        import re
+        rsid_match = re.search(r'rs\d+', variant)
+        if not rsid_match:
+            return None  # No rsID to check
+
+        rsid = rsid_match.group()
+
+        try:
+            # Get frequency data using Nova's rsID system
+            freq_data = self.rsid_fetcher.fetch_frequency(rsid)
+            if not freq_data:
+                return None
+
+            max_af = freq_data.get('max_af', 0.0)
+            gnomad_af = freq_data.get('gnomad_af', 0.0)
+
+            # 🧬 REN'S BRILLIANT AD/AR INHERITANCE LOGIC!
+            frequency_pct = max_af * 100
+
+            # Determine inheritance pattern from analysis results
+            inheritance_pattern = self._infer_inheritance_pattern(results)
+
+            warnings = []
+
+            if inheritance_pattern == "AD" or inheritance_pattern == "UNKNOWN":
+                # Autosomal Dominant: 1% frequency = 1% affected = HUGE problem!
+                if max_af > 0.01:  # >1% for AD
+                    if max_af > 0.05:  # >5%
+                        warnings.append(f"🚨 AD: {frequency_pct:.1f}% affected population - investigate widespread symptoms")
+                    else:  # 1-5%
+                        warnings.append(f"⚠️ AD: {frequency_pct:.1f}% affected - possible undiagnosed condition")
+
+            if inheritance_pattern == "AR" or inheritance_pattern == "UNKNOWN":
+                # Autosomal Recessive: Need carrier frequency math
+                if max_af > 0.04:  # >4% carriers
+                    homozygote_freq = (max_af ** 2) * 100  # Hardy-Weinberg
+                    if max_af > 0.08:  # >8% carriers
+                        warnings.append(f"🚨 AR: {frequency_pct:.1f}% carriers ({homozygote_freq:.2f}% affected) - very high carrier rate")
+                    else:  # 4-8% carriers
+                        warnings.append(f"⚠️ AR: {frequency_pct:.1f}% carriers ({homozygote_freq:.2f}% affected) - high carrier frequency")
+
+            if warnings:
+                inheritance_note = f" (inferred: {inheritance_pattern})" if inheritance_pattern != "UNKNOWN" else " (inheritance unknown)"
+                return " | ".join(warnings) + inheritance_note
+
+            return None
+
+        except Exception as e:
+            print(f"⚠️ Error checking frequency for {rsid}: {e}")
+            return None
+
+    def _infer_inheritance_pattern(self, results: Dict) -> str:
+        """
+        🧬 REN'S BIOLOGICAL LOGIC: Infer inheritance pattern from mechanism
+
+        DN or mixed DN = Dominant Negative = AD (breaks things for everyone!)
+        Pure LOF = Loss of Function = AR (need both copies broken!)
+
+        Args:
+            results: Analysis results
+
+        Returns:
+            "AD", "AR", or "UNKNOWN"
+        """
+
+        analyzers_run = results.get('analyzers_run', [])
+        scores = results.get('scores', {})
+        synergy_used = results.get('synergy_used', False)
+
+        # Check if DN was involved in the final result
+        dn_score = scores.get('DN', 0.0)
+        lof_score = scores.get('LOF', 0.0)
+        gof_score = scores.get('GOF', 0.0)
+
+        # DN or mixed mechanism with DN = Dominant (breaks things!)
+        if dn_score > 0.3 and (synergy_used or dn_score >= max(lof_score, gof_score)):
+            return "AD"  # Dominant Negative mechanism
+
+        # Pure LOF (no significant DN/GOF) = Recessive (need both copies)
+        elif lof_score > 0.3 and dn_score < 0.3 and gof_score < 0.3:
+            return "AR"  # Loss of Function mechanism
+
+        # Mixed LOF+GOF or unclear = Unknown
+        else:
+            return "UNKNOWN"
 
     def _extract_position(self, variant: str) -> Optional[int]:
         """Extract amino acid position from variant string"""

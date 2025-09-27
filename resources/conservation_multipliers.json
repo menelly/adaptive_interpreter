@@ -1,0 +1,195 @@
+{
+  "meta": {
+    "model_version": "conservation_ml_v1",
+    "trained_on": "ClinVar_variants_186",
+    "features_used": [
+      "phylop",
+      "phastcons",
+      "gerp",
+      "gene_family"
+    ],
+    "note": "ML-learned conservation multipliers by gene family"
+  },
+  "families": {
+    "TUMOR_SUPPRESSOR": {
+      "phylop_curve": [
+        [
+          0.0,
+          3.88
+        ]
+      ],
+      "phastcons_curve": [
+        [
+          0.0,
+          3.88
+        ]
+      ],
+      "gerp_curve": [
+        [
+          0.0,
+          3.88
+        ]
+      ]
+    },
+    "ONCOGENE": {
+      "phylop_curve": [
+        [
+          0.0,
+          0.721
+        ]
+      ],
+      "phastcons_curve": [
+        [
+          0.0,
+          0.721
+        ]
+      ],
+      "gerp_curve": [
+        [
+          0.0,
+          0.721
+        ]
+      ]
+    },
+    "ION_CHANNEL": {
+      "phylop_curve": [
+        [
+          0.0,
+          0.291
+        ]
+      ],
+      "phastcons_curve": [
+        [
+          0.0,
+          0.291
+        ]
+      ],
+      "gerp_curve": [
+        [
+          0.0,
+          0.291
+        ]
+      ]
+    },
+    "TRANSCRIPTION_FACTOR": {
+      "phylop_curve": [],
+      "phastcons_curve": [],
+      "gerp_curve": []
+    },
+    "MOTOR_PROTEIN": {
+      "phylop_curve": [],
+      "phastcons_curve": [],
+      "gerp_curve": []
+    },
+    "RIBOSOMAL_PROTEIN": {
+      "phylop_curve": [],
+      "phastcons_curve": [],
+      "gerp_curve": []
+    },
+    "MUSCULAR_DYSTROPHY": {
+      "phylop_curve": [],
+      "phastcons_curve": [],
+      "gerp_curve": []
+    },
+    "COLLAGEN_FIBRILLAR": {
+      "phylop_curve": [],
+      "phastcons_curve": [],
+      "gerp_curve": []
+    },
+    "COLLAGEN_NETWORK": {
+      "phylop_curve": [],
+      "phastcons_curve": [],
+      "gerp_curve": []
+    },
+    "COLLAGEN_ANCHORING": {
+      "phylop_curve": [],
+      "phastcons_curve": [],
+      "gerp_curve": []
+    },
+    "COLLAGEN_FACIT": {
+      "phylop_curve": [],
+      "phastcons_curve": [],
+      "gerp_curve": []
+    },
+    "FIBRILLIN": {
+      "phylop_curve": [],
+      "phastcons_curve": [],
+      "gerp_curve": []
+    },
+    "ELASTIN": {
+      "phylop_curve": [],
+      "phastcons_curve": [],
+      "gerp_curve": []
+    },
+    "INTERMEDIATE_FILAMENT": {
+      "phylop_curve": [],
+      "phastcons_curve": [],
+      "gerp_curve": []
+    },
+    "CYTOSKELETON_POLYMER": {
+      "phylop_curve": [],
+      "phastcons_curve": [],
+      "gerp_curve": []
+    },
+    "LAMIN": {
+      "phylop_curve": [],
+      "phastcons_curve": [],
+      "gerp_curve": []
+    },
+    "NEGATIVE_REGULATOR": {
+      "phylop_curve": [],
+      "phastcons_curve": [],
+      "gerp_curve": []
+    },
+    "AUTOSOMAL_RECESSIVE": {
+      "phylop_curve": [],
+      "phastcons_curve": [],
+      "gerp_curve": []
+    },
+    "METABOLIC_ENZYME": {
+      "phylop_curve": [],
+      "phastcons_curve": [],
+      "gerp_curve": []
+    },
+    "TRANSPORTER": {
+      "phylop_curve": [],
+      "phastcons_curve": [],
+      "gerp_curve": []
+    },
+    "SCAFFOLD_ADAPTOR": {
+      "phylop_curve": [],
+      "phastcons_curve": [],
+      "gerp_curve": []
+    },
+    "SIGNALING_REGULATOR": {
+      "phylop_curve": [],
+      "phastcons_curve": [],
+      "gerp_curve": []
+    },
+    "STRUCTURAL": {
+      "phylop_curve": [],
+      "phastcons_curve": [],
+      "gerp_curve": []
+    },
+    "GENERAL": {
+      "phylop_curve": [
+        [
+          0.0,
+          1.571
+        ]
+      ],
+      "phastcons_curve": [
+        [
+          0.0,
+          1.571
+        ]
+      ],
+      "gerp_curve": [
+        [
+          0.0,
+          1.571
+        ]
+      ]
+    }
+  }
+}

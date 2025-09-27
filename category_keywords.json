@@ -1,0 +1,223 @@
+{
+  "meta": {
+    "priority_order": [
+      "COLLAGEN_FIBRILLAR",
+      "COLLAGEN_NETWORK",
+      "COLLAGEN_ANCHORING",
+      "COLLAGEN_FACIT",
+      "FIBRILLIN",
+      "ELASTIN",
+      "INTERMEDIATE_FILAMENT",
+      "CYTOSKELETON_POLYMER",
+      "ION_CHANNEL",
+      "RTK_MAPK",
+      "TRANSCRIPTION_FACTOR",
+      "MOTOR_PROTEIN",
+      "RIBOSOMAL_PROTEIN",
+      "MUSCULAR_DYSTROPHY",
+      "NEGATIVE_REGULATOR",
+      "METABOLIC_ENZYME",
+      "TRANSPORTER",
+      "SCAFFOLD_ADAPTOR",
+      "SIGNALING_REGULATOR",
+      "AUTOSOMAL_RECESSIVE",
+      "STRUCTURAL",
+      "GENERAL"
+    ],
+    "threshold_margin": 0.2
+  },
+  "categories": {
+    "TUMOR_SUPPRESSOR": {
+      "tumor suppressor": 2.0,
+      "transforming growth factor": 2.2,
+      "tgf-beta": 2.0,
+      "tgfbr": 1.8,
+      "smad signaling": 1.5,
+      "dna repair": 1.8,
+      "dna damage response": 1.8,
+      "double-strand break repair": 1.8,
+      "homologous recombination": 1.5,
+      "dna polymerase activity": 1.5,
+      "checkpoint": 1.2,
+      "guardian": 1.0,
+      "negative regulator": 1.2,
+      "negative regulation of cell": 1.5,
+      "repressor": 1.2,
+      "patched": 1.0,
+      "neurofibromin": 1.0
+    },
+    "ONCOGENE": {
+      "oncogene": 2.0,
+      "growth factor": 1.5,
+      "receptor tyrosine kinase": 1.8,
+      "signal transduction": 1.0,
+      "ras": 1.5,
+      "raf": 1.2,
+      "mapk": 1.2,
+      "egfr": 1.5,
+      "fgfr": 1.5
+    },
+    "ION_CHANNEL": {
+      "ion channel": 2.0,
+      "potassium channel": 1.8,
+      "sodium channel": 1.8,
+      "calcium channel": 1.8,
+      "chloride channel": 1.8,
+      "voltage-gated": 1.5,
+      "ligand-gated": 1.5,
+      "calcium-activated": 1.2,
+      "gap junction": 1.5,
+      "connexin": 1.5,
+      "ion transport": 1.8,
+      "potassium ion transport": 1.8,
+      "sodium ion transport": 1.8,
+      "calcium ion transport": 1.8,
+      "transmembrane transporter": 1.5,
+      "antiporter activity": 1.5,
+      "symporter activity": 1.5,
+      "neurotransmitter transport": 1.3
+    },
+    "TRANSCRIPTION_FACTOR": {
+      "transcription factor": 2.0,
+      "transcriptional activator": 1.5,
+      "transcriptional repressor": 1.5,
+      "homeodomain": 1.5,
+      "dna-binding": 1.5,
+      "chromatin binding": 1.2,
+      "sequence-specific dna binding": 1.5,
+      "regulatory protein": 1.0,
+      "rna-binding": 1.0,
+      "splicing factor": 1.0
+    },
+    "MOTOR_PROTEIN": {
+      "myosin": 1.5,
+      "kinesin": 1.5,
+      "dynein": 1.5,
+      "motor protein": 1.5,
+      "actin-based motor": 1.2,
+      "microtubule motor": 1.2
+    },
+    "RIBOSOMAL_PROTEIN": {
+      "ribosomal protein": 2.0,
+      "ribosome": 1.5,
+      "rpl": 1.2,
+      "rps": 1.2,
+      "60s ribosomal": 1.2,
+      "40s ribosomal": 1.2
+    },
+    "MUSCULAR_DYSTROPHY": {
+      "muscular dystrophy": 2.0,
+      "limb-girdle": 1.5,
+      "dysferlin": 1.5,
+      "dystrophin": 1.5,
+      "sarcoglycan": 1.5,
+      "muscle membrane": 1.2
+    },
+    "COLLAGEN_FIBRILLAR": {
+      "collagen type i": 2.0,
+      "collagen type ii": 2.0,
+      "collagen type v": 2.0
+    },
+    "COLLAGEN_NETWORK": {
+      "collagen type iv": 2.0
+    },
+    "COLLAGEN_ANCHORING": {
+      "collagen type vii": 2.0,
+      "anchoring fibril": 2.0
+    },
+    "COLLAGEN_FACIT": {
+      "collagen type ix": 2.0,
+      "collagen type xii": 2.0,
+      "collagen type xiv": 2.0
+    },
+    "FIBRILLIN": {
+      "fibrillin": 2.0,
+      "microfibril": 1.5
+    },
+    "ELASTIN": {
+      "elastin": 2.0
+    },
+    "INTERMEDIATE_FILAMENT": {
+      "keratin": 2.0,
+      "desmin": 2.0,
+      "vimentin": 2.0,
+      "intermediate filament": 2.0
+    },
+    "CYTOSKELETON_POLYMER": {
+      "actin": 1.5,
+      "tubulin": 1.5,
+      "microtubule": 1.5
+    },
+    "LAMIN": {
+      "lamin": 2.0
+    },
+    "NEGATIVE_REGULATOR": {
+      "negative regulator": 1.5,
+      "repressor": 1.5
+    },
+    "AUTOSOMAL_RECESSIVE": {
+      "enzyme deficiency": 2.0,
+      "metabolic disorder": 2.0,
+      "recessive disorder": 2.0,
+      "compound heterozygous": 2.0,
+      "inborn error": 2.0,
+      "cystic fibrosis": 2.0,
+      "stargardt": 2.0,
+      "sickle cell": 2.0,
+      "thalassemia": 2.0,
+      "phenylketonuria": 2.0,
+      "galactosemia": 2.0,
+      "glycogen storage": 2.0,
+      "pompe": 2.0,
+      "gaucher": 2.0
+    },
+    "METABOLIC_ENZYME": {
+      "dehydrogenase": 1.8,
+      "carboxylase": 1.8,
+      "phosphorylase": 1.8,
+      "hydrogenase": 1.5,
+      "synthase": 1.5,
+      "synthetase": 1.5,
+      "hydroxylase": 1.5,
+      "oxidase": 1.5,
+      "transferase": 1.5,
+      "enzyme": 1.0,
+      "cofactor": 1.0,
+      "metabolic": 1.5,
+      "mitochondria": 1.2,
+      "peroxisome": 1.2
+    },
+    "TRANSPORTER": {
+      "transporter": 2.0,
+      "solute carrier": 2.0,
+      "slc": 2.0,
+      "carrier": 1.5,
+      "exchange": 1.5,
+      "exchanger": 1.5,
+      "symporter": 1.5,
+      "antiporter": 1.5,
+      "mitochondrial carrier": 1.8,
+      "vesicle transport": 1.2
+    },
+    "SCAFFOLD_ADAPTOR": {
+      "scaffold": 2.0,
+      "adaptor": 2.0,
+      "anchoring": 1.5,
+      "junction": 1.5,
+      "condensin": 1.5,
+      "autophagy": 1.2,
+      "vesicle trafficking": 1.5,
+      "chaperone": 1.2,
+      "microtubule-binding": 1.2,
+      "linker": 1.2
+    },
+    "SIGNALING_REGULATOR": {
+      "signaling": 1.5,
+      "regulator": 1.5,
+      "modulator": 1.2,
+      "feedback": 1.2,
+      "homeostasis": 1.2,
+      "signalosome": 1.2
+    }
+  }
+}
