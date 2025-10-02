@@ -1,0 +1,56 @@
+{
+  "uniprot_id": "Q9H9S5",
+  "sequence_length": 495,
+  "function": "Catalyzes the transfer of a ribitol 5-phosphate from CDP-L-ribitol to the ribitol 5-phosphate previously attached by FKTN/fukutin to the phosphorylated O-mannosyl trisaccharide (N-acetylgalactosamine-beta-3-N-acetylglucosamine-beta-4-(phosphate-6-)mannose), a carbohydrate structure present in alpha-dystroglycan (DAG1) (PubMed:26923585, PubMed:27194101, PubMed:29477842, PubMed:31949166). This constitutes the second step in the formation of the ribose 5-phosphate tandem repeat which links the phosphorylated O-mannosyl trisaccharide to the ligand binding moiety composed of repeats of 3-xylosyl-alpha-1,3-glucuronic acid-beta-1 (PubMed:25279699, PubMed:26923585, PubMed:27194101, PubMed:29477842, PubMed:31949166)",
+  "sequence": "MRLTRCQAALAAAITLNLLVLFYVSWLQHQPRNSRARGPRRASAAGPRVTVLVREFEAFDNAVPELVDSFLQQDPAQPVVVAADTLPYPPLALPRIPNVRLALLQPALDRPAAASRPETYVATEFVALVPDGARAEAPGLLERMVEALRAGSARLVAAPVATANPARCLALNVSLREWTARYGAAPAAPRCDALDGDAVVLLRARDLFNLSAPLARPVGTSLFLQTALRGWAVQLLDLTFAAARQPPLATAHARWKAEREGRARRAALLRALGIRLVSWEGGRLEWFGCNKETTRCFGTVVGDTPAYLYEERWTPPCCLRALRETARYVVGVLEAAGVRYWLEGGSLLGAARHGDIIPWDYDVDLGIYLEDVGNCEQLRGAEAGSVVDERGFVWEKAVEGDFFRVQYSESNHLHVDLWPFYPRNGVMTKDTWLDHRQDVEFPEHFLQPLVPLPFAGFVAQAPNNYRRFLELKFGPGVIENPQYPNPALLSLTGSG",
+  "domains": [
+    {
+      "start": 1,
+      "end": 289,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 312,
+      "end": 481,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1,
+      "end": 74,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 142,
+      "end": 206,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 223,
+      "end": 330,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "flexible_loops": [
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84
+  ],
+  "interface_regions": [
+    5,
+    493
+  ],
+  "gene": "FKRP",
+  "cached_at": "2025-01-27"
+}

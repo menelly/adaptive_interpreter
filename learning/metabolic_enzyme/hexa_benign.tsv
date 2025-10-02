@@ -1,502 +1,506 @@
-"HGVS","dbSNP","gnomAD frequency"
-"NM_000520.6(HEXA):c.1306A>G (p.Ile436Val)","rs1800431","0.88741"
-"NM_000520.6(HEXA):c.1518A>G (p.Glu506=)","rs4777502","0.87885"
-"NM_000520.6(HEXA):c.*630A>G","rs35949555","0.05290"
-"NM_000520.6(HEXA):c.1195A>G (p.Asn399Asp)","rs1800430","0.03370"
-"NM_000520.6(HEXA):c.9C>T (p.Ser3=)","rs1800428","0.03241"
-"NM_000520.6(HEXA):c.672+189C>A","rs12908883","0.01552"
-"NM_000520.6(HEXA):c.672+30T>G","rs117160567","0.01494"
-"NM_000520.5(HEXA):c.-167G>A","rs77707876","0.01456"
-"NM_000520.6(HEXA):c.1146+351G>A","rs60920713","0.01441"
-"NM_000520.6(HEXA):c.1147-154G>A","rs145247513","0.01012"
-"NM_000520.6(HEXA):c.346+192T>C","rs111559120","0.00666"
-"NM_000520.6(HEXA):c.570+131A>G","rs148388819","0.00642"
-"NM_000520.5(HEXA):c.-59G>A","rs147174351","0.00469"
-"NM_000520.6(HEXA):c.759G>A (p.Val253=)","rs117513345","0.00412"
-"NM_000520.6(HEXA):c.673-13T>C","rs75211071","0.00405"
-"NM_000520.6(HEXA):c.253+5074C>T","rs149661366","0.00322"
-"NM_000520.6(HEXA):c.739C>T (p.Arg247Trp)","rs121907970","0.00190"
-"NM_000520.6(HEXA):c.1146+8G>A","rs201453018","0.00167"
-"NM_000520.6(HEXA):c.254-33G>A","rs186468379","0.00164"
-"NM_000520.6(HEXA):c.346+13C>T","rs200871198","0.00156"
-"NM_000520.6(HEXA):c.69C>G (p.Leu23=)","rs143554538","0.00107"
-"NM_000520.6(HEXA):c.1107C>T (p.Gly369=)","rs140337137","0.00096"
-"NM_000520.6(HEXA):c.1527-6T>C","rs199914308","0.00087"
-"NM_000520.6(HEXA):c.1435G>A (p.Ala479Thr)","rs145012038","0.00052"
-"NM_000520.6(HEXA):c.-4G>A","rs766510036","0.00050"
-"NM_000520.6(HEXA):c.1074-100T>C","rs868411141","0.00038"
-"NM_000520.6(HEXA):c.1338T>C (p.Pro446=)","rs34085965","0.00029"
-"NM_000520.6(HEXA):c.8G>C (p.Ser3Thr)","rs374524755","0.00029"
-"NM_000520.6(HEXA):c.1073+41C>T","rs367719010","0.00027"
-"NM_000520.6(HEXA):c.253+5107G>A","rs748336538","0.00024"
-"NM_000520.6(HEXA):c.1421+14G>C","rs201497629","0.00019"
-"NM_000520.6(HEXA):c.1216C>T (p.Leu406=)","rs140482769","0.00017"
-"NM_000520.6(HEXA):c.517C>T (p.Leu173=)","rs200743199","0.00017"
-"NM_000520.6(HEXA):c.1073+51G>A","rs545676277","0.00016"
-"NM_000520.6(HEXA):c.582G>A (p.Ala194=)","rs112614306","0.00016"
-"NM_000520.6(HEXA):c.1443C>T (p.Ala481=)","rs140091006","0.00015"
-"NM_000520.6(HEXA):c.548T>A (p.Leu183His)","rs185797496","0.00014"
-"NM_000520.6(HEXA):c.1330+16T>G","rs371435283","0.00009"
-"NM_000520.6(HEXA):c.102C>T (p.Asp34=)","rs377310315","0.00008"
-"NM_000520.6(HEXA):c.1397A>G (p.Asn466Ser)","rs200936836","0.00008"
-"NM_000520.6(HEXA):c.1073C>T (p.Thr358Met)","rs552505619","0.00007"
-"NM_000520.6(HEXA):c.855C>T (p.Gly285=)","rs768518776","0.00007"
-"NC_000015.10:g.72347677C>G","rs371023342","0.00005"
-"NM_000520.6(HEXA):c.135A>G (p.Gln45=)","rs375574405","0.00005"
-"NM_000520.6(HEXA):c.888T>C (p.Asn296=)","rs752260651","0.00005"
-"NM_000520.6(HEXA):c.1231G>A (p.Gly411Ser)","rs575121167","0.00004"
-"NM_000520.6(HEXA):c.253+20C>T","rs772715699","0.00004"
-"NM_000520.6(HEXA):c.347-15T>A","rs750626935","0.00004"
-"NM_000520.6(HEXA):c.840G>A (p.Gly280=)","rs778823870","0.00004"
-"NM_000520.6(HEXA):c.981C>T (p.Thr327=)","rs1271376611","0.00004"
-"NM_000520.6(HEXA):c.1073+18G>A","rs756371964","0.00003"
-"NM_000520.6(HEXA):c.1074-20G>T","rs776333373","0.00003"
-"NM_000520.6(HEXA):c.1266G>T (p.Leu422=)","rs373023700","0.00003"
-"NM_000520.6(HEXA):c.1014T>C (p.Phe338=)","rs149121118","0.00002"
-"NM_000520.6(HEXA):c.1146+18A>G","rs1555472543","0.00002"
-"NM_000520.6(HEXA):c.1230C>T (p.Ala410=)","rs751185874","0.00002"
-"NM_000520.6(HEXA):c.1359T>C (p.Ile453=)","rs113941121","0.00002"
-"NM_000520.6(HEXA):c.1407G>C (p.Leu469=)","rs2140320253","0.00002"
-"NM_000520.6(HEXA):c.1557A>G (p.Val519=)","rs1327031567","0.00002"
-"NM_000520.6(HEXA):c.1572G>A (p.Gln524=)","rs1389009140","0.00002"
-"NM_000520.6(HEXA):c.1587C>T (p.Thr529=)","rs1467811950","0.00002"
-"NM_000520.6(HEXA):c.297A>C (p.Val99=)","rs766640260","0.00002"
-"NM_000520.6(HEXA):c.347-12C>T","rs761854464","0.00002"
-"NM_000520.6(HEXA):c.459+18A>G","rs751790486","0.00002"
-"NM_000520.6(HEXA):c.673-11G>C","rs757023807","0.00002"
-"NM_000520.6(HEXA):c.805+12G>T","rs1176274141","0.00002"
-"NM_000520.6(HEXA):c.805+7A>G","rs758135123","0.00002"
-"NM_000520.6(HEXA):c.805+8T>C","rs2140324076","0.00002"
-"NM_000520.6(HEXA):c.906C>T (p.Ser302=)","rs765612435","0.00002"
-"NM_000520.6(HEXA):c.933C>T (p.Val311=)","rs2088661117","0.00002"
-"NC_000015.10:g.72353186G>A","rs1437923865","0.00001"
-"NM_000520.6(HEXA):c.1032C>T (p.Phe344=)","rs762704131","0.00001"
-"NM_000520.6(HEXA):c.1047G>A (p.Lys349=)","rs746518979","0.00001"
-"NM_000520.6(HEXA):c.1073+8A>T","rs2088641552","0.00001"
-"NM_000520.6(HEXA):c.1074-86G>A","rs1050913691","0.00001"
-"NM_000520.6(HEXA):c.1086C>T (p.Ile362=)","rs749828204","0.00001"
-"NM_000520.6(HEXA):c.1092T>C (p.Ser364=)","rs757519934","0.00001"
-"NM_000520.6(HEXA):c.1116G>A (p.Val372=)","rs753609749","0.00001"
-"NM_000520.6(HEXA):c.1146+11G>A","rs1470851557","0.00001"
-"NM_000520.6(HEXA):c.1146+16G>A","rs1297838415","0.00001"
-"NM_000520.6(HEXA):c.1147-6T>C","rs2088620275","0.00001"
-"NM_000520.6(HEXA):c.1161A>T (p.Thr387=)","rs1244956386","0.00001"
-"NM_000520.6(HEXA):c.1173G>A (p.Val391=)","rs575836910","0.00001"
-"NM_000520.6(HEXA):c.1182G>A (p.Glu394=)","rs777737367","0.00001"
-"NM_000520.6(HEXA):c.120C>T (p.Tyr40=)","rs762382202","0.00001"
-"NM_000520.6(HEXA):c.1254C>T (p.Ala418=)","rs1248988558","0.00001"
-"NM_000520.6(HEXA):c.1272T>C (p.Arg424=)","rs1020151571","0.00001"
-"NM_000520.6(HEXA):c.1331-13T>C","rs1366792630","0.00001"
-"NM_000520.6(HEXA):c.1331-19G>C","rs758099765","0.00001"
-"NM_000520.6(HEXA):c.1421+12C>T","rs200757264","0.00001"
-"NM_000520.6(HEXA):c.1421+13G>A","rs375201437","0.00001"
-"NM_000520.6(HEXA):c.1421+16G>C","rs1260701932","0.00001"
-"NM_000520.6(HEXA):c.1421+17G>A","rs752975043","0.00001"
-"NM_000520.6(HEXA):c.1421+19G>T","rs759574076","0.00001"
-"NM_000520.6(HEXA):c.1422-10T>C","rs747528877","0.00001"
-"NM_000520.6(HEXA):c.1422-7C>T","rs1204984002","0.00001"
-"NM_000520.6(HEXA):c.1434G>C (p.Gly478=)","rs1343812879","0.00001"
-"NM_000520.6(HEXA):c.1477C>T (p.Leu493=)","rs774313739","0.00001"
-"NM_000520.6(HEXA):c.1526+12G>A","rs370449921","0.00001"
-"NM_000520.6(HEXA):c.1526+13T>C","rs1406864261","0.00001"
-"NM_000520.6(HEXA):c.1527-10C>G","rs775281927","0.00001"
-"NM_000520.6(HEXA):c.1545A>G (p.Gln515=)","rs369398952","0.00001"
-"NM_000520.6(HEXA):c.1548C>T (p.Pro516=)","rs1322003883","0.00001"
-"NM_000520.6(HEXA):c.168C>T (p.Pro56=)","rs777515618","0.00001"
-"NM_000520.6(HEXA):c.204T>C (p.Tyr68=)","rs2089056122","0.00001"
-"NM_000520.6(HEXA):c.210C>T (p.Asp70=)","rs1377654671","0.00001"
-"NM_000520.6(HEXA):c.211C>T (p.Leu71=)","rs775000497","0.00001"
-"NM_000520.6(HEXA):c.228G>C (p.Gly76=)","rs2089055564","0.00001"
-"NM_000520.6(HEXA):c.237C>T (p.Pro79=)","rs763428989","0.00001"
-"NM_000520.6(HEXA):c.253+18C>T","rs771013647","0.00001"
-"NM_000520.6(HEXA):c.254-10G>A","rs1290138071","0.00001"
-"NM_000520.6(HEXA):c.267A>G (p.Thr89=)","rs924112367","0.00001"
-"NM_000520.6(HEXA):c.27G>T (p.Ser9=)","rs1185608839","0.00001"
-"NM_000520.6(HEXA):c.282G>A (p.Val94=)","rs1353572968","0.00001"
-"NM_000520.6(HEXA):c.291C>T (p.Val97=)","rs776967919","0.00001"
-"NM_000520.6(HEXA):c.303A>G (p.Thr101=)","rs970894400","0.00001"
-"NM_000520.6(HEXA):c.347-7A>G","rs1567300313","0.00001"
-"NM_000520.6(HEXA):c.357C>T (p.Thr119=)","rs1242269336","0.00001"
-"NM_000520.6(HEXA):c.393T>G (p.Thr131=)","rs763015329","0.00001"
-"NM_000520.6(HEXA):c.412+13G>A","rs1391540037","0.00001"
-"NM_000520.6(HEXA):c.413-16C>T","rs1329277483","0.00001"
-"NM_000520.6(HEXA):c.413-19C>T","rs2088734265","0.00001"
-"NM_000520.6(HEXA):c.413-4C>T","rs373382175","0.00001"
-"NM_000520.6(HEXA):c.48C>T (p.Phe16=)","rs772706192","0.00001"
-"NM_000520.6(HEXA):c.540C>T (p.Tyr180=)","rs121907969","0.00001"
-"NM_000520.6(HEXA):c.571-16G>A","rs771550714","0.00001"
-"NM_000520.6(HEXA):c.571-19T>G","rs576601675","0.00001"
-"NM_000520.6(HEXA):c.597C>T (p.Asn199=)","rs756010672","0.00001"
-"NM_000520.6(HEXA):c.621T>C (p.Asp207=)","rs763649208","0.00001"
-"NM_000520.6(HEXA):c.636A>G (p.Pro212=)","rs774842392","0.00001"
-"NM_000520.6(HEXA):c.651T>G (p.Thr217=)","rs773807075","0.00001"
-"NM_000520.6(HEXA):c.660G>A (p.Glu220=)","rs2140324649","0.00001"
-"NM_000520.6(HEXA):c.672+10C>T","rs2088689193","0.00001"
-"NM_000520.6(HEXA):c.672+11G>A","rs1196402639","0.00001"
-"NM_000520.6(HEXA):c.675G>T (p.Gly225=)","rs1236823358","0.00001"
-"NM_000520.6(HEXA):c.6A>G (p.Thr2=)","rs1372094460","0.00001"
-"NM_000520.6(HEXA):c.705A>G (p.Thr235=)","rs781164103","0.00001"
-"NM_000520.6(HEXA):c.735C>T (p.Tyr245=)","rs777460475","0.00001"
-"NM_000520.6(HEXA):c.738A>C (p.Ala246=)","rs2140324194","0.00001"
-"NM_000520.6(HEXA):c.741G>A (p.Arg247=)","rs76873846","0.00001"
-"NM_000520.6(HEXA):c.795C>T (p.Ser265=)","rs746942625","0.00001"
-"NM_000520.6(HEXA):c.867A>G (p.Pro289=)","rs1420729942","0.00001"
-"NM_000520.6(HEXA):c.876C>T (p.Pro292=)","rs143009489","0.00001"
-"NM_000520.6(HEXA):c.909A>G (p.Thr303=)","rs2088661576","0.00001"
-"NM_000520.6(HEXA):c.912C>T (p.Phe304=)","rs1385655581","0.00001"
-"NM_000520.6(HEXA):c.957T>C (p.Leu319=)","rs373799508","0.00001"
-"NM_000520.6(HEXA):c.986+7G>C","rs1291660859","0.00001"
-"NM_000520.6(HEXA):c.987-12C>T","rs1390022706","0.00001"
-"NM_000520.6(HEXA):c.987-14C>T","rs766562662","0.00001"
-"NM_000520.6(HEXA):c.987-15T>C","rs754219266","0.00001"
-"NM_000520.6(HEXA):c.987-18T>G","rs374977824","0.00001"
-"NM_000520.6(HEXA):c.987-8G>C","rs760923149","0.00001"
-"NC_000015.10:g.72353747T>C","rs1361722304",""
-"NM_000520.6(HEXA):c.1023G>A (p.Lys341=)","rs1362243832",""
-"NM_000520.6(HEXA):c.1026A>G (p.Lys342=)","rs1595798386",""
-"NM_000520.6(HEXA):c.1050G>A (p.Gln350=)","",""
-"NM_000520.6(HEXA):c.1059C>T (p.Ser353=)","rs1264309804",""
-"NM_000520.6(HEXA):c.1065C>T (p.Tyr355=)","rs2140322139",""
-"NM_000520.6(HEXA):c.1073+10G>A","rs1458405375",""
-"NM_000520.6(HEXA):c.1073+17G>A","rs1277432109",""
-"NM_000520.6(HEXA):c.1074-12TCTCC[3]","rs759219683",""
-"NM_000520.6(HEXA):c.1074-13C>A","",""
-"NM_000520.6(HEXA):c.1074-16C>A","rs772680815",""
-"NM_000520.6(HEXA):c.1074-16C>T","rs772680815",""
-"NM_000520.6(HEXA):c.1074-17A>G","rs746573936",""
-"NM_000520.6(HEXA):c.1074-19A>G","rs770559759",""
-"NM_000520.6(HEXA):c.1074-20G>A","rs776333373",""
-"NM_000520.6(HEXA):c.1074-7T>C","rs2140321912",""
-"NM_000520.6(HEXA):c.1074-8C>T","rs2140321914",""
-"NM_000520.6(HEXA):c.1077G>A (p.Leu359=)","",""
-"NM_000520.6(HEXA):c.1080G>A (p.Leu360=)","rs1344084494",""
-"NM_000520.6(HEXA):c.1086C>A (p.Ile362=)","rs749828204",""
-"NM_000520.6(HEXA):c.1095T>A (p.Ser365=)","",""
-"NM_000520.6(HEXA):c.1098T>C (p.Tyr366=)","rs979690054",""
-"NM_000520.6(HEXA):c.1101C>G (p.Gly367=)","rs2542518902",""
-"NM_000520.6(HEXA):c.1110T>C (p.Tyr370=)","rs2140321848",""
-"NM_000520.6(HEXA):c.1122G>A (p.Gln374=)","rs2542518747",""
-"NM_000520.6(HEXA):c.1137T>C (p.Asn379=)","rs2140321800",""
-"NM_000520.6(HEXA):c.1143A>G (p.Val381=)","rs781712951",""
-"NM_000520.6(HEXA):c.1146+17A>G","rs2140321766",""
-"NM_000520.6(HEXA):c.1146+7C>G","rs1445671872",""
-"NM_000520.6(HEXA):c.1146+7C>T","rs1445671872",""
-"NM_000520.6(HEXA):c.1146+8G>T","rs201453018",""
-"NM_000520.6(HEXA):c.1147-13C>T","rs773715120",""
-"NM_000520.6(HEXA):c.1147-14A>G","rs1402089878",""
-"NM_000520.6(HEXA):c.1147-7A>G","rs1476782915",""
-"NM_000520.6(HEXA):c.1147-8T>G","rs2542514959",""
-"NM_000520.6(HEXA):c.1147-9_1147-6del","rs2140320865",""
-"NM_000520.6(HEXA):c.1164C>T (p.Ile388=)","rs760153692",""
-"NM_000520.6(HEXA):c.1170G>A (p.Gln390=)","",""
-"NM_000520.6(HEXA):c.1173G>T (p.Val391=)","rs575836910",""
-"NM_000520.6(HEXA):c.117T>G (p.Leu39=)","rs2542582125",""
-"NM_000520.6(HEXA):c.1188T>A (p.Ile396=)","rs2542514675",""
-"NM_000520.6(HEXA):c.1188T>C (p.Ile396=)","",""
-"NM_000520.6(HEXA):c.1191A>G (p.Pro397=)","rs2140320794",""
-"NM_000520.6(HEXA):c.1194G>C (p.Val398=)","rs2140320785",""
-"NM_000520.6(HEXA):c.1194G>T (p.Val398=)","rs2140320785",""
-"NM_000520.6(HEXA):c.1230C>A (p.Ala410=)","rs751185874",""
-"NM_000520.6(HEXA):c.1233C>G (p.Gly411=)","rs2140320715",""
-"NM_000520.6(HEXA):c.1239G>A (p.Arg413=)","rs2140320704",""
-"NM_000520.6(HEXA):c.1239G>T (p.Arg413=)","rs2140320704",""
-"NM_000520.6(HEXA):c.123G>T (p.Pro41=)","rs769075910",""
-"NM_000520.6(HEXA):c.1242C>T (p.Ala414=)","rs2542514369",""
-"NM_000520.6(HEXA):c.1245T>C (p.Leu415=)","rs2542514363",""
-"NM_000520.6(HEXA):c.1251T>G (p.Ser417=)","rs2542514314",""
-"NM_000520.6(HEXA):c.1257C>T (p.Pro419=)","rs1595797185",""
-"NM_000520.6(HEXA):c.1263C>T (p.Tyr421=)","rs2140320674",""
-"NM_000520.6(HEXA):c.1278C>T (p.Ser426=)","rs780010367",""
-"NM_000520.6(HEXA):c.1287T>C (p.Pro429=)","rs1159406854",""
-"NM_000520.6(HEXA):c.1296G>A (p.Lys432=)","rs757010519",""
-"NM_000520.6(HEXA):c.12C>T (p.Ser4=)","rs774967373",""
-"NM_000520.6(HEXA):c.1305_1306inv (p.Ile436Val)","",""
-"NM_000520.6(HEXA):c.1311G>A (p.Val437=)","rs2140320599",""
-"NM_000520.6(HEXA):c.1317C>G (p.Pro439=)","rs1003506073",""
-"NM_000520.6(HEXA):c.1317C>T (p.Pro439=)","rs1003506073",""
-"NM_000520.6(HEXA):c.1330+12G>C","rs868661831",""
-"NM_000520.6(HEXA):c.1330+15C>T","rs1384520777",""
-"NM_000520.6(HEXA):c.1330+19C>T","rs1393716879",""
-"NM_000520.6(HEXA):c.1330+20C>T","rs2542513737",""
-"NM_000520.6(HEXA):c.1331-16G>T","rs2542513095",""
-"NM_000520.6(HEXA):c.1331-18T>C","rs2542513105",""
-"NM_000520.6(HEXA):c.1331-19G>T","rs758099765",""
-"NM_000520.6(HEXA):c.1331-4T>C","rs2542513049",""
-"NM_000520.6(HEXA):c.1331-5C>G","rs1398769778",""
-"NM_000520.6(HEXA):c.1331-5C>T","rs1398769778",""
-"NM_000520.6(HEXA):c.1331-7C>G","rs778594889",""
-"NM_000520.6(HEXA):c.1331-7C>T","rs778594889",""
-"NM_000520.6(HEXA):c.1335C>A (p.Thr445=)","rs1365983427",""
-"NM_000520.6(HEXA):c.1335C>T (p.Thr445=)","rs1365983427",""
-"NM_000520.6(HEXA):c.1338T>A (p.Pro446=)","rs34085965",""
-"NM_000520.6(HEXA):c.1344G>A (p.Gln448=)","rs2140320361",""
-"NM_000520.6(HEXA):c.1347G>A (p.Lys449=)","rs1595796907",""
-"NM_000520.6(HEXA):c.1356G>A (p.Val452=)","rs2542512894",""
-"NM_000520.6(HEXA):c.1362T>C (p.Gly454=)","rs2542512865",""
-"NM_000520.6(HEXA):c.1368G>A (p.Glu456=)","rs2140320322",""
-"NM_000520.6(HEXA):c.1371T>A (p.Ala457=)","rs2140320317",""
-"NM_000520.6(HEXA):c.1371T>G (p.Ala457=)","rs2140320317",""
-"NM_000520.6(HEXA):c.1374T>C (p.Cys458=)","rs764396757",""
-"NM_000520.6(HEXA):c.1383A>G (p.Gly461=)","",""
-"NM_000520.6(HEXA):c.1389T>C (p.Tyr463=)","rs1239101618",""
-"NM_000520.6(HEXA):c.13A>C (p.Arg5=)","rs1595816387",""
-"NM_000520.6(HEXA):c.1405C>T (p.Leu469=)","rs777731446",""
-"NM_000520.6(HEXA):c.1407G>T (p.Leu469=)","rs2140320253",""
-"NM_000520.6(HEXA):c.1410C>G (p.Val470=)","rs771951380",""
-"NM_000520.6(HEXA):c.1414A>C (p.Arg472=)","",""
-"NM_000520.6(HEXA):c.1416G>A (p.Arg472=)","rs369117208",""
-"NM_000520.6(HEXA):c.1421+11del","rs922064515",""
-"NM_000520.6(HEXA):c.1421+12C>G","rs200757264",""
-"NM_000520.6(HEXA):c.1421+13G>C","rs375201437",""
-"NM_000520.6(HEXA):c.1421+13dup","rs780193130",""
-"NM_000520.6(HEXA):c.1421+14G>A","rs201497629",""
-"NM_000520.6(HEXA):c.1421+14G>T","rs201497629",""
-"NM_000520.6(HEXA):c.1421+15G>A","rs185764548",""
-"NM_000520.6(HEXA):c.1421+15G>C","rs185764548",""
-"NM_000520.6(HEXA):c.1421+15G>T","rs185764548",""
-"NM_000520.6(HEXA):c.1421+19G>A","rs759574076",""
-"NM_000520.6(HEXA):c.1421+19G>C","rs759574076",""
-"NM_000520.6(HEXA):c.1421+7G>T","rs2542512445",""
-"NM_000520.6(HEXA):c.1421+7del","rs747378954",""
-"NM_000520.6(HEXA):c.1421+9T>C","rs2140320220",""
-"NM_000520.6(HEXA):c.1422-13C>T","rs1366173591",""
-"NM_000520.6(HEXA):c.1422-14C>T","rs942212689",""
-"NM_000520.6(HEXA):c.1422-18A>G","rs2542510114",""
-"NM_000520.6(HEXA):c.1422-6C>T","rs2542510047",""
-"NM_000520.6(HEXA):c.1422-8T>C","rs2140319698",""
-"NM_000520.6(HEXA):c.1422-9T>A","rs2140319704",""
-"NM_000520.6(HEXA):c.1425C>T (p.Pro475=)","rs2140319679",""
-"NM_000520.6(HEXA):c.1431A>G (p.Ala477=)","rs2140319674",""
-"NM_000520.6(HEXA):c.1437T>C (p.Ala479=)","rs2140319660",""
-"NM_000520.6(HEXA):c.144C>T (p.Tyr48=)","rs2140344619",""
-"NM_000520.6(HEXA):c.1452G>A (p.Leu484=)","rs2542509848",""
-"NM_000520.6(HEXA):c.1467G>A (p.Leu489=)","",""
-"NM_000520.6(HEXA):c.1470A>G (p.Thr490=)","rs2542509762",""
-"NM_000520.6(HEXA):c.1473T>G (p.Ser491=)","rs2542509746",""
-"NM_000520.6(HEXA):c.147T>C (p.Asp49=)","rs2542581903",""
-"NM_000520.6(HEXA):c.1521G>A (p.Leu507=)","rs2542509476",""
-"NM_000520.6(HEXA):c.1524G>A (p.Leu508=)","rs2140319542",""
-"NM_000520.6(HEXA):c.1526+14G>A","rs2542509398",""
-"NM_000520.6(HEXA):c.1526+20T>G","rs2542509369",""
-"NM_000520.6(HEXA):c.1526+325dup","rs528390276",""
-"NM_000520.6(HEXA):c.1526+7_1526+10del","rs1165016914",""
-"NM_000520.6(HEXA):c.1527-10C>T","rs775281927",""
-"NM_000520.6(HEXA):c.1527-17T>A","",""
-"NM_000520.6(HEXA):c.1527-18C>T","rs1412081412",""
-"NM_000520.6(HEXA):c.1527-4G>A","rs2542505784",""
-"NM_000520.6(HEXA):c.1527-4G>C","rs2542505784",""
-"NM_000520.6(HEXA):c.1527-7C>T","rs2088581612",""
-"NM_000520.6(HEXA):c.1533T>C (p.Gly511=)","rs761249905",""
-"NM_000520.6(HEXA):c.1533T>G (p.Gly511=)","rs761249905",""
-"NM_000520.6(HEXA):c.1536C>G (p.Val512=)","rs2542505714",""
-"NM_000520.6(HEXA):c.1554T>C (p.Asn518=)","rs749609063",""
-"NM_000520.6(HEXA):c.1563C>T (p.Phe521=)","rs2542505615",""
-"NM_000520.6(HEXA):c.156G>C (p.Ser52=)","rs1595816211",""
-"NM_000520.6(HEXA):c.1578T>C (p.Phe526=)","rs2140318501",""
-"NM_000520.6(HEXA):c.159C>G (p.Ala53=)","",""
-"NM_000520.6(HEXA):c.159C>T (p.Ala53=)","rs2140344589",""
-"NM_000520.6(HEXA):c.162G>T (p.Ala54=)","rs2542581788",""
-"NM_000520.6(HEXA):c.165G>A (p.Gln55=)","rs1488431200",""
-"NM_000520.6(HEXA):c.183C>G (p.Leu61=)","rs2089056934",""
-"NM_000520.6(HEXA):c.183C>T (p.Leu61=)","rs2089056934",""
-"NM_000520.6(HEXA):c.186C>T (p.Asp62=)","rs765001944",""
-"NM_000520.6(HEXA):c.189G>A (p.Glu63=)","rs1401078087",""
-"NM_000520.6(HEXA):c.195C>T (p.Phe65=)","rs2542581528",""
-"NM_000520.6(HEXA):c.198G>A (p.Gln66=)","",""
-"NM_000520.6(HEXA):c.213G>C (p.Leu71=)","rs2140344454",""
-"NM_000520.6(HEXA):c.219C>T (p.Phe73=)","rs2089055709",""
-"NM_000520.6(HEXA):c.222T>G (p.Gly74=)","rs2542581273",""
-"NM_000520.6(HEXA):c.225C>G (p.Ser75=)","rs1279272078",""
-"NM_000520.6(HEXA):c.228G>T (p.Gly76=)","rs2089055564",""
-"NM_000520.6(HEXA):c.249C>T (p.Leu83=)","rs1416793758",""
-"NM_000520.6(HEXA):c.253+1100_253+1948del","rs2542575395",""
-"NM_000520.6(HEXA):c.253+14G>A","rs2542580981",""
-"NM_000520.6(HEXA):c.253+19G>A","rs370680843",""
-"NM_000520.6(HEXA):c.253+19G>C","rs370680843",""
-"NM_000520.6(HEXA):c.253+20C>A","rs772715699",""
-"NM_000520.6(HEXA):c.253+7C>G","rs996974364",""
-"NM_000520.6(HEXA):c.253+7C>T","rs996974364",""
-"NM_000520.6(HEXA):c.253+8G>C","rs2542581005",""
-"NM_000520.6(HEXA):c.253+9G>C","rs2089054710",""
-"NM_000520.6(HEXA):c.254-10G>T","rs1290138071",""
-"NM_000520.6(HEXA):c.254-12C>G","rs1025102105",""
-"NM_000520.6(HEXA):c.254-12C>T","",""
-"NM_000520.6(HEXA):c.254-14C>A","",""
-"NM_000520.6(HEXA):c.254-15A>T","rs2542540321",""
-"NM_000520.6(HEXA):c.254-17T>C","rs2140329132",""
-"NM_000520.6(HEXA):c.254-20A>G","rs1347847185",""
-"NM_000520.6(HEXA):c.254-23C>T","rs779906572",""
-"NM_000520.6(HEXA):c.254-252G>C","rs3784586",""
-"NM_000520.6(HEXA):c.259C>A (p.Arg87=)","rs573269641",""
-"NM_000520.6(HEXA):c.261G>A (p.Arg87=)","rs1298623340",""
-"NM_000520.6(HEXA):c.268C>T (p.Leu90=)","rs2140329094",""
-"NM_000520.6(HEXA):c.270G>C (p.Leu90=)","rs2088785332",""
-"NM_000520.6(HEXA):c.273G>A (p.Glu91=)","rs2140329075",""
-"NM_000520.6(HEXA):c.294T>C (p.Ser98=)","rs2542540140",""
-"NM_000520.6(HEXA):c.300C>G (p.Val100=)","rs2140329021",""
-"NM_000520.6(HEXA):c.306T>C (p.Pro102=)","rs1472077476",""
-"NM_000520.6(HEXA):c.309A>T (p.Gly103=)","rs1595804037",""
-"NM_000520.6(HEXA):c.312T>C (p.Cys104=)","rs760781092",""
-"NM_000520.6(HEXA):c.31C>T (p.Leu11=)","rs2542582736",""
-"NM_000520.6(HEXA):c.336A>G (p.Ser112=)","rs2542539959",""
-"NM_000520.6(HEXA):c.336A>T (p.Ser112=)","rs2542539959",""
-"NM_000520.6(HEXA):c.33G>A (p.Leu11=)","rs2140344852",""
-"NM_000520.6(HEXA):c.346+10A>G","rs2140328935",""
-"NM_000520.6(HEXA):c.346+18C>T","rs2542539869",""
-"NM_000520.6(HEXA):c.346+8C>T","rs2140328936",""
-"NM_000520.6(HEXA):c.347-12_347-11del","rs2088766986",""
-"NM_000520.6(HEXA):c.347-17C>A","rs761054655",""
-"NM_000520.6(HEXA):c.347-17C>T","rs761054655",""
-"NM_000520.6(HEXA):c.347-20G>A","rs1055316951",""
-"NM_000520.6(HEXA):c.351C>G (p.Thr117=)","rs2542537964",""
-"NM_000520.6(HEXA):c.366T>C (p.Asp122=)","rs1302430521",""
-"NM_000520.6(HEXA):c.36G>A (p.Leu12=)","rs2140344844",""
-"NM_000520.6(HEXA):c.381C>A (p.Leu127=)","rs1595803351",""
-"NM_000520.6(HEXA):c.381C>T (p.Leu127=)","rs1595803351",""
-"NM_000520.6(HEXA):c.390G>A (p.Glu130=)","rs2140328190",""
-"NM_000520.6(HEXA):c.405T>C (p.Ala135=)","rs2140328173",""
-"NM_000520.6(HEXA):c.408C>T (p.Leu136=)","rs2088765442",""
-"NM_000520.6(HEXA):c.412+10T>C","rs2140328149",""
-"NM_000520.6(HEXA):c.412+12G>A","",""
-"NM_000520.6(HEXA):c.412+14G>T","rs1431861885",""
-"NM_000520.6(HEXA):c.412+16T>A","rs780776443",""
-"NM_000520.6(HEXA):c.412+17G>C","rs2542537662",""
-"NM_000520.6(HEXA):c.412+18A>T","rs1220880031",""
-"NM_000520.6(HEXA):c.412+7A>G","rs2088764993",""
-"NM_000520.6(HEXA):c.412+9T>C","rs1173406782",""
-"NM_000520.6(HEXA):c.413-12A>G","rs2542534233",""
-"NM_000520.6(HEXA):c.413-14C>G","rs2140326832",""
-"NM_000520.6(HEXA):c.413-18C>T","",""
-"NM_000520.6(HEXA):c.413-20G>T","",""
-"NM_000520.6(HEXA):c.413-4C>G","rs373382175",""
-"NM_000520.6(HEXA):c.414T>C (p.Gly138=)","rs1361295729",""
-"NM_000520.6(HEXA):c.417G>A (p.Leu139=)","rs1567299634",""
-"NM_000520.6(HEXA):c.42A>G (p.Ala14=)","rs2089060994",""
-"NM_000520.6(HEXA):c.42A>T (p.Ala14=)","",""
-"NM_000520.6(HEXA):c.438T>G (p.Val146=)","rs2140326788",""
-"NM_000520.6(HEXA):c.450T>C (p.Ala150=)","rs1195208193",""
-"NM_000520.6(HEXA):c.450T>G (p.Ala150=)","",""
-"NM_000520.6(HEXA):c.459+13_459+14del","rs2542533953",""
-"NM_000520.6(HEXA):c.459+19A>C","rs1211013544",""
-"NM_000520.6(HEXA):c.459+9G>T","rs2542533978",""
-"NM_000520.6(HEXA):c.460-10T>C","rs2542532873",""
-"NM_000520.6(HEXA):c.460-11G>A","rs2542532878",""
-"NM_000520.6(HEXA):c.460-15G>A","rs2140326434",""
-"NM_000520.6(HEXA):c.460-17A>T","rs200177553",""
-"NM_000520.6(HEXA):c.460-18A>G","rs2088725774",""
-"NM_000520.6(HEXA):c.460-19C>T","rs1680245631",""
-"NM_000520.6(HEXA):c.492T>C (p.Phe164=)","rs2088724431",""
-"NM_000520.6(HEXA):c.495C>T (p.Pro165=)","rs1447087928",""
-"NM_000520.6(HEXA):c.498C>T (p.Arg166=)","rs2542532702",""
-"NM_000520.6(HEXA):c.501T>C (p.Phe167=)","rs2542532686",""
-"NM_000520.6(HEXA):c.510G>A (p.Arg170=)","rs760406474",""
-"NM_000520.6(HEXA):c.516G>A (p.Leu172=)","rs1567299356",""
-"NM_000520.6(HEXA):c.519G>A (p.Leu173=)","rs771696420",""
-"NM_000520.6(HEXA):c.519G>C (p.Leu173=)","rs771696420",""
-"NM_000520.6(HEXA):c.51A>C (p.Ala17=)","rs2140344816",""
-"NM_000520.6(HEXA):c.528A>C (p.Thr176=)","rs1458388844",""
-"NM_000520.6(HEXA):c.528A>G (p.Thr176=)","rs1458388844",""
-"NM_000520.6(HEXA):c.531T>A (p.Ser177=)","rs747703708",""
-"NM_000520.6(HEXA):c.539A>C (p.Tyr180Ser)","rs200513831",""
-"NM_000520.6(HEXA):c.541C>T (p.Leu181=)","rs2542532487",""
-"NM_000520.6(HEXA):c.54A>G (p.Gly18=)","rs2542582500",""
-"NM_000520.6(HEXA):c.552T>C (p.Ser184=)","rs1387980987",""
-"NM_000520.6(HEXA):c.555C>T (p.Ser185=)","rs2542532421",""
-"NM_000520.6(HEXA):c.558C>T (p.Ile186=)","rs144652159",""
-"NM_000520.6(HEXA):c.559C>T (p.Leu187=)","rs1390872805",""
-"NM_000520.6(HEXA):c.564C>T (p.Asp188=)","",""
-"NM_000520.6(HEXA):c.567T>C (p.Thr189=)","",""
-"NM_000520.6(HEXA):c.570+10C>A","rs1453635996",""
-"NM_000520.6(HEXA):c.570+10C>G","rs1453635996",""
-"NM_000520.6(HEXA):c.570+10C>T","rs1453635996",""
-"NM_000520.6(HEXA):c.570+11C>T","rs2542532325",""
-"NM_000520.6(HEXA):c.570+16G>A","rs1567299267",""
-"NM_000520.6(HEXA):c.570+19C>G","",""
-"NM_000520.6(HEXA):c.570+7A>C","rs2542532334",""
-"NM_000520.6(HEXA):c.570+9G>C","rs2088721599",""
-"NM_000520.6(HEXA):c.571-13C>A","",""
-"NM_000520.6(HEXA):c.571-15C>A","rs2140324790",""
-"NM_000520.6(HEXA):c.571-16G>T","rs771550714",""
-"NM_000520.6(HEXA):c.571-19T>C","rs576601675",""
-"NM_000520.6(HEXA):c.571-20G>T","rs2542528453",""
-"NM_000520.6(HEXA):c.571-4A>G","rs2140324768",""
-"NM_000520.6(HEXA):c.571-6C>T","rs1415195365",""
-"NM_000520.6(HEXA):c.571-7C>T","rs1378205972",""
-"NM_000520.6(HEXA):c.571-8A>C","rs2140324777",""
-"NM_000520.6(HEXA):c.576C>T (p.Val192=)","rs2542528362",""
-"NM_000520.6(HEXA):c.57G>C (p.Arg19=)","rs2542582474",""
-"NM_000520.6(HEXA):c.582G>C (p.Ala194=)","rs112614306",""
-"NM_000520.6(HEXA):c.603C>T (p.Phe201=)","rs767318868",""
-"NM_000520.6(HEXA):c.606C>T (p.His202=)","rs2140324709",""
-"NM_000520.6(HEXA):c.60G>T (p.Ala20=)","rs2542582460",""
-"NM_000520.6(HEXA):c.627T>G (p.Pro209=)","rs762581234",""
-"NM_000520.6(HEXA):c.633C>T (p.Phe211=)","rs2140324675",""
-"NM_000520.6(HEXA):c.63G>A (p.Thr21=)","rs2542582426",""
-"NM_000520.6(HEXA):c.63G>T (p.Thr21=)","rs2542582426",""
-"NM_000520.6(HEXA):c.663C>G (p.Leu221=)","rs2542528065",""
-"NM_000520.6(HEXA):c.66C>T (p.Ala22=)","rs990896217",""
-"NM_000520.6(HEXA):c.672+11G>T","rs1196402639",""
-"NM_000520.6(HEXA):c.672+14T>A","rs1319324646",""
-"NM_000520.6(HEXA):c.672+8C>T","rs2542528016",""
-"NM_000520.6(HEXA):c.672+9C>G","rs2140324618",""
-"NM_000520.6(HEXA):c.673-11G>A","rs757023807",""
-"NM_000520.6(HEXA):c.673-16G>C","rs1567298204",""
-"NM_000520.6(HEXA):c.673-4T>C","rs1171895864",""
-"NM_000520.6(HEXA):c.673-60_673-17del","rs1183071056",""
-"NM_000520.6(HEXA):c.673-7C>T","rs2542526826",""
-"NM_000520.6(HEXA):c.678C>A (p.Ser226=)","rs2140324260",""
-"NM_000520.6(HEXA):c.684C>T (p.Asn228=)","rs2140324256",""
-"NM_000520.6(HEXA):c.69C>A (p.Leu23=)","rs143554538",""
-"NM_000520.6(HEXA):c.69C>T (p.Leu23=)","rs143554538",""
-"NM_000520.6(HEXA):c.702C>T (p.Tyr234=)","rs1352320036",""
-"NM_000520.6(HEXA):c.720G>A (p.Lys240=)","rs2542526570",""
-"NM_000520.6(HEXA):c.723G>A (p.Glu241=)","rs1435809210",""
-"NM_000520.6(HEXA):c.744C>T (p.Leu248=)","rs1595800060",""
-"NM_000520.6(HEXA):c.747G>C (p.Arg249=)","rs77405894",""
-"NM_000520.6(HEXA):c.750T>C (p.Gly250=)","rs2088681348",""
-"NM_000520.6(HEXA):c.753C>T (p.Ile251=)","rs1476731221",""
-"NM_000520.6(HEXA):c.75C>G (p.Pro25=)","rs2089060038",""
-"NM_000520.6(HEXA):c.75C>T (p.Pro25=)","rs2089060038",""
-"NM_000520.6(HEXA):c.762T>C (p.Leu254=)","rs1595800026",""
-"NM_000520.6(HEXA):c.765A>G (p.Ala255=)","rs1307931778",""
-"NM_000520.6(HEXA):c.768G>A (p.Glu256=)","rs1218888083",""
-"NM_000520.6(HEXA):c.792G>A (p.Leu264=)","rs2140324097",""
-"NM_000520.6(HEXA):c.805+10A>T","rs2140324073",""
-"NM_000520.6(HEXA):c.805+14C>T","rs2542526152",""
-"NM_000520.6(HEXA):c.805+9G>C","rs747954846",""
-"NM_000520.6(HEXA):c.806-10C>A","rs2140323098",""
-"NM_000520.6(HEXA):c.806-11T>C","rs2542523209",""
-"NM_000520.6(HEXA):c.806-19G>A","rs2542523221",""
-"NM_000520.6(HEXA):c.806-8T>C","rs2140323096",""
-"NM_000520.6(HEXA):c.810C>A (p.Ile270=)","",""
-"NM_000520.6(HEXA):c.810C>T (p.Ile270=)","rs2140323086",""
-"NM_000520.6(HEXA):c.813T>G (p.Pro271=)","rs2088664140",""
-"NM_000520.6(HEXA):c.820C>T (p.Leu274=)","rs2542523136",""
-"NM_000520.6(HEXA):c.828T>G (p.Pro276=)","rs2542523091",""
-"NM_000520.6(HEXA):c.831C>T (p.Cys277=)","rs2542523089",""
-"NM_000520.6(HEXA):c.843T>C (p.Ser281=)","rs2140323055",""
-"NM_000520.6(HEXA):c.846G>A (p.Glu282=)","rs1362329720",""
-"NM_000520.6(HEXA):c.849C>A (p.Pro283=)","rs2140323045",""
-"NM_000520.6(HEXA):c.849C>G (p.Pro283=)","rs2140323045",""
-"NM_000520.6(HEXA):c.849C>T (p.Pro283=)","rs2140323045",""
-"NM_000520.6(HEXA):c.858C>T (p.Thr286=)","rs748958444",""
-"NM_000520.6(HEXA):c.861T>C (p.Phe287=)","rs1245160890",""
-"NM_000520.6(HEXA):c.900C>T (p.Phe300=)","rs1445600899",""
-"NM_000520.6(HEXA):c.909A>T (p.Thr303=)","rs2088661576",""
-"NM_000520.6(HEXA):c.921A>G (p.Glu307=)","rs1457483877",""
-"NM_000520.6(HEXA):c.924C>T (p.Val308=)","rs2140322950",""
-"NM_000520.6(HEXA):c.930T>C (p.Ser310=)","rs2542522697",""
-"NM_000520.6(HEXA):c.936C>T (p.Phe312=)","rs2542522689",""
-"NM_000520.6(HEXA):c.939A>G (p.Pro313=)","rs2542522673",""
-"NM_000520.6(HEXA):c.969G>A (p.Glu323=)","rs2140322880",""
-"NM_000520.6(HEXA):c.96C>G (p.Thr32=)","rs2140344723",""
-"NM_000520.6(HEXA):c.96C>T (p.Thr32=)","rs2140344723",""
-"NM_000520.6(HEXA):c.984C>T (p.Cys328=)","rs1466852142",""
-"NM_000520.6(HEXA):c.986+10C>A","rs2542522484",""
-"NM_000520.6(HEXA):c.986+12T>C","",""
-"NM_000520.6(HEXA):c.986+20C>A","rs2542522470",""
-"NM_000520.6(HEXA):c.986+8C>T","rs2140322848",""
-"NM_000520.6(HEXA):c.986+9C>A","rs2542522489",""
-"NM_000520.6(HEXA):c.987-19A>T","rs2542520679",""
-"NM_000520.6(HEXA):c.99C>A (p.Ser33=)","rs2140344713",""
-"NM_000520.6(HEXA):c.99C>T (p.Ser33=)","rs2140344713",""
+HGVS	dbSNP	gnomAD frequency	ClinVar_significance	Review_status
+NC_000015.10:g.72343447T>C		0.0	Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72343488A>C		0.0	Benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72343562C>T		0.0	Benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72344080G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72344089A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72344095C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72344104G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72344110T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72344113A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72344119G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72344122T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72344131G>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72344134A>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72344134A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72344144C>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72344144C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72344147G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72344150G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72344150G>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72344157A>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72344158G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72345121dup		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72345258C>T		0.0	Benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72345367T>C		0.0	Benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72345426A>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72345432C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72345433A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72345434C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72345436GCTT[1]		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72345448C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72345451C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72345454T>C		0.0	Benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72345495G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72345499A>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72345502T>C		0.0	Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72345505C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72345520C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72345529G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72345535A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72345537C>T		0.0	Benign/Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72345538C>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72345541T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72345547G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72345556G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72345557G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72345558A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72345559A>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72345560A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72345563G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72345564G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72345568T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72345619C>T		0.0	Benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72345787T>C		0.0	Benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72346050T>C		0.0	Benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72346222dup		0.0	Benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346222del		0.0	Benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346216C>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346216C>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346216C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346218C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346219C>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346220C>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346220C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346221C>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346221C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346222C>G		0.0	Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72346222C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346223G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346223G>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346227del		0.0	Likely_benign	no_assertion_criteria_provided
+NC_000015.10:g.72346226A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346230del		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346228C>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346240C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346242T>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346246G>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346249C>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346249C>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346251G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346267A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346273T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346282A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346285A>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346285A>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346288C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346294A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346297A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346300C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346309C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346312C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346318A>G		0.0	Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72346318A>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346321G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346321G>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346329A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346330G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346330G>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346332G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346338A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346341C>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346343A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346344C>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346344C>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346371C>T		0.0	Benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72346507G>A		0.0	Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72346508G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346511A>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346512G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346515C>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346540G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346540G>C		0.0	Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72346546C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346551T>C		0.0	Benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72346561C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346570A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346579G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346585A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346591C>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346594G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346600G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346603G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346606A>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346612A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346615G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346618C>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346618C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346624G>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346627G>A		0.0	Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72346627G>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346662T>C		0.0	Benign/Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72346663C>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346663C>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346666T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346669A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346669A>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346675C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346684C>A		0.0	Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72346684C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346687C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346693G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346696T>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346717_72346720del		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346716A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346717T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346718A>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346723G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346724T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72346864C>T		0.0	Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72347335C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347356C>G		0.0	Benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347420T>C		0.0	Benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347669T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347670C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347675C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347677C>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347678C>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347678C>T		0.0	Benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347679G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347679G>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347689T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347695A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347710C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347716C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347722A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347731G>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347734A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347737A>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347740A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347746G>A		0.0	Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72347746G>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347752C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347755C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347765AGGAG[3]		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347765A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347766G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347771G>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347774G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347774G>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347775T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347777T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347778C>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347778C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72347801G>C		0.0	Benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72347844C>T		0.0	Likely_benign	no_assertion_criteria_provided
+NC_000015.10:g.72347852G>T		0.0	Benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72347858A>G		0.0	Likely_benign	no_assertion_criteria_provided
+NC_000015.10:g.72347885T>A		0.0	Benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72347997C>T		0.0	Likely_benign	no_assertion_criteria_provided
+NC_000015.10:g.72348030C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72348031C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72348038C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72348040T>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72348056G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72348062G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72348071C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72348074C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72348089G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72348095T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72348098C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72348107A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72348142C>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72348146G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72348148G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72348149A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72348152A>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72348153T>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72348222C>T		0.0	Benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72348804C>T		0.0	Benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349011C>T		0.0	Benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72349059G>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349067A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349069G>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349070G>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349071G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349072C>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349081G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349084G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349096C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349108A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349126T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349129G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349132G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349135A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349141G>A		0.0	Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72349144T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349153G>A		0.0	Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72349156T>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349156T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349159G>A		0.0	Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72349165G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349177A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349189G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349198T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349204A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349207G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349210G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349216G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349216G>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349216G>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349219C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349222A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349225C>T		0.0	Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72349234G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349237A>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349245G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349252A>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349255G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349255G>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349267A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349269G>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349270A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349278C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72349307C>A		0.0	Benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72350504G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350506C>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350508T>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350509C>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350510A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350511T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350528G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350531C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350555C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350558T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350561A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350564C>T		0.0	Benign/Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72350570G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350573A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350576C>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350579G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350582C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350584G>A		0.0	Benign/Likely_benign|other	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72350585T>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350588G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350600C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350603C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350618T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350621G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350639G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350645G>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350648C>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350654A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350657G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350661C>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350661C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350666C>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350669_72350712del		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72350944G>T		0.0	Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72351103A>C		0.0	Benign/Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72351119A>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351122C>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351122C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351123G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351124G>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351125G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351142G>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351145C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351154A>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351169T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351172G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351178A>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351184A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351199G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351202G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351208G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351223C>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351223C>T		0.0	Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72351229G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351238T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351240G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351241G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351242T>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351247G>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351249G>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351250C>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351250C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351253A>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351253A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72351254C>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72352937T>C		0.0	Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72353011C>T		0.0	Benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72353049G>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353052C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353057G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353058G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353058G>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353058G>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353059C>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353061T>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353071A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353074G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353079G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353080G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353083G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353086A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353097G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353098G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353099T>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353107A>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353110T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353110T>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353119C>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353119C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353121G>A		0.0	Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72353122C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353128C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353137A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353140G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353143G>A		0.0	Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72353146A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353186G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353188A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353189C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353193C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353195T>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353196T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353672T>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353673T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353678_72353679del		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353682C>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353700A>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353700A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353712A>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353718C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353733C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353736A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353741G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353741G>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353747T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353749T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353751G>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353753G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353755G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353756G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72353757C>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72355541T>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72355542C>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72355543A>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72355545C>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72355546C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72355547C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72355549A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72355550A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72355552T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72355563G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72355566A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72355578A>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72355581C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72355590G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72355590G>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72355605A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72355614G>A		0.0	Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72355620G>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72355631T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72355636_72355637del		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72355636G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72355639A>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72355641G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72355641G>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72355644C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72355693T>G		0.0	Benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72356333A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356507G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356515T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356517G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356535T>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356535T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356559A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356562T>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356565A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356568T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356571G>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356574T>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356577A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356580G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356589C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356598C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356601C>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356603G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356604T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356610C>T		0.0	Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72356612G>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356627C>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356627C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356629G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356629G>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356631G>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356632T>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356634A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356637T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356640G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356650C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72356869C>G		0.0	Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72370613C>T		0.0	Likely_benign	no_assertion_criteria_provided
+NC_000015.10:g.72370646G>A		0.0	Benign	criteria_provided,_single_submitter
+NC_000015.10:g.72373773_72374621del		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375590G>T		0.0	Benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72375700G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375700G>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375701C>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375701C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375702G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375706C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375711C>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375712C>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375713G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375713G>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375724G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375736G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375745C>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375745C>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375748G>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375751A>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375754G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375760C>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375762G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375763G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375769A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375775C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375778G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375784C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375787G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375790G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375790G>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375805G>A		0.0	Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72375808C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375811C>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375814G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375814G>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375817C>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375826A>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375829G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375838T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375850C>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375853G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375856A>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375871G>A		0.0	Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72375874G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375874G>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375877G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375877G>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375898G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375898G>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375904G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375904G>C		0.0	Benign/Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72375904G>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375907G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375910C>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375910C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375913C>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375916C>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375919T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375922T>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375925G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375931T>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375931T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375937C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375940C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375942G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375946C>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375960T>G		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72375961G>A		0.0	Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72375964G>A		0.0	Benign/Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72375967T>C		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000015.10:g.72376198T>C		0.0	Benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000015.10:g.72378495A>G		0.0	Benign	criteria_provided,_single_submitter

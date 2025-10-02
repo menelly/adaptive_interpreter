@@ -1,0 +1,176 @@
+{
+  "uniprot_id": "O00555",
+  "sequence_length": 2506,
+  "function": "Voltage-sensitive calcium channels (VSCC) mediate the entry of calcium ions into excitable cells and are also involved in a variety of calcium-dependent processes, including muscle contraction, hormone or neurotransmitter release, gene expression, cell motility, cell division and cell death. The isoform alpha-1A gives rise to P and/or Q-type calcium currents. P/Q-type calcium channels belong to the 'high-voltage activated' (HVA) group and are specifically blocked by the spider omega-agatoxin-IVA (AC P54282) (By similarity). They are however insensitive to dihydropyridines (DHP)",
+  "sequence": "MARFGDEMPARYGGGGSGAAAGVVVGSGGGRGAGGSRQGGQPGAQRMYKQSMAQRARTMALYNPIPVRQNCLTVNRSLFLFSEDNVVRKYAKKITEWPPFEYMILATIIANCIVLALEQHLPDDDKTPMSERLDDTEPYFIGIFCFEAGIKIIALGFAFHKGSYLRNGWNVMDFVVVLTGILATVGTEFDLRTLRAVRVLRPLKLVSGIPSLQVVLKSIMKAMIPLLQIGLLLFFAILIFAIIGLEFYMGKFHTTCFEEGTDDIQGESPAPCGTEEPARTCPNGTKCQPYWEGPNNGITQFDNILFAVLTVFQCITMEGWTDLLYNSNDASGNTWNWLYFIPLIIIGSFFMLNLVLGVLSGEFAKERERVENRRAFLKLRRQQQIERELNGYMEWISKAEEVILAEDETDGEQRHPFDALRRTTIKKSKTDLLNPEEAEDQLADIASVGSPFARASIKSAKLENSTFFHKKERRMRFYIRRMVKTQAFYWTVLSLVALNTLCVAIVHYNQPEWLSDFLYYAEFIFLGLFMSEMFIKMYGLGTRPYFHSSFNCFDCGVIIGSIFEVIWAVIKPGTSFGISVLRALRLLRIFKVTKYWASLRNLVVSLLNSMKSIISLLFLLFLFIVVFALLGMQLFGGQFNFDEGTPPTNFDTFPAAIMTVFQILTGEDWNEVMYDGIKSQGGVQGGMVFSIYFIVLTLFGNYTLLNVFLAIAVDNLANAQELTKDEQEEEEAANQKLALQKAKEVAEVSPLSAANMSIAVKEQQKNQKPAKSVWEQRTSEMRKQNLLASREALYNEMDPDERWKAAYTRHLRPDMKTHLDRPLVVDPQENRNNNTNKSRAAEPTVDQRLGQQRAEDFLRKQARYHDRARDPSGSAGLDARRPWAGSQEAELSREGPYGRESDHHAREGSLEQPGFWEGEAERGKAGDPHRRHVHRQGGSRESRSGSPRTGADGEHRRHRAHRRPGEEGPEDKAERRARHREGSRPARGGEGEGEGPDGGERRRRHRHGAPATYEGDARREDKERRHRRRKENQGSGVPVSGPNLSTTRPIQQDLGRQDPPLAEDIDNMKNNKLATAESAAPHGSLGHAGLPQSPAKMGNSTDPGPMLAIPAMATNPQNAASRRTPNNPGNPSNPGPPKTPENSLIVTNPSGTQTNSAKTARKPDHTTVDIPPACPPPLNHTVVQVNKNANPDPLPKKEEEKKEEEEDDRGEDGPKPMPPYSSMFILSTTNPLRRLCHYILNLRYFEMCILMVIAMSSIALAAEDPVQPNAPRNNVLRYFDYVFTGVFTFEMVIKMIDLGLVLHQGAYFRDLWNILDFIVVSGALVAFAFTGNSKGKDINTIKSLRVLRVLRPLKTIKRLPKLKAVFDCVVNSLKNVFNILIVYMLFMFIFAVVAVQLFKGKFFHCTDESKEFEKDCRGKYLLYEKNEVKARDREWKKYEFHYDNVLWALLTLFTVSTGEGWPQVLKHSVDATFENQGPSPGYRMEMSIFYVVYFVVFPFFFVNIFVALIIITFQEQGDKMMEEYSLEKNERACIDFAISAKPLTRHMPQNKQSFQYRMWQFVVSPPFEYTIMAMIALNTIVLMMKFYGASVAYENALRVFNIVFTSLFSLECVLKVMAFGILNYFRDAWNIFDFVTVLGSITDILVTEFGNNFINLSFLRLFRAARLIKLLRQGYTIRILLWTFVQSFKALPYVCLLIAMLFFIYAIIGMQVFGNIGIDVEDEDSDEDEFQITEHNNFRTFFQALMLLFRSATGEAWHNIMLSCLSGKPCDKNSGILTRECGNEFAYFYFVSFIFLCSFLMLNLFVAVIMDNFEYLTRDSSILGPHHLDEYVRVWAEYDPAAWGRMPYLDMYQMLRHMSPPLGLGKKCPARVAYKRLLRMDLPVADDNTVHFNSTLMALIRTALDIKIAKGGADKQQMDAELRKEMMAIWPNLSQKTLDLLVTPHKSTDLTVGKIYAAMMIMEYYRQSKAKKLQAMREEQDRTPLMFQRMEPPSPTQEGGPGQNALPSTQLDPGGALMAHESGLKESPSWVTQRAQEMFQKTGTWSPEQGPPTDMPNSQPNSQSVEMREMGRDGYSDSEHYLPMEGQGRAASMPRLPAENQRRRGRPRGNNLSTISDTSPMKRSASVLGPKARRLDDYSLERVPPEENQRHHQRRRDRSHRASERSLGRYTDVDTGLGTDLSMTTQSGDLPSKERDQERGRPKDRKHRQHHHHHHHHHHPPPPDKDRYAQERPDHGRARARDQRWSRSPSEGREHMAHRQGSSSVSGSPAPSTSGTSTPRRGRRQLPQTPSTPRPHVSYSPVIRKAGGSGPPQQQQQQQQQQQQQAVARPGRAATSGPRRYPGPTAEPLAGDRPPTGGHSSGRSPRMERRVPGPARSESPRACRHGGARWPASGPHVSEGPPGPRHHGYYRGSDYDEADGPGSGGGEEAMAGAYDAPPPVRHASSGATGRSPRTPRASGPACASPSRHGRRLPNGYYPAHGLARPRGPGSRKGLHEPYSESDDDWC",
+  "domains": [
+    {
+      "start": 45,
+      "end": 262,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 291,
+      "end": 412,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 435,
+      "end": 776,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 854,
+      "end": 874,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1051,
+      "end": 1093,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1106,
+      "end": 1126,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1168,
+      "end": 1195,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1225,
+      "end": 1467,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1479,
+      "end": 1993,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2021,
+      "end": 2048,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2067,
+      "end": 2101,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2118,
+      "end": 2145,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2167,
+      "end": 2187,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2426,
+      "end": 2489,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 22,
+      "end": 107,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 165,
+      "end": 234,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 339,
+      "end": 512,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 555,
+      "end": 624,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 729,
+      "end": 858,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1193,
+      "end": 1240,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1309,
+      "end": 1468,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1512,
+      "end": 1567,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1639,
+      "end": 1702,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1832,
+      "end": 2003,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 2064,
+      "end": 2154,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "flexible_loops": [
+    235,
+    236,
+    237,
+    238,
+    239,
+    240,
+    241,
+    242,
+    243,
+    244
+  ],
+  "interface_regions": [
+    17,
+    2483
+  ],
+  "gene": "CACNA1A",
+  "cached_at": "2025-01-27"
+}

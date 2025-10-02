@@ -1,0 +1,138 @@
+{
+  "family": "SIGNALING_REGULATOR",
+  "n_variants": 244,
+  "aa_effects": {
+    "A": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.41,
+      "n": 17
+    },
+    "R": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.563,
+      "n": 49
+    },
+    "N": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.441,
+      "n": 21
+    },
+    "D": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.492,
+      "n": 30
+    },
+    "C": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.46,
+      "n": 24
+    },
+    "E": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.426,
+      "n": 19
+    },
+    "Q": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.333,
+      "n": 10
+    },
+    "G": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.51,
+      "n": 34
+    },
+    "H": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.482,
+      "n": 28
+    },
+    "I": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.477,
+      "n": 27
+    },
+    "L": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.506,
+      "n": 33
+    },
+    "K": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.454,
+      "n": 23
+    },
+    "M": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.401,
+      "n": 16
+    },
+    "F": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.392,
+      "n": 15
+    },
+    "P": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.492,
+      "n": 30
+    },
+    "S": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.46,
+      "n": 24
+    },
+    "T": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.454,
+      "n": 23
+    },
+    "W": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.333,
+      "n": 7
+    },
+    "Y": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.497,
+      "n": 31
+    },
+    "V": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.477,
+      "n": 27
+    }
+  },
+  "conservation_mapping": {
+    "method": "empirical_breakpoints_v1",
+    "breakpoints": [
+      1.0,
+      3.0,
+      5.0,
+      7.0
+    ],
+    "multipliers": [
+      1.0
+    ]
+  }
+}

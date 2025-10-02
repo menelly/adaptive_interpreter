@@ -1,6 +1,6 @@
 {
   "family": "ion_channel",
-  "n_samples": 162,
+  "n_samples": 14520,
   "n_features": 17,
   "feature_columns": [
     "grantham_distance",
@@ -22,27 +22,27 @@
     "frequency"
   ],
   "feature_importance": {
-    "grantham_distance": 0.0068666521289417705,
-    "delta_hydrophobicity": 0.08901205433774312,
-    "delta_volume": 0.04730257552613721,
-    "delta_charge": 0.01155991507065683,
-    "ref_hydrophobicity": 0.0933346026050293,
-    "alt_hydrophobicity": 0.08534063790860176,
-    "ref_volume": 0.054386629859907804,
-    "alt_volume": 0.03273579393495209,
-    "ref_charge": 0.008900116689857839,
-    "alt_charge": 0.021716487988395473,
-    "proline_involved": 0.0,
-    "glycine_involved": 0.0011969985554781061,
-    "cysteine_involved": 0.0015626307147654178,
-    "phylop_score": 0.0,
-    "phastcons_score": 0.0,
+    "grantham_distance": 0.0002732671012003238,
+    "delta_hydrophobicity": 0.0013110104884749261,
+    "delta_volume": 0.0022422411612907636,
+    "delta_charge": 0.00012462546385346018,
+    "ref_hydrophobicity": 0.007277064402365805,
+    "alt_hydrophobicity": 0.02350192546342807,
+    "ref_volume": 0.007500592236477383,
+    "alt_volume": 0.0005299349198693123,
+    "ref_charge": 2.2853513240138583e-05,
+    "alt_charge": 0.0003366808034888898,
+    "proline_involved": 1.4506288634136695e-05,
+    "glycine_involved": 0.0001425207531863958,
+    "cysteine_involved": 1.0214418503555106e-05,
+    "phylop_score": 0.9368819695383096,
+    "phastcons_score": 0.013941280108784286,
     "gerp_score": 0.0,
-    "frequency": 0.5460849046795334
+    "frequency": 0.005889313338892766
   },
   "performance": {
-    "mse": 0.19618370202020205,
-    "r2": -0.06822025750000016
+    "mse": 0.058548163186780224,
+    "r2": 0.6827323886140988
   },
   "model_path": "resources/family_models/ion_channel_unified_model.joblib",
   "scaler_path": "resources/family_models/ion_channel_unified_scaler.joblib"

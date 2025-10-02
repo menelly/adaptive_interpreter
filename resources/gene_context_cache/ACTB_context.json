@@ -1,0 +1,50 @@
+{
+  "uniprot_id": "P60709",
+  "sequence_length": 375,
+  "function": "Actin is a highly conserved protein that polymerizes to produce filaments that form cross-linked networks in the cytoplasm of cells (PubMed:25255767, PubMed:29581253). Actin exists in both monomeric (G-actin) and polymeric (F-actin) forms, both forms playing key functions, such as cell motility and contraction (PubMed:29581253). In addition to their role in the cytoplasmic cytoskeleton, G- and F-actin also localize in the nucleus, and regulate gene transcription and motility and repair of damaged DNA (PubMed:29925947). Plays a role in the assembly of the gamma-tubulin ring complex (gTuRC), which regulates the minus-end nucleation of alpha-beta tubulin heterodimers that grow into microtubule protafilaments (PubMed:39321809, PubMed:38609661). Part of the ACTR1A/ACTB filament around which the dynactin complex is built (By similarity). The dynactin multiprotein complex activates the molecular motor dynein for ultra-processive transport along microtubules (By similarity)",
+  "sequence": "MDDDIAALVVDNGSGMCKAGFAGDDAPRAVFPSIVGRPRHQGVMVGMGQKDSYVGDEAQSKRGILTLKYPIEHGIVTNWDDMEKIWHHTFYNELRVAPEEHPVLLTEAPLNPKANREKMTQIMFETFNTPAMYVAIQAVLSLYASGRTTGIVMDSGDGVTHTVPIYEGYALPHAILRLDLAGRDLTDYLMKILTERGYSFTTTAEREIVRDIKEKLCYVALDFEQEMATAASSSSLEKSYELPDGQVITIGNERFRCPEALFQPSFLGMESCGIHETTFNSIMKCDVDIRKDLYANTVLSGGTTMYPGIADRMQKEITALAPSTMKIKIIAPPERKYSVWIGGSILASLSTFQQMWISKQEYDESGPSIVHRKCF",
+  "domains": [
+    {
+      "start": 2,
+      "end": 372,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 23,
+      "end": 76,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 171,
+      "end": 230,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 289,
+      "end": 351,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "flexible_loops": [
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86
+  ],
+  "interface_regions": [
+    1,
+    358
+  ],
+  "gene": "ACTB",
+  "cached_at": "2025-01-27"
+}

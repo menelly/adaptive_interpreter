@@ -15,14 +15,14 @@ from .smart_protein_analyzer import SmartProteinAnalyzer
 
 # Add sequence mismatch handler
 sys.path.append(os.path.join(os.path.dirname(__file__), '../../../'))
-from sequence_mismatch_handler import create_mismatch_handler
+from data_processing.sequence_mismatch_handler import create_mismatch_handler
 
 # Add DOMAIN AWARENESS! 🎯
-from universal_protein_annotator import UniversalProteinAnnotator
+from data_processing.universal_protein_annotator import UniversalProteinAnnotator
 
 # Add NOVA'S FUNCTIONAL DOMAIN WEIGHTING! 🚀
 sys.path.append(os.path.join(os.path.dirname(__file__), '../'))
-from functional_domain_weighter import FunctionalDomainWeighter
+from core_analyzers.functional_domain_weighter import FunctionalDomainWeighter
 
 class LOFAnalyzer:
     """Analyze loss of function potential - Bin 1 of our two-bin approach"""

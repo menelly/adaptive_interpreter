@@ -1,0 +1,49 @@
+{
+  "family": "oncogene",
+  "n_samples": 911,
+  "n_features": 17,
+  "feature_columns": [
+    "grantham_distance",
+    "delta_hydrophobicity",
+    "delta_volume",
+    "delta_charge",
+    "ref_hydrophobicity",
+    "alt_hydrophobicity",
+    "ref_volume",
+    "alt_volume",
+    "ref_charge",
+    "alt_charge",
+    "proline_involved",
+    "glycine_involved",
+    "cysteine_involved",
+    "phylop_score",
+    "phastcons_score",
+    "gerp_score",
+    "frequency"
+  ],
+  "feature_importance": {
+    "grantham_distance": 0.0,
+    "delta_hydrophobicity": 0.0,
+    "delta_volume": 0.0,
+    "delta_charge": 0.0,
+    "ref_hydrophobicity": 0.0,
+    "alt_hydrophobicity": 0.0,
+    "ref_volume": 0.0,
+    "alt_volume": 0.0,
+    "ref_charge": 0.0,
+    "alt_charge": 0.0,
+    "proline_involved": 0.0,
+    "glycine_involved": 0.0,
+    "cysteine_involved": 0.0,
+    "phylop_score": 0.9885259177134802,
+    "phastcons_score": 0.011474082286519765,
+    "gerp_score": 0.0,
+    "frequency": 0.0
+  },
+  "performance": {
+    "mse": 0.09123050504251044,
+    "r2": 0.4455139050147672
+  },
+  "model_path": "resources/family_models/oncogene_unified_model.joblib",
+  "scaler_path": "resources/family_models/oncogene_unified_scaler.joblib"
+}

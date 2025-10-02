@@ -1,0 +1,86 @@
+{
+  "uniprot_id": "P07949",
+  "sequence_length": 1114,
+  "function": "Receptor tyrosine-protein kinase involved in numerous cellular mechanisms including cell proliferation, neuronal navigation, cell migration, and cell differentiation in response to glia cell line-derived growth family factors (GDNF, NRTN, ARTN, PSPN and GDF15) (PubMed:20064382, PubMed:20616503, PubMed:20702524, PubMed:21357690, PubMed:21454698, PubMed:24560924, PubMed:28846097, PubMed:28846099, PubMed:28953886, PubMed:31118272). In contrast to most receptor tyrosine kinases, RET requires not only its cognate ligands but also coreceptors, for activation (PubMed:21994944, PubMed:23333276, PubMed:28846097, PubMed:28846099, PubMed:28953886). GDNF ligands (GDNF, NRTN, ARTN, PSPN and GDF15) first bind their corresponding GDNFR coreceptors (GFRA1, GFRA2, GFRA3, GFRA4 and GFRAL, respectively), triggering RET autophosphorylation and activation, leading to activation of downstream signaling pathways, including the MAPK- and AKT-signaling pathways (PubMed:21994944, PubMed:23333276, PubMed:24560924, PubMed:25242331, PubMed:28846097, PubMed:28846099, PubMed:28953886). Acts as a dependence receptor via the GDNF-GFRA1 signaling: in the presence of the ligand GDNF in somatotrophs within pituitary, promotes survival and down regulates growth hormone (GH) production, but triggers apoptosis in absence of GDNF (PubMed:20616503, PubMed:21994944). Required for the molecular mechanisms orchestration during intestine organogenesis via the ARTN-GFRA3 signaling: involved in the development of enteric nervous system and renal organogenesis during embryonic life, and promotes the formation of Peyer's patch-like structures, a major component of the gut-associated lymphoid tissue (By similarity). Mediates, through interaction with GDF15-receptor GFRAL, GDF15-induced cell-signaling in the brainstem which triggers an aversive response, characterized by nausea, vomiting, and/or loss of appetite in response to various stresses (PubMed:28846097, PubMed:28846099, PubMed:28953886). Modulates cell adhesion via its cleavage by caspase in sympathetic neurons and mediates cell migration in an integrin (e.g. ITGB1 and ITGB3)-dependent manner (PubMed:20702524, PubMed:21357690). Also active in the absence of ligand, triggering apoptosis through a mechanism that requires receptor intracellular caspase cleavage (PubMed:21357690). Triggers the differentiation of rapidly adapting (RA) mechanoreceptors (PubMed:20064382). Involved in the development of the neural crest (By similarity). Regulates nociceptor survival and size (By similarity). Phosphorylates PTK2/FAK1 (PubMed:21454698)",
+  "sequence": "MAKATSGAAGLRLLLLLLLPLLGKVALGLYFSRDAYWEKLYVDQAAGTPLLYVHALRDAPEEVPSFRLGQHLYGTYRTRLHENNWICIQEDTGLLYLNRSLDHSSWEKLSVRNRGFPLLTVYLKVFLSPTSLREGECQWPGCARVYFSFFNTSFPACSSLKPRELCFPETRPSFRIRENRPPGTFHQFRLLPVQFLCPNISVAYRLLEGEGLPFRCAPDSLEVSTRWALDREQREKYELVAVCTVHAGAREEVVMVPFPVTVYDEDDSAPTFPAGVDTASAVVEFKRKEDTVVATLRVFDADVVPASGELVRRYTSTLLPGDTWAQQTFRVEHWPNETSVQANGSFVRATVHDYRLVLNRNLSISENRTMQLAVLVNDSDFQGPGAGVLLLHFNVSVLPVSLHLPSTYSLSVSRRARRFAQIGKVCVENCQAFSGINVQYKLHSSGANCSTLGVVTSAEDTSGILFVNDTKALRRPKCAELHYMVVATDQQTSRQAQAQLLVTVEGSYVAEEAGCPLSCAVSKRRLECEECGGLGSPTGRCEWRQGDGKGITRNFSTCSPSTKTCPDGHCDVVETQDINICPQDCLRGSIVGGHEPGEPRGIKAGYGTCNCFPEEEKCFCEPEDIQDPLCDELCRTVIAAAVLFSFIVSVLLSAFCIHCYHKFAHKPPISSAEMTFRRPAQAFPVSYSSSGARRPSLDSMENQVSVDAFKILEDPKWEFPRKNLVLGKTLGEGEFGKVVKATAFHLKGRAGYTTVAVKMLKENASPSELRDLLSEFNVLKQVNHPHVIKLYGACSQDGPLLLIVEYAKYGSLRGFLRESRKVGPGYLGSGGSRNSSSLDHPDERALTMGDLISFAWQISQGMQYLAEMKLVHRDLAARNILVAEGRKMKISDFGLSRDVYEEDSYVKRSQGRIPVKWMAIESLFDHIYTTQSDVWSFGVLLWEIVTLGGNPYPGIPPERLFNLLKTGHRMERPDNCSEEMYRLMLQCWKQEPDKRPVFADISKDLEKMMVKRRDYLDLAASTPSDSLIYDDGLSEEETPLVDCNNAPLPRALPSTWIENKLYGMSDPNWPGESPVPLTRADGTNTGFPRYPNDSVYANWMLSPSAAKLMDTFDS",
+  "domains": [
+    {
+      "start": 1,
+      "end": 166,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 185,
+      "end": 530,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 626,
+      "end": 958,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 981,
+      "end": 1025,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1080,
+      "end": 1112,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 75,
+      "end": 254,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 274,
+      "end": 325,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 402,
+      "end": 453,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 655,
+      "end": 928,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 950,
+      "end": 1034,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "flexible_loops": [
+    326,
+    327,
+    328,
+    329,
+    330,
+    331,
+    332,
+    333,
+    334,
+    335
+  ],
+  "interface_regions": [
+    7,
+    1112
+  ],
+  "gene": "RET",
+  "cached_at": "2025-01-27"
+}

@@ -1,0 +1,138 @@
+{
+  "family": "GENERAL",
+  "n_variants": 105,
+  "aa_effects": {
+    "A": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.333,
+      "n": 9
+    },
+    "R": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.482,
+      "n": 28
+    },
+    "N": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.382,
+      "n": 14
+    },
+    "D": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.333,
+      "n": 8
+    },
+    "C": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.371,
+      "n": 13
+    },
+    "E": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.333,
+      "n": 3
+    },
+    "Q": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.333,
+      "n": 4
+    },
+    "G": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.41,
+      "n": 17
+    },
+    "H": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.333,
+      "n": 8
+    },
+    "I": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.333,
+      "n": 2
+    },
+    "L": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.382,
+      "n": 14
+    },
+    "K": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.333,
+      "n": 6
+    },
+    "M": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.333,
+      "n": 6
+    },
+    "F": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.347,
+      "n": 11
+    },
+    "P": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.36,
+      "n": 12
+    },
+    "S": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.447,
+      "n": 22
+    },
+    "T": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.333,
+      "n": 9
+    },
+    "W": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.333,
+      "n": 5
+    },
+    "Y": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.333,
+      "n": 7
+    },
+    "V": {
+      "ref_loss_multiplier": 1.0,
+      "gain_multiplier": 1.0,
+      "confidence": 0.36,
+      "n": 12
+    }
+  },
+  "conservation_mapping": {
+    "method": "empirical_breakpoints_v1",
+    "breakpoints": [
+      1.0,
+      3.0,
+      5.0,
+      7.0
+    ],
+    "multipliers": [
+      1.0
+    ]
+  }
+}

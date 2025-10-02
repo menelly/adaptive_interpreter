@@ -1,0 +1,116 @@
+{
+  "uniprot_id": "P13569",
+  "sequence_length": 1480,
+  "function": "Epithelial ion channel that plays an important role in the regulation of epithelial ion and water transport and fluid homeostasis (PubMed:26823428). Mediates the transport of chloride ions across the cell membrane (PubMed:10792060, PubMed:11524016, PubMed:11707463, PubMed:12519745, PubMed:12529365, PubMed:12588899, PubMed:12727866, PubMed:15010471, PubMed:17036051, PubMed:1712898, PubMed:17182731, PubMed:19398555, PubMed:19621064, PubMed:22178883, PubMed:25330774, PubMed:26846474, PubMed:28087700, PubMed:8910473, PubMed:9804160). Possesses an intrinsic ATPase activity and utilizes ATP to gate its channel; the passive flow of anions through the channel is gated by cycles of ATP binding and hydrolysis by the ATP-binding domains (PubMed:11524016, PubMed:15284228, PubMed:26627831, PubMed:8910473). The ion channel is also permeable to HCO(3)(-); selectivity depends on the extracellular chloride concentration (PubMed:15010471, PubMed:19019741). In vitro, mediates ATP-dependent glutathione flux (PubMed:12727866). Exerts its function also by modulating the activity of other ion channels and transporters (PubMed:12403779, PubMed:22121115, PubMed:22178883, PubMed:27941075). Plays an important role in airway fluid homeostasis (PubMed:16645176, PubMed:19621064, PubMed:26823428). Contributes to the regulation of the pH and the ion content of the airway surface fluid layer and thereby plays an important role in defense against pathogens (PubMed:14668433, PubMed:16645176, PubMed:26823428). Modulates the activity of the epithelial sodium channel (ENaC) complex, in part by regulating the cell surface expression of the ENaC complex (PubMed:17182731, PubMed:17434346, PubMed:27941075). Inhibits the activity of the ENaC channel containing subunits SCNN1A, SCNN1B and SCNN1G (PubMed:17182731). Inhibits the activity of the ENaC channel containing subunits SCNN1D, SCNN1B and SCNN1G, but not of the ENaC channel containing subunits SCNN1A, SCNN1B and SCNN1G (PubMed:17182731, PubMed:27941075). May regulate bicarbonate secretion and salvage in epithelial cells by regulating the transporter SLC4A7 (PubMed:12403779). Can inhibit the chloride channel activity of ANO1 (PubMed:22178883). Plays a role in the chloride and bicarbonate homeostasis during sperm epididymal maturation and capacitation (PubMed:19923167, PubMed:27714810, PubMed:29393851)",
+  "sequence": "MQRSPLEKASVVSKLFFSWTRPILRKGYRQRLELSDIYQIPSVDSADNLSEKLEREWDRELASKKNPKLINALRRCFFWRFMFYGIFLYLGEVTKAVQPLLLGRIIASYDPDNKEERSIAIYLGIGLCLLFIVRTLLLHPAIFGLHHIGMQMRIAMFSLIYKKTLKLSSRVLDKISIGQLVSLLSNNLNKFDEGLALAHFVWIAPLQVALLMGLIWELLQASAFCGLGFLIVLALFQAGLGRMMMKYRDQRAGKISERLVITSEMIENIQSVKAYCWEEAMEKMIENLRQTELKLTRKAAYVRYFNSSAFFFSGFFVVFLSVLPYALIKGIILRKIFTTISFCIVLRMAVTRQFPWAVQTWYDSLGAINKIQDFLQKQEYKTLEYNLTTTEVVMENVTAFWEEGFGELFEKAKQNNNNRKTSNGDDSLFFSNFSLLGTPVLKDINFKIERGQLLAVAGSTGAGKTSLLMVIMGELEPSEGKIKHSGRISFCSQFSWIMPGTIKENIIFGVSYDEYRYRSVIKACQLEEDISKFAEKDNIVLGEGGITLSGGQRARISLARAVYKDADLYLLDSPFGYLDVLTEKEIFESCVCKLMANKTRILVTSKMEHLKKADKILILHEGSSYFYGTFSELQNLQPDFSSKLMGCDSFDQFSAERRNSILTETLHRFSLEGDAPVSWTETKKQSFKQTGEFGEKRKNSILNPINSIRKFSIVQKTPLQMNGIEEDSDEPLERRLSLVPDSEQGEAILPRISVISTGPTLQARRRQSVLNLMTHSVNQGQNIHRKTTASTRKVSLAPQANLTELDIYSRRLSQETGLEISEEINEEDLKECFFDDMESIPAVTTWNTYLRYITVHKSLIFVLIWCLVIFLAEVAASLVVLWLLGNTPLQDKGNSTHSRNNSYAVIITSTSSYYVFYIYVGVADTLLAMGFFRGLPLVHTLITVSKILHHKMLHSVLQAPMSTLNTLKAGGILNRFSKDIAILDDLLPLTIFDFIQLLLIVIGAIAVVAVLQPYIFVATVPVIVAFIMLRAYFLQTSQQLKQLESEGRSPIFTHLVTSLKGLWTLRAFGRQPYFETLFHKALNLHTANWFLYLSTLRWFQMRIEMIFVIFFIAVTFISILTTGEGEGRVGIILTLAMNIMSTLQWAVNSSIDVDSLMRSVSRVFKFIDMPTEGKPTKSTKPYKNGQLSKVMIIENSHVKKDDIWPSGGQMTVKDLTAKYTEGGNAILENISFSISPGQRVGLLGRTGSGKSTLLSAFLRLLNTEGEIQIDGVSWDSITLQQWRKAFGVIPQKVFIFSGTFRKNLDPYEQWSDQEIWKVADEVGLRSVIEQFPGKLDFVLVDGGCVLSHGHKQLMCLARSVLSKAKILLLDEPSAHLDPVTYQIIRRTLKQAFADCTVILCEHRIEAMLECQQFLVIEENKVRQYDSIQKLLNERSLFRQAISPSDRVKLFPHRNSSKCKSKPQIAALKEETEEEVQDTRL",
+  "domains": [
+    {
+      "start": 2,
+      "end": 29,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 43,
+      "end": 672,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 738,
+      "end": 783,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 826,
+      "end": 1177,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1212,
+      "end": 1453,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1,
+      "end": 107,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 131,
+      "end": 201,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 219,
+      "end": 336,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 408,
+      "end": 452,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 479,
+      "end": 637,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 649,
+      "end": 824,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1041,
+      "end": 1080,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1141,
+      "end": 1222,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1278,
+      "end": 1322,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1347,
+      "end": 1480,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "flexible_loops": [
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39
+  ],
+  "interface_regions": [
+    6,
+    1470
+  ],
+  "gene": "CFTR",
+  "cached_at": "2025-01-27"
+}

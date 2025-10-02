@@ -1,6 +1,6 @@
 {
   "family": "cytoskeleton",
-  "n_samples": 585,
+  "n_samples": 553,
   "n_features": 17,
   "feature_columns": [
     "grantham_distance",
@@ -22,27 +22,27 @@
     "frequency"
   ],
   "feature_importance": {
-    "grantham_distance": 0.007899200036212492,
-    "delta_hydrophobicity": 0.051406377120636525,
-    "delta_volume": 0.06022543580549119,
-    "delta_charge": 0.009283942381814783,
-    "ref_hydrophobicity": 0.03403036348731921,
-    "alt_hydrophobicity": 0.034616540336355486,
-    "ref_volume": 0.03324967451299789,
-    "alt_volume": 0.06036871164752023,
-    "ref_charge": 0.007605083201953367,
-    "alt_charge": 0.003074840683161652,
-    "proline_involved": 0.0007891927375667802,
-    "glycine_involved": 0.0023976878121123916,
-    "cysteine_involved": 0.0031071387159187867,
-    "phylop_score": 0.12170759615790055,
-    "phastcons_score": 0.10950639028375843,
-    "gerp_score": 0.12474253518799222,
-    "frequency": 0.33598928989128807
+    "grantham_distance": 0.011551194317516994,
+    "delta_hydrophobicity": 0.07486047022262957,
+    "delta_volume": 0.08448694606312859,
+    "delta_charge": 0.011918900472260071,
+    "ref_hydrophobicity": 0.04992078372755415,
+    "alt_hydrophobicity": 0.06286468759957901,
+    "ref_volume": 0.03736289348753683,
+    "alt_volume": 0.09048837247966862,
+    "ref_charge": 0.0058135800444031925,
+    "alt_charge": 0.012783855800035382,
+    "proline_involved": 7.073992825570909e-05,
+    "glycine_involved": 0.00431931856988141,
+    "cysteine_involved": 0.0013995520137925835,
+    "phylop_score": 0.0,
+    "phastcons_score": 0.0,
+    "gerp_score": 0.0,
+    "frequency": 0.552158705273758
   },
   "performance": {
-    "mse": 0.07221815984128828,
-    "r2": 0.4904152628518581
+    "mse": 0.13271757240754262,
+    "r2": 0.06452333545003863
   },
   "model_path": "resources/family_models/cytoskeleton_unified_model.joblib",
   "scaler_path": "resources/family_models/cytoskeleton_unified_scaler.joblib"

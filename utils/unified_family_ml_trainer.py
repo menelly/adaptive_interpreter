@@ -29,12 +29,14 @@ import pyBigWig
 
 # Import our existing systems
 import sys
-sys.path.append('..')
+from pathlib import Path
+sys.path.append(str(Path(__file__).parent.parent))
 from nova_dn.amino_acid_props import AA_PROPS
 from utils.gnomad_frequency_fetcher import GnomADFrequencyFetcher
-from plausibility_filter import classify_gene_family
+from core_analyzers.plausibility_filter import classify_gene_family
 from nova_dn.universal_context import UniversalContext
 from analyzers.uniprot_mapper import UniProtMapper
+from utils.genomic_to_protein import GenomicToProteinConverter
 
 class UnifiedFamilyMLTrainer:
     """Revolutionary unified ML trainer for family-aware analysis"""
@@ -42,7 +44,7 @@ class UnifiedFamilyMLTrainer:
     def __init__(self, benign_freq_threshold: float = 0.04):
         self.learning_dir = Path("learning")
         self.models_dir = Path("resources/family_models")
-        self.models_dir.mkdir(exist_ok=True)
+        self.models_dir.mkdir(parents=True, exist_ok=True)
 
         # Frequency threshold for benign variants (default 4%)
         self.benign_freq_threshold = benign_freq_threshold
@@ -56,6 +58,9 @@ class UnifiedFamilyMLTrainer:
 
         # Initialize UniProt mapper for coordinate conversion
         self.uniprot_mapper = UniProtMapper()
+
+        # Initialize genomic to protein converter
+        self.genomic_converter = GenomicToProteinConverter()
 
         # Conservation data paths
         self.conservation_dir = Path("/home/Ace/conservation_data")
@@ -73,8 +78,14 @@ class UnifiedFamilyMLTrainer:
         print("🧬 Using real GO term classification system!")
         print(f"🧬 Conservation data: {self.conservation_dir}")
     
-    def extract_variant_info(self, hgvs: str) -> Optional[Dict]:
+    def extract_variant_info(self, hgvs: str, gene_from_filename: str = None) -> Optional[Dict]:
         """Extract gene, transcript, and variant from HGVS with protein parsing"""
+
+        # 🚀 NEW: Handle genomic HGVS format (from ClinVar)
+        if self.genomic_converter.is_genomic_hgvs(hgvs):
+            return self._extract_from_genomic_hgvs(hgvs, gene_from_filename)
+
+        # Original protein HGVS handling
         # Extract gene name from parentheses
         gene_match = re.search(r'\(([^)]+)\)', hgvs)
         if not gene_match:
@@ -118,7 +129,33 @@ class UnifiedFamilyMLTrainer:
             'variant_str': None,
             'type': 'unknown'
         }
-    
+
+    def _extract_from_genomic_hgvs(self, hgvs: str, gene_from_filename: str = None) -> Optional[Dict]:
+        """Extract variant info from genomic HGVS format"""
+
+        # Use genomic converter to parse coordinates
+        variant_info = self.genomic_converter.extract_variant_info_from_genomic(hgvs, gene_from_filename or "UNKNOWN_GENE")
+        if not variant_info:
+            return None
+
+        # For genomic variants we do NOT fabricate protein AA fields.
+        # We keep protein-position/AA fields as None so downstream calibrators
+        # won't treat placeholders as real counts.
+
+        return {
+            'gene': gene_from_filename or variant_info['gene'],
+            'hgvs': hgvs,
+            'position': None,
+            'ref_aa': None,
+            'alt_aa': None,
+            'variant_str': variant_info['variant_str'],
+            'type': 'genomic_missense',
+            'chromosome': variant_info['chromosome'],
+            'genomic_position': variant_info['genomic_position'],
+            'ref_allele': variant_info['ref_allele'],
+            'alt_allele': variant_info['alt_allele']
+        }
+
     def calculate_aa_features(self, ref_aa: str, alt_aa: str) -> Dict:
         """Calculate amino acid property features"""
         if ref_aa not in AA_PROPS or alt_aa not in AA_PROPS:
@@ -485,21 +522,33 @@ class UnifiedFamilyMLTrainer:
             # Pattern for NC_XXXXXX.XX:g.POSITION
             genomic_match = re.search(r'NC_(\d+)(?:\.\d+)?:g\.(\d+)', hgvs)
             if genomic_match:
-                chrom_num = genomic_match.group(1).lstrip('0')  # Remove leading zeros
+                raw_num = genomic_match.group(1)
+                chrom_num = raw_num.lstrip('0') or raw_num  # Remove leading zeros but keep raw if all zeros
                 position = int(genomic_match.group(2))
 
-                # Convert NC chromosome number to chr format
-                chrom = f"chr{chrom_num}"
+                # Map special chromosomes
+                if chrom_num in ("23",):
+                    chrom = "chrX"
+                elif chrom_num in ("24",):
+                    chrom = "chrY"
+                elif chrom_num in ("12920",):  # NC_012920.* mitochondrial
+                    chrom = "chrM"
+                else:
+                    chrom = f"chr{chrom_num}"
 
                 return (chrom, position)
 
-            # Pattern for direct chr format: chr17:50183779
-            chr_match = re.search(r'chr(\d+):(\d+)', hgvs)
+            # Pattern for direct chr format: supports chr1..chr22, chrX, chrY, chrM
+            chr_match = re.search(r'chr([0-9XYM]+):(\d+)', hgvs, re.IGNORECASE)
             if chr_match:
-                chrom_num = chr_match.group(1)
+                chrom_id = chr_match.group(1).upper()
                 position = int(chr_match.group(2))
-
-                chrom = f"chr{chrom_num}"
+                if chrom_id == "23":
+                    chrom = "chrX"
+                elif chrom_id == "24":
+                    chrom = "chrY"
+                else:
+                    chrom = f"chr{chrom_id}"
                 return (chrom, position)
 
             return None
@@ -552,7 +601,10 @@ class UnifiedFamilyMLTrainer:
                 is_pathogenic = 'pathogenic' in tsv_file.name.lower()
                 is_benign = 'benign' in tsv_file.name.lower()
                 pathogenicity_score = 1.0 if is_pathogenic else 0.0
-                
+
+                # Extract gene name from filename (e.g., "myo7a_pathogenic.tsv" -> "MYO7A")
+                gene_from_filename = tsv_file.stem.split('_')[0].upper()
+
                 print(f"   📋 Columns found: {df.columns.tolist()}")
                 print(f"   📊 Rows: {len(df)}")
 
@@ -587,8 +639,8 @@ class UnifiedFamilyMLTrainer:
                         skipped_high_freq += 1
                         continue  # Skip common "benign" variants (they're just normal!)
 
-                    # Extract variant info
-                    variant_info = self.extract_variant_info(hgvs)
+                    # Extract variant info (pass gene name from filename for genomic HGVS)
+                    variant_info = self.extract_variant_info(hgvs, gene_from_filename)
                     if not variant_info:
                         skipped_unparseable += 1
                         continue
@@ -614,12 +666,16 @@ class UnifiedFamilyMLTrainer:
                         'hgvs': hgvs,
                         'frequency': frequency,
                         'pathogenicity_score': pathogenicity_score,
+                        # Explicit AA fields needed by the calibrator
+                        'ref_aa': ref_aa,
+                        'alt_aa': alt_aa,
+                        'position': position,
                         **aa_features,
                         **domain_features
                     }
-                    
+
                     all_data.append(feature_row)
-                    
+
             except Exception as e:
                 print(f"❌ Error processing {tsv_file}: {e}")
                 continue

@@ -1,0 +1,80 @@
+{
+  "uniprot_id": "P51787",
+  "sequence_length": 676,
+  "function": "Pore-forming subunit of the voltage-gated potassium (Kv) channel involved in the regulation of cardiomyocyte excitability and important in normal development and functions of myocardium, inner ear, stomach and colon (PubMed:10646604, PubMed:25441029). Associates with KCNE beta subunits that modulates current kinetics (PubMed:10646604, PubMed:11101505, PubMed:19687231, PubMed:8900283, PubMed:9108097, PubMed:9312006). Induces a voltage-dependent current by rapidly activating and slowly deactivating potassium-selective outward current (PubMed:10646604, PubMed:11101505, PubMed:25441029, PubMed:8900283, PubMed:9108097, PubMed:9312006). Also promotes a delayed voltage activated potassium current showing outward rectification characteristic (By similarity). During beta-adrenergic receptor stimulation, participates in cardiac repolarization by associating with KCNE1 to form the I(Ks) cardiac potassium current that increases the amplitude and slows down the activation kinetics of outward potassium current I(Ks) (By similarity) (PubMed:10646604, PubMed:11101505, PubMed:8900283, PubMed:9108097, PubMed:9312006). Muscarinic agonist oxotremorine-M strongly suppresses KCNQ1/KCNE1 current (PubMed:10713961). When associated with KCNE3, forms the potassium channel that is important for cyclic AMP-stimulated intestinal secretion of chloride ions (PubMed:10646604). This interaction with KCNE3 is reduced by 17beta-estradiol, resulting in the reduction of currents (By similarity). During conditions of increased substrate load, maintains the driving force for proximal tubular and intestinal sodium ions absorption, gastric acid secretion, and cAMP-induced jejunal chloride ions secretion (By similarity). Allows the provision of potassium ions to the luminal membrane of the secretory canaliculus in the resting state as well as during stimulated acid secretion (By similarity). When associated with KCNE2, forms a heterooligomer complex leading to currents with an apparently instantaneous activation, a rapid deactivation process and a linear current-voltage relationship and decreases the amplitude of the outward current (PubMed:11101505). When associated with KCNE4, inhibits voltage-gated potassium channel activity (PubMed:19687231). When associated with KCNE5, this complex only conducts current upon strong and continued depolarization (PubMed:12324418). Also forms a heterotetramer with KCNQ5; has a voltage-gated potassium channel activity (PubMed:24855057). Binds with phosphatidylinositol 4,5-bisphosphate (PubMed:25037568). KCNQ1-KCNE2 channel associates with Na(+)-coupled myo-inositol symporter in the apical membrane of choroid plexus epithelium and regulates the myo-inositol gradient between blood and cerebrospinal fluid with an impact on neuron excitability (By similarity)",
+  "sequence": "MAAASSPPRAERKRWGWGRLPGARRGSAGLAKKCPFSLELAEGGPAGGALYAPIAPGAPGPAPPASPAAPAAPPVASDLGPRPPVSLDPRVSIYSTRRPVLARTHVQGRVYNFLERPTGWKCFVYHFAVFLIVLVCLIFSVLSTIEQYAALATGTLFWMEIVLVVFFGTEYVVRLWSAGCRSKYVGLWGRLRFARKPISIIDLIVVVASMVVLCVGSKGQVFATSAIRGIRFLQILRMLHVDRQGGTWRLLGSVVFIHRQELITTLYIGFLGLIFSSYFVYLAEKDAVNESGRVEFGSYADALWWGVVTVTTIGYGDKVPQTWVGKTIASCFSVFAISFFALPAGILGSGFALKVQQKQRQKHFNRQIPAAASLIQTAWRCYAAENPDSSTWKIYIRKAPRSHTLLSPSPKPKKSVVVKKKKFKLDKDNGVTPGEKMLTVPHITCDPPEERRLDHFSVDGYDSSVRKSPTLLEVSMPHFMRTNSFAEDLDLEGETLLTPITHISQLREHHRATIKVIRRMQYFVAKKKFQQARKPYDVRDVIEQYSQGHLNLMVRIKELQRRLDQSIGKPSLFISVSEKSKDRGSNTIGARLNRVEDKVTQLDQRLALITDMLHQLLSLHGGSTPGSGGPPREGGAHITQPCGSGGSVDPELFLPSNTLPTYEQLTVPRRGPDEGS",
+  "domains": [
+    {
+      "start": 3,
+      "end": 23,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 38,
+      "end": 412,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 458,
+      "end": 629,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 645,
+      "end": 665,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1,
+      "end": 53,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 70,
+      "end": 136,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 156,
+      "end": 267,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 341,
+      "end": 461,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 480,
+      "end": 620,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "flexible_loops": [
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33
+  ],
+  "interface_regions": [
+    1,
+    654
+  ],
+  "gene": "KCNQ1",
+  "cached_at": "2025-01-27"
+}

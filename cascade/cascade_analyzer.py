@@ -20,21 +20,25 @@ import tempfile
 from typing import Dict, List, Optional, Tuple
 from pathlib import Path
 
-# Add paths for all analyzers
-sys.path.append(str(Path(__file__).parent / "nova_dn"))
+# Add paths for all analyzers and project root
+sys.path.append(str(Path(__file__).parent.parent))  # DNModeling root
+sys.path.append(str(Path(__file__).parent.parent / "utils"))  # legacy flat imports under utils
+sys.path.append(str(Path(__file__).parent.parent / "data_processing"))  # legacy flat imports under data_processing
+sys.path.append(str(Path(__file__).parent.parent / "core_analyzers"))  # legacy flat imports under core_analyzers
+sys.path.append(str(Path(__file__).parent.parent / "nova_dn"))
 sys.path.append(str(Path(__file__).parent.parent / "caller" / "phase1" / "code"))
 
-# Import all three analyzers
-from nova_dn.analyzer import NovaDNAnalyzer
-from analyzers.lof_analyzer import LOFAnalyzer
-from analyzers.gof_variant_analyzer import GOFVariantAnalyzer
-from nova_dn.alphafold_sequence import AlphaFoldSequenceExtractor
-from nova_dn.sequence_manager import SequenceManager
-from biological_router import BiologicalRouter
-from proline_ml_integrator import ProlineMLIntegrator
-from gly_cys_simple_integrator import SimplifiedGlyCysIntegrator  # 🔥 REVOLUTIONARY ML SYSTEM!
-from analyzers.conservation_database import ConservationDatabase  # 🧬 EVOLUTIONARY INTELLIGENCE!
-from utils.rsid_frequency_fetcher import RSIDFrequencyFetcher  # 🔑 NOVA'S rsID SOLUTION!
+# Import analyzers and utilities (absolute package imports)
+from DNModeling.nova_dn.analyzer import NovaDNAnalyzer
+from DNModeling.analyzers.lof_analyzer import LOFAnalyzer
+from DNModeling.analyzers.gof_variant_analyzer import GOFVariantAnalyzer
+from DNModeling.nova_dn.alphafold_sequence import AlphaFoldSequenceExtractor
+from DNModeling.nova_dn.sequence_manager import SequenceManager
+from DNModeling.cascade.biological_router import BiologicalRouter
+from DNModeling.utils.proline_ml_integrator import ProlineMLIntegrator
+from DNModeling.utils.gly_cys_simple_integrator import SimplifiedGlyCysIntegrator  # 🔥 REVOLUTIONARY ML SYSTEM!
+from DNModeling.analyzers.conservation_database import ConservationDatabase  # 🧬 EVOLUTIONARY INTELLIGENCE!
+from DNModeling.utils.rsid_frequency_fetcher import RSIDFrequencyFetcher  # 🔑 NOVA'S rsID SOLUTION!
 
 
 class HotspotDatabase:
@@ -84,7 +88,7 @@ class HotspotDatabase:
 
 class CascadeAnalyzer:
     """Coordinates DN, LOF, and GOF analyzers for comprehensive pathogenicity analysis"""
-    
+
     def __init__(self, alphafold_path: str = "/mnt/Arcana/alphafold_human/structures/", override_family: str = None):
         self.dn_analyzer = NovaDNAnalyzer(use_smart_filtering=True)
         self.lof_analyzer = LOFAnalyzer(offline_mode=True)
@@ -98,7 +102,7 @@ class CascadeAnalyzer:
         self.rsid_fetcher = RSIDFrequencyFetcher()  # 🔑 NOVA'S rsID SOLUTION!
         self.temp_files = []
         self.override_family = override_family  # 🎯 CLI override for gene family classification
-        
+
         # Gene -> UniProt mappings (expanded for biological routing)
         self.gene_to_uniprot = {
             'TP53': 'P04637', 'COL1A1': 'P02452', 'FGFR3': 'P22607',
@@ -118,27 +122,54 @@ class CascadeAnalyzer:
             # Hearing loss genes - use canonical isoforms
             'MYO7A': 'Q13402'  # Canonical full-length MYO7A (2215 residues)
         }
-    
-    def interpret_score(self, score: float) -> str:
-        """
-        Convert numeric score to clinical classification
 
-        🔥 UPDATED THRESHOLDS for conservation-boosted era!
-        Based on real 300-variant validation data analysis.
+    def _load_classification_thresholds(self):
+        if hasattr(self, "_family_thresholds") and self._family_thresholds is not None:
+            return
+        self._family_thresholds = {}
+        try:
+            from pathlib import Path
+            import json
+            cfg_path = Path(__file__).parent / "resources" / "classification_thresholds.json"
+            if cfg_path.exists():
+                with cfg_path.open("r", encoding="utf-8") as fh:
+                    data = json.load(fh)
+                    if isinstance(data, dict):
+                        self._family_thresholds = data
+        except Exception:
+            # Stay silent; fall back to defaults
+            self._family_thresholds = {}
+
+    def _get_family_thresholds(self, family: str | None) -> dict:
+        # Global defaults tuned for conservation-boosted era
+        base = {"P": 1.2, "LP": 0.8, "VUS-P": 0.6, "VUS": 0.4, "LB": 0.2}
+        if not family:
+            return base
+        self._load_classification_thresholds()
+        fam = self._family_thresholds.get(family, {}) if hasattr(self, "_family_thresholds") else {}
+        # Merge partial overrides
+        merged = dict(base)
+        merged.update({k: v for k, v in fam.items() if isinstance(v, (int, float))})
+        return merged
+
+    def interpret_score(self, score: float, family: str | None = None) -> str:
         """
-        if score >= 1.2:
-            return "P"   # Pathogenic (ultra-conserved, definitely broken)
-        elif score >= 0.8:
-            return "LP"  # Likely Pathogenic (strong evidence)
-        elif score >= 0.6:
-            return "VUS-P"  # VUS favor Pathogenic (moderate evidence)
-        elif score >= 0.4:
-            return "VUS"  # Uncertain significance (weak evidence)
-        elif score >= 0.2:
-            return "LB"  # Likely Benign (conservative threshold)
+        Convert numeric score to clinical classification with optional per-family thresholds.
+        """
+        thr = self._get_family_thresholds(family)
+        if score >= thr["P"]:
+            return "P"
+        elif score >= thr["LP"]:
+            return "LP"
+        elif score >= thr["VUS-P"]:
+            return "VUS-P"
+        elif score >= thr["VUS"]:
+            return "VUS"
+        elif score >= thr["LB"]:
+            return "LB"
         else:
-            return "B"   # Benign (very confident)
-    
+            return "B"
+
     def analyze_cascade_biological(self, gene: str, variant: str, gnomad_freq: float = 0.0,
                                   variant_type: str = 'missense', sequence: Optional[str] = None) -> Dict:
         """
@@ -375,7 +406,7 @@ class CascadeAnalyzer:
             if synergistic_score > 0 and synergistic_score > max_single_score:
                 # Synergy wins - mixed mechanism is more dangerous
                 results['final_score'] = synergistic_score
-                results['final_classification'] = self.interpret_score(synergistic_score)
+                results['final_classification'] = self.interpret_score(synergistic_score, results.get('gene_family') or routing_result.get('gene_family'))
 
                 # Add hotspot information to explanation
                 explanation = f"Mixed mechanism synergy (biological routing): {synergy_explanation}"
@@ -511,10 +542,15 @@ class CascadeAnalyzer:
             results['final_score_pre_filter'] = results['final_score']
             results['final_score_pre_conservation'] = final_filtered_score
 
-            # 🔥 REN'S BRILLIANT FIX: Apply conservation to FINAL score (fair competition!)
-            final_score_with_conservation = final_filtered_score * conservation_multiplier
+            # 🧠 Family AA multiplier (per-family, per-AA, ML-derived coefficients)
+            family_mult = self._get_family_aa_multiplier(gene, variant, results.get('gene_family') or routing_result.get('gene_family'))
+            results['family_aa_multiplier_applied'] = family_mult
+            final_score_with_family = final_filtered_score * family_mult
 
-            # 🧬🔥 ACE'S REVOLUTIONARY GLY/CYS ML SYSTEM: Apply biological intelligence!
+            # 🔥 Apply conservation to the family-adjusted final score (fair competition!)
+            final_score_with_conservation = final_score_with_family * conservation_multiplier
+
+            # 🧬🔥 GLY/CYS biological intelligence
             gly_cys_multiplier = self._get_gly_cys_multiplier(gene, variant, gnomad_freq)
             final_score_with_gly_cys = final_score_with_conservation * gly_cys_multiplier
 
@@ -526,8 +562,8 @@ class CascadeAnalyzer:
             if gly_cys_multiplier != 1.0:
                 print(f"🔥 GLY/CYS BIOLOGICAL INTELLIGENCE: {final_score_with_conservation:.3f} × {gly_cys_multiplier:.3f}x = {final_score_with_gly_cys:.3f}")
 
-            # Update classification based on conservation-boosted final score
-            raw_classification = self.interpret_score(final_score_with_conservation)
+            # Update classification based on conservation-boosted final score (use per-family thresholds if available)
+            raw_classification = self.interpret_score(final_score_with_conservation, results.get('gene_family'))
 
             # 🔥 REN'S BRILLIANT CONSERVATION-AWARE CLASSIFICATION
             # If conservation multiplier is exactly 1.0, we have no conservation data - be conservative!
@@ -757,6 +793,78 @@ class CascadeAnalyzer:
         else:
             return 1.0  # Common variants don't get frequency boost
 
+    def _load_family_coefficients(self, family: Optional[str]) -> Optional[Dict]:
+        """
+        Load per-family coefficient JSON if available.
+        Expected path: resources/family_models/{family}_coefficients.json
+        """
+        try:
+            if not family:
+                return None
+            base_dir = Path(__file__).parent
+            # Primary expected path
+            coeff_path = base_dir / "resources" / "family_models" / f"{family}_coefficients.json"
+            if not coeff_path.exists():
+                # Try lowercase family name as fallback
+                coeff_path = base_dir / "resources" / "family_models" / f"{family.lower()}_coefficients.json"
+            if not coeff_path.exists():
+                return None
+            with open(coeff_path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"⚠️ Failed to load family coefficients for {family}: {e}")
+            return None
+
+    def _get_family_aa_multiplier(self, gene: str, variant: str, family: Optional[str]) -> float:
+        """
+        Compute a gentle per-family, per-AA multiplier based on learned coefficients.
+        - Multiplicative combo of ref-loss and alt-gain multipliers
+        - Each multiplier is blended toward 1.0 by its confidence: 1 + (m-1)*conf
+        - Gentle clamping to avoid runaway effects
+        Fallback: 1.0 when data is missing.
+        """
+        try:
+            if not family:
+                return 1.0
+
+            coeff = self._load_family_coefficients(family)
+            if not coeff:
+                return 1.0
+
+            import re
+            m = re.match(r'p\.([A-Z])(\d+)([A-Z])', variant)
+            if not m:
+                return 1.0
+            ref_aa, _pos, alt_aa = m.groups()
+
+            aa_effects = (coeff or {}).get("aa_effects", {})
+            # Ref loss
+            ref_info = aa_effects.get(ref_aa, {})
+            ref_mult = float(ref_info.get("ref_loss_multiplier", 1.0))
+            ref_conf = float(ref_info.get("confidence", 0.0))
+            # Blend toward 1.0 by confidence
+            ref_eff = 1.0 + (ref_mult - 1.0) * max(0.0, min(1.0, ref_conf))
+
+            # Alt gain
+            alt_info = aa_effects.get(alt_aa, {})
+            alt_mult = float(alt_info.get("gain_multiplier", 1.0))
+            alt_conf = float(alt_info.get("confidence", 0.0))
+            alt_eff = 1.0 + (alt_mult - 1.0) * max(0.0, min(1.0, alt_conf))
+
+            combined = ref_eff * alt_eff
+            # Gentle clamping
+            if combined < 0.7:
+                combined = 0.7
+            elif combined > 1.8:
+                combined = 1.8
+
+            if abs(combined - 1.0) > 1e-6:
+                print(f"🧠 Family AA multiplier for {gene} ({family}) {variant}: ref={ref_aa} alt={alt_aa} -> {combined:.3f}x")
+            return combined
+        except Exception as e:
+            print(f"⚠️ Family AA multiplier failed for {gene} {variant}: {e}")
+            return 1.0
+
     def _get_gly_cys_multiplier(self, gene: str, variant: str, gnomad_freq: float = 0.0) -> float:
         """
         🧬🔥 REVOLUTIONARY GLY/CYS BIOLOGICAL INTELLIGENCE SYSTEM
@@ -862,7 +970,7 @@ class CascadeAnalyzer:
                     'variant': variant,
                     'status': 'FAILED'
                 }
-        
+
         # Get sequence if not provided
         if not sequence:
             try:
@@ -870,13 +978,13 @@ class CascadeAnalyzer:
                 import re
                 pos_match = re.search(r'p\.[A-Z](\d+)[A-Z]', variant)
                 variant_position = int(pos_match.group(1)) if pos_match else None
-                
+
                 sequence, source, temp_fasta_path = self.sequence_manager.get_best_sequence(
                     gene, uniprot_id, variant_position
                 )
                 self.temp_files.append(temp_fasta_path)
                 print(f"Using {len(sequence)} residue {source} sequence for {gene}")
-                
+
             except Exception as e:
                 return {
                     'error': f'Could not get sequence: {e}',
@@ -884,7 +992,7 @@ class CascadeAnalyzer:
                     'variant': variant,
                     'status': 'FAILED'
                 }
-        
+
         results = {
             'gene': gene,
             'variant': variant,
@@ -899,7 +1007,7 @@ class CascadeAnalyzer:
             'explanation': '',
             'status': 'SUCCESS'
         }
-        
+
         # STEP 1: Run DN Analysis
         print(f"🧬 Running DN analysis for {gene} {variant}")
         try:
@@ -916,19 +1024,19 @@ class CascadeAnalyzer:
                         context = build_position_context(anns, gene, pos)
                 except:
                     pass
-            
+
             dn_result = self.dn_analyzer.analyze(
                 sequence, variant, context, gene, uniprot_id
             )
-            
+
             # Extract DN score (use top mechanism score)
             dn_score = dn_result['mechanism_scores'][dn_result['top_mechanism']]
             results['scores']['DN'] = dn_score
             results['classifications']['DN'] = self.interpret_score(dn_score)
             results['dn_details'] = dn_result
-            
+
             print(f"   DN score: {dn_score:.3f} ({results['classifications']['DN']})")
-            
+
         except Exception as e:
             return {
                 'error': f'DN analysis failed: {e}',
@@ -936,16 +1044,16 @@ class CascadeAnalyzer:
                 'variant': variant,
                 'status': 'FAILED'
             }
-        
+
         # STEP 2: Cascade Decision Logic
         cascade_threshold = 0.3
         freq_threshold = 0.001  # 0.1%
-        
+
         if dn_score < cascade_threshold and gnomad_freq < freq_threshold:
             print(f"🌊 CASCADE TRIGGERED: DN={dn_score:.3f} < {cascade_threshold}, freq={gnomad_freq:.4f} < {freq_threshold}")
             results['cascade_triggered'] = True
             results['analyzers_run'].extend(['LOF', 'GOF'])
-            
+
             # STEP 3: Run LOF Analysis
             print(f"🔬 Running LOF analysis...")
             try:
@@ -956,14 +1064,14 @@ class CascadeAnalyzer:
                 results['scores']['LOF'] = lof_score
                 results['classifications']['LOF'] = self.interpret_score(lof_score)
                 results['lof_details'] = lof_result
-                
+
                 print(f"   LOF score: {lof_score:.3f} ({results['classifications']['LOF']})")
-                
+
             except Exception as e:
                 print(f"   LOF analysis failed: {e}")
                 results['scores']['LOF'] = 0.0
                 results['classifications']['LOF'] = 'ERROR'
-            
+
             # STEP 4: Run GOF Analysis
             print(f"🔥 Running GOF analysis...")
             try:
@@ -974,14 +1082,14 @@ class CascadeAnalyzer:
                 results['scores']['GOF'] = gof_score
                 results['classifications']['GOF'] = self.interpret_score(gof_score)
                 results['gof_details'] = gof_result
-                
+
                 print(f"   GOF score: {gof_score:.3f} ({results['classifications']['GOF']})")
-                
+
             except Exception as e:
                 print(f"   GOF analysis failed: {e}")
                 results['scores']['GOF'] = 0.0
                 results['classifications']['GOF'] = 'ERROR'
-        
+
         else:
             print(f"🚫 CASCADE NOT TRIGGERED: DN={dn_score:.3f} >= {cascade_threshold} OR freq={gnomad_freq:.4f} >= {freq_threshold}")
             # Use DN result only
@@ -989,7 +1097,7 @@ class CascadeAnalyzer:
             results['scores']['GOF'] = 0.0
             results['classifications']['LOF'] = 'NOT_RUN'
             results['classifications']['GOF'] = 'NOT_RUN'
-        
+
         # STEP 5: Determine Final Classification
         all_scores = [score for score in results['scores'].values() if score > 0]
         if all_scores:
@@ -1002,7 +1110,7 @@ class CascadeAnalyzer:
             results['final_score'] = dn_score
             results['final_classification'] = results['classifications']['DN']
             results['explanation'] = "DN analysis only"
-        
+
         # Create summary string
         summary_parts = []
         for analyzer in ['DN', 'LOF', 'GOF']:
@@ -1011,16 +1119,16 @@ class CascadeAnalyzer:
                 classification = results['classifications'][analyzer]
                 if classification not in ['NOT_RUN', 'ERROR']:
                     summary_parts.append(f"{analyzer}:{score:.2f}({classification})")
-        
+
         results['summary'] = f"{' '.join(summary_parts)} FINAL:{results['final_classification']}"
-        
+
         print(f"🎯 FINAL RESULT: {results['summary']}")
-        
+
         # Cleanup
         self.cleanup()
-        
+
         return results
-    
+
     def _run_dn_analysis(self, gene: str, variant: str, sequence: str, uniprot_id: str, conservation_multiplier: float = 1.0) -> Dict:
         """Run DN analysis and return standardized result"""
         try:
@@ -1544,7 +1652,7 @@ class CascadeAnalyzer:
 def main():
     """CLI interface for cascade analysis"""
     import argparse
-    
+
     parser = argparse.ArgumentParser(
         description="🌊 CASCADE ANALYZER - Multi-Mechanism Pathogenicity Analysis",
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -1552,23 +1660,23 @@ def main():
 Examples:
   # Analyze single variant
   python3 cascade_analyzer.py --gene TP53 --variant p.R273H --freq 0.0001
-  
+
   # High frequency variant (cascade won't trigger)
   python3 cascade_analyzer.py --gene TP53 --variant p.P72R --freq 0.25
         """
     )
-    
+
     parser.add_argument('--gene', required=True, help='Gene symbol (e.g., TP53)')
     parser.add_argument('--variant', required=True, help='Variant (e.g., p.R273H)')
     parser.add_argument('--freq', type=float, default=0.0, help='gnomAD frequency (default: 0.0)')
     parser.add_argument('--json', action='store_true', help='Output JSON format')
-    
+
     args = parser.parse_args()
-    
+
     # Run cascade analysis
     analyzer = CascadeAnalyzer()
     result = analyzer.analyze_cascade(args.gene, args.variant, args.freq)
-    
+
     if args.json:
         print(json.dumps(result, indent=2))
     else:
@@ -1583,7 +1691,7 @@ Examples:
             print(f"Final: {result['final_score']:.3f} ({result['final_classification']})")
         else:
             print(f"❌ Analysis failed: {result.get('error', 'Unknown error')}")
-    
+
     return 0 if result['status'] == 'SUCCESS' else 1
 
 

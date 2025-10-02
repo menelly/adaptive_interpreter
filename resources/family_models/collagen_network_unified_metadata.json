@@ -22,27 +22,27 @@
     "frequency"
   ],
   "feature_importance": {
-    "grantham_distance": 0.0015491303222493632,
-    "delta_hydrophobicity": 0.015251147938242055,
-    "delta_volume": 0.00755825341421784,
-    "delta_charge": 0.0028553683350401315,
-    "ref_hydrophobicity": 0.09361244800334817,
-    "alt_hydrophobicity": 0.0041173047991835575,
-    "ref_volume": 0.3221510292673007,
-    "alt_volume": 0.0067076371439541305,
-    "ref_charge": 0.0008778373224057292,
-    "alt_charge": 0.0,
-    "proline_involved": 0.003187918918991887,
-    "glycine_involved": 0.00744092187256988,
-    "cysteine_involved": 0.0,
-    "phylop_score": 0.014272564856915656,
-    "phastcons_score": 0.004314515607990828,
-    "gerp_score": 0.02436982932962308,
-    "frequency": 0.491734092867967
+    "grantham_distance": 0.0019344299976266682,
+    "delta_hydrophobicity": 0.0196327908825347,
+    "delta_volume": 0.01707952485273368,
+    "delta_charge": 0.0024060433589619184,
+    "ref_hydrophobicity": 0.10098702195505627,
+    "alt_hydrophobicity": 0.009036804339098014,
+    "ref_volume": 0.30684454269222206,
+    "alt_volume": 0.009364843969744064,
+    "ref_charge": 0.0004575642169511066,
+    "alt_charge": 0.00046759311166967734,
+    "proline_involved": 0.004419215043879696,
+    "glycine_involved": 0.02486873422032925,
+    "cysteine_involved": 0.0002260929182891568,
+    "phylop_score": 0.0,
+    "phastcons_score": 0.0,
+    "gerp_score": 0.0,
+    "frequency": 0.5022747984409038
   },
   "performance": {
-    "mse": 0.038856989247311825,
-    "r2": 0.7698122602739725
+    "mse": 0.03477311827956989,
+    "r2": 0.794005
   },
   "model_path": "resources/family_models/collagen_network_unified_model.joblib",
   "scaler_path": "resources/family_models/collagen_network_unified_scaler.joblib"

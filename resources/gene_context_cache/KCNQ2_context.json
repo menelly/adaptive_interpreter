@@ -1,0 +1,74 @@
+{
+  "uniprot_id": "O43526",
+  "sequence_length": 872,
+  "function": "Pore-forming subunit of the voltage-gated potassium (Kv) M-channel which is responsible for the M-current, a key controller of neuronal excitability (PubMed:24277843, PubMed:28793216, PubMed:9836639). M-channel is composed of pore-forming subunits KCNQ2 and KCNQ3 assembled as heterotetramers (PubMed:10781098, PubMed:14534157, PubMed:32884139, PubMed:37857637, PubMed:9836639). The native M-current has a slowly activating and deactivating potassium conductance which plays a critical role in determining the subthreshold electrical excitability of neurons as well as the responsiveness to synaptic inputs (PubMed:14534157, PubMed:28793216, PubMed:9836639). KCNQ2-KCNQ3 M-channel is selectively permeable in vitro to other cations besides potassium, in decreasing order of affinity K(+) > Rb(+) > Cs(+) > Na(+) (PubMed:28793216). M-channel association with SLC5A3/SMIT1 alters channel ion selectivity, increasing Na(+) and Cs(+) permeation relative to K(+) (PubMed:28793216). Suppressed by activation of the muscarinic acetylcholine receptor CHRM1 (PubMed:10684873, PubMed:10713961)",
+  "sequence": "MVQKSRNGGVYPGPSGEKKLKVGFVGLDPGAPDSTRDGALLIAGSEAPKRGSILSKPRAGGAGAGKPPKRNAFYRKLQNFLYNVLERPRGWAFIYHAYVFLLVFSCLVLSVFSTIKEYEKSSEGALYILEIVTIVVFGVEYFVRIWAAGCCCRYRGWRGRLKFARKPFCVIDIMVLIASIAVLAAGSQGNVFATSALRSLRFLQILRMIRMDRRGGTWKLLGSVVYAHSKELVTAWYIGFLCLILASFLVYLAEKGENDHFDTYADALWWGLITLTTIGYGDKYPQTWNGRLLAATFTLIGVSFFALPAGILGSGFALKVQEQHRQKHFEKRRNPAAGLIQSAWRFYATNLSRTDLHSTWQYYERTVTVPMYSSQTQTYGASRLIPPLNQLELLRNLKSKSGLAFRKDPPPEPSPSKGSPCRGPLCGCCPGRSSQKVSLKDRVFSSPRGVAAKGKGSPQAQTVRRSPSADQSLEDSPSKVPKSWSFGDRSRARQAFRIKGAASRQNSEEASLPGEDIVDDKSCPCEFVTEDLTPGLKVSIRAVCVMRFLVSKRKFKESLRPYDVMDVIEQYSAGHLDMLSRIKSLQSRVDQIVGRGPAITDKDRTKGPAEAELPEDPSMMGRLGKVEKQVLSMEKKLDFLVNIYMQRMGIPPTETEAYFGAKEPEPAPPYHSPEDSREHVDRHGCIVKIVRSSSSTGQKNFSAPPAAPPVQCPPSTSWQPQSHPRQGHGTSPVGDHGSLVRIPPPPAHERSLSAYGGGNRASMEFLRQEDTPGCRPPEGNLRDSDTSISIPSVDHEELERSFSGFSISQSKENLDALNSCYAAVAPCAKVRPYIAEGESDTDSDLCTPCGPPPRSATGEGPFGDVGWAGPRK",
+  "domains": [
+    {
+      "start": 10,
+      "end": 401,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 495,
+      "end": 515,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 528,
+      "end": 661,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 788,
+      "end": 841,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1,
+      "end": 108,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 123,
+      "end": 246,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 294,
+      "end": 427,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 479,
+      "end": 664,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "flexible_loops": [
+    247,
+    248,
+    249,
+    250,
+    251,
+    252,
+    253,
+    254,
+    255,
+    256
+  ],
+  "interface_regions": [
+    19,
+    868
+  ],
+  "gene": "KCNQ2",
+  "cached_at": "2025-01-27"
+}

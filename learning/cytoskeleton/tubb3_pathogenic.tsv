@@ -1,29 +1,53 @@
-"HGVS","dbSNP","gnomAD frequency"
-"NM_006086.4(TUBB3):c.1070C>T (p.Pro357Leu)","rs2151093027",""
-"NM_006086.4(TUBB3):c.1138C>T (p.Arg380Cys)","rs864321717",""
-"NM_006086.4(TUBB3):c.1162A>G (p.Met388Val)","rs878853279",""
-"NM_006086.4(TUBB3):c.1172G>T (p.Arg391Leu)","rs886039497",""
-"NM_006086.4(TUBB3):c.1228G>A (p.Glu410Lys)","rs267607165",""
-"NM_006086.4(TUBB3):c.1249G>A (p.Asp417Asn)","rs267607164",""
-"NM_006086.4(TUBB3):c.1249G>C (p.Asp417His)","rs267607164",""
-"NM_006086.4(TUBB3):c.136C>T (p.Arg46Trp)","rs1555625363",""
-"NM_006086.4(TUBB3):c.211G>A (p.Gly71Arg)","rs864321715",""
-"NM_006086.4(TUBB3):c.292G>A (p.Gly98Ser)","rs587784505",""
-"NM_006086.4(TUBB3):c.424G>A (p.Gly142Ser)","rs1131691895",""
-"NM_006086.4(TUBB3):c.523G>C (p.Val175Leu)","rs1555625571",""
-"NM_006086.4(TUBB3):c.533C>T (p.Thr178Met)","rs747480526",""
-"NM_006086.4(TUBB3):c.577G>A (p.Val193Met)","rs2030404834",""
-"NM_006086.4(TUBB3):c.613G>A (p.Glu205Lys)","rs878853257",""
-"NM_006086.4(TUBB3):c.683T>C (p.Leu228Pro)","rs2544627585",""
-"NM_006086.4(TUBB3):c.689C>T (p.Ser230Leu)","rs886041459",""
-"NM_006086.4(TUBB3):c.728C>T (p.Pro243Leu)","rs587784506",""
-"NM_006086.4(TUBB3):c.763G>A (p.Val255Ile)","rs1057517908",""
-"NM_006086.4(TUBB3):c.784C>T (p.Arg262Cys)","rs267607162",""
-"NM_006086.4(TUBB3):c.785G>A (p.Arg262His)","rs864321716",""
-"NM_006086.4(TUBB3):c.845G>C (p.Arg282Pro)","rs1064795231",""
-"NM_006086.4(TUBB3):c.862G>A (p.Glu288Lys)","rs1057521924",""
-"NM_006086.4(TUBB3):c.904G>A (p.Ala302Thr)","rs267607163",""
-"NM_006086.4(TUBB3):c.904G>T (p.Ala302Ser)","rs267607163",""
-"NM_006086.4(TUBB3):c.905C>T (p.Ala302Val)","rs878853258",""
-"NM_006086.4(TUBB3):c.967A>G (p.Met323Val)","rs878853256",""
-"c.1228G>A","",""
+HGVS	dbSNP	gnomAD frequency	ClinVar_significance	Review_status
+NC_000016.10:g.89932587G>A		0.0	Likely_pathogenic	criteria_provided,_single_submitter
+NC_000016.10:g.89933479G>T		0.0	Likely_pathogenic	criteria_provided,_single_submitter
+NC_000016.10:g.89933486G>A		0.0	Likely_pathogenic	criteria_provided,_single_submitter
+NC_000016.10:g.89933512G>A		0.0	Pathogenic/Likely_pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000016.10:g.89933513G>C		0.0	Likely_pathogenic	criteria_provided,_single_submitter
+NC_000016.10:g.89934743G>A		0.0	Pathogenic/Likely_pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000016.10:g.89934764C>A		0.0	Likely_pathogenic	no_assertion_criteria_provided
+NC_000016.10:g.89934837G>A		0.0	Likely_pathogenic	criteria_provided,_single_submitter
+NC_000016.10:g.89934875G>A		0.0	Pathogenic/Likely_pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000016.10:g.89934974G>C		0.0	Pathogenic/Likely_pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000016.10:g.89934984C>T		0.0	Pathogenic/Likely_pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000016.10:g.89934986G>C		0.0	Likely_pathogenic	no_assertion_criteria_provided
+NC_000016.10:g.89935002A>G		0.0	Likely_pathogenic	criteria_provided,_single_submitter
+NC_000016.10:g.89935028G>A		0.0	Pathogenic	no_assertion_criteria_provided
+NC_000016.10:g.89935047C>T		0.0	Likely_pathogenic	criteria_provided,_single_submitter
+NC_000016.10:g.89935064G>A		0.0	Pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000016.10:g.89935064G>C		0.0	Likely_pathogenic	criteria_provided,_single_submitter
+NC_000016.10:g.89935065A>C		0.0	Likely_pathogenic	criteria_provided,_single_submitter
+NC_000016.10:g.89935134T>C		0.0	Pathogenic	criteria_provided,_single_submitter
+NC_000016.10:g.89935140C>T		0.0	Pathogenic/Likely_pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000016.10:g.89935167C>T		0.0	Likely_pathogenic	criteria_provided,_single_submitter
+NC_000016.10:g.89935179C>G		0.0	Likely_pathogenic	criteria_provided,_single_submitter
+NC_000016.10:g.89935214G>A		0.0	Pathogenic/Likely_pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000016.10:g.89935235C>T		0.0	Pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000016.10:g.89935236G>A		0.0	Pathogenic/Likely_pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000016.10:g.89935268C>G		0.0	Likely_pathogenic	criteria_provided,_single_submitter
+NC_000016.10:g.89935285C>G		0.0	Likely_pathogenic	criteria_provided,_single_submitter
+NC_000016.10:g.89935295C>G		0.0	Likely_pathogenic	no_assertion_criteria_provided
+NC_000016.10:g.89935296G>C		0.0	Pathogenic	criteria_provided,_single_submitter
+NC_000016.10:g.89935310C>T		0.0	Likely_pathogenic	criteria_provided,_single_submitter
+NC_000016.10:g.89935313G>A		0.0	Pathogenic/Likely_pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000016.10:g.89935314A>C		0.0	Likely_pathogenic	criteria_provided,_single_submitter
+NC_000016.10:g.89935351G>A		0.0	Likely_pathogenic	no_assertion_criteria_provided
+NC_000016.10:g.89935355G>A		0.0	Pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000016.10:g.89935355G>T		0.0	Pathogenic	criteria_provided,_single_submitter
+NC_000016.10:g.89935356C>T		0.0	Pathogenic	no_assertion_criteria_provided
+NC_000016.10:g.89935380A>G		0.0	Likely_pathogenic	criteria_provided,_single_submitter
+NC_000016.10:g.89935404G>A		0.0	Likely_pathogenic	criteria_provided,_single_submitter
+NC_000016.10:g.89935418A>G		0.0	Pathogenic	criteria_provided,_single_submitter
+NC_000016.10:g.89935475G>A		0.0	Likely_pathogenic	criteria_provided,_single_submitter
+NC_000016.10:g.89935532C>A		0.0	Likely_pathogenic	criteria_provided,_single_submitter
+NC_000016.10:g.89935589C>A		0.0	Likely_pathogenic	criteria_provided,_single_submitter
+NC_000016.10:g.89935589C>T		0.0	Pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000016.10:g.89935590G>C		0.0	Likely_pathogenic	criteria_provided,_single_submitter
+NC_000016.10:g.89935613A>G		0.0	Pathogenic/Likely_pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000016.10:g.89935614T>C		0.0	Likely_pathogenic	no_assertion_criteria_provided
+NC_000016.10:g.89935623G>A		0.0	Likely_pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000016.10:g.89935623G>T		0.0	Pathogenic	criteria_provided,_single_submitter
+NC_000016.10:g.89935660G>C		0.0	Likely_pathogenic	criteria_provided,_single_submitter
+NC_000016.10:g.89935679G>A		0.0	Pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000016.10:g.89935700G>A		0.0	Pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000016.10:g.89935700G>C		0.0	Pathogenic	no_assertion_criteria_provided

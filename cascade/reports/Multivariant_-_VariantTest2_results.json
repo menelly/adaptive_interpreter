@@ -1,0 +1,1786 @@
+[
+  {
+    "gene": "KIT",
+    "variant": "p.D820G",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.8009333369914673,
+    "final_classification": "P"
+  },
+  {
+    "gene": "KIT",
+    "variant": "p.V559D",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.76747219831021,
+    "final_classification": "P"
+  },
+  {
+    "gene": "KIT",
+    "variant": "p.R796G",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 4.269092547216274,
+    "final_classification": "P"
+  },
+  {
+    "gene": "KIT",
+    "variant": "p.D816Y",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.137055757738535,
+    "final_classification": "P"
+  },
+  {
+    "gene": "KIT",
+    "variant": "p.T847P",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.675508879287146,
+    "final_classification": "P"
+  },
+  {
+    "gene": "KIT",
+    "variant": "p.E839K",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.4342141984002432,
+    "final_classification": "P"
+  },
+  {
+    "gene": "KIT",
+    "variant": "p.P36T",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.67579039371846,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "KIT",
+    "variant": "p.A940P",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.9519775417458973,
+    "final_classification": "P"
+  },
+  {
+    "gene": "KIT",
+    "variant": "p.T753I",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.9260988451102614,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "KIT",
+    "variant": "p.E711A",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.591395968143863,
+    "final_classification": "P"
+  },
+  {
+    "gene": "KIT",
+    "variant": "p.D716G",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.7829475120823873,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "KIT",
+    "variant": "p.N567H",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.515093327183793,
+    "final_classification": "P"
+  },
+  {
+    "gene": "KIT",
+    "variant": "p.K193R",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.5174784030276046,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "KIT",
+    "variant": "p.R420K",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.417183852704998,
+    "final_classification": "P"
+  },
+  {
+    "gene": "KIT",
+    "variant": "p.V422A",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.5160674274069885,
+    "final_classification": "P"
+  },
+  {
+    "gene": "KIT",
+    "variant": "p.D45E",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.830635970943632,
+    "final_classification": "P"
+  },
+  {
+    "gene": "KIT",
+    "variant": "p.F68I",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.1251200429781307,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "KIT",
+    "variant": "p.D72G",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.1042537253729325,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "KIT",
+    "variant": "p.H708N",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.084650619510165,
+    "final_classification": "P"
+  },
+  {
+    "gene": "KIT",
+    "variant": "p.N400S",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.669386460574159,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "KIT",
+    "variant": "p.T718A",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.673439940532047,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.D208V",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.8008,
+    "final_score": 2.9623722184359207,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.R158S",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.9253075249599999,
+    "final_score": 2.4798430569390213,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.R248W",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.06561,
+    "final_score": 4.31476186871936,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.E258K",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 5.352683734398459,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.G245C",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 4.718522611856123,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.L252P",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.4652433494999997,
+    "final_score": 7.774360256422998,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.P72R",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.2026620000000001,
+    "final_score": 1.763604038394133,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.R249S",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.9253075249599999,
+    "final_score": 5.5280101880133845,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.V157F",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.861224,
+    "final_score": 2.1588822985095324,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.A63G",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.891775,
+    "final_score": 0.45616526543376923,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.G293R",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.2026620000000001,
+    "final_score": 1.3280984118555488,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.G374R",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.2026620000000001,
+    "final_score": 1.3061627973865038,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.G360E",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.8452534295961183,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.A78G",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.891775,
+    "final_score": 0.7033244999255638,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.P316T",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.864969,
+    "final_score": 4.412129529125944,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.E358V",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.8008,
+    "final_score": 0.9686892783075902,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.S303N",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.894289,
+    "final_score": 0.3893984911808681,
+    "final_classification": "LB"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.K372R",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.3992539411680003,
+    "final_score": 0.5438856151216069,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.Q317K",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.5994962498631664,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.S260Y",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.894289,
+    "final_score": 1.595653502408855,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.V10L",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.7257319342,
+    "final_score": 0.47014954163869127,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.Q354K",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.44205866311610725,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.R202G",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.06561,
+    "final_score": 0.7998025472931186,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.P72T",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.864969,
+    "final_score": 0.9806343176877659,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.R342Q",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.06561,
+    "final_score": 0.6873423354396344,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.Q5R",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.2026620000000001,
+    "final_score": 0.4518537499792114,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.G266V",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.8008,
+    "final_score": 8.060262349692822,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.G356R",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.2026620000000001,
+    "final_score": 1.832078695824388,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.N310K",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.866125,
+    "final_score": 0.7421230778021568,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.P4L",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.8426750000000001,
+    "final_score": 0.7406255746743157,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.P13L",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.8426750000000001,
+    "final_score": 3.1050744279554547,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.R379H",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.06561,
+    "final_score": 0.39948864754285873,
+    "final_classification": "LB"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.F385L",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.8426750000000001,
+    "final_score": 0.5639534488588548,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.E388Q",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.8385270285446975,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.E388D",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.7477483384133996,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.D393Y",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.5181374443244501,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.S185R",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.0755273973180002,
+    "final_score": 0.6973902090018113,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.D208N",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.4375354543626155,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.M340I",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.8373703009200002,
+    "final_score": 1.4146852178781797,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.N310S",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.7520875180000001,
+    "final_score": 0.5034372017160241,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.T312N",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.888798,
+    "final_score": 1.0492435867590375,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.L32V",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.9662652999999998,
+    "final_score": 1.4222525310830019,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.E349G",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 4.248231233249826,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TP53",
+    "variant": "p.D57V",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.8008,
+    "final_score": 0.4979932817338595,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.G1634V",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 5.916675966043998,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.L1650F",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.075001859288175,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.M1501V",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.0831796239592526,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.A263T",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.084490419417172,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.V423L",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.0714289515294917,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.I1596S",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.2004431335851176,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.L1855I",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.0731994270203558,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.S863Y",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.4198032479804301,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.I1760V",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.6335246486593882,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.K507E",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.4876609073833706,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.I1061T",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.0983624567743298,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.T1138S",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.2035858204384486,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.Q452R",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.7510782612894533,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.M715V",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.0831796239592526,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.K1190Q",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.0707636034365589,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.T1240I",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.287141080068537,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.D740A",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.265946455470451,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.R1177Q",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.3765836987492137,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.I25V",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.6335246486593882,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.L1669V",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.0714289515294917,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.I1186V",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.0659464235025031,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.E1939Q",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.6565695137607288,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.N624S",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.7883152922530426,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.G1149A",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.1001812451994506,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.S54N",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.4396180048887968,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.R524Q",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.6353521368326212,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.D12E",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.803817161746869,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.N298D",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.852787927916431,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.G1189D",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 5.8375117442449325,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.R1177P",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 4.354648859522202,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.L669F",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.8709288942865485,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.E1438K",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.901026850982848,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.F288L",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.7377011736216543,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.H1365R",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.2967636919783723,
+    "final_classification": "P"
+  },
+  {
+    "gene": "SCN2A",
+    "variant": "p.A1152T",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.281981719265629,
+    "final_classification": "LB"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.S348C",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 4.3196562395377915,
+    "final_classification": "P"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.T546K",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.206089011392931,
+    "final_classification": "P"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.G380R",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.6870948742962995,
+    "final_classification": "P"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.G380R",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.6870948742962995,
+    "final_classification": "P"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.A391E",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.2677476089506146,
+    "final_classification": "P"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.G375C",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 5.63970825545059,
+    "final_classification": "P"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.K650E",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.4342141984002432,
+    "final_classification": "P"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.R248C",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 6.469321834628417,
+    "final_classification": "P"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.V788M",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.9503091120937854,
+    "final_classification": "P"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.P91L",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.1579176241357416,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.R112Q",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.8991516396643623,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.V553M",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.9357450388742533,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.P402R",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.66153409190796,
+    "final_classification": "P"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.S578F",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.8043990621534158,
+    "final_classification": "P"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.N718S",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.5230285617807697,
+    "final_classification": "P"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.P250L",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.2847715537005007,
+    "final_classification": "P"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.P585S",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.3206997059391459,
+    "final_classification": "P"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.P799L",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.9765536003722479,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.N328I",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.4248924346035077,
+    "final_classification": "P"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.A717T",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.6655724438740268,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.P449S",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.7816427172829044,
+    "final_classification": "P"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.Q29H",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.5976987147384543,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.A106T",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.44227904494787,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.V117I",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.5520307005955375,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.A661P",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.6160408123906858,
+    "final_classification": "P"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.R694G",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.6595249926034397,
+    "final_classification": "P"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.H717D",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.985467219140241,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.R765C",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 5.587149004635549,
+    "final_classification": "P"
+  },
+  {
+    "gene": "FGFR3",
+    "variant": "p.P773S",
+    "family": "ONCOGENE",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 7.226976467944789,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.M540I",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.1039739185645816,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.E384K",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.5880112876076637,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.L92P",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.0261429871878582,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.E65G",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.6233211996212815,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.M1L",
+    "family": null,
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.0,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.S94P",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.6192464198563026,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.L141P",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.3623810968753975,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.E68V",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.2258628987128817,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.R453W",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.459460869525059,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.R60G",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.976519255658773,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.L85R",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.1060565409070917,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.T424S",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.4387262028007901,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.C591Y",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 5.833351009497029,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.S636N",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.6224980739587953,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.V629M",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.3053199344125757,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.R119C",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 6.1854202413821495,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.T534A",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.5005670794449032,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.E347A",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.4312500000000004,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.L61F",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.4252853188046246,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.S645F",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.9465041285148734,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.I128V",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.719447585708852,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.G412R",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.8518583716954082,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.G76S",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 4.518207228813216,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.R89K",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.159179531674011,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.P100S",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.801015327140412,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.W5L",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.8438475717978133,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.C27S",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 5.8067051449165215,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.G11A",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.8820921325523683,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.N98S",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.554787445279901,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.W63L",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.387218560741225,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.A77V",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.700648773262722,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.M31T",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.552198521452717,
+    "final_classification": "P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.T79I",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.82376181411862,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.T1355I",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.7414074767267997,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.Y1442D",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.137055757738535,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.A628T",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.2535585713639446,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.F1505S",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.0231192281081882,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.I219V",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.7977030097074187,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.S1468L",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.849745461332477,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.P202L",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 5.0360698962583905,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.G676R",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 9.207457221435671,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.G918C",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.036511479145311,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.V1808I",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.7977030097074187,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.N283S",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.3440238093129155,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.C272Y",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 6.453014321010027,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.G539R",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 9.207457221435671,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.A1507T",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.2535585713639446,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.L1344P",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.1525850553553663,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.V713M",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.248705045735445,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.I1602V",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.5520307005955375,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.Y1849F",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.769767732545854,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.H958N",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.3862629620674427,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.P269L",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 4.259683086803524,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.R381Q",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.057123,
+    "final_score": 2.8766762966580295,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.R481H",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.057123,
+    "final_score": 2.5705688161066305,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.K2203N",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.2095878545098648,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.G926R",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.3828001399497283,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.P1172R",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 5.927514901270366,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.L602P",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.318510584584597,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.W2245C",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.9840810567218883,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.T1284I",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.1868013169924696,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.G1210E",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 4.100827815495997,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.G895R",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.0987262101633872,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.E1200G",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.0635378005853062,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.R2232Q",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.057123,
+    "final_score": 2.558636301615615,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.P1137H",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.0742140558265616,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.D1016E",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.5924823389915506,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.S459R",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.462573242628255,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.P2028L",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.8244858602905092,
+    "final_classification": "P"
+  },
+  {
+    "gene": "CACNA1A",
+    "variant": "p.R1209L",
+    "family": "ION_CHANNEL",
+    "family_aa_multiplier_applied": 1.057123,
+    "final_score": 1.6648654107159928,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TGFBR2",
+    "variant": "p.Y448H",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.1286028613739925,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TGFBR2",
+    "variant": "p.E526Q",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.0766255865802066,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TGFBR2",
+    "variant": "p.L308P",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.4652433494999997,
+    "final_score": 4.862425564307936,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TGFBR2",
+    "variant": "p.S449F",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.894289,
+    "final_score": 1.6055084890113571,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TGFBR2",
+    "variant": "p.R537C",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.06561,
+    "final_score": 1.1725289264848509,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "TGFBR2",
+    "variant": "p.Y336N",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.8697066138165965,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TGFBR2",
+    "variant": "p.A355P",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.0829109193,
+    "final_score": 3.244189478353809,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TGFBR2",
+    "variant": "p.G357W",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 5.600946543199994,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TGFBR2",
+    "variant": "p.R528H",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.06561,
+    "final_score": 1.7241543618715336,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TGFBR2",
+    "variant": "p.R528C",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.06561,
+    "final_score": 4.690893825629257,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TGFBR2",
+    "variant": "p.R460C",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.06561,
+    "final_score": 6.893774040198387,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TGFBR2",
+    "variant": "p.R460H",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.06561,
+    "final_score": 2.5912063554869076,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TGFBR2",
+    "variant": "p.M425V",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.7667643984,
+    "final_score": 1.7242269715723832,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TGFBR2",
+    "variant": "p.P427L",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.8426750000000001,
+    "final_score": 4.243770199829539,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TGFBR2",
+    "variant": "p.R528S",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.9253075249599999,
+    "final_score": 2.242183929759398,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TGFBR2",
+    "variant": "p.L436S",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.0477559259999998,
+    "final_score": 2.5160886375296054,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TGFBR2",
+    "variant": "p.R460P",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.29400432252,
+    "final_score": 6.429017241750227,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TGFBR2",
+    "variant": "p.I14M",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.8155,
+    "final_score": 1.8397695820343323,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TGFBR2",
+    "variant": "p.G561S",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.868336,
+    "final_score": 6.467073534221175,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TGFBR2",
+    "variant": "p.L395Q",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.2066249999999998,
+    "final_score": 3.8597359240960105,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TGFBR2",
+    "variant": "p.P473S",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.868336,
+    "final_score": 4.627137041849035,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TGFBR2",
+    "variant": "p.C61Y",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.9753920645484317,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TGFBR2",
+    "variant": "p.A275S",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.7743603364,
+    "final_score": 1.7469584211435842,
+    "final_classification": "P"
+  },
+  {
+    "gene": "TGFBR2",
+    "variant": "p.A422E",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.891775,
+    "final_score": 2.690331615061753,
+    "final_classification": "P"
+  }
+]

@@ -1,0 +1,1970 @@
+[
+  {
+    "gene": "COL1A1",
+    "variant": "p.T1367N",
+    "family": "COLLAGEN_FIBRILLAR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.073852135796165,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL1A1",
+    "variant": "p.G368V",
+    "family": "COLLAGEN_FIBRILLAR",
+    "family_aa_multiplier_applied": 1.2451298849440002,
+    "final_score": 21.534182068639915,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL1A1",
+    "variant": "p.G809S",
+    "family": "COLLAGEN_FIBRILLAR",
+    "family_aa_multiplier_applied": 1.146546512496,
+    "final_score": 19.011699234660444,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL1A1",
+    "variant": "p.D1413G",
+    "family": "COLLAGEN_FIBRILLAR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 11.825987992789546,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL1A1",
+    "variant": "p.G1106C",
+    "family": "COLLAGEN_FIBRILLAR",
+    "family_aa_multiplier_applied": 1.2197002353800002,
+    "final_score": 22.410385422327217,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL1A1",
+    "variant": "p.A847T",
+    "family": "COLLAGEN_FIBRILLAR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.862524968386712,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL1A1",
+    "variant": "p.Q42H",
+    "family": "COLLAGEN_FIBRILLAR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.3607162190942865,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL1A1",
+    "variant": "p.P949S",
+    "family": "COLLAGEN_FIBRILLAR",
+    "family_aa_multiplier_applied": 0.988848,
+    "final_score": 9.250871886101983,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL1A1",
+    "variant": "p.P565T",
+    "family": "COLLAGEN_FIBRILLAR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 8.88730253596716,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL1A1",
+    "variant": "p.P739L",
+    "family": "COLLAGEN_FIBRILLAR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 8.640364558425762,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL3A1",
+    "variant": "p.G957D",
+    "family": "COLLAGEN_FIBRILLAR",
+    "family_aa_multiplier_applied": 1.2825044665620002,
+    "final_score": 21.821424678801954,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL3A1",
+    "variant": "p.G234D",
+    "family": "COLLAGEN_FIBRILLAR",
+    "family_aa_multiplier_applied": 1.2825044665620002,
+    "final_score": 21.821424678801954,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL3A1",
+    "variant": "p.D1288V",
+    "family": "COLLAGEN_FIBRILLAR",
+    "family_aa_multiplier_applied": 1.0738720000000002,
+    "final_score": 3.939395678852133,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL3A1",
+    "variant": "p.E451K",
+    "family": "COLLAGEN_FIBRILLAR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.0590713297492473,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL3A1",
+    "variant": "p.K674N",
+    "family": "COLLAGEN_FIBRILLAR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.9817976467922116,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL3A1",
+    "variant": "p.L427Q",
+    "family": "COLLAGEN_FIBRILLAR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.7822078327212786,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL3A1",
+    "variant": "p.V44I",
+    "family": "COLLAGEN_FIBRILLAR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.9934904508217142,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL3A1",
+    "variant": "p.T1411A",
+    "family": "COLLAGEN_FIBRILLAR",
+    "family_aa_multiplier_applied": 1.003678,
+    "final_score": 1.0395168198356899,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL3A1",
+    "variant": "p.A679T",
+    "family": "COLLAGEN_FIBRILLAR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.9664551551647105,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL3A1",
+    "variant": "p.S1067C",
+    "family": "COLLAGEN_FIBRILLAR",
+    "family_aa_multiplier_applied": 1.05194,
+    "final_score": 1.3571869259631366,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL4A1",
+    "variant": "p.G773R",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.3530820352000001,
+    "final_score": 24.91163488341241,
+    "final_classification": "P"
+  },
+  {
+    "gene": "COL4A1",
+    "variant": "p.N1627K",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.542698917586159,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL4A1",
+    "variant": "p.G1038S",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.2115459358799998,
+    "final_score": 20.089500679551474,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL4A1",
+    "variant": "p.E1615K",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 4.166605205472628,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL4A1",
+    "variant": "p.G870R",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.3530820352000001,
+    "final_score": 16.925995966684592,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL4A1",
+    "variant": "p.A1003V",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 0.994708,
+    "final_score": 1.9212098805998268,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL4A1",
+    "variant": "p.R1238H",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.054602109207642,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL4A1",
+    "variant": "p.P512S",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 0.8372851392999999,
+    "final_score": 7.8011887029183615,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL4A1",
+    "variant": "p.E1592G",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 6.2745105624327895,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL4A1",
+    "variant": "p.H42R",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.10912,
+    "final_score": 1.537123344474868,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL4A5",
+    "variant": "p.G54D",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.4081266304000002,
+    "final_score": 22.38451787548756,
+    "final_classification": "P"
+  },
+  {
+    "gene": "COL4A5",
+    "variant": "p.L1655R",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.10912,
+    "final_score": 2.669027551241009,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL4A5",
+    "variant": "p.R1683Q",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.4039104347055904,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL4A5",
+    "variant": "p.G1116E",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.3111276107999998,
+    "final_score": 22.308438800268792,
+    "final_classification": "P"
+  },
+  {
+    "gene": "COL4A5",
+    "variant": "p.G1036E",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.3111276107999998,
+    "final_score": 22.308438800268792,
+    "final_classification": "P"
+  },
+  {
+    "gene": "COL4A5",
+    "variant": "p.P529Q",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 0.8431,
+    "final_score": 2.123855276863579,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL4A5",
+    "variant": "p.P604T",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 0.8431,
+    "final_score": 1.7638346498849056,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL4A5",
+    "variant": "p.R1416H",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.2660582821037526,
+    "final_classification": "LB"
+  },
+  {
+    "gene": "COL4A5",
+    "variant": "p.T660I",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.9226465249487477,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL4A5",
+    "variant": "p.P1277T",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 0.8431,
+    "final_score": 3.836839428469889,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL4A5",
+    "variant": "p.Y1090H",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.4449287572787495,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL7A1",
+    "variant": "p.R1814C",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 6.772815369962479,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL7A1",
+    "variant": "p.G1919R",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.3530820352000001,
+    "final_score": 24.91163488341241,
+    "final_classification": "P"
+  },
+  {
+    "gene": "COL7A1",
+    "variant": "p.Q1924R",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.10912,
+    "final_score": 1.5046197931368672,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL7A1",
+    "variant": "p.G2012S",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.2115459358799998,
+    "final_score": 20.089500679551474,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL7A1",
+    "variant": "p.R2703W",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 4.864310035010576,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL7A1",
+    "variant": "p.Q1013L",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.28809871290424,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL7A1",
+    "variant": "p.P1349L",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 0.8431,
+    "final_score": 2.2128574189321153,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL7A1",
+    "variant": "p.M817V",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 0.994708,
+    "final_score": 0.6697826326274244,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL7A1",
+    "variant": "p.A1313T",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.862524968386712,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL7A1",
+    "variant": "p.P1046T",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 0.8431,
+    "final_score": 3.0545733036655616,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL17A1",
+    "variant": "p.G866R",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.3530820352000001,
+    "final_score": 18.806686754512317,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL17A1",
+    "variant": "p.R1303Q",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.106298687483227,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL17A1",
+    "variant": "p.G633D",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.4081266304000002,
+    "final_score": 23.95884771135286,
+    "final_classification": "P"
+  },
+  {
+    "gene": "COL17A1",
+    "variant": "p.T939I",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.5370039472534257,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "COL17A1",
+    "variant": "p.D1200Y",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.0945311213491271,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL17A1",
+    "variant": "p.N1374D",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.1542400000000002,
+    "final_score": 1.4635449990711709,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL17A1",
+    "variant": "p.G436E",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.3111276107999998,
+    "final_score": 4.618111199010692,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL17A1",
+    "variant": "p.G436R",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.3530820352000001,
+    "final_score": 4.875448618382529,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL17A1",
+    "variant": "p.L1135F",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.060097033590564,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL17A1",
+    "variant": "p.P913L",
+    "family": "COLLAGEN_NETWORK",
+    "family_aa_multiplier_applied": 0.8431,
+    "final_score": 4.875505743015001,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL12A1",
+    "variant": "p.I2334T",
+    "family": "COLLAGEN_FACIT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.2184975208460345,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL12A1",
+    "variant": "p.G2786D",
+    "family": "COLLAGEN_FACIT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 16.81331887410989,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL12A1",
+    "variant": "p.R1965C",
+    "family": "COLLAGEN_FACIT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.433352509315785,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL12A1",
+    "variant": "p.G2777R",
+    "family": "COLLAGEN_FACIT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 18.388706970923757,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL12A1",
+    "variant": "p.N1763S",
+    "family": "COLLAGEN_FACIT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.154995649647581,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL12A1",
+    "variant": "p.T1664N",
+    "family": "COLLAGEN_FACIT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.5370073234521944,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL12A1",
+    "variant": "p.R1834Q",
+    "family": "COLLAGEN_FACIT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.4686512067010478,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL12A1",
+    "variant": "p.V1646L",
+    "family": "COLLAGEN_FACIT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.4314878450385364,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "COL12A1",
+    "variant": "p.S1626A",
+    "family": "COLLAGEN_FACIT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.6685536771278262,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "COL12A1",
+    "variant": "p.G1923R",
+    "family": "COLLAGEN_FACIT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 8.53196401458381,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "FBN1",
+    "variant": "p.Y1699N",
+    "family": "SIGNALING_REGULATOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.7712195143180967,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "FBN1",
+    "variant": "p.N57D",
+    "family": "SIGNALING_REGULATOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.1551174561958337,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "FBN1",
+    "variant": "p.I1725N",
+    "family": "SIGNALING_REGULATOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.2288019927604936,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "FBN1",
+    "variant": "p.C628Y",
+    "family": "SIGNALING_REGULATOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 9.49946331964622,
+    "final_classification": "P"
+  },
+  {
+    "gene": "FBN1",
+    "variant": "p.C2470Y",
+    "family": "SIGNALING_REGULATOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 9.49946331964622,
+    "final_classification": "P"
+  },
+  {
+    "gene": "FBN1",
+    "variant": "p.N2750S",
+    "family": "SIGNALING_REGULATOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.524669642346496,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "FBN1",
+    "variant": "p.R429L",
+    "family": "SIGNALING_REGULATOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.7484333971783264,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "FBN1",
+    "variant": "p.A362V",
+    "family": "SIGNALING_REGULATOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.31654976480799984,
+    "final_classification": "LB"
+  },
+  {
+    "gene": "FBN1",
+    "variant": "p.Q907H",
+    "family": "SIGNALING_REGULATOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.4267540471682956,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "FBN1",
+    "variant": "p.T2834A",
+    "family": "SIGNALING_REGULATOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.5693918783325865,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "FBN2",
+    "variant": "p.G1179C",
+    "family": "FIBRILLIN",
+    "family_aa_multiplier_applied": 1.183150567842,
+    "final_score": 5.783110471466179,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "FBN2",
+    "variant": "p.C1489Y",
+    "family": "FIBRILLIN",
+    "family_aa_multiplier_applied": 1.4361958961999999,
+    "final_score": 5.742850851266842,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "FBN2",
+    "variant": "p.E391K",
+    "family": "FIBRILLIN",
+    "family_aa_multiplier_applied": 0.895142081592,
+    "final_score": 3.0687235867272546,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "FBN2",
+    "variant": "p.D1115H",
+    "family": "FIBRILLIN",
+    "family_aa_multiplier_applied": 0.8585160583679999,
+    "final_score": 2.9389131453497597,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "FBN2",
+    "variant": "p.C1142F",
+    "family": "FIBRILLIN",
+    "family_aa_multiplier_applied": 1.32040652315,
+    "final_score": 12.025896375678705,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "FBN2",
+    "variant": "p.L2204V",
+    "family": "FIBRILLIN",
+    "family_aa_multiplier_applied": 0.8296049999999999,
+    "final_score": 1.6712397715418457,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "FBN2",
+    "variant": "p.D2893N",
+    "family": "FIBRILLIN",
+    "family_aa_multiplier_applied": 0.9121651784319998,
+    "final_score": 1.2273454291914314,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "FBN2",
+    "variant": "p.H2848R",
+    "family": "FIBRILLIN",
+    "family_aa_multiplier_applied": 1.11919,
+    "final_score": 1.6906775867444819,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "FBN2",
+    "variant": "p.M2805V",
+    "family": "FIBRILLIN",
+    "family_aa_multiplier_applied": 0.8296049999999999,
+    "final_score": 1.7281714946779645,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "FBN2",
+    "variant": "p.P1303L",
+    "family": "FIBRILLIN",
+    "family_aa_multiplier_applied": 0.8236,
+    "final_score": 3.8078061213680554,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "ELN",
+    "variant": "p.P211S",
+    "family": "ELASTIN",
+    "family_aa_multiplier_applied": 0.8185068576,
+    "final_score": 5.241095445466161,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "ELN",
+    "variant": "p.K315R",
+    "family": "ELASTIN",
+    "family_aa_multiplier_applied": 1.11919,
+    "final_score": 3.1500824807424643,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "ELN",
+    "variant": "p.G45R",
+    "family": "ELASTIN",
+    "family_aa_multiplier_applied": 1.1173612435399998,
+    "final_score": 5.4012716765117945,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "ELN",
+    "variant": "p.L15P",
+    "family": "ELASTIN",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.3177788112870035,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "ELN",
+    "variant": "p.G581Q",
+    "family": "ELASTIN",
+    "family_aa_multiplier_applied": 0.998366,
+    "final_score": 7.570304416170643,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "ELN",
+    "variant": "p.G610S",
+    "family": "ELASTIN",
+    "family_aa_multiplier_applied": 0.992192104656,
+    "final_score": 6.844673640138667,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "ELN",
+    "variant": "p.V298I",
+    "family": "ELASTIN",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.3683941900466944,
+    "final_classification": "LB"
+  },
+  {
+    "gene": "ELN",
+    "variant": "p.A311T",
+    "family": "ELASTIN",
+    "family_aa_multiplier_applied": 0.8172999999999999,
+    "final_score": 2.115054917757456,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "ELN",
+    "variant": "p.V411G",
+    "family": "ELASTIN",
+    "family_aa_multiplier_applied": 1.086602,
+    "final_score": 0.8190941019685368,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "ELN",
+    "variant": "p.A296T",
+    "family": "ELASTIN",
+    "family_aa_multiplier_applied": 0.8172999999999999,
+    "final_score": 1.1578648572417953,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "GLB1",
+    "variant": "p.F308L",
+    "family": "METABOLIC_ENZYME",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.807020845234418,
+    "final_classification": "P"
+  },
+  {
+    "gene": "GLB1",
+    "variant": "p.L463P",
+    "family": "METABOLIC_ENZYME",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.8830769695760816,
+    "final_classification": "P"
+  },
+  {
+    "gene": "GLB1",
+    "variant": "p.Y36C",
+    "family": "METABOLIC_ENZYME",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.051124830915176,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "GLB1",
+    "variant": "p.T420P",
+    "family": "METABOLIC_ENZYME",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.2846678682080084,
+    "final_classification": "P"
+  },
+  {
+    "gene": "GLB1",
+    "variant": "p.D332N",
+    "family": "METABOLIC_ENZYME",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.802231253840411,
+    "final_classification": "P"
+  },
+  {
+    "gene": "GLB1",
+    "variant": "p.Q572R",
+    "family": "METABOLIC_ENZYME",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.5605064383018072,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "GLB1",
+    "variant": "p.N437S",
+    "family": "METABOLIC_ENZYME",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.2619125228010299,
+    "final_classification": "LB"
+  },
+  {
+    "gene": "GLB1",
+    "variant": "p.G526D",
+    "family": "METABOLIC_ENZYME",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.7213746190548248,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "GLB1",
+    "variant": "p.H534R",
+    "family": "METABOLIC_ENZYME",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.3731809212700993,
+    "final_classification": "LB"
+  },
+  {
+    "gene": "GLB1",
+    "variant": "p.C521R",
+    "family": "METABOLIC_ENZYME",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.8788372618044824,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "KRT5",
+    "variant": "p.Q191E",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.5669975774238667,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "KRT5",
+    "variant": "p.L196P",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.3623810968753975,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "KRT5",
+    "variant": "p.T321P",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.837825304353832,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "KRT5",
+    "variant": "p.E466Q",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.9378013143335613,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "KRT5",
+    "variant": "p.T469S",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.5812732211733684,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "KRT5",
+    "variant": "p.S579Y",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.4897844834382676,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "KRT5",
+    "variant": "p.G569R",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.831024300937866,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "KRT5",
+    "variant": "p.G118S",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 4.641629201045684,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "KRT5",
+    "variant": "p.R37Q",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.0750162409935953,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "KRT5",
+    "variant": "p.S499P",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.4087756706321914,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "GFAP",
+    "variant": "p.M73V",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.0896889720721603,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "GFAP",
+    "variant": "p.E371K",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.5880112876076637,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "GFAP",
+    "variant": "p.R239C",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 6.1854202413821495,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "GFAP",
+    "variant": "p.N77Y",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.0849595319813767,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "GFAP",
+    "variant": "p.E362D",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.4458855758191147,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "GFAP",
+    "variant": "p.R316Q",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.7403264518119004,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "GFAP",
+    "variant": "p.R30H",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.8332055026606582,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "GFAP",
+    "variant": "p.P44A",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.529902357006494,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "GFAP",
+    "variant": "p.A145T",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.488481857464175,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "GFAP",
+    "variant": "p.P47L",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.849230452960696,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "ACTN2",
+    "variant": "p.R759T",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.2166817818921394,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "ACTN2",
+    "variant": "p.E628G",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.7646661455053625,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "ACTN2",
+    "variant": "p.L727R",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.167463684182282,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "ACTN2",
+    "variant": "p.C487R",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 8.772462596101507,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "ACTN2",
+    "variant": "p.A119T",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.3822852504815444,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "ACTN2",
+    "variant": "p.G534S",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 4.987987886905413,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "ACTN2",
+    "variant": "p.R637C",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 6.418870466250273,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "ACTN2",
+    "variant": "p.M604I",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.729609813754661,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "ACTN2",
+    "variant": "p.H775L",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.359534948022607,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "ACTN2",
+    "variant": "p.M507V",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.9839944043427167,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TUBB3",
+    "variant": "p.G71R",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 7.930782259142476,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TUBB3",
+    "variant": "p.R262H",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.330133387799563,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TUBB3",
+    "variant": "p.R380C",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 6.418870466250273,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TUBB3",
+    "variant": "p.M388V",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.194386796007903,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TUBB3",
+    "variant": "p.T178M",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.738220962420351,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TUBB3",
+    "variant": "p.V286M",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.194386796007903,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TUBB3",
+    "variant": "p.A446T",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.6196813753409445,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TUBB3",
+    "variant": "p.R306C",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 6.418870466250273,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TUBB3",
+    "variant": "p.M299L",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.179037351874492,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TUBB3",
+    "variant": "p.H227R",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.330133387799563,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.S94P",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.6192464198563026,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.L141P",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.3623810968753975,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.E68V",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.2258628987128817,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.R453W",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.459460869525059,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.E384K",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.5880112876076637,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.K33R",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.697259279691821,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.V191G",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.726477534270758,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.P100S",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.801015327140412,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.N98S",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.554787445279901,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "LMNA",
+    "variant": "p.R572G",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.8248661389745533,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "LMNB1",
+    "variant": "p.L364P",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.3623810968753975,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "LMNB1",
+    "variant": "p.A152G",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.2490008344874286,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "LMNB1",
+    "variant": "p.K33E",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.5880112876076637,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "LMNB1",
+    "variant": "p.R42W",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.4371652646367448,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "LMNB1",
+    "variant": "p.R90P",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 4.317897078146919,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "LMNB1",
+    "variant": "p.Y360C",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 4.696505748958474,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "LMNB1",
+    "variant": "p.K528E",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.3835225727043703,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "LMNB1",
+    "variant": "p.A500S",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.1039739185645816,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "LMNB1",
+    "variant": "p.A501V",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.4841826841733468,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "LMNB1",
+    "variant": "p.R234C",
+    "family": "INTERMEDIATE_FILAMENT",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 6.1854202413821495,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "PTEN",
+    "variant": "p.P246L",
+    "family": "SIGNALING_REGULATOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 4.904610076244594,
+    "final_classification": "P"
+  },
+  {
+    "gene": "PTEN",
+    "variant": "p.T277I",
+    "family": "SIGNALING_REGULATOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.9684003657792792,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "PTEN",
+    "variant": "p.P204A",
+    "family": "SIGNALING_REGULATOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 6.329206081160818,
+    "final_classification": "P"
+  },
+  {
+    "gene": "PTEN",
+    "variant": "p.R47G",
+    "family": "SIGNALING_REGULATOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 5.451792351240955,
+    "final_classification": "P"
+  },
+  {
+    "gene": "PTEN",
+    "variant": "p.P95L",
+    "family": "SIGNALING_REGULATOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.6058626874104066,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "KLLN",
+    "variant": "p.R128G",
+    "family": "TRANSCRIPTION_FACTOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.1078293928597491,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "KLLN",
+    "variant": "p.W149R",
+    "family": "TRANSCRIPTION_FACTOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.7354978660805306,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "KLLN",
+    "variant": "p.N131S",
+    "family": "TRANSCRIPTION_FACTOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.4455050545167811,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "PTEN",
+    "variant": "p.Y20H",
+    "family": "SIGNALING_REGULATOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.6038969142700343,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "PTEN",
+    "variant": "p.R3P",
+    "family": "SIGNALING_REGULATOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.3233793114892465,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "RB1",
+    "variant": "p.V654M",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.861224,
+    "final_score": 1.9366387543084629,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "RB1",
+    "variant": "p.K643E",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.163464,
+    "final_score": 3.995584588127541,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "RB1",
+    "variant": "p.D701N",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.0766255865802066,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "RB1",
+    "variant": "p.H733Y",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.1286028613739925,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "RB1",
+    "variant": "p.R46K",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.06561,
+    "final_score": 2.5757752852809723,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "RB1",
+    "variant": "p.T630A",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.888798,
+    "final_score": 0.5043913583829042,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "RB1",
+    "variant": "p.T633I",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.77728940292,
+    "final_score": 0.4763267777451208,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "RB1",
+    "variant": "p.I415L",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.7,
+    "final_score": 1.5480525649431807,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "RB1",
+    "variant": "p.D507N",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 4.057588569581692,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "RB1",
+    "variant": "p.T620A",
+    "family": "TUMOR_SUPPRESSOR",
+    "family_aa_multiplier_applied": 0.888798,
+    "final_score": 0.5043913583829042,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "NF1",
+    "variant": "p.G1166C",
+    "family": "SIGNALING_REGULATOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 6.721652381953947,
+    "final_classification": "P"
+  },
+  {
+    "gene": "NF1",
+    "variant": "p.M242R",
+    "family": "SIGNALING_REGULATOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.379732127782453,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "NF1",
+    "variant": "p.D1644A",
+    "family": "SIGNALING_REGULATOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 5.5795665154203515,
+    "final_classification": "P"
+  },
+  {
+    "gene": "NF1",
+    "variant": "p.D1644G",
+    "family": "SIGNALING_REGULATOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 5.916957607385279,
+    "final_classification": "P"
+  },
+  {
+    "gene": "NF1",
+    "variant": "p.L2081S",
+    "family": "SIGNALING_REGULATOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.2095952259778855,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "NF1",
+    "variant": "p.E2339K",
+    "family": "SIGNALING_REGULATOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.1619502762357967,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "NF1",
+    "variant": "p.M349L",
+    "family": "SIGNALING_REGULATOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.0806000588624123,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "NF1",
+    "variant": "p.M895I",
+    "family": "SIGNALING_REGULATOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.085151058861589,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "NF1",
+    "variant": "p.D1067Y",
+    "family": "SIGNALING_REGULATOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.815631315849098,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "NF1",
+    "variant": "p.L1068F",
+    "family": "SIGNALING_REGULATOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.316516781722075,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TFG",
+    "variant": "p.R106C",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 7.0427263517049985,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TFG",
+    "variant": "p.R106H",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.598455919856689,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TFG",
+    "variant": "p.R22W",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.9474389227306683,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TFG",
+    "variant": "p.G269V",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 6.02035222961589,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TFG",
+    "variant": "p.P285L",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 4.001065483093223,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TFG",
+    "variant": "p.R400Q",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.0495554556016335,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TFG",
+    "variant": "p.S153A",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.6032290429622122,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TFG",
+    "variant": "p.A303V",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.953830150485053,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TFG",
+    "variant": "p.T364P",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.7409922242182665,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "TFG",
+    "variant": "p.R360K",
+    "family": "CYTOSKELETON_POLYMER",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.078545540155423,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "SHANK3",
+    "variant": "p.I1769R",
+    "family": "SCAFFOLD_ADAPTOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.273064598867462,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "SHANK3",
+    "variant": "p.R611W",
+    "family": "SCAFFOLD_ADAPTOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.381113424327947,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "SHANK3",
+    "variant": "p.G1771S",
+    "family": "SCAFFOLD_ADAPTOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.9429593571691377,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "SHANK3",
+    "variant": "p.P216A",
+    "family": "SCAFFOLD_ADAPTOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 4.475152173870185,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "SHANK3",
+    "variant": "p.R1703S",
+    "family": "SCAFFOLD_ADAPTOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.8303043751406937,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "SHANK3",
+    "variant": "p.G505S",
+    "family": "SCAFFOLD_ADAPTOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.43091143604368,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "SHANK3",
+    "variant": "p.I888M",
+    "family": "SCAFFOLD_ADAPTOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.3556707419184892,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "SHANK3",
+    "variant": "p.A1320V",
+    "family": "SCAFFOLD_ADAPTOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.3543733278203285,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "SHANK3",
+    "variant": "p.P1338L",
+    "family": "SCAFFOLD_ADAPTOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.5129696217821658,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "SHANK3",
+    "variant": "p.R700C",
+    "family": "SCAFFOLD_ADAPTOR",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 5.880026041609,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "ASPA",
+    "variant": "p.D114E",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.8792360097775935,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "ASPA",
+    "variant": "p.G176S",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 5.872555854882218,
+    "final_classification": "P"
+  },
+  {
+    "gene": "ASPA",
+    "variant": "p.R71S",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.2601482702213347,
+    "final_classification": "P"
+  },
+  {
+    "gene": "ASPA",
+    "variant": "p.G274R",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 8.332089269823545,
+    "final_classification": "P"
+  },
+  {
+    "gene": "ASPA",
+    "variant": "p.A287T",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.084490419417172,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "ASPA",
+    "variant": "p.C4R",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.0208015673969157,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "ASPA",
+    "variant": "p.M82T",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.33104796947725323,
+    "final_classification": "LB"
+  },
+  {
+    "gene": "ASPA",
+    "variant": "p.V278M",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.3537296263414522,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "ASPA",
+    "variant": "p.A39T",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.523455198380063,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "ASPA",
+    "variant": "p.E235K",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.1619502762357967,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "GALNS",
+    "variant": "p.G201E",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 5.8552880723129626,
+    "final_classification": "P"
+  },
+  {
+    "gene": "GALNS",
+    "variant": "p.D233N",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 3.016542930243161,
+    "final_classification": "P"
+  },
+  {
+    "gene": "GALNS",
+    "variant": "p.T313M",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.1070088249154546,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "GALNS",
+    "variant": "p.P420R",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 8.145096947192528,
+    "final_classification": "P"
+  },
+  {
+    "gene": "GALNS",
+    "variant": "p.G290S",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 5.784413351368716,
+    "final_classification": "P"
+  },
+  {
+    "gene": "GALNS",
+    "variant": "p.R446W",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.5176550630488598,
+    "final_classification": "VUS"
+  },
+  {
+    "gene": "GALNS",
+    "variant": "p.V480F",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.3480873327756342,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "GALNS",
+    "variant": "p.V488M",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.0831796239592526,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "GALNS",
+    "variant": "p.T200M",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.5447123318830613,
+    "final_classification": "VUS-P"
+  },
+  {
+    "gene": "GALNS",
+    "variant": "p.A459V",
+    "family": "GENERAL",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 0.31654976480799984,
+    "final_classification": "LB"
+  },
+  {
+    "gene": "ACADM",
+    "variant": "p.I356T",
+    "family": "METABOLIC_ENZYME",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.0983624567743298,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "ACADM",
+    "variant": "p.A218G",
+    "family": "METABOLIC_ENZYME",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.6531923069084673,
+    "final_classification": "P"
+  },
+  {
+    "gene": "ACADM",
+    "variant": "p.D266G",
+    "family": "METABOLIC_ENZYME",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.2578878154506468,
+    "final_classification": "LP"
+  },
+  {
+    "gene": "ACADM",
+    "variant": "p.K329Q",
+    "family": "METABOLIC_ENZYME",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 2.801859845830803,
+    "final_classification": "P"
+  },
+  {
+    "gene": "ACADM",
+    "variant": "p.R248G",
+    "family": "METABOLIC_ENZYME",
+    "family_aa_multiplier_applied": 1.0,
+    "final_score": 1.4909894173929528,
+    "final_classification": "LP"
+  }
+]

@@ -16,7 +16,7 @@ import os
 
 # Add the parent directory to the path to import universal_protein_annotator
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from universal_protein_annotator import UniversalProteinAnnotator
+from data_processing.universal_protein_annotator import UniversalProteinAnnotator
 
 class DNAnalyzer:
     """Analyze dominant negative potential - Bin 2 of our two-bin approach"""

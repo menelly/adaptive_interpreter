@@ -8,7 +8,7 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
-from universal_protein_annotator import UniversalProteinAnnotator
+from data_processing.universal_protein_annotator import UniversalProteinAnnotator
 import json
 from typing import Dict, Optional
 

@@ -180,17 +180,13 @@ class SequenceManager:
         alphafold_seq = self.get_alphafold_sequence(gene_name, uniprot_id)
         
         # Decide which to use
-        if variant_position and alphafold_seq and variant_position <= len(alphafold_seq):
-            # Variant is within AlphaFold coverage - use AlphaFold for structure info
-            chosen_seq = alphafold_seq
-            source = "AlphaFold"
-            print(f"🧬 Using AlphaFold sequence (variant at pos {variant_position} within coverage)")
-        elif uniprot_seq:
-            # Use full UniProt sequence
+        # IMPORTANT: Always use UniProt sequence for residue indexing to avoid numbering drift.
+        # AlphaFold sequence is used for structure/context, not for AA-indexing checks.
+        if uniprot_seq:
             chosen_seq = uniprot_seq
             source = "UniProt"
             if variant_position and alphafold_seq:
-                print(f"🧬 Using UniProt sequence (variant at pos {variant_position} beyond AlphaFold coverage of {len(alphafold_seq)})")
+                print(f"🧬 Using UniProt sequence ({len(chosen_seq)} residues); AlphaFold available for structure")
             else:
                 print(f"🧬 Using UniProt sequence ({len(chosen_seq)} residues)")
         elif alphafold_seq:
@@ -200,7 +196,7 @@ class SequenceManager:
             print(f"🧬 Fallback to AlphaFold sequence ({len(chosen_seq)} residues)")
         else:
             raise ValueError(f"Could not get any sequence for {gene_name} ({uniprot_id})")
-        
+
         # Create temporary FASTA file for analyzer
         import tempfile
         temp_fasta = tempfile.NamedTemporaryFile(mode='w', suffix='.fasta', delete=False)

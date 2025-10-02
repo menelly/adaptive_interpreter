@@ -1,0 +1,140 @@
+{
+  "uniprot_id": "Q12756",
+  "sequence_length": 1690,
+  "function": "Kinesin motor with a plus-end-directed microtubule motor activity (By similarity). It is required for anterograde axonal transport of synaptic vesicle precursors (PubMed:33880452). Also required for neuronal dense core vesicles (DCVs) transport to the dendritic spines and axons. The interaction calcium-dependent with CALM1 increases vesicle motility and interaction with the scaffolding proteins PPFIA2 and TANC2 recruits DCVs to synaptic sites",
+  "sequence": "MAGASVKVAVRVRPFNSREMSRDSKCIIQMSGSTTTIVNPKQPKETPKSFSFDYSYWSHTSPEDINYASQKQVYRDIGEEMLQHAFEGYNVCIFAYGQTGAGKSYTMMGKQEKDQQGIIPQLCEDLFSRINDTTNDNMSYSVEVSYMEIYCERVRDLLNPKNKGNLRVREHPLLGPYVEDLSKLAVTSYNDIQDLMDSGNKARTVAATNMNETSSRSHAVFNIIFTQKRHDAETNITTEKVSKISLVDLAGSERADSTGAKGTRLKEGANINKSLTTLGKVISALAEMDSGPNKNKKKKKTDFIPYRDSVLTWLLRENLGGNSRTAMVAALSPADINYDETLSTLRYADRAKQIRCNAVINEDPNNKLIRELKDEVTRLRDLLYAQGLGDITDMTNALVGMSPSSSLSALSSRAASVSSLHERILFAPGSEEAIERLKETEKIIAELNETWEEKLRRTEAIRMEREALLAEMGVAMREDGGTLGVFSPKKTPHLVNLNEDPLMSECLLYYIKDGITRVGREDGERRQDIVLSGHFIKEEHCVFRSDSRGGSEAVVTLEPCEGADTYVNGKKVTEPSILRSGNRIIMGKSHVFRFNHPEQARQERERTPCAETPAEPVDWAFAQRELLEKQGIDMKQEMEQRLQELEDQYRREREEATYLLEQQRLDYESKLEALQKQMDSRYYPEVNEEEEEPEDEVQWTERECELALWAFRKWKWYQFTSLRDLLWGNAIFLKEANAISVELKKKVQFQFVLLTDTLYSPLPPDLLPPEAAKDRETRPFPRTIVAVEVQDQKNGATHYWTLEKLRQRLDLMREMYDRAAEVPSSVIEDCDNVVTGGDPFYDRFPWFRLVGRAFVYLSNLLYPVPLVHRVAIVSEKGEVKGFLRVAVQAISADEEAPDYGSGVRQSGTAKISFDDQHFEKFQSESCPVVGMSRSGTSQEELRIVEGQGQGADVGPSADEVNNNTCSAVPPEGLLLDSSEKAALDGPLDAALDHLRLGNTFTFRVTVLQASSISAEYADIFCQFNFIHRHDEAFSTEPLKNTGRGPPLGFYHVQNIAVEVTKSFIEYIKSQPIVFEVFGHYQQHPFPPLCKDVLSPLRPSRRHFPRVMPLSKPVPATKLSTLTRPCPGPCHCKYDLLVYFEICELEANGDYIPAVVDHRGGMPCMGTFLLHQGIQRRITVTLLHETGSHIRWKEVRELVVGRIRNTPETDESLIDPNILSLNILSSGYIHPAQDDRTFYQFEAAWDSSMHNSLLLNRVTPYREKIYMTLSAYIEMENCTQPAVVTKDFCMVFYSRDAKLPASRSIRNLFGSGSLRASESNRVTGVYELSLCHVADAGSPGMQRRRRRVLDTSVAYVRGEENLAGWRPRSDSLILDHQWELEKLSLLQEVEKTRHYLLLREKLETAQRPVPEALSPAFSEDSESHGSSSASSPLSAEGRPSPLEAPNERQRELAVKCLRLLTHTFNREYTHSHVCVSASESKLSEMSVTLLRDPSMSPLGVATLTPSSTCPSLVEGRYGATDLRTPQPCSRPASPEPELLPEADSKKLPSPARATETDKEPQRLLVPDIQEIRVSPIVSKKGYLHFLEPHTSGWARRFVVVRRPYAYMYNSDKDTVERFVLNLATAQVEYSEDQQAMLKTPNTFAVCTEHRGILLQAASDKDMHDWLYAFNPLLAGTIRSKLSRRRSAQMRV",
+  "domains": [
+    {
+      "start": 1,
+      "end": 40,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 67,
+      "end": 227,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 268,
+      "end": 528,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 577,
+      "end": 684,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 697,
+      "end": 931,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 943,
+      "end": 1116,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1134,
+      "end": 1174,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1210,
+      "end": 1374,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1387,
+      "end": 1421,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1449,
+      "end": 1494,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1567,
+      "end": 1686,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1,
+      "end": 57,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 128,
+      "end": 394,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 417,
+      "end": 887,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1066,
+      "end": 1140,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1156,
+      "end": 1215,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1275,
+      "end": 1486,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1532,
+      "end": 1633,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1644,
+      "end": 1690,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "flexible_loops": [
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    685
+  ],
+  "interface_regions": [
+    1,
+    1677
+  ],
+  "gene": "KIF1A",
+  "cached_at": "2025-01-27"
+}

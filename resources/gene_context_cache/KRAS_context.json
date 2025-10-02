@@ -1,0 +1,26 @@
+{
+  "uniprot_id": "P01116",
+  "sequence_length": 189,
+  "function": "Ras proteins bind GDP/GTP and possess intrinsic GTPase activity (PubMed:20949621, PubMed:39809765). Plays an important role in the regulation of cell proliferation (PubMed:22711838, PubMed:23698361). Plays a role in promoting oncogenic events by inducing transcriptional silencing of tumor suppressor genes (TSGs) in colorectal cancer (CRC) cells in a ZNF304-dependent manner (PubMed:24623306)",
+  "sequence": "MTEYKLVVVGAGGVGKSALTIQLIQNHFVDEYDPTIEDSYRKQVVIDGETCLLDILDTAGQEEYSAMRDQYMRTGEGFLCVFAINNTKSFEDIHHYREQIKRVKDSEDVPMVLVGNKCDLPSRTVDTKQAQDLARSYGIPFIETSAKTRQRVEDAFYTLVREIRQYRLKKISKEEKTPGCVKIKKCIIM",
+  "domains": [
+    {
+      "start": 1,
+      "end": 176,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 63,
+      "end": 189,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "interface_regions": [
+    1,
+    163
+  ],
+  "gene": "KRAS",
+  "cached_at": "2025-01-27"
+}
