@@ -1,4 +1,32 @@
 {
+  "ONCOGENE": {
+    "LP": 3.095,
+    "P": 3.105
+  },
+  "TUMOR_SUPPRESSOR": {
+    "LP": 4.258,
+    "P": 4.268
+  },
+  "GENERAL": {
+    "LP": 5.848,
+    "P": 5.858
+  },
+  "INTERMEDIATE_FILAMENT": {
+    "LP": 6.195,
+    "P": 6.205
+  },
+  "ION_CHANNEL": {
+    "LP": 3.084,
+    "P": 3.094
+  },
+  "TRANSCRIPTION_FACTOR": {
+    "LP": 7.668,
+    "P": 7.678
+  },
+  "MOTOR_PROTEIN": {
+    "LP": 3.596,
+    "P": 3.606
+  },
   "COLLAGEN_FIBRILLAR": {
     "LP": 9.261,
     "P": 9.271
@@ -27,40 +55,12 @@
     "LP": 0.889,
     "P": 2.268
   },
-  "INTERMEDIATE_FILAMENT": {
-    "LP": 6.195,
-    "P": 6.205
-  },
   "CYTOSKELETON_POLYMER": {
     "LP": 6.429,
     "P": 6.439
   },
-  "TUMOR_SUPPRESSOR": {
-    "LP": 4.258,
-    "P": 4.268
-  },
   "SCAFFOLD_ADAPTOR": {
     "LP": 5.89,
     "P": 5.9
-  },
-  "GENERAL": {
-    "LP": 5.848,
-    "P": 5.858
-  },
-  "ONCOGENE": {
-    "LP": 3.095,
-    "P": 3.105
-  },
-  "ION_CHANNEL": {
-    "LP": 3.084,
-    "P": 3.094
-  },
-  "TRANSCRIPTION_FACTOR": {
-    "LP": 7.668,
-    "P": 7.678
-  },
-  "MOTOR_PROTEIN": {
-    "LP": 3.596,
-    "P": 3.606
   }
 }

@@ -40,25 +40,56 @@ from DNModeling.utils.gly_cys_simple_integrator import SimplifiedGlyCysIntegrato
 from DNModeling.analyzers.conservation_database import ConservationDatabase  # 🧬 EVOLUTIONARY INTELLIGENCE!
 from DNModeling.utils.rsid_frequency_fetcher import RSIDFrequencyFetcher  # 🔑 NOVA'S rsID SOLUTION!
 
-# Import extracted modular components
-from DNModeling.cascade.data.hotspot_database import HotspotDatabase
-from DNModeling.cascade.scoring.synergy import calculate_synergy_score_v2, get_gene_family
-from DNModeling.cascade.scoring.classifier import VariantClassifier
+
+class HotspotDatabase:
+    """🔥 HOTSPOT INTELLIGENCE: Known pathogenic and activating regions"""
+
+    def __init__(self):
+        # Known hotspot regions from literature and our analysis
+        self.hotspots = {
+            # Collagen genes - glycine-rich regions are poison hotspots
+            'COL1A1': [
+                {'start': 359, 'end': 362, 'type': 'dominant_cluster', 'mechanism': 'collagen_poison', 'confidence': 0.9},
+                {'start': 988, 'end': 991, 'type': 'dominant_cluster', 'mechanism': 'collagen_poison', 'confidence': 0.8},
+            ],
+            'COL1A2': [
+                {'start': 359, 'end': 362, 'type': 'dominant_cluster', 'mechanism': 'collagen_poison', 'confidence': 0.9},
+            ],
+            # Ion channels - pore and gate regions
+            'SCN1A': [
+                {'start': 1616, 'end': 1620, 'type': 'activating_hotspot', 'mechanism': 'channel_disruption', 'confidence': 0.8},
+                {'start': 373, 'end': 375, 'type': 'dominant_cluster', 'mechanism': 'channel_poison', 'confidence': 0.7},
+            ],
+            'KCNQ2': [
+                {'start': 265, 'end': 267, 'type': 'activating_hotspot', 'mechanism': 'channel_disruption', 'confidence': 0.9},
+            ],
+            # Tumor suppressors - DNA binding domains
+            'TP53': [
+                {'start': 270, 'end': 280, 'type': 'dominant_cluster', 'mechanism': 'dna_binding_loss', 'confidence': 0.95},
+            ],
+            # Muscle genes - critical structural regions
+            'FKRP': [
+                {'start': 338, 'end': 340, 'type': 'dominant_cluster', 'mechanism': 'structural_disruption', 'confidence': 0.8},
+            ],
+        }
+
+    def get_hotspots(self, gene: str) -> List[Dict]:
+        """Get all hotspots for a gene"""
+        return self.hotspots.get(gene, [])
+
+    def check_variant_in_hotspot(self, gene: str, position: int) -> Optional[Dict]:
+        """Check if variant position overlaps any hotspot"""
+        hotspots = self.get_hotspots(gene)
+        for hotspot in hotspots:
+            if hotspot['start'] <= position <= hotspot['end']:
+                return hotspot
+        return None
 
 
 class CascadeAnalyzer:
     """Coordinates DN, LOF, and GOF analyzers for comprehensive pathogenicity analysis"""
 
-    def __init__(self, alphafold_path: str = "/mnt/Arcana/alphafold_human/structures/",
-                 override_family: str = None, conservative_mode: bool = False):
-        """
-        Initialize CASCADE analyzer with all sub-analyzers
-
-        Args:
-            alphafold_path: Path to AlphaFold structures directory
-            override_family: Optional gene family override for testing
-            conservative_mode: If True, downgrade P/LP→VUS-P and upgrade B/LB→VUS when conservation data is missing
-        """
+    def __init__(self, alphafold_path: str = "/mnt/Arcana/alphafold_human/structures/", override_family: str = None):
         self.dn_analyzer = NovaDNAnalyzer(use_smart_filtering=True)
         self.lof_analyzer = LOFAnalyzer(offline_mode=True)
         self.gof_analyzer = GOFVariantAnalyzer(offline_mode=True)
@@ -69,10 +100,8 @@ class CascadeAnalyzer:
         self.conservation_db = ConservationDatabase()  # 🧬 EVOLUTIONARY INTELLIGENCE!
         self.hotspot_db = HotspotDatabase()  # 🔥 HOTSPOT INTELLIGENCE!
         self.rsid_fetcher = RSIDFrequencyFetcher()  # 🔑 NOVA'S rsID SOLUTION!
-        self.classifier = VariantClassifier()  # 🎯 MODULAR CLASSIFICATION!
         self.temp_files = []
         self.override_family = override_family  # 🎯 CLI override for gene family classification
-        self.conservative_mode = conservative_mode  # 🎯 OPTIONAL: Conservative classification when lacking conservation data
 
         # Gene -> UniProt mappings (expanded for biological routing)
         self.gene_to_uniprot = {
@@ -94,12 +123,52 @@ class CascadeAnalyzer:
             'MYO7A': 'Q13402'  # Canonical full-length MYO7A (2215 residues)
         }
 
+    def _load_classification_thresholds(self):
+        if hasattr(self, "_family_thresholds") and self._family_thresholds is not None:
+            return
+        self._family_thresholds = {}
+        try:
+            from pathlib import Path
+            import json
+            cfg_path = Path(__file__).parent / "resources" / "classification_thresholds.json"
+            if cfg_path.exists():
+                with cfg_path.open("r", encoding="utf-8") as fh:
+                    data = json.load(fh)
+                    if isinstance(data, dict):
+                        self._family_thresholds = data
+        except Exception:
+            # Stay silent; fall back to defaults
+            self._family_thresholds = {}
+
+    def _get_family_thresholds(self, family: str | None) -> dict:
+        # Global defaults tuned for conservation-boosted era
+        base = {"P": 1.2, "LP": 0.8, "VUS-P": 0.6, "VUS": 0.4, "LB": 0.2}
+        if not family:
+            return base
+        self._load_classification_thresholds()
+        fam = self._family_thresholds.get(family, {}) if hasattr(self, "_family_thresholds") else {}
+        # Merge partial overrides
+        merged = dict(base)
+        merged.update({k: v for k, v in fam.items() if isinstance(v, (int, float))})
+        return merged
+
     def interpret_score(self, score: float, family: str | None = None) -> str:
         """
         Convert numeric score to clinical classification with optional per-family thresholds.
-        Delegates to the modular VariantClassifier.
         """
-        return self.classifier.interpret_score(score, family)
+        thr = self._get_family_thresholds(family)
+        if score >= thr["P"]:
+            return "P"
+        elif score >= thr["LP"]:
+            return "LP"
+        elif score >= thr["VUS-P"]:
+            return "VUS-P"
+        elif score >= thr["VUS"]:
+            return "VUS"
+        elif score >= thr["LB"]:
+            return "LB"
+        else:
+            return "B"
 
     def analyze_cascade_biological(self, gene: str, variant: str, gnomad_freq: float = 0.0,
                                   variant_type: str = 'missense', sequence: Optional[str] = None) -> Dict:
@@ -493,14 +562,12 @@ class CascadeAnalyzer:
             if gly_cys_multiplier != 1.0:
                 print(f"🔥 GLY/CYS BIOLOGICAL INTELLIGENCE: {final_score_with_conservation:.3f} × {gly_cys_multiplier:.3f}x = {final_score_with_gly_cys:.3f}")
 
-            # 🔥 BUG FIX: Use the FINAL score (after Gly/Cys multiplier) for classification!
-            # Update classification based on conservation-boosted AND gly/cys-boosted final score (use per-family thresholds if available)
-            raw_classification = self.interpret_score(final_score_with_gly_cys, results.get('gene_family'))
+            # Update classification based on conservation-boosted final score (use per-family thresholds if available)
+            raw_classification = self.interpret_score(final_score_with_conservation, results.get('gene_family'))
 
-            # 🔥 REN'S BRILLIANT CONSERVATION-AWARE CLASSIFICATION (OPTIONAL)
-            # If conservation multiplier is exactly 1.0, we have no conservation data
-            # Only apply conservative classification if conservative_mode is enabled
-            if conservation_multiplier == 1.0 and self.conservative_mode:
+            # 🔥 REN'S BRILLIANT CONSERVATION-AWARE CLASSIFICATION
+            # If conservation multiplier is exactly 1.0, we have no conservation data - be conservative!
+            if conservation_multiplier == 1.0:
                 print(f"⚠️ No conservation data available (1.0x multiplier) - applying conservative classification")
 
                 if raw_classification in ['B', 'LB']:
@@ -518,10 +585,8 @@ class CascadeAnalyzer:
                     results['final_classification'] = raw_classification
                     results['explanation'] += " | Classification maintained despite missing conservation data"
             else:
-                # Either we have real conservation data, or conservative_mode is disabled - trust the classification
+                # We have real conservation data - trust the classification
                 results['final_classification'] = raw_classification
-                if conservation_multiplier == 1.0 and not self.conservative_mode:
-                    results['explanation'] += " | Classification trusted despite missing conservation data (conservative mode disabled)"
 
             results['explanation'] += f" | Plausibility filter applied (gene family: {results['gene_family']})"
 
@@ -1150,16 +1215,105 @@ class CascadeAnalyzer:
     def calculate_synergy_score_v2(self, mechanism_scores, gene_family=None):
         """
         🧬 NOVA'S V2 SYNERGY ALGORITHM 🧬
-        Delegates to the extracted modular synergy calculator.
+        Calculate synergistic score for mixed-mechanism variants with tiered thresholds,
+        contextual weighting, and improved biological rationale
         """
-        return calculate_synergy_score_v2(mechanism_scores, gene_family)
+        import math
+
+        # Get top 2 scoring mechanisms
+        valid_scores = [(name, score) for name, score in mechanism_scores.items() if score > 0]
+        valid_scores.sort(key=lambda x: x[1], reverse=True)  # Highest first
+
+        if len(valid_scores) < 2:
+            return {'synergy_score': 0, 'synergy_used': False, 'explanation': 'Need 2+ mechanisms for synergy'}
+
+        top_2_names = [valid_scores[0][0], valid_scores[1][0]]
+        top_2_scores = [valid_scores[0][1], valid_scores[1][1]]
+
+        # Tiered thresholds for strength of evidence
+        min_score = min(top_2_scores)
+        if min_score < 0.3:
+            return {'synergy_score': 0, 'synergy_used': False, 'explanation': 'Scores too low for synergy'}
+        elif min_score >= 0.7:
+            tier = 'strong'
+            synergy_boost = 0.3
+        elif min_score >= 0.5:
+            tier = 'moderate'
+            synergy_boost = 0.2
+        else:
+            tier = 'weak'
+            synergy_boost = 0.1
+
+        # Biological plausibility check
+        mechanism_pair = tuple(sorted(top_2_names))
+        plausible = False
+        rationale = ''
+
+        if ('LOF' in mechanism_pair and 'DN' in mechanism_pair):
+            plausible = True
+            rationale = 'Protein both unstable and poisons complex (classic dominant negative).'
+        elif ('DN' in mechanism_pair and 'GOF' in mechanism_pair):
+            plausible = True
+            rationale = 'Protein is hyperactive AND disrupts wild-type partners.'
+        elif ('LOF' in mechanism_pair and 'GOF' in mechanism_pair):
+            plausible = False
+            rationale = 'Unusual: catalytically dead but also hyperactive. Possible only in special cases (e.g. dimerization sequestering).'
+
+        # Contextual adjustment
+        context_multiplier = 1.0
+        if gene_family:
+            gf = gene_family.lower()
+            if gf == 'collagen' and ('DN' in mechanism_pair and 'LOF' in mechanism_pair):
+                context_multiplier = 1.1  # boost collagen DN+LOF
+            if gf == 'kinase' and ('DN' in mechanism_pair and 'GOF' in mechanism_pair):
+                context_multiplier = 0.9  # penalize unless strong
+
+        if not plausible and 'LOF' in mechanism_pair and 'GOF' in mechanism_pair:
+            return {
+                'synergy_score': min(sum(top_2_scores)/2, 0.5), # keep low but non-zero
+                'synergy_used': True,
+                'tier': tier,
+                'biological_rationale': rationale,
+                'explanation': f"LOF+GOF flagged as biologically unlikely; downweighted score assigned for caution."
+            }
+
+        # Balance weighting
+        balance_factor = min(top_2_scores) / max(top_2_scores)
+        synergy_multiplier = 1.0 + (balance_factor * synergy_boost * context_multiplier)
+
+        # Base synergistic score
+        base_synergistic_score = math.sqrt(top_2_scores[0]**2 + top_2_scores[1]**2)
+
+        # Final score, normalized to max 1.0
+        synergistic_score = min(base_synergistic_score * synergy_multiplier, 1.0)
+
+        return {
+            'synergy_score': synergistic_score,
+            'synergy_used': True,
+            'tier': tier,
+            'balance_factor': balance_factor,
+            'synergy_multiplier': synergy_multiplier,
+            'base_score': base_synergistic_score,
+            'biological_rationale': rationale,
+            'explanation': f"{tier.capitalize()} mixed mechanism synergy: {top_2_names[0]}+{top_2_names[1]} "
+                           f"= sqrt({top_2_scores[0]:.2f}² + {top_2_scores[1]:.2f}²) * {synergy_multiplier:.3f} "
+                           f"(balance {balance_factor:.2f}, context {context_multiplier:.2f}) "
+                           f"= {synergistic_score:.3f}"
+        }
 
     def get_gene_family(self, gene):
-        """
-        Determine gene family for contextual synergy weighting.
-        Delegates to the extracted modular function.
-        """
-        return get_gene_family(gene)
+        """Determine gene family for contextual synergy weighting"""
+        # Simple gene family classification based on gene name patterns
+        gene_upper = gene.upper()
+
+        if gene_upper.startswith('COL') or gene_upper in ['FBN1', 'FBN2', 'TGFBR1', 'TGFBR2']:
+            return 'collagen'  # Structural proteins including fibrillin
+        elif gene_upper.endswith('K') or 'KINASE' in gene_upper or gene_upper in ['ATM', 'BRCA1', 'BRCA2']:
+            return 'kinase'
+        elif 'SCN' in gene_upper or 'KCNQ' in gene_upper or 'CACNA' in gene_upper:
+            return 'channel'
+        else:
+            return None
 
     def _check_critical_codons(self, variant: str, variant_type: str) -> Dict:
         """

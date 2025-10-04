@@ -23,10 +23,13 @@ import os
 import sys
 from typing import Dict, List
 from pathlib import Path
-from gnomad_frequency_fetcher import GnomADFrequencyFetcher
 import re
 
-from cascade_analyzer import CascadeAnalyzer
+# Add parent directory to path for imports
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from utils.gnomad_frequency_fetcher import GnomADFrequencyFetcher
+from cascade.cascade_analyzer import CascadeAnalyzer
 from nova_dn.csv_batch_processor import CSVBatchProcessor
 from nova_dn.mixed_mechanism_resolver import UnifiedMechanismResolver
 
@@ -34,8 +37,9 @@ from nova_dn.mixed_mechanism_resolver import UnifiedMechanismResolver
 class CascadeBatchProcessor:
     """Process CSV files through the complete cascade system with ClinVar comparison"""
 
-    def __init__(self, alphafold_path: str = "/mnt/Arcana/alphafold_human/structures/", override_family: str = None):
-        self.cascade_analyzer = CascadeAnalyzer(alphafold_path, override_family)
+    def __init__(self, alphafold_path: str = "/mnt/Arcana/alphafold_human/structures/",
+                 override_family: str = None, conservative_mode: bool = False):
+        self.cascade_analyzer = CascadeAnalyzer(alphafold_path, override_family, conservative_mode)
         self.csv_processor = CSVBatchProcessor(alphafold_path)  # For HGVS parsing
 
         # 🧬 NOVA'S UNIFIED MECHANISM RESOLVER
@@ -751,21 +755,23 @@ Examples:
                        help='Path to AlphaFold structures directory')
     parser.add_argument('--override-family', type=str,
                        help='Override gene family classification (e.g., TUMOR_SUPPRESSOR, ION_CHANNEL, COLLAGEN_FIBRILLAR)')
-    
+    parser.add_argument('--conservative-mode', action='store_true',
+                       help='Enable conservative classification: downgrade P/LP→VUS-P and upgrade B/LB→VUS when conservation data is missing')
+
     args = parser.parse_args()
-    
+
     # Validate input file
     if not os.path.exists(args.input):
         print(f"❌ Input file not found: {args.input}")
         return 1
-    
+
     # Create output directory if needed
     output_dir = os.path.dirname(args.output)
     if output_dir and not os.path.exists(output_dir):
         os.makedirs(output_dir)
-    
+
     # Process CSV through cascade
-    processor = CascadeBatchProcessor(args.alphafold_path, args.override_family)
+    processor = CascadeBatchProcessor(args.alphafold_path, args.override_family, args.conservative_mode)
     result = processor.process_csv(
         args.input, 
         args.output,
