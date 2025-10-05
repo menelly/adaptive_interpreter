@@ -23,7 +23,7 @@ from utils.offline_genomic_to_protein import OfflineGenomicToProteinConverter
 def parse_genomic_hgvs(hgvs: str):
     """Parse genomic HGVS to extract chromosome, position, ref, alt"""
     import re
-    
+
     # Pattern: NC_000019.10:g.46755451A>C
     match = re.search(r'NC_0+(\d+)(?:\.\d+)?:g\.(\d+)([ATCG])>([ATCG])', hgvs)
     if match:
@@ -31,7 +31,7 @@ def parse_genomic_hgvs(hgvs: str):
         position = int(match.group(2))
         ref_allele = match.group(3)
         alt_allele = match.group(4)
-        
+
         # Convert NC number to chr
         if chrom_num == "23":
             chrom = "chrX"
@@ -41,10 +41,41 @@ def parse_genomic_hgvs(hgvs: str):
             chrom = "chrM"
         else:
             chrom = f"chr{chrom_num}"
-        
+
         return chrom, position, ref_allele, alt_allele
-    
+
     return None, None, None, None
+
+
+def convert_to_three_letter(protein_change: str) -> str:
+    """Convert 1-letter amino acid codes to 3-letter codes
+
+    Example: p.M1L -> p.Met1Leu
+    """
+    import re
+
+    # Amino acid conversion map
+    aa_map = {
+        'A': 'Ala', 'R': 'Arg', 'N': 'Asn', 'D': 'Asp', 'C': 'Cys',
+        'E': 'Glu', 'Q': 'Gln', 'G': 'Gly', 'H': 'His', 'I': 'Ile',
+        'L': 'Leu', 'K': 'Lys', 'M': 'Met', 'F': 'Phe', 'P': 'Pro',
+        'S': 'Ser', 'T': 'Thr', 'W': 'Trp', 'Y': 'Tyr', 'V': 'Val',
+        '*': '*'  # Stop codon stays as *
+    }
+
+    # Pattern: p.X123Y where X and Y are 1-letter codes
+    match = re.match(r'p\.([A-Z*])(\d+)([A-Z*])', protein_change)
+    if match:
+        ref_1letter = match.group(1)
+        position = match.group(2)
+        alt_1letter = match.group(3)
+
+        ref_3letter = aa_map.get(ref_1letter, ref_1letter)
+        alt_3letter = aa_map.get(alt_1letter, alt_1letter)
+
+        return f"p.{ref_3letter}{position}{alt_3letter}"
+
+    return protein_change
 
 
 def convert_clinvar_to_ml_format(gene: str, input_dir: Path, output_dir: Path, converter: OfflineGenomicToProteinConverter):
@@ -87,14 +118,17 @@ def convert_clinvar_to_ml_format(gene: str, input_dir: Path, output_dir: Path, c
             
             # Convert to protein notation
             protein_change = converter.convert(chrom, position, ref_allele, alt_allele, gene)
-            
+
             if not protein_change:
                 failed_conversions += 1
                 continue
-            
+
+            # Convert to 3-letter amino acid codes for batch processor compatibility
+            protein_change_3letter = convert_to_three_letter(protein_change)
+
             # Create HGVS-like format for ML trainer
             # Format: NM_XXXXXX.X(GENE):c.XXX (p.RefPosAlt)
-            ml_hgvs = f"NM_000000.0({gene}):c.{position}A>C ({protein_change})"
+            ml_hgvs = f"NM_000000.0({gene}):c.{position}A>C ({protein_change_3letter})"
             
             converted_variants.append({
                 'HGVS': ml_hgvs,

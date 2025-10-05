@@ -62,5 +62,9 @@
   "MOTOR_PROTEIN": {
     "LP": 3.596,
     "P": 3.606
+  },
+  "MUSCULAR_DYSTROPHY": {
+    "LP": 3.556,
+    "P": 4.056
   }
 }

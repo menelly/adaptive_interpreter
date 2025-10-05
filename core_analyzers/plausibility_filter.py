@@ -49,8 +49,7 @@ PATHOGENICITY_RULES: Dict[str, Dict[str, float]] = {
     "TRANSCRIPTION_FACTOR": {"LOF": 1.0, "DN": 1.0, "GOF": 1.0},
     "TUMOR_SUPPRESSOR": {"LOF": 1.0, "DN": 1.0, "GOF": 0.25},
     "ONCOGENE": {"LOF": 1.0, "DN": 1.0, "GOF": 1.0},  # All mechanisms possible for oncogenes
-    "AUTOSOMAL_RECESSIVE": {"LOF": 1.3, "DN": 0.4, "GOF": 0.0},  # AR diseases: STRONG LOF boost - designed to lose function!
-    "MUSCULAR_DYSTROPHY": {"LOF": 1.0, "DN": 0.5, "GOF": 0.0},  # MD: Let GO terms handle AD vs AR distinction
+    "MUSCULAR_DYSTROPHY": {"LOF": 1.0, "DN": 0.5, "GOF": 0.0},  # Muscular dystrophy genes
     "RIBOSOMAL_PROTEIN": {"LOF": 1.0, "DN": 0.5, "GOF": 0.0},  # More ribosomes = good for growth
     "MOTOR_PROTEIN": {"LOF": 1.0, "DN": 1.0, "GOF": 0.25},  # Myosins: GOF rarely pathogenic
     "DNA_REPAIR": {"LOF": 1.0, "DN": 0.5, "GOF": 0.0},  # DNA repair: more repair = good
@@ -166,21 +165,15 @@ def classify_gene_family(gene_symbol: str, uniprot_function: str, go_terms: List
 
     # Handle UNCLASSIFIED - fall back to legacy patterns for special cases
     if classification == "UNCLASSIFIED":
-        # 🧬 SMART AR DETECTION (based on biological clues)
-        ar_disease_patterns = [
-            "cystic fibrosis", "cf", "cftr",
-            "stargardt", "abca4", "retinal dystrophy",
-            "muscular dystrophy", "limb-girdle", "fkrp", "dysferlin",
-            "sickle cell", "thalassemia", "hemoglobin",
-            "phenylketonuria", "pku", "phenylalanine hydroxylase",
-            "galactosemia", "galt", "galactose-1-phosphate",
-            "glycogen storage", "pompe", "gaucher",
-            "enzyme deficiency", "metabolic disorder", "inborn error",
-            "recessive disorder", "autosomal recessive", "compound heterozygous"
-        ]
+        # 🧬 CHECK SPECIFIC DISEASE FAMILIES FIRST (before generic patterns)
 
-        if any(pattern in function_lower for pattern in ar_disease_patterns):
-            return "AUTOSOMAL_RECESSIVE"
+        # Muscular dystrophy genes
+        muscular_dystrophy_keywords = [
+            "muscular dystrophy", "muscle dystrophy", "limb-girdle", "dysferlin",
+            "dystrophin", "sarcoglycan", "muscle membrane", "dystroglycan", "fkrp"
+        ]
+        if any(keyword in function_lower for keyword in muscular_dystrophy_keywords) or gene_symbol == "FKRP":
+            return "MUSCULAR_DYSTROPHY"
 
         # 🧬 SMART AD STRUCTURAL DETECTION
         ad_structural_patterns = [
@@ -211,12 +204,6 @@ def classify_gene_family(gene_symbol: str, uniprot_function: str, go_terms: List
                 return "STRUCTURAL"
 
         # Additional legacy patterns for special cases
-        muscular_dystrophy_keywords = [
-            "muscular dystrophy", "muscle dystrophy", "limb-girdle", "dysferlin",
-            "dystrophin", "sarcoglycan", "muscle membrane"
-        ]
-        if any(keyword in function_lower for keyword in muscular_dystrophy_keywords):
-            return "MUSCULAR_DYSTROPHY"
 
         ribosomal_keywords = ["ribosomal protein", "ribosome", "rpl", "rps", "60s ribosomal", "40s ribosomal"]
         if any(keyword in function_lower for keyword in ribosomal_keywords):
