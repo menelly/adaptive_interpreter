@@ -652,6 +652,9 @@ class CascadeBatchProcessor:
                 for col in columns:
                     if col == 'analyzers_run':
                         row[col] = ', '.join(result.get('analyzers_run', []))
+                    elif col == 'final_score' or col == 'final_classification':
+                        # 🔥 FIX: Handle final_score and final_classification directly from result dict
+                        row[col] = result.get(col, '')
                     elif col.endswith('_score'):
                         analyzer = col.replace('_score', '').upper()
                         # Use plausibility-filtered scores if available, otherwise raw scores

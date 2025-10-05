@@ -1,0 +1,3 @@
+HGVS	dbSNP	gnomAD frequency	ClinVar_significance	Review_status
+NM_000000.0(DMD):c.33211302A>C (p.Gly4Val)		0.0	Pathogenic	criteria_provided,_single_submitter
+NM_000000.0(DMD):c.33211304A>C (p.Gly3Gly)		0.0	Pathogenic	criteria_provided,_multiple_submitters,_no_conflicts

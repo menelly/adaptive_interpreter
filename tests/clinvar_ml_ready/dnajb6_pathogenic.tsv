@@ -1,0 +1,13 @@
+HGVS	dbSNP	gnomAD frequency	ClinVar_significance	Review_status
+NM_000000.0(DNAJB6):c.157367373A>C (p.Gly79Asp)		0.0	Likely_pathogenic	criteria_provided,_single_submitter
+NM_000000.0(DNAJB6):c.157367402A>C (p.Phe89Ile)		0.0	Pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NM_000000.0(DNAJB6):c.157367408A>C (p.Phe91Ile)		0.0	Pathogenic	criteria_provided,_single_submitter
+NM_000000.0(DNAJB6):c.157367408A>C (p.Phe91Leu)		0.0	Pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NM_000000.0(DNAJB6):c.157367408A>C (p.Phe91Val)		0.0	Pathogenic/Likely_pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NM_000000.0(DNAJB6):c.157367410A>C (p.Phe91Leu)		0.0	Pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NM_000000.0(DNAJB6):c.157367414A>C (p.Phe93Leu)		0.0	Pathogenic	criteria_provided,_single_submitter
+NM_000000.0(DNAJB6):c.157367416A>C (p.Phe93Leu)		0.0	Pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NM_000000.0(DNAJB6):c.157367416A>C (p.Phe93Leu)		0.0	Pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NM_000000.0(DNAJB6):c.157367424A>C (p.Pro96Arg)		0.0	Pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NM_000000.0(DNAJB6):c.157367424A>C (p.Pro96Leu)		0.0	Pathogenic	criteria_provided,_single_submitter
+NM_000000.0(DNAJB6):c.157367435A>C (p.Phe100Val)		0.0	Pathogenic	no_assertion_criteria_provided

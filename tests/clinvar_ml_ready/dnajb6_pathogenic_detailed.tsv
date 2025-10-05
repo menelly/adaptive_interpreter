@@ -1,0 +1,13 @@
+HGVS	dbSNP	gnomAD frequency	ClinVar_significance	Review_status	genomic_hgvs	protein_change
+NM_000000.0(DNAJB6):c.157367373A>C (p.Gly79Asp)		0.0	Likely_pathogenic	criteria_provided,_single_submitter	NC_000007.14:g.157367373G>A	p.G79D
+NM_000000.0(DNAJB6):c.157367402A>C (p.Phe89Ile)		0.0	Pathogenic	criteria_provided,_multiple_submitters,_no_conflicts	NC_000007.14:g.157367402T>A	p.F89I
+NM_000000.0(DNAJB6):c.157367408A>C (p.Phe91Ile)		0.0	Pathogenic	criteria_provided,_single_submitter	NC_000007.14:g.157367408T>A	p.F91I
+NM_000000.0(DNAJB6):c.157367408A>C (p.Phe91Leu)		0.0	Pathogenic	criteria_provided,_multiple_submitters,_no_conflicts	NC_000007.14:g.157367408T>C	p.F91L
+NM_000000.0(DNAJB6):c.157367408A>C (p.Phe91Val)		0.0	Pathogenic/Likely_pathogenic	criteria_provided,_multiple_submitters,_no_conflicts	NC_000007.14:g.157367408T>G	p.F91V
+NM_000000.0(DNAJB6):c.157367410A>C (p.Phe91Leu)		0.0	Pathogenic	criteria_provided,_multiple_submitters,_no_conflicts	NC_000007.14:g.157367410C>G	p.F91L
+NM_000000.0(DNAJB6):c.157367414A>C (p.Phe93Leu)		0.0	Pathogenic	criteria_provided,_single_submitter	NC_000007.14:g.157367414T>C	p.F93L
+NM_000000.0(DNAJB6):c.157367416A>C (p.Phe93Leu)		0.0	Pathogenic	criteria_provided,_multiple_submitters,_no_conflicts	NC_000007.14:g.157367416C>A	p.F93L
+NM_000000.0(DNAJB6):c.157367416A>C (p.Phe93Leu)		0.0	Pathogenic	criteria_provided,_multiple_submitters,_no_conflicts	NC_000007.14:g.157367416C>G	p.F93L
+NM_000000.0(DNAJB6):c.157367424A>C (p.Pro96Arg)		0.0	Pathogenic	criteria_provided,_multiple_submitters,_no_conflicts	NC_000007.14:g.157367424C>G	p.P96R
+NM_000000.0(DNAJB6):c.157367424A>C (p.Pro96Leu)		0.0	Pathogenic	criteria_provided,_single_submitter	NC_000007.14:g.157367424C>T	p.P96L
+NM_000000.0(DNAJB6):c.157367435A>C (p.Phe100Val)		0.0	Pathogenic	no_assertion_criteria_provided	NC_000007.14:g.157367435T>G	p.F100V

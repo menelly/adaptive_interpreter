@@ -53,11 +53,32 @@ class CSVBatchProcessor:
         if not gene_match:
             return None
         gene = gene_match.group(1)
-        
+
+        # 🔥 CHECK FOR SYNONYMOUS FIRST (before missense pattern matches them!)
+        # Check for synonymous variants p.Ala359= or p.Pro486Pro (same AA)
+        synonymous_match = re.search(r'p\.([A-Z][a-z]{2})(\d+)=', hgvs)
+        if synonymous_match:
+            return {
+                'gene': gene,
+                'variant': f'p.{synonymous_match.group(1)}{synonymous_match.group(2)}=',
+                'type': 'synonymous',
+                'skip_reason': 'SKIPPED_SYNONYMOUS'
+            }
+
         # Look for protein change p.RefPosAlt
         protein_match = re.search(r'p\.([A-Z][a-z]{2})(\d+)([A-Z][a-z]{2})', hgvs)
         if protein_match:
             ref_long, pos, alt_long = protein_match.groups()
+
+            # 🔥 CHECK IF REF == ALT (synonymous variant like p.Pro486Pro)
+            if ref_long == alt_long:
+                return {
+                    'gene': gene,
+                    'variant': f'p.{ref_long}{pos}{alt_long}',
+                    'type': 'synonymous',
+                    'skip_reason': 'SKIPPED_SYNONYMOUS'
+                }
+
             # Convert 3-letter to 1-letter codes
             aa_map = {
                 'Ala': 'A', 'Arg': 'R', 'Asn': 'N', 'Asp': 'D', 'Cys': 'C',
@@ -68,7 +89,7 @@ class CSVBatchProcessor:
             ref = aa_map.get(ref_long, ref_long)
             alt = aa_map.get(alt_long, alt_long)
             variant = f"p.{ref}{pos}{alt}"
-            
+
             return {
                 'gene': gene,
                 'variant': variant,
@@ -90,15 +111,7 @@ class CSVBatchProcessor:
                 'skip_reason': 'SKIPPED_FRAMESHIFT'
             }
 
-        # Check for synonymous variants p.Ala359=
-        synonymous_match = re.search(r'p\.([A-Z][a-z]{2})(\d+)=', hgvs)
-        if synonymous_match:
-            return {
-                'gene': gene,
-                'variant': f'p.{synonymous_match.group(1)}{synonymous_match.group(2)}=',
-                'type': 'synonymous',
-                'skip_reason': 'SKIPPED_SYNONYMOUS'
-            }
+        # (Synonymous check moved earlier to prevent missense pattern from matching them)
 
         # Check for intronic variants c.1122+52T>C
         if re.search(r'c\.\d+[+-]\d+', hgvs):

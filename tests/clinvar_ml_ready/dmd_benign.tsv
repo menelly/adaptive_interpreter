@@ -1,0 +1,4 @@
+HGVS	dbSNP	gnomAD frequency	ClinVar_significance	Review_status
+NM_000000.0(DMD):c.33211289A>C (p.Glu8Asp)		0.0	Likely_benign	criteria_provided,_single_submitter
+NM_000000.0(DMD):c.33211292A>C (p.Met7Ile)		0.0	Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NM_000000.0(DMD):c.33211295A>C (p.Lys6Asn)		0.0	Likely_benign	criteria_provided,_single_submitter
