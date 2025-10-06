@@ -1,0 +1,10 @@
+HGVS	dbSNP	gnomAD frequency	ClinVar_significance	Review_status
+NM_000000.0(SCN5A):c.38633040A>C (p.Asn90Asn)		0.0	Pathogenic	criteria_provided,_single_submitter
+NM_000000.0(SCN5A):c.38633076A>C (p.Glu78Lys)		0.0	Pathogenic	criteria_provided,_single_submitter
+NM_000000.0(SCN5A):c.38633091A>C (p.Asn73Asn)		0.0	Pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NM_000000.0(SCN5A):c.38633104A>C (p.Tyr68Tyr)		0.0	Pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NM_000000.0(SCN5A):c.38633133A>C (p.Asp59Asn)		0.0	Pathogenic/Likely_pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NM_000000.0(SCN5A):c.38633181A>C (p.Ser43Ser)		0.0	Pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NM_000000.0(SCN5A):c.38633190A>C (p.Asp40Asn)		0.0	Pathogenic	criteria_provided,_single_submitter
+NM_000000.0(SCN5A):c.38633214A>C (p.Asn32Asn)		0.0	Pathogenic/Likely_pathogenic	criteria_provided,_multiple_submitters,_no_conflicts
+NM_000000.0(SCN5A):c.38633253A>C (p.Glu19Lys)		0.0	Likely_pathogenic	criteria_provided,_single_submitter
