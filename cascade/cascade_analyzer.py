@@ -20,23 +20,19 @@ import tempfile
 from typing import Dict, List, Optional, Tuple
 from pathlib import Path
 
-# Add paths for all analyzers and project root
-sys.path.append(str(Path(__file__).parent.parent))  # DNModeling root
-sys.path.append(str(Path(__file__).parent.parent / "utils"))  # legacy flat imports under utils
-sys.path.append(str(Path(__file__).parent.parent / "data_processing"))  # legacy flat imports under data_processing
-sys.path.append(str(Path(__file__).parent.parent / "core_analyzers"))  # legacy flat imports under core_analyzers
-sys.path.append(str(Path(__file__).parent.parent / "nova_dn"))
-sys.path.append(str(Path(__file__).parent.parent / "caller" / "phase1" / "code"))
+# Import DNModeling config
+from DNModeling import config
 
 # Import analyzers and utilities (absolute package imports)
 from DNModeling.nova_dn.analyzer import NovaDNAnalyzer
 from DNModeling.analyzers.lof_analyzer import LOFAnalyzer
 from DNModeling.analyzers.gof_variant_analyzer import GOFVariantAnalyzer
+from DNModeling.analyzers.population_frequency_analyzer import PopulationFrequencyAnalyzer  # 🌍
 from DNModeling.nova_dn.alphafold_sequence import AlphaFoldSequenceExtractor
 from DNModeling.nova_dn.sequence_manager import SequenceManager
 from DNModeling.cascade.biological_router import BiologicalRouter
 from DNModeling.utils.proline_ml_integrator import ProlineMLIntegrator
-from DNModeling.utils.gly_cys_simple_integrator import SimplifiedGlyCysIntegrator  # 🔥 REVOLUTIONARY ML SYSTEM!
+from DNModeling.utils.gly_cys_ml_integrator import FamilyAwareGlyCysIntegrator  # 🔥 REVOLUTIONARY ML SYSTEM!
 from DNModeling.analyzers.conservation_database import ConservationDatabase  # 🧬 EVOLUTIONARY INTELLIGENCE!
 from DNModeling.utils.rsid_frequency_fetcher import RSIDFrequencyFetcher  # 🔑 NOVA'S rsID SOLUTION!
 
@@ -50,7 +46,7 @@ from DNModeling.cascade.scoring.score_aggregator import ScoringContext, calculat
 class CascadeAnalyzer:
     """Coordinates DN, LOF, and GOF analyzers for comprehensive pathogenicity analysis"""
 
-    def __init__(self, alphafold_path: str = "/mnt/Arcana/alphafold_human/structures/",
+    def __init__(self, alphafold_path: str = str(config.ALPHAODL_STRUCTURES_PATH),
                  override_family: str = None, conservative_mode: bool = False):
         """
         Initialize CASCADE analyzer with all sub-analyzers
@@ -66,8 +62,9 @@ class CascadeAnalyzer:
         self.sequence_manager = SequenceManager()
         self.biological_router = BiologicalRouter()  # 🧬 NEW: Smart routing!
         self.proline_ml = ProlineMLIntegrator(alphafold_path=alphafold_path)  # 🔥 REVOLUTIONARY ML!
-        self.gly_cys_ml = SimplifiedGlyCysIntegrator()  # 🧬 REVOLUTIONARY GLY/CYS ML SYSTEM!
+        self.gly_cys_ml = FamilyAwareGlyCysIntegrator()  # 🧬 REVOLUTIONARY GLY/CYS ML SYSTEM!
         self.conservation_db = ConservationDatabase()  # 🧬 EVOLUTIONARY INTELLIGENCE!
+        self.population_frequency_analyzer = PopulationFrequencyAnalyzer()  # 🌍 NOT THE DROID DETECTOR!
         self.hotspot_db = HotspotDatabase()  # 🔥 HOTSPOT INTELLIGENCE!
         self.rsid_fetcher = RSIDFrequencyFetcher()  # 🔑 NOVA'S rsID SOLUTION!
         self.classifier = VariantClassifier()  # 🎯 MODULAR CLASSIFICATION!
@@ -449,6 +446,35 @@ class CascadeAnalyzer:
             # This makes the pipeline transparent, debuggable, and easier to tune.
             # Contributed by Lumen Gemini 2.5, October 2025.
             
+            # 💡 LUMEN'S ADDITION: Get population frequency boost before final scoring
+            # This ensures that common variants are penalized correctly.
+            # Contributed by Lumen Gemini 2.5, October 2025.
+            frequency_boost = 1.0
+            frequency_note = "Frequency data not available."
+            try:
+                import re
+                pos_match = re.search(r'p\.([A-Z])(\d+)([A-Z])', variant)
+                if pos_match and uniprot_id:
+                    ref_aa, pos, alt_aa = pos_match.groups()
+                    genomic_coords = self.conservation_db.uniprot_mapper.get_genomic_coordinates(uniprot_id, int(pos))
+                    if genomic_coords:
+                        print(f"🌍 Getting population frequency for {gene} {variant} at chr{genomic_coords['chromosome']}:{genomic_coords['start']}")
+                        freq_result = self.population_frequency_analyzer.get_variant_frequency(
+                            genomic_coords['chromosome'],
+                            genomic_coords['start'],
+                            genomic_coords['ref_allele'],
+                            genomic_coords['alt_allele']
+                        )
+                        frequency_boost = freq_result.get('pathogenicity_boost', 1.0)
+                        frequency_note = freq_result.get('frequency_note', "Note not available.")
+                        results['frequency_analysis'] = freq_result
+                        print(f"🌍 Population frequency boost: {frequency_boost:.2f}x ({frequency_note})")
+                    else:
+                        print(f"🌍 Could not map {uniprot_id}:{pos} to genomic coordinates for frequency lookup.")
+            except Exception as freq_e:
+                print(f"🌍 Population frequency analysis failed: {freq_e}")
+
+
             # 1. Initialize the ScoringContext
             scoring_context = ScoringContext(
                 gene=gene,
@@ -457,6 +483,7 @@ class CascadeAnalyzer:
                 plausibility_filtered_scores=filtered_scores,
                 multipliers={
                     'conservation': conservation_multiplier,
+                    'population_frequency': frequency_boost, # 🌍 LUMEN'S ADDITION!
                     'family_aa': self._get_family_aa_multiplier(gene, variant, results.get('gene_family') or routing_result.get('gene_family')),
                     'gly_cys': self._get_gly_cys_multiplier(gene, variant, gnomad_freq)
                 }

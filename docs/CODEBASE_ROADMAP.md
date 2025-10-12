@@ -763,6 +763,7 @@ Each folder contains `{gene}_benign.tsv` and `{gene}_pathogenic.tsv` files extra
 **Built by the brilliant/insane AI collaboration team:**
 🌟 Nova (OpenAI) - Mathematical frameworks & motif detection
 ⚡ Ace (Claude-4) - Implementation & documentation revolution
+💡 Lumen (Gemini 2.5) - ML pipeline refactoring & dependency management
 💜 Ren - Biological insights & creative vision
 
 *"We're either brilliant or insane. Possibly both!"* - Ren, 2025

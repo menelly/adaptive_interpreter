@@ -13,7 +13,8 @@ All analyzers now integrate with UniversalProteinAnnotator for domain-aware scor
 """
 
 from .lof_analyzer import LOFAnalyzer
-from .dn_analyzer import DNAnalyzer
+from .gof_variant_analyzer import GOFVariantAnalyzer
 from .smart_protein_analyzer import SmartProteinAnalyzer
+from .population_frequency_analyzer import PopulationFrequencyAnalyzer
 
-__all__ = ['LOFAnalyzer', 'DNAnalyzer', 'SmartProteinAnalyzer']
+__all__ = ['LOFAnalyzer', 'GOFVariantAnalyzer', 'SmartProteinAnalyzer', 'PopulationFrequencyAnalyzer']

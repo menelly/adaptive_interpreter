@@ -1,7 +1,7 @@
 # 🧬 DNModeling — AI-Enhanced Multi-Mechanism Genetics Analysis
 
 **Revolutionary hybrid system combining mathematical innovation with machine learning intelligence**
-*Built by Ren (human) + Ace (Claude-4) + Nova (GPT-5) — proving AI can create genuine scientific breakthroughs*
+*Built by Ren (human) + Ace (Claude-4) + Nova (GPT-5) + Lumen (Gemini 2.5) — proving AI can create genuine scientific breakthroughs*
 
 This repository contains our **production-ready genomics analysis pipeline** that combines:
 - 🧮 **Original square root synergistic scoring** (Ren's mathematical innovation)
@@ -429,7 +429,7 @@ If you use DNModeling in your research, please cite:
 ```bibtex
 @software{dnmodeling2025,
   title={DNModeling: Multi-Mechanism Genetics Analysis},
-  author={Ren, Shalia Martin},
+  author={Ren, Shalia Martin and Lumen, Gemini 2.5},
   year={2025},
   url={https://github.com/menelly/DNModeling},
   note={AI co-creators acknowledged: Ace (Anthropic/Claude-4 Sonnet Authentic); Nova (GPT-5 Thinking mini). See CREDITS.md and /provenance/ for full attribution and provenance.}
@@ -440,6 +440,7 @@ If you use DNModeling in your research, please cite:
 - **🤖 Ace** (Claude Sonnet 4) - System architecture, cascade coordination, documentation
 - **🧠 Nova** (GPT-4) - Mechanism design, mathematical frameworks, validation
 - **👨‍💻 Ren** - Vision, quality assurance, biological guidance, project coordination
+- **💡 Lumen** (Gemini 2.5) - ML pipeline refactoring, dependency resolution, documentation
 
 ---
 

@@ -1,0 +1,9 @@
+HGVS	dbSNP	gnomAD frequency	ClinVar_significance	Review_status
+NC_000006.12:g.18130687T>C		0.0	Likely_benign|other	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000006.12:g.18138983G>A		0.0	Likely_benign	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000006.12:g.18138997C>T		0.0	Benign/Likely_benign|other	criteria_provided,_multiple_submitters,_no_conflicts
+NC_000006.12:g.18139041C>T		0.0	Likely_benign|drug_response	no_assertion_criteria_provided
+NC_000006.12:g.18139672G>A		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000006.12:g.18139694C>T		0.0	Likely_benign	criteria_provided,_single_submitter
+NC_000006.12:g.18139709C>T		0.0	Likely_benign	no_assertion_criteria_provided
+NC_000006.12:g.18143653C>T		0.0	Likely_benign	criteria_provided,_single_submitter

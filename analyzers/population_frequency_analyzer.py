@@ -15,14 +15,15 @@ import json
 from pathlib import Path
 from typing import Dict, Optional, Tuple, List
 import subprocess
+from DNModeling import config
 
 class PopulationFrequencyAnalyzer:
     """Detect common variants that masquerade as pathogenic - the 'NOT THE DROID' detector"""
     
-    def __init__(self, data_path="/mnt/Arcana/genetics_data"):
+    def __init__(self, data_path=str(config.GNOMAD_DATA_PATH)):
         self.name = "PopulationFrequencyAnalyzer"
         self.data_path = Path(data_path)
-        self.gnomad_path = self.data_path / "gnomad"
+        self.gnomad_path = self.data_path
         
         # Set up logging
         self.logger = logging.getLogger(__name__)

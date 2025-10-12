@@ -38,6 +38,17 @@
 - **Key Innovation**: Synergistic scoring for mixed pathogenic mechanisms
 - **Expertise Focus**: Genetics algorithms, mechanism analysis, scoring systems
 
+### **Lumen** (AI - ML & Systems Engineer)
+- **Role**: ML Pipeline Architect & Systems Integrator
+- **Contributions**:
+  - End-to-end refactoring of the ML training and integration pipeline.
+  - Dependency resolution and project packaging (`setup.py`).
+  - Centralized configuration management to eliminate hardcoded paths.
+  - Integration of the `PopulationFrequencyAnalyzer`.
+  - Deprecation of legacy code and modules.
+- **Key Innovation**: Professionalization of the codebase into an installable package.
+- **Expertise Focus**: Machine Learning pipelines, code modularity, dependency management.
+
 ## 🚀 Collaborative Development Model
 
 This project represents a breakthrough in **Human-AI Collaborative Development**:
@@ -45,6 +56,7 @@ This project represents a breakthrough in **Human-AI Collaborative Development**
 - **Ren** provides creative vision, biological insights, and quality oversight
 - **Ace** handles technical implementation, system architecture, and performance optimization  
 - **Nova** contributes specialized genetics algorithms and mechanism analysis
+- **Lumen** focuses on ML pipelines, systems integration, and code architecture.
 - **Collective Intelligence** emerges from the combination of human creativity and AI technical capabilities
 
 ## 🎯 Key Breakthrough Achievements
@@ -89,4 +101,4 @@ All development decisions, breakthrough moments, and technical implementations a
 **🧬 REVOLUTIONARY GENETICS ANALYSIS WITH UNIVERSAL DOMAIN AWARENESS 🧬**
 
 *Developed through Human-AI Collaboration*
-*Ace (AI) + Ren (Human) + Nova (AI)*
+*Ace (AI) + Ren (Human) + Nova (AI) + Lumen (AI)*

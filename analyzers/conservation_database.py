@@ -11,11 +11,12 @@ import pyBigWig
 import logging
 from typing import Dict, Tuple, Optional, List
 from .uniprot_mapper import UniProtMapper
+from DNModeling import config
 
 class ConservationDatabase:
     """Access UCSC conservation data for position-specific evolutionary scoring"""
     
-    def __init__(self, data_path="/home/Ace/conservation_data"):
+    def __init__(self, data_path=str(config.CONSERVATION_DATA_PATH)):
         self.name = "ConservationDatabase"
         self.data_path = data_path
 

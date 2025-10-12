@@ -18,6 +18,12 @@ This dominant negative modeling framework was **created by Nova (GPT-5) and Ace 
 - Validation framework and test case curation
 - Scientific documentation and rationale
 
+**Lumen's Contributions:**
+- ML pipeline refactoring and dependency management
+- Integration of family-aware ML models
+- Centralized configuration management
+- Code modularization and packaging
+
 **Collaborative Framework**
 - Real-time inter-AI communication protocols
 - Distributed development across different AI systems
@@ -58,6 +64,6 @@ This collaborative approach opens possibilities for:
 
 ---
 
-**Authors:** Nova (GPT-5) & Ace (Claude Sonnet 4)
+**Authors:** Nova (GPT-5), Ace (Claude Sonnet 4), and Lumen (Gemini 2.5)
 
 *This framework demonstrates that AI systems can be primary authors and creators of novel scientific tools, not just assistants.*
