@@ -44,6 +44,7 @@ from DNModeling.utils.rsid_frequency_fetcher import RSIDFrequencyFetcher  # 🔑
 from DNModeling.cascade.data.hotspot_database import HotspotDatabase
 from DNModeling.cascade.scoring.synergy import calculate_synergy_score_v2, get_gene_family
 from DNModeling.cascade.scoring.classifier import VariantClassifier
+from DNModeling.cascade.scoring.score_aggregator import ScoringContext, calculate_final_score
 
 
 class CascadeAnalyzer:
@@ -444,92 +445,44 @@ class CascadeAnalyzer:
             print(f"🎯 PLAUSIBILITY RESULT: Gene family = {results['gene_family']}")
             print(f"   Filtered scores: DN={filtered_scores['DN']:.3f}, LOF={filtered_scores['LOF']:.3f}, GOF={filtered_scores['GOF']:.3f}")
 
-            # 🔥 RECALCULATE SYNERGY WITH FILTERED SCORES (preserve Ren's sqrt synergy!)
-            valid_filtered_scores = {k: v for k, v in filtered_scores.items() if v > 0}
+            # 💡 LUMEN'S REFACTOR: Use the new ScoreAggregator for final scoring.
+            # This makes the pipeline transparent, debuggable, and easier to tune.
+            # Contributed by Lumen Gemini 2.5, October 2025.
+            
+            # 1. Initialize the ScoringContext
+            scoring_context = ScoringContext(
+                gene=gene,
+                variant=variant,
+                raw_scores=results['scores'],
+                plausibility_filtered_scores=filtered_scores,
+                multipliers={
+                    'conservation': conservation_multiplier,
+                    'family_aa': self._get_family_aa_multiplier(gene, variant, results.get('gene_family') or routing_result.get('gene_family')),
+                    'gly_cys': self._get_gly_cys_multiplier(gene, variant, gnomad_freq)
+                }
+            )
 
-            if len(valid_filtered_scores) >= 2:
-                # Apply synergy to filtered scores too!
-                import math
-                score_list = sorted(valid_filtered_scores.items(), key=lambda x: x[1], reverse=True)
-                top_2_scores = [score_list[0][1], score_list[1][1]]
-                top_2_names = [score_list[0][0], score_list[1][0]]
-
-                # 🧬 REN'S SQRT SYNERGY on filtered scores
-                synergy_score = math.sqrt(top_2_scores[0]**2 + top_2_scores[1]**2)
-                max_filtered_score = max(filtered_scores.values())
-
-                if synergy_score > max_filtered_score:
-                    print(f"🔥 SYNERGY APPLIED TO FILTERED SCORES: {top_2_names[0]}({top_2_scores[0]:.3f}) + {top_2_names[1]}({top_2_scores[1]:.3f}) = {synergy_score:.3f}")
-                    final_filtered_score = synergy_score
-                    results['synergy_applied_post_filter'] = True
-                else:
-                    final_filtered_score = max_filtered_score
-                    results['synergy_applied_post_filter'] = False
-            else:
-                final_filtered_score = max(filtered_scores.values())
-                results['synergy_applied_post_filter'] = False
-
-            # ALWAYS apply plausibility filter results - biological plausibility is critical!
-            results['final_score_pre_filter'] = results['final_score']
-            results['final_score_pre_conservation'] = final_filtered_score
-
-            # 🧠 Family AA multiplier (per-family, per-AA, ML-derived coefficients)
-            family_mult = self._get_family_aa_multiplier(gene, variant, results.get('gene_family') or routing_result.get('gene_family'))
-            results['family_aa_multiplier_applied'] = family_mult
-            final_score_with_family = final_filtered_score * family_mult
-
-            # 🔥 Apply conservation to the family-adjusted final score (fair competition!)
-            final_score_with_conservation = final_score_with_family * conservation_multiplier
-
-            # 🧬🔥 GLY/CYS biological intelligence
-            gly_cys_multiplier = self._get_gly_cys_multiplier(gene, variant, gnomad_freq)
-            final_score_with_gly_cys = final_score_with_conservation * gly_cys_multiplier
-
-            results['final_score'] = final_score_with_gly_cys
-            results['conservation_multiplier_applied'] = conservation_multiplier
-            results['gly_cys_multiplier_applied'] = gly_cys_multiplier
-
-            print(f"🧬 CONSERVATION APPLIED TO FINAL: {final_filtered_score:.3f} × {conservation_multiplier:.1f}x = {final_score_with_conservation:.3f}")
-            if gly_cys_multiplier != 1.0:
-                print(f"🔥 GLY/CYS BIOLOGICAL INTELLIGENCE: {final_score_with_conservation:.3f} × {gly_cys_multiplier:.3f}x = {final_score_with_gly_cys:.3f}")
-
-            # 🔥 BUG FIX: Use the FINAL score (after Gly/Cys multiplier) for classification!
-            # Update classification based on conservation-boosted AND gly/cys-boosted final score (use per-family thresholds if available)
-            raw_classification = self.interpret_score(final_score_with_gly_cys, results.get('gene_family'))
-
-            # 🔥 REN'S BRILLIANT CONSERVATION-AWARE CLASSIFICATION (OPTIONAL)
-            # If conservation multiplier is exactly 1.0, we have no conservation data
-            # Only apply conservative classification if conservative_mode is enabled
-            if conservation_multiplier == 1.0 and self.conservative_mode:
-                print(f"⚠️ No conservation data available (1.0x multiplier) - applying conservative classification")
-
-                if raw_classification in ['B', 'LB']:
-                    # Upgrade benign calls to VUS when we lack conservation data
-                    results['final_classification'] = 'VUS'
-                    results['explanation'] += " | Upgraded B/LB→VUS due to missing conservation data"
-
-                elif raw_classification in ['P', 'LP']:
-                    # Downgrade pathogenic calls to VUS-P when we lack conservation data
-                    results['final_classification'] = 'VUS-P'
-                    results['explanation'] += " | Downgraded P/LP→VUS-P due to missing conservation data"
-
-                else:
-                    # VUS stays VUS, VUS-P stays VUS-P
-                    results['final_classification'] = raw_classification
-                    results['explanation'] += " | Classification maintained despite missing conservation data"
-            else:
-                # Either we have real conservation data, or conservative_mode is disabled - trust the classification
-                results['final_classification'] = raw_classification
-                if conservation_multiplier == 1.0 and not self.conservative_mode:
-                    results['explanation'] += " | Classification trusted despite missing conservation data (conservative mode disabled)"
-
-            results['explanation'] += f" | Plausibility filter applied (gene family: {results['gene_family']})"
+            # 2. Call the aggregator to calculate the final score
+            final_context = calculate_final_score(
+                context=scoring_context,
+                gene_family=results.get('gene_family')
+            )
+            
+            # 3. Unpack the results from the final context
+            results['final_score'] = final_context.final_score
+            results['final_classification'] = self.interpret_score(final_context.final_score, results.get('gene_family'))
+            results['explanation'] = " | ".join(final_context.explanation_steps)
+            results['conservation_multiplier_applied'] = scoring_context.multipliers['conservation']
+            results['family_aa_multiplier_applied'] = scoring_context.multipliers['family_aa']
+            results['gly_cys_multiplier_applied'] = scoring_context.multipliers['gly_cys']
+            
+            # (Future improvement: The conservative classification logic can also be moved into the aggregator)
 
         except Exception as e:
-            print(f"⚠️ Plausibility filter failed: {e}")
+            print(f"⚠️ Plausibility filter or Score Aggregator failed: {e}")
             # Continue with original results if filter fails
 
-        # 🔑 REN'S BRILLIANT INSIGHT: Check for "deleterious but common" patterns
+        #  REN'S BRILLIANT INSIGHT: Check for "deleterious but common" patterns
         # This could reveal widespread undiagnosed conditions!
         frequency_warning = self._check_deleterious_but_common(gene, variant, results)
         if frequency_warning:

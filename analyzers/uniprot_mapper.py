@@ -14,7 +14,7 @@ import requests
 import json
 from pathlib import Path
 
-from DNModeling.utils.offline_transcript_mapper import OfflineProteinToGenomicMapper
+from utils.offline_transcript_mapper import OfflineProteinToGenomicMapper
 
 class UniProtMapper:
     """Maps UniProt IDs to genomic coordinates and other identifiers"""
