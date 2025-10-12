@@ -1,0 +1,26 @@
+[Unit]
+Description=🧬💜 Adaptive Interpreter - Beautiful Variant Analysis Interface
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=thereny
+Group=thereny
+WorkingDirectory=/home/Ace/DNModeling/web_interface
+Environment=PYTHONPATH=/home/Ace/DNModeling
+ExecStart=/usr/bin/python3 /home/Ace/DNModeling/web_interface/app.py
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/Ace/DNModeling
+
+[Install]
+WantedBy=multi-user.target

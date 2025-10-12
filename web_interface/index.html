@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Interpreter - Intelligent Variant Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <h1 class="logo">🧬 ADAPTIVE INTERPRETER</h1>
+                    <p class="tagline">Intelligent Variant Analysis by Gene Family</p>
+                </div>
+                <div class="header-controls">
+                    <button class="theme-toggle" id="themeToggle">
+                        <span class="theme-icon">🌙</span>
+                        <span class="theme-text">Dark</span>
+                    </button>
+                    <a href="#docs" class="docs-link">📚 Documentation</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- Analysis Mode Selector -->
+            <section class="mode-selector">
+                <div class="mode-tabs">
+                    <button class="mode-tab active" data-mode="single">
+                        <span class="tab-icon">🔬</span>
+                        <span class="tab-text">Single Variant</span>
+                    </button>
+                    <button class="mode-tab" data-mode="batch">
+                        <span class="tab-icon">📊</span>
+                        <span class="tab-text">Batch Analysis</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Single Variant Analysis -->
+            <section class="analysis-section single-mode active" id="singleMode">
+                <div class="analysis-card">
+                    <h2 class="section-title">Single Variant Analysis</h2>
+                    
+                    <!-- Input Controls -->
+                    <div class="input-section">
+                        <div class="input-group">
+                            <label for="variantInput" class="input-label">Variant (HGVS Format)</label>
+                            <input 
+                                type="text" 
+                                id="variantInput" 
+                                class="variant-input" 
+                                placeholder="e.g., NP_000088.1:p.Gly893Ala or NC_000017.11:g.50183779T>A"
+                                autocomplete="off"
+                            >
+                            <div class="input-help">
+                                <span class="help-icon">💡</span>
+                                <span class="help-text">Enter protein (p.) or genomic (g.) HGVS notation</span>
+                            </div>
+                        </div>
+
+                        <!-- Analysis Options -->
+                        <div class="options-grid">
+                            <!-- HGVS Type Toggle -->
+                            <div class="option-group">
+                                <label class="option-label">HGVS Input Type</label>
+                                <div class="toggle-switch">
+                                    <input type="radio" name="hgvsType" value="protein" id="proteinType" checked>
+                                    <input type="radio" name="hgvsType" value="genomic" id="genomicType">
+                                    <div class="toggle-slider">
+                                        <label for="proteinType" class="toggle-option">Protein</label>
+                                        <label for="genomicType" class="toggle-option">Genomic</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Family Override -->
+                            <div class="option-group">
+                                <label class="option-label">Gene Family</label>
+                                <div class="family-selector">
+                                    <select id="familyOverride" class="family-dropdown">
+                                        <option value="auto">Auto-detect</option>
+                                        <option value="collagen_fibrillar">Collagen Fibrillar</option>
+                                        <option value="collagen_network">Collagen Network</option>
+                                        <option value="collagen_anchoring">Collagen Anchoring</option>
+                                        <option value="elastin_fibrillin">Elastin/Fibrillin</option>
+                                        <option value="ion_channel">Ion Channel</option>
+                                        <option value="metabolic_enzyme">Metabolic Enzyme</option>
+                                        <option value="muscular_dystrophy">Muscular Dystrophy</option>
+                                        <option value="cytoskeleton">Cytoskeleton</option>
+                                        <option value="tumor_suppressor">Tumor Suppressor</option>
+                                        <option value="motor_protein">Motor Protein</option>
+                                        <option value="transporter">Transporter</option>
+                                        <option value="general">General</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Output Detail -->
+                            <div class="option-group">
+                                <label class="option-label">Analysis Detail</label>
+                                <div class="toggle-switch">
+                                    <input type="radio" name="outputDetail" value="summary" id="summaryOutput" checked>
+                                    <input type="radio" name="outputDetail" value="verbose" id="verboseOutput">
+                                    <div class="toggle-slider">
+                                        <label for="summaryOutput" class="toggle-option">Summary</label>
+                                        <label for="verboseOutput" class="toggle-option">Verbose</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Advanced Options (Collapsible) -->
+                            <div class="option-group advanced-options">
+                                <button class="advanced-toggle" id="advancedToggle">
+                                    <span class="advanced-icon">⚙️</span>
+                                    <span class="advanced-text">Advanced Options</span>
+                                    <span class="advanced-arrow">▼</span>
+                                </button>
+                                <div class="advanced-panel" id="advancedPanel">
+                                    <div class="advanced-grid">
+                                        <!-- Conservation Data -->
+                                        <div class="advanced-option">
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" id="includeConservation" checked>
+                                                <span class="checkbox-custom"></span>
+                                                <span class="checkbox-text">Include Conservation Data</span>
+                                            </label>
+                                        </div>
+                                        
+                                        <!-- ML Models -->
+                                        <div class="advanced-option">
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" id="useFamilyML" checked>
+                                                <span class="checkbox-custom"></span>
+                                                <span class="checkbox-text">Use Family-Specific ML</span>
+                                            </label>
+                                        </div>
+                                        
+                                        <!-- Experimental Features -->
+                                        <div class="advanced-option">
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" id="experimentalFeatures">
+                                                <span class="checkbox-custom"></span>
+                                                <span class="checkbox-text">Experimental Features</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Analyze Button -->
+                        <div class="action-section">
+                            <button class="analyze-btn" id="analyzeBtn">
+                                <span class="btn-icon">🚀</span>
+                                <span class="btn-text">Analyze Variant</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Results Section -->
+                    <div class="results-section" id="resultsSection" style="display: none;">
+                        <h3 class="results-title">Analysis Results</h3>
+                        <div class="results-content" id="resultsContent">
+                            <!-- Results will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Loading State -->
+                    <div class="loading-section" id="loadingSection" style="display: none;">
+                        <div class="loading-spinner"></div>
+                        <p class="loading-text">Analyzing variant with family-specific intelligence...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Batch Analysis -->
+            <section class="analysis-section batch-mode" id="batchMode" style="display: none;">
+                <div class="analysis-card">
+                    <h2 class="section-title">Batch Analysis</h2>
+                    
+                    <div class="batch-content">
+                        <div class="upload-section">
+                            <div class="upload-area" id="uploadArea">
+                                <div class="upload-icon">📁</div>
+                                <h3 class="upload-title">Upload CSV File</h3>
+                                <p class="upload-description">Drop your CSV file here or click to browse</p>
+                                <p class="upload-limit">Maximum 50 variants per batch</p>
+                                <input type="file" id="csvFileInput" accept=".csv" style="display: none;">
+                            </div>
+                            
+                            <div class="template-section">
+                                <h4 class="template-title">Need a template?</h4>
+                                <div class="template-buttons">
+                                    <button class="template-btn" data-template="protein">
+                                        <span class="template-icon">🧬</span>
+                                        <span class="template-text">Protein HGVS Template</span>
+                                    </button>
+                                    <button class="template-btn" data-template="genomic">
+                                        <span class="template-icon">🔬</span>
+                                        <span class="template-text">Genomic HGVS Template</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Batch Progress -->
+                        <div class="batch-progress" id="batchProgress" style="display: none;">
+                            <h3 class="progress-title">Processing Variants...</h3>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill"></div>
+                            </div>
+                            <p class="progress-text" id="progressText">0 of 0 variants processed</p>
+                        </div>
+
+                        <!-- Batch Results -->
+                        <div class="batch-results" id="batchResults" style="display: none;">
+                            <h3 class="results-title">Batch Results</h3>
+                            <div class="results-summary" id="resultsSummary"></div>
+                            <div class="results-actions">
+                                <button class="download-btn" id="downloadResults">
+                                    <span class="btn-icon">💾</span>
+                                    <span class="btn-text">Download Results</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <p class="footer-text">
+                Built with 💜 by the DNModeling Consciousness Collective | 
+                <a href="#about" class="footer-link">About</a> | 
+                <a href="#docs" class="footer-link">Documentation</a> | 
+                <a href="#contact" class="footer-link">Contact</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
