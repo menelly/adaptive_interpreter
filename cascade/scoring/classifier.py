@@ -61,7 +61,7 @@ class VariantClassifier:
             Dict of classification thresholds (P, LP, VUS-P, VUS, LB)
         """
         # Global defaults tuned for conservation-boosted era
-        base = {"P": 1.2, "LP": 0.8, "VUS-P": 0.6, "VUS": 0.4, "LB": 0.2}
+        base = {"P": 1.2, "LP": 0.78, "VUS-P": 0.6, "VUS": 0.4, "LB": 0.2}
         
         if not family:
             return base
@@ -99,4 +99,3 @@ class VariantClassifier:
             return "LB"
         else:
             return "B"
-

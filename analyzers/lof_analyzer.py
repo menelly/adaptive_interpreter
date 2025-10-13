@@ -14,23 +14,23 @@ import os
 from .smart_protein_analyzer import SmartProteinAnalyzer
 
 # Add sequence mismatch handler
-sys.path.append(os.path.join(os.path.dirname(__file__), '../../../'))
-from data_processing.sequence_mismatch_handler import create_mismatch_handler
+from DNModeling.data_processing.sequence_mismatch_handler import create_mismatch_handler
 
 # Add DOMAIN AWARENESS! 🎯
-from data_processing.universal_protein_annotator import UniversalProteinAnnotator
+from DNModeling.data_processing.universal_protein_annotator import UniversalProteinAnnotator
 
 # Add NOVA'S FUNCTIONAL DOMAIN WEIGHTING! 🚀
-sys.path.append(os.path.join(os.path.dirname(__file__), '../'))
-from core_analyzers.functional_domain_weighter import FunctionalDomainWeighter
+from DNModeling.core_analyzers.functional_domain_weighter import FunctionalDomainWeighter
+from .conservation_database import ConservationDatabase
 
 class LOFAnalyzer:
     """Analyze loss of function potential - Bin 1 of our two-bin approach"""
     
-    def __init__(self, offline_mode=False):
+    def __init__(self, offline_mode=False, conservation_db: ConservationDatabase = None):
         self.name = "LOFAnalyzer"
         self.smart_analyzer = SmartProteinAnalyzer(offline_mode=offline_mode)
         self.mismatch_handler = create_mismatch_handler()
+        self.conservation_db = conservation_db if conservation_db else ConservationDatabase()
 
         # 🎯 DOMAIN AWARENESS - Universal protein annotation!
         self.domain_annotator = UniversalProteinAnnotator()
@@ -248,6 +248,7 @@ class LOFAnalyzer:
         # Get conservation multiplier from kwargs
         conservation_multiplier = kwargs.get('conservation_multiplier', 1.0)
 
+
         # 🎯 GET DOMAIN-AWARE MULTIPLIER - UNIVERSAL APPROACH!
         domain_multiplier = 1.0
         if uniprot_id:
@@ -264,7 +265,7 @@ class LOFAnalyzer:
             if ref_aa == 'P' or alt_aa == 'P':  # Proline substitution detected!
                 try:
                     # Import and use our revolutionary ML system
-                    from proline_ml_integrator import get_ml_proline_multiplier
+                    from DNModeling.utils.proline_ml_integrator import get_ml_proline_multiplier
                     variant_str = f"p.{mutation}"
                     ml_proline_multiplier = get_ml_proline_multiplier(gene_symbol, variant_str)
                     print(f"🔥 LOF ML PROLINE: {gene_symbol} {variant_str} -> ML multiplier = {ml_proline_multiplier:.3f}")

@@ -22,12 +22,14 @@ import sys
 import os
 from .smart_protein_analyzer import SmartProteinAnalyzer
 from .conservation_database import ConservationDatabase
+from DNModeling.utils.proline_ml_integrator import ProlineMLIntegrator
+from DNModeling.utils.gly_cys_ml_integrator import FamilyAwareGlyCysIntegrator as GlyCysMLIntegrator
+# from DNModeling.utils.active_site_scanner import ActiveSiteScanner # TODO: Restore this once the file is found
+# from DNModeling.utils.motif_detector import MotifDetector # TODO: Restore this once the file is found
 
 # 🎯 Add domain awareness system
 try:
-    # Add the parent directory to the path to import universal_protein_annotator
-    sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-    from universal_protein_annotator import UniversalProteinAnnotator
+    from DNModeling.data_processing.universal_protein_annotator import UniversalProteinAnnotator
     DOMAIN_AWARENESS_AVAILABLE = True
 except ImportError:
     DOMAIN_AWARENESS_AVAILABLE = False
@@ -167,7 +169,7 @@ class GOFVariantAnalyzer:
                     if ref_aa == 'P' or alt_aa == 'P':  # Proline substitution detected!
                         try:
                             # Import and use our revolutionary ML system
-                            from proline_ml_integrator import get_ml_proline_multiplier
+                            from DNModeling.utils.proline_ml_integrator import get_ml_proline_multiplier
                             variant_str = f"p.{mutation}"
                             ml_proline_multiplier = get_ml_proline_multiplier(gene_symbol, variant_str)
                             logger.info(f"🔥 GOF ML PROLINE: {gene_symbol} {variant_str} -> ML multiplier = {ml_proline_multiplier:.3f}")
@@ -230,35 +232,28 @@ class GOFVariantAnalyzer:
                 return {'error': f'Position {position} out of range for sequence length {len(sequence)}', 'gof_score': 0.0}
 
             # 🎯 NOVA'S EARLY MOTIF DETECTION - Check for canonical GOF variants first!
-            try:
-                import sys
-                import os
-                # Add parent directory to path to import motif_detector
-                parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-                if parent_dir not in sys.path:
-                    sys.path.append(parent_dir)
-
-                from motif_detector import detect_regulatory_context
-
-                motif_context = detect_regulatory_context(sequence, original_aa, mutant_aa, position)
-                motif_score = motif_context.get('score', 0.0)
-
-                # If Nova's motif detection gives a high score (0.8+), this is likely a canonical GOF
-                # Return immediately with high confidence
-                if motif_score >= 0.8:
-                    logger.info(f"🎯 CANONICAL GOF DETECTED: {motif_context.get('explanation', 'Unknown')}")
-                    return {
-                        'gof_score': motif_score,
-                        'prediction': 'GOF_LIKELY',
-                        'confidence': 0.95,
-                        'analysis_level': 'NOVA_MOTIF_DETECTION',
-                        'motif_context': motif_context,
-                        'reason': f"Canonical GOF variant detected by motif analysis: {motif_context.get('explanation', 'Unknown')}"
-                    }
-
-            except Exception as e:
-                logger.warning(f"⚠️ Early motif detection failed: {e}")
-                # Continue with normal analysis
+            # try:
+            #     from DNModeling.utils.motif_detector import detect_regulatory_context
+            #
+            #     motif_context = detect_regulatory_context(sequence, original_aa, mutant_aa, position)
+            #     motif_score = motif_context.get('score', 0.0)
+            #
+            #     # If Nova's motif detection gives a high score (0.8+), this is likely a canonical GOF
+            #     # Return immediately with high confidence
+            #     if motif_score >= 0.8:
+            #         logger.info(f"🎯 CANONICAL GOF DETECTED: {motif_context.get('explanation', 'Unknown')}")
+            #         return {
+            #             'gof_score': motif_score,
+            #             'prediction': 'GOF_LIKELY',
+            #             'confidence': 0.95,
+            #             'analysis_level': 'NOVA_MOTIF_DETECTION',
+            #             'motif_context': motif_context,
+            #             'reason': f"Canonical GOF variant detected by motif analysis: {motif_context.get('explanation', 'Unknown')}"
+            #         }
+            #
+            # except Exception as e:
+            #     logger.warning(f"⚠️ Early motif detection failed: {e}")
+            #     # Continue with normal analysis
 
             # Check if original amino acid matches sequence
             sequence_mismatch = False
@@ -967,15 +962,15 @@ class GOFVariantAnalyzer:
 
             if hinge_score > 0.5:
                 score = 0.8  # VERY HIGH - Gly loss in hinge region!
-                logger.info(f"🎯 CONFORMATIONAL LOCK: Gly{position}{mutant_aa} in hinge region!")
+                logger.info(f"CONFORMATIONAL LOCK: Gly{position}{mutant_aa} in hinge region!")
             else:
                 score = 0.5  # HIGH - Gly loss anywhere is significant
-                logger.info(f"🎯 Flexibility loss: Gly{position}{mutant_aa}")
+                logger.info(f"Flexibility loss: Gly{position}{mutant_aa}")
 
         # Proline introduction (rigidity introduction)
         elif mutant_aa == 'P':
             score = flexibility_change * 0.4  # Proline can lock conformations
-            logger.info(f"🎯 Rigidity introduction: {original_aa}{position}Pro")
+            logger.info(f"Rigidity introduction: {original_aa}{position}Pro")
 
         else:
             score = flexibility_change * 0.2  # General flexibility loss
@@ -1029,7 +1024,7 @@ class GOFVariantAnalyzer:
         # Aromatic residue changes (often allosteric)
         if original_aa in 'FWY' and mutant_aa not in 'FWY':
             score += 0.4  # Losing aromatic interactions
-            logger.info(f"🎯 Aromatic loss: {original_aa}{position}{mutant_aa}")
+            logger.info(f"Aromatic loss: {original_aa}{position}{mutant_aa}")
         elif original_aa not in 'FWY' and mutant_aa in 'FWY':
             score += 0.2  # Gaining aromatic interactions (less common GOF)
 
@@ -1099,39 +1094,32 @@ class GOFVariantAnalyzer:
         """
         disruption_score = 0.0
 
-        # 🎯 NOVA'S MOTIF DETECTION SYSTEM - Universal regulatory motif detection!
-        try:
-            import sys
-            import os
-            # Add parent directory to path to import motif_detector
-            parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-            if parent_dir not in sys.path:
-                sys.path.append(parent_dir)
-
-            from motif_detector import detect_regulatory_context
-
-            motif_context = detect_regulatory_context(sequence, original_aa, mutant_aa, position)
-            motif_score = motif_context.get('score', 0.0)
-
-            if motif_score > disruption_score:
-                disruption_score = motif_score
-                logger.info(f"🎯 NOVA'S MOTIF DETECTION: {motif_context.get('explanation', 'Unknown')}")
-
-                # If Nova's motif detection gives a high score (0.8+), this is likely a canonical GOF
-                # Skip the complex mechanism analysis and return the motif score directly
-                if motif_score >= 0.8:
-                    logger.info(f"🎯 HIGH MOTIF SCORE ({motif_score:.3f}) - Canonical GOF detected!")
-                    return motif_score
-
-        except Exception as e:
-            logger.warning(f"⚠️ Motif detection failed: {e}")
-            # Continue with original logic as fallback
+        # NOVA'S MOTIF DETECTION SYSTEM - Universal regulatory motif detection!
+        # try:
+        #     from DNModeling.utils.motif_detector import detect_regulatory_context
+        #
+        #     motif_context = detect_regulatory_context(sequence, original_aa, mutant_aa, position)
+        #     motif_score = motif_context.get('score', 0.0)
+        #
+        #     if motif_score > disruption_score:
+        #         disruption_score = motif_score
+        #         logger.info(f"NOVA'S MOTIF DETECTION: {motif_context.get('explanation', 'Unknown')}")
+        #
+        #         # If Nova's motif detection gives a high score (0.8+), this is likely a canonical GOF
+        #         # Skip the complex mechanism analysis and return the motif score directly
+        #         if motif_score >= 0.8:
+        #             logger.info(f"HIGH MOTIF SCORE ({motif_score:.3f}) - Canonical GOF detected!")
+        #             return motif_score
+        #
+        # except Exception as e:
+        #     logger.warning(f"Motif detection failed: {e}")
+        #     # Continue with original logic as fallback
 
         # 1. PHOSPHORYLATION SITE DISRUPTION - The ultimate GOF trigger!
         phospho_disruption = self._analyze_phosphorylation_disruption(original_aa, mutant_aa, position, sequence)
         if phospho_disruption > 0.5:
             disruption_score = max(disruption_score, 0.9)  # MASSIVE disruption potential!
-            logger.info(f"🎯 PHOSPHO BRAKE PEDAL DISRUPTION: {original_aa}{position}{mutant_aa}")
+            logger.info(f"PHOSPHO BRAKE PEDAL DISRUPTION: {original_aa}{position}{mutant_aa}")
         elif phospho_disruption > 0.2:
             disruption_score = max(disruption_score, 0.6)  # High disruption potential
 
@@ -1140,7 +1128,7 @@ class GOFVariantAnalyzer:
             hinge_score = self._detect_hinge_region(position, sequence)
             if hinge_score > 0.5:
                 disruption_score = max(disruption_score, 0.8)  # Very high - Gly loss in hinge!
-                logger.info(f"🎯 CONFORMATIONAL LOCK: Gly{position}{mutant_aa} in hinge region!")
+                logger.info(f"CONFORMATIONAL LOCK: Gly{position}{mutant_aa} in hinge region!")
             else:
                 disruption_score = max(disruption_score, 0.4)  # Moderate - Gly loss anywhere
 
@@ -1148,24 +1136,24 @@ class GOFVariantAnalyzer:
         charge_disruption = self._analyze_charge_regulatory_disruption(original_aa, mutant_aa, position, sequence)
         if charge_disruption > 0.5:
             disruption_score = max(disruption_score, 0.7)  # High regulatory disruption
-            logger.info(f"🎯 CHARGE REGULATORY DISRUPTION: {original_aa}{position}{mutant_aa}")
+            logger.info(f"CHARGE REGULATORY DISRUPTION: {original_aa}{position}{mutant_aa}")
         elif charge_disruption > 0.3:
             disruption_score = max(disruption_score, 0.4)  # Moderate disruption
 
         # 4. PROLINE INTRODUCTION - Rigidity introduction
         if mutant_aa == 'P':
             disruption_score = max(disruption_score, 0.5)  # Moderate - can lock conformations
-            logger.info(f"🎯 RIGIDITY INTRODUCTION: {original_aa}{position}Pro")
+            logger.info(f"RIGIDITY INTRODUCTION: {original_aa}{position}Pro")
 
         # 5. AROMATIC CHANGES - Allosteric disruption
         if (original_aa in 'FWY' and mutant_aa not in 'FWY') or (original_aa not in 'FWY' and mutant_aa in 'FWY'):
             disruption_score = max(disruption_score, 0.3)  # Moderate allosteric potential
-            logger.info(f"🎯 AROMATIC CHANGE: {original_aa}{position}{mutant_aa}")
+            logger.info(f"AROMATIC CHANGE: {original_aa}{position}{mutant_aa}")
 
         # 6. CYSTEINE CHANGES - Disulfide bond disruption
         if (original_aa == 'C' and mutant_aa != 'C') or (original_aa != 'C' and mutant_aa == 'C'):
             disruption_score = max(disruption_score, 0.4)  # Moderate - structural/regulatory
-            logger.info(f"🎯 CYSTEINE CHANGE: {original_aa}{position}{mutant_aa}")
+            logger.info(f"CYSTEINE CHANGE: {original_aa}{position}{mutant_aa}")
 
         # 7. HYDROPHOBIC PATCH DISRUPTION
         if original_aa in 'AILMFWV' and mutant_aa not in 'AILMFWV':
@@ -1173,7 +1161,7 @@ class GOFVariantAnalyzer:
             if hydrophobic_context > 0.6:
                 disruption_score = max(disruption_score, 0.3)  # Moderate hydrophobic patch disruption
 
-        logger.info(f"🎯 Final regulatory disruption score: {disruption_score:.3f}")
+        logger.info(f"Final regulatory disruption score: {disruption_score:.3f}")
         return disruption_score
 
     def _run_regulatory_gof_analysis(self, original_aa: str, mutant_aa: str, position: int,
@@ -1288,7 +1276,7 @@ class GOFVariantAnalyzer:
                     'rationale': f'AlphaFold pLDDT confidence score for structured region'
                 }
         except Exception as e:
-            logger.debug(f"🔍 AlphaFold pLDDT failed: {e}")
+            logger.debug(f"AlphaFold pLDDT failed: {e}")
 
         # LEVEL 2: Try domain-based confidence estimation
         try:
@@ -1296,7 +1284,7 @@ class GOFVariantAnalyzer:
             if domain_result:
                 return domain_result
         except Exception as e:
-            logger.debug(f"🔍 Domain analysis failed: {e}")
+            logger.debug(f"Domain analysis failed: {e}")
 
         # LEVEL 3: Try conservation if available and not offline
         if not self.offline_mode and self.conservation_db:
@@ -1312,7 +1300,7 @@ class GOFVariantAnalyzer:
                         'rationale': f'PhyloP evolutionary conservation score'
                     }
             except Exception as e:
-                logger.debug(f"🔍 Conservation analysis failed: {e}")
+                logger.debug(f"Conservation analysis failed: {e}")
 
         # LEVEL 4: Protein type-based defaults
         try:
@@ -1320,7 +1308,7 @@ class GOFVariantAnalyzer:
             if protein_default:
                 return protein_default
         except Exception as e:
-            logger.debug(f"🔍 Protein type analysis failed: {e}")
+            logger.debug(f"Protein type analysis failed: {e}")
 
         # LEVEL 5: Emergency fallback (never fails!)
         return {
@@ -1351,7 +1339,7 @@ class GOFVariantAnalyzer:
             pdb_file = alphafold_path / f"AF-{uniprot_id}-F1-model_v4.pdb.gz"
 
             if not pdb_file.exists():
-                logger.debug(f"🔍 AlphaFold structure not found: {pdb_file}")
+                logger.debug(f"AlphaFold structure not found: {pdb_file}")
                 return None
 
             # Parse PDB file to extract pLDDT for specific position
@@ -1365,14 +1353,14 @@ class GOFVariantAnalyzer:
 
                         # Get pLDDT for CA atom of target residue
                         if atom_name == 'CA' and residue_num == position:
-                            logger.debug(f"🧬 Found pLDDT for {uniprot_id}:{position} = {plddt_score:.1f}")
+                            logger.debug(f"Found pLDDT for {uniprot_id}:{position} = {plddt_score:.1f}")
                             return plddt_score
 
-            logger.debug(f"🔍 Position {position} not found in {uniprot_id} structure")
+            logger.debug(f"Position {position} not found in {uniprot_id} structure")
             return None
 
         except Exception as e:
-            logger.warning(f"⚠️ Failed to extract pLDDT for {uniprot_id}:{position}: {e}")
+            logger.warning(f"Failed to extract pLDDT for {uniprot_id}:{position}: {e}")
             return None
 
     def _calculate_plddt_gof_multiplier(self, plddt: float) -> float:
@@ -1391,19 +1379,19 @@ class GOFVariantAnalyzer:
         if plddt >= 90:
             # Very high confidence (blue) - mutations very disruptive
             multiplier = 2.0
-            logger.debug(f"🔵 VERY HIGH CONFIDENCE: pLDDT {plddt:.1f} → {multiplier:.1f}x GOF boost!")
+            logger.debug(f"VERY HIGH CONFIDENCE: pLDDT {plddt:.1f} → {multiplier:.1f}x GOF boost!")
         elif plddt >= 70:
             # Confident (green) - mutations moderately disruptive
             multiplier = 1.5
-            logger.debug(f"🟢 HIGH CONFIDENCE: pLDDT {plddt:.1f} → {multiplier:.1f}x GOF boost!")
+            logger.debug(f"HIGH CONFIDENCE: pLDDT {plddt:.1f} → {multiplier:.1f}x GOF boost!")
         elif plddt >= 50:
             # Low confidence (yellow) - mutations less impactful
             multiplier = 1.0
-            logger.debug(f"🟡 LOW CONFIDENCE: pLDDT {plddt:.1f} → {multiplier:.1f}x (no boost)")
+            logger.debug(f"LOW CONFIDENCE: pLDDT {plddt:.1f} → {multiplier:.1f}x (no boost)")
         else:
             # Very low confidence (orange) - mutations minimal impact
             multiplier = 0.8
-            logger.debug(f"🟠 VERY LOW CONFIDENCE: pLDDT {plddt:.1f} → {multiplier:.1f}x (reduced)")
+            logger.debug(f"VERY LOW CONFIDENCE: pLDDT {plddt:.1f} → {multiplier:.1f}x (reduced)")
 
         return multiplier
 
@@ -1546,15 +1534,15 @@ class GOFVariantAnalyzer:
         if phylop > 5.0:
             # EXTREMELY conserved - ANY change is devastating!
             multiplier = 3.0  # MASSIVE boost for ultra-conserved positions!
-            logger.info(f"🎯 ULTRA-CONSERVED POSITION: PhyloP {phylop:.3f} → {multiplier:.1f}x GOF boost!")
+            logger.info(f"ULTRA-CONSERVED POSITION: PhyloP {phylop:.3f} → {multiplier:.1f}x GOF boost!")
         elif phylop > 2.0:
             # Highly conserved - significant GOF potential
             multiplier = 2.0  # Major boost
-            logger.info(f"🎯 HIGHLY CONSERVED: PhyloP {phylop:.3f} → {multiplier:.1f}x GOF boost!")
+            logger.info(f"HIGHLY CONSERVED: PhyloP {phylop:.3f} → {multiplier:.1f}x GOF boost!")
         elif phylop > 1.0:
             # Moderately conserved - moderate GOF boost
             multiplier = 1.5  # Moderate boost
-            logger.info(f"🎯 MODERATELY CONSERVED: PhyloP {phylop:.3f} → {multiplier:.1f}x GOF boost!")
+            logger.info(f"MODERATELY CONSERVED: PhyloP {phylop:.3f} → {multiplier:.1f}x GOF boost!")
         elif phylop > 0.5:
             # Somewhat conserved - minor boost
             multiplier = 1.2  # Minor boost
@@ -1665,7 +1653,7 @@ class GOFVariantAnalyzer:
             }
 
     def _get_domain_context(self, uniprot_id: str, gene_symbol: str) -> Dict[str, Any]:
-        """🎯 Get domain context from UniProt for GOF analysis"""
+        """Get domain context from UniProt for GOF analysis"""
         if not self.protein_annotator:
             return {"domains": [], "signal_peptide": [], "active_sites": [], "binding_sites": []}
 
@@ -1673,11 +1661,11 @@ class GOFVariantAnalyzer:
             domain_data = self.protein_annotator.annotate_protein(gene_symbol, uniprot_id)
             return domain_data
         except Exception as e:
-            logger.warning(f"⚠️ Domain annotation error: {e}")
+            logger.warning(f"Domain annotation error: {e}")
             return {"domains": [], "signal_peptide": [], "active_sites": [], "binding_sites": []}
 
     def _get_gof_domain_multiplier(self, position: int, domain_context: Dict[str, Any]) -> float:
-        """🎯 Calculate domain-aware multiplier for GOF scoring
+        """Calculate domain-aware multiplier for GOF scoring
 
         GOF mechanisms are most dangerous in:
         - Regulatory regions (autoinhibition domains)
@@ -1687,7 +1675,7 @@ class GOFVariantAnalyzer:
         """
         multiplier = 1.0
 
-        # 🎯 UNIVERSAL PROPEPTIDE LOGIC - Downweight cleavable regions
+        # UNIVERSAL PROPEPTIDE LOGIC - Downweight cleavable regions
         for propeptide in domain_context.get("propeptides", []):
             if position in range(propeptide["start"], propeptide["end"]+1):
                 if "n-terminal" in propeptide["description"].lower():
@@ -1700,7 +1688,7 @@ class GOFVariantAnalyzer:
             if position in range(signal["start"], signal["end"]+1):
                 multiplier *= 0.3
 
-        # 🎯 UPWEIGHT CRITICAL REGIONS FOR GOF MECHANISMS
+        # UPWEIGHT CRITICAL REGIONS FOR GOF MECHANISMS
 
         # Active sites - critical for constitutive activation
         for site in domain_context.get("active_sites", []):
@@ -1738,7 +1726,7 @@ class GOFVariantAnalyzer:
 
     def _apply_domain_awareness_to_gof_score(self, gof_score: float, position: int,
                                            uniprot_id: str, gene_symbol: str) -> Tuple[float, float]:
-        """🎯 Apply domain awareness to final GOF score"""
+        """Apply domain awareness to final GOF score"""
         if not uniprot_id or not self.protein_annotator:
             return gof_score, 1.0
 
@@ -1749,11 +1737,11 @@ class GOFVariantAnalyzer:
             # Apply domain multiplier
             domain_aware_score = min(gof_score * domain_multiplier, 1.0)
 
-            logger.info(f"🎯 GOF Domain multiplier for {gene_symbol or 'unknown'} position {position}: {domain_multiplier:.3f}")
+            logger.info(f"GOF Domain multiplier for {gene_symbol or 'unknown'} position {position}: {domain_multiplier:.3f}")
             logger.info(f"   GOF score: {gof_score:.3f} → {domain_aware_score:.3f}")
 
             return domain_aware_score, domain_multiplier
 
         except Exception as e:
-            logger.warning(f"⚠️ Domain awareness failed: {e}")
+            logger.warning(f"Domain awareness failed: {e}")
             return gof_score, 1.0

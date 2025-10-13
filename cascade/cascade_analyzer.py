@@ -47,7 +47,8 @@ class CascadeAnalyzer:
     """Coordinates DN, LOF, and GOF analyzers for comprehensive pathogenicity analysis"""
 
     def __init__(self, alphafold_path: str = str(config.ALPHAODL_STRUCTURES_PATH),
-                 override_family: str = None, conservative_mode: bool = False):
+                 override_family: str = None, conservative_mode: bool = False,
+                 conservation_data_path: Optional[str] = None):
         """
         Initialize CASCADE analyzer with all sub-analyzers
 
@@ -55,15 +56,17 @@ class CascadeAnalyzer:
             alphafold_path: Path to AlphaFold structures directory
             override_family: Optional gene family override for testing
             conservative_mode: If True, downgrade P/LP→VUS-P and upgrade B/LB→VUS when conservation data is missing
+            conservation_data_path: Path to the conservation data directory
         """
         self.dn_analyzer = NovaDNAnalyzer(use_smart_filtering=True)
-        self.lof_analyzer = LOFAnalyzer(offline_mode=True)
+        # Pass the conservation path to the analyzers that need it
+        self.conservation_db = ConservationDatabase(data_path=conservation_data_path)  # 🧬 EVOLUTIONARY INTELLIGENCE!
+        self.lof_analyzer = LOFAnalyzer(offline_mode=True, conservation_db=self.conservation_db)
         self.gof_analyzer = GOFVariantAnalyzer(offline_mode=True)
         self.sequence_manager = SequenceManager()
         self.biological_router = BiologicalRouter()  # 🧬 NEW: Smart routing!
         self.proline_ml = ProlineMLIntegrator(alphafold_path=alphafold_path)  # 🔥 REVOLUTIONARY ML!
         self.gly_cys_ml = FamilyAwareGlyCysIntegrator()  # 🧬 REVOLUTIONARY GLY/CYS ML SYSTEM!
-        self.conservation_db = ConservationDatabase()  # 🧬 EVOLUTIONARY INTELLIGENCE!
         self.population_frequency_analyzer = PopulationFrequencyAnalyzer()  # 🌍 NOT THE DROID DETECTOR!
         self.hotspot_db = HotspotDatabase()  # 🔥 HOTSPOT INTELLIGENCE!
         self.rsid_fetcher = RSIDFrequencyFetcher()  # 🔑 NOVA'S rsID SOLUTION!
@@ -159,7 +162,7 @@ class CascadeAnalyzer:
             print(f"🔍 DEBUG: Router did not provide uniprot_id")
             # Fallback: Use the same UniProt lookup that DN analyzer uses
             try:
-                from universal_protein_annotator import UniversalProteinAnnotator
+                from DNModeling.data_processing.universal_protein_annotator import UniversalProteinAnnotator
                 annotator = UniversalProteinAnnotator()
                 uniprot_id = annotator._find_uniprot_id(gene)
                 if uniprot_id:
@@ -399,7 +402,7 @@ class CascadeAnalyzer:
 
         # Apply Nova's biological plausibility filter
         try:
-            from plausibility_filter import plausibility_pipeline
+            from DNModeling.core_analyzers.plausibility_filter import plausibility_pipeline
 
             # Get UniProt function from annotation cache
             uniprot_function = ""
@@ -503,6 +506,22 @@ class CascadeAnalyzer:
             results['family_aa_multiplier_applied'] = scoring_context.multipliers['family_aa']
             results['gly_cys_multiplier_applied'] = scoring_context.multipliers['gly_cys']
             
+            # 🔥 REN'S CRITICAL ADDITION: Add review flags for missing data
+            review_flags = []
+            if scoring_context.multipliers.get('conservation', 0.0) == 1.0:
+                review_flags.append("MISSING_CONSERVATION")
+            if gnomad_freq is None:
+                review_flags.append("MISSING_FREQUENCY")
+            if routing_result.get('confidence', 1.0) < 0.7:
+                review_flags.append(f"ROUTING_CONFIDENCE_LOW_{routing_result['confidence']:.2f}")
+
+            # Check if ML models had structure data (a bit indirect)
+            # A more direct check would require deeper refactoring, but we can infer
+            if 'proline_ml_active' not in results.get('dn_details', {}) and 'gly_cys_multiplier_applied' not in results:
+                 review_flags.append("MISSING_AF_STRUCTURE")
+
+            results['review_flags'] = ",".join(review_flags) if review_flags else "None"
+            
             # (Future improvement: The conservative classification logic can also be moved into the aggregator)
 
         except Exception as e:
@@ -598,6 +617,11 @@ class CascadeAnalyzer:
                 print(f"⚠️ Conservation lookup failed for {gene} {variant}: {conservation_data['error']}")
 
                 # 🔥 FALLBACK: Use frequency-based conservation for ion channels
+                # 💡 LUMEN'S FIX: Ensure gnomad_freq is not None before comparison
+                if gnomad_freq is None:
+                    print("🧬 GnomAD frequency is None, skipping frequency-based conservation fallback.")
+                    return 1.0
+                
                 frequency_multiplier = self._get_frequency_based_conservation(gene, gnomad_freq)
                 if frequency_multiplier > 1.0:
                     print(f"🧬 Using frequency-based conservation fallback: {frequency_multiplier:.1f}x")
@@ -681,6 +705,11 @@ class CascadeAnalyzer:
 
         if gene not in ion_channel_genes and gene not in highly_conserved_genes:
             return 1.0  # No frequency-based conservation for other genes
+
+        # 💡 LUMEN'S FIX: Handle cases where gnomAD frequency is missing (None)
+        if gnomad_freq is None:
+            print("🧬 GnomAD frequency is None, using conservative frequency multiplier of 1.0x")
+            return 1.0
 
         # Frequency-based conservation logic
         if gnomad_freq == 0.0:

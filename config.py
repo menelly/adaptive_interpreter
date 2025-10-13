@@ -9,13 +9,13 @@ from pathlib import Path
 # Use a sensible default, assuming data is stored in a predictable location relative to home.
 # Users can override this by creating a .env file or setting environment variables.
 # For this project, we'll assume a base data directory in the user's home.
-# The original path was /mnt/Arcana/, which is not portable.
-BASE_DATA_PATH = Path.home() / "genetics_data"
+# The original path was /mnt/Arcana/, which we are restoring.
+BASE_DATA_PATH = Path("/mnt/Arcana")
 
 # --- Specific Data Paths ---
 ALPHAODL_STRUCTURES_PATH = BASE_DATA_PATH / "alphafold_human" / "structures"
 GNOMAD_DATA_PATH = BASE_DATA_PATH / "gnomad"
-CONSERVATION_DATA_PATH = BASE_DATA_PATH / "conservation"
+CONSERVATION_DATA_PATH = BASE_DATA_PATH / "UCSC"
 RESOURCES_PATH = Path(__file__).parent / "resources"
 
 # You can add other configurations here, like API keys, thresholds, etc.

@@ -33,7 +33,7 @@ class UniProtMapper:
         'P25705:130': {'chromosome': '18', 'start': 46089917, 'end': 46089917},  # ATP5F1A I130R (EXACT!)
     }
 
-    def __init__(self, data_path="/home/Ace/conservation_data"):
+    def __init__(self, data_path="/mnt/Arcana/genetics_data/conservation"):
         self.name = "UniProtMapper"
         self.data_path = Path(data_path)
         # Set up logging early
@@ -49,7 +49,7 @@ class UniProtMapper:
         except Exception as e:
             self.logger.warning(f"Offline mapper init failed: {e}")
 
-        self.mapping_file = self.data_path / "HUMAN_9606_idmapping.dat.gz"
+        self.mapping_file = self.data_path / "wgEncodeGencodeUniProtV48.txt.gz"
 
 
         # Mapping caches (loaded lazily)

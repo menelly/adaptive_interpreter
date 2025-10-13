@@ -10,7 +10,7 @@ using pure biological reasoning to replace hardcoded penalties.
 from typing import Dict, Any, Optional
 from DNModeling.nova_dn.gly_cys_context import GlyCysContextAnalyzer
 
-
+import numpy as np
 import joblib
 from pathlib import Path
 
