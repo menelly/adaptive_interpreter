@@ -11,7 +11,7 @@ import pyBigWig
 import logging
 from typing import Dict, Tuple, Optional, List
 from .uniprot_mapper import UniProtMapper
-from DNModeling import config
+from AdaptiveInterpreter import config
 
 class ConservationDatabase:
     """Access UCSC conservation data for position-specific evolutionary scoring"""

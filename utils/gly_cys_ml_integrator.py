@@ -8,7 +8,7 @@ using pure biological reasoning to replace hardcoded penalties.
 """
 
 from typing import Dict, Any, Optional
-from DNModeling.nova_dn.gly_cys_context import GlyCysContextAnalyzer
+from AdaptiveInterpreter.nova_dn.gly_cys_context import GlyCysContextAnalyzer
 
 import numpy as np
 import joblib
@@ -17,7 +17,7 @@ from pathlib import Path
 class FamilyAwareGlyCysIntegrator:
     """Family-Aware Gly/Cys multiplier system using trained ML models"""
     
-    def __init__(self, model_dir: str = "DNModeling/resources/family_gly_cys_models"):
+    def __init__(self, model_dir: str = "AdaptiveInterpreter/resources/family_gly_cys_models"):
         self.context_analyzer = GlyCysContextAnalyzer()
         self.model_dir = Path(model_dir)
         self.family_models = {}

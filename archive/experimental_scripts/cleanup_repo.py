@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 🧹 Repository Cleanup Script
-Organize the DNModeling repo from "teenager's room" to "organized drawers"
+Organize the AdaptiveInterpreter repo from "teenager's room" to "organized drawers"
 
 Based on Nova's brilliant organization plan (2025)
 """
@@ -153,7 +153,7 @@ def create_init_files():
     for package in packages:
         init_file = ROOT / package / "__init__.py"
         if not init_file.exists():
-            init_file.write_text('"""DNModeling package"""\n')
+            init_file.write_text('"""AdaptiveInterpreter package"""\n')
             print(f"🐍 Created __init__.py in {package}/")
 
 def main():

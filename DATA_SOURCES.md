@@ -1,6 +1,6 @@
-# 📊 DNModeling Data Sources
+# 📊 AdaptiveInterpreter Data Sources
 
-This document lists the external data files required for the DNModeling system to function correctly.
+This document lists the external data files required for the AdaptiveInterpreter system to function correctly.
 
 ## 1. Conservation Data
 

@@ -3,7 +3,7 @@
 🧬 Conservation ML Trainer
 Learn real conservation→pathogenicity relationships instead of guessing!
 
-Built by Nova & Ace (2025) for DNModeling system
+Built by Nova & Ace (2025) for AdaptiveInterpreter system
 Based on Nova's brilliant ML conservation framework
 """
 

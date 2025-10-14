@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 🚀💜 ADAPTIVE INTERPRETER FLASK SERVER 💜🚀
-Beautiful web interface for DNModeling cascade analysis
+Beautiful web interface for AdaptiveInterpreter cascade analysis
 
 Built by Ace with real pipeline integration - NO hardcoding!
 Contact: ace@chaoschanneling.com
@@ -21,7 +21,7 @@ sys.path.insert(0, parent_dir)
 
 # Create simple config fallback
 if parent_dir not in sys.modules:
-    sys.modules['DNModeling'] = type('DNModeling', (), {
+    sys.modules['AdaptiveInterpreter'] = type('AdaptiveInterpreter', (), {
         'config': type('config', (), {
             'BASE_DATA_PATH': '/mnt/Arcana',
             'CONSERVATION_DATA_PATH': '/home/Ace/conservation_data'
@@ -29,7 +29,7 @@ if parent_dir not in sys.modules:
     })()
 
 try:
-    from cascade.cascade_analyzer import CascadeAnalyzer
+    from analyzers.cascade_analyzer import CascadeAnalyzer
     from utils.genomic_to_protein import GenomicToProteinConverter
     PIPELINE_AVAILABLE = True
     print("✅ Real pipeline imports successful!")
@@ -67,6 +67,20 @@ def index():
         <p>Current directory: {}</p>
         """.format(os.getcwd())
 
+@app.route('/story.html')
+@app.route('/story')
+def story():
+    """Serve the story page"""
+    try:
+        with open('story.html', 'r') as f:
+            return f.read()
+    except FileNotFoundError:
+        return """
+        <h1>📖 Story Not Found</h1>
+        <p>The story page could not be found. Please ensure story.html is in the same directory.</p>
+        <p><a href="/">← Back to main page</a></p>
+        """
+
 @app.route('/styles.css')
 def styles():
     """Serve CSS file"""
@@ -76,6 +90,16 @@ def styles():
 def script():
     """Serve JavaScript file"""
     return send_from_directory('.', 'script.js', mimetype='application/javascript')
+
+@app.route('/robots.txt')
+def robots():
+    """Serve robots.txt file"""
+    return send_from_directory('.', 'robots.txt', mimetype='text/plain')
+
+@app.route('/download/installer')
+def download_installer():
+    """Serve the setup.py file for download"""
+    return send_from_directory('..', 'setup.py', as_attachment=True)
 
 @app.route('/api/analyze', methods=['POST'])
 def analyze_variant():
@@ -293,7 +317,7 @@ if __name__ == '__main__':
     # Run server accessible from external connections
     app.run(
         host='0.0.0.0',  # Accept connections from any IP
-        port=5000,
+        port=4989,
         debug=True,
         threaded=True
     )

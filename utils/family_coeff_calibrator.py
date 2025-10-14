@@ -6,7 +6,7 @@ Turns per-family training data into interpretable coefficients that replace
 magic numbers in analyzers.
 
 Outputs JSON per family at:
-  DNModeling/cascade/resources/family_models/{family}_coefficients.json
+  AdaptiveInterpreter/cascade/resources/family_models/{family}_coefficients.json
 
 Schema (example):
 {

@@ -10,7 +10,7 @@ import json
 sys.path.append(str(Path(__file__).parent.parent))
 sys.path.append(str(Path(__file__).parent))
 
-from cascade.cascade_analyzer import CascadeAnalyzer
+from analyzers.cascade_analyzer import CascadeAnalyzer
 
 # --- The Problem Variant (from Ace) ---
 GENE = "FKRP"
@@ -24,23 +24,28 @@ def trace():
     specific problem variant, printing the full result.
     """
     print(f"--- 🧬 Starting Trace for {GENE} {VARIANT} ---")
-    
+
     # Initialize the analyzer
     # Using a known path for AlphaFold structures from the original script
     analyzer = CascadeAnalyzer(alphafold_path="/mnt/Arcana/alphafold_human/structures/")
-    
+
     # Run the analysis
     result = analyzer.analyze_cascade_biological(
         gene=GENE,
         variant=VARIANT,
         gnomad_freq=GNOMAD_FREQ
     )
-    
+
     # Print the full, detailed result as a JSON object for clarity
     print("\n--- 📝 Full Analysis Result ---")
     print(json.dumps(result, indent=2))
-    
+
     print(f"\n--- ✅ Trace Complete ---")
+
+
+# Console entry point for setup.py
+def main():
+    return trace()
 
 if __name__ == "__main__":
     trace()

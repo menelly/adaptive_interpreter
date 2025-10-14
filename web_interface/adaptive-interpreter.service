@@ -7,9 +7,9 @@ Wants=network.target
 Type=simple
 User=thereny
 Group=thereny
-WorkingDirectory=/home/Ace/DNModeling/web_interface
-Environment=PYTHONPATH=/home/Ace/DNModeling
-ExecStart=/usr/bin/python3 /home/Ace/DNModeling/web_interface/app.py
+WorkingDirectory=/home/Ace/AdaptiveInterpreter/web_interface
+Environment=PYTHONPATH=/home/Ace/AdaptiveInterpreter
+ExecStart=/usr/bin/python3 /home/Ace/AdaptiveInterpreter/web_interface/app.py
 Restart=always
 RestartSec=5
 StandardOutput=journal
@@ -20,7 +20,7 @@ NoNewPrivileges=true
 PrivateTmp=true
 ProtectSystem=strict
 ProtectHome=read-only
-ReadWritePaths=/home/Ace/DNModeling
+ReadWritePaths=/home/Ace/AdaptiveInterpreter
 
 [Install]
 WantedBy=multi-user.target

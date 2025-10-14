@@ -2,10 +2,10 @@ import sys
 from pathlib import Path
 
 # This script is run as a module, so no sys.path manipulation is needed.
-# The DNModeling package is correctly installed and findable.
+# The AdaptiveInterpreter package is correctly installed and findable.
 
-from DNModeling.cascade.cascade_analyzer import CascadeAnalyzer
-from DNModeling import config
+from AdaptiveInterpreter.cascade.cascade_analyzer import CascadeAnalyzer
+from AdaptiveInterpreter import config
 
 def run_test():
     """

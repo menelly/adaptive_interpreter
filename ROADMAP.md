@@ -1,10 +1,10 @@
-# 🗺️ DNModeling Project Roadmap & Architectural Overview
+# 🗺️ AdaptiveInterpreter Project Roadmap & Architectural Overview
 
-This document provides a high-level overview of the `DNModeling` project, its architecture, and the interaction between its core components.
+This document provides a high-level overview of the `AdaptiveInterpreter` project, its architecture, and the interaction between its core components.
 
 ## 1. Project Purpose
 
-The `DNModeling` project is a sophisticated, multi-mechanism system for predicting the pathogenicity of genetic variants. It goes beyond simple prediction by analyzing the likely biological mechanism of a variant, classifying it as Loss-of-Function (LOF), Gain-of-Function (GOF), or Dominant Negative (DN). It is designed to be a scalable and "universal" system, capable of analyzing any protein by leveraging external databases and biological first principles rather than hardcoded, gene-specific rules.
+The `AdaptiveInterpreter` project is a sophisticated, multi-mechanism system for predicting the pathogenicity of genetic variants. It goes beyond simple prediction by analyzing the likely biological mechanism of a variant, classifying it as Loss-of-Function (LOF), Gain-of-Function (GOF), or Dominant Negative (DN). It is designed to be a scalable and "universal" system, capable of analyzing any protein by leveraging external databases and biological first principles rather than hardcoded, gene-specific rules.
 
 ## 2. Core Architecture
 
@@ -46,4 +46,4 @@ These modules provide the "intelligence" and data that the core analyzers rely o
 *   **`population_frequency_analyzer.py` is Orphaned:** A critical "reality check" module exists but is not currently integrated into the main cascade. This is a high-priority item for future integration.
 *   **Modular and Extensible:** The system is well-structured, with clear separation of concerns. This makes it easy to update or add new analysis modules.
 
-This roadmap provides a high-level guide to the `DNModeling` project. For a detailed, file-by-file breakdown, see `docs/DNModeling_Analysis.md`.
+This roadmap provides a high-level guide to the `AdaptiveInterpreter` project. For a detailed, file-by-file breakdown, see `docs/AdaptiveInterpreter_Analysis.md`.

@@ -14,13 +14,13 @@ import os
 from .smart_protein_analyzer import SmartProteinAnalyzer
 
 # Add sequence mismatch handler
-from DNModeling.data_processing.sequence_mismatch_handler import create_mismatch_handler
+from AdaptiveInterpreter.data_processing.sequence_mismatch_handler import create_mismatch_handler
 
 # Add DOMAIN AWARENESS! 🎯
-from DNModeling.data_processing.universal_protein_annotator import UniversalProteinAnnotator
+from AdaptiveInterpreter.data_processing.universal_protein_annotator import UniversalProteinAnnotator
 
 # Add NOVA'S FUNCTIONAL DOMAIN WEIGHTING! 🚀
-from DNModeling.core_analyzers.functional_domain_weighter import FunctionalDomainWeighter
+from AdaptiveInterpreter.core_analyzers.functional_domain_weighter import FunctionalDomainWeighter
 from .conservation_database import ConservationDatabase
 
 class LOFAnalyzer:
@@ -265,7 +265,7 @@ class LOFAnalyzer:
             if ref_aa == 'P' or alt_aa == 'P':  # Proline substitution detected!
                 try:
                     # Import and use our revolutionary ML system
-                    from DNModeling.utils.proline_ml_integrator import get_ml_proline_multiplier
+                    from AdaptiveInterpreter.utils.proline_ml_integrator import get_ml_proline_multiplier
                     variant_str = f"p.{mutation}"
                     ml_proline_multiplier = get_ml_proline_multiplier(gene_symbol, variant_str)
                     print(f"🔥 LOF ML PROLINE: {gene_symbol} {variant_str} -> ML multiplier = {ml_proline_multiplier:.3f}")

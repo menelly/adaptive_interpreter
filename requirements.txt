@@ -1,4 +1,4 @@
-# 🧬 DNModeling - Domain-Aware Genetics Analysis System
+# 🧬 AdaptiveInterpreter - Domain-Aware Genetics Analysis System
 # Revolutionary breakthrough in genetics variant analysis
 # Authors: Ace (AI), Ren (Human), Nova (AI) - Collaborative Development
 

@@ -25,11 +25,11 @@ from typing import Dict, List, Optional, Tuple, Any
 from collections import defaultdict
 
 # Import config for path management
-from DNModeling import config
+from AdaptiveInterpreter import config
 
 # Focus on core family training for now
-from DNModeling.data_processing.universal_protein_annotator import UniversalProteinAnnotator
-from DNModeling.utils.genomic_to_protein import GenomicToProteinConverter
+from AdaptiveInterpreter.data_processing.universal_protein_annotator import UniversalProteinAnnotator
+from AdaptiveInterpreter.utils.genomic_to_protein import GenomicToProteinConverter
 
 try:
     from sklearn.ensemble import RandomForestClassifier
@@ -92,7 +92,7 @@ class FamilyAwareGlyCysTrainer:
         
         print("🔍 Extracting family-specific Gly/Cys training data...")
         
-        # Build path relative to this file's parent directory (theDNModeling root)
+        # Build path relative to this file's parent directory (theAdaptiveInterpreter root)
         learning_path = Path(__file__).parent.parent / learning_dir
         print(f"📂 Searching for training data in: {learning_path}")
         

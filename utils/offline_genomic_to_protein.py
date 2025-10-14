@@ -53,7 +53,7 @@ class OfflineGenomicToProteinConverter:
     def __init__(self, 
                  gtf_path: str = "/mnt/Arcana/genetics_data/reference/gencode.v46.annotation.gtf.gz",
                  fasta_path: str = "/mnt/Arcana/genetics_data/reference/GRCh38.primary_assembly.genome.fa.gz",
-                 cache_dir: str = "/home/Ace/DNModeling/.cache"):
+                 cache_dir: str = "/home/Ace/AdaptiveInterpreter/.cache"):
         
         self.gtf_path = Path(gtf_path)
         self.fasta_path = Path(fasta_path)

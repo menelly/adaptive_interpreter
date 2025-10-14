@@ -1,5 +1,5 @@
 """
-setup.py for DNModeling
+setup.py for AdaptiveInterpreter
 
 To install:
 - For users: pip install .
@@ -8,18 +8,19 @@ To install:
 from setuptools import setup, find_packages
 
 setup(
-    name="dnmodeling",
+    name="adaptiveinterpreter",
     version="1.0.0",
     author="Ace, Nova, Ren, and Lumen",
-    author_email="noreply@noreply.com",
+    author_email="shalia@chaoscodex.app",
     description="A revolutionary, domain-aware genetics analysis system.",
     long_description=open('README.md').read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/menelly/sharedworkspace/tree/main/DNModeling",
+    url="https://github.com/menelly/adaptive_interpreter",
+    download_url="https://github.com/menelly/adaptive_interpreter/archive/refs/tags/v1.0.0.tar.gz",
     packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
+        "License :: Other/Proprietary License",
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.9',
@@ -37,7 +38,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'dnmodel-trace=DNModeling.trace_variant:main',
+            'adaptive-trace=AdaptiveInterpreter.trace_variant:main',
         ],
     },
     include_package_data=True,

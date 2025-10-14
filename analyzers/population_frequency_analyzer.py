@@ -15,7 +15,7 @@ import json
 from pathlib import Path
 from typing import Dict, Optional, Tuple, List
 import subprocess
-from DNModeling import config
+from AdaptiveInterpreter import config
 
 class PopulationFrequencyAnalyzer:
     """Detect common variants that masquerade as pathogenic - the 'NOT THE DROID' detector"""

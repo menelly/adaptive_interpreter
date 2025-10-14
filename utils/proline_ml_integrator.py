@@ -28,7 +28,7 @@ from pathlib import Path
 
 # Import Nova's mapping system
 from .proline_multiplier_mapper import map_prob_to_multiplier
-from DNModeling.data_processing.universal_protein_annotator import UniversalProteinAnnotator
+from AdaptiveInterpreter.data_processing.universal_protein_annotator import UniversalProteinAnnotator
 
 class ProlineMLIntegrator:
     """ML-powered proline multiplier system to replace hardcoded approaches"""

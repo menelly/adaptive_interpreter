@@ -6,11 +6,11 @@ RYR1	p.P1632S	0.00586	ANALYSIS_FAILED								"Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
     exec(code, run_globals)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 271, in <module>
     raise SystemExit(main())
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 247, in main
     result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 92, in analyze
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 92, in analyze
     raise ValueError(f""Variant position {pos1} out of sequence bounds (len={len(sequence)})"")
 ValueError: Variant position 1632 out of sequence bounds (len=1400)"
 RYR1	p.P4501L	0.00572	ANALYSIS_FAILED								"Traceback (most recent call last):
@@ -18,11 +18,11 @@ RYR1	p.P4501L	0.00572	ANALYSIS_FAILED								"Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
     exec(code, run_globals)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 271, in <module>
     raise SystemExit(main())
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 247, in main
     result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 92, in analyze
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 92, in analyze
     raise ValueError(f""Variant position {pos1} out of sequence bounds (len={len(sequence)})"")
 ValueError: Variant position 4501 out of sequence bounds (len=1400)"
 RYR1	p.E1878D	0.00452	ANALYSIS_FAILED								"Traceback (most recent call last):
@@ -30,11 +30,11 @@ RYR1	p.E1878D	0.00452	ANALYSIS_FAILED								"Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
     exec(code, run_globals)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 271, in <module>
     raise SystemExit(main())
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 247, in main
     result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 92, in analyze
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 92, in analyze
     raise ValueError(f""Variant position {pos1} out of sequence bounds (len={len(sequence)})"")
 ValueError: Variant position 1878 out of sequence bounds (len=1400)"
 RYR1	p.T4294M	0.0044	ANALYSIS_FAILED								"Traceback (most recent call last):
@@ -42,11 +42,11 @@ RYR1	p.T4294M	0.0044	ANALYSIS_FAILED								"Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
     exec(code, run_globals)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 271, in <module>
     raise SystemExit(main())
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 247, in main
     result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 92, in analyze
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 92, in analyze
     raise ValueError(f""Variant position {pos1} out of sequence bounds (len={len(sequence)})"")
 ValueError: Variant position 4294 out of sequence bounds (len=1400)"
 RYR1	p.H3981Y	0.00392	ANALYSIS_FAILED								"Traceback (most recent call last):
@@ -54,11 +54,11 @@ RYR1	p.H3981Y	0.00392	ANALYSIS_FAILED								"Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
     exec(code, run_globals)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 271, in <module>
     raise SystemExit(main())
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 247, in main
     result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 92, in analyze
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 92, in analyze
     raise ValueError(f""Variant position {pos1} out of sequence bounds (len={len(sequence)})"")
 ValueError: Variant position 3981 out of sequence bounds (len=1400)"
 RYR1	p.P1316T	0.00386	SUCCESS	1.0	0.12000000000000002	0.15	0.0	0.0	active_site_jamming	active-site jamming via |d_charge| + |d_volume|	
@@ -67,11 +67,11 @@ RYR1	p.H3647Q	0.00326	ANALYSIS_FAILED								"Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
     exec(code, run_globals)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 271, in <module>
     raise SystemExit(main())
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 247, in main
     result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 92, in analyze
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 92, in analyze
     raise ValueError(f""Variant position {pos1} out of sequence bounds (len={len(sequence)})"")
 ValueError: Variant position 3647 out of sequence bounds (len=1400)"
 RYR1	p.D2943N	0.00307	ANALYSIS_FAILED								"Traceback (most recent call last):
@@ -79,11 +79,11 @@ RYR1	p.D2943N	0.00307	ANALYSIS_FAILED								"Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
     exec(code, run_globals)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 271, in <module>
     raise SystemExit(main())
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 247, in main
     result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 92, in analyze
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 92, in analyze
     raise ValueError(f""Variant position {pos1} out of sequence bounds (len={len(sequence)})"")
 ValueError: Variant position 2943 out of sequence bounds (len=1400)"
 RYR1	p.K1393R	0.00279	SUCCESS	1.0	0.11333333333333334	0.15	0.25	0.0	lattice_disruption	lattice disruption via coiled_coil_flag	
@@ -93,11 +93,11 @@ RYR1	p.A3118V	0.00188	ANALYSIS_FAILED								"Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
     exec(code, run_globals)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 271, in <module>
     raise SystemExit(main())
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 247, in main
     result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 92, in analyze
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 92, in analyze
     raise ValueError(f""Variant position {pos1} out of sequence bounds (len={len(sequence)})"")
 ValueError: Variant position 3118 out of sequence bounds (len=1400)"
 RYR1	p.R1667C	0.00174	ANALYSIS_FAILED								"Traceback (most recent call last):
@@ -105,11 +105,11 @@ RYR1	p.R1667C	0.00174	ANALYSIS_FAILED								"Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
     exec(code, run_globals)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 271, in <module>
     raise SystemExit(main())
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 247, in main
     result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 92, in analyze
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 92, in analyze
     raise ValueError(f""Variant position {pos1} out of sequence bounds (len={len(sequence)})"")
 ValueError: Variant position 1667 out of sequence bounds (len=1400)"
 RYR1	p.R3539H	0.00166	ANALYSIS_FAILED								"Traceback (most recent call last):
@@ -117,11 +117,11 @@ RYR1	p.R3539H	0.00166	ANALYSIS_FAILED								"Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
     exec(code, run_globals)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 271, in <module>
     raise SystemExit(main())
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 247, in main
     result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 92, in analyze
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 92, in analyze
     raise ValueError(f""Variant position {pos1} out of sequence bounds (len={len(sequence)})"")
 ValueError: Variant position 3539 out of sequence bounds (len=1400)"
 RYR1	p.A4295V	0.00163	ANALYSIS_FAILED								"Traceback (most recent call last):
@@ -129,11 +129,11 @@ RYR1	p.A4295V	0.00163	ANALYSIS_FAILED								"Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
     exec(code, run_globals)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 271, in <module>
     raise SystemExit(main())
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 247, in main
     result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 92, in analyze
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 92, in analyze
     raise ValueError(f""Variant position {pos1} out of sequence bounds (len={len(sequence)})"")
 ValueError: Variant position 4295 out of sequence bounds (len=1400)"
 RYR1	p.A933T	0.00137	SUCCESS	1.0	0.15555555555555556	0.15	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
@@ -142,11 +142,11 @@ RYR1	p.I1571V	0.00107	ANALYSIS_FAILED								"Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
     exec(code, run_globals)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 271, in <module>
     raise SystemExit(main())
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 247, in main
     result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 92, in analyze
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 92, in analyze
     raise ValueError(f""Variant position {pos1} out of sequence bounds (len={len(sequence)})"")
 ValueError: Variant position 1571 out of sequence bounds (len=1400)"
 RYR1	p.N2342S	0.00107	ANALYSIS_FAILED								"Traceback (most recent call last):
@@ -154,11 +154,11 @@ RYR1	p.N2342S	0.00107	ANALYSIS_FAILED								"Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
     exec(code, run_globals)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 271, in <module>
     raise SystemExit(main())
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 247, in main
     result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 92, in analyze
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 92, in analyze
     raise ValueError(f""Variant position {pos1} out of sequence bounds (len={len(sequence)})"")
 ValueError: Variant position 2342 out of sequence bounds (len=1400)"
 RYR1	p.R1679H	0.00101	ANALYSIS_FAILED								"Traceback (most recent call last):
@@ -166,11 +166,11 @@ RYR1	p.R1679H	0.00101	ANALYSIS_FAILED								"Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
     exec(code, run_globals)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 271, in <module>
     raise SystemExit(main())
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 247, in main
     result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 92, in analyze
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 92, in analyze
     raise ValueError(f""Variant position {pos1} out of sequence bounds (len={len(sequence)})"")
 ValueError: Variant position 1679 out of sequence bounds (len=1400)"
 RYR1	p.A1363V	0.00084	SUCCESS	1.0	0.15333333333333335	0.15	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
@@ -179,11 +179,11 @@ RYR1	p.R3366H	0.00073	ANALYSIS_FAILED								"Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
     exec(code, run_globals)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 271, in <module>
     raise SystemExit(main())
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 247, in main
     result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 92, in analyze
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 92, in analyze
     raise ValueError(f""Variant position {pos1} out of sequence bounds (len={len(sequence)})"")
 ValueError: Variant position 3366 out of sequence bounds (len=1400)"
 RYR1	p.D708N	0.00065	SUCCESS	1.0	0.35	0.3	0.0	0.0	interface_poisoning	interface poisoning due to |d_charge| + |d_hydropathy|	
@@ -192,11 +192,11 @@ RYR1	p.I2321V	0.00058	ANALYSIS_FAILED								"Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
     exec(code, run_globals)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 271, in <module>
     raise SystemExit(main())
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 247, in main
     result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 92, in analyze
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 92, in analyze
     raise ValueError(f""Variant position {pos1} out of sequence bounds (len={len(sequence)})"")
 ValueError: Variant position 2321 out of sequence bounds (len=1400)"
 RYR1	p.T4294A	0.00053	ANALYSIS_FAILED								"Traceback (most recent call last):
@@ -204,11 +204,11 @@ RYR1	p.T4294A	0.00053	ANALYSIS_FAILED								"Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
     exec(code, run_globals)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 271, in <module>
     raise SystemExit(main())
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 247, in main
     result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 92, in analyze
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 92, in analyze
     raise ValueError(f""Variant position {pos1} out of sequence bounds (len={len(sequence)})"")
 ValueError: Variant position 4294 out of sequence bounds (len=1400)"
 RYR1	p.P1773S	0.00031	ANALYSIS_FAILED								"Traceback (most recent call last):
@@ -216,11 +216,11 @@ RYR1	p.P1773S	0.00031	ANALYSIS_FAILED								"Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
     exec(code, run_globals)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 271, in <module>
     raise SystemExit(main())
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 247, in main
     result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 92, in analyze
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 92, in analyze
     raise ValueError(f""Variant position {pos1} out of sequence bounds (len={len(sequence)})"")
 ValueError: Variant position 1773 out of sequence bounds (len=1400)"
 RYR1	p.E3238G	0.00016	ANALYSIS_FAILED								"Traceback (most recent call last):
@@ -228,11 +228,11 @@ RYR1	p.E3238G	0.00016	ANALYSIS_FAILED								"Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
     exec(code, run_globals)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 271, in <module>
     raise SystemExit(main())
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 247, in main
     result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 92, in analyze
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 92, in analyze
     raise ValueError(f""Variant position {pos1} out of sequence bounds (len={len(sequence)})"")
 ValueError: Variant position 3238 out of sequence bounds (len=1400)"
 RYR1	p.R3051H	0.00013	ANALYSIS_FAILED								"Traceback (most recent call last):
@@ -240,11 +240,11 @@ RYR1	p.R3051H	0.00013	ANALYSIS_FAILED								"Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
     exec(code, run_globals)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 271, in <module>
     raise SystemExit(main())
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 247, in main
     result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 92, in analyze
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 92, in analyze
     raise ValueError(f""Variant position {pos1} out of sequence bounds (len={len(sequence)})"")
 ValueError: Variant position 3051 out of sequence bounds (len=1400)"
 RYR1	p.E4283K	7e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
@@ -252,11 +252,11 @@ RYR1	p.E4283K	7e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
     exec(code, run_globals)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 271, in <module>
     raise SystemExit(main())
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 247, in main
     result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 92, in analyze
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 92, in analyze
     raise ValueError(f""Variant position {pos1} out of sequence bounds (len={len(sequence)})"")
 ValueError: Variant position 4283 out of sequence bounds (len=1400)"
 RYR1	p.I3253T	6e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
@@ -264,11 +264,11 @@ RYR1	p.I3253T	6e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
     exec(code, run_globals)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 271, in <module>
     raise SystemExit(main())
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 247, in main
     result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 92, in analyze
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 92, in analyze
     raise ValueError(f""Variant position {pos1} out of sequence bounds (len={len(sequence)})"")
 ValueError: Variant position 3253 out of sequence bounds (len=1400)"
 RYR1	p.A2727T	5e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
@@ -276,11 +276,11 @@ RYR1	p.A2727T	5e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
     exec(code, run_globals)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 271, in <module>
     raise SystemExit(main())
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 247, in main
     result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 92, in analyze
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 92, in analyze
     raise ValueError(f""Variant position {pos1} out of sequence bounds (len={len(sequence)})"")
 ValueError: Variant position 2727 out of sequence bounds (len=1400)"
 RYR1	p.T3911A	3e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
@@ -288,11 +288,11 @@ RYR1	p.T3911A	3e-05	ANALYSIS_FAILED								"Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
     exec(code, run_globals)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 271, in <module>
     raise SystemExit(main())
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 247, in main
     result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 92, in analyze
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 92, in analyze
     raise ValueError(f""Variant position {pos1} out of sequence bounds (len={len(sequence)})"")
 ValueError: Variant position 3911 out of sequence bounds (len=1400)"
 RYR1	p.D4505H	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
@@ -300,11 +300,11 @@ RYR1	p.D4505H	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
     exec(code, run_globals)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 271, in <module>
     raise SystemExit(main())
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 247, in main
     result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 92, in analyze
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 92, in analyze
     raise ValueError(f""Variant position {pos1} out of sequence bounds (len={len(sequence)})"")
 ValueError: Variant position 4505 out of sequence bounds (len=1400)"
 RYR1	p.G1832A	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
@@ -312,11 +312,11 @@ RYR1	p.G1832A	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
     exec(code, run_globals)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 271, in <module>
     raise SystemExit(main())
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 247, in main
     result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 92, in analyze
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 92, in analyze
     raise ValueError(f""Variant position {pos1} out of sequence bounds (len={len(sequence)})"")
 ValueError: Variant position 1832 out of sequence bounds (len=1400)"
 RYR1	p.L2550V	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
@@ -324,10 +324,10 @@ RYR1	p.L2550V	0.0	ANALYSIS_FAILED								"Traceback (most recent call last):
     return _run_code(code, main_globals, None,
   File ""/usr/lib/python3.10/runpy.py"", line 86, in _run_code
     exec(code, run_globals)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 271, in <module>
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 271, in <module>
     raise SystemExit(main())
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 247, in main
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 247, in main
     result = analyzer.analyze(seq, args.variant, context, args.gene, args.uniprot)
-  File ""/home/Ace/DNModeling/nova_dn/analyzer.py"", line 92, in analyze
+  File ""/home/Ace/AdaptiveInterpreter/nova_dn/analyzer.py"", line 92, in analyze
     raise ValueError(f""Variant position {pos1} out of sequence bounds (len={len(sequence)})"")
 ValueError: Variant position 2550 out of sequence bounds (len=1400)"

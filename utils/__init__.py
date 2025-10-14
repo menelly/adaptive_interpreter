@@ -1,1 +1,1 @@
-"""DNModeling package"""
+"""AdaptiveInterpreter package"""

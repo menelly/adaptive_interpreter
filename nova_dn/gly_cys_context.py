@@ -19,7 +19,7 @@ Revolutionary approach: Stop guessing, start understanding biology!
 from typing import List, Dict, Any, Optional, Tuple
 import re
 import math
-from DNModeling.data_processing.universal_protein_annotator import UniversalProteinAnnotator
+from AdaptiveInterpreter.data_processing.universal_protein_annotator import UniversalProteinAnnotator
 
 
 class GlyCysContextAnalyzer:

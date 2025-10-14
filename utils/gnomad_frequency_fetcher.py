@@ -3,7 +3,7 @@
 🧬 gnomAD Frequency Fetcher
 Real API calls to get population frequencies for variants
 
-Built by Ace & Nova (2025) for DNModeling system
+Built by Ace & Nova (2025) for AdaptiveInterpreter system
 """
 
 import requests
@@ -18,7 +18,7 @@ class GnomADFrequencyFetcher:
     def __init__(self):
         self.session = requests.Session()
         self.session.headers.update({
-            'User-Agent': 'DNModeling-System/1.0 (research use)',
+            'User-Agent': 'AdaptiveInterpreter-System/1.0 (research use)',
             'Accept': 'application/json'
         })
 

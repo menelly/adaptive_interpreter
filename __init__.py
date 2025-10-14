@@ -1,1 +1,1 @@
-# This file makes DNModeling a Python package.
+# This file makes AdaptiveInterpreter a Python package.

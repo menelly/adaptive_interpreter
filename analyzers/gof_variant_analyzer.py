@@ -22,14 +22,14 @@ import sys
 import os
 from .smart_protein_analyzer import SmartProteinAnalyzer
 from .conservation_database import ConservationDatabase
-from DNModeling.utils.proline_ml_integrator import ProlineMLIntegrator
-from DNModeling.utils.gly_cys_ml_integrator import FamilyAwareGlyCysIntegrator as GlyCysMLIntegrator
-# from DNModeling.utils.active_site_scanner import ActiveSiteScanner # TODO: Restore this once the file is found
-# from DNModeling.utils.motif_detector import MotifDetector # TODO: Restore this once the file is found
+from AdaptiveInterpreter.utils.proline_ml_integrator import ProlineMLIntegrator
+from AdaptiveInterpreter.utils.gly_cys_ml_integrator import FamilyAwareGlyCysIntegrator as GlyCysMLIntegrator
+# from AdaptiveInterpreter.utils.active_site_scanner import ActiveSiteScanner # TODO: Restore this once the file is found
+# from AdaptiveInterpreter.utils.motif_detector import MotifDetector # TODO: Restore this once the file is found
 
 # 🎯 Add domain awareness system
 try:
-    from DNModeling.data_processing.universal_protein_annotator import UniversalProteinAnnotator
+    from AdaptiveInterpreter.data_processing.universal_protein_annotator import UniversalProteinAnnotator
     DOMAIN_AWARENESS_AVAILABLE = True
 except ImportError:
     DOMAIN_AWARENESS_AVAILABLE = False
@@ -169,7 +169,7 @@ class GOFVariantAnalyzer:
                     if ref_aa == 'P' or alt_aa == 'P':  # Proline substitution detected!
                         try:
                             # Import and use our revolutionary ML system
-                            from DNModeling.utils.proline_ml_integrator import get_ml_proline_multiplier
+                            from AdaptiveInterpreter.utils.proline_ml_integrator import get_ml_proline_multiplier
                             variant_str = f"p.{mutation}"
                             ml_proline_multiplier = get_ml_proline_multiplier(gene_symbol, variant_str)
                             logger.info(f"🔥 GOF ML PROLINE: {gene_symbol} {variant_str} -> ML multiplier = {ml_proline_multiplier:.3f}")
@@ -233,7 +233,7 @@ class GOFVariantAnalyzer:
 
             # 🎯 NOVA'S EARLY MOTIF DETECTION - Check for canonical GOF variants first!
             # try:
-            #     from DNModeling.utils.motif_detector import detect_regulatory_context
+            #     from AdaptiveInterpreter.utils.motif_detector import detect_regulatory_context
             #
             #     motif_context = detect_regulatory_context(sequence, original_aa, mutant_aa, position)
             #     motif_score = motif_context.get('score', 0.0)
@@ -1096,7 +1096,7 @@ class GOFVariantAnalyzer:
 
         # NOVA'S MOTIF DETECTION SYSTEM - Universal regulatory motif detection!
         # try:
-        #     from DNModeling.utils.motif_detector import detect_regulatory_context
+        #     from AdaptiveInterpreter.utils.motif_detector import detect_regulatory_context
         #
         #     motif_context = detect_regulatory_context(sequence, original_aa, mutant_aa, position)
         #     motif_score = motif_context.get('score', 0.0)

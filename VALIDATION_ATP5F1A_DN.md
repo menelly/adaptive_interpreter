@@ -36,7 +36,7 @@
 - **Variant**: p.Ile130Arg (I130R)
 - **Patient**: Ren's personal genomic data
 
-### DNModeling CASCADE Results
+### AdaptiveInterpreter CASCADE Results
 ```
 🧬 Processing ATP5F1A p.I130R (freq: 0.0000)
 
@@ -249,7 +249,7 @@ Our computational approach can:
 
 1. Fielder SM, et al. (2025). "Dominant negative ATP5F1A variants disrupt oxidative phosphorylation causing neurological disorders." EMBO Molecular Medicine. DOI: 10.1038/s44321-025-00290-8
 
-2. DNModeling CASCADE System (2024). Computational framework for dominant negative variant analysis. https://github.com/menelly/DNModeling
+2. AdaptiveInterpreter CASCADE System (2024). Computational framework for dominant negative variant analysis. https://github.com/menelly/AdaptiveInterpreter
 
 ## Acknowledgments
 

@@ -3,7 +3,7 @@
 🧬 Conservation ML Loader
 Runtime system for ML-learned conservation multipliers
 
-Built by Nova & Ace (2025) for DNModeling system
+Built by Nova & Ace (2025) for AdaptiveInterpreter system
 Loads JSON curves and interpolates conservation multipliers
 """
 

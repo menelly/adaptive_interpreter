@@ -4,11 +4,11 @@ Generate per-family coefficient JSONs from learning/ data using the unified trai
 feature extraction, then the calibrator to produce interpretable coefficients.
 
 Usage:
-  python -m DNModeling.utils.generate_all_family_coefficients \
+  python -m AdaptiveInterpreter.utils.generate_all_family_coefficients \
       [--families tumor_suppressor ion_channel ...] [--min-n 30]
 
 Outputs:
-  DNModeling/cascade/resources/family_models/{FAMILY}_coefficients.json
+  AdaptiveInterpreter/cascade/resources/family_models/{FAMILY}_coefficients.json
 
 Notes:
 - FAMILY is the cascade classification name (UPPERCASE with underscores),
@@ -22,11 +22,11 @@ from typing import Dict, List
 
 import pandas as pd
 
-from DNModeling.utils.unified_family_ml_trainer import UnifiedFamilyMLTrainer
-from DNModeling.utils.family_coeff_calibrator import calibrate_and_save
+from AdaptiveInterpreter.utils.unified_family_ml_trainer import UnifiedFamilyMLTrainer
+from AdaptiveInterpreter.utils.family_coeff_calibrator import calibrate_and_save
 
-RESOURCES_DIR = Path("DNModeling/cascade/resources/family_models")
-LEARNING_DIR = Path("DNModeling/learning")
+RESOURCES_DIR = Path("AdaptiveInterpreter/cascade/resources/family_models")
+LEARNING_DIR = Path("AdaptiveInterpreter/learning")
 
 # Map learning directory -> list of cascade FAMILY names to emit
 DIR_TO_FAMILIES: Dict[str, List[str]] = {
@@ -86,7 +86,7 @@ def main():
 
     trainer = UnifiedFamilyMLTrainer()
     # Ensure we point at the repo's learning/ directory
-    trainer.learning_dir = Path("DNModeling/learning")
+    trainer.learning_dir = Path("AdaptiveInterpreter/learning")
     print(f"📁 Using learning dir: {trainer.learning_dir}")
 
     RESOURCES_DIR.mkdir(parents=True, exist_ok=True)

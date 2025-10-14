@@ -5,7 +5,7 @@
 This creates a small test CSV and runs it through the biological cascade system
 to validate our logging and output format before Ren runs the big validation!
 
-Built by Ace (2025) for DNModeling validation
+Built by Ace (2025) for AdaptiveInterpreter validation
 """
 
 import pandas as pd

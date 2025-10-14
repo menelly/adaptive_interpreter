@@ -2,7 +2,7 @@
 
 ## Overview
 
-The DNModeling system integrates data and methodologies from numerous high-quality scientific resources. This document provides comprehensive citations and acknowledgments for all external resources used in the system.
+The AdaptiveInterpreter system integrates data and methodologies from numerous high-quality scientific resources. This document provides comprehensive citations and acknowledgments for all external resources used in the system.
 
 ---
 
@@ -149,7 +149,7 @@ We gratefully acknowledge:
 
 ## 📝 Usage Guidelines
 
-When using the DNModeling system or its outputs in publications, please:
+When using the AdaptiveInterpreter system or its outputs in publications, please:
 
 1. **Cite this system** and its primary publication (when available)
 2. **Cite relevant databases** used for your specific analysis

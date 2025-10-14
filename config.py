@@ -1,5 +1,5 @@
 """
-📜 DNModeling Configuration
+📜 AdaptiveInterpreter Configuration
 Centralized configuration for all paths and settings.
 """
 
@@ -24,4 +24,4 @@ RESOURCES_PATH = Path(__file__).parent / "resources"
 #     "GNOMAD_API": "your_key_here"
 # }
 
-print(f"🧬 DNModeling configured with base data path: {BASE_DATA_PATH}")
+print(f"🧬 AdaptiveInterpreter configured with base data path: {BASE_DATA_PATH}")
