@@ -14,6 +14,7 @@ import argparse
 import json
 import sys
 import os
+import re
 from dataclasses import dataclass
 from typing import Dict, List, Tuple, Optional
 
@@ -47,6 +48,17 @@ except ImportError:
     DOMAIN_AWARENESS_AVAILABLE = False
 
 
+
+# Map three-letter amino acid codes to one-letter
+THREE_TO_ONE = {
+    'Ala':'A','Arg':'R','Asn':'N','Asp':'D','Cys':'C',
+    'Glu':'E','Gln':'Q','Gly':'G','His':'H','Ile':'I',
+    'Leu':'L','Lys':'K','Met':'M','Phe':'F','Pro':'P',
+    'Ser':'S','Thr':'T','Trp':'W','Tyr':'Y','Val':'V',
+    # Less common/edge cases
+    'Sec':'U','Pyl':'O','Ter':'*','Stop':'*'
+}
+
 AA_SET = set("ARNDCEQGHILKMFPSTWYV")
 
 
@@ -63,23 +75,45 @@ def interpret_dn_score(score: float) -> str:
 
 
 def parse_variant(s: str) -> Tuple[str, int, str]:
-    """Parse 'R273H' or 'p.R273H' → (ref, pos, alt). Raises ValueError on failure."""
+    """Parse protein variant into (ref, pos, alt).
+
+    Accepts both 1-letter and 3-letter HGVS protein formats, with optional 'p.' prefix:
+      - 'R273H' or 'p.R273H'
+      - 'Arg273His' or 'p.Arg273His'
+      - Recognizes stop as '*' or 'Ter'/'Stop' (treated as nonsense)
+      - Recognizes synonymous '=' in 3-letter form (treated as non-variant)
+    """
     s = s.strip()
     if s.startswith("p."):
         s = s[2:]
 
-    # Filter out nonsense variants (stop codons) - they can't be dominant negative
-    if 'Ter' in s:
-        raise ValueError("nonsense")
+    # Quick path: 1-letter form e.g., R273H (allow '*')
+    m = re.match(r"^([A-Za-z\*])(\d+)([A-Za-z\*])$", s)
+    if m:
+        ref, pos_str, alt = m.groups()
+        ref = ref.upper()
+        alt = alt.upper()
+        if ref == '*' or alt == '*':
+            raise ValueError("nonsense")
+        if ref not in AA_SET or alt not in AA_SET:
+            raise ValueError(f"Unrecognized amino acid in 1-letter form: {s}")
+        return ref, int(pos_str), alt
 
-    if len(s) < 3:
-        raise ValueError(f"Variant too short: {s}")
-    ref = s[0].upper()
-    alt = s[-1].upper()
-    pos_str = s[1:-1]
-    if ref not in AA_SET or alt not in AA_SET or not pos_str.isdigit():
-        raise ValueError(f"Unrecognized variant format: {s}")
-    return ref, int(pos_str), alt
+    # 3-letter form e.g., Glu446Ala, Tyr87Ter, Ala359=
+    m3 = re.match(r"^([A-Z][a-z]{2})(\d+)([A-Z][a-z]{2}|\*|=)$", s)
+    if m3:
+        ref3, pos_str, alt3 = m3.groups()
+        if alt3 == '=':
+            raise ValueError("synonymous")
+        if alt3 in ('Ter', 'Stop', '*'):
+            raise ValueError("nonsense")
+        ref = THREE_TO_ONE.get(ref3)
+        alt = THREE_TO_ONE.get(alt3)
+        if not ref or not alt:
+            raise ValueError(f"Unrecognized 3-letter amino acid: {s}")
+        return ref, int(pos_str), alt
+
+    raise ValueError(f"Unrecognized variant format: {s}")
 
 
 @dataclass
