@@ -318,43 +318,103 @@ class LOFAnalyzer:
         }
     
     def _parse_mutation(self, mutation: str) -> Dict[str, Any]:
-        """Parse mutation string - handles both missense and nonsense variants"""
+        """Parse mutation string - supports 1-letter and 3-letter HGVS (with optional 'p.'), plus nonsense.
+        Examples:
+          - R175H, p.R175H
+          - Glu446Ala, p.Glu446Ala
+          - Tyr87Ter, R100*
+        """
         if not mutation or len(mutation) < 3:
             return None
 
-        # Handle nonsense variants (e.g., "Q18Ter", "R100*")
-        if mutation.endswith('Ter') or mutation.endswith('*'):
-            if mutation.endswith('Ter'):
-                position_str = mutation[1:-3]  # Remove first AA and "Ter"
-                new_aa = '*'  # Standard nonsense notation
-            else:  # ends with '*'
-                position_str = mutation[1:-1]  # Remove first AA and "*"
-                new_aa = '*'
+        s = mutation.strip()
+        if s.startswith('p.'):
+            s = s[2:]
 
+        # 1) Nonsense variants first (Ter or *)
+        if s.endswith('Ter') or s.endswith('*'):
+            # Handle 1-letter nonsense: R100*
+            if s.endswith('*') and len(s) >= 3 and s[0].isalpha():
+                try:
+                    position = int(s[1:-1])
+                    return {
+                        'original_aa': s[0].upper(),
+                        'position': position,
+                        'new_aa': '*',
+                        'mutation': s,
+                        'is_nonsense': True
+                    }
+                except ValueError:
+                    return None
+
+            # Handle 3-letter nonsense: Tyr87Ter
+            m_n3 = re.match(r'^([A-Z][a-z]{2})(\d+)Ter$', s)
+            if m_n3:
+                ref3, pos_str = m_n3.groups()
+                THREE_TO_ONE = {
+                    'Ala':'A','Arg':'R','Asn':'N','Asp':'D','Cys':'C','Gln':'Q','Glu':'E','Gly':'G',
+                    'His':'H','Ile':'I','Leu':'L','Lys':'K','Met':'M','Phe':'F','Pro':'P','Ser':'S',
+                    'Thr':'T','Trp':'W','Tyr':'Y','Val':'V'
+                }
+                ref = THREE_TO_ONE.get(ref3)
+                if not ref:
+                    return None
+                try:
+                    position = int(pos_str)
+                    return {
+                        'original_aa': ref,
+                        'position': position,
+                        'new_aa': '*',
+                        'mutation': s,
+                        'is_nonsense': True
+                    }
+                except ValueError:
+                    return None
+
+        # 2) Missense variants
+        # 2a) 1-letter form: R175H
+        m1 = re.match(r'^([A-Za-z])(\d+)([A-Za-z])$', s)
+        if m1:
+            ref, pos_str, alt = m1.groups()
             try:
-                position = int(position_str)
                 return {
-                    'original_aa': mutation[0],
-                    'position': position,
-                    'new_aa': new_aa,
-                    'mutation': mutation,
-                    'is_nonsense': True
+                    'original_aa': ref.upper(),
+                    'position': int(pos_str),
+                    'new_aa': alt.upper(),
+                    'mutation': f"{ref.upper()}{pos_str}{alt.upper()}",
+                    'is_nonsense': False
                 }
             except ValueError:
                 return None
 
-        # Handle regular missense variants (e.g., "R175H")
-        try:
-            return {
-                'original_aa': mutation[0],
-                'position': int(mutation[1:-1]),
-                'new_aa': mutation[-1],
-                'mutation': mutation,
-                'is_nonsense': False
+        # 2b) 3-letter form: Glu446Ala (ignore synonymous '=')
+        m3 = re.match(r'^([A-Z][a-z]{2})(\d+)([A-Z][a-z]{2}|=)$', s)
+        if m3:
+            ref3, pos_str, alt3 = m3.groups()
+            if alt3 == '=':
+                return None  # synonymous; treat as unparseable for LOF scoring
+            THREE_TO_ONE = {
+                'Ala':'A','Arg':'R','Asn':'N','Asp':'D','Cys':'C','Gln':'Q','Glu':'E','Gly':'G',
+                'His':'H','Ile':'I','Leu':'L','Lys':'K','Met':'M','Phe':'F','Pro':'P','Ser':'S',
+                'Thr':'T','Trp':'W','Tyr':'Y','Val':'V'
             }
-        except ValueError:
-            return None
-    
+            ref = THREE_TO_ONE.get(ref3)
+            alt = THREE_TO_ONE.get(alt3)
+            if not ref or not alt:
+                return None
+            try:
+                return {
+                    'original_aa': ref,
+                    'position': int(pos_str),
+                    'new_aa': alt,
+                    'mutation': f"{ref}{pos_str}{alt}",
+                    'is_nonsense': False
+                }
+            except ValueError:
+                return None
+
+        return None
+
     def _default_props(self) -> Dict[str, Any]:
         """Default amino acid properties"""
         return {'size': 3, 'charge': 0, 'hydrophobic': False, 'flexibility': 'medium', 'conservation': 'medium'}

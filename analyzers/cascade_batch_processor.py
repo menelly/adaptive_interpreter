@@ -95,12 +95,18 @@ class CascadeBatchProcessor:
                                 'final_classification': 'LB',
                                 'final_score': 0.0,
                                 'explanation': f'High population frequency ({gnomad_freq:.4%}) ≥ threshold {effective_threshold:.2%} — benign by frequency',
-                                'scores': {},
-                                'classifications': {},
+                                'scores': {'DN': 0.0, 'LOF': 0.0, 'GOF': 0.0},
+                                'classifications': {'DN': 'NOT_RUN', 'LOF': 'NOT_RUN', 'GOF': 'NOT_RUN'},
                                 'analyzers_run': ['FREQUENCY_ONLY']
                             }
                             result['hgvs'] = hgvs
+                            result['variant_type'] = parsed_info.get('variant_type')
                             result['gnomad_freq'] = gnomad_freq
+                            result['clinical_sig'] = clinical_sig
+                            result['review_status'] = parsed_info.get('review_status','')
+                            result['molecular_consequence'] = parsed_info.get('molecular_consequence','')
+                            result['rcv'] = parsed_info.get('rcv','')
+                            result['variation_id'] = parsed_info.get('variation_id','')
                             results.append(result)
                             stats['processed'] += 1
                             continue
@@ -115,10 +121,15 @@ class CascadeBatchProcessor:
                         result = self.cascade_analyzer.analyze_cascade_biological(
                             gene, variant, gnomad_freq, variant_type, sequence=None, conservation_score=conservation_score
                         )
-                        # Preserve original inputs for downstream consumers
+                        # Preserve original inputs and ClinVar context for downstream consumers
                         result['hgvs'] = hgvs
                         result['variant_type'] = variant_type
                         result['gnomad_freq'] = gnomad_freq
+                        result['clinical_sig'] = clinical_sig
+                        result['review_status'] = parsed_info.get('review_status','')
+                        result['molecular_consequence'] = parsed_info.get('molecular_consequence','')
+                        result['rcv'] = parsed_info.get('rcv','')
+                        result['variation_id'] = parsed_info.get('variation_id','')
                         results.append(result)
                         stats['processed'] += 1
                     except Exception as e:
@@ -197,6 +208,7 @@ class CascadeBatchProcessor:
 
         # Derive/collect variant_type from ClinVar-style columns when present
         variant_type = None
+        raw_molecular_consequence = ''
         possible_type_keys = [
             'molecular_consequence', 'MolecularConsequence', 'Consequence', 'consequence',
             'MC', 'SequenceOntology', 'sequence_ontology', 'variant_type'
@@ -204,7 +216,8 @@ class CascadeBatchProcessor:
         for key in possible_type_keys:
             val = row.get(key)
             if val:
-                v = str(val).lower()
+                raw_molecular_consequence = str(val)
+                v = raw_molecular_consequence.lower()
                 if 'splice' in v:
                     variant_type = 'splice'
                     break
@@ -240,12 +253,22 @@ class CascadeBatchProcessor:
                 if not variant_type:
                     variant_type = 'unknown'
 
+        # Collect ClinVar-relevant passthroughs
+        clinical_sig = row.get('clinical_sig', '')
+        review_status = row.get('review_status', row.get('ReviewStatus', ''))
+        rcv = row.get('RCVaccession', row.get('RCV', ''))
+        variation_id = row.get('VariationID', row.get('variation_id', ''))
+
         return {
             'gene': gene,
             'variant': variant,
             'gnomad_freq': gnomad_freq,
             'hgvs': hgvs_g,
-            'clinical_sig': row.get('clinical_sig', ''),
+            'clinical_sig': clinical_sig,
+            'review_status': review_status,
+            'molecular_consequence': raw_molecular_consequence,
+            'rcv': rcv,
+            'variation_id': variation_id,
             'conservation_score': conservation_score,
             'chrom': chrom_num,
             'pos': pos,
@@ -263,11 +286,77 @@ class CascadeBatchProcessor:
 
     def write_results_tsv(self, results: List[Dict], output_path: str):
         if not results: return
-        columns = ['gene', 'variant', 'variant_type', 'hgvs', 'gnomad_freq', 'status', 'final_score', 'final_classification', 'explanation', 'review_flags']
+
+        def map_clinvar_bucket(sig: str) -> str:
+            if not sig: return 'NA'
+            s = sig.strip().lower()
+            if 'likely pathogenic' in s:
+                return 'LP'
+            if 'pathogenic' in s:
+                return 'P'
+            if 'likely benign' in s:
+                return 'LB'
+            if 'benign' in s:
+                return 'B'
+            if 'uncertain' in s or 'vus' in s or 'conflicting' in s:
+                return 'VUS'
+            return 'NA'
+
+        def map_ai_bucket(cls: str) -> str:
+            if not cls: return 'NA'
+            c = str(cls).upper()
+            if c in ('P', 'LP'): return c
+            if c in ('B', 'LB'): return c
+            if c.startswith('VUS'): return 'VUS'
+            return 'NA'
+
+        def agreement_label(clin: str, ai: str) -> str:
+            if clin == 'NA' or ai == 'NA':
+                return 'NA'
+            if (clin in {'B','LB'} and ai in {'B','LB'}) or (clin in {'P','LP'} and ai in {'P','LP'}) or (clin == 'VUS' and ai == 'VUS'):
+                return 'AGREE'
+            return 'DISAGREE'
+
+        columns = [
+            'gene','variant','variant_type','hgvs','gnomad_freq','status',
+            'final_score','final_classification','explanation','review_flags',
+            'clinical_sig','review_status','molecular_consequence','rcv','variation_id',
+            'clinvar_bucket','ai_bucket','agreement',
+            'dn_score','lof_score','gof_score',
+            'filtered_dn_score','filtered_lof_score','filtered_gof_score',
+            'synergy_used','summary'
+        ]
+
         with open(output_path, 'w', newline='') as f:
             writer = csv.DictWriter(f, fieldnames=columns, delimiter='\t', extrasaction='ignore')
             writer.writeheader()
-            writer.writerows(results)
+            for r in results:
+                scores = r.get('scores', {}) or {}
+                filtered = r.get('plausibility_filtered_scores', {}) or {}
+                dn = scores.get('DN', 0.0)
+                lof = scores.get('LOF', 0.0)
+                gof = scores.get('GOF', 0.0)
+                fdn = filtered.get('DN', dn)
+                flof = filtered.get('LOF', lof)
+                fgof = filtered.get('GOF', gof)
+                clin_bucket = map_clinvar_bucket(r.get('clinical_sig',''))
+                ai_bucket = map_ai_bucket(r.get('final_classification'))
+                agree = agreement_label(clin_bucket, ai_bucket)
+                row = {
+                    **r,
+                    'dn_score': dn,
+                    'lof_score': lof,
+                    'gof_score': gof,
+                    'filtered_dn_score': fdn,
+                    'filtered_lof_score': flof,
+                    'filtered_gof_score': fgof,
+                    'synergy_used': r.get('synergy_used', False),
+                    'summary': r.get('summary',''),
+                    'clinvar_bucket': clin_bucket,
+                    'ai_bucket': ai_bucket,
+                    'agreement': agree,
+                }
+                writer.writerow(row)
         print(f"💾 CASCADE results saved to {output_path}")
 
 def main():

@@ -219,8 +219,32 @@ class GOFVariantAnalyzer:
             Dict with GOF analysis results
         """
         try:
-            # Parse mutation
-            match = re.match(r'([A-Z])(\d+)([A-Z])', mutation)
+            # Normalize mutation: accept 'p.' prefix and 3-letter HGVS
+            s = mutation.strip()
+            if s.startswith('p.'):
+                s = s[2:]
+
+            # If 3-letter like Glu446Ala or Tyr87Ter, convert to 1-letter
+            m3 = re.match(r'^([A-Z][a-z]{2})(\d+)([A-Z][a-z]{2}|\*|=)$', s)
+            if m3:
+                ref3, pos_str, alt3 = m3.groups()
+                if alt3 == '=':
+                    return {'error': f'synonymous change not scored for GOF: {mutation}', 'gof_score': 0.0}
+                if alt3 == '*':
+                    return {'error': f'nonsense change not scored for GOF: {mutation}', 'gof_score': 0.0}
+                THREE_TO_ONE = {
+                    'Ala':'A','Arg':'R','Asn':'N','Asp':'D','Cys':'C','Gln':'Q','Glu':'E','Gly':'G',
+                    'His':'H','Ile':'I','Leu':'L','Lys':'K','Met':'M','Phe':'F','Pro':'P','Ser':'S',
+                    'Thr':'T','Trp':'W','Tyr':'Y','Val':'V'
+                }
+                ref = THREE_TO_ONE.get(ref3)
+                alt = THREE_TO_ONE.get(alt3)
+                if not ref or not alt:
+                    return {'error': f'Invalid 3-letter amino acid in: {mutation}', 'gof_score': 0.0}
+                s = f"{ref}{pos_str}{alt}"
+
+            # Now parse 1-letter form
+            match = re.match(r'([A-Z])(\d+)([A-Z])', s)
             if not match:
                 return {'error': f'Invalid mutation format: {mutation}', 'gof_score': 0.0}
 
