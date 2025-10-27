@@ -745,6 +745,12 @@ class CascadeAnalyzer:
         Returns:
             Conservation multiplier (always 1.0 now - nudge is applied separately)
         """
+        # 🔥 MECHANISM-FIRST: Conservation is now a nudge, not a multiplier!
+        # Always return 1.0 so it doesn't affect mechanism scores
+        print(f"🧬 Conservation multiplier: 1.0 (nudge applied separately)")
+        return 1.0
+
+        # OLD CODE BELOW - KEPT FOR REFERENCE BUT NOT EXECUTED
         # ✨ LUMEN'S FIX: Prioritize direct score from the batch processor if available!
         if direct_score is not None:
             phylop_score = direct_score
