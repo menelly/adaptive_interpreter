@@ -47,7 +47,7 @@ PATHOGENICITY_RULES: Dict[str, Dict[str, float]] = {
     "NEGATIVE_REGULATOR": {"LOF": 1.2, "DN": 0.9, "GOF": 0.0},
     # ----------------------------
     "TRANSCRIPTION_FACTOR": {"LOF": 1.0, "DN": 1.0, "GOF": 1.0},
-    "TUMOR_SUPPRESSOR": {"LOF": 1.0, "DN": 1.0, "GOF": 0.25},
+    "TUMOR_SUPPRESSOR": {"LOF": 1.0, "DN": 1.0, "GOF": 0.05},  # GOF is NOT pathogenic for tumor suppressors!
     "ONCOGENE": {"LOF": 1.0, "DN": 1.0, "GOF": 1.0},  # All mechanisms possible for oncogenes
     "MUSCULAR_DYSTROPHY": {"LOF": 1.0, "DN": 0.5, "GOF": 0.0},  # Muscular dystrophy genes
     "RIBOSOMAL_PROTEIN": {"LOF": 1.0, "DN": 0.5, "GOF": 0.0},  # More ribosomes = good for growth

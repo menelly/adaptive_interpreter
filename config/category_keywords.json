@@ -31,6 +31,7 @@
   "categories": {
     "TUMOR_SUPPRESSOR": {
       "tumor suppressor": 2.0,
+      "tumor suppressive": 2.0,
       "transforming growth factor": 2.2,
       "tgf-beta": 2.0,
       "tgfbr": 1.8,
@@ -42,11 +43,20 @@
       "dna polymerase activity": 1.5,
       "checkpoint": 1.2,
       "guardian": 1.0,
-      "negative regulator": 1.2,
+      "negative regulator": 1.8,
       "negative regulation of cell": 1.5,
+      "antagonizes": 1.5,
+      "pi3k-akt": 1.8,
+      "phosphatidylinositol 3,4,5-trisphosphate": 1.5,
+      "ptdins": 1.2,
       "repressor": 1.2,
       "patched": 1.0,
-      "neurofibromin": 1.0
+      "neurofibromin": 1.0,
+      "pten": 2.0,
+      "brca": 1.8,
+      "tp53": 2.0,
+      "rb1": 1.8,
+      "apc": 1.8
     },
     "ONCOGENE": {
       "oncogene": 2.0,
