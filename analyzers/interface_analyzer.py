@@ -34,6 +34,34 @@ class InterfaceAnalyzer:
     
     def __init__(self, cache_dir: str = "protein_annotations_cache"):
         self.cache_dir = cache_dir
+
+        # 🔥 HARDCODED DOMAIN BOUNDARIES for common genes
+        # (UniProt API doesn't always return functional domains!)
+        self.known_domains = {
+            'PTEN': {
+                'domains': [
+                    {'type': 'domain', 'start': 7, 'end': 185, 'description': 'Phosphatase domain'},
+                    {'type': 'domain', 'start': 186, 'end': 351, 'description': 'C2 domain'},
+                    {'type': 'region', 'start': 352, 'end': 403, 'description': 'C-terminal tail'}
+                ]
+            },
+            'TP53': {
+                'domains': [
+                    {'type': 'domain', 'start': 1, 'end': 61, 'description': 'Transactivation domain'},
+                    {'type': 'domain', 'start': 102, 'end': 292, 'description': 'DNA-binding domain'},
+                    {'type': 'domain', 'start': 324, 'end': 355, 'description': 'Tetramerization domain'},
+                    {'type': 'region', 'start': 363, 'end': 393, 'description': 'Regulatory domain'}
+                ]
+            },
+            'MSH2': {
+                'domains': [
+                    {'type': 'domain', 'start': 1, 'end': 120, 'description': 'Mismatch recognition domain'},
+                    {'type': 'domain', 'start': 300, 'end': 500, 'description': 'Connector domain'},
+                    {'type': 'domain', 'start': 620, 'end': 853, 'description': 'ATPase domain'}
+                ]
+            }
+        }
+
         print("🔗 Interface Analyzer initialized!")
         print("🎯 Ready to detect domain boundary disruptions!")
     
@@ -75,16 +103,27 @@ class InterfaceAnalyzer:
             'details': {}
         }
         
-        # Get domain boundaries
-        if domain_data is None:
-            domain_data = self._get_domain_data(uniprot_id)
-        
-        if not domain_data:
-            print(f"⚠️  No domain data available for {uniprot_id}")
-            return result
-        
+        # 🔗 FIRST: Try to load InterPro domains (REAL structural domains!)
+        interpro_data = self._load_interpro_domains(uniprot_id)
+
+        if interpro_data and interpro_data.get('domains'):
+            print(f"   ✅ Using InterPro domains (REAL structural boundaries!)")
+            parsed_data = interpro_data
+        else:
+            # Fallback to LOF analyzer's domain data (predicted domains)
+            print(f"   ⚠️ No InterPro cache - falling back to predicted domains")
+            if domain_data is None:
+                domain_data = self._get_domain_data(uniprot_id)
+
+            if not domain_data or not domain_data.get('domains'):
+                print(f"⚠️  No domain data available for {uniprot_id}")
+                return result
+
+            # Parse domain data into our format
+            parsed_data = self._parse_domain_features(domain_data)
+
         # Check if position is at domain interface
-        interface_info = self._check_domain_interface(position, domain_data)
+        interface_info = self._check_domain_interface(position, parsed_data)
         
         if not interface_info['is_interface']:
             print(f"   Position {position} is NOT at domain interface")
@@ -128,31 +167,87 @@ class InterfaceAnalyzer:
             print(f"⚠️  Error fetching domain data: {e}")
         return None
     
-    def _parse_domain_features(self, uniprot_data: Dict) -> Dict:
-        """Parse domain features from UniProt JSON"""
-        domains = []
-        
-        if 'features' not in uniprot_data:
-            return {'domains': domains}
-        
-        for feature in uniprot_data['features']:
-            ftype = feature.get('type', '')
-            
-            # Look for domain annotations
-            if ftype in ['domain', 'region', 'repeat', 'zinc finger', 'DNA binding']:
-                location = feature.get('location', {})
-                start = location.get('start', {}).get('value')
-                end = location.get('end', {}).get('value')
-                description = feature.get('description', '')
-                
-                if start and end:
+    def _load_interpro_domains(self, uniprot_id: str) -> Dict:
+        """
+        Load REAL domain boundaries from InterPro cache
+
+        This is the 0.5 step Ren suggested - use pre-cached InterPro data!
+        """
+
+        import os
+        import json
+
+        # Try multiple possible cache locations
+        possible_paths = [
+            f"protein_annotations_cache/{uniprot_id}_interpro_domains.json",
+            f"AdaptiveInterpreter/protein_annotations_cache/{uniprot_id}_interpro_domains.json",
+            f"/home/Ace/AdaptiveInterpreter/protein_annotations_cache/{uniprot_id}_interpro_domains.json"
+        ]
+
+        cache_file = None
+        for path in possible_paths:
+            if os.path.exists(path):
+                cache_file = path
+                break
+
+        if not cache_file:
+            print(f"   ⚠️ No InterPro cache for {uniprot_id} - run cache_interpro_domains.py first!")
+            return {'domains': []}
+
+        try:
+            with open(cache_file, 'r') as f:
+                data = json.load(f)
+
+            domains = []
+            for d in data.get('domains', []):
+                # Only use real structural domains, not just families
+                if d.get('type') in ['domain', 'homologous_superfamily']:
                     domains.append({
-                        'type': ftype,
-                        'start': start,
-                        'end': end,
-                        'description': description
+                        'start': d['start'],
+                        'end': d['end'],
+                        'type': d['type'],
+                        'description': d['description'],
+                        'accession': d.get('accession', '')
                     })
-        
+
+            print(f"   🔗 Loaded {len(domains)} InterPro domains for {uniprot_id}")
+            return {'domains': sorted(domains, key=lambda x: x['start'])}
+
+        except Exception as e:
+            print(f"   ❌ Failed to load InterPro cache for {uniprot_id}: {e}")
+            return {'domains': []}
+
+    def _parse_domain_features(self, domain_data: Dict) -> Dict:
+        """
+        Parse domain features from LOF analyzer's domain data format
+
+        LOF uses domain_annotator which returns:
+        {
+            'domains': [{'start': int, 'end': int, 'type': str, 'description': str}, ...],
+            'regions': [...],
+            'mature_chain': [...]
+        }
+        """
+        domains = []
+
+        # Get domains from the data
+        for domain in domain_data.get('domains', []):
+            domains.append({
+                'type': domain.get('type', 'domain'),
+                'start': domain.get('start'),
+                'end': domain.get('end'),
+                'description': domain.get('description', '')
+            })
+
+        # Also include regions as potential interfaces
+        for region in domain_data.get('regions', []):
+            domains.append({
+                'type': 'region',
+                'start': region.get('start'),
+                'end': region.get('end'),
+                'description': region.get('description', '')
+            })
+
         return {'domains': sorted(domains, key=lambda x: x['start'])}
     
     def _check_domain_interface(self, position: int, domain_data: Dict) -> Dict:

@@ -290,15 +290,19 @@ class CascadeAnalyzer:
             ref_aa = aa_map.get(ref_aa_raw, ref_aa_raw)
             alt_aa = aa_map.get(alt_aa_raw, alt_aa_raw) if alt_aa_raw != '*' else '*'
 
-            # Run interface analysis
+            # Get domain data from LOF analyzer's cache (same source!)
             try:
+                domain_data = self.lof_analyzer._get_domain_context(uniprot_id, gene)
+
+                # Run interface analysis with pre-fetched domain data
                 interface_result = self.interface_analyzer.analyze_interface(
                     gene=gene,
                     variant=variant,
                     uniprot_id=uniprot_id,
                     position=position,
                     ref_aa=ref_aa,
-                    alt_aa=alt_aa
+                    alt_aa=alt_aa,
+                    domain_data=domain_data
                 )
 
                 if interface_result['is_interface']:
