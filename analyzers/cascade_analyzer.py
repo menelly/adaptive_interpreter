@@ -578,6 +578,21 @@ class CascadeAnalyzer:
             results['family_aa_multiplier_applied'] = scoring_context.multipliers['family_aa']
             results['gly_cys_multiplier_applied'] = scoring_context.multipliers['gly_cys']
 
+            # 🧬 REN'S MECHANISM-FIRST APPROACH: Apply conservation as ±1 level nudge
+            # Conservation is a TIE-BREAKER, not a score multiplier!
+            if conservation_score is not None:
+                pre_nudge_classification = results['final_classification']
+                results['final_classification'] = self._apply_conservation_nudge(
+                    pre_nudge_classification,
+                    conservation_score
+                )
+                results['conservation_nudge_applied'] = (pre_nudge_classification != results['final_classification'])
+                results['pre_nudge_classification'] = pre_nudge_classification
+                results['phylop_score'] = conservation_score
+            else:
+                results['conservation_nudge_applied'] = False
+                results['phylop_score'] = None
+
             # 🔥 REN'S CRITICAL ADDITION: Add review flags for missing data
             review_flags = []
             if scoring_context.multipliers.get('conservation', 0.0) == 1.0:
@@ -671,12 +686,56 @@ class CascadeAnalyzer:
 
         return results
 
+    def _apply_conservation_nudge(self, classification: str, phylop_score: float) -> str:
+        """
+        🧬 MECHANISM-FIRST CONSERVATION NUDGE
+
+        Apply conservation as a ±1 level adjustment AFTER mechanism-based classification.
+        This respects the biological evidence while using evolutionary data as a tie-breaker.
+
+        Args:
+            classification: Mechanism-based classification (B, LB, VUS, VUS-P, LP, P)
+            phylop_score: PhyloP conservation score (-20 to +20)
+
+        Returns:
+            Nudged classification (shifted ±1 level or unchanged)
+        """
+        # Classification hierarchy (in order of severity)
+        levels = ['B', 'LB', 'VUS', 'VUS-P', 'LP', 'P']
+
+        if classification not in levels:
+            return classification  # Don't nudge unknown classifications
+
+        current_index = levels.index(classification)
+
+        # High conservation = nudge UP (more pathogenic)
+        if phylop_score >= 5.0:  # Extremely/ultra-conserved
+            new_index = min(current_index + 1, len(levels) - 1)
+            nudged = levels[new_index]
+            if nudged != classification:
+                print(f"🧬 CONSERVATION NUDGE UP: {classification} → {nudged} (phyloP: {phylop_score:.2f})")
+            return nudged
+
+        # Low conservation = nudge DOWN (more benign)
+        elif phylop_score < -1.0:  # Not conserved
+            new_index = max(current_index - 1, 0)
+            nudged = levels[new_index]
+            if nudged != classification:
+                print(f"🧬 CONSERVATION NUDGE DOWN: {classification} → {nudged} (phyloP: {phylop_score:.2f})")
+            return nudged
+
+        # Average conservation = no change
+        else:
+            print(f"🧬 CONSERVATION: No nudge (phyloP: {phylop_score:.2f} is average)")
+            return classification
+
     def _get_conservation_multiplier(self, gene: str, variant: str, uniprot_id: str, gnomad_freq: float = 0.0, direct_score: Optional[float] = None) -> float:
         """
         🧬 EVOLUTIONARY INTELLIGENCE: Get conservation-based multiplier
 
-        Uses real evolutionary data (GERP, phyloP) to determine if this position
-        is conserved across species. Highly conserved = higher pathogenic potential.
+        NOTE: This function is DEPRECATED for mechanism scoring!
+        Conservation is now applied as a ±1 level nudge AFTER classification.
+        This function is kept for backwards compatibility and returns 1.0.
 
         Args:
             gene: Gene symbol
@@ -684,7 +743,7 @@ class CascadeAnalyzer:
             uniprot_id: UniProt ID for genomic mapping
 
         Returns:
-            Conservation multiplier (0.8-2.0x based on evolutionary constraint)
+            Conservation multiplier (always 1.0 now - nudge is applied separately)
         """
         # ✨ LUMEN'S FIX: Prioritize direct score from the batch processor if available!
         if direct_score is not None:
