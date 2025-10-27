@@ -231,6 +231,16 @@ class CascadeBatchProcessor:
             if val:
                 raw_molecular_consequence = str(val)
                 v = raw_molecular_consequence.lower()
+                # 🚨 CRITICAL: Check for nonsense/frameshift FIRST (auto-pathogenic!)
+                if 'nonsense' in v or 'stop_gained' in v or 'stop gain' in v:
+                    variant_type = 'nonsense'
+                    break
+                if 'frameshift' in v or 'frame_shift' in v or 'frame shift' in v:
+                    variant_type = 'frameshift'
+                    break
+                if 'stop_lost' in v or 'stop loss' in v or 'stop_loss' in v:
+                    variant_type = 'stop_loss'
+                    break
                 if 'splice' in v:
                     variant_type = 'splice'
                     break
@@ -243,6 +253,19 @@ class CascadeBatchProcessor:
                 if 'missense' in v:
                     variant_type = 'missense'
                     break
+
+        # 🚨 HEURISTIC: Check variant string itself for nonsense/frameshift indicators
+        if not variant_type and variant:
+            v_lower = str(variant).lower()
+            # Nonsense: p.Gly71*, p.Arg123Ter, p.R123*
+            if '*' in variant or 'ter' in v_lower or 'x' == variant[-1:]:
+                variant_type = 'nonsense'
+            # Frameshift: p.Arg123fs, p.Arg123Lysfs*10
+            elif 'fs' in v_lower:
+                variant_type = 'frameshift'
+            # Indels: del, ins, dup, delins
+            elif any(x in v_lower for x in ['del', 'ins', 'dup']):
+                variant_type = 'indel'
 
         # If we lack a parseable protein HGVS, try converting to protein using the existing converter
         # Gate conversion to coding consequences to avoid noisy network calls for intronic/UTR
