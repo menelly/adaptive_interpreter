@@ -275,12 +275,13 @@ class CascadeAnalyzer:
         # 🔥 REN'S BRILLIANT INSIGHT: LOF first, skip GOF if protein is broken!
         lof_score = 0.0
 
-        # Always run LOF first (if requested) - WITH CONSERVATION BOOST!
+        # Always run LOF first (if requested) - NO CONSERVATION YET (apply at end as nudge!)
         if 'LOF' in analyzers_to_run:
             print(f"🔬 Running LOF analysis...")
             print(f"🔍 DEBUG: About to call _run_lof_analysis with gene={gene}, variant={variant}")
-            # 🔥 FIXED BUG: Use the actual conservation multiplier, not hardcoded 1.0!
-            analyzer_results['LOF'] = self._run_lof_analysis(gene, variant, sequence, uniprot_id, conservation_multiplier=conservation_multiplier)
+            # 🔥 REN'S FIX: No conservation multiplier here - mechanisms score on their own merit!
+            # Conservation will be applied as a ±1 level nudge AFTER classification
+            analyzer_results['LOF'] = self._run_lof_analysis(gene, variant, sequence, uniprot_id, conservation_multiplier=1.0)
             print(f"🔍 DEBUG: LOF analyzer returned: {analyzer_results['LOF']}")
 
             if analyzer_results['LOF']['success']:
