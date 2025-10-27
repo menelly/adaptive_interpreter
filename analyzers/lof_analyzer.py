@@ -160,15 +160,15 @@ class LOFAnalyzer:
     def analyze_lof(self, mutation: str, sequence: str, uniprot_id: str = None, gene_symbol: str = "", **kwargs) -> Dict[str, Any]:
         """
         Analyze loss of function potential
-        
+
         Args:
             mutation: Mutation string (e.g., "R175H")
             sequence: Protein sequence
-            
+
         Returns:
             LOF analysis results
         """
-        
+
         parsed = self._parse_mutation(mutation)
         if not parsed:
             return self._empty_result()
@@ -177,6 +177,39 @@ class LOFAnalyzer:
         new_aa = parsed['new_aa']
         position = parsed['position']
         is_nonsense = parsed.get('is_nonsense', False)
+
+        # NEW: Start-loss and Stop-loss fast-paths (never benign)
+        if parsed.get('is_start_loss', False) or parsed.get('is_stop_loss', False):
+            base_score = 0.95  # very high LOF starting point
+            # domain awareness still applies
+            domain_multiplier = 1.0
+            if uniprot_id:
+                domain_context = self._get_domain_context(uniprot_id, gene_symbol)
+                domain_multiplier = self._get_domain_multiplier(max(position, 1), domain_context)
+                tag = 'start_loss' if parsed.get('is_start_loss') else 'stop_loss'
+                print(f"🎯 Domain multiplier for {tag} {gene_symbol} position {position}: {domain_multiplier:.3f}")
+            final_score = min(base_score * domain_multiplier, 1.0)
+            mech = 'start_codon_loss' if parsed.get('is_start_loss') else 'stop_codon_loss'
+            return {
+                'lof_score': final_score,
+                'base_lof_score': base_score,
+                'smart_multiplier': 1.0,
+                'conservation_multiplier': 1.0,
+                'domain_multiplier': domain_multiplier,
+                'total_multiplier': domain_multiplier,
+                'stability_impact': 1.0,
+                'conservation_impact': 1.0,
+                'structural_impact': 1.0,
+                'functional_impact': 1.0,
+                'mechanism': mech,
+                'confidence': 0.95,
+                'sequence_mismatch': False,
+                'mismatch_info': None,
+                'start_stop_details': {
+                    'position': position,
+                    'explanation': f'{mech.replace("_"," ").title()} detected at position {position}'
+                }
+            }
 
         # Handle nonsense variants - they're almost always high LOF!
         if is_nonsense:
@@ -277,14 +310,17 @@ class LOFAnalyzer:
                         ml_proline_multiplier = 0.7  # Reduce LOF score (less destabilizing than expected)
                         print(f"🔥 LOF PROLINE FALLBACK: {gene_symbol} {variant_str} -> fallback multiplier = {ml_proline_multiplier:.3f}")
 
-        # Calculate overall LOF score with ALL multipliers
-        base_lof_score = self._calculate_lof_score(
-            stability_impact, conservation_impact, structural_impact, functional_impact
-        )
+        # Calculate mechanistic LOF base WITHOUT conservation
+        # Fold ML proline into the functional component (bounded), and include domain/smart in base.
+        functional_adj = min(functional_impact * ml_proline_multiplier, 1.0)
+        # Original weights: stability 0.3, conservation 0.3, structural 0.2, functional 0.2
+        # Drop conservation from base and renormalize by 0.7 to preserve scale.
+        base_no_cons = (stability_impact * 0.3) + (structural_impact * 0.2) + (functional_adj * 0.2)
+        base_lof_score = min(base_no_cons / 0.7, 1.0)
 
-        # Apply ALL multipliers: conservation, smart, domain, AND ML proline!
-        total_multiplier = smart_multiplier * conservation_multiplier * domain_multiplier * ml_proline_multiplier
-        lof_score = base_lof_score * total_multiplier
+        # Mechanistic base multiplies in domain and smart context; exclude conservation from multipliers here.
+        total_multiplier = smart_multiplier * domain_multiplier
+        lof_score = min(base_lof_score * total_multiplier, 1.0)
 
         # Apply sequence mismatch handling if needed
         if sequence_mismatch and mismatch_info:
@@ -330,6 +366,123 @@ class LOFAnalyzer:
         s = mutation.strip()
         if s.startswith('p.'):
             s = s[2:]
+
+        # 0) Start-loss and Stop-loss special patterns
+        # Start-loss: Met1? / Met1Leu / M1L / M1?
+        m_start1 = re.match(r'^[Mm]1([A-Za-z]|\?)$', s)
+        if m_start1:
+            alt = m_start1.group(1)
+            alt1 = alt.upper() if alt != '?' else '?'
+            return {
+                'original_aa': 'M',
+                'position': 1,
+                'new_aa': alt1,
+                'mutation': f"M1{alt1}",
+                'is_nonsense': False,
+                'is_start_loss': True
+            }
+        m_start3 = re.match(r'^(Met)1([A-Z][a-z]{2}|\?)$', s)
+        if m_start3:
+            alt3 = m_start3.group(2)
+            if alt3 == '?':
+                alt1 = '?'
+            else:
+                THREE_TO_ONE = {
+                    'Ala':'A','Arg':'R','Asn':'N','Asp':'D','Cys':'C','Gln':'Q','Glu':'E','Gly':'G',
+                    'His':'H','Ile':'I','Leu':'L','Lys':'K','Met':'M','Phe':'F','Pro':'P','Ser':'S',
+                    'Thr':'T','Trp':'W','Tyr':'Y','Val':'V'
+                }
+                alt1 = THREE_TO_ONE.get(alt3)
+                if not alt1:
+                    return None
+            return {
+                'original_aa': 'M',
+                'position': 1,
+                'new_aa': alt1,
+                'mutation': f"M1{alt1}",
+                'is_nonsense': False,
+                'is_start_loss': True
+            }
+
+        # Stop-loss: Ter123Gln / *123Q and stop-loss with extension (ext*?, ext*NN)
+        # Basic stop-loss (stop codon changed to amino acid)
+        m_stop1 = re.match(r'^\*(\d+)([A-Za-z])$', s)
+        if m_stop1:
+            try:
+                pos = int(m_stop1.group(1))
+                alt = m_stop1.group(2).upper()
+                return {
+                    'original_aa': '*',
+                    'position': pos,
+                    'new_aa': alt,
+                    'mutation': f"*{pos}{alt}",
+                    'is_nonsense': False,
+                    'is_stop_loss': True
+                }
+            except ValueError:
+                return None
+        m_stop3 = re.match(r'^Ter(\d+)([A-Z][a-z]{2})$', s)
+        if m_stop3:
+            pos_str, alt3 = m_stop3.groups()
+            THREE_TO_ONE = {
+                'Ala':'A','Arg':'R','Asn':'N','Asp':'D','Cys':'C','Gln':'Q','Glu':'E','Gly':'G',
+                'His':'H','Ile':'I','Leu':'L','Lys':'K','Met':'M','Phe':'F','Pro':'P','Ser':'S',
+                'Thr':'T','Trp':'W','Tyr':'Y','Val':'V'
+            }
+            alt = THREE_TO_ONE.get(alt3)
+            if not alt:
+                return None
+            try:
+                pos = int(pos_str)
+                return {
+                    'original_aa': '*',
+                    'position': pos,
+                    'new_aa': alt,
+                    'mutation': f"*{pos}{alt}",
+                    'is_nonsense': False,
+                    'is_stop_loss': True
+                }
+            except ValueError:
+                return None
+        # Stop-loss with extension annotations: e.g., Ter577Cysext*?, *577Qext*?, or ext*12
+        m_stop1_ext = re.match(r'^\*(\d+)([A-Za-z])ext\*\??(?:\d+)?$', s)
+        if m_stop1_ext:
+            try:
+                pos = int(m_stop1_ext.group(1))
+                alt = m_stop1_ext.group(2).upper()
+                return {
+                    'original_aa': '*',
+                    'position': pos,
+                    'new_aa': alt,
+                    'mutation': f"*{pos}{alt}ext*?",
+                    'is_nonsense': False,
+                    'is_stop_loss': True
+                }
+            except ValueError:
+                return None
+        m_stop3_ext = re.match(r'^Ter(\d+)([A-Z][a-z]{2})ext\*\??(?:\d+)?$', s)
+        if m_stop3_ext:
+            pos_str, alt3 = m_stop3_ext.groups()
+            THREE_TO_ONE = {
+                'Ala':'A','Arg':'R','Asn':'N','Asp':'D','Cys':'C','Gln':'Q','Glu':'E','Gly':'G',
+                'His':'H','Ile':'I','Leu':'L','Lys':'K','Met':'M','Phe':'F','Pro':'P','Ser':'S',
+                'Thr':'T','Trp':'W','Tyr':'Y','Val':'V'
+            }
+            alt = THREE_TO_ONE.get(alt3)
+            if not alt:
+                return None
+            try:
+                pos = int(pos_str)
+                return {
+                    'original_aa': '*',
+                    'position': pos,
+                    'new_aa': alt,
+                    'mutation': f"*{pos}{alt}ext*?",
+                    'is_nonsense': False,
+                    'is_stop_loss': True
+                }
+            except ValueError:
+                return None
 
         # 1) Nonsense variants first (Ter or *)
         if s.endswith('Ter') or s.endswith('*'):
@@ -534,17 +687,17 @@ class LOFAnalyzer:
         return min(score, 1.0)
     
     def _calculate_lof_score(self, stability: float, conservation: float, structural: float, functional: float) -> float:
-        """Calculate overall LOF score"""
-        # Weighted combination
+        """Calculate overall LOF score (legacy; conservation excluded upstream)."""
+        # Keep legacy signature but exclude conservation here to avoid double counting.
         score = (
             stability * 0.3 +
-            conservation * 0.3 +
             structural * 0.2 +
             functional * 0.2
         )
-        
+        # Renormalize to preserve scale roughly comparable to legacy
+        score = score / 0.7
         return min(score, 1.0)
-    
+
     def _determine_lof_mechanism(self, stability: float, conservation: float, structural: float) -> str:
         """Determine primary LOF mechanism"""
         if stability > 0.5:

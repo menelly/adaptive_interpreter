@@ -153,8 +153,21 @@ class CascadeBatchProcessor:
         # Accept rows with either protein or genomic HGVS (or both)
         if not gene or (not variant_p and not hgvs_g):
             return {'skipped': True, 'skip_reason': 'skipped_unparseable'}
-        # Use protein HGVS when available; otherwise fall back to genomic string for reporting
-        variant = variant_p if variant_p else hgvs_g
+
+        # Determine if provided protein HGVS is parseable/useful; treat p.? and similar as uninformative
+        protein_uninformative = False
+        if variant_p:
+            vp = str(variant_p).strip()
+            vpl = vp.lower()
+            if vpl in {"p.?", "p.?*", "p.", "p.=", "p.(=)"}:
+                protein_uninformative = True
+            else:
+                # Heuristic: must contain a position to be useful (e.g., p.Arg273His, p.R273H, p.*577Qext*)
+                if not re.search(r"p\.[A-Za-z\*][A-Za-z]{0,2}\d+", vp):
+                    protein_uninformative = True
+
+        # Use protein HGVS when available and informative; otherwise fall back to genomic string for reporting
+        variant = (variant_p if (variant_p and not protein_uninformative) else hgvs_g)
 
         # Parse genomic coordinates and alleles from hgvs_g like: NC_000017.11:g.50201411T>C
         chrom_num = None
@@ -231,21 +244,21 @@ class CascadeBatchProcessor:
                     variant_type = 'missense'
                     break
 
-        # If we only have genomic HGVS, try converting to protein using the existing converter
+        # If we lack a parseable protein HGVS, try converting to protein using the existing converter
         # Gate conversion to coding consequences to avoid noisy network calls for intronic/UTR
         coding_types = {'missense','stop_gained','stop_lost','frameshift','splice','splice_acceptor','splice_donor'}
-        should_convert = (not variant_p) and hgvs_g and (variant_type in coding_types or variant_type is None) and (not os.getenv("CASCADE_DISABLE_CONVERSION"))
+        should_convert = hgvs_g and (protein_uninformative or (not variant_p)) and (variant_type in coding_types or variant_type is None) and (not os.getenv("CASCADE_DISABLE_CONVERSION"))
         if should_convert:
             try:
                 converter = GenomicToProteinConverter()
                 prot = converter.convert_genomic_to_protein(hgvs_g, gene_name=gene)
                 if prot:
                     variant = prot
-                    if not variant_type:
+                    if not variant_type or variant_type == 'unknown':
                         variant_type = 'missense'
                     print(f"✅ Genomic→protein conversion succeeded for {gene}: {hgvs_g} → {variant}")
                 else:
-                    # Avoid mislabeling genomic-only rows as missense
+                    # Avoid mislabeling genomic/intractable rows as missense
                     if not variant_type:
                         variant_type = 'unknown'
             except Exception as e:
@@ -289,7 +302,7 @@ class CascadeBatchProcessor:
 
         def map_clinvar_bucket(sig: str) -> str:
             if not sig: return 'NA'
-            s = sig.strip().lower()
+            s = sig.strip().replace('_',' ').replace('-',' ').lower()
             if 'likely pathogenic' in s:
                 return 'LP'
             if 'pathogenic' in s:
@@ -305,15 +318,26 @@ class CascadeBatchProcessor:
         def map_ai_bucket(cls: str) -> str:
             if not cls: return 'NA'
             c = str(cls).upper()
+            if c.startswith('VUS-P'): return 'VUS'  # bucket VUS-P with VUS for display bucket
             if c in ('P', 'LP'): return c
             if c in ('B', 'LB'): return c
             if c.startswith('VUS'): return 'VUS'
             return 'NA'
 
         def agreement_label(clin: str, ai: str) -> str:
+            # Align with agreement_analysis.py semantics
             if clin == 'NA' or ai == 'NA':
                 return 'NA'
-            if (clin in {'B','LB'} and ai in {'B','LB'}) or (clin in {'P','LP'} and ai in {'P','LP'}) or (clin == 'VUS' and ai == 'VUS'):
+            # VUS <-> VUS-P agreement handled by bucketing VUS-P as VUS above
+            if clin == 'VUS' and ai == 'VUS':
+                return 'AGREE'
+            # If ClinVar VUS and AI moves to a side, that's better data
+            if clin == 'VUS' and ai in {'B','LB'}:
+                return 'BETTER_DATA_to_benign'
+            if clin == 'VUS' and ai in {'P','LP'}:
+                return 'BETTER_DATA_to_pathogenic'
+            # Bucket agreement across sides
+            if (clin in {'B','LB'} and ai in {'B','LB'}) or (clin in {'P','LP'} and ai in {'P','LP'}):
                 return 'AGREE'
             return 'DISAGREE'
 
@@ -324,6 +348,9 @@ class CascadeBatchProcessor:
             'clinvar_bucket','ai_bucket','agreement',
             'dn_score','lof_score','gof_score',
             'filtered_dn_score','filtered_lof_score','filtered_gof_score',
+            # Diagnostics for LOF mechanics and multipliers
+            'base_lof_score','stability_impact','structural_impact','functional_impact','conservation_impact',
+            'smart_multiplier','domain_multiplier','ml_proline_multiplier','conservation_multiplier','total_multiplier',
             'synergy_used','summary'
         ]
 
@@ -342,6 +369,8 @@ class CascadeBatchProcessor:
                 clin_bucket = map_clinvar_bucket(r.get('clinical_sig',''))
                 ai_bucket = map_ai_bucket(r.get('final_classification'))
                 agree = agreement_label(clin_bucket, ai_bucket)
+                # Extract LOF diagnostics if available
+                lof_details = (r.get('lof_details') or {})
                 row = {
                     **r,
                     'dn_score': dn,
@@ -350,6 +379,17 @@ class CascadeBatchProcessor:
                     'filtered_dn_score': fdn,
                     'filtered_lof_score': flof,
                     'filtered_gof_score': fgof,
+                    # Diagnostics (safe defaults if missing)
+                    'base_lof_score': lof_details.get('base_lof_score', ''),
+                    'stability_impact': lof_details.get('stability_impact', ''),
+                    'structural_impact': lof_details.get('structural_impact', ''),
+                    'functional_impact': lof_details.get('functional_impact', ''),
+                    'conservation_impact': lof_details.get('conservation_impact', ''),
+                    'smart_multiplier': lof_details.get('smart_multiplier', ''),
+                    'domain_multiplier': lof_details.get('domain_multiplier', ''),
+                    'ml_proline_multiplier': lof_details.get('ml_proline_multiplier', ''),
+                    'conservation_multiplier': lof_details.get('conservation_multiplier', ''),
+                    'total_multiplier': lof_details.get('total_multiplier', ''),
                     'synergy_used': r.get('synergy_used', False),
                     'summary': r.get('summary',''),
                     'clinvar_bucket': clin_bucket,

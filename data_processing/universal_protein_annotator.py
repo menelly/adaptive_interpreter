@@ -68,12 +68,37 @@ class UniversalProteinAnnotator:
                 "regions": [],  # Functional regions like triple helix
                 "cleavage_sites": [],  # Where protein gets processed
                 "motifs": [],  # Functional motifs
-                "compositional_bias": []  # Compositionally biased regions (important for HMSN-P!)
+                "compositional_bias": [],  # Compositionally biased regions (important for HMSN-P!)
+                # 🎯 NEW! GO cross-references (IDs and term names)
+                "go_ids": [],
+                "go_terms": []
             }
 
             # Debug: print function extraction
             print(f"Extracted function for {uniprot_id}: {features['function'][:100] if features['function'] else 'NONE'}...")
-            
+
+            # Extract GO terms from UniProt cross-references (offline-friendly once cached)
+            try:
+                xrefs = data.get("uniProtKBCrossReferences", []) or []
+                go_ids = []
+                go_terms = []
+                for x in xrefs:
+                    if (x or {}).get("database") == "GO":
+                        go_id = x.get("id")
+                        if go_id:
+                            go_ids.append(go_id)
+                        for prop in (x.get("properties") or []):
+                            val = (prop.get("value") or "").strip()
+                            if val:
+                                # Typical format: "F:protein binding" / "P:signal transduction" / "C:nucleus"
+                                term = val.split(":", 1)[1].strip() if ":" in val else val
+                                go_terms.append(term)
+                # De-duplicate, store
+                features["go_ids"] = sorted(set(go_ids))
+                features["go_terms"] = sorted(set(go_terms))
+            except Exception as ge:
+                print(f"⚠️ GO extraction failed for {uniprot_id}: {ge}")
+
             # Extract features from UniProt annotations
             for feature in data.get("features", []):
                 self._parse_uniprot_feature(feature, features)
@@ -93,10 +118,11 @@ class UniversalProteinAnnotator:
                 print(f"⚠️ Cache write error for {uniprot_id}: {e}")
 
             return features
-            
+
         except Exception as e:
             print(f"UniProt API failed for {uniprot_id}: {e}")
-            return {"uniprot_id": uniprot_id, "error": str(e)}
+            # Minimal offline structure, so downstream can still read 'function' and 'go_terms'
+            return {"uniprot_id": uniprot_id, "function": "", "go_terms": [], "go_ids": [], "error": str(e)}
     
     def _extract_gene_name(self, data: Dict) -> str:
         """Extract primary gene name"""
@@ -373,21 +399,24 @@ class UniversalProteinAnnotator:
             "sequence_length": features.get("length", 0),
             "function": features.get("function", ""),
             "sequence": features.get("sequence", ""),
-            "domains": features.get("domains", [])
+            "domains": features.get("domains", []),
+            # Expose GO to BiologicalRouter/plausibility systems
+            "go_terms": features.get("go_terms", []),
+            "go_ids": features.get("go_ids", [])
         }
-        
+
         # Map to Nova's expected fields
         if features.get("dna_contact_sites"):
             nova_format["dna_contact_sites"] = features["dna_contact_sites"]
-        
+
         if features.get("active_sites"):
             nova_format["known_active_or_binding_sites"] = features["active_sites"]
-        
+
         if features.get("transmembrane"):
             tm = features["transmembrane"]
             if tm:
                 nova_format["transmembrane_domain"] = [tm[0]["start"], tm[0]["end"]]
-        
+
         if features.get("collagen_repeats"):
             cr = features["collagen_repeats"]
             if cr:

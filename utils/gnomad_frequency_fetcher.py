@@ -362,25 +362,22 @@ class GnomADFrequencyFetcher:
                 'error': None  # Not really an error, just conservative
             }
 
-        # TEMPORARILY DISABLED: Try API call (but expect it might fail)
-        # try:
-        #     return self.get_variant_frequency(
-        #         parsed['chrom'],
-        #         parsed['pos'],
-        #         parsed['ref'],
-        #         parsed['alt']
-        #     )
-        # except Exception as e:
-        #     print(f"⚠️ API call failed, assuming ultra-rare: {e}")
-
-        # For testing: just return ultra-rare immediately
-        print(f"🚀 TESTING MODE: Skipping API call, assuming ultra-rare")
-        return {
-            'frequency': 0.0,
-            'allele_count': 0,
-            'allele_number': 0,
-            'source': 'testing_mode_ultra_rare',
-            'error': None  # Conservative assumption
+        # Try API call
+        try:
+            return self.get_variant_frequency(
+                parsed['chrom'],
+                parsed['pos'],
+                parsed['ref'],
+                parsed['alt']
+            )
+        except Exception as e:
+            print(f"⚠️ API call failed, assuming ultra-rare: {e}")
+            return {
+                'frequency': 0.0,
+                'allele_count': 0,
+                'allele_number': 0,
+                'source': 'api_call_exception',
+                'error': str(e)
             }
     
     def save_cache(self, cache_file: str = "gnomad_frequency_cache.json"):

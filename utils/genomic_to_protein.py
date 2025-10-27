@@ -203,24 +203,41 @@ class GenomicToProteinConverter:
         if not data:
             return None
         try:
+            candidates = []
             for entry in data:
                 # Each entry may have transcript_consequences
                 for tc in entry.get('transcript_consequences', []) or []:
-                    # Prefer entries with protein position and amino_acids
                     prot_pos = tc.get('protein_start')
                     aa_change = tc.get('amino_acids')  # e.g., "R/H"
-                    if prot_pos and aa_change and len(aa_change.split('/')) == 2:
-                        ref_aa, alt_aa = aa_change.split('/')
-                        # If gene filter provided, prefer matching gene_symbol
-                        if gene_name and tc.get('gene_symbol') and tc['gene_symbol'].upper() != gene_name.upper():
-                            continue
-                        return {
-                            'transcript_id': tc.get('transcript_id'),
-                            'gene_symbol': tc.get('gene_symbol'),
-                            'protein_position': int(prot_pos),
-                            'ref_aa': ref_aa,
-                            'alt_aa': alt_aa
-                        }
+                    if not (prot_pos and aa_change and len(aa_change.split('/')) == 2):
+                        continue
+                    if gene_name and tc.get('gene_symbol') and tc['gene_symbol'].upper() != gene_name.upper():
+                        continue
+                    ref_aa, alt_aa = aa_change.split('/')
+                    candidates.append({
+                        'tc': tc,
+                        'transcript_id': tc.get('transcript_id'),
+                        'gene_symbol': tc.get('gene_symbol'),
+                        'protein_position': int(prot_pos),
+                        'ref_aa': ref_aa,
+                        'alt_aa': alt_aa,
+                        'canonical': tc.get('canonical')
+                    })
+            if not candidates:
+                return None
+            # Prefer canonical transcript if flagged by VEP (canonical can be '1', 1, True, or 'YES')
+            def is_canonical(x):
+                c = x.get('canonical')
+                return c in (1, '1', True, 'YES', 'Yes', 'yes', 'Y')
+            canon = [c for c in candidates if is_canonical(c)]
+            best = canon[0] if canon else candidates[0]
+            return {
+                'transcript_id': best['transcript_id'],
+                'gene_symbol': best['gene_symbol'],
+                'protein_position': best['protein_position'],
+                'ref_aa': best['ref_aa'],
+                'alt_aa': best['alt_aa']
+            }
         except Exception:
             return None
         return None

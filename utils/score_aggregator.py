@@ -9,6 +9,7 @@
 from dataclasses import dataclass, field
 from typing import Dict, List, Any, Optional
 import math
+from .ensemble_scores import calculate_synergy_score_v2
 
 @dataclass
 class ScoringContext:
@@ -54,20 +55,38 @@ def calculate_final_score(context: ScoringContext, gene_family: Optional[str] = 
         return context
 
     highest_score = max(context.plausibility_filtered_scores.values())
-    context.final_score = highest_score
+    base_choice = highest_score
     context.explanation_steps.append(f"Starting with highest filtered score: {highest_score:.3f}")
 
-    # 2. Apply Damped Conservation Multiplier
+    # 1b. Consider synergy before conservation (Ren's sqrt system)
+    try:
+        mech_scores = dict(context.plausibility_filtered_scores)
+        syn = calculate_synergy_score_v2(mech_scores, gene_family)
+        syn_score = float(syn.get('synergy_score', 0.0) or 0.0)
+        syn_used = bool(syn.get('synergy_used', False))
+        if syn_used and syn_score > base_choice:
+            context.explanation_steps.append(
+                f"Applied synergy: {syn.get('explanation', '')}")
+            base_choice = syn_score
+        else:
+            # Not used or not higher than base
+            pass
+    except Exception as e:
+        context.explanation_steps.append(f"Synergy calculation skipped due to error: {e}")
+
+    # 2. Apply Damped Conservation Multiplier to the chosen base (max or synergy)
     conservation_multiplier = context.multipliers.get('conservation', 1.0)
-    original_score = context.final_score
-    context.final_score = apply_damped_conservation_scaling(original_score, conservation_multiplier)
+    original_score = base_choice
+    final_after_conservation = apply_damped_conservation_scaling(original_score, conservation_multiplier)
     context.explanation_steps.append(
         f"Applied damped conservation (multiplier: {conservation_multiplier:.2f}x). "
-        f"Score changed from {original_score:.3f} to {context.final_score:.3f}"
-    )
+        f"Score changed from {original_score:.3f} to {final_after_conservation:.3f}")
+
+    # Set final score
+    context.final_score = final_after_conservation
 
     # In the future, other multipliers (family_aa, gly_cys) would be applied here, also potentially with damping.
-    
+
     # Final score clamping
     context.final_score = max(0.0, min(context.final_score, 5.0)) # Cap score to prevent extreme values
 

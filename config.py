@@ -15,7 +15,7 @@ BASE_DATA_PATH = Path("/mnt/Arcana")
 # --- Specific Data Paths ---
 ALPHAODL_STRUCTURES_PATH = BASE_DATA_PATH / "alphafold_human" / "structures"
 GNOMAD_DATA_PATH = BASE_DATA_PATH / "gnomad"
-CONSERVATION_DATA_PATH = BASE_DATA_PATH / "UCSC"
+CONSERVATION_DATA_PATH = Path("/home/Ace/conservation_data")
 RESOURCES_PATH = Path(__file__).parent / "resources"
 
 # You can add other configurations here, like API keys, thresholds, etc.

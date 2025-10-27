@@ -20,6 +20,9 @@ import tempfile
 from typing import Dict, List, Optional, Tuple
 from pathlib import Path
 
+# Fix python path for standalone execution
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
+
 # Import AdaptiveInterpreter config
 from AdaptiveInterpreter import config
 
@@ -103,7 +106,8 @@ class CascadeAnalyzer:
         return self.classifier.interpret_score(score, family)
 
     def analyze_cascade_biological(self, gene: str, variant: str, gnomad_freq: float = 0.0,
-                                  variant_type: str = 'missense', sequence: Optional[str] = None) -> Dict:
+                                  variant_type: str = 'missense', sequence: Optional[str] = None,
+                                  conservation_score: Optional[float] = None) -> Dict:
         """
         🧬 NEW: Biologically-guided cascade analysis
         Uses BiologicalRouter to determine which analyzers to run
@@ -262,7 +266,7 @@ class CascadeAnalyzer:
         }
 
         # 🧬 STEP 2: Get Conservation Multiplier (EVOLUTIONARY INTELLIGENCE!)
-        conservation_multiplier = self._get_conservation_multiplier(gene, variant, uniprot_id, gnomad_freq)
+        conservation_multiplier = self._get_conservation_multiplier(gene, variant, uniprot_id, gnomad_freq, conservation_score)
         print(f"🧬 Using conservation multiplier: {conservation_multiplier:.1f}x")
 
         # 🧬 STEP 3: Run Analyzers with LOF-First Logic
@@ -413,6 +417,23 @@ class CascadeAnalyzer:
             results['final_classification'] = 'ERROR'
             results['explanation'] = "All analyzers failed"
 
+            # 🛡️ Early SAFETY CLAMP (pre-summary): if no protein consequence and no scores → VUS
+            try:
+                import re
+                looks_protein = bool(re.match(r'^p\.', variant))
+                scores_nonzero = any((v or 0.0) > 0.0 for v in (results.get('scores', {}) or {}).values())
+                if (not looks_protein) and (not scores_nonzero):
+                    results['final_classification'] = 'VUS'
+                    results['explanation'] = (results.get('explanation','') + ' | No protein consequence resolved; conservative clamp to VUS').strip(' |')
+                    if 'review_flags' in results and results['review_flags'] and results['review_flags'] != 'None':
+                        results['review_flags'] += ',NO_PROTEIN_CONSEQUENCE'
+                    else:
+                        results['review_flags'] = 'NO_PROTEIN_CONSEQUENCE'
+                    results['clamped_vus'] = True
+            except Exception:
+                pass
+
+
         # Create summary string with primary/backup indication
         primary_analyzer = routing_result.get('primary_analyzer')
         summary_parts = []
@@ -440,8 +461,9 @@ class CascadeAnalyzer:
         try:
             from AdaptiveInterpreter.utils.plausibility_filter import plausibility_pipeline
 
-            # Get UniProt function from annotation cache
+            # Get UniProt function and GO terms from annotation cache
             uniprot_function = ""
+            go_terms = []
             if uniprot_id:
                 try:
                     import json
@@ -450,9 +472,12 @@ class CascadeAnalyzer:
                         with open(cache_file, 'r') as f:
                             annotation_data = json.load(f)
                             uniprot_function = annotation_data.get('function', '')
+                            go_terms = annotation_data.get('go_terms', []) or []
                             print(f"🔍 Retrieved function for {gene} ({uniprot_id}): {uniprot_function[:100]}...")
+                            if go_terms:
+                                print(f"🔍 Retrieved {len(go_terms)} GO terms for {gene}")
                 except Exception as e:
-                    print(f"⚠️ Could not read cached function: {e}")
+                    print(f"⚠️ Could not read cached function/GO: {e}")
                     pass
 
             # Apply plausibility filter
@@ -469,7 +494,7 @@ class CascadeAnalyzer:
                 gene_symbol=gene,
                 raw_scores=raw_scores,
                 uniprot_function=uniprot_function,
-                go_terms=[]
+                go_terms=go_terms
             )
 
             # Update results with plausibility-filtered scores
@@ -486,30 +511,40 @@ class CascadeAnalyzer:
             # Contributed by Lumen Gemini 2.5, October 2025.
 
             # 💡 LUMEN'S ADDITION: Get population frequency boost before final scoring
-            # This ensures that common variants are penalized correctly.
-            # Contributed by Lumen Gemini 2.5, October 2025.
+            # Prefer the already computed/passed frequency (no protein→genomic remapping)
             frequency_boost = 1.0
             frequency_note = "Frequency data not available."
             try:
-                import re
-                pos_match = re.search(r'p\.([A-Z])(\d+)([A-Z])', variant)
-                if pos_match and uniprot_id:
-                    ref_aa, pos, alt_aa = pos_match.groups()
-                    genomic_coords = self.conservation_db.uniprot_mapper.get_genomic_coordinates(uniprot_id, int(pos))
-                    if genomic_coords:
-                        print(f"🌍 Getting population frequency for {gene} {variant} at chr{genomic_coords['chromosome']}:{genomic_coords['start']}")
-                        freq_result = self.population_frequency_analyzer.get_variant_frequency(
-                            genomic_coords['chromosome'],
-                            genomic_coords['start'],
-                            genomic_coords['ref_allele'],
-                            genomic_coords['alt_allele']
-                        )
-                        frequency_boost = freq_result.get('pathogenicity_boost', 1.0)
-                        frequency_note = freq_result.get('frequency_note', "Note not available.")
-                        results['frequency_analysis'] = freq_result
-                        print(f"🌍 Population frequency boost: {frequency_boost:.2f}x ({frequency_note})")
-                    else:
-                        print(f"🌍 Could not map {uniprot_id}:{pos} to genomic coordinates for frequency lookup.")
+                if gnomad_freq and gnomad_freq > 0:
+                    # We already have frequency from the batch parser (ClinVar/gnomAD)
+                    results['frequency_analysis'] = {
+                        'frequency': gnomad_freq,
+                        'source': 'pre-fetched',
+                        'frequency_note': f'AF={gnomad_freq:.6f} (pre-fetched)'
+                    }
+                    frequency_note = results['frequency_analysis']['frequency_note']
+                    print(f"🌍 Using pre-fetched frequency: {gnomad_freq:.6f}")
+                else:
+                    # Fallback: try mapping if absolutely needed
+                    import re
+                    pos_match = re.search(r'p\.([A-Z])(\d+)([A-Z])', variant)
+                    if pos_match and uniprot_id and hasattr(self, 'conservation_db') and self.conservation_db:
+                        ref_aa, pos, alt_aa = pos_match.groups()
+                        genomic_coords = self.conservation_db.uniprot_mapper.get_genomic_coordinates(uniprot_id, int(pos))
+                        if genomic_coords:
+                            print(f"🌍 Getting population frequency for {gene} {variant} at chr{genomic_coords['chromosome']}:{genomic_coords['start']}")
+                            freq_result = self.population_frequency_analyzer.get_variant_frequency(
+                                genomic_coords['chromosome'],
+                                genomic_coords['start'],
+                                genomic_coords['ref_allele'],
+                                genomic_coords['alt_allele']
+                            )
+                            frequency_boost = freq_result.get('pathogenicity_boost', 1.0)
+                            frequency_note = freq_result.get('frequency_note', "Note not available.")
+                            results['frequency_analysis'] = freq_result
+                            print(f"🌍 Population frequency boost: {frequency_boost:.2f}x ({frequency_note})")
+                        else:
+                            print(f"🌍 Could not map {uniprot_id}:{pos} to genomic coordinates for frequency lookup.")
             except Exception as freq_e:
                 print(f"🌍 Population frequency analysis failed: {freq_e}")
 
@@ -551,10 +586,23 @@ class CascadeAnalyzer:
             if routing_result.get('confidence', 1.0) < 0.7:
                 review_flags.append(f"ROUTING_CONFIDENCE_LOW_{routing_result['confidence']:.2f}")
 
+            # Mechanism vs population consistency: if AD-like mechanism (DN/GOF top) and AF≥1%, flag
+            try:
+                top_mech = max(filtered_scores, key=filtered_scores.get) if filtered_scores else None
+                if top_mech in ('DN', 'GOF') and (gnomad_freq is not None) and (gnomad_freq >= 0.01):
+                    review_flags.append("POP_FREQ_HIGH_FOR_AD")
+                    results['population_ad_mismatch'] = {
+                        'af': gnomad_freq,
+                        'threshold': 0.01,
+                        'note': 'Population potentially too high for autosomal-dominant mechanics'
+                    }
+            except Exception:
+                pass
+
             # Check if ML models had structure data (a bit indirect)
             # A more direct check would require deeper refactoring, but we can infer
             if 'proline_ml_active' not in results.get('dn_details', {}) and 'gly_cys_multiplier_applied' not in results:
-                 review_flags.append("MISSING_AF_STRUCTURE")
+                review_flags.append("ML_STRUCTURE_UNCERTAIN")
 
             results['review_flags'] = ",".join(review_flags) if review_flags else "None"
 
@@ -572,12 +620,57 @@ class CascadeAnalyzer:
             results['explanation'] += f" | {frequency_warning}"
             print(f"⚠️ FREQUENCY WARNING: {frequency_warning}")
 
+        # Splice-suspect safety clamp: ensure minimum VUS-P when variant_type indicates possible splicing
+        try:
+            if (variant_type or '').lower().startswith('splice'):
+                current = results.get('final_classification') or 'VUS'
+                if self._get_severity_level(current) < self._get_severity_level('VUS-P'):
+                    results['final_classification'] = 'VUS-P'
+                    # Keep the same numeric score; this is a safety floor on the label
+                    note = 'Splice-suspect guard: minimum classification clamped to VUS-P for safety'
+                    results['explanation'] = (results.get('explanation') + ' | ' + note).strip(' |')
+                    # Append review flag if present
+                    if 'review_flags' in results and results['review_flags'] and results['review_flags'] != 'None':
+                        results['review_flags'] += ',SPLICE_SUSPECT_MIN_CLAMP'
+                    else:
+                        results['review_flags'] = 'SPLICE_SUSPECT_MIN_CLAMP'
+                    # Nudge summary to reflect clamp
+                    if 'summary' in results and results['summary']:
+                        results['summary'] += ' [Clamp:VUS-P]'
+        except Exception:
+            pass
+        # 🛡️ SAFETY CLAMP: If we could not resolve a protein consequence (no p.HGVS)
+        # and there is no mechanistic signal (all analyzer scores == 0 or ERROR),
+        # do NOT default to Benign — conservatively clamp to VUS.
+        try:
+            import re
+            looks_protein = bool(re.match(r'^p\.', variant))
+            scores = results.get('scores', {}) or {}
+            scores_nonzero = any((v or 0.0) > 0.0 for v in scores.values())
+            if (not looks_protein) and (not scores_nonzero):
+                current = results.get('final_classification') or 'B'
+                if self._get_severity_level(current) < self._get_severity_level('VUS'):
+                    results['final_classification'] = 'VUS'
+                    note = 'No protein consequence resolved; conservative clamp to VUS'
+                    results['explanation'] = (results.get('explanation','') + ' | ' + note).strip(' |')
+                    # Add/append review flag
+                    if 'review_flags' in results and results['review_flags'] and results['review_flags'] != 'None':
+                        results['review_flags'] += ',NO_PROTEIN_CONSEQUENCE'
+                    else:
+                        results['review_flags'] = 'NO_PROTEIN_CONSEQUENCE'
+                    # Nudge summary to reflect clamp
+                    if 'summary' in results and results['summary']:
+                        results['summary'] += ' [Clamp:VUS]'
+        except Exception:
+            pass
+
+
         # Cleanup
         self.cleanup()
 
         return results
 
-    def _get_conservation_multiplier(self, gene: str, variant: str, uniprot_id: str, gnomad_freq: float = 0.0) -> float:
+    def _get_conservation_multiplier(self, gene: str, variant: str, uniprot_id: str, gnomad_freq: float = 0.0, direct_score: Optional[float] = None) -> float:
         """
         🧬 EVOLUTIONARY INTELLIGENCE: Get conservation-based multiplier
 
@@ -592,6 +685,25 @@ class CascadeAnalyzer:
         Returns:
             Conservation multiplier (0.8-2.0x based on evolutionary constraint)
         """
+        # ✨ LUMEN'S FIX: Prioritize direct score from the batch processor if available!
+        if direct_score is not None:
+            phylop_score = direct_score
+            if phylop_score >= 7.0:
+                multiplier = 2.5
+            elif phylop_score >= 5.0:
+                multiplier = 2.0
+            elif phylop_score >= 3.0:
+                multiplier = 1.5
+            elif phylop_score >= 1.0:
+                multiplier = 1.2
+            elif phylop_score >= -1.0:
+                multiplier = 0.9  # Avoid 1.0 for real data
+            else:
+                multiplier = 0.8
+            print(f"🎯 Using direct conservation score {direct_score:.3f} -> {multiplier:.1f}x multiplier")
+            return multiplier
+
+        # Fallback to original logic if no direct score is provided
         try:
             # 🔥 COORDINATE LOOKUP: Check temporary coordinates from batch processor
             variant_key = f"{gene}_{variant}"
@@ -930,12 +1042,24 @@ class CascadeAnalyzer:
             Comprehensive cascade analysis results (legacy DN-first approach)
         """
 
-        # Get UniProt ID - try hardcoded first, then dynamic lookup
+        # Get UniProt ID - try hardcoded first, then OFFLINE mapper, then (last resort) dynamic lookup
         uniprot_id = self.gene_to_uniprot.get(gene)
         if not uniprot_id:
-            print(f"🔍 Gene {gene} not in hardcoded mappings, searching UniProt...")
-            # Use the existing UniversalProteinAnnotator to find UniProt ID
-            from universal_protein_annotator import UniversalProteinAnnotator
+            try:
+                # Prefer offline mapping from local idmapping (no network)
+                from AdaptiveInterpreter.analyzers.uniprot_mapper import UniProtMapper
+                offline_mapper = UniProtMapper()
+                offline_id = offline_mapper.gene_name_to_uniprot(gene)
+                if offline_id:
+                    uniprot_id = offline_id
+                    print(f"✅ Offline UniProt mapping for {gene}: {uniprot_id}")
+            except Exception as off_e:
+                print(f"⚠️ Offline UniProt mapping failed for {gene}: {off_e}")
+
+        if not uniprot_id:
+            print(f"🔍 Gene {gene} not in mappings, attempting UniProt search (network)...")
+            # Use the existing UniversalProteinAnnotator to find UniProt ID (offline-friendly)
+            from AdaptiveInterpreter.data_processing.universal_protein_annotator import UniversalProteinAnnotator
             annotator = UniversalProteinAnnotator()
             uniprot_id = annotator._find_uniprot_id(gene)
 

@@ -234,8 +234,58 @@ def classify_gene_family(gene_symbol: str, uniprot_function: str, go_terms: List
 # STEP 2 + 4: PLAUSIBILITY FILTER
 # ======================================================
 
+def _dn_evidence_score(gene_symbol: str, uniprot_function: str = "", go_terms: List[str] | None = None) -> tuple[float, list[str]]:
+    """Heuristic dominant-negative evidence score from local text signals.
+    - Searches UniProt function text for phrases like 'dominant negative'.
+    - Optionally looks at GO terms (rare direct hits expected).
+    Returns (score, hits).
+    """
+    if go_terms is None:
+        go_terms = []
+    score = 0.0
+    hits: list[str] = []
+    func = (uniprot_function or "").lower()
+    # Core phrases
+    patterns = [
+        "dominant negative",
+        "dominant-negative",
+        "exerts a dominant negative",
+        "acts in a dominant negative",
+    ]
+    for p in patterns:
+        if p in func:
+            score += 1.0
+            hits.append(f"uniprot:{p}")
+            break
+    # GO rarely encodes this explicitly; keep very conservative
+    for term in go_terms:
+        t = (term or "").lower()
+        if "dominant-negative" in t or "dominant negative" in t:
+            score += 0.5
+            hits.append("go:dominant-negative")
+            break
+    return score, hits
+
+
+def _adjust_dn_weight(base_weight: float, evidence_score: float) -> float:
+    """Map evidence score → adjusted DN weight conservatively.
+    - strong (>=1.0): at least 1.0
+    - moderate (>=0.5): at least 0.9
+    - else: unchanged
+    """
+    if evidence_score >= 1.0:
+        return max(base_weight, 1.0)
+    if evidence_score >= 0.5:
+        return max(base_weight, 0.9)
+    return base_weight
+
+
 def apply_pathogenicity_filter(
-    raw_scores: Dict[str, float], gene_family: str
+    raw_scores: Dict[str, float],
+    gene_family: str,
+    gene_symbol: str = "",
+    uniprot_function: str = "",
+    go_terms: List[str] | None = None,
 ) -> Dict[str, Dict[str, Any]]:
     """
     Apply gene-family-specific plausibility rules to raw mechanism scores.
@@ -243,32 +293,56 @@ def apply_pathogenicity_filter(
     Args:
         raw_scores: dict of {mechanism: score}
         gene_family: str, e.g. "ENZYME", "ION_CHANNEL"
+        gene_symbol/uniprot_function/go_terms: used for DN evidence-based adjustment
 
     Returns:
-        dict with mechanism → {raw_score, weighted_score, status, rationale}
+        dict with mechanism → {raw_score, weighted_score, status, rationale, ...}
     """
+    if go_terms is None:
+        go_terms = []
     rules = PATHOGENICITY_RULES.get(gene_family, PATHOGENICITY_RULES["GENERAL"])
     filtered: Dict[str, Dict[str, Any]] = {}
 
+    # Compute DN evidence once per gene
+    dn_ev_score, dn_ev_hits = _dn_evidence_score(gene_symbol, uniprot_function, go_terms)
+
     for mech, score in raw_scores.items():
-        weight = rules.get(mech, 0.0)
+        base_weight = rules.get(mech, 0.0)
+        weight = base_weight
+        evidence_applied = False
+        if mech == "DN":
+            new_weight = _adjust_dn_weight(base_weight, dn_ev_score)
+            if new_weight != base_weight:
+                weight = new_weight
+                evidence_applied = True
         weighted = score * weight
 
         if weight == 1.0:
             status = "kept"
-        elif weight == 0.5 or weight == 0.25:
+        elif weight in (0.5, 0.25, 0.8, 0.9):
             status = "downweighted"
-        else:
+        elif weight == 0.0:
             status = "zeroed"
+        else:
+            status = "weighted"
 
         rationale = f"{mech} {status} for {gene_family} (weight {weight})"
-
-        filtered[mech] = {
+        entry = {
             "raw_score": score,
             "weighted_score": weighted,
             "status": status,
             "rationale": rationale,
         }
+        if mech == "DN":
+            entry.update({
+                "dn_weight_base": base_weight,
+                "dn_weight_final": weight,
+                "dn_evidence_score": dn_ev_score,
+                "dn_evidence_hits": dn_ev_hits,
+                "dn_evidence_applied": evidence_applied,
+            })
+
+        filtered[mech] = entry
 
     return filtered
 
@@ -308,7 +382,13 @@ def plausibility_pipeline(
     gene_family = classify_gene_family(gene_symbol, uniprot_function, go_terms, override_family)
 
     # Step 3-4: apply plausibility filter
-    filtered = apply_pathogenicity_filter(raw_scores, gene_family)
+    filtered = apply_pathogenicity_filter(
+        raw_scores,
+        gene_family,
+        gene_symbol=gene_symbol,
+        uniprot_function=uniprot_function,
+        go_terms=go_terms,
+    )
 
     # Step 5-6: extract final weighted scores for downstream use
     final_scores = {mech: vals["weighted_score"] for mech, vals in filtered.items()}
