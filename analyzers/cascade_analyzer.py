@@ -30,6 +30,7 @@ from AdaptiveInterpreter import config
 from AdaptiveInterpreter.nova_dn.analyzer import NovaDNAnalyzer
 from AdaptiveInterpreter.analyzers.lof_analyzer import LOFAnalyzer
 from AdaptiveInterpreter.analyzers.gof_variant_analyzer import GOFVariantAnalyzer
+from AdaptiveInterpreter.analyzers.interface_analyzer import InterfaceAnalyzer  # 🔗 DOMAIN INTERFACE DETECTION!
 from AdaptiveInterpreter.analyzers.population_frequency_analyzer import PopulationFrequencyAnalyzer  # 🌍
 from AdaptiveInterpreter.nova_dn.alphafold_sequence import AlphaFoldSequenceExtractor
 from AdaptiveInterpreter.nova_dn.sequence_manager import SequenceManager
@@ -66,6 +67,7 @@ class CascadeAnalyzer:
         self.conservation_db = ConservationDatabase(data_path=conservation_data_path)  # 🧬 EVOLUTIONARY INTELLIGENCE!
         self.lof_analyzer = LOFAnalyzer(offline_mode=True, conservation_db=self.conservation_db)
         self.gof_analyzer = GOFVariantAnalyzer(offline_mode=True)
+        self.interface_analyzer = InterfaceAnalyzer()  # 🔗 DOMAIN INTERFACE DISRUPTION DETECTION!
         self.sequence_manager = SequenceManager()
         self.biological_router = BiologicalRouter()  # 🧬 NEW: Smart routing!
         self.proline_ml = ProlineMLIntegrator(alphafold_path=alphafold_path)  # 🔥 REVOLUTIONARY ML!
@@ -269,7 +271,46 @@ class CascadeAnalyzer:
         conservation_multiplier = self._get_conservation_multiplier(gene, variant, uniprot_id, gnomad_freq, conservation_score)
         print(f"🧬 Using conservation multiplier: {conservation_multiplier:.1f}x")
 
-        # 🧬 STEP 3: Run Analyzers with LOF-First Logic
+        # 🧬 STEP 3: Check for Domain Interface Disruption (THE MISSING MECHANISM!)
+        interface_result = None
+        interface_multiplier = 1.0
+
+        # Extract position and amino acids from variant
+        import re
+        match = re.search(r'p\.([A-Z][a-z]{2}|[A-Z])(\d+)([A-Z][a-z]{2}|[A-Z]|\*)', variant)
+        if match:
+            ref_aa_raw, position_str, alt_aa_raw = match.groups()
+            position = int(position_str)
+
+            # Convert three-letter to single-letter if needed
+            aa_map = {'Ala': 'A', 'Arg': 'R', 'Asn': 'N', 'Asp': 'D', 'Cys': 'C',
+                     'Gln': 'Q', 'Glu': 'E', 'Gly': 'G', 'His': 'H', 'Ile': 'I',
+                     'Leu': 'L', 'Lys': 'K', 'Met': 'M', 'Phe': 'F', 'Pro': 'P',
+                     'Ser': 'S', 'Thr': 'T', 'Trp': 'W', 'Tyr': 'Y', 'Val': 'V'}
+            ref_aa = aa_map.get(ref_aa_raw, ref_aa_raw)
+            alt_aa = aa_map.get(alt_aa_raw, alt_aa_raw) if alt_aa_raw != '*' else '*'
+
+            # Run interface analysis
+            try:
+                interface_result = self.interface_analyzer.analyze_interface(
+                    gene=gene,
+                    variant=variant,
+                    uniprot_id=uniprot_id,
+                    position=position,
+                    ref_aa=ref_aa,
+                    alt_aa=alt_aa
+                )
+
+                if interface_result['is_interface']:
+                    # Interface disruption boosts LOF and DN scores!
+                    interface_multiplier = 1.0 + interface_result['interface_score']
+                    print(f"🔗 INTERFACE DISRUPTION DETECTED!")
+                    print(f"   Interface multiplier: {interface_multiplier:.2f}x")
+                    print(f"   Mechanism: {interface_result['disruption_mechanism']}")
+            except Exception as e:
+                print(f"⚠️  Interface analysis failed: {e}")
+
+        # 🧬 STEP 4: Run Analyzers with LOF-First Logic
         analyzer_results = {}
 
         # 🔥 REN'S BRILLIANT INSIGHT: LOF first, skip GOF if protein is broken!
@@ -286,13 +327,27 @@ class CascadeAnalyzer:
 
             if analyzer_results['LOF']['success']:
                 lof_score = analyzer_results['LOF']['score']
-                print(f"🎯 LOF score: {lof_score:.3f} (raw, before conservation)")
+                print(f"🎯 LOF score: {lof_score:.3f} (raw, before interface boost)")
+
+                # 🔗 Apply interface multiplier to LOF!
+                if interface_multiplier > 1.0:
+                    lof_score_boosted = lof_score * interface_multiplier
+                    analyzer_results['LOF']['score'] = lof_score_boosted
+                    lof_score = lof_score_boosted
+                    print(f"🔗 LOF boosted by interface: {lof_score:.3f} ({interface_multiplier:.2f}x)")
 
         # Always run DN (can coexist with broken proteins - misfolded can still poison) - NO CONSERVATION BOOST YET!
         if 'DN' in analyzers_to_run:
             print(f"🧬 Running DN analysis...")
             # 🔥 REN'S BRILLIANT FIX: No conservation boost here - apply at the end!
             analyzer_results['DN'] = self._run_dn_analysis(gene, variant, sequence, uniprot_id, conservation_multiplier=1.0)
+
+            # 🔗 Apply interface multiplier to DN!
+            if analyzer_results['DN']['success'] and interface_multiplier > 1.0:
+                dn_score = analyzer_results['DN']['score']
+                dn_score_boosted = dn_score * interface_multiplier
+                analyzer_results['DN']['score'] = dn_score_boosted
+                print(f"🔗 DN boosted by interface: {dn_score:.3f} → {dn_score_boosted:.3f} ({interface_multiplier:.2f}x)")
 
         # 🔥 BIOLOGICAL LOGIC: Skip GOF if protein is definitely broken (LOF ≥ 0.5)
         if 'GOF' in analyzers_to_run:
