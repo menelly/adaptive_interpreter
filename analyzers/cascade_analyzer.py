@@ -1406,24 +1406,52 @@ class CascadeAnalyzer:
         - Stop codon loss = Auto-P (read-through effects)
 
         Args:
-            variant: Variant in p.RefPosAlt format (e.g., 'p.M1L')
-            variant_type: Type of variant ('missense', 'nonsense', etc.)
+            variant: Variant in p.RefPosAlt format (e.g., 'p.M1L', 'p.Met1?', 'p.Arg123*')
+            variant_type: Type of variant ('missense', 'nonsense', 'start_loss', etc.)
 
         Returns:
             Dict with is_critical flag and explanation
         """
         import re
 
+        # 🚨 START LOSS: Check variant_type first (most reliable)
+        if variant_type == 'start_loss':
+            return {
+                'is_critical': True,
+                'explanation': f"Start codon loss ({variant}): Complete loss of protein production - Auto-Pathogenic"
+            }
+
+        # 🚨 START LOSS: Check variant string for Met1 or M1 patterns
+        # Handles: p.Met1?, p.Met1Leu, p.M1?, p.M1L
+        if variant.startswith('p.Met1') or variant.startswith('p.M1'):
+            return {
+                'is_critical': True,
+                'explanation': f"Start codon loss ({variant}): Complete loss of protein production - Auto-Pathogenic"
+            }
+
         # Extract position and amino acids from variant
-        match = re.search(r'p\.([A-Z*])(\d+)([A-Z*])', variant)
-        if not match:
-            return {'is_critical': False, 'explanation': ''}
+        # Try three-letter code first: p.Met123Leu
+        match = re.search(r'p\.([A-Z][a-z]{2})(\d+)([A-Z][a-z]{2}|\*|\?)', variant)
+        if match:
+            ref_aa_3letter, position, alt_aa_3letter = match.groups()
+            position = int(position)
+            # Convert to single letter for comparison
+            aa_map = {'Met': 'M', 'Leu': 'L', 'Arg': 'R', 'Gly': 'G', 'Cys': 'C',
+                     'Pro': 'P', 'Ala': 'A', 'Val': 'V', 'Ile': 'I', 'Thr': 'T',
+                     'Ser': 'S', 'Asn': 'N', 'Gln': 'Q', 'Asp': 'D', 'Glu': 'E',
+                     'Lys': 'K', 'His': 'H', 'Phe': 'F', 'Tyr': 'Y', 'Trp': 'W'}
+            ref_aa = aa_map.get(ref_aa_3letter, ref_aa_3letter[0])
+            alt_aa = aa_map.get(alt_aa_3letter, alt_aa_3letter[0]) if alt_aa_3letter not in ['*', '?'] else alt_aa_3letter
+        else:
+            # Try single-letter code: p.M123L or p.R123*
+            match = re.search(r'p\.([A-Z*])(\d+)([A-Z*?])', variant)
+            if not match:
+                return {'is_critical': False, 'explanation': ''}
+            ref_aa, position, alt_aa = match.groups()
+            position = int(position)
 
-        ref_aa, position, alt_aa = match.groups()
-        position = int(position)
-
-        # 🚨 START CODON LOSS (M1X)
-        if position == 1 and ref_aa == 'M' and alt_aa != 'M':
+        # 🚨 START CODON LOSS (M1X where X != M)
+        if position == 1 and ref_aa == 'M' and alt_aa not in ['M', '?']:
             return {
                 'is_critical': True,
                 'explanation': f"Start codon loss (M1{alt_aa}): Complete loss of protein production - Auto-Pathogenic"

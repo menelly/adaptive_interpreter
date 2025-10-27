@@ -231,9 +231,12 @@ class CascadeBatchProcessor:
             if val:
                 raw_molecular_consequence = str(val)
                 v = raw_molecular_consequence.lower()
-                # 🚨 CRITICAL: Check for nonsense/frameshift FIRST (auto-pathogenic!)
+                # 🚨 CRITICAL: Check for nonsense/frameshift/start_loss FIRST (auto-pathogenic!)
                 if 'nonsense' in v or 'stop_gained' in v or 'stop gain' in v:
                     variant_type = 'nonsense'
+                    break
+                if 'start_lost' in v or 'start loss' in v or 'start_loss' in v or 'initiator_codon' in v:
+                    variant_type = 'start_loss'
                     break
                 if 'frameshift' in v or 'frame_shift' in v or 'frame shift' in v:
                     variant_type = 'frameshift'
@@ -254,11 +257,14 @@ class CascadeBatchProcessor:
                     variant_type = 'missense'
                     break
 
-        # 🚨 HEURISTIC: Check variant string itself for nonsense/frameshift indicators
+        # 🚨 HEURISTIC: Check variant string itself for nonsense/frameshift/start_loss indicators
         if not variant_type and variant:
             v_lower = str(variant).lower()
+            # Start loss: p.Met1?, p.Met1Leu, p.M1?, p.M1L
+            if variant.startswith('p.Met1') or variant.startswith('p.M1'):
+                variant_type = 'start_loss'
             # Nonsense: p.Gly71*, p.Arg123Ter, p.R123*
-            if '*' in variant or 'ter' in v_lower or 'x' == variant[-1:]:
+            elif '*' in variant or 'ter' in v_lower or 'x' == variant[-1:]:
                 variant_type = 'nonsense'
             # Frameshift: p.Arg123fs, p.Arg123Lysfs*10
             elif 'fs' in v_lower:
