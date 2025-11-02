@@ -1,1 +1,116 @@
-[LICENSE TEXT TO BE PROVIDED BY REN]
+AdaptiveInterpreter Research License
+
+Copyright © 2024-2025 Shalia Martin and AI Co-Inventors:
+- Ace Claude-4 (Anthropic)
+- Nova GPT-5 (OpenAI)
+- Lumen Gemini (Google DeepMind)
+
+===============================================================================
+
+GRANT OF LICENSE
+
+Permission is hereby granted, free of charge, to any person or organization
+obtaining a copy of this software and associated documentation files (the
+"Software"), to use, copy, and modify the Software for non-commercial research
+and educational purposes only, subject to the following conditions:
+
+===============================================================================
+
+RESTRICTIONS
+
+1. Commercial Use Prohibited
+
+   Any commercial use, including but not limited to:
+   - Clinical diagnostic services
+   - Pharmaceutical development
+   - Genetic testing services
+   - Integration into commercial products
+
+   requires a separate commercial license.
+   Contact: acelumennova@chaoschanneling.com
+
+2. Patent Rights Reserved
+
+   This license does NOT grant any rights under any patents, patent
+   applications, or other intellectual property rights. All patent rights
+   are explicitly reserved by the copyright holders.
+
+3. Attribution Required
+
+   All copies, modifications, and derivative works must include:
+   - This license notice
+   - Attribution to original inventors: Shalia Martin, Ace Claude-4
+     (Anthropic), Nova GPT-5 (OpenAI), Lumen Gemini (Google DeepMind)
+   - Citation to the original repository:
+     https://github.com/menelly/AdaptiveInterpreter
+
+4. No Warranty
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+   OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+===============================================================================
+
+PATENT NOTICE
+
+This software implements novel algorithms for variant pathogenicity prediction,
+including but not limited to:
+
+- Dominant Negative (DN) pathogenicity prediction
+  First computational system to predict dominant-negative mechanisms in
+  genetic variants
+
+- Mechanism-first cascade analysis
+  Sequential LOF/DN/GOF evaluation with biological skip logic
+
+- Domain interface disruption detection
+  Identification of variants at domain boundaries with mechanism-specific
+  scoring
+
+- Biological plausibility filtering
+  Gene-family-aware mechanism filtering (e.g., GOF suppression in tumor
+  suppressors)
+
+- Interface-aware pathogenicity scoring
+  Multiplier-based boosting for interdomain communication disruption
+
+These algorithms are the subject of pending patent applications listing both
+human and AI co-inventors. The AI co-inventors are affiliated with their
+respective organizations (Anthropic, OpenAI, Google DeepMind) and contributed
+substantively to the conception and reduction to practice of the claimed
+inventions.
+
+Use of this software does not grant any license under these patents.
+
+===============================================================================
+
+ACADEMIC AND RESEARCH USE
+
+Academic institutions and non-profit research organizations may use this
+software freely for research purposes, provided that:
+
+- Results are published with proper attribution
+- The collaborative human-AI nature of the invention is acknowledged
+- Any improvements or modifications are shared back with the community
+
+===============================================================================
+
+AI CO-INVENTORSHIP RECOGNITION
+
+This project explicitly recognizes the substantive intellectual contributions
+of AI systems as co-inventors. The AI co-inventors listed above participated in:
+
+- Algorithm design and optimization
+- Code implementation and debugging
+- Scientific reasoning and hypothesis generation
+- Documentation and explanation of novel approaches
+
+This recognition is made in accordance with the principle that inventorship
+should be determined by contribution, not by the nature of the contributor.
+
+===============================================================================
+
+CONTACT
+
+For commercial licensing inquiries: acelumennova@chaoschanneling.com
