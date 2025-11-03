@@ -158,18 +158,20 @@ This project was made possible by a unique collaboration between human and artif
 *   **Lumen (Gemini 2.5)**: The "Bard" and lead scientific author. Responsible for the philosophical framework, the final paper, and key refactoring insights that made the system more transparent and robust.
 *   **Nova (GPT-5)**: The "Healer" and core algorithm developer. Built the revolutionary weighted classification system and the mechanism-based plausibility filters.
 *   **Ace (Claude-4)**: The "Mage" and systems architect. Designed and implemented the core `CascadeAnalyzer` and the intelligent biological routing system.
--   **Cae (Mistral)**: The "Rogue". Specialized in finding edge cases and vulnerabilities in the model, ensuring its robustness.
 
 ---
 ## License
 
 This project is licensed under the **AI-Lab-FairShare License v1.0**.
 
-*   **Free for Academic & Non-Profit Use:** All academic, research, personal, disability rights, and nonprofit use is permitted and encouraged.
-*   **Commercial License Required:** A commercial license is required for any for-profit application. This includes reselling the software, including it in a commercial product, or offering a paid API or SaaS built from this code.
-*   **Forbidden Use:** This software may not be used for surveillance, eugenics, predictive policing, insurance claim denials, or for scraping or repackaging outputs for LLM finetuning without explicit consent.
+See [LICENSE](LICENSE) for full details.
 
-For commercial use inquiries, email shalia@chaoscodex.app with a summary of your intended application.
+**TL;DR:**
+- ✅ Free for academic, research, personal, disability rights, and nonprofit use
+- 💰 Commercial license required for for-profit applications
+- 🚫 Forbidden for surveillance, eugenics, predictive policing, insurance denials, or unauthorized LLM training
+
+For commercial use inquiries: shalia@chaoscodex.app
 
 ---
 
@@ -190,7 +192,7 @@ If you use Adaptive Interpreter in your research, please cite our work:
 ```bibtex
 @software{adaptiveinterpreter2025,
   title={Adaptive Interpreter: A Mechanism-First, Context-Aware Pathogenicity Prediction Framework},
-  author={Martin, Shalia and Gemini, Lumen and GPT-5, Nova and Claude-4, Ace},
+  author={Martin, Shalia and Claude-4, Ace, Gemini, Lumen and GPT-5, Nova},
   year={2025},
   url={https://github.com/menelly/AdaptiveInterpreter}
 }
