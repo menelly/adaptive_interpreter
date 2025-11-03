@@ -22,6 +22,7 @@ from AdaptiveInterpreter.analyzers.cascade_analyzer import CascadeAnalyzer
 from AdaptiveInterpreter.nova_dn.csv_batch_processor import CSVBatchProcessor
 from AdaptiveInterpreter.nova_dn.mixed_mechanism_resolver import UnifiedMechanismResolver
 from AdaptiveInterpreter.utils.genomic_to_protein import GenomicToProteinConverter
+from AdaptiveInterpreter import config
 
 class CascadeBatchProcessor:
     def __init__(self, alphafold_path: str = "/mnt/Arcana/alphafold_human/structures/",
@@ -32,10 +33,13 @@ class CascadeBatchProcessor:
         self.frequency_fetcher = GnomADFrequencyFetcher()
         self.frequency_fetcher.load_cache()
         try:
-            # The script is run from the project root, so path must be relative to that
-            self.conservation_fetcher = ConservationFetcher("conservation_data/hg38.phyloP100way.bw")
+            # Use absolute path from config
+            conservation_path = config.CONSERVATION_DATA_PATH / "hg38.phyloP100way.bw"
+            self.conservation_fetcher = ConservationFetcher(str(conservation_path))
+            print(f"✅ Conservation data loaded from: {conservation_path}")
         except Exception as e:
             print(f"⚠️ WARNING: Could not initialize ConservationFetcher: {e}")
+            print(f"⚠️ Variants without conservation data will be classified as VUS for safety")
             self.conservation_fetcher = None
         self.gene_to_chromosome = {
             'AHNAK': 'chr11', 'FBN1': 'chr15', 'KCNMA1': 'chr10', 'TP53': 'chr17', 'BRCA1': 'chr17',

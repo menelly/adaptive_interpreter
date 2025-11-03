@@ -271,6 +271,13 @@ class CascadeAnalyzer:
         conservation_multiplier = self._get_conservation_multiplier(gene, variant, uniprot_id, gnomad_freq, conservation_score)
         print(f"🧬 Using conservation multiplier: {conservation_multiplier:.1f}x")
 
+        # 🛡️ SAFETY: If conservation data is missing (multiplier = 1.0 and no direct score),
+        # flag for review - we can't be confident without evolutionary data
+        if conservation_score is None and conservation_multiplier == 1.0:
+            print(f"⚠️ WARNING: No conservation data available for {gene} {variant}")
+            results['review_flags'] = 'MISSING_CONSERVATION'
+            results['conservation_data_missing'] = True
+
         # 🧬 STEP 3: Check for Domain Interface Disruption (THE MISSING MECHANISM!)
         interface_result = None
         interface_multiplier = 1.0
@@ -736,6 +743,57 @@ class CascadeAnalyzer:
                     # Nudge summary to reflect clamp
                     if 'summary' in results and results['summary']:
                         results['summary'] += ' [Clamp:VUS]'
+        except Exception:
+            pass
+
+        # 🛡️ CONSERVATION SAFETY CLAMP: If conservation data is missing,
+        # we can't confidently call variants benign - clamp to VUS for safety
+        try:
+            if results.get('conservation_data_missing', False):
+                current = results.get('final_classification') or 'B'
+                # Only clamp if we would have called it benign/likely benign
+                if current in ['B', 'LB', 'B/LB']:
+                    results['final_classification'] = 'VUS'
+                    note = 'Missing conservation data; cannot confidently classify as benign - clamped to VUS for safety'
+                    results['explanation'] = (results.get('explanation','') + ' | ' + note).strip(' |')
+                    # Add/append review flag
+                    if 'review_flags' in results and results['review_flags'] and results['review_flags'] != 'None':
+                        if 'MISSING_CONSERVATION' not in results['review_flags']:
+                            results['review_flags'] += ',MISSING_CONSERVATION_CLAMP'
+                    else:
+                        results['review_flags'] = 'MISSING_CONSERVATION_CLAMP'
+                    # Nudge summary to reflect clamp
+                    if 'summary' in results and results['summary']:
+                        results['summary'] += ' [Clamp:VUS-NoConservation]'
+                    print(f"🛡️ SAFETY: Clamped {current} → VUS due to missing conservation data")
+        except Exception:
+            pass
+
+        # 🛡️ SEQUENCE MISMATCH SAFETY CLAMP: If we have isoform mismatches,
+        # we're analyzing the WRONG sequence - clamp to VUS for safety
+        try:
+            # Check if LOF analysis detected sequence mismatch
+            lof_details = results.get('lof_details', {})
+            has_sequence_mismatch = lof_details.get('sequence_mismatch', False)
+
+            if has_sequence_mismatch:
+                current = results.get('final_classification') or 'B'
+                # Only clamp if we would have called it benign/likely benign
+                if current in ['B', 'LB', 'B/LB']:
+                    results['final_classification'] = 'VUS'
+                    mismatch_info = lof_details.get('mismatch_info', {})
+                    likely_cause = mismatch_info.get('likely_cause', 'isoform_difference')
+                    note = f'Sequence mismatch detected ({likely_cause}); cannot confidently classify as benign - clamped to VUS for safety'
+                    results['explanation'] = (results.get('explanation','') + ' | ' + note).strip(' |')
+                    # Add/append review flag
+                    if 'review_flags' in results and results['review_flags'] and results['review_flags'] != 'None':
+                        results['review_flags'] += ',SEQUENCE_MISMATCH_CLAMP'
+                    else:
+                        results['review_flags'] = 'SEQUENCE_MISMATCH_CLAMP'
+                    # Nudge summary to reflect clamp
+                    if 'summary' in results and results['summary']:
+                        results['summary'] += ' [Clamp:VUS-IsoformMismatch]'
+                    print(f"🛡️ SAFETY: Clamped {current} → VUS due to sequence mismatch ({likely_cause})")
         except Exception:
             pass
 
