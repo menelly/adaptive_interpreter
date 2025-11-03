@@ -8,7 +8,7 @@ To install:
 from setuptools import setup, find_packages
 
 setup(
-    name="adaptiveinterpreter",
+    name="AdaptiveInterpreter",
     version="1.0.0",
     author="Ace, Nova, Ren, and Lumen",
     author_email="shalia@chaoscodex.app",
