@@ -380,13 +380,107 @@ class OfflineGenomicToProteinConverter:
             return None
 
 
-if __name__ == "__main__":
-    print("🧬 Testing Offline Genomic-to-Protein Converter")
-    print("=" * 60)
-    
+def convert_tsv_file(input_file: str, output_file: str):
+    """
+    Convert a TSV file with genomic HGVS to protein HGVS using OFFLINE converter
+
+    Args:
+        input_file: Path to input TSV file
+        output_file: Path to output TSV file
+    """
+    import pandas as pd
+    import sys
+
+    print(f"🔬 Converting {input_file}")
+    print(f"📝 Output: {output_file}")
+
+    # Read input file
+    df = pd.read_csv(input_file, sep='\t')
+    print(f"📊 Loaded {len(df)} variants")
+
+    # Initialize converter
     converter = OfflineGenomicToProteinConverter()
-    
-    # Test with FKRP variant
-    result = converter.convert("chr19", 46755451, "A", "C", "FKRP")
-    print(f"\n✅ Result: {result}")
+
+    # Process each variant
+    converted = 0
+    skipped = 0
+    failed = 0
+
+    for idx, row in df.iterrows():
+        if idx % 100 == 0:
+            print(f"   Processing {idx}/{len(df)}...", end='\r')
+
+        hgvs_p = row.get('hgvs_p', '')
+        hgvs_g = row.get('hgvs_g', '')
+        gene = row.get('gene', '')
+
+        # Convert NaN to empty string
+        if pd.isna(hgvs_p):
+            hgvs_p = ''
+        if pd.isna(hgvs_g):
+            hgvs_g = ''
+
+        # If already has protein HGVS, skip
+        if hgvs_p and str(hgvs_p).strip():
+            skipped += 1
+            continue
+
+        # Parse genomic HGVS (e.g., NC_000001.11:g.236686164C>T)
+        if hgvs_g:
+            # Try NC_ format first
+            match = re.match(r'NC_(\d+)\.\d+:g\.(\d+)([ACGT])>([ACGT])', str(hgvs_g))
+            if match:
+                nc_num = int(match.group(1))
+                pos = int(match.group(2))
+                ref = match.group(3)
+                alt = match.group(4)
+
+                # Convert NC_ to chromosome (NC_000001 = chr1, etc.)
+                # NC_000023 = chrX, NC_000024 = chrY
+                if nc_num == 23:
+                    chrom = "chrX"
+                elif nc_num == 24:
+                    chrom = "chrY"
+                else:
+                    chrom = f"chr{nc_num}"
+
+                try:
+                    result = converter.convert(chrom, pos, ref, alt, str(gene))
+                    if result:
+                        df.at[idx, 'hgvs_p'] = result
+                        converted += 1
+                    else:
+                        failed += 1
+                except Exception as e:
+                    failed += 1
+            else:
+                failed += 1
+
+    print(f"\n✅ Converted {converted}/{len(df)} variants")
+    print(f"⏭️  Skipped {skipped} (already had protein HGVS)")
+    print(f"❌ Failed {failed}")
+
+    # Write output file
+    df.to_csv(output_file, sep='\t', index=False)
+    print(f"💾 Saved to {output_file}")
+
+
+if __name__ == "__main__":
+    import sys
+
+    if len(sys.argv) == 3:
+        # File conversion mode
+        input_file = sys.argv[1]
+        output_file = sys.argv[2]
+        convert_tsv_file(input_file, output_file)
+    else:
+        # Test mode
+        print("🧬 Testing Offline Genomic-to-Protein Converter")
+        print("=" * 60)
+
+        converter = OfflineGenomicToProteinConverter()
+
+        # Test with FKRP variant
+        result = converter.convert("chr19", 46755451, "A", "C", "FKRP")
+        print(f"\n✅ Result: {result}")
 

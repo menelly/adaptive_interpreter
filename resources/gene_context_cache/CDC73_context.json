@@ -1,0 +1,124 @@
+{
+  "uniprot_id": "Q6P1J9",
+  "sequence_length": 531,
+  "function": "Tumor suppressor probably involved in transcriptional and post-transcriptional control pathways. May be involved in cell cycle progression through the regulation of cyclin D1/PRAD1 expression. Component of the PAF1 complex (PAF1C) which has multiple functions during transcription by RNA polymerase II and is implicated in regulation of development and maintenance of embryonic stem cell pluripotency. PAF1C associates with RNA polymerase II through interaction with POLR2A CTD non-phosphorylated and 'Ser-2'- and 'Ser-5'-phosphorylated forms and is involved in transcriptional elongation, acting both independently and synergistically with TCEA1 and in cooperation with the DSIF complex and HTATSF1. PAF1C is required for transcription of Hox and Wnt target genes. PAF1C is involved in hematopoiesis and stimulates transcriptional activity of KMT2A/MLL1; it promotes leukemogenesis through association with KMT2A/MLL1-rearranged oncoproteins, such as KMT2A/MLL1-MLLT3/AF9 and KMT2A/MLL1-MLLT1/ENL. PAF1C is involved in histone modifications such as ubiquitination of histone H2B and methylation on histone H3 'Lys-4' (H3K4me3). PAF1C recruits the RNF20/40 E3 ubiquitin-protein ligase complex and the E2 enzyme UBE2A or UBE2B to chromatin which mediate monoubiquitination of 'Lys-120' of histone H2B (H2BK120ub1); UB2A/B-mediated H2B ubiquitination is proposed to be coupled to transcription. PAF1C is involved in mRNA 3' end formation probably through association with cleavage and poly(A) factors. In case of infection by influenza A strain H3N2, PAF1C associates with viral NS1 protein, thereby regulating gene transcription. Connects PAF1C with the cleavage and polyadenylation specificity factor (CPSF) complex and the cleavage stimulation factor (CSTF) complex, and with Wnt signaling. Involved in polyadenylation of mRNA precursors",
+  "sequence": "MADVLSVLRQYNIQKKEIVVKGDEVIFGEFSWPKNVKTNYVVWGTGKEGQPREYYTLDSILFLLNNVHLSHPVYVRRAATENIPVVRRPDRKDLLGYLNGEASTSASIDRSAPLEIGLQRSTQVKRAADEVLAEAKKPRIEDEECVRLDKERLAARLEGHKEGIVQTEQIRSLSEAMSVEKIAAIKAKIMAKKRSTIKTDLDDDITALKQRSFVDAEVDVTRDIVSRERVWRTRTTILQSTGKNFSKNIFAILQSVKAREEGRAPEQRPAPNAAPVDPTLRTKQPIPAAYNRYDQERFKGKEETEGFKIDTMGTYHGMTLKSVTEGASARKTQTPAAQPVPRPVSQARPPPNQKKGSRTPIIIIPAATTSLITMLNAKDLLQDLKFVPSDEKKKQGCQRENETLIQRRKDQMQPGGTAISVTVPYRVVDQPLKLMPQDWDRVVAVFVQGPAWQFKGWPWLLPDGSPVDIFAKIKAFHLKYDEVRLDPNVQKWDVTVLELSYHKRHLDRPVFLRFWETLDRYMVKHKSHLRF",
+  "domains": [
+    {
+      "start": 1,
+      "end": 141,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 170,
+      "end": 262,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 273,
+      "end": 296,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 320,
+      "end": 397,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 411,
+      "end": 531,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1,
+      "end": 531,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "go_terms": [
+    "BHF-UCL",
+    "Cdc73/Paf1 complex",
+    "Ensembl",
+    "GO_Central",
+    "HPA",
+    "RNA polymerase II complex binding",
+    "UniProtKB",
+    "UniProtKB-KW",
+    "Wnt signaling pathway",
+    "cellular response to lipopolysaccharide",
+    "chromosome, telomeric region",
+    "cytosol",
+    "endodermal cell fate commitment",
+    "mRNA 3'-end processing",
+    "negative regulation of G1/S transition of mitotic cell cycle",
+    "negative regulation of apoptotic process",
+    "negative regulation of cell population proliferation",
+    "negative regulation of epithelial cell proliferation",
+    "negative regulation of fibroblast proliferation",
+    "negative regulation of myeloid cell differentiation",
+    "negative regulation of transcription by RNA polymerase II",
+    "nucleoplasm",
+    "nucleus",
+    "positive regulation of Wnt signaling pathway",
+    "positive regulation of cell cycle G1/S phase transition",
+    "positive regulation of mRNA 3'-end processing",
+    "positive regulation of transcription by RNA polymerase II",
+    "positive regulation of transcription elongation by RNA polymerase II",
+    "protein destabilization",
+    "regulation of cell growth",
+    "stem cell population maintenance",
+    "transcription elongation by RNA polymerase II"
+  ],
+  "go_ids": [
+    "GO:0000122",
+    "GO:0000781",
+    "GO:0000993",
+    "GO:0001558",
+    "GO:0001711",
+    "GO:0005634",
+    "GO:0005654",
+    "GO:0005829",
+    "GO:0006368",
+    "GO:0008285",
+    "GO:0016055",
+    "GO:0016593",
+    "GO:0019827",
+    "GO:0030177",
+    "GO:0031124",
+    "GO:0031442",
+    "GO:0031648",
+    "GO:0032968",
+    "GO:0043066",
+    "GO:0045638",
+    "GO:0045944",
+    "GO:0048147",
+    "GO:0050680",
+    "GO:0071222",
+    "GO:1902808",
+    "GO:2000134"
+  ],
+  "flexible_loops": [
+    263,
+    264,
+    265,
+    266,
+    267,
+    268,
+    269,
+    270,
+    271,
+    272
+  ],
+  "interface_regions": [
+    1,
+    524
+  ],
+  "gene": "CDC73",
+  "cached_at": "2025-01-27"
+}

@@ -1,0 +1,154 @@
+{
+  "uniprot_id": "Q02487",
+  "sequence_length": 901,
+  "function": "A component of desmosome cell-cell junctions which are required for positive regulation of cellular adhesion (PubMed:33596089). Promotes timely incorporation of DSG2 into desmosome intercellular junctions and promotes interaction of desmosome cell junctions with intermediate filament cytokeratin, via modulation of DSP phosphorylation (PubMed:33596089). Plays an important role in desmosome-mediated maintenance of intestinal epithelial cell intercellular adhesion strength and barrier function (PubMed:33596089). Positively regulates wound healing of intestinal mucosa via promotion of epithelial cell migration, and also plays a role in mechanotransduction of force between intestinal epithelial cells and extracellular matrix (PubMed:31967937). May contribute to epidermal cell positioning (stratification) by mediating differential adhesiveness between cells that express different isoforms. May promote p38MAPK signaling activation that facilitates keratinocyte migration (By similarity)",
+  "sequence": "MEAARPSGSWNGALCRLLLLTLAILIFASDACKNVTLHVPSKLDAEKLVGRVNLKECFTAANLIHSSDPDFQILEDGSVYTTNTILLSSEKRSFTILLSNTENQEKKKIFVFLEHQTKVLKKRHTKEKVLRRAKRRWAPIPCSMLENSLGPFPLFLQQVQSDTAQNYTIYYSIRGPGVDQEPRNLFYVERDTGNLYCTRPVDREQYESFEIIAFATTPDGYTPELPLPLIIKIEDENDNYPIFTEETYTFTIFENCRVGTTVGQVCATDKDEPDTMHTRLKYSIIGQVPPSPTLFSMHPTTGVITTTSSQLDRELIDKYQLKIKVQDMDGQYFGLQTTSTCIINIDDVNDHLPTFTRTSYVTSVEENTVDVEILRVTVEDKDLVNTANWRANYTILKGNENGNFKIVTDAKTNEGVLCVVKPLNYEEKQQMILQIGVVNEAPFSREASPRSAMSTATVTVNVEDQDEGPECNPPIQTVRMKENAEVGTTSNGYKAYDPETRSSSGIRYKKLTDPTGWVTIDENTGSIKVFRSLDREAETIKNGIYNITVLASDQGGRTCTGTLGIILQDVNDNSPFIPKKTVIICKPTMSSAEIVAVDPDEPIHGPPFDFSLESSTSEVQRMWRLKAINDTAARLSYQNDPPFGSYVVPITVRDRLGMSSVTSLDVTLCDCITENDCTHRVDPRIGGGGVQLGKWAILAILLGIALLFCILFTLVCGASGTSKQPKVIPDDLAQQNLIVSNTEAPGDDKVYSANGFTTQTVGASAQGVCGTVGSGIKNGGQETIEMVKGGHQTSESCRGAGHHHTLDSCRGGHTEVDNCRYTYSEWHSFTQPRLGEKVYLCNQDENHKHAQDYVLTYNYEGRGSVAGSVGCCSERQEEDGLEFLDNLEPKFRTLAEACMKR",
+  "domains": [
+    {
+      "start": 3,
+      "end": 100,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 123,
+      "end": 198,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 211,
+      "end": 268,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 294,
+      "end": 436,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 520,
+      "end": 731,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 751,
+      "end": 778,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 840,
+      "end": 901,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 16,
+      "end": 55,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 79,
+      "end": 167,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 372,
+      "end": 429,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 470,
+      "end": 548,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 616,
+      "end": 660,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 862,
+      "end": 901,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "go_terms": [
+    "BHF-UCL",
+    "Ensembl",
+    "GO_Central",
+    "HPA",
+    "InterPro",
+    "ProtInc",
+    "Reactome",
+    "UniProtKB",
+    "adherens junction",
+    "bundle of His cell-Purkinje myocyte adhesion involved in cell communication",
+    "calcium ion binding",
+    "cardiac muscle cell-cardiac muscle cell adhesion",
+    "cell adhesion",
+    "cell adhesive protein binding involved in bundle of His cell-Purkinje myocyte communication",
+    "cell-cell adhesion",
+    "cellular response to starvation",
+    "cornified envelope",
+    "cytoplasmic vesicle",
+    "desmosome",
+    "endoplasmic reticulum",
+    "extracellular exosome",
+    "homophilic cell adhesion via plasma membrane adhesion molecules",
+    "intercalated disc",
+    "plasma membrane",
+    "positive regulation of p38MAPK cascade",
+    "regulation of heart rate by cardiac conduction",
+    "regulation of ventricular cardiac muscle cell action potential"
+  ],
+  "go_ids": [
+    "GO:0001533",
+    "GO:0005509",
+    "GO:0005783",
+    "GO:0005886",
+    "GO:0005912",
+    "GO:0007155",
+    "GO:0007156",
+    "GO:0009267",
+    "GO:0014704",
+    "GO:0030057",
+    "GO:0031410",
+    "GO:0070062",
+    "GO:0086042",
+    "GO:0086073",
+    "GO:0086083",
+    "GO:0086091",
+    "GO:0098609",
+    "GO:0098911",
+    "GO:1900745"
+  ],
+  "flexible_loops": [
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65
+  ],
+  "interface_regions": [
+    12,
+    900
+  ],
+  "gene": "DSC2",
+  "cached_at": "2025-01-27"
+}

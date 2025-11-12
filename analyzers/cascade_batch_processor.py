@@ -173,6 +173,15 @@ class CascadeBatchProcessor:
         # Use protein HGVS when available and informative; otherwise fall back to genomic string for reporting
         variant = (variant_p if (variant_p and not protein_uninformative) else hgvs_g)
 
+        # 🚨 EARLY SKIP: If we don't have protein HGVS and only have genomic, skip it NOW
+        # This prevents wasting time on conversion attempts for non-coding variants
+        if not variant_p or protein_uninformative:
+            # No protein HGVS available - likely intronic/UTR, skip it
+            return {
+                'skipped': True,
+                'skip_reason': 'skipped_no_protein_consequence'
+            }
+
         # Parse genomic coordinates and alleles from hgvs_g like: NC_000017.11:g.50201411T>C
         chrom_num = None
         pos = None
@@ -215,13 +224,14 @@ class CascadeBatchProcessor:
                     pass
 
         # If not provided, early frequency lookup using coordinates (prefer coordinates we already have)
-        if gnomad_freq == 0.0 and chrom_num and pos and ref and alt:
-            try:
-                freq_result = self.frequency_fetcher.get_variant_frequency(chrom_num, pos, ref, alt)
-                gnomad_freq = float(freq_result.get('frequency', 0.0) or 0.0)
-                print(f"🌍 Pre-analysis frequency for {gene} {variant} at chr{chrom_num}:{pos} {ref}>{alt}: {gnomad_freq:.6f} (source: {freq_result.get('source','?')})")
-            except Exception as fe:
-                print(f"⚠️ Frequency lookup failed for {gene} {variant} at chr{chrom_num}:{pos} {ref}>{alt}: {fe}")
+        # 🚨 DISABLED: API calls are broken and slow - TSV already has frequencies!
+        # if gnomad_freq == 0.0 and chrom_num and pos and ref and alt:
+        #     try:
+        #         freq_result = self.frequency_fetcher.get_variant_frequency(chrom_num, pos, ref, alt)
+        #         gnomad_freq = float(freq_result.get('frequency', 0.0) or 0.0)
+        #         print(f"🌍 Pre-analysis frequency for {gene} {variant} at chr{chrom_num}:{pos} {ref}>{alt}: {gnomad_freq:.6f} (source: {freq_result.get('source','?')})")
+        #     except Exception as fe:
+        #         print(f"⚠️ Frequency lookup failed for {gene} {variant} at chr{chrom_num}:{pos} {ref}>{alt}: {fe}")
 
         # Derive/collect variant_type from ClinVar-style columns when present
         variant_type = None
@@ -299,8 +309,19 @@ class CascadeBatchProcessor:
                 if not variant_type:
                     variant_type = 'unknown'
 
+        # 🚨 SKIP variants with no protein consequence (intronic, UTR, etc.)
+        # These can't be analyzed by cascade and will just waste time
+        # Check if variant is still genomic (starts with NC_ or chr) or has no protein info
+        is_still_genomic = variant and (variant.startswith('NC_') or variant.startswith('chr'))
+        if is_still_genomic or variant_type in {'intronic', 'unknown'}:
+            return {
+                'skipped': True,
+                'skip_reason': 'skipped_no_protein_consequence'
+            }
+
         # Collect ClinVar-relevant passthroughs
-        clinical_sig = row.get('clinical_sig', '')
+        # Support both 'clinical_sig' and 'clinvar_sig' column names
+        clinical_sig = row.get('clinical_sig', row.get('clinvar_sig', ''))
         review_status = row.get('review_status', row.get('ReviewStatus', ''))
         rcv = row.get('RCVaccession', row.get('RCV', ''))
         variation_id = row.get('VariationID', row.get('variation_id', ''))
@@ -324,7 +345,7 @@ class CascadeBatchProcessor:
         }
 
     def get_initial_stats(self):
-        return {key: 0 for key in ['total_variants', 'processed', 'skipped_frequency', 'skipped_frameshift', 'skipped_synonymous', 'skipped_intronic', 'skipped_unparseable', 'cascade_triggered', 'dn_only', 'failed', 'success', 'agreements', 'better_data_benign', 'better_data_pathogenic', 'clinical_correlation', 'disagreements', 'unclear']}
+        return {key: 0 for key in ['total_variants', 'processed', 'skipped_frequency', 'skipped_frameshift', 'skipped_synonymous', 'skipped_intronic', 'skipped_unparseable', 'skipped_no_protein_consequence', 'cascade_triggered', 'dn_only', 'failed', 'success', 'agreements', 'better_data_benign', 'better_data_pathogenic', 'clinical_correlation', 'disagreements', 'unclear']}
 
     def finalize_processing(self, results, output_path, stats):
         self.write_results_tsv(results, output_path)

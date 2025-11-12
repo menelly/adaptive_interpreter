@@ -1,0 +1,431 @@
+{
+  "uniprot_id": "P04114",
+  "sequence_length": 4563,
+  "function": "Apolipoprotein B is a major protein constituent of chylomicrons (apo B-48), LDL (apo B-100) and VLDL (apo B-100). Apo B-100 functions as a recognition signal for the cellular binding and internalization of LDL particles by the apoB/E receptor",
+  "sequence": "MDPPRPALLALLALPALLLLLLAGARAEEEMLENVSLVCPKDATRFKHLRKYTYNYEAESSSGVPGTADSRSATRINCKVELEVPQLCSFILKTSQCTLKEVYGFNPEGKALLKKTKNSEEFAAAMSRYELKLAIPEGKQVFLYPEKDEPTYILNIKRGIISALLVPPETEEAKQVLFLDTVYGNCSTHFTVKTRKGNVATEISTERDLGQCDRFKPIRTGISPLALIKGMTRPLSTLISSSQSCQYTLDAKRKHVAEAICKEQHLFLPFSYKNKYGMVAQVTQTLKLEDTPKINSRFFGEGTKKMGLAFESTKSTSPPKQAEAVLKTLQELKKLTISEQNIQRANLFNKLVTELRGLSDEAVTSLLPQLIEVSSPITLQALVQCGQPQCSTHILQWLKRVHANPLLIDVVTYLVALIPEPSAQQLREIFNMARDQRSRATLYALSHAVNNYHKTNPTGTQELLDIANYLMEQIQDDCTGDEDYTYLILRVIGNMGQTMEQLTPELKSSILKCVQSTKPSLMIQKAAIQALRKMEPKDKDQEVLLQTFLDDASPGDKRLAAYLMLMRSPSQADINKIVQILPWEQNEQVKNFVASHIANILNSEELDIQDLKKLVKEALKESQLPTVMDFRKFSRNYQLYKSVSLPSLDPASAKIEGNLIFDPNNYLPKESMLKTTLTAFGFASADLIEIGLEGKGFEPTLEALFGKQGFFPDSVNKALYWVNGQVPDGVSKVLVDHFGYTKDDKHEQDMVNGIMLSVEKLIKDLKSKEVPEARAYLRILGEELGFASLHDLQLLGKLLLMGARTLQGIPQMIGEVIRKGSKNDFFLHYIFMENAFELPTGAGLQLQISSSGVIAPGAKAGVKLEVANMQAELVAKPSVSVEFVTNMGIIIPDFARSGVQMNTNFFHESGLEAHVALKAGKLKFIIPSPKRPVKLLSGGNTLHLVSTTKTEVIPPLIENRQSWSVCKQVFPGLNYCTSGAYSNASSTDSASYYPLTGDTRLELELRPTGEIEQYSVSATYELQREDRALVDTLKFVTQAEGAKQTEATMTFKYNRQSMTLSSEVQIPDFDVDLGTILRVNDESTEGKTSYRLTLDIQNKKITEVALMGHLSCDTKEERKIKGVISIPRLQAEARSEILAHWSPAKLLLQMDSSATAYGSTVSKRVAWHYDEEKIEFEWNTGTNVDTKKMTSNFPVDLSDYPKSLHMYANRLLDHRVPQTDMTFRHVGSKLIVAMSSWLQKASGSLPYTQTLQDHLNSLKEFNLQNMGLPDFHIPENLFLKSDGRVKYTLNKNSLKIEIPLPFGGKSSRDLKMLETVRTPALHFKSVGFHLPSREFQVPTFTIPKLYQLQVPLLGVLDLSTNVYSNLYNWSASYSGGNTSTDHFSLRARYHMKADSVVDLLSYNVQGSGETTYDHKNTFTLSCDGSLRHKFLDSNIKFSHVEKLGNNPVSKGLLIFDASSSWGPQMSASVHLDSKKKQHLFVKEVKIDGQFRVSSFYAKGTYGLSCQRDPNTGRLNGESNLRFNSSYLQGTNQITGRYEDGTLSLTSTSDLQSGIIKNTASLKYENYELTLKSDTNGKYKNFATSNKMDMTFSKQNALLRSEYQADYESLRFFSLLSGSLNSHGLELNADILGTDKINSGAHKATLRIGQDGISTSATTNLKCSLLVLENELNAELGLSGASMKLTTNGRFREHNAKFSLDGKAALTELSLGSAYQAMILGVDSKNIFNFKVSQEGLKLSNDMMGSYAEMKFDHTNSLNIAGLSLDFSSKLDNIYSSDKFYKQTVNLQLQPYSLVTTLNSDLKYNALDLTNNGKLRLEPLKLHVAGNLKGAYQNNEIKHIYAISSAALSASYKADTVAKVQGVEFSHRLNTDIAGLASAIDMSTNYNSDSLHFSNVFRSVMAPFTMTIDAHTNGNGKLALWGEHTGQLYSKFLLKAEPLAFTFSHDYKGSTSHHLVSRKSISAALEHKVSALLTPAEQTGTWKLKTQFNNNEYSQDLDAYNTKDKIGVELTGRTLADLTLLDSPIKVPLLLSEPINIIDALEMRDAVEKPQEFTIVAFVKYDKNQDVHSINLPFFETLQEYFERNRQTIIVVLENVQRNLKHINIDQFVRKYRAALGKLPQQANDYLNSFNWERQVSHAKEKLTALTKKYRITENDIQIALDDAKINFNEKLSQLQTYMIQFDQYIKDSYDLHDLKIAIANIIDEIIEKLKSLDEHYHIRVNLVKTIHDLHLFIENIDFNKSGSSTASWIQNVDTKYQIRIQIQEKLQQLKRHIQNIDIQHLAGKLKQHIEAIDVRVLLDQLGTTISFERINDILEHVKHFVINLIGDFEVAEKINAFRAKVHELIERYEVDQQIQVLMDKLVELAHQYKLKETIQKLSNVLQQVKIKDYFEKLVGFIDDAVKKLNELSFKTFIEDVNKFLDMLIKKLKSFDYHQFVDETNDKIREVTQRLNGEIQALELPQKAEALKLFLEETKATVAVYLESLQDTKITLIINWLQEALSSASLAHMKAKFRETLEDTRDRMYQMDIQQELQRYLSLVGQVYSTLVTYISDWWTLAAKNLTDFAEQYSIQDWAKRMKALVEQGFTVPEIKTILGTMPAFEVSLQALQKATFQTPDFIVPLTDLRIPSVQINFKDLKNIKIPSRFSTPEFTILNTFHIPSFTIDFVEMKVKIIRTIDQMLNSELQWPVPDIYLRDLKVEDIPLARITLPDFRLPEIAIPEFIIPTLNLNDFQVPDLHIPEFQLPHISHTIEVPTFGKLYSILKIQSPLFTLDANADIGNGTTSANEAGIAASITAKGESKLEVLNFDFQANAQLSNPKINPLALKESVKFSSKYLRTEHGSEMLFFGNAIEGKSNTVASLHTEKNTLELSNGVIVKINNQLTLDSNTKYFHKLNIPKLDFSSQADLRNEIKTLLKAGHIAWTSSGKGSWKWACPRFSDEGTHESQISFTIEGPLTSFGLSNKINSKHLRVNQNLVYESGSLNFSKLEIQSQVDSQHVGHSVLTAKGMALFGEGKAEFTGRHDAHLNGKVIGTLKNSLFFSAQPFEITASTNNEGNLKVRFPLRLTGKIDFLNNYALFLSPSAQQASWQVSARFNQYKYNQNFSAGNNENIMEAHVGINGEANLDFLNIPLTIPEMRLPYTIITTPPLKDFSLWEKTGLKEFLKTTKQSFDLSVKAQYKKNKHRHSITNPLAVLCEFISQSIKSFDRHFEKNRNNALDFVTKSYNETKIKFDKYKAEKSHDELPRTFQIPGYTVPVVNVEVSPFTIEMSAFGYVFPKAVSMPSFSILGSDVRVPSYTLILPSLELPVLHVPRNLKLSLPDFKELCTISHIFIPAMGNITYDFSFKSSVITLNTNAELFNQSDIVAHLLSSSSSVIDALQYKLEGTTRLTRKRGLKLATALSLSNKFVEGSHNSTVSLTTKNMEVSVATTTKAQIPILRMNFKQELNGNTKSKPTVSSSMEFKYDFNSSMLYSTAKGAVDHKLSLESLTSYFSIESSTKGDVKGSVLSREYSGTIASEANTYLNSKSTRSSVKLQGTSKIDDIWNLEVKENFAGEATLQRIYSLWEHSTKNHLQLEGLFFTNGEHTSKATLELSPWQMSALVQVHASQPSSFHDFPDLGQEVALNANTKNQKIRWKNEVRIHSGSFQSQVELSNDQEKAHLDIAGSLEGHLRFLKNIILPVYDKSLWDFLKLDVTTSIGRRQHLRVSTAFVYTKNPNGYSFSIPVKVLADKFIIPGLKLNDLNSVLVMPTFHVPFTDLQVPSCKLDFREIQIYKKLRTSSFALNLPTLPEVKFPEVDVLTKYSQPEDSLIPFFEITVPESQLTVSQFTLPKSVSDGIAALDLNAVANKIADFELPTIIVPEQTIEIPSIKFSVPAGIVIPSFQALTARFEVDSPVYNATWSASLKNKADYVETVLDSTCSSTVQFLEYELNVLGTHKIEDGTLASKTKGTFAHRDFSAEYEEDGKYEGLQEWEGKAHLNIKSPAFTDLHLRYQKDKKGISTSAASPAVGTVGMDMDEDDDFSKWNFYYSPQSSPDKKLTIFKTELRVRESDEETQIKVNWEEEAASGLLTSLKDNVPKATGVLYDYVNKYHWEHTGLTLREVSSKLRRNLQNNAEWVYQGAIRQIDDIDVRFQKAASGTTGTYQEWKDKAQNLYQELLTQEGQASFQGLKDNVFDGLVRVTQEFHMKVKHLIDSLIDFLNFPRFQFPGKPGIYTREELCTMFIREVGTVLSQVYSKVHNGSEILFSYFQDLVITLPFELRKHKLIDVISMYRELLKDLSKEAQEVFKAIQSLKTTEVLRNLQDLLQFIFQLIEDNIKQLKEMKFTYLINYIQDEINTIFSDYIPYVFKLLKENLCLNLHKFNEFIQNELQEASQELQQIHQYIMALREEYFDPSIVGWTVKYYELEEKIVSLIKNLLVALKDFHSEYIVSASNFTSQLSSQVEQFLHRNIQEYLSILTDPDGKGKEKIAELSATAQEIIKSQAIATKKIISDYHQQFRYKLQDFSDQLSDYYEKFIAESKRLIDLSIQNYHTFLIYITELLKKLQSTTVMNPYMKLAPGELTIIL",
+  "domains": [
+    {
+      "start": 1,
+      "end": 55,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 70,
+      "end": 97,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 112,
+      "end": 196,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 208,
+      "end": 292,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 315,
+      "end": 990,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1011,
+      "end": 1107,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1123,
+      "end": 1167,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1190,
+      "end": 1288,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1306,
+      "end": 1410,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1423,
+      "end": 1474,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1556,
+      "end": 1576,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1595,
+      "end": 1981,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2007,
+      "end": 2825,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2843,
+      "end": 2949,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 2994,
+      "end": 3152,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 3183,
+      "end": 3387,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 3416,
+      "end": 3446,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 3459,
+      "end": 3503,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 3546,
+      "end": 3630,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 3655,
+      "end": 3941,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 3964,
+      "end": 4042,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 4053,
+      "end": 4558,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 12,
+      "end": 366,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 494,
+      "end": 576,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 593,
+      "end": 670,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 727,
+      "end": 805,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 892,
+      "end": 969,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1016,
+      "end": 1063,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1076,
+      "end": 1241,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1256,
+      "end": 1347,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1411,
+      "end": 1524,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1547,
+      "end": 1616,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1798,
+      "end": 1852,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1928,
+      "end": 1986,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 2071,
+      "end": 2548,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 2605,
+      "end": 2708,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 2794,
+      "end": 2946,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 3028,
+      "end": 3067,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 3127,
+      "end": 3266,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 3355,
+      "end": 3480,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 3492,
+      "end": 3563,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 3617,
+      "end": 3805,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 3934,
+      "end": 4142,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 4168,
+      "end": 4224,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 4239,
+      "end": 4324,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 4446,
+      "end": 4525,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "go_terms": [
+    "BHF-UCL",
+    "Ensembl",
+    "GO_Central",
+    "HPA",
+    "MGI",
+    "Reactome",
+    "UniProt",
+    "UniProtKB",
+    "UniProtKB-SubCell",
+    "artery morphogenesis",
+    "cellular response to lipoprotein particle stimulus",
+    "cholesterol efflux",
+    "cholesterol homeostasis",
+    "cholesterol metabolic process",
+    "cholesterol transfer activity",
+    "cholesterol transport",
+    "chylomicron",
+    "chylomicron remnant",
+    "clathrin-coated endocytic vesicle membrane",
+    "cytoplasm",
+    "cytosol",
+    "early endosome",
+    "endocytic vesicle lumen",
+    "endoplasmic reticulum exit site",
+    "endoplasmic reticulum lumen",
+    "endoplasmic reticulum membrane",
+    "endosome lumen",
+    "endosome membrane",
+    "establishment of localization in cell",
+    "extracellular exosome",
+    "extracellular region",
+    "extracellular space",
+    "fertilization",
+    "flagellated sperm motility",
+    "heparin binding",
+    "in utero embryonic development",
+    "intermediate-density lipoprotein particle",
+    "intracellular membrane-bounded organelle",
+    "lipase binding",
+    "lipid droplet",
+    "lipoprotein biosynthetic process",
+    "lipoprotein catabolic process",
+    "lipoprotein transport",
+    "low-density lipoprotein particle",
+    "low-density lipoprotein particle clearance",
+    "low-density lipoprotein particle receptor binding",
+    "low-density lipoprotein particle remodeling",
+    "lysosomal lumen",
+    "mature chylomicron",
+    "nervous system development",
+    "neuronal cell body",
+    "phospholipid binding",
+    "plasma membrane",
+    "positive regulation of cholesterol storage",
+    "positive regulation of gene expression",
+    "positive regulation of lipid storage",
+    "positive regulation of macrophage derived foam cell differentiation",
+    "post-embryonic development",
+    "receptor ligand activity",
+    "regulation of cholesterol biosynthetic process",
+    "response to virus",
+    "smooth endoplasmic reticulum",
+    "spermatogenesis",
+    "triglyceride catabolic process",
+    "triglyceride mobilization",
+    "very-low-density lipoprotein particle",
+    "very-low-density lipoprotein particle assembly"
+  ],
+  "go_ids": [
+    "GO:0001701",
+    "GO:0005543",
+    "GO:0005576",
+    "GO:0005615",
+    "GO:0005737",
+    "GO:0005769",
+    "GO:0005788",
+    "GO:0005789",
+    "GO:0005790",
+    "GO:0005811",
+    "GO:0005829",
+    "GO:0005886",
+    "GO:0006642",
+    "GO:0007283",
+    "GO:0007399",
+    "GO:0008201",
+    "GO:0008203",
+    "GO:0009566",
+    "GO:0009615",
+    "GO:0009791",
+    "GO:0010008",
+    "GO:0010628",
+    "GO:0010744",
+    "GO:0010884",
+    "GO:0010886",
+    "GO:0019433",
+    "GO:0030301",
+    "GO:0030317",
+    "GO:0030669",
+    "GO:0031904",
+    "GO:0033344",
+    "GO:0034359",
+    "GO:0034360",
+    "GO:0034361",
+    "GO:0034362",
+    "GO:0034363",
+    "GO:0034374",
+    "GO:0034379",
+    "GO:0034383",
+    "GO:0035473",
+    "GO:0042158",
+    "GO:0042159",
+    "GO:0042627",
+    "GO:0042632",
+    "GO:0042953",
+    "GO:0043025",
+    "GO:0043202",
+    "GO:0043231",
+    "GO:0045540",
+    "GO:0048018",
+    "GO:0048844",
+    "GO:0050750",
+    "GO:0051649",
+    "GO:0070062",
+    "GO:0070971",
+    "GO:0071402",
+    "GO:0071682",
+    "GO:0120020"
+  ],
+  "flexible_loops": [
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107
+  ],
+  "interface_regions": [
+    4,
+    4557
+  ],
+  "gene": "APOB",
+  "cached_at": "2025-01-27"
+}

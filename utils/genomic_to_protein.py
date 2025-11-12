@@ -251,35 +251,95 @@ class GenomicToProteinConverter:
         return bool(re.search(r'NM_.*\([^)]+\).*p\.', hgvs))
 
 
-def main():
-    """Test the converter"""
-    print("🧬 Testing Genomic to Protein Converter")
-    print("=" * 50)
+def convert_tsv_file(input_file: str, output_file: str):
+    """
+    Convert a TSV file with genomic HGVS to protein HGVS
 
+    Args:
+        input_file: Path to input TSV file
+        output_file: Path to output TSV file
+    """
+    import pandas as pd
+
+    print(f"🔬 Converting {input_file}")
+    print(f"📝 Output: {output_file}")
+
+    # Read input file
+    df = pd.read_csv(input_file, sep='\t')
+    print(f"📊 Loaded {len(df)} variants")
+
+    # Initialize converter
     converter = GenomicToProteinConverter()
 
-    # Test genomic HGVS parsing
-    test_cases = [
-        "NC_000017.11:g.50183779T>A",
-        "NC_000011.10:g.77130635A>G",
-        "chr17:50183779T>A"
-    ]
+    # Process each variant
+    converted = 0
+    skipped = 0
+    for idx, row in df.iterrows():
+        hgvs_p = row.get('hgvs_p', '')
+        hgvs_g = row.get('hgvs_g', '')
+        gene = row.get('gene', '')
 
-    for test_hgvs in test_cases:
-        print(f"\n🧪 Testing: {test_hgvs}")
+        # Convert NaN to empty string
+        if pd.isna(hgvs_p):
+            hgvs_p = ''
+        if pd.isna(hgvs_g):
+            hgvs_g = ''
 
-        # Test parsing
-        parsed = converter.parse_genomic_hgvs(test_hgvs)
-        print(f"   Parsed: {parsed}")
+        # If already has protein HGVS, skip
+        if hgvs_p and str(hgvs_p).strip():
+            skipped += 1
+            continue
 
-        # Test variant info extraction
-        variant_info = converter.extract_variant_info_from_genomic(test_hgvs, "TEST_GENE")
-        print(f"   Variant info: {variant_info}")
+        # If has genomic HGVS, try to convert
+        if hgvs_g and converter.is_genomic_hgvs(str(hgvs_g)):
+            protein_hgvs = converter.convert_genomic_to_protein(str(hgvs_g), str(gene))
+            if protein_hgvs:
+                df.at[idx, 'hgvs_p'] = protein_hgvs
+                converted += 1
 
-        # Test format detection
-        is_genomic = converter.is_genomic_hgvs(test_hgvs)
-        is_protein = converter.is_protein_hgvs(test_hgvs)
-        print(f"   Is genomic: {is_genomic}, Is protein: {is_protein}")
+    # Write output file
+    df.to_csv(output_file, sep='\t', index=False)
+    print(f"✅ Converted {converted}/{len(df)} variants")
+    print(f"⏭️  Skipped {skipped} (already had protein HGVS)")
+    print(f"💾 Saved to {output_file}")
+
+
+def main():
+    """Main entry point - can run as test or file converter"""
+    if len(sys.argv) == 3:
+        # File conversion mode
+        input_file = sys.argv[1]
+        output_file = sys.argv[2]
+        convert_tsv_file(input_file, output_file)
+    else:
+        # Test mode
+        print("🧬 Testing Genomic to Protein Converter")
+        print("=" * 50)
+
+        converter = GenomicToProteinConverter()
+
+        # Test genomic HGVS parsing
+        test_cases = [
+            "NC_000017.11:g.50183779T>A",
+            "NC_000011.10:g.77130635A>G",
+            "chr17:50183779T>A"
+        ]
+
+        for test_hgvs in test_cases:
+            print(f"\n🧪 Testing: {test_hgvs}")
+
+            # Test parsing
+            parsed = converter.parse_genomic_hgvs(test_hgvs)
+            print(f"   Parsed: {parsed}")
+
+            # Test variant info extraction
+            variant_info = converter.extract_variant_info_from_genomic(test_hgvs, "TEST_GENE")
+            print(f"   Variant info: {variant_info}")
+
+            # Test format detection
+            is_genomic = converter.is_genomic_hgvs(test_hgvs)
+            is_protein = converter.is_protein_hgvs(test_hgvs)
+            print(f"   Is genomic: {is_genomic}, Is protein: {is_protein}")
 
 
 if __name__ == "__main__":

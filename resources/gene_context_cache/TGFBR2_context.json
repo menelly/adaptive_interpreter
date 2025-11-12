@@ -1,0 +1,76 @@
+{
+  "uniprot_id": "P37173",
+  "sequence_length": 567,
+  "function": "Transmembrane serine/threonine kinase forming with the TGF-beta type I serine/threonine kinase receptor, TGFBR1, the non-promiscuous receptor for the TGF-beta cytokines TGFB1, TGFB2 and TGFB3. Transduces the TGFB1, TGFB2 and TGFB3 signal from the cell surface to the cytoplasm and thus regulates a plethora of physiological and pathological processes including cell cycle arrest in epithelial and hematopoietic cells, control of mesenchymal cell proliferation and differentiation, wound healing, extracellular matrix production, immunosuppression and carcinogenesis. The formation of the receptor complex composed of 2 TGFBR1 and 2 TGFBR2 molecules symmetrically bound to the cytokine dimer results in the phosphorylation and activation of TGFBR1 by the constitutively active TGFBR2. Activated TGFBR1 phosphorylates SMAD2 which dissociates from the receptor and interacts with SMAD4. The SMAD2-SMAD4 complex is subsequently translocated to the nucleus where it modulates the transcription of the TGF-beta-regulated genes. This constitutes the canonical SMAD-dependent TGF-beta signaling cascade. Also involved in non-canonical, SMAD-independent TGF-beta signaling pathways",
+  "sequence": "MGRGLLRGLWPLHIVLWTRIASTIPPHVQKSVNNDMIVTDNNGAVKFPQLCKFCDVRFSTCDNQKSCMSNCSITSICEKPQEVCVAVWRKNDENITLETVCHDPKLPYHDFILEDAASPKCIMKEKKKPGETFFMCSCSSDECNDNIIFSEEYNTSNPDLLLVIFQVTGISLLPPLGVAISVIIIFYCYRVNRQQKLSSTWETGKTRKLMEFSEHCAIILEDDRSDISSTCANNINHNTELLPIELDTLVGKGRFAEVYKAKLKQNTSEQFETVAVKIFPYEEYASWKTEKDIFSDINLKHENILQFLTAEERKTELGKQYWLITAFHAKGNLQEYLTRHVISWEDLRKLGSSLARGIAHLHSDHTPCGRPKMPIVHRDLKSSNILVKNDLTCCLCDFGLSLRLDPTLSVDDLANSGQVGTARYMAPEVLESRMNLENVESFKQTDVYSMALVLWEMTSRCNAVGEVKDYEPPFGSKVREHPCVESMKDNVLRDRGRPEIPSFWLNHQGIQMVCETLTECWDHDPEARLTAQCVAERFSELEHLDRLSGRSCSEEKIPEDGSLNTTK",
+  "domains": [
+    {
+      "start": 2,
+      "end": 41,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 73,
+      "end": 126,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 146,
+      "end": 487,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 500,
+      "end": 551,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 51,
+      "end": 144,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 169,
+      "end": 409,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 454,
+      "end": 516,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 528,
+      "end": 567,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "go_terms": [],
+  "go_ids": [],
+  "flexible_loops": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    127
+  ],
+  "interface_regions": [
+    4,
+    535
+  ],
+  "gene": "TGFBR2",
+  "cached_at": "2025-01-27"
+}

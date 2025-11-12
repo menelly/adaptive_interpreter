@@ -1,0 +1,58 @@
+{
+  "uniprot_id": "Q99643",
+  "sequence_length": 169,
+  "function": "Membrane-anchoring subunit of succinate dehydrogenase (SDH) that is involved in complex II of the mitochondrial electron transport chain and is responsible for transferring electrons from succinate to ubiquinone (coenzyme Q) (PubMed:9533030). SDH also oxidizes malate to the non-canonical enol form of oxaloacetate, enol-oxaloacetate (By similarity). Enol-oxaloacetate, which is a potent inhibitor of the succinate dehydrogenase activity, is further isomerized into keto-oxaloacetate (By similarity)",
+  "sequence": "MAALLLRHVGRHCLRAHFSPQLCIRNAVPLGTTAKEEMERFWNKNIGSNRPLSPHITIYSWSLPMAMSICHRGTGIALSAGVSLFGMSALLLPGNFESYLELVKSLCLGPALIHTAKFALVFPLMYHTWNGIRHLMWDLGKGLKIPQLYQSGVVVLVLTVLSSMGLAAM",
+  "domains": [
+    {
+      "start": 2,
+      "end": 167,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1,
+      "end": 54,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "go_terms": [
+    "ComplexPortal",
+    "FlyBase",
+    "GO_Central",
+    "InterPro",
+    "UniProtKB",
+    "UniProtKB-KW",
+    "aerobic respiration",
+    "electron transfer activity",
+    "heme binding",
+    "membrane",
+    "metal ion binding",
+    "mitochondrial electron transport, succinate to ubiquinone",
+    "mitochondrial inner membrane",
+    "mitochondrion",
+    "proton motive force-driven mitochondrial ATP synthesis",
+    "respiratory chain complex II (succinate dehydrogenase)",
+    "tricarboxylic acid cycle"
+  ],
+  "go_ids": [
+    "GO:0005739",
+    "GO:0005743",
+    "GO:0006099",
+    "GO:0006121",
+    "GO:0009055",
+    "GO:0009060",
+    "GO:0016020",
+    "GO:0020037",
+    "GO:0042776",
+    "GO:0045273",
+    "GO:0046872"
+  ],
+  "interface_regions": [
+    1,
+    168
+  ],
+  "gene": "SDHC",
+  "cached_at": "2025-01-27"
+}

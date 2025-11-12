@@ -14,13 +14,13 @@ import os
 from .smart_protein_analyzer import SmartProteinAnalyzer
 
 # Add sequence mismatch handler
-from AdaptiveInterpreter.data_processing.sequence_mismatch_handler import create_mismatch_handler
+from data_processing.sequence_mismatch_handler import create_mismatch_handler
 
 # Add DOMAIN AWARENESS! 🎯
-from AdaptiveInterpreter.data_processing.universal_protein_annotator import UniversalProteinAnnotator
+from data_processing.universal_protein_annotator import UniversalProteinAnnotator
 
 # Add NOVA'S FUNCTIONAL DOMAIN WEIGHTING! 🚀
-from AdaptiveInterpreter.core_analyzers.functional_domain_weighter import FunctionalDomainWeighter
+from core_analyzers.functional_domain_weighter import FunctionalDomainWeighter
 from .conservation_database import ConservationDatabase
 
 class LOFAnalyzer:

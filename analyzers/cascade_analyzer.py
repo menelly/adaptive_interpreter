@@ -592,26 +592,28 @@ class CascadeAnalyzer:
                     frequency_note = results['frequency_analysis']['frequency_note']
                     print(f"🌍 Using pre-fetched frequency: {gnomad_freq:.6f}")
                 else:
+                    # 🚨 DISABLED: Frequency lookup is broken and slow - use pre-fetched frequencies only!
                     # Fallback: try mapping if absolutely needed
-                    import re
-                    pos_match = re.search(r'p\.([A-Z])(\d+)([A-Z])', variant)
-                    if pos_match and uniprot_id and hasattr(self, 'conservation_db') and self.conservation_db:
-                        ref_aa, pos, alt_aa = pos_match.groups()
-                        genomic_coords = self.conservation_db.uniprot_mapper.get_genomic_coordinates(uniprot_id, int(pos))
-                        if genomic_coords:
-                            print(f"🌍 Getting population frequency for {gene} {variant} at chr{genomic_coords['chromosome']}:{genomic_coords['start']}")
-                            freq_result = self.population_frequency_analyzer.get_variant_frequency(
-                                genomic_coords['chromosome'],
-                                genomic_coords['start'],
-                                genomic_coords['ref_allele'],
-                                genomic_coords['alt_allele']
-                            )
-                            frequency_boost = freq_result.get('pathogenicity_boost', 1.0)
-                            frequency_note = freq_result.get('frequency_note', "Note not available.")
-                            results['frequency_analysis'] = freq_result
-                            print(f"🌍 Population frequency boost: {frequency_boost:.2f}x ({frequency_note})")
-                        else:
-                            print(f"🌍 Could not map {uniprot_id}:{pos} to genomic coordinates for frequency lookup.")
+                    # import re
+                    # pos_match = re.search(r'p\.([A-Z])(\d+)([A-Z])', variant)
+                    # if pos_match and uniprot_id and hasattr(self, 'conservation_db') and self.conservation_db:
+                    #     ref_aa, pos, alt_aa = pos_match.groups()
+                    #     genomic_coords = self.conservation_db.uniprot_mapper.get_genomic_coordinates(uniprot_id, int(pos))
+                    #     if genomic_coords:
+                    #         print(f"🌍 Getting population frequency for {gene} {variant} at chr{genomic_coords['chromosome']}:{genomic_coords['start']}")
+                    #         freq_result = self.population_frequency_analyzer.get_variant_frequency(
+                    #             genomic_coords['chromosome'],
+                    #             genomic_coords['start'],
+                    #             genomic_coords['ref_allele'],
+                    #             genomic_coords['alt_allele']
+                    #         )
+                    #         frequency_boost = freq_result.get('pathogenicity_boost', 1.0)
+                    #         frequency_note = freq_result.get('frequency_note', "Note not available.")
+                    #         results['frequency_analysis'] = freq_result
+                    #         print(f"🌍 Population frequency boost: {frequency_boost:.2f}x ({frequency_note})")
+                    #     else:
+                    #         print(f"🌍 Could not map {uniprot_id}:{pos} to genomic coordinates for frequency lookup.")
+                    pass  # Use default frequency_boost and frequency_note
             except Exception as freq_e:
                 print(f"🌍 Population frequency analysis failed: {freq_e}")
 
@@ -663,6 +665,8 @@ class CascadeAnalyzer:
             review_flags = []
             if scoring_context.multipliers.get('conservation', 0.0) == 1.0:
                 review_flags.append("MISSING_CONSERVATION")
+                # 🛡️ CRITICAL: Set the flag that triggers the conservation clamp!
+                results['conservation_data_missing'] = True
             if gnomad_freq is None:
                 review_flags.append("MISSING_FREQUENCY")
             if routing_result.get('confidence', 1.0) < 0.7:
@@ -751,6 +755,7 @@ class CascadeAnalyzer:
         try:
             if results.get('conservation_data_missing', False):
                 current = results.get('final_classification') or 'B'
+                print(f"🛡️ DEBUG: Conservation clamp check - current={current}, conservation_data_missing={results.get('conservation_data_missing')}")
                 # Only clamp if we would have called it benign/likely benign
                 if current in ['B', 'LB', 'B/LB']:
                     results['final_classification'] = 'VUS'
@@ -766,8 +771,12 @@ class CascadeAnalyzer:
                     if 'summary' in results and results['summary']:
                         results['summary'] += ' [Clamp:VUS-NoConservation]'
                     print(f"🛡️ SAFETY: Clamped {current} → VUS due to missing conservation data")
-        except Exception:
-            pass
+                else:
+                    print(f"🛡️ DEBUG: No clamp needed - {current} not in ['B', 'LB', 'B/LB']")
+        except Exception as e:
+            print(f"❌ ERROR in conservation clamp: {e}")
+            import traceback
+            traceback.print_exc()
 
         # 🛡️ SEQUENCE MISMATCH SAFETY CLAMP: If we have isoform mismatches,
         # we're analyzing the WRONG sequence - clamp to VUS for safety

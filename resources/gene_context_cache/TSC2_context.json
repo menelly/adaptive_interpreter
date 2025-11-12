@@ -1,0 +1,236 @@
+{
+  "uniprot_id": "P49815",
+  "sequence_length": 1807,
+  "function": "Catalytic component of the TSC-TBC complex, a multiprotein complex that acts as a negative regulator of the canonical mTORC1 complex, an evolutionarily conserved central nutrient sensor that stimulates anabolic reactions and macromolecule biosynthesis to promote cellular biomass generation and growth (PubMed:12172553, PubMed:12271141, PubMed:12842888, PubMed:12906785, PubMed:15340059, PubMed:22819219, PubMed:24529379, PubMed:28215400, PubMed:33436626, PubMed:35772404). Within the TSC-TBC complex, TSC2 acts as a GTPase-activating protein (GAP) for the small GTPase RHEB, a direct activator of the protein kinase activity of mTORC1 (PubMed:12172553, PubMed:12820960, PubMed:12842888, PubMed:12906785, PubMed:15340059, PubMed:22819219, PubMed:24529379, PubMed:33436626). In absence of nutrients, the TSC-TBC complex inhibits mTORC1, thereby preventing phosphorylation of ribosomal protein S6 kinase (RPS6KB1 and RPS6KB2) and EIF4EBP1 (4E-BP1) by the mTORC1 signaling (PubMed:12172553, PubMed:12271141, PubMed:12842888, PubMed:12906785, PubMed:22819219, PubMed:24529379, PubMed:28215400, PubMed:35772404). The TSC-TBC complex is inactivated in response to nutrients, relieving inhibition of mTORC1 (PubMed:12172553, PubMed:24529379). Involved in microtubule-mediated protein transport via its ability to regulate mTORC1 signaling (By similarity). Also stimulates the intrinsic GTPase activity of the Ras-related proteins RAP1A and RAB5 (By similarity)",
+  "sequence": "MAKPTSKDSGLKEKFKILLGLGTPRPNPRSAEGKQTEFIITAEILRELSMECGLNNRIRMIGQICEVAKTKKFEEHAVEALWKAVADLLQPERPLEARHAVLALLKAIVQGQGERLGVLRALFFKVIKDYPSNEDLHERLEVFKALTDNGRHITYLEEELADFVLQWMDVGLSSEFLLVLVNLVKFNSCYLDEYIARMVQMICLLCVRTASSVDIEVSLQVLDAVVCYNCLPAESLPLFIVTLCRTINVKELCEPCWKLMRNLLGTHLGHSAIYNMCHLMEDRAYMEDAPLLRGAVFFVGMALWGAHRLYSLRNSPTSVLPSFYQAMACPNEVVSYEIVLSITRLIKKYRKELQVVAWDILLNIIERLLQQLQTLDSPELRTIVHDLLTTVEELCDQNEFHGSQERYFELVERCADQRPESSLLNLISYRAQSIHPAKDGWIQNLQALMERFFRSESRGAVRIKVLDVLSFVLLINRQFYEEELINSVVISQLSHIPEDKDHQVRKLATQLLVDLAEGCHTHHFNSLLDIIEKVMARSLSPPPELEERDVAAYSASLEDVKTAVLGLLVILQTKLYTLPASHATRVYEMLVSHIQLHYKHSYTLPIASSIRLQAFDFLLLLRADSLHRLGLPNKDGVVRFSPYCVCDYMEPERGSEKKTSGPLSPPTGPPGPAPAGPAVRLGSVPYSLLFRVLLQCLKQESDWKVLKLVLGRLPESLRYKVLIFTSPCSVDQLCSALCSMLSGPKTLERLRGAPEGFSRTDLHLAVVPVLTALISYHNYLDKTKQREMVYCLEQGLIHRCASQCVVALSICSVEMPDIIIKALPVLVVKLTHISATASMAVPLLEFLSTLARLPHLYRNFAAEQYASVFAISLPYTNPSKFNQYIVCLAHHVIAMWFIRCRLPFRKDFVPFITKGLRSNVLLSFDDTPEKDSFRARSTSLNERPKSLRIARPPKQGLNNSPPVKEFKESSAAEAFRCRSISVSEHVVRSRIQTSLTSASLGSADENSVAQADDSLKNLHLELTETCLDMMARYVFSNFTAVPKRSPVGEFLLAGGRTKTWLVGNKLVTVTTSVGTGTRSLLGLDSGELQSGPESSSSPGVHVRQTKEAPAKLESQAGQQVSRGARDRVRSMSGGHGLRVGALDVPASQFLGSATSPGPRTAPAAKPEKASAGTRVPVQEKTNLAAYVPLLTQGWAEILVRRPTGNTSWLMSLENPLSPFSSDINNMPLQELSNALMAAERFKEHRDTALYKSLSVPAASTAKPPPLPRSNTVASFSSLYQSSCQGQLHRSVSWADSAVVMEEGSPGEVPVLVEPPGLEDVEAALGMDRRTDAYSRSSSVSSQEEKSLHAEELVGRGIPIERVVSSEGGRPSVDLSFQPSQPLSKSSSSPELQTLQDILGDPGDKADVGRLSPEVKARSQSGTLDGESAAWSASGEDSRGQPEGPLPSSSPRSPSGLRPRGYTISDSAPSRRGKRVERDALKSRATASNAEKVPGINPSFVFLQLYHSPFFGDESNKPILLPNESQSFERSVQLLDQIPSYDTHKIAVLYVGEGQSNSELAILSNEHGSYRYTEFLTGLGRLIELKDCQPDKVYLGGLDVCGEDGQFTYCWHDDIMQAVFHIATLMPTKDVDKHRCDKKRHLGNDFVSIVYNDSGEDFKLGTIKGQFNFVHVIVTPLDYECNLVSLQCRKDMEGLVDTSVAKIVSDRNLPFVARQMALHANMASQVHHSRSNPTDIYPSKWIARLRHIKRLRQRICEEAAYSNPSLPLVHPPSHSKAPAQTPAEPTPGYEVGQRKRLISSVEDFTEFV",
+  "domains": [
+    {
+      "start": 1,
+      "end": 404,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 417,
+      "end": 651,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 672,
+      "end": 922,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 933,
+      "end": 960,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 972,
+      "end": 1086,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1132,
+      "end": 1330,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1349,
+      "end": 1369,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1391,
+      "end": 1411,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1472,
+      "end": 1771,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1,
+      "end": 159,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 312,
+      "end": 386,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 423,
+      "end": 490,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 618,
+      "end": 788,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 875,
+      "end": 1003,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1026,
+      "end": 1082,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1100,
+      "end": 1204,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1229,
+      "end": 1279,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1322,
+      "end": 1367,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1461,
+      "end": 1512,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1600,
+      "end": 1673,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1706,
+      "end": 1783,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "go_terms": [
+    "ComplexPortal",
+    "GO_Central",
+    "GTPase activator activity",
+    "Golgi apparatus",
+    "HPA",
+    "Hsp90 protein binding",
+    "InterPro",
+    "ParkinsonsUK-UCL",
+    "ProtInc",
+    "SynGO",
+    "TSC1-TSC2 complex",
+    "UniProtKB",
+    "anoikis",
+    "cellular response to starvation",
+    "cytoplasm",
+    "cytosol",
+    "endocytosis",
+    "heart development",
+    "lysosomal membrane",
+    "lysosome",
+    "membrane",
+    "negative regulation of TOR signaling",
+    "negative regulation of TORC1 signaling",
+    "negative regulation of Wnt signaling pathway",
+    "negative regulation of cell population proliferation",
+    "negative regulation of insulin receptor signaling pathway",
+    "negative regulation of mitophagy",
+    "negative regulation of phosphatidylinositol 3-kinase/protein kinase B signal transduction",
+    "neural tube closure",
+    "nucleus",
+    "perinuclear region of cytoplasm",
+    "phosphatase binding",
+    "positive chemotaxis",
+    "positive regulation of macroautophagy",
+    "postsynaptic density",
+    "protein homodimerization activity",
+    "protein import into nucleus",
+    "protein localization",
+    "regulation of cell cycle",
+    "regulation of endocytosis",
+    "regulation of insulin receptor signaling pathway",
+    "regulation of small GTPase mediated signal transduction",
+    "small GTPase binding",
+    "vesicle-mediated transport"
+  ],
+  "go_ids": [
+    "GO:0001843",
+    "GO:0005096",
+    "GO:0005634",
+    "GO:0005737",
+    "GO:0005764",
+    "GO:0005765",
+    "GO:0005794",
+    "GO:0005829",
+    "GO:0006606",
+    "GO:0006897",
+    "GO:0007507",
+    "GO:0008104",
+    "GO:0008285",
+    "GO:0009267",
+    "GO:0014069",
+    "GO:0016020",
+    "GO:0016192",
+    "GO:0016239",
+    "GO:0019902",
+    "GO:0030100",
+    "GO:0030178",
+    "GO:0031267",
+    "GO:0032007",
+    "GO:0033596",
+    "GO:0042803",
+    "GO:0043276",
+    "GO:0046626",
+    "GO:0046627",
+    "GO:0048471",
+    "GO:0050918",
+    "GO:0051056",
+    "GO:0051726",
+    "GO:0051879",
+    "GO:0051898",
+    "GO:1901525",
+    "GO:1904262"
+  ],
+  "flexible_loops": [
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169
+  ],
+  "interface_regions": [
+    13,
+    1760
+  ],
+  "gene": "TSC2",
+  "cached_at": "2025-01-27"
+}

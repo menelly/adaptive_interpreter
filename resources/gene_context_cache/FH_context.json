@@ -1,0 +1,109 @@
+{
+  "uniprot_id": "P07954",
+  "sequence_length": 510,
+  "function": "Catalyzes the reversible stereospecific interconversion of fumarate to L-malate (PubMed:30761759). Experiments in other species have demonstrated that specific isoforms of this protein act in defined pathways and favor one direction over the other (Probable)",
+  "sequence": "MYRALRLLARSRPLVRAPAAALASAPGLGGAAVPSFWPPNAARMASQNSFRIEYDTFGELKVPNDKYYGAQTVRSTMNFKIGGVTERMPTPVIKAFGILKRAAAEVNQDYGLDPKIANAIMKAADEVAEGKLNDHFPLVVWQTGSGTQTNMNVNEVISNRAIEMLGGELGSKIPVHPNDHVNKSQSSNDTFPTAMHIAAAIEVHEVLLPGLQKLHDALDAKSKEFAQIIKIGRTHTQDAVPLTLGQEFSGYVQQVKYAMTRIKAAMPRIYELAAGGTAVGTGLNTRIGFAEKVAAKVAALTGLPFVTAPNKFEALAAHDALVELSGAMNTTACSLMKIANDIRFLGSGPRSGLGELILPENEPGSSIMPGKVNPTQCEAMTMVAAQVMGNHVAVTVGGSNGHFELNVFKPMMIKNVLHSARLLGDASVSFTENCVVGIQANTERINKLMNESLMLVTALNPHIGYDKAAKIAKTAHKNGSTLKETAIELGYLTAEQFDEWVKPKDMLGPK",
+  "domains": [
+    {
+      "start": 1,
+      "end": 144,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 181,
+      "end": 507,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 41,
+      "end": 133,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 229,
+      "end": 300,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 438,
+      "end": 510,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "go_terms": [
+    "DNA damage response",
+    "DNA repair",
+    "Ensembl",
+    "GO_Central",
+    "Reactome",
+    "UniProtKB",
+    "UniProtKB-KW",
+    "UniProtKB-SubCell",
+    "YuBioLab",
+    "arginine metabolic process",
+    "chromosome",
+    "cytoplasm",
+    "cytosol",
+    "extracellular exosome",
+    "fumarate hydratase activity",
+    "fumarate metabolic process",
+    "histone binding",
+    "homeostasis of number of cells within a tissue",
+    "malate metabolic process",
+    "mitochondrial matrix",
+    "mitochondrion",
+    "nucleus",
+    "positive regulation of cold-induced thermogenesis",
+    "positive regulation of double-strand break repair via nonhomologous end joining",
+    "regulation of arginine metabolic process",
+    "site of double-strand break",
+    "tricarboxylic acid cycle",
+    "urea cycle"
+  ],
+  "go_ids": [
+    "GO:0000050",
+    "GO:0000821",
+    "GO:0004333",
+    "GO:0005634",
+    "GO:0005694",
+    "GO:0005737",
+    "GO:0005739",
+    "GO:0005759",
+    "GO:0005829",
+    "GO:0006099",
+    "GO:0006106",
+    "GO:0006108",
+    "GO:0006281",
+    "GO:0006525",
+    "GO:0006974",
+    "GO:0035861",
+    "GO:0042393",
+    "GO:0048873",
+    "GO:0070062",
+    "GO:0120162",
+    "GO:2001034"
+  ],
+  "flexible_loops": [
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143
+  ],
+  "interface_regions": [
+    1,
+    497
+  ],
+  "gene": "FH",
+  "cached_at": "2025-01-27"
+}

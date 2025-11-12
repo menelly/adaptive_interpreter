@@ -1,0 +1,177 @@
+{
+  "uniprot_id": "P52701",
+  "sequence_length": 1360,
+  "function": "Component of the post-replicative DNA mismatch repair system (MMR). Heterodimerizes with MSH2 to form MutS alpha, which binds to DNA mismatches thereby initiating DNA repair. When bound, MutS alpha bends the DNA helix and shields approximately 20 base pairs, and recognizes single base mismatches and dinucleotide insertion-deletion loops (IDL) in the DNA. After mismatch binding, forms a ternary complex with the MutL alpha heterodimer, which is thought to be responsible for directing the downstream MMR events, including strand discrimination, excision, and resynthesis. ATP binding and hydrolysis play a pivotal role in mismatch repair functions. The ATPase activity associated with MutS alpha regulates binding similar to a molecular switch: mismatched DNA provokes ADP-->ATP exchange, resulting in a discernible conformational transition that converts MutS alpha into a sliding clamp capable of hydrolysis-independent diffusion along the DNA backbone. This transition is crucial for mismatch repair. MutS alpha may also play a role in DNA homologous recombination repair. Recruited on chromatin in G1 and early S phase via its PWWP domain that specifically binds trimethylated 'Lys-36' of histone H3 (H3K36me3): early recruitment to chromatin to be replicated allowing a quick identification of mismatch repair to initiate the DNA mismatch repair reaction",
+  "sequence": "MSRQSTLYSFFPKSPALSDANKASARASREGGRAAAAPGASPSPGGDAAWSEAGPGPRPLARSASPPKAKNLNGGLRRSVAPAAPTSCDFSPGDLVWAKMEGYPWWPCLVYNHPFDGTFIREKGKSVRVHVQFFDDSPTRGWVSKRLLKPYTGSKSKEAQKGGHFYSAKPEILRAMQRADEALNKDKIKRLELAVCDEPSEPEEEEEMEVGTTYVTDKSEEDNEIESEEEVQPKTQGSRRSSRQIKKRRVISDSESDIGGSDVEFKPDTKEEGSSDEISSGVGDSESEGLNSPVKVARKRKRMVTGNGSLKRKSSRKETPSATKQATSISSETKNTLRAFSAPQNSESQAHVSGGGDDSSRPTVWYHETLEWLKEEKRRDEHRRRPDHPDFDASTLYVPEDFLNSCTPGMRKWWQIKSQNFDLVICYKVGKFYELYHMDALIGVSELGLVFMKGNWAHSGFPEIAFGRYSDSLVQKGYKVARVEQTETPEMMEARCRKMAHISKYDRVVRREICRIITKGTQTYSVLEGDPSENYSKYLLSLKEKEEDSSGHTRAYGVCFVDTSLGKFFIGQFSDDRHCSRFRTLVAHYPPVQVLFEKGNLSKETKTILKSSLSCSLQEGLIPGSQFWDASKTLRTLLEEEYFREKLSDGIGVMLPQVLKGMTSESDSIGLTPGEKSELALSALGGCVFYLKKCLIDQELLSMANFEEYIPLDSDTVSTTRSGAIFTKAYQRMVLDAVTLNNLEIFLNGTNGSTEGTLLERVDTCHTPFGKRLLKQWLCAPLCNHYAINDRLDAIEDLMVVPDKISEVVELLKKLPDLERLLSKIHNVGSPLKSQNHPDSRAIMYEETTYSKKKIIDFLSALEGFKVMCKIIGIMEEVADGFKSKILKQVISLQTKNPEGRFPDLTVELNRWDTAFDHEKARKTGLITPKAGFDSDYDQALADIRENEQSLLEYLEKQRNRIGCRTIVYWGIGRNRYQLEIPENFTTRNLPEEYELKSTKKGCKRYWTKTIEKKLANLINAEERRDVSLKDCMRRLFYNFDKNYKDWQSAVECIAVLDVLLCLANYSRGGDGPMCRPVILLPEDTPPFLELKGSRHPCITKTFFGDDFIPNDILIGCEEEEQENGKAYCVLVTGPNMGGKSTLMRQAGLLAVMAQMGCYVPAEVCRLTPIDRVFTRLGASDRIMSGESTFFVELSETASILMHATAHSLVLVDELGRGTATFDGTAIANAVVKELAETIKCRTLFSTHYHSLVEDYSQNVAVRLGHMACMVENECEDPSQETITFLYKFIKGACPKSYGFNAARLANLPEEVIQKGHRKAREFEKMNQSLRLFREVCLASERSTVDAEAVHKLLTLIKEL",
+  "domains": [
+    {
+      "start": 10,
+      "end": 137,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 158,
+      "end": 196,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 287,
+      "end": 307,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 393,
+      "end": 530,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 551,
+      "end": 602,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 620,
+      "end": 987,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1004,
+      "end": 1094,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 1127,
+      "end": 1360,
+      "type": "predicted_coiled_coil",
+      "description": "Predicted coiled coil domain"
+    },
+    {
+      "start": 58,
+      "end": 213,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 243,
+      "end": 317,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 352,
+      "end": 422,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 458,
+      "end": 637,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 785,
+      "end": 1069,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    },
+    {
+      "start": 1279,
+      "end": 1360,
+      "type": "predicted_pb1",
+      "description": "Predicted PB1-like domain"
+    }
+  ],
+  "go_terms": [
+    "ATP binding",
+    "ATP-dependent DNA damage sensor activity",
+    "ATP-dependent activity, acting on DNA",
+    "BHF-UCL",
+    "DNA repair",
+    "Ensembl",
+    "Golgi apparatus",
+    "HGNC-UCL",
+    "HPA",
+    "InterPro",
+    "MutSalpha complex",
+    "UniProtKB",
+    "UniProtKB-KW",
+    "chromatin",
+    "chromatin binding",
+    "cytosol",
+    "damaged DNA binding",
+    "determination of adult lifespan",
+    "enzyme binding",
+    "guanine/thymine mispair binding",
+    "histone H3K36me3 reader activity",
+    "intracellular membrane-bounded organelle",
+    "intrinsic apoptotic signaling pathway",
+    "intrinsic apoptotic signaling pathway in response to DNA damage",
+    "isotype switching",
+    "meiotic mismatch repair",
+    "mismatch repair",
+    "mismatched DNA binding",
+    "negative regulation of DNA recombination",
+    "nucleoplasm",
+    "nucleus",
+    "response to UV",
+    "somatic hypermutation of immunoglobulin genes",
+    "somatic recombination of immunoglobulin gene segments",
+    "spermatogenesis"
+  ],
+  "go_ids": [
+    "GO:0000710",
+    "GO:0000785",
+    "GO:0003682",
+    "GO:0003684",
+    "GO:0005524",
+    "GO:0005634",
+    "GO:0005654",
+    "GO:0005794",
+    "GO:0005829",
+    "GO:0006281",
+    "GO:0006298",
+    "GO:0007283",
+    "GO:0008094",
+    "GO:0008340",
+    "GO:0008630",
+    "GO:0009411",
+    "GO:0016446",
+    "GO:0016447",
+    "GO:0019899",
+    "GO:0030983",
+    "GO:0032137",
+    "GO:0032301",
+    "GO:0043231",
+    "GO:0045190",
+    "GO:0045910",
+    "GO:0097193",
+    "GO:0140003",
+    "GO:0140664"
+  ],
+  "flexible_loops": [
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206
+  ],
+  "interface_regions": [
+    5,
+    1359
+  ],
+  "gene": "MSH6",
+  "cached_at": "2025-01-27"
+}
