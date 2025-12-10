@@ -561,17 +561,29 @@ class CascadeAnalyzer:
                 gene_symbol=gene,
                 raw_scores=raw_scores,
                 uniprot_function=uniprot_function,
-                go_terms=go_terms
+                go_terms=go_terms,
+                use_advisory_mode=True  # 🧬 REN'S ELEGANT REFACTOR: Trust analyzers, flag atypical
             )
 
             # Update results with plausibility-filtered scores
+            # 🧬 In advisory mode, final_scores ARE the raw scores (trust the analyzer)
             filtered_scores = plausibility_result['final_scores']
             results['plausibility_filtered_scores'] = filtered_scores
             results['gene_family'] = plausibility_result['gene_family']
             results['plausibility_rationale'] = plausibility_result.get('rationale', {})
+            results['advisory_mode'] = plausibility_result.get('advisory_mode', False)
+            results['atypical_mechanisms'] = plausibility_result.get('atypical_mechanisms', [])
 
             print(f"🎯 PLAUSIBILITY RESULT: Gene family = {results['gene_family']}")
-            print(f"   Filtered scores: DN={filtered_scores['DN']:.3f}, LOF={filtered_scores['LOF']:.3f}, GOF={filtered_scores['GOF']:.3f}")
+            if plausibility_result.get('advisory_mode'):
+                print(f"   🧬 ADVISORY MODE: Using raw scores (trust the analyzer)")
+            print(f"   Scores: DN={filtered_scores['DN']:.3f}, LOF={filtered_scores['LOF']:.3f}, GOF={filtered_scores['GOF']:.3f}")
+
+            # 🧬 REN'S ELEGANT INSIGHT: Flag atypical mechanisms instead of squashing them
+            atypical = plausibility_result.get('atypical_mechanisms', [])
+            if atypical:
+                for am in atypical:
+                    print(f"   {am['flag']}")
 
             # 💡 LUMEN'S REFACTOR: Use the new ScoreAggregator for final scoring.
             # This makes the pipeline transparent, debuggable, and easier to tune.

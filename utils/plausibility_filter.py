@@ -290,13 +290,19 @@ def apply_pathogenicity_filter(
     """
     Apply gene-family-specific plausibility rules to raw mechanism scores.
 
+    🧬 REN'S ELEGANT REFACTOR (December 2025):
+    Now uses ADVISORY mode instead of hard filtering!
+    - Raw scores are preserved for classification (trust the analyzer's work)
+    - Atypical mechanisms are FLAGGED, not squashed
+    - "The math says this is a problem. THAT SAID, this family isn't usually <mechanism>"
+
     Args:
         raw_scores: dict of {mechanism: score}
         gene_family: str, e.g. "ENZYME", "ION_CHANNEL"
         gene_symbol/uniprot_function/go_terms: used for DN evidence-based adjustment
 
     Returns:
-        dict with mechanism → {raw_score, weighted_score, status, rationale, ...}
+        dict with mechanism → {raw_score, weighted_score, status, rationale, atypical_flag, ...}
     """
     if go_terms is None:
         go_terms = []
@@ -327,11 +333,20 @@ def apply_pathogenicity_filter(
             status = "weighted"
 
         rationale = f"{mech} {status} for {gene_family} (weight {weight})"
+
+        # 🧬 ATYPICAL MECHANISM FLAG (Ren's advisory mode)
+        # If the weight < 1.0 AND the raw score is significant (>0.4), flag for review
+        atypical_flag = None
+        if weight < 1.0 and score >= 0.4:
+            atypical_flag = f"⚠️ {mech} is atypical for {gene_family} (family weight: {weight}) - verify mechanism"
+
         entry = {
             "raw_score": score,
             "weighted_score": weighted,
             "status": status,
             "rationale": rationale,
+            "atypical_flag": atypical_flag,  # 🧬 NEW: Advisory flag instead of hard filter
+            "family_weight": weight,  # 🧬 NEW: Expose the weight for transparency
         }
         if mech == "DN":
             entry.update({
@@ -357,9 +372,15 @@ def plausibility_pipeline(
     uniprot_function: str = "",
     go_terms: List[str] = None,
     override_family: str = None,
+    use_advisory_mode: bool = True,  # 🧬 NEW: Ren's elegant refactor!
 ) -> Dict[str, Any]:
     """
     Full plausibility pipeline: classify → filter → return explainable scores.
+
+    🧬 REN'S ELEGANT REFACTOR (December 2025):
+    Now supports ADVISORY MODE (default: True)!
+    - advisory_mode=True: Use RAW scores for classification, flag atypical mechanisms
+    - advisory_mode=False: Use FILTERED scores (legacy behavior)
 
     Args:
         gene_symbol: str, e.g. "DLD"
@@ -367,12 +388,15 @@ def plausibility_pipeline(
         uniprot_function: UniProt function description
         go_terms: list of GO terms (optional)
         override_family: Optional manual family override (e.g., 'ONCOGENE' for KRAS)
+        use_advisory_mode: If True (default), use raw scores + advisory flags instead of hard filtering
 
     Returns:
         dict with:
             - gene_family
-            - filtered_scores (per mechanism with rationale)
-            - final_scores (simplified weighted values)
+            - filtered_scores (per mechanism with rationale + atypical_flag)
+            - final_scores (RAW values if advisory_mode, else weighted)
+            - atypical_mechanisms (list of mechanisms flagged as atypical for this family)
+            - advisory_mode (whether advisory mode was used)
     """
     if go_terms is None:
         go_terms = []
@@ -381,7 +405,7 @@ def plausibility_pipeline(
     # Step 2: classify gene family (with optional override)
     gene_family = classify_gene_family(gene_symbol, uniprot_function, go_terms, override_family)
 
-    # Step 3-4: apply plausibility filter
+    # Step 3-4: apply plausibility filter (now includes atypical_flag)
     filtered = apply_pathogenicity_filter(
         raw_scores,
         gene_family,
@@ -390,14 +414,32 @@ def plausibility_pipeline(
         go_terms=go_terms,
     )
 
-    # Step 5-6: extract final weighted scores for downstream use
-    final_scores = {mech: vals["weighted_score"] for mech, vals in filtered.items()}
+    # 🧬 REN'S ADVISORY MODE: Trust the analyzer, flag atypical mechanisms
+    if use_advisory_mode:
+        # Use RAW scores for classification (trust the analyzer's work)
+        final_scores = {mech: vals["raw_score"] for mech, vals in filtered.items()}
+    else:
+        # Legacy: use weighted scores
+        final_scores = {mech: vals["weighted_score"] for mech, vals in filtered.items()}
+
+    # Collect atypical mechanism flags
+    atypical_mechanisms = []
+    for mech, vals in filtered.items():
+        if vals.get("atypical_flag"):
+            atypical_mechanisms.append({
+                "mechanism": mech,
+                "flag": vals["atypical_flag"],
+                "raw_score": vals["raw_score"],
+                "family_weight": vals.get("family_weight", 1.0),
+            })
 
     return {
         "gene_symbol": gene_symbol,
         "gene_family": gene_family,
         "filtered_scores": filtered,
         "final_scores": final_scores,
+        "atypical_mechanisms": atypical_mechanisms,  # 🧬 NEW: Advisory flags
+        "advisory_mode": use_advisory_mode,  # 🧬 NEW: Track which mode was used
     }
 
 
