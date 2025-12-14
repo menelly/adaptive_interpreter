@@ -58,11 +58,12 @@ class VariantClassifier:
             family: Gene family name (e.g., 'collagen', 'tumor_suppressor')
         
         Returns:
-            Dict of classification thresholds (P, LP, VUS-P, VUS, LB)
+            Dict of classification thresholds (P, LP, VUS, LB)
         """
-        # Global defaults calibrated empirically (2025-10-14)
-        # LP threshold lowered from 0.80 to 0.78; VUS-P and VUS calibrated via ROC sub-sweeps
-        base = {"P": 1.2, "LP": 0.78, "VUS-P": 0.34, "VUS": 0.25, "LB": 0.2}
+        # Global defaults calibrated empirically (2025-12-11)
+        # VUS-P collapsed into VUS for simpler, more honest classification
+        # LP at 0.78 for high specificity (~75%), LB at 0.25 for conservative benign calls
+        base = {"P": 1.2, "LP": 0.78, "VUS": 0.25, "LB": 0.2}
 
         if not family:
             return base
@@ -84,16 +85,15 @@ class VariantClassifier:
             family: Optional gene family for family-specific thresholds
         
         Returns:
-            ACMG classification string: 'P', 'LP', 'VUS-P', 'VUS', 'LB', or 'B'
+            ACMG classification string: 'P', 'LP', 'VUS', 'LB', or 'B'
+            (VUS-P collapsed into VUS as of 2025-12-11)
         """
         thr = self._get_family_thresholds(family)
-        
+
         if score >= thr["P"]:
             return "P"
         elif score >= thr["LP"]:
             return "LP"
-        elif score >= thr["VUS-P"]:
-            return "VUS-P"
         elif score >= thr["VUS"]:
             return "VUS"
         elif score >= thr["LB"]:

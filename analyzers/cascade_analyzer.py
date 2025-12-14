@@ -267,24 +267,12 @@ class CascadeAnalyzer:
             'status': 'SUCCESS'
         }
 
-        # 🧬 STEP 2: Get Conservation Multiplier (EVOLUTIONARY INTELLIGENCE!)
-        conservation_multiplier = self._get_conservation_multiplier(gene, variant, uniprot_id, gnomad_freq, conservation_score)
-        print(f"🧬 Using conservation multiplier: {conservation_multiplier:.1f}x")
-
-        # 🛡️ SAFETY: If conservation data is missing (multiplier = 1.0 and no direct score),
-        # flag for review - we can't be confident without evolutionary data
-        if conservation_score is None and conservation_multiplier == 1.0:
-            print(f"⚠️ WARNING: No conservation data available for {gene} {variant}")
-            results['review_flags'] = 'MISSING_CONSERVATION'
-            results['conservation_data_missing'] = True
-
-        # 🧬 STEP 3: Check for Domain Interface Disruption (THE MISSING MECHANISM!)
-        interface_result = None
-        interface_multiplier = 1.0
-
-        # Extract position and amino acids from variant
+        # 🧬 STEP 2: Extract position from variant FIRST (needed for conservation fetch)
         import re
         match = re.search(r'p\.([A-Z][a-z]{2}|[A-Z])(\d+)([A-Z][a-z]{2}|[A-Z]|\*)', variant)
+        position = None
+        ref_aa = None
+        alt_aa = None
         if match:
             ref_aa_raw, position_str, alt_aa_raw = match.groups()
             position = int(position_str)
@@ -296,6 +284,42 @@ class CascadeAnalyzer:
                      'Ser': 'S', 'Thr': 'T', 'Trp': 'W', 'Tyr': 'Y', 'Val': 'V'}
             ref_aa = aa_map.get(ref_aa_raw, ref_aa_raw)
             alt_aa = aa_map.get(alt_aa_raw, alt_aa_raw) if alt_aa_raw != '*' else '*'
+
+        # 🧬 STEP 2b: FETCH CONSERVATION SCORE if not provided
+        if conservation_score is None and position is not None:
+            try:
+                # Use offline mapper to get genomic coordinates
+                if hasattr(self.conservation_db, 'uniprot_mapper') and hasattr(self.conservation_db.uniprot_mapper, 'offline_mapper'):
+                    offline_mapper = self.conservation_db.uniprot_mapper.offline_mapper
+                    if offline_mapper:
+                        genomic_coords = offline_mapper.map_gene_pos(gene, position)
+                        if genomic_coords and genomic_coords.get('genomic_position'):
+                            chrom = genomic_coords['chromosome']
+                            gpos = genomic_coords['genomic_position']
+                            scores = self.conservation_db.get_conservation_scores(chrom, gpos)
+                            if scores and scores.get('phyloP', 0) != 0:
+                                conservation_score = scores['phyloP']
+                                print(f"🧬 Fetched conservation for {gene} pos {position}: phyloP={conservation_score:.2f} at {chrom}:{gpos}")
+            except Exception as e:
+                print(f"⚠️ Conservation fetch failed for {gene} {variant}: {e}")
+
+        # 🧬 STEP 2c: Get Conservation Multiplier (EVOLUTIONARY INTELLIGENCE!)
+        conservation_multiplier = self._get_conservation_multiplier(gene, variant, uniprot_id, gnomad_freq, conservation_score)
+        print(f"🧬 Using conservation multiplier: {conservation_multiplier:.1f}x")
+
+        # 🛡️ SAFETY: If conservation data is missing, flag for review
+        if conservation_score is None:
+            print(f"⚠️ WARNING: No conservation data available for {gene} {variant}")
+            results['review_flags'] = 'MISSING_CONSERVATION'
+            results['conservation_data_missing'] = True
+        else:
+            results['conservation_data_missing'] = False
+
+        # 🧬 STEP 3: Check for Domain Interface Disruption (THE MISSING MECHANISM!)
+        interface_result = None
+        interface_multiplier = 1.0
+
+        if position is not None:
 
             # Get domain data from LOF analyzer's cache (same source!)
             try:
@@ -562,12 +586,16 @@ class CascadeAnalyzer:
                 raw_scores=raw_scores,
                 uniprot_function=uniprot_function,
                 go_terms=go_terms,
-                use_advisory_mode=True  # 🧬 REN'S ELEGANT REFACTOR: Trust analyzers, flag atypical
+                use_advisory_mode=False  # 🧬 REN'S DUAL-TRACK INSIGHT: Use weighted for final, show raw too!
             )
 
-            # Update results with plausibility-filtered scores
-            # 🧬 In advisory mode, final_scores ARE the raw scores (trust the analyzer)
-            filtered_scores = plausibility_result['final_scores']
+            # 🧬 REN'S DUAL-TRACK CLASSIFICATION (December 2025):
+            # "Show what we detected AND what current biology expects"
+            # - raw_classification: What the analyzer found (for future science to validate)
+            # - final_classification: What current biology says is plausible (for clinical use)
+            # This preserves signals like "DN in AR genes" or "GOF in tumor suppressors"
+            # while reporting conservatively based on current understanding.
+            filtered_scores = plausibility_result['final_scores']  # Now uses WEIGHTED scores
             results['plausibility_filtered_scores'] = filtered_scores
             results['gene_family'] = plausibility_result['gene_family']
             results['plausibility_rationale'] = plausibility_result.get('rationale', {})
@@ -575,15 +603,16 @@ class CascadeAnalyzer:
             results['atypical_mechanisms'] = plausibility_result.get('atypical_mechanisms', [])
 
             print(f"🎯 PLAUSIBILITY RESULT: Gene family = {results['gene_family']}")
-            if plausibility_result.get('advisory_mode'):
-                print(f"   🧬 ADVISORY MODE: Using raw scores (trust the analyzer)")
-            print(f"   Scores: DN={filtered_scores['DN']:.3f}, LOF={filtered_scores['LOF']:.3f}, GOF={filtered_scores['GOF']:.3f}")
+            print(f"   🧬 DUAL-TRACK MODE: Raw scores preserved, weighted scores for classification")
+            print(f"   Raw scores:    DN={raw_scores['DN']:.3f}, LOF={raw_scores['LOF']:.3f}, GOF={raw_scores['GOF']:.3f}")
+            print(f"   Weighted:      DN={filtered_scores['DN']:.3f}, LOF={filtered_scores['LOF']:.3f}, GOF={filtered_scores['GOF']:.3f}")
 
-            # 🧬 REN'S ELEGANT INSIGHT: Flag atypical mechanisms instead of squashing them
+            # 🧬 REN'S ELEGANT INSIGHT: Flag atypical mechanisms (these are the "future science" signals!)
             atypical = plausibility_result.get('atypical_mechanisms', [])
             if atypical:
+                print(f"   🔬 ATYPICAL MECHANISMS DETECTED (preserved for future validation):")
                 for am in atypical:
-                    print(f"   {am['flag']}")
+                    print(f"      {am['flag']}")
 
             # 💡 LUMEN'S REFACTOR: Use the new ScoreAggregator for final scoring.
             # This makes the pipeline transparent, debuggable, and easier to tune.
@@ -630,12 +659,12 @@ class CascadeAnalyzer:
                 print(f"🌍 Population frequency analysis failed: {freq_e}")
 
 
-            # 1. Initialize the ScoringContext
+            # 1. Initialize the ScoringContext (uses WEIGHTED/filtered scores for final classification)
             scoring_context = ScoringContext(
                 gene=gene,
                 variant=variant,
                 raw_scores=results['scores'],
-                plausibility_filtered_scores=filtered_scores,
+                plausibility_filtered_scores=filtered_scores,  # WEIGHTED scores for clinical reporting
                 multipliers={
                     'conservation': conservation_multiplier,
                     'population_frequency': frequency_boost, # 🌍 LUMEN'S ADDITION!
@@ -644,7 +673,23 @@ class CascadeAnalyzer:
                 }
             )
 
-            # 2. Call the aggregator to calculate the final score
+            # 🧬 REN'S DUAL-TRACK: Also calculate what we'd call it with RAW scores
+            # This preserves signals that current biology might not expect but future science may validate
+            raw_scoring_context = ScoringContext(
+                gene=gene,
+                variant=variant,
+                raw_scores=results['scores'],
+                plausibility_filtered_scores=results['scores'],  # Use RAW scores here
+                multipliers=scoring_context.multipliers.copy()
+            )
+            raw_context = calculate_final_score(
+                context=raw_scoring_context,
+                gene_family=results.get('gene_family')
+            )
+            results['raw_score'] = raw_context.final_score
+            results['raw_classification'] = self.interpret_score(raw_context.final_score, results.get('gene_family'))
+
+            # 2. Call the aggregator to calculate the final score (uses WEIGHTED scores)
             final_context = calculate_final_score(
                 context=scoring_context,
                 gene_family=results.get('gene_family')
@@ -657,6 +702,11 @@ class CascadeAnalyzer:
             results['conservation_multiplier_applied'] = scoring_context.multipliers['conservation']
             results['family_aa_multiplier_applied'] = scoring_context.multipliers['family_aa']
             results['gly_cys_multiplier_applied'] = scoring_context.multipliers['gly_cys']
+
+            # 🧬 REN'S INSIGHT: Track when raw vs weighted differ (future science signals!)
+            if results['raw_classification'] != results['final_classification']:
+                results['plausibility_adjustment'] = f"Raw:{results['raw_classification']}→Weighted:{results['final_classification']}"
+                print(f"   🔬 DUAL-TRACK: Raw={results['raw_classification']}, Final={results['final_classification']}")
 
             # 🧬 REN'S MECHANISM-FIRST APPROACH: Apply conservation as ±1 level nudge
             # Conservation is a TIE-BREAKER, not a score multiplier!
@@ -675,10 +725,10 @@ class CascadeAnalyzer:
 
             # 🔥 REN'S CRITICAL ADDITION: Add review flags for missing data
             review_flags = []
-            if scoring_context.multipliers.get('conservation', 0.0) == 1.0:
+            # Check if conservation_data_missing was already set (earlier in the function)
+            # This respects the actual conservation fetch result
+            if results.get('conservation_data_missing', True):
                 review_flags.append("MISSING_CONSERVATION")
-                # 🛡️ CRITICAL: Set the flag that triggers the conservation clamp!
-                results['conservation_data_missing'] = True
             if gnomad_freq is None:
                 review_flags.append("MISSING_FREQUENCY")
             if routing_result.get('confidence', 1.0) < 0.7:
@@ -762,31 +812,54 @@ class CascadeAnalyzer:
         except Exception:
             pass
 
-        # 🛡️ CONSERVATION SAFETY CLAMP: If conservation data is missing,
-        # we can't confidently call variants benign - clamp to VUS for safety
+        # 🛡️ CONSERVATION UNCERTAINTY FLAGS: If conservation data is missing,
+        # we have UNCERTAINTY in BOTH directions - flag appropriately
+        # (Don't clamp pathogenic calls - recessive diseases can be common!)
         try:
             if results.get('conservation_data_missing', False):
                 current = results.get('final_classification') or 'B'
-                print(f"🛡️ DEBUG: Conservation clamp check - current={current}, conservation_data_missing={results.get('conservation_data_missing')}")
-                # Only clamp if we would have called it benign/likely benign
+                print(f"🛡️ DEBUG: Conservation uncertainty check - current={current}, conservation_data_missing={results.get('conservation_data_missing')}")
+
+                def _add_review_flag(results, flag):
+                    if 'review_flags' in results and results['review_flags'] and results['review_flags'] != 'None':
+                        if flag not in results['review_flags']:
+                            results['review_flags'] += f',{flag}'
+                    else:
+                        results['review_flags'] = flag
+
+                # BENIGN DIRECTION: Can't confidently call benign without conservation
                 if current in ['B', 'LB', 'B/LB']:
                     results['final_classification'] = 'VUS'
                     note = 'Missing conservation data; cannot confidently classify as benign - clamped to VUS for safety'
                     results['explanation'] = (results.get('explanation','') + ' | ' + note).strip(' |')
-                    # Add/append review flag
-                    if 'review_flags' in results and results['review_flags'] and results['review_flags'] != 'None':
-                        if 'MISSING_CONSERVATION' not in results['review_flags']:
-                            results['review_flags'] += ',MISSING_CONSERVATION_CLAMP'
-                    else:
-                        results['review_flags'] = 'MISSING_CONSERVATION_CLAMP'
-                    # Nudge summary to reflect clamp
+                    _add_review_flag(results, 'MISSING_CONSERVATION_CLAMP_BENIGN')
                     if 'summary' in results and results['summary']:
                         results['summary'] += ' [Clamp:VUS-NoConservation]'
                     print(f"🛡️ SAFETY: Clamped {current} → VUS due to missing conservation data")
+
+                # PATHOGENIC DIRECTION: Flag uncertainty but DON'T clamp
+                # (Recessive diseases can have common pathogenic variants!)
+                elif current in ['LP', 'P']:
+                    note = 'Missing conservation data; pathogenic call has reduced confidence'
+                    results['explanation'] = (results.get('explanation','') + ' | ' + note).strip(' |')
+                    _add_review_flag(results, 'MISSING_CONSERVATION_PATH_UNCERTAIN')
+                    # Reduce confidence score if present
+                    if 'confidence' in results:
+                        results['confidence'] = min(results.get('confidence', 1.0), 0.7)
+                    if 'summary' in results and results['summary']:
+                        results['summary'] += ' [Flag:NoConservation-ReducedConf]'
+                    print(f"🛡️ UNCERTAINTY: Flagged {current} - missing conservation reduces confidence")
+
+                # VUS-P: Also flag uncertainty
+                elif current == 'VUS-P':
+                    _add_review_flag(results, 'MISSING_CONSERVATION_UNCERTAIN')
+                    if 'confidence' in results:
+                        results['confidence'] = min(results.get('confidence', 1.0), 0.8)
+                    print(f"🛡️ UNCERTAINTY: Flagged {current} - missing conservation data")
                 else:
-                    print(f"🛡️ DEBUG: No clamp needed - {current} not in ['B', 'LB', 'B/LB']")
+                    print(f"🛡️ DEBUG: No action needed for {current}")
         except Exception as e:
-            print(f"❌ ERROR in conservation clamp: {e}")
+            print(f"❌ ERROR in conservation uncertainty check: {e}")
             import traceback
             traceback.print_exc()
 
@@ -826,17 +899,24 @@ class CascadeAnalyzer:
 
     def _apply_conservation_nudge(self, classification: str, phylop_score: float) -> str:
         """
-        🧬 MECHANISM-FIRST CONSERVATION NUDGE
+        🧬 MECHANISM-FIRST CONSERVATION NUDGE (UPWARD ONLY)
 
-        Apply conservation as a ±1 level adjustment AFTER mechanism-based classification.
-        This respects the biological evidence while using evolutionary data as a tie-breaker.
+        Apply conservation as a +1 level adjustment AFTER mechanism-based classification.
+
+        🔬 REN'S INSIGHT (Dec 2024): Only nudge UPWARD for highly conserved positions.
+        Low conservation does NOT mean a variant can't break things - it just means
+        evolution hasn't had strong pressure to preserve that position. A variant
+        can still disrupt function even at non-conserved sites.
+
+        High conservation + rare variant = strong evidence for pathogenicity → nudge UP
+        Low conservation ≠ evidence for benign → NO downward nudge
 
         Args:
             classification: Mechanism-based classification (B, LB, VUS, VUS-P, LP, P)
             phylop_score: PhyloP conservation score (-20 to +20)
 
         Returns:
-            Nudged classification (shifted ±1 level or unchanged)
+            Nudged classification (shifted +1 level for high conservation, unchanged otherwise)
         """
         # Classification hierarchy (in order of severity)
         levels = ['B', 'LB', 'VUS', 'VUS-P', 'LP', 'P']
@@ -854,17 +934,13 @@ class CascadeAnalyzer:
                 print(f"🧬 CONSERVATION NUDGE UP: {classification} → {nudged} (phyloP: {phylop_score:.2f})")
             return nudged
 
-        # Low conservation = nudge DOWN (more benign)
-        elif phylop_score < -1.0:  # Not conserved
-            new_index = max(current_index - 1, 0)
-            nudged = levels[new_index]
-            if nudged != classification:
-                print(f"🧬 CONSERVATION NUDGE DOWN: {classification} → {nudged} (phyloP: {phylop_score:.2f})")
-            return nudged
-
-        # Average conservation = no change
+        # All other cases: no nudge (including low conservation)
+        # 🔬 REN'S FIX: Low conservation doesn't mean benign - just no extra evidence for pathogenic
         else:
-            print(f"🧬 CONSERVATION: No nudge (phyloP: {phylop_score:.2f} is average)")
+            if phylop_score < -1.0:
+                print(f"🧬 CONSERVATION: No downward nudge (phyloP: {phylop_score:.2f} - low conservation ≠ benign)")
+            else:
+                print(f"🧬 CONSERVATION: No nudge (phyloP: {phylop_score:.2f} is average)")
             return classification
 
     def _get_conservation_multiplier(self, gene: str, variant: str, uniprot_id: str, gnomad_freq: float = 0.0, direct_score: Optional[float] = None) -> float:
@@ -1568,25 +1644,37 @@ class CascadeAnalyzer:
             }
 
         # Extract position and amino acids from variant
-        # Try three-letter code first: p.Met123Leu
-        match = re.search(r'p\.([A-Z][a-z]{2})(\d+)([A-Z][a-z]{2}|\*|\?)', variant)
+        # Try three-letter code first: p.Met123Leu, p.Arg273Ter, p.Gln577X
+        # 🚨 FIX: Added Ter and X as valid stop codon indicators
+        match = re.search(r'p\.([A-Z][a-z]{2})(\d+)([A-Z][a-z]{2}|\*|\?|X)', variant)
         if match:
             ref_aa_3letter, position, alt_aa_3letter = match.groups()
             position = int(position)
             # Convert to single letter for comparison
+            # 🚨 FIX: Added 'Ter' mapping to '*' for stop codon
             aa_map = {'Met': 'M', 'Leu': 'L', 'Arg': 'R', 'Gly': 'G', 'Cys': 'C',
                      'Pro': 'P', 'Ala': 'A', 'Val': 'V', 'Ile': 'I', 'Thr': 'T',
                      'Ser': 'S', 'Asn': 'N', 'Gln': 'Q', 'Asp': 'D', 'Glu': 'E',
-                     'Lys': 'K', 'His': 'H', 'Phe': 'F', 'Tyr': 'Y', 'Trp': 'W'}
+                     'Lys': 'K', 'His': 'H', 'Phe': 'F', 'Tyr': 'Y', 'Trp': 'W',
+                     'Ter': '*'}  # Ter = termination/stop codon
             ref_aa = aa_map.get(ref_aa_3letter, ref_aa_3letter[0])
-            alt_aa = aa_map.get(alt_aa_3letter, alt_aa_3letter[0]) if alt_aa_3letter not in ['*', '?'] else alt_aa_3letter
+            # 🚨 FIX: Handle X as stop codon (normalize to *)
+            if alt_aa_3letter == 'X':
+                alt_aa = '*'
+            elif alt_aa_3letter in ['*', '?']:
+                alt_aa = alt_aa_3letter
+            else:
+                alt_aa = aa_map.get(alt_aa_3letter, alt_aa_3letter[0])
         else:
-            # Try single-letter code: p.M123L or p.R123*
-            match = re.search(r'p\.([A-Z*])(\d+)([A-Z*?])', variant)
+            # Try single-letter code: p.M123L or p.R123* or p.R123X
+            match = re.search(r'p\.([A-Z*])(\d+)([A-Z*?X])', variant)
             if not match:
                 return {'is_critical': False, 'explanation': ''}
             ref_aa, position, alt_aa = match.groups()
             position = int(position)
+            # 🚨 FIX: Normalize X to * for stop codon
+            if alt_aa == 'X':
+                alt_aa = '*'
 
         # 🚨 START CODON LOSS (M1X where X != M)
         if position == 1 and ref_aa == 'M' and alt_aa not in ['M', '?']:
@@ -1595,7 +1683,7 @@ class CascadeAnalyzer:
                 'explanation': f"Start codon loss (M1{alt_aa}): Complete loss of protein production - Auto-Pathogenic"
             }
 
-        # 🚨 NONSENSE VARIANTS (X = stop codon)
+        # 🚨 NONSENSE VARIANTS (* = stop codon, already normalized from X/Ter)
         if variant_type == 'nonsense' or alt_aa == '*':
             return {
                 'is_critical': True,
@@ -1931,11 +2019,14 @@ Examples:
             print(f"\n🎯 CASCADE ANALYSIS COMPLETE")
             print(f"Gene: {result['gene']}")
             print(f"Variant: {result['variant']}")
-            print(f"Frequency: {result['gnomad_freq']:.4f}")
-            print(f"Cascade Triggered: {result['cascade_triggered']}")
-            print(f"Analyzers Run: {', '.join(result['analyzers_run'])}")
-            print(f"Summary: {result['summary']}")
-            print(f"Final: {result['final_score']:.3f} ({result['final_classification']})")
+            print(f"Frequency: {result.get('gnomad_freq', 0.0):.4f}")
+            print(f"Cascade Triggered: {result.get('cascade_triggered', 'N/A')}")
+            print(f"Analyzers Run: {', '.join(result.get('analyzers_run', []))}")
+            print(f"Summary: {result.get('summary', 'N/A')}")
+            print(f"Final: {result.get('final_score', 0.0):.3f} ({result.get('final_classification', 'UNKNOWN')})")
+            # Show review flags if present
+            if result.get('review_flags') and result['review_flags'] != 'None':
+                print(f"⚠️ Review Flags: {result['review_flags']}")
         else:
             print(f"❌ Analysis failed: {result.get('error', 'Unknown error')}")
 

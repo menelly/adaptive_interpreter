@@ -357,6 +357,9 @@ class CascadeBatchProcessor:
         def map_clinvar_bucket(sig: str) -> str:
             if not sig: return 'NA'
             s = sig.strip().replace('_',' ').replace('-',' ').lower()
+            # IMPORTANT: Check conflicting FIRST before pathogenic/benign keywords
+            if 'conflicting' in s:
+                return 'CONFLICTING'
             if 'likely pathogenic' in s:
                 return 'LP'
             if 'pathogenic' in s:
@@ -365,7 +368,7 @@ class CascadeBatchProcessor:
                 return 'LB'
             if 'benign' in s:
                 return 'B'
-            if 'uncertain' in s or 'vus' in s or 'conflicting' in s:
+            if 'uncertain' in s or 'vus' in s:
                 return 'VUS'
             return 'NA'
 
@@ -382,17 +385,30 @@ class CascadeBatchProcessor:
             # Align with agreement_analysis.py semantics
             if clin == 'NA' or ai == 'NA':
                 return 'NA'
-            # VUS <-> VUS-P agreement handled by bucketing VUS-P as VUS above
+
+            # CONFLICTING in ClinVar = experts can't agree, so ANY call is reasonable
+            if clin == 'CONFLICTING':
+                return 'CONFLICTING_OK'
+
+            # VUS <-> VUS agreement
             if clin == 'VUS' and ai == 'VUS':
                 return 'AGREE'
+
             # If ClinVar VUS and AI moves to a side, that's better data
             if clin == 'VUS' and ai in {'B','LB'}:
                 return 'BETTER_DATA_to_benign'
             if clin == 'VUS' and ai in {'P','LP'}:
                 return 'BETTER_DATA_to_pathogenic'
+
+            # If WE say VUS, we're being appropriately cautious - not disagreeing
+            if ai == 'VUS':
+                return 'CAUTIOUS'
+
             # Bucket agreement across sides
             if (clin in {'B','LB'} and ai in {'B','LB'}) or (clin in {'P','LP'} and ai in {'P','LP'}):
                 return 'AGREE'
+
+            # Only TRUE disagreement is P/LP <-> B/LB flips
             return 'DISAGREE'
 
         columns = [

@@ -429,10 +429,27 @@ class UniversalProteinAnnotator:
             nova_format["flexible_loops"] = features["flexible_loops"][:10]  # Limit size
         
         if features.get("interface_likelihood"):
-            # Convert to ranges for efficiency
+            # 🐙 FIX: Keep actual position set, don't collapse to bogus min-max range!
+            # The old code: [positions[0], positions[-1]] collapsed positions 13 and 746
+            # into "interface region 13-746" which is wrong - it marked the entire protein!
+            # Now we keep the actual positions and let the context builder check membership.
             positions = sorted(set(features["interface_likelihood"]))
             if positions:
-                nova_format["interface_regions"] = [positions[0], positions[-1]]
+                # Store actual position ranges, not collapsed min-max
+                # Group consecutive positions into ranges
+                ranges = []
+                if positions:
+                    start = positions[0]
+                    end = positions[0]
+                    for pos in positions[1:]:
+                        if pos <= end + 5:  # Allow small gaps (5 residues)
+                            end = pos
+                        else:
+                            ranges.append([start, end])
+                            start = pos
+                            end = pos
+                    ranges.append([start, end])
+                nova_format["interface_regions"] = ranges  # List of [start, end] pairs
         
         return nova_format
 
