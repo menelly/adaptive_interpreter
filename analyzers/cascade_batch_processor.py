@@ -41,12 +41,8 @@ class CascadeBatchProcessor:
             print(f"⚠️ WARNING: Could not initialize ConservationFetcher: {e}")
             print(f"⚠️ Variants without conservation data will be classified as VUS for safety")
             self.conservation_fetcher = None
-        self.gene_to_chromosome = {
-            'AHNAK': 'chr11', 'FBN1': 'chr15', 'KCNMA1': 'chr10', 'TP53': 'chr17', 'BRCA1': 'chr17',
-            'BRCA2': 'chr13', 'COL1A1': 'chr17', 'COL1A2': 'chr7', 'CFTR': 'chr7', 'SCN5A': 'chr3',
-            'CACNA1C': 'chr12', 'KCNH2': 'chr7', 'MYO7A': 'chr11', 'RYR1': 'chr19', 'TTN': 'chr2',
-            'MYBPC3': 'chr11', 'MYH7': 'chr14', 'LDLR': 'chr19', 'APOB': 'chr2', 'PCSK9': 'chr1'
-        }
+        # Dynamic gene-to-chromosome cache - fetches from Ensembl on demand
+        self._gene_chromosome_cache = {}
         # Per-Ren: autosomal recessive genes can have high population AF even for pathogenic variants.
         # Use a higher benign short-circuit threshold for AR genes (default 5%).
         self.autosomal_recessive_genes = {
@@ -54,9 +50,27 @@ class CascadeBatchProcessor:
         }
         self.ar_benign_threshold = 0.05  # 5% minimum for AR genes
 
-    # ... [All other helper methods from the original file go here] ...
-    # I am including the full logic from the known good file.
-    
+    def get_gene_chromosome(self, gene: str) -> str:
+        """Dynamically fetch chromosome for gene from Ensembl REST API, with caching."""
+        if gene in self._gene_chromosome_cache:
+            return self._gene_chromosome_cache[gene]
+
+        try:
+            import requests
+            url = f'https://rest.ensembl.org/lookup/symbol/homo_sapiens/{gene}?content-type=application/json'
+            r = requests.get(url, timeout=10)
+            if r.status_code == 200:
+                data = r.json()
+                chrom = f"chr{data.get('seq_region_name', '')}"
+                if chrom and chrom != 'chr':
+                    self._gene_chromosome_cache[gene] = chrom
+                    print(f"📍 Fetched chromosome for {gene}: {chrom}")
+                    return chrom
+        except Exception as e:
+            print(f"⚠️ Could not fetch chromosome for {gene}: {e}")
+
+        return None
+
     def process_csv(self, input_path: str, output_path: str, freq_threshold: float = 0.05) -> Dict:
         results = []
         stats = self.get_initial_stats()
@@ -149,8 +163,67 @@ class CascadeBatchProcessor:
     def parse_variant_row(self, row, is_discovery, is_ren, freq_threshold):
         if is_discovery:
             return self.parse_discovery_format(row)
-        # Placeholder for other formats
+        if is_ren:
+            return self.parse_ren_format(row)
         return {'skipped': True, 'skip_reason': 'skipped_unparseable'}
+
+    def parse_ren_format(self, row):
+        """Parse GeneCards/Ren TSV format with Variation Name and AA Chg columns"""
+        variation_name = row.get('Variation Name', '')
+        aa_chg = row.get('AA Chg', '')
+
+        if not aa_chg or not aa_chg.strip():
+            return {'skipped': True, 'skip_reason': 'skipped_no_protein_consequence'}
+
+        # Extract gene from Variation Name like "NM_000088.4(COL1A1):c.2678G>C (p.Gly893Ala)"
+        gene_match = re.search(r'\(([A-Z0-9]+)\):', variation_name)
+        gene = gene_match.group(1) if gene_match else None
+
+        if not gene:
+            return {'skipped': True, 'skip_reason': 'skipped_unparseable'}
+
+        # Convert AA Chg (like G893A) to variant format analyzer expects
+        aa_chg = aa_chg.strip()
+
+        # Build hgvs from variation name or construct from aa_chg
+        hgvs = variation_name if variation_name else f"p.{aa_chg}"
+
+        # Parse Chrpos like "50,189,528(-)" to get position
+        chrpos_raw = row.get('Chrpos', '')
+        pos = None
+        if chrpos_raw:
+            # Remove commas and extract just the number
+            pos_match = re.search(r'([\d,]+)', chrpos_raw)
+            if pos_match:
+                pos = int(pos_match.group(1).replace(',', ''))
+
+        # Get chromosome from gene dynamically via Ensembl API (cached)
+        chrom = self.get_gene_chromosome(gene)
+
+        # Fetch conservation score if we have position and chromosome
+        conservation_score = None
+        if self.conservation_fetcher and chrom and pos:
+            conservation_score = self.conservation_fetcher.get_conservation_score(chrom, pos)
+            if conservation_score is not None:
+                print(f"✅ Conservation score for {gene} {aa_chg} ({chrom}:{pos}): {conservation_score:.4f}")
+
+        return {
+            'gene': gene,
+            'variant': aa_chg,
+            'hgvs': hgvs,
+            'hgvs_g': None,
+            'chrom': chrom,
+            'pos': pos,
+            'ref': None,
+            'alt': None,
+            'clinical_sig': row.get('Clinical significance and condition', '')[:80],
+            'clinvar_sig': row.get('Clinical significance and condition', '')[:80],
+            'rsid': row.get('rsID', ''),
+            'variant_type': 'missense',
+            'review_status': '',
+            'molecular_consequence': row.get('Type', ''),
+            'conservation_score': conservation_score
+        }
 
     def parse_discovery_format(self, row):
         gene, variant_p, hgvs_g = row.get('gene'), row.get('hgvs_p'), row.get('hgvs_g')

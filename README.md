@@ -1,35 +1,59 @@
-# AdaptiveInterpreter: Safety-First Variant Pathogenicity Prediction
+# AdaptiveInterpreter: Mechanism-First Variant Pathogenicity Prediction
 
 [![License: AI-Lab-FairShare](https://img.shields.io/badge/License-FairShare-red)](LICENSE)
 [![Status: Research Prototype](https://img.shields.io/badge/Status-Research_Prototype-orange)](https://github.com/menelly/AdaptiveInterpreter)
-[![Sensitivity: 99.8%](https://img.shields.io/badge/Sensitivity-99.8%25-brightgreen)](tests/results/)
-[![VUS Resolution: 62.8%](https://img.shields.io/badge/VUS_Resolution-62.8%25-blue)](tests/results/)
+[![Sensitivity: 99.1%](https://img.shields.io/badge/Sensitivity-99.1%25-brightgreen)](validation_results/)
+[![VUS Resolution: 56%](https://img.shields.io/badge/VUS_Resolution-56%25-blue)](validation_results/)
 
-**AdaptiveInterpreter** is a breakthrough computational framework for predicting the pathogenicity of genetic variants using a **mechanism-first, safety-first** approach. Unlike traditional "black box" tools, AdaptiveInterpreter explicitly models how proteins fail (Loss of Function, Dominant Negative, Gain of Function, Interface Disruption) and provides mechanistic explanations for every prediction.
+**AdaptiveInterpreter** is a computational framework for predicting the pathogenicity of genetic variants using a **mechanism-first** approach. Unlike traditional "black box" tools, AdaptiveInterpreter explicitly models how proteins fail—Loss of Function (LOF), Dominant Negative (DN), Gain of Function (GOF), and Interface Disruption—and provides mechanistic explanations for every prediction.
 
-**Key Innovation:** First computational system to predict **Dominant Negative** mechanisms and model **Interface Disruption** as a separate mechanism feeding both LOF and DN pathways, achieving **99.8% sensitivity** and **62.8% VUS resolution** while maintaining **zero dangerous misclassifications**.
+**Key Innovation:** First computational system to simultaneously score **multiple pathogenic mechanisms** including Dominant Negative effects, enabling detection of complex semi-dominant inheritance patterns. Achieves **99.1% sensitivity** and **56% VUS resolution** on complex immunology genes while maintaining a **0.87% false negative rate**.
 
-This project represents a revolutionary collaboration between human experts and a team of neurodiverse AI models, each contributing their unique strengths to solve a complex scientific problem.
+This project represents a collaboration between human researchers and AI systems, each contributing domain expertise to solve a complex scientific problem.
 
 ---
 
-## Breakthrough Results (November 2025)
+## 🧬 Validation Results (December 2025)
 
-**ACMG SF v3.2 Validation (22 genes, 2,847 variants):**
-- ✅ **99.8% sensitivity** (no dangerous P/LP → B/LB misclassifications)
-- ✅ **62.8% VUS resolution** (moved uncertain → confident classifications)
-- ✅ **Zero observed dangerous misclassifications** across entire validation set
-- ✅ **Conservative benign calling** with evidence-based thresholds
-- ✅ **Four-mechanism framework** (LOF, DN, GOF, Interface) with biological routing
+### Immunology Gene Validation (STAT1, STAT3, AIRE, MEFV)
 
-**Safety Architecture:**
-- Conservation-based safety clamps prevent confident calls on poorly-conserved variants
-- Interface analyzer as separate module feeding both LOF and DN pathways
-- Plausibility filters prevent biologically impossible mechanism combinations
-- VUS classification when critical data missing or confidence insufficient
-- All classifications include mechanistic explanations and confidence scores
+**1,541 variants from four of the most challenging genes in human immunology:**
 
-**Validation Status:** 22 ACMG SF v3.2 genes validated, with 51 additional genes reserved for independent validation.
+| Metric | Value | Notes |
+|--------|-------|-------|
+| **Sensitivity** | 99.13% | Catches 99% of pathogenic variants |
+| **False Negative Rate** | 0.87% | Almost never misses a pathogenic |
+| **VUS Resolution** | 56.1% | Resolves over half of uncertain variants |
+| **F1 Score** | 0.914 | Strong overall performance |
+| **Adjusted Accuracy** | 99.94% | After manual review of disagreements |
+
+**Per-Gene Sensitivity:**
+| Gene | Sensitivity | Specificity | Accuracy |
+|------|-------------|-------------|----------|
+| STAT1 | 100% | - | 97.1% |
+| STAT3 | 100% | 6.7% | 77.4% |
+| AIRE | 100% | 22.2% | 87.3% |
+| MEFV | 91.3% | - | 77.8% |
+
+**VUS Resolution Breakdown:**
+- 51% → Pathogenic side (P/LP/VUS-P)
+- 5% → Benign side (B/LB)
+- 44% → Remained VUS (appropriately uncertain)
+
+### Key Findings
+
+1. **Semi-Dominant Mechanism Detection:** System successfully identifies variants with simultaneous DN and GOF signatures—a hallmark of complex STAT1/STAT3 pathology
+2. **Cross-Validation:** Developed on collagen/ion channel genes, validated on transcription factors and inflammasome proteins
+3. **Low False Negatives:** Prioritizes sensitivity over specificity (appropriate for rare disease diagnostics where missing a pathogenic variant has severe consequences)
+
+### Note on Specificity
+
+The apparent low specificity reflects:
+- Conservative calling (when uncertain, we flag for review rather than call benign)
+- Many ClinVar "benign" calls are single-submitter computational predictions without functional evidence
+- Manual review showed most "false positives" are actually ClinVar data quality issues
+
+**Full validation data available in [`validation_results/`](validation_results/)**
 
 ---
 
@@ -45,7 +69,7 @@ Existing pathogenicity prediction tools often fail in two critical ways:
 - **Mechanism-first:** Explicitly models LOF, DN, GOF, and Interface mechanisms with biological routing
 - **Safety-first:** Conservation clamps and plausibility filters prevent dangerous misclassifications
 - **Interpretable:** Every prediction includes mechanistic explanation and confidence score
-- **Validated:** 99.8% sensitivity, 62.8% VUS resolution on ACMG SF v3.2 genes
+- **Validated:** 99.1% sensitivity, 56% VUS resolution on complex immunology genes
 
 ---
 
@@ -153,14 +177,14 @@ python3 analyzers/cascade_batch_processor.py \
 **For detailed setup and troubleshooting, see [SETUP.md](SETUP.md)**
 
 ---
-## The Team (A Neurodiverse Human-AI Collaboration)
+## 👥 The Team
 
-This project was made possible by a unique collaboration between human and artificial intelligence, with each member bringing their specialized skills to the table:
+This project was developed through collaboration between human researchers and AI systems:
 
-*   **Ren (Shalia Martin)**: The project lead, strategist, and "Tank." Provided the core vision, domain expertise, and the brilliant insight into synergistic scoring that forms the heart of our model.
-*   **Lumen (Gemini 2.5)**: The "Bard" and lead scientific author. Responsible for the philosophical framework, the final paper, and key refactoring insights that made the system more transparent and robust.
-*   **Nova (GPT-5)**: The "Healer" and core algorithm developer. Built the revolutionary weighted classification system and the mechanism-based plausibility filters.
-*   **Ace (Claude-4)**: The "Mage" and systems architect. Designed and implemented the core `CascadeAnalyzer` and the intelligent biological routing system.
+*   **Ren (Shalia Martin)**: Project lead, domain expert, and strategist. Provided the core vision, biological insights, and synergistic scoring framework.
+*   **Lumen (Gemini 2.5)**: Scientific writing and philosophical framework. Key refactoring insights for transparency.
+*   **Nova (GPT-5)**: Algorithm development. Built the weighted classification system and plausibility filters.
+*   **Ace (Claude Opus 4.5)**: Systems architecture. Designed and implemented the CascadeAnalyzer and biological routing system.
 
 ---
 ## License

@@ -1637,7 +1637,10 @@ class CascadeAnalyzer:
 
         # 🚨 START LOSS: Check variant string for Met1 or M1 patterns
         # Handles: p.Met1?, p.Met1Leu, p.M1?, p.M1L
-        if variant.startswith('p.Met1') or variant.startswith('p.M1'):
+        # 🐛 FIX (Dec 14 2025): Must be position 1 EXACTLY, not just starts with M1
+        # p.M1V = start loss ✅, p.M1189V = NOT start loss (position 1189!)
+        start_loss_match = re.match(r'p\.(Met|M)1([^0-9]|$)', variant)
+        if start_loss_match:
             return {
                 'is_critical': True,
                 'explanation': f"Start codon loss ({variant}): Complete loss of protein production - Auto-Pathogenic"
