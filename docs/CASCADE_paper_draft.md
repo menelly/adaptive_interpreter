@@ -23,14 +23,14 @@ Critically, we discover that STAT1/STAT3 variants frequently show **simultaneous
 ## Introduction
 
 ### The Problem
-- Semi-dominant genes cause disease through BOTH haploinsufficiency AND dominant-negative mechanisms
+- Semi-dominant genes cause disease through BOTH haploinsufficiency AND dominant-negative mechanisms [3]
 - Current tools (REVEL, AlphaMissense, etc.) produce single pathogenicity scores
-- They systematically miss DN variants because they're trained on LOF-biased datasets
-- Clinical geneticists resort to "VUS" for 50%+ of variants in these genes
+- They systematically miss DN variants because they're trained on LOF-biased datasets [6]
+- Clinical geneticists resort to "VUS" for 50%+ of variants in these genes [1]
 
 ### Why Mechanism Matters
 
-Loss-of-function (LOF) and dominant-negative (DN) mechanisms have fundamentally different structural requirements. LOF variants reduce protein dosage through instability, degradation, or catalytic disruption—one functional copy often suffices (haploinsufficiency threshold ~50%). DN variants, by contrast, produce stable proteins that poison multimeric complexes: a single mutant subunit in a trimer destroys 7/8 of assembled complexes (1 - 0.5³), while in tetramers it destroys 15/16 (1 - 0.5⁴). This "multiplier effect" explains why DN variants in oligomeric proteins cause dominant disease even when LOF of the same gene is recessive or benign. Current tools, trained predominantly on LOF-enriched datasets, systematically underweight these interface-disrupting, complex-poisoning variants.
+Loss-of-function (LOF) and dominant-negative (DN) mechanisms have fundamentally different structural requirements. LOF variants reduce protein dosage through instability, degradation, or catalytic disruption—one functional copy often suffices (haploinsufficiency threshold ~50%). DN variants, by contrast, produce stable proteins that poison multimeric complexes: a single mutant subunit in a trimer destroys 7/8 of assembled complexes (1 - 0.5³), while in tetramers it destroys 15/16 (1 - 0.5⁴). This "multiplier effect" explains why DN variants in oligomeric proteins cause dominant disease even when LOF of the same gene is recessive or benign. Current tools, trained predominantly on LOF-enriched datasets, systematically underweight these interface-disrupting, complex-poisoning variants [2,3].
 
 ### The Genes (8 genes, 5 protein families, 4,487 variants)
 
@@ -353,5 +353,50 @@ quadrantChart
 
 ---
 
-*Draft: December 2025
+## Acknowledgments
+
+We thank the ClinVar, UniProt, AlphaFold, and gnomAD teams for maintaining the essential public databases that made this work possible. We also acknowledge the broader AI research community for developing the foundational models (Claude, GPT, Gemini) that enabled this collaborative framework.
+
+---
+
+## Data Availability
+
+**No patient data were used in this study.** All variants were derived from the public ClinVar database (https://www.ncbi.nlm.nih.gov/clinvar/), queried October-December 2025. Protein annotations were obtained from UniProt (https://www.uniprot.org/), structural predictions from AlphaFold (https://alphafold.ebi.ac.uk/), and population frequency data from gnomAD (https://gnomad.broadinstitute.org/).
+
+All code, validation data, and supplementary materials are available at:
+- **GitHub repository:** https://github.com/menelly/adaptive_interpreter
+- **Permanent archive (Zenodo):** [DOI to be assigned upon publication]
+- **Supplementary data files:** Available in repository under `/analysis` and `/validation_results` directories
+
+The complete analysis pipeline is fully reproducible using the provided code and publicly available databases.
+
+---
+
+## Competing Interests
+
+The authors declare no competing interests. This work was conducted as an independent citizen science initiative without commercial funding or institutional affiliation.
+
+---
+
+## References
+
+1. Richards S, Aziz N, Bale S, et al. **Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology.** *Genet Med.* 2015;17(5):405-424. doi:10.1038/gim.2015.30
+
+2. Gerasimavicius L, Liu X, Marsh JA. **Identification of pathogenic missense mutations using protein stability predictors.** *Sci Rep.* 2020;10:15387. doi:10.1038/s41598-020-72404-w
+
+3. Agarwal I, Marsh JA. **Diverse Molecular Mechanisms Underlying Pathogenic Protein Mutations: Beyond the Loss-of-Function Paradigm.** *Annu Rev Genomics Hum Genet.* 2022;24:161-188. doi:10.1146/annurev-genom-111221-103208
+
+4. Toubiana J, Okada S, Hiller J, et al. **Heterozygous STAT1 gain-of-function mutations underlie an unexpectedly broad clinical phenotype.** *Blood.* 2016;127(25):3154-3164. doi:10.1182/blood-2015-11-679902
+
+5. Leiding JW, Forbes LR. **Inborn errors of STAT1 immunity.** *Curr Opin Immunol.* 2021;72:42-50. doi:10.1016/j.coi.2021.02.006
+
+6. Mead S, Bhomra A, Mayston M, et al. **Prevalence of loss-of-function, gain-of-function and dominant-negative effects in human disease genes.** *Nat Commun.* 2025. doi:10.1038/s41467-025-63234-3
+
+7. Jumper J, Evans R, Pritzel A, et al. **Highly accurate protein structure prediction with AlphaFold.** *Nature.* 2021;596:583-589. doi:10.1038/s41586-021-03819-2
+
+8. Karczewski KJ, Francioli LC, Tiao G, et al. **The mutational constraint spectrum quantified from variation in 141,456 humans.** *Nature.* 2020;581:434-443. doi:10.1038/s41586-020-2308-7
+
+---
+
+*Draft: December 2025*
 
