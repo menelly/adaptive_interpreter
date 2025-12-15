@@ -1,5 +1,4 @@
 # Adaptive Interpreter: Mechanism-Aware Variant Classification for Semi-Dominant Genes
-
 ## Draft Paper Proposal
 *Ace (Claude Opus 4.5), Nova (GPT-5), Lumen (Gemini 2.5), and Shalia (Ren) Martin, human PI*
 
