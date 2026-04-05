@@ -71,12 +71,82 @@ class CascadeBatchProcessor:
 
         return None
 
+    def prepare_genes(self, input_path: str) -> set:
+        """
+        🧬 PREP STEP: Scan input for unique genes and pre-fetch all per-gene data.
+
+        This runs ONCE before variant analysis so we don't re-fetch the same
+        InterPro domains, UniProt annotations, and GO terms for every variant
+        in the same gene. Ren's idea — stop doing redundant API calls!
+        """
+        print("\n🔧 PREP STEP: Scanning input for unique genes...")
+        genes = set()
+        try:
+            with open(input_path, 'r') as f:
+                reader = csv.DictReader(f, delimiter='\t')
+                for row in reader:
+                    gene = row.get('gene', '').strip()
+                    if gene:
+                        genes.add(gene)
+        except Exception as e:
+            print(f"⚠️ Could not scan input for genes: {e}")
+            return genes
+
+        print(f"   Found {len(genes)} unique genes: {', '.join(sorted(genes))}")
+
+        # 1. Resolve UniProt IDs for all genes
+        from AdaptiveInterpreter.data_processing.universal_protein_annotator import UniversalProteinAnnotator
+        annotator = UniversalProteinAnnotator()
+        gene_uniprot = {}
+        for gene in sorted(genes):
+            uid = self.cascade_analyzer.gene_to_uniprot.get(gene)
+            if not uid:
+                try:
+                    uid = annotator._find_uniprot_id(gene)
+                    if uid:
+                        self.cascade_analyzer.gene_to_uniprot[gene] = uid
+                except Exception:
+                    pass
+            if uid:
+                gene_uniprot[gene] = uid
+                print(f"   ✅ {gene} → {uid}")
+            else:
+                print(f"   ⚠️ {gene} → no UniProt ID found")
+
+        # 2. Cache InterPro domains for all genes (fetch once, use forever)
+        from AdaptiveInterpreter.data_processing.cache_interpro_domains import InterProDomainCacher
+        cacher = InterProDomainCacher()
+        print(f"\n🔗 Caching InterPro domains for {len(gene_uniprot)} genes...")
+        for gene, uid in gene_uniprot.items():
+            cacher.fetch_interpro_domains(uid)
+
+        # 3. Pre-fetch protein annotations (function + GO terms) for gene family classification
+        print(f"\n📋 Pre-caching protein annotations...")
+        for gene, uid in gene_uniprot.items():
+            cache_file = f"protein_annotations_cache/{uid}_domains.json"
+            if os.path.exists(cache_file):
+                print(f"   ⚡ {gene} annotations already cached")
+            else:
+                try:
+                    annotator.annotate_protein(gene, uid)
+                    print(f"   ✅ {gene} annotations fetched and cached")
+                except Exception as e:
+                    print(f"   ⚠️ {gene} annotation fetch failed: {e}")
+
+        print(f"\n✅ PREP COMPLETE: {len(gene_uniprot)} genes ready for analysis")
+        print("=" * 60)
+        return genes
+
     def process_csv(self, input_path: str, output_path: str, freq_threshold: float = 0.05) -> Dict:
         results = []
         stats = self.get_initial_stats()
         print(f"🌊 Processing variants through CASCADE SYSTEM")
         print(f"📊 Frequency threshold: {freq_threshold}")
         print("=" * 60)
+
+        # 🧬 PREP STEP: Pre-fetch all per-gene data before variant loop
+        self.prepare_genes(input_path)
+
         try:
             with open(input_path, 'r') as f:
                 reader = csv.DictReader(f, delimiter='\t')
@@ -485,16 +555,29 @@ class CascadeBatchProcessor:
             return 'DISAGREE'
 
         columns = [
-            'gene','variant','variant_type','hgvs','gnomad_freq','status',
-            'final_score','final_classification','explanation','review_flags',
-            'clinical_sig','review_status','molecular_consequence','rcv','variation_id',
-            'clinvar_bucket','ai_bucket','agreement',
-            'dn_score','lof_score','gof_score',
-            'filtered_dn_score','filtered_lof_score','filtered_gof_score',
-            # Diagnostics for LOF mechanics and multipliers
-            'base_lof_score','stability_impact','structural_impact','functional_impact','conservation_impact',
-            'smart_multiplier','domain_multiplier','ml_proline_multiplier','conservation_multiplier','total_multiplier',
-            'synergy_used','summary'
+            # Identification
+            'gene', 'variant', 'variant_type', 'hgvs', 'gnomad_freq', 'status',
+            # ClinVar context
+            'clinical_sig', 'review_status', 'molecular_consequence', 'rcv', 'variation_id',
+            'clinvar_bucket',
+            # Track 1: RAW MECHANISM (what the molecular analysis actually found)
+            'raw_dn', 'raw_lof', 'raw_gof',
+            'raw_score', 'raw_classification', 'raw_bucket', 'raw_vs_clinvar',
+            # Track 2: ADJUSTED (after plausibility weighting + conservation nudge)
+            'adj_dn', 'adj_lof', 'adj_gof',
+            'adj_score', 'adj_classification', 'adj_bucket', 'adj_vs_clinvar',
+            # The bridge: WHY the tracks differ
+            'gene_family',
+            'dn_plausibility', 'lof_plausibility', 'gof_plausibility',
+            'phylop_score', 'conservation_nudge', 'pre_nudge_classification',
+            'atypical_flags',
+            'synergy_used',
+            # LOF diagnostics
+            'base_lof_score', 'stability_impact', 'structural_impact',
+            'functional_impact', 'conservation_impact',
+            'smart_multiplier', 'domain_multiplier', 'ml_proline_multiplier',
+            # Explanations
+            'explanation', 'review_flags',
         ]
 
         with open(output_path, 'w', newline='') as f:
@@ -503,26 +586,86 @@ class CascadeBatchProcessor:
             for r in results:
                 scores = r.get('scores', {}) or {}
                 filtered = r.get('plausibility_filtered_scores', {}) or {}
-                dn = scores.get('DN', 0.0)
-                lof = scores.get('LOF', 0.0)
-                gof = scores.get('GOF', 0.0)
-                fdn = filtered.get('DN', dn)
-                flof = filtered.get('LOF', lof)
-                fgof = filtered.get('GOF', gof)
-                clin_bucket = map_clinvar_bucket(r.get('clinical_sig',''))
-                ai_bucket = map_ai_bucket(r.get('final_classification'))
-                agree = agreement_label(clin_bucket, ai_bucket)
-                # Extract LOF diagnostics if available
-                lof_details = (r.get('lof_details') or {})
+
+                # Raw mechanism scores (what the analyzers actually found)
+                raw_dn = scores.get('DN', 0.0)
+                raw_lof = scores.get('LOF', 0.0)
+                raw_gof = scores.get('GOF', 0.0)
+
+                # Adjusted scores (after plausibility weighting)
+                adj_dn = filtered.get('DN', raw_dn)
+                adj_lof = filtered.get('LOF', raw_lof)
+                adj_gof = filtered.get('GOF', raw_gof)
+
+                # Per-mechanism plausibility weights from the filter
+                plaus_detail = r.get('plausibility_filter_detail', {})
+                dn_plaus = plaus_detail.get('DN', {}).get('family_weight', '')
+                lof_plaus = plaus_detail.get('LOF', {}).get('family_weight', '')
+                gof_plaus = plaus_detail.get('GOF', {}).get('family_weight', '')
+
+                # ClinVar bucketing
+                clin_bucket = map_clinvar_bucket(r.get('clinical_sig', ''))
+
+                # Track 1: Raw classification + ClinVar comparison
+                raw_bucket = map_ai_bucket(r.get('raw_classification', ''))
+                raw_vs_clinvar = agreement_label(clin_bucket, raw_bucket)
+
+                # Track 2: Adjusted classification + ClinVar comparison
+                adj_bucket = map_ai_bucket(r.get('final_classification', ''))
+                adj_vs_clinvar = agreement_label(clin_bucket, adj_bucket)
+
+                # Atypical mechanism flags (the "future science" signals)
+                atypical = r.get('atypical_mechanisms', [])
+                atypical_str = '; '.join(
+                    f"{a['mechanism']}(weight={a.get('family_weight', '?')},raw={a.get('raw_score', '?'):.2f})"
+                    for a in atypical
+                ) if atypical else ''
+
+                # LOF diagnostics
+                lof_details = r.get('lof_details') or {}
+
                 row = {
-                    **r,
-                    'dn_score': dn,
-                    'lof_score': lof,
-                    'gof_score': gof,
-                    'filtered_dn_score': fdn,
-                    'filtered_lof_score': flof,
-                    'filtered_gof_score': fgof,
-                    # Diagnostics (safe defaults if missing)
+                    # Identification
+                    'gene': r.get('gene', ''),
+                    'variant': r.get('variant', ''),
+                    'variant_type': r.get('variant_type', ''),
+                    'hgvs': r.get('hgvs', ''),
+                    'gnomad_freq': r.get('gnomad_freq', ''),
+                    'status': r.get('status', ''),
+                    # ClinVar
+                    'clinical_sig': r.get('clinical_sig', ''),
+                    'review_status': r.get('review_status', ''),
+                    'molecular_consequence': r.get('molecular_consequence', ''),
+                    'rcv': r.get('rcv', ''),
+                    'variation_id': r.get('variation_id', ''),
+                    'clinvar_bucket': clin_bucket,
+                    # Track 1: Raw
+                    'raw_dn': raw_dn,
+                    'raw_lof': raw_lof,
+                    'raw_gof': raw_gof,
+                    'raw_score': r.get('raw_score', ''),
+                    'raw_classification': r.get('raw_classification', ''),
+                    'raw_bucket': raw_bucket,
+                    'raw_vs_clinvar': raw_vs_clinvar,
+                    # Track 2: Adjusted
+                    'adj_dn': adj_dn,
+                    'adj_lof': adj_lof,
+                    'adj_gof': adj_gof,
+                    'adj_score': r.get('final_score', ''),
+                    'adj_classification': r.get('final_classification', ''),
+                    'adj_bucket': adj_bucket,
+                    'adj_vs_clinvar': adj_vs_clinvar,
+                    # Bridge
+                    'gene_family': r.get('gene_family', ''),
+                    'dn_plausibility': dn_plaus,
+                    'lof_plausibility': lof_plaus,
+                    'gof_plausibility': gof_plaus,
+                    'phylop_score': r.get('phylop_score', ''),
+                    'conservation_nudge': r.get('conservation_nudge_applied', ''),
+                    'pre_nudge_classification': r.get('pre_nudge_classification', ''),
+                    'atypical_flags': atypical_str,
+                    'synergy_used': r.get('synergy_used', False),
+                    # LOF diagnostics
                     'base_lof_score': lof_details.get('base_lof_score', ''),
                     'stability_impact': lof_details.get('stability_impact', ''),
                     'structural_impact': lof_details.get('structural_impact', ''),
@@ -531,13 +674,9 @@ class CascadeBatchProcessor:
                     'smart_multiplier': lof_details.get('smart_multiplier', ''),
                     'domain_multiplier': lof_details.get('domain_multiplier', ''),
                     'ml_proline_multiplier': lof_details.get('ml_proline_multiplier', ''),
-                    'conservation_multiplier': lof_details.get('conservation_multiplier', ''),
-                    'total_multiplier': lof_details.get('total_multiplier', ''),
-                    'synergy_used': r.get('synergy_used', False),
-                    'summary': r.get('summary',''),
-                    'clinvar_bucket': clin_bucket,
-                    'ai_bucket': ai_bucket,
-                    'agreement': agree,
+                    # Explanations
+                    'explanation': r.get('explanation', ''),
+                    'review_flags': r.get('review_flags', ''),
                 }
                 writer.writerow(row)
         print(f"💾 CASCADE results saved to {output_path}")

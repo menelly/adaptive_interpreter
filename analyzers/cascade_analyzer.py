@@ -525,28 +525,17 @@ class CascadeAnalyzer:
                 pass
 
 
-        # Create summary string with primary/backup indication
-        primary_analyzer = routing_result.get('primary_analyzer')
-        summary_parts = []
-
+        # 🐙 Raw mechanism summary (pre-filter, what the analyzers actually found)
+        raw_parts = []
         for analyzer in ['DN', 'LOF', 'GOF']:
             if analyzer in results['scores']:
                 score = results['scores'][analyzer]
-                classification = results['classifications'][analyzer]
+                classification = results['classifications'].get(analyzer, '')
                 if classification not in ['ERROR']:
-                    # Mark primary analyzer
-                    if analyzer == primary_analyzer:
-                        summary_parts.append(f"*{analyzer}:{score:.2f}({classification})")  # * indicates primary
-                    else:
-                        summary_parts.append(f"{analyzer}:{score:.2f}({classification})")
+                    raw_parts.append(f"{analyzer}:{score:.2f}({classification})")
+        results['raw_summary'] = ' '.join(raw_parts)
 
-        results['summary'] = f"{' '.join(summary_parts)} FINAL:{results['final_classification']}"
-
-        # Add routing confidence to summary for transparency
-        if routing_result.get('confidence'):
-            results['summary'] += f" [Confidence:{routing_result['confidence']:.2f}]"
-
-        print(f"🎯 BIOLOGICAL RESULT: {results['summary']}")
+        print(f"🎯 RAW MECHANISM: {results['raw_summary']}")
 
         # Apply Nova's biological plausibility filter
         try:
@@ -598,9 +587,9 @@ class CascadeAnalyzer:
             filtered_scores = plausibility_result['final_scores']  # Now uses WEIGHTED scores
             results['plausibility_filtered_scores'] = filtered_scores
             results['gene_family'] = plausibility_result['gene_family']
-            results['plausibility_rationale'] = plausibility_result.get('rationale', {})
-            results['advisory_mode'] = plausibility_result.get('advisory_mode', False)
             results['atypical_mechanisms'] = plausibility_result.get('atypical_mechanisms', [])
+            # 🐙 Store per-mechanism plausibility weights for dual-track output
+            results['plausibility_filter_detail'] = plausibility_result.get('filtered_scores', {})
 
             print(f"🎯 PLAUSIBILITY RESULT: Gene family = {results['gene_family']}")
             print(f"   🧬 DUAL-TRACK MODE: Raw scores preserved, weighted scores for classification")
@@ -633,28 +622,7 @@ class CascadeAnalyzer:
                     frequency_note = results['frequency_analysis']['frequency_note']
                     print(f"🌍 Using pre-fetched frequency: {gnomad_freq:.6f}")
                 else:
-                    # 🚨 DISABLED: Frequency lookup is broken and slow - use pre-fetched frequencies only!
-                    # Fallback: try mapping if absolutely needed
-                    # import re
-                    # pos_match = re.search(r'p\.([A-Z])(\d+)([A-Z])', variant)
-                    # if pos_match and uniprot_id and hasattr(self, 'conservation_db') and self.conservation_db:
-                    #     ref_aa, pos, alt_aa = pos_match.groups()
-                    #     genomic_coords = self.conservation_db.uniprot_mapper.get_genomic_coordinates(uniprot_id, int(pos))
-                    #     if genomic_coords:
-                    #         print(f"🌍 Getting population frequency for {gene} {variant} at chr{genomic_coords['chromosome']}:{genomic_coords['start']}")
-                    #         freq_result = self.population_frequency_analyzer.get_variant_frequency(
-                    #             genomic_coords['chromosome'],
-                    #             genomic_coords['start'],
-                    #             genomic_coords['ref_allele'],
-                    #             genomic_coords['alt_allele']
-                    #         )
-                    #         frequency_boost = freq_result.get('pathogenicity_boost', 1.0)
-                    #         frequency_note = freq_result.get('frequency_note', "Note not available.")
-                    #         results['frequency_analysis'] = freq_result
-                    #         print(f"🌍 Population frequency boost: {frequency_boost:.2f}x ({frequency_note})")
-                    #     else:
-                    #         print(f"🌍 Could not map {uniprot_id}:{pos} to genomic coordinates for frequency lookup.")
-                    pass  # Use default frequency_boost and frequency_note
+                    pass  # No pre-fetched frequency available
             except Exception as freq_e:
                 print(f"🌍 Population frequency analysis failed: {freq_e}")
 
@@ -723,6 +691,20 @@ class CascadeAnalyzer:
                 results['conservation_nudge_applied'] = False
                 results['phylop_score'] = None
 
+            # 🧬 REN'S CONSERVATION FLOOR: If evolution is screaming, minimum VUS
+            # phyloP ≥ 5.0 means this position is ultra-conserved — can't be benign
+            if conservation_score is not None and conservation_score >= 5.0:
+                current = results.get('final_classification', 'B')
+                severity_levels = ['B', 'LB', 'VUS', 'VUS-P', 'LP', 'P']
+                if current in severity_levels:
+                    current_idx = severity_levels.index(current)
+                    vus_idx = severity_levels.index('VUS')
+                    if current_idx < vus_idx:
+                        results['final_classification'] = 'VUS'
+                        results['explanation'] = (results.get('explanation', '') +
+                            f' | Conservation floor: phyloP {conservation_score:.1f} ≥ 5.0 at ultra-conserved position — clamped {current} → VUS').strip(' |')
+                        print(f"🧬 CONSERVATION FLOOR: {current} → VUS (phyloP {conservation_score:.1f} — evolution says this matters)")
+
             # 🔥 REN'S CRITICAL ADDITION: Add review flags for missing data
             review_flags = []
             # Check if conservation_data_missing was already set (earlier in the function)
@@ -783,8 +765,7 @@ class CascadeAnalyzer:
                     else:
                         results['review_flags'] = 'SPLICE_SUSPECT_MIN_CLAMP'
                     # Nudge summary to reflect clamp
-                    if 'summary' in results and results['summary']:
-                        results['summary'] += ' [Clamp:VUS-P]'
+                    # Clamp info captured in explanation and review_flags
         except Exception:
             pass
         # 🛡️ SAFETY CLAMP: If we could not resolve a protein consequence (no p.HGVS)
@@ -807,8 +788,7 @@ class CascadeAnalyzer:
                     else:
                         results['review_flags'] = 'NO_PROTEIN_CONSEQUENCE'
                     # Nudge summary to reflect clamp
-                    if 'summary' in results and results['summary']:
-                        results['summary'] += ' [Clamp:VUS]'
+                    # Clamp info captured in explanation and review_flags
         except Exception:
             pass
 
@@ -833,8 +813,7 @@ class CascadeAnalyzer:
                     note = 'Missing conservation data; cannot confidently classify as benign - clamped to VUS for safety'
                     results['explanation'] = (results.get('explanation','') + ' | ' + note).strip(' |')
                     _add_review_flag(results, 'MISSING_CONSERVATION_CLAMP_BENIGN')
-                    if 'summary' in results and results['summary']:
-                        results['summary'] += ' [Clamp:VUS-NoConservation]'
+                    # Clamp info captured in explanation and review_flags
                     print(f"🛡️ SAFETY: Clamped {current} → VUS due to missing conservation data")
 
                 # PATHOGENIC DIRECTION: Flag uncertainty but DON'T clamp
@@ -843,18 +822,14 @@ class CascadeAnalyzer:
                     note = 'Missing conservation data; pathogenic call has reduced confidence'
                     results['explanation'] = (results.get('explanation','') + ' | ' + note).strip(' |')
                     _add_review_flag(results, 'MISSING_CONSERVATION_PATH_UNCERTAIN')
-                    # Reduce confidence score if present
-                    if 'confidence' in results:
-                        results['confidence'] = min(results.get('confidence', 1.0), 0.7)
-                    if 'summary' in results and results['summary']:
-                        results['summary'] += ' [Flag:NoConservation-ReducedConf]'
+                    # Reduced confidence captured in review_flags
+                    # Flag info captured in review_flags
                     print(f"🛡️ UNCERTAINTY: Flagged {current} - missing conservation reduces confidence")
 
                 # VUS-P: Also flag uncertainty
                 elif current == 'VUS-P':
                     _add_review_flag(results, 'MISSING_CONSERVATION_UNCERTAIN')
-                    if 'confidence' in results:
-                        results['confidence'] = min(results.get('confidence', 1.0), 0.8)
+                    # Reduced confidence captured in review_flags
                     print(f"🛡️ UNCERTAINTY: Flagged {current} - missing conservation data")
                 else:
                     print(f"🛡️ DEBUG: No action needed for {current}")
@@ -884,9 +859,7 @@ class CascadeAnalyzer:
                         results['review_flags'] += ',SEQUENCE_MISMATCH_CLAMP'
                     else:
                         results['review_flags'] = 'SEQUENCE_MISMATCH_CLAMP'
-                    # Nudge summary to reflect clamp
-                    if 'summary' in results and results['summary']:
-                        results['summary'] += ' [Clamp:VUS-IsoformMismatch]'
+                    # Clamp info captured in explanation and review_flags
                     print(f"🛡️ SAFETY: Clamped {current} → VUS due to sequence mismatch ({likely_cause})")
         except Exception:
             pass
