@@ -14,11 +14,11 @@ SHARD=${1:?Usage: bash run_rerun_shard.sh [1|2]}
 cd /home/Ace
 
 BASEDIR="AdaptiveInterpreter"
-OUTDIR="$BASEDIR/outputs_rerun_v2"
+OUTDIR="$BASEDIR/outputs_missense_v2"
 mkdir -p "$OUTDIR"
 
 # Split gene list into two halves alphabetically
-ALL_INPUTS=($BASEDIR/inputs_for_rerun/*_input.tsv)
+ALL_INPUTS=($BASEDIR/inputs_missense_only/*_input.tsv)
 TOTAL=${#ALL_INPUTS[@]}
 HALF=$(( (TOTAL + 1) / 2 ))
 

@@ -1,0 +1,396 @@
+gene	hgvs_p	hgvs_g	gnomad_freq	clinical_sig	molecular_consequence	review_status
+AIRE	p.Met1Lys		0.0	Pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyendocrine 	initiator_codon_variant,missense variant	
+AIRE	p.Met1Arg		0.0	Pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyendocrine 	initiator_codon_variant,missense variant	
+AIRE	p.Trp78Arg		0.0	Pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyendocrine 	missense variant	
+AIRE	p.Met1Thr		0.0	Pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyendocrine 	initiator_codon_variant,missense variant	
+AIRE	p.Met1Leu		0.0	Pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyendocrine 	initiator_codon_variant,missense variant	
+AIRE	p.Val80Gly		0.0	Pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyendocrine 	missense variant	
+AIRE	p.Arg92Trp		0.0	Pathogenic: not provided Pathogenic/Likely pathogenic: Autoimmune Polyendocrine 	missense variant	
+AIRE	p.Met1Val		0.0	Pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyendocrine 	initiator_codon_variant,missense variant	
+AIRE	p.Pro539Leu		0.0	Pathogenic: not provided ; AIRE-related disorder Pathogenic/Likely pathogenic: A	missense variant	
+AIRE	p.Tyr85Cys		0.0	Pathogenic: not provided Pathogenic/Likely pathogenic: Autoimmune Polyendocrine 	missense variant	
+AIRE	p.Tyr90Cys		0.0	Pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyendocrine 	missense variant	
+AIRE	p.Arg15Leu		0.0	Pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyendocrine 	missense variant	
+AIRE	p.Thr16Met		0.0	Pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyendocrine 	missense variant	
+AIRE	p.Ala21Val		0.0	Pathogenic: not provided Pathogenic/Likely pathogenic: Autoimmune Polyendocrine 	missense variant	
+AIRE	p.Leu28Pro		0.0	Pathogenic: not provided Pathogenic/Likely pathogenic: Autoimmune Polyendocrine 	missense variant	
+AIRE	p.Leu29Pro		0.0	Pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyendocrine 	missense variant	
+AIRE	p.Arg15His		0.0	Pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyendocrine 	missense variant	
+AIRE	p.Val301Met		0.0	Pathogenic/Likely pathogenic: Autoimmune polyendocrine syndrome 1, with or witho	missense variant	
+AIRE	p.Lys83Glu		0.0	Pathogenic/Likely pathogenic: Autoimmune polyendocrine syndrome 1, with or witho	missense variant	
+AIRE	p.Gly228Trp		0.0	Pathogenic/Likely pathogenic: Autoimmune polyendocrine syndrome 1, with or witho	missense variant	
+AIRE	p.Gly155Ser		0.0	Pathogenic/Likely pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimm	missense variant	
+AIRE	p.Cys311Tyr		0.0	Pathogenic/Likely pathogenic: Autoimmune polyendocrine syndrome 1, with or witho	missense variant	
+AIRE	p.Phe77Ser		0.0	Pathogenic/Likely pathogenic: Autoimmune polyendocrine syndrome 1, with or witho	missense variant	
+AIRE	p.Val80Leu		0.0	Pathogenic/Likely pathogenic: Autoimmune polyendocrine syndrome 1, with or witho	missense variant	
+AIRE	p.Leu93Arg		0.0	Pathogenic/Likely pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimm	missense variant	
+AIRE	p.Arg15Cys		0.0	Pathogenic/Likely pathogenic: Autoimmune polyendocrine syndrome 1, with or witho	missense variant	
+AIRE	p.Pro326Gln		0.0	Pathogenic/Likely pathogenic: Autoimmune polyendocrine syndrome 1, with or witho	missense variant	
+AIRE	p.Pro326Leu		0.0	Pathogenic/Likely pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimm	missense variant	
+AIRE	p.Arg92Gln		0.0	Likely pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyend	missense variant	
+AIRE	p.Ala58Gly		0.0	Likely pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyend	missense variant	
+AIRE	p.Arg15Gly		0.0	Likely pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyend	missense variant	
+AIRE	p.Leu97Pro		0.0	Likely pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyend	missense variant	
+AIRE	p.Ile18Met		0.0	Likely pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyend	missense variant	
+AIRE	p.Thr16Ala		0.0	Likely pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyend	missense variant	
+AIRE	p.Leu93Gln		0.0	Likely pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyend	missense variant	
+AIRE	p.Gln44Pro		0.0	Likely pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyend	missense variant	
+AIRE	p.Leu81Pro		0.0	Likely pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyend	missense variant	
+AIRE	p.Arg8His		0.0	Likely pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyend	missense variant	
+AIRE	p.Thr16Arg		0.0	Likely pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyend	missense variant	
+AIRE	p.Arg9Pro		0.0	Likely pathogenic: not provided	missense variant	
+AIRE	p.Arg12Gly		0.0	Likely pathogenic: not provided	missense variant	
+AIRE	p.Tyr90His		0.0	Likely pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyend	missense variant	
+AIRE	p.Arg8Cys		0.0	Likely pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyend	missense variant	
+AIRE	p.Ala58Asp		0.0	Likely pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyend	missense variant	
+AIRE	p.Leu87Pro		0.0	Likely pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyend	missense variant	
+AIRE	p.Arg9Trp		0.0	Likely pathogenic: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyend	missense variant	
+AIRE	p.Gly306Arg		0.0	Conflicting interpretations of pathogenicity: Autoimmune Polyendocrine Syndrome 	missense variant	
+AIRE	p.Val199Ile		0.0	Conflicting interpretations of pathogenicity: not specified Likely benign: not p	missense variant	
+AIRE	p.Thr441Met		0.0	Conflicting interpretations of pathogenicity: Autoimmune Polyendocrine Syndrome 	missense variant	
+AIRE	p.Pro124Leu		0.0	Conflicting interpretations of pathogenicity: Autoimmune Polyendocrine Syndrome 	missense variant	
+AIRE	p.Thr390Met		0.0	Conflicting interpretations of pathogenicity: Autoimmune Polyendocrine Syndrome 	missense variant	
+AIRE	p.Lys243Glu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala399Asp		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro509Ser		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala452Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Leu291Pro		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro176Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro56Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ser412Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro466Ser		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro384Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro368Ala		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ser521Arg		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Thr344Ile		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg494Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Cys419Phe		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro416Ser		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gly382Arg		0.0	Uncertain significance: not provided	missense variant	
+AIRE	p.Tyr394Cys		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro430Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gly408Ala		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro350Arg		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ser239Tyr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gln57Glu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gly180Asp		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala265Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gly438Arg		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Leu175Pro		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala142Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.His507Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg378Gly		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Asp23Gly		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro407Arg		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg203Gln		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gly227Asp		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Asp4Val		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Lys102Arg		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg174Gly		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala404Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala5Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala264Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro163His		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Leu327Ile		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg351Gly		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala432Val		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg473Lys		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala300Val		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Leu417Ile		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ser535Arg		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala432Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Glu40Gln		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg139Pro		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro381Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ile96Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Thr441Ala		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Thr364Asn		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Asp23Asn		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro483Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala489Val		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro483Arg		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ser476Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gln213Glu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Met184Val		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Thr46Ser		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala537Pro		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Cys337Phe		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro325Leu		0.0	Uncertain significance: not provided	missense variant	
+AIRE	p.Arg465Trp		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Val301Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro148Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala284Gly		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro365Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gly379Asp		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Asp36Glu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ser241Ile		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro367Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg79Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Cys472Tyr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala281Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala429Ser		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Asp34Glu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Asp238His		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ser339Arg		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg247Cys		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Val479Met		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ser338Pro		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro355Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg351Gln		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg538His		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg433His		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala451Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala61Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Val484Ala		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg316Gly		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala493Gly		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Leu519Phe		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro401Arg		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Lys159Arg		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Lys245Arg		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Thr364Ser		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Lys50Arg		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gly462Ser		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gly387Ser		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala170Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro544Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala510Pro		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Leu63Met		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg303Trp		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Val206Met		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Met194Val		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro163Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Asp41Gly		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala510Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gly527Ser		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ser518Phe		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro119Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg316Trp		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Leu470Pro		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Asp439Glu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg456Cys		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Met184Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro405Gln		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Met536Ile		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro539Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala5Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Thr463Ser		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Lys164Arg		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Glu522Lys		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro109Ala		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Thr147Ile		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg351Trp		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg471His		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala142Val		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg110Gln		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Thr480Ala		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro492Ala		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro490Ser		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro398Arg		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+AIRE	p.Thr3Pro		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+AIRE	p.Asp4Ala		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+AIRE	p.Glu207Lys		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala489Pro		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+AIRE	p.Gly467Ala		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg513Gly		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ser464Pro		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+AIRE	p.Arg257Pro		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+AIRE	p.Val22Gly		0.0	Uncertain significance: not specified	missense variant	
+AIRE	p.Leu327Phe		0.0	Uncertain significance: not provided	missense variant	
+AIRE	p.Pro280Ser		0.0	Uncertain significance: not provided	missense variant	
+AIRE	p.Arg336Lys		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+AIRE	p.Leu146Pro		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+AIRE	p.Pro331Leu		0.0	Uncertain significance: not provided	missense variant	
+AIRE	p.Ala25Gly		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+AIRE	p.Gln530Leu		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+AIRE	p.Ser402Ala		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+AIRE	p.Thr468Arg		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+AIRE	p.Ala58Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro401Thr		0.0	Uncertain significance: AIRE-related disorder	missense variant	
+AIRE	p.Val479Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ser156Phe		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Glu376Asp		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro154Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Lys165Arg		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Thr68Ala		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gln276Arg		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Glu375Gly		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Val487Ala		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Val443Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gly462Arg		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gly424Val		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Cys434Trp		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala399Ser		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Glu329Lys		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ser506Ile		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.His14Pro		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gly374Val		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ser248Gly		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ser169Arg		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Lys245Glu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Lys111Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Cys437Tyr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg465Pro		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gly219Ser		0.0	Uncertain significance: not provided Likely benign: Autoimmune Polyendocrine Syn	missense variant	
+AIRE	p.Thr334Asn		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg356Trp		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro95Ser		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Glu363Asp		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg89Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro289Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Leu392Pro		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Asp41Asn		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro109Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Val104Met		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro483Ala		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala532Val		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Val80Met		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Asp238Ala		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro39Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala321Asp		0.0	Uncertain significance: not provided	missense variant	
+AIRE	p.His507Gln		0.0	Uncertain significance: AIRE-related disorder	missense variant	
+AIRE	p.Ser250Gly		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Thr334Ile		0.0	Uncertain significance: AIRE-related disorder	missense variant	
+AIRE	p.Lys294Arg		0.0	Uncertain significance: AIRE-related disorder	missense variant	
+AIRE	p.Ser196Tyr		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+AIRE	p.Asp442Glu		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+AIRE	p.Glu508Gln		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+AIRE	p.Pro483Ser		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+AIRE	p.Lys114Asn		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ser535Gly		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Phe236Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala541Val		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro286Ala		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro126Ser		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Val38Phe		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gln108Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala142Ser		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gly204Trp		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Lys245Gln		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Glu296Asp		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Cys475Tyr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Glu17Ala		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala31Val		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Leu128Ile		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Thr151Ile		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Asp478Asn		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Glu270Lys		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg538Gly		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Glu171Lys		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro162Ser		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Leu87Val		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ser491Asn		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gln225Lys		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Cys449Arg		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala493Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Glu359Lys		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Leu122Phe		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+AIRE	p.Leu444Pro		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+AIRE	p.Ala413Thr		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+AIRE	p.Thr232Pro		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+AIRE	p.Cys457Tyr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Leu13Pro		0.0	Uncertain significance: not specified	missense variant	
+AIRE	p.Lys221Asn		0.0	Uncertain significance: not provided	missense variant	
+AIRE	p.Asp76Asn		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ile309Val		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gly197Arg		0.0	Uncertain significance: not provided Likely benign: Autoimmune Polyendocrine Syn	missense variant	
+AIRE	p.Val362Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gly435Arg		0.0	Uncertain significance: not provided Likely benign: Autoimmune Polyendocrine Syn	missense variant	
+AIRE	p.Arg494Cys		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Thr46Met		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala403Thr		0.0	Uncertain significance: Inborn genetic diseases Benign: Autoimmune Polyendocrine	missense variant	
+AIRE	p.Val484Met		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Cys446Gly		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala19Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Glu298Lys		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Thr390Ala		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gly180Arg		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg445Gln		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Glu485Val		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala160Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Thr468Met		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro355Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro162Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg272Ser		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gly197Ala		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Met194Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala265Val		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro368Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ser287Asn		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro116Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Val118Ile		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Val118Asp		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ser187Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Asp4Asn		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Val256Ile		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.His415Tyr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg356Gln		0.0	Uncertain significance: Inborn genetic diseases Likely benign: Autoimmune Polyen	missense variant	
+AIRE	p.Arg174Cys		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro56Ser		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Asp502Val		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gly467Arg		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ser220Phe		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg328Gln		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.His458Arg		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.His415Arg		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg316Gln		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala373Val		0.0	Uncertain significance: not specified ; not provided Likely benign: Autoimmune P	missense variant	
+AIRE	p.Arg445Trp		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala300Asp		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro350Ser		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gln182Pro		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.His448Gln		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gly486Arg		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gly498Glu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala284Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro355Ser		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gln262Arg		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Glu17Asp		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ser339Gly		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Thr364Ile		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro357Ser		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro405Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Leu158Pro		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro398Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ser506Gly		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gly424Asp		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Cys419Tyr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg328Trp		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala540Val		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ile309Met		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ser250Cys		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ser372Leu		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Val362Met		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Pro361Ser		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala25Pro		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg473Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg456His		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Gln275His		0.0	Uncertain significance: Inborn genetic diseases Likely benign: Autoimmune Polyen	missense variant	
+AIRE	p.Arg538Cys		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala450Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg494His		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg89His		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Arg110Trp		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala152Thr		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ser153Gly		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Val214Met		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ala258Gly		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Asn295Ser		0.0	Uncertain significance: not specified	missense variant	
+AIRE	p.Asp297Asn		0.0	Uncertain significance: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Po	missense variant	
+AIRE	p.Ser464Phe		0.0	Likely benign: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyendocri	missense variant	
+AIRE	p.Arg247His		0.0	Likely benign: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyendocri	missense variant	
+AIRE	p.Arg139Gly		0.0	Likely benign: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyendocri	missense variant	
+AIRE	p.Pro166Leu		0.0	Likely benign: not provided Benign: Autoimmune Polyendocrine Syndrome Type 1 ; A	missense variant	
+AIRE	p.Asp288Glu		0.0	Likely benign: Inborn genetic diseases	missense variant	
+AIRE	p.Pro200Leu		0.0	Likely benign: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyendocri	missense variant	
+AIRE	p.Val443Met		0.0	Likely benign: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyendocri	missense variant	
+AIRE	p.Arg303Gln		0.0	Likely benign: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyendocri	missense variant	
+AIRE	p.Arg174His		0.0	Likely benign: not specified Benign: Autoimmune Polyendocrine Syndrome Type 1 ; 	missense variant	
+AIRE	p.Pro400Leu		0.0	Likely benign: AIRE-related disorder Benign/Likely benign: Autoimmune Polyendocr	missense variant	
+AIRE	p.Asp503Asn		0.0	Likely benign: not provided Benign: Autoimmune Polyendocrine Syndrome Type 1 ; A	missense variant	
+AIRE	p.Arg465Gln		0.0	Likely benign: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyendocri	missense variant	
+AIRE	p.Gly240Ser		0.0	Likely benign: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyendocri	missense variant	
+AIRE	p.Arg471Cys		0.0	Benign/Likely benign: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Poly	missense variant	
+AIRE	p.Pro252Leu		0.0	Benign/Likely benign: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Poly	missense variant	
+AIRE	p.Thr183Asn		0.0	Benign: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyendocrine Synd	missense variant	
+AIRE	p.Ser278Arg		0.0	Benign: Autoimmune Polyendocrine Syndrome Type 1 ; Autoimmune Polyendocrine Synd	missense variant	

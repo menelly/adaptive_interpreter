@@ -1,0 +1,13 @@
+gene	hgvs_p	hgvs_g	gnomad_freq	clinical_sig	molecular_consequence	review_status
+DMD	p.Y11N	NC_000023.11:g.33211284_33211285del	0.0	pathogenic		
+DMD	p.C10W	NC_000023.11:g.33211283A>G	0.0	vus		
+DMD	p.C10*	NC_000023.11:g.33211284del	0.0	pathogenic		
+DMD	p.C10S	NC_000023.11:g.33211285del	0.0	pathogenic		
+DMD	p.Q9H	NC_000023.11:g.33211286G>C	0.0	vus		
+DMD	p.E8D	NC_000023.11:g.33211289C>T	0.0	benign		
+DMD	p.E8*	NC_000023.11:g.33211291C>T	0.0	vus		
+DMD	p.M7I	NC_000023.11:g.33211292T>C	0.0	benign		
+DMD	p.M7K	NC_000023.11:g.33211294del	0.0	pathogenic		
+DMD	p.M7K	NC_000023.11:g.33211295TTC[1]	0.0	vus		
+DMD	p.K6N	NC_000023.11:g.33211295T>C	0.0	benign		
+DMD	p.G4V	NC_000023.11:g.33211302C>T	0.0	pathogenic		

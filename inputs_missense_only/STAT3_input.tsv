@@ -1,0 +1,329 @@
+gene	hgvs_p	hgvs_g	gnomad_freq	clinical_sig	molecular_consequence	review_status
+STAT3	p.Thr714Ile		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections 	intron variant,missense variant	
+STAT3	p.His410Tyr		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections 	missense variant	
+STAT3	p.Thr620Ser		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections 	missense variant	
+STAT3	p.Gly618Arg		0.0	Pathogenic: EBV-Positive Inflammatory Follicular Dendritic Cell Sarcoma Uncertai	missense variant	
+STAT3	p.R375G		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections 	missense variant,splice acceptor variant	
+STAT3	p.Leu706Met		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections 	intron variant,missense variant	
+STAT3	p.Pro639Ala		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections 	missense variant	
+STAT3	p.Lys392Arg		0.0	Pathogenic: Autoimmune Disease, Multisystem, Infantile-Onset, 1 ; Stat3-Related 	missense variant	
+STAT3	p.Asn646Lys		0.0	Pathogenic: Autoimmune Disease, Multisystem, Infantile-Onset, 1 ; Stat3-Related 	missense variant	
+STAT3	p.Lys658Asn		0.0	Pathogenic: Autoimmune Disease, Multisystem, Infantile-Onset, 1 ; Stat3-Related 	missense variant	
+STAT3	p.His332Tyr		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections 	missense variant	
+STAT3	p.Val637Ala		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections	missense variant	
+STAT3	p.Pro330Ser		0.0	Pathogenic: not provided	missense variant	
+STAT3	p.Met329Val		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections	missense variant	
+STAT3	p.Thr620Ala		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections	missense variant	
+STAT3	p.Arg382Trp		0.0	Pathogenic: Autoimmune Disease, Multisystem, Infantile-Onset, 1 ; Hyper-Ige Synd	missense variant	
+STAT3	p.Arg382Gln		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections 	missense variant	
+STAT3	p.Arg423Gln		0.0	Pathogenic: Autoimmune Disease, Multisystem, Infantile-Onset, 1 ; Hyper-Ige Synd	missense variant	
+STAT3	p.Arg382Leu		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections 	missense variant	
+STAT3	p.Val637Met		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections 	missense variant	
+STAT3	p.Arg382Pro		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections 	missense variant	
+STAT3	p.Pro639Thr		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections 	missense variant	
+STAT3	p.Ser636Tyr		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections 	missense variant	
+STAT3	p.Thr622Ile		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections 	missense variant	
+STAT3	p.Leu645Gln		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections 	missense variant	
+STAT3	p.Gln344His		0.0	Pathogenic: Autoimmune Disease, Multisystem, Infantile-Onset, 1 ; Stat3-Related 	missense variant	
+STAT3	p.Gly421Arg		0.0	Pathogenic: Autoimmune Disease, Multisystem, Infantile-Onset, 1 ; Hyper-Ige Synd	missense variant	
+STAT3	p.Thr663Ile		0.0	Pathogenic: Autoimmune Disease, Multisystem, Infantile-Onset, 1 ; Stat3-Related 	missense variant	
+STAT3	p.Arg152Trp		0.0	Pathogenic: Autoimmune Disease, Multisystem, Infantile-Onset, 1 ; Hyper-Ige Synd	intron variant,missense variant	
+STAT3	p.Val353Phe		0.0	Pathogenic: Autoimmune Disease, Multisystem, Infantile-Onset, 1 ; Stat3-Related 	intron variant,missense variant	
+STAT3	p.Thr716Met		0.0	Pathogenic: Autoimmune Disease, Multisystem, Infantile-Onset, 1 ; Hyper-Ige Synd	intron variant,missense variant	
+STAT3	p.Asn420Lys		0.0	Pathogenic: Autoimmune Disease, Multisystem, Infantile-Onset, 1 ; Stat3-Related 	missense variant	
+STAT3	p.Ala703Thr		0.0	Pathogenic: Autoimmune Disease, Multisystem, Infantile-Onset, 1 ; Stat3-Related 	intron variant,missense variant	
+STAT3	p.His332Leu		0.0	Pathogenic: Inborn genetic diseases	missense variant	
+STAT3	p.Met660Thr		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections 	missense variant	
+STAT3	p.Ser614Gly		0.0	Pathogenic: not provided Uncertain significance: Hyper-Ige Syndrome 1, Autosomal	missense variant	
+STAT3	p.Ser636Phe		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections 	missense variant	
+STAT3	p.Met394Thr		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections 	missense variant	
+STAT3	p.Val713Leu		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections 	intron variant,missense variant	
+STAT3	p.His437Tyr		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections 	intron variant,missense variant	
+STAT3	p.Arg335Trp		0.0	Pathogenic: STAT3 gain of function Likely pathogenic: Hyper-Ige Syndrome 1, Auto	missense variant	
+STAT3	p.Glu415Lys		0.0	Pathogenic: Autoimmune Disease, Multisystem, Infantile-Onset, 1 ; Stat3-Related 	missense variant	
+STAT3	p.Tyr657Cys		0.0	Pathogenic: STAT3 gain of function Pathogenic/Likely pathogenic: Hyper-Ige Syndr	missense variant	
+STAT3	p.Tyr640Phe		0.0	Pathogenic: Diffuse Large B-Cell Lymphoma ; not provided ; EBV-positive nodal T-	missense variant	
+STAT3	p.Asn466Thr		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections 	missense variant	
+STAT3	p.Asn466Ser		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections 	missense variant	
+STAT3	p.Pro715Leu		0.0	Pathogenic: Autoimmune Disease, Multisystem, Infantile-Onset, 1 ; Hyper-Ige Synd	intron variant,missense variant	
+STAT3	p.Leu706Pro		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections 	intron variant,missense variant	
+STAT3	p.Gly618Asp		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections	missense variant	
+STAT3	p.Met329Lys		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections 	missense variant	
+STAT3	p.Ile659Asn		0.0	Pathogenic: STAT3 gain of function Likely pathogenic: Hyper-Ige Syndrome 1, Auto	missense variant	
+STAT3	p.Thr389Ile		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections 	missense variant	
+STAT3	p.His437Gln		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections 	intron variant,missense variant	
+STAT3	p.Arg278His		0.0	Pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections 	missense variant	
+STAT3	p.Asp661Tyr		0.0	Pathogenic: EBV-positive nodal T- and NK-cell lymphoma Uncertain significance: H	missense variant	
+STAT3	p.Asn647Ile		0.0	Pathogenic: not provided Uncertain significance: Hyper-Ige Syndrome 1, Autosomal	missense variant	
+STAT3	p.Asn567Asp		0.0	Likely pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infe	missense variant	
+STAT3	p.Met394Ile		0.0	Likely pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infe	missense variant	
+STAT3	p.Lys642Glu		0.0	Likely pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infe	missense variant	
+STAT3	p.Val393Leu		0.0	Likely pathogenic: not provided	missense variant	
+STAT3	p.Met28Val		0.0	Likely pathogenic: STAT3-related disorder Uncertain significance: not provided	missense variant	
+STAT3	p.Thr708Ser		0.0	Likely pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infe	intron variant,missense variant	
+STAT3	p.Leu287Phe		0.0	Likely pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infe	missense variant	
+STAT3	p.Trp623Leu		0.0	Likely pathogenic: not provided	missense variant	
+STAT3	p.Thr714Lys		0.0	Likely pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infe	intron variant,missense variant	
+STAT3	p.Gly421Glu		0.0	Likely pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infe	missense variant	
+STAT3	p.Tyr705Cys		0.0	Likely pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infe	intron variant,missense variant	
+STAT3	p.Val637Leu		0.0	Likely pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infe	missense variant	
+STAT3	p.Phe621Val		0.0	Likely pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infe	missense variant	
+STAT3	p.Thr412Ile		0.0	Likely pathogenic: not provided	missense variant	
+STAT3	p.Lys340Glu		0.0	Likely pathogenic: STAT3-related disorder	missense variant	
+STAT3	p.Tyr360His		0.0	Likely pathogenic: not provided	intron variant,missense variant	
+STAT3	p.Pro639Leu		0.0	Likely pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infe	missense variant	
+STAT3	p.Lys591Met		0.0	Likely pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infe	missense variant	
+STAT3	p.Glu594Lys		0.0	Likely pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infe	missense variant	
+STAT3	p.Cys712Arg		0.0	Likely pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infe	intron variant,missense variant	
+STAT3	p.Met660Arg		0.0	Likely pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infe	missense variant	
+STAT3	p.Asn472Asp		0.0	Likely pathogenic: not provided	missense variant	
+STAT3	p.Tyr657Gln		0.0	Likely pathogenic: not provided	missense variant	
+STAT3	p.Glu616Gln		0.0	Likely pathogenic: not provided	missense variant	
+STAT3	p.Glu582Lys		0.0	Likely pathogenic: not provided	intron variant,missense variant	
+STAT3	p.Met648Lys		0.0	Likely pathogenic: not provided	missense variant	
+STAT3	p.Met331Arg		0.0	Likely pathogenic: not provided	missense variant	
+STAT3	p.Thr341Ile		0.0	Likely pathogenic: not provided	missense variant	
+STAT3	p.Ile711Val		0.0	Likely pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infe	intron variant,missense variant	
+STAT3	p.Glu159Lys		0.0	Likely pathogenic: not provided Uncertain significance: Hyper-Ige Syndrome 1, Au	missense variant	
+STAT3	p.Phe621Leu		0.0	Likely pathogenic: not provided	missense variant	
+STAT3	p.Lys709Glu		0.0	Likely pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infe	intron variant,missense variant	
+STAT3	p.Arg278Cys		0.0	Likely pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infe	missense variant	
+STAT3	p.Gly419Arg		0.0	Likely pathogenic: not provided	missense variant	
+STAT3	p.Lys615Glu		0.0	Likely pathogenic: not provided	missense variant	
+STAT3	p.Ile711Ser		0.0	Likely pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infe	intron variant,missense variant	
+STAT3	p.R375K		0.0	Likely pathogenic: not provided	missense variant,splice acceptor variant	
+STAT3	p.Met329Arg		0.0	Likely pathogenic: Autoimmune Disease, Multisystem, Infantile-Onset, 1 ; Hyper-I	missense variant	
+STAT3	p.Lys707Glu		0.0	Likely pathogenic: Inherited Immunodeficiency Diseases Uncertain significance: H	missense variant	
+STAT3	p.Lys290Asn		0.0	Likely pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infe	missense variant	
+STAT3	p.Thr389Ala		0.0	Likely pathogenic: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infe	missense variant	
+STAT3	p.Lys658Arg		0.0	Likely pathogenic: Autoimmune Disease, Multisystem, Infantile-Onset, 1 ; Stat3-R	missense variant	
+STAT3	p.His437Leu		0.0	Likely pathogenic: Autoimmune Disease, Multisystem, Infantile-Onset, 1 ; Stat3-R	missense variant	
+STAT3	p.Gly743Val		0.0	Conflicting interpretations of pathogenicity: not provided Uncertain significanc	3 prime UTR variant,missense variant	
+STAT3	p.His694Gln		0.0	Conflicting interpretations of pathogenicity: not specified Uncertain significan	missense variant	
+STAT3	p.Met586Thr		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ala377Thr		0.0	Uncertain significance: Autoimmune Disease, Multisystem, Infantile-Onset, 1 ; St	missense variant	
+STAT3	p.Leu362Phe		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	intron variant,missense variant	
+STAT3	p.Val136Leu		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	intron variant,missense variant	
+STAT3	p.Ser768Phe		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	3 prime UTR variant,missense variant	
+STAT3	p.Phe757Leu		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	3 prime UTR variant,missense variant	
+STAT3	p.Asp65Glu		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Arg609Ser		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Met206Ile		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Asp374Tyr		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Val713Ala		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	intron variant,missense variant	
+STAT3	p.His410Arg		0.0	Uncertain significance: not specified	missense variant	
+STAT3	p.Ser614Arg		0.0	Uncertain significance: Autoimmune Disease, Multisystem, Infantile-Onset, 1 ; Hy	missense variant	
+STAT3	p.Glu435Lys		0.0	Uncertain significance: not provided	intron variant,missense variant	
+STAT3	p.Gly750Arg		0.0	Uncertain significance: not provided	3 prime UTR variant,missense variant	
+STAT3	p.Gln202Arg		0.0	Uncertain significance: not provided	missense variant	
+STAT3	p.Leu454Pro		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	intron variant,missense variant	
+STAT3	p.Glu616Gly		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Arg214Gln		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Asp170Tyr		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Pro303Leu		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Met770Val		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	3 prime UTR variant,missense variant	
+STAT3	p.Ala475Val		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Arg107Trp		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	intron variant,missense variant	
+STAT3	p.Val338Ile		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Arg70His		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Asn481Ser		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Gln198His		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Arg114Cys		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	intron variant,missense variant	
+STAT3	p.Arg103Leu		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	intron variant,missense variant	
+STAT3	p.Ala119Val		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Leu337Val		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Lys294Glu		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Met759Ile		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	3 prime UTR variant,missense variant	
+STAT3	p.Asp170Asn		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Met770Thr		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	3 prime UTR variant,missense variant	
+STAT3	p.Arg114His		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	intron variant,missense variant	
+STAT3	p.Glu530Lys		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Gly617Arg		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Pro678His		0.0	Uncertain significance: not provided	missense variant	
+STAT3	p.Met648Thr		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Asp157Asn		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ser219Thr		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Arg414Lys		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Gly656Arg		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Glu652Gly		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Lys318Glu		0.0	Uncertain significance: not provided Likely benign: Hyper-Ige Syndrome 1, Autoso	missense variant	
+STAT3	p.Gly402Ser		0.0	Uncertain significance: not provided Likely benign: Hyper-Ige Syndrome 1, Autoso	missense variant	
+STAT3	p.Pro497Leu		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Arg325Gln		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Glu229Gly		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Met304Ile		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Lys140Asn		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	intron variant,missense variant	
+STAT3	p.Lys591Asn		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Gly558Asp		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Gln193His		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ile217Phe		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ile585Thr		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Glu229Lys		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Gln128Pro		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	intron variant,missense variant	
+STAT3	p.Ser649Pro		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Cys718Tyr		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	intron variant,missense variant	
+STAT3	p.Asn390Ile		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Lys283Asn		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Asn191His		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Pro669Ser		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Asp374Gly		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.His58Tyr		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ile267Val		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ala134Thr		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	intron variant,missense variant	
+STAT3	p.Ala227Val		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Asn5Ser		0.0	Uncertain significance: not provided Likely benign: Hyper-Ige Syndrome 1, Autoso	missense variant	
+STAT3	p.Asp237Glu		0.0	Uncertain significance: not provided	missense variant	
+STAT3	p.Arg335Gln		0.0	Uncertain significance: Autoimmune Disease, Multisystem, Infantile-Onset, 1 ; Hy	missense variant	
+STAT3	p.Phe321Val		0.0	Uncertain significance: not provided	missense variant	
+STAT3	p.Cys328Phe		0.0	Uncertain significance: not provided	missense variant	
+STAT3	p.Leu413Gln		0.0	Uncertain significance: not provided	missense variant	
+STAT3	p.His447Asp		0.0	Uncertain significance: Autoimmune Disease, Multisystem, Infantile-Onset, 1 ; St	intron variant,missense variant	
+STAT3	p.Thr196Asn		0.0	Uncertain significance: not provided	missense variant	
+STAT3	p.Arg417Thr		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Gln279Pro		0.0	Uncertain significance: not provided	missense variant	
+STAT3	p.His131Gln		0.0	Uncertain significance: not provided	intron variant,missense variant	
+STAT3	p.Met206Arg		0.0	Uncertain significance: not provided	missense variant	
+STAT3	p.Glu455Asp		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	intron variant,missense variant	
+STAT3	p.Ala424Thr		0.0	Uncertain significance: not provided	missense variant	
+STAT3	p.Met162Val		0.0	Uncertain significance: not specified	missense variant	
+STAT3	p.Ile64Thr		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Met482Val		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Arg70Cys		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Gly684Arg		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Asn647Ser		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Val619Ile		0.0	Uncertain significance: STAT3-related disorder Likely benign: Hyper-Ige Syndrome	missense variant	
+STAT3	p.Ala766Val		0.0	Uncertain significance: Inborn genetic diseases Likely benign: Hyper-Ige Syndrom	3 prime UTR variant,missense variant	
+STAT3	p.Arg688Gln		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ile452Thr		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	intron variant,missense variant	
+STAT3	p.Met586Val		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Glu286Lys		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Glu616Ala		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Cys426Tyr		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Arg379Ser		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Thr663Leu		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Gln469Pro		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Asp171Asn		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ala662Thr		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Glu753Lys		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	3 prime UTR variant,missense variant	
+STAT3	p.Cys418Arg		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Lys531Arg		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Leu351Ser		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	intron variant,missense variant	
+STAT3	p.Arg31Gln		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Asn192Lys		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Val393Glu		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Thr756Ser		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	3 prime UTR variant,missense variant	
+STAT3	p.Pro327Ser		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Glu306Ala		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Val445Met		0.0	Uncertain significance: Autoimmune Disease, Multisystem, Infantile-Onset, 1 ; St	intron variant,missense variant	
+STAT3	p.Lys370Arg		0.0	Uncertain significance: not provided	intron variant,missense variant	
+STAT3	p.Met586Leu		0.0	Uncertain significance: STAT3-related disorder	missense variant	
+STAT3	p.Trp623Cys		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Gly373Ala		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+STAT3	p.Cys367Trp		0.0	Uncertain significance: Hyper Ige Syndrome	intron variant,missense variant	
+STAT3	p.Gln117Arg		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant,splice acceptor variant	
+STAT3	p.Lys283Glu		0.0	Uncertain significance: not provided	missense variant	
+STAT3	p.Leu666Pro		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Arg518Gln		0.0	Uncertain significance: STAT3-related disorder	missense variant	
+STAT3	p.Ala222Val		0.0	Uncertain significance: not provided	missense variant	
+STAT3	p.Ile477Thr		0.0	Uncertain significance: not provided	missense variant	
+STAT3	p.Thr721Ser		0.0	Uncertain significance: Inborn genetic diseases	intron variant,missense variant	
+STAT3	p.Asp150Asn		0.0	Uncertain significance: Inborn genetic diseases	intron variant,missense variant	
+STAT3	p.Gly558Ala		0.0	Uncertain significance: not provided	missense variant	
+STAT3	p.Met759Val		0.0	Uncertain significance: not provided	3 prime UTR variant,missense variant	
+STAT3	p.Val349Ile		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Met185Leu		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ser540Ala		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Arg215Gly		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Lys348Glu		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Asn401Ser		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ala376Val		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.His58Arg		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Gly656Asp		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ala250Thr		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ala766Gly		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	3 prime UTR variant,missense variant	
+STAT3	p.Asn664Ile		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ala596Ser		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Gln182Arg		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Phe441Leu		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	intron variant,missense variant	
+STAT3	p.Ile677Leu		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Arg13Trp		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ala505Pro		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Pro255Arg		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ile298Val		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Trp110Arg		0.0	Uncertain significance: Autoimmune Disease, Multisystem, Infantile-Onset, 1 ; Hy	intron variant,missense variant	
+STAT3	p.Glu166Asp		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Thr443Ile		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	intron variant,missense variant	
+STAT3	p.Gln125Glu		0.0	Uncertain significance: Autoimmune Disease, Multisystem, Infantile-Onset, 1 ; St	intron variant,missense variant	
+STAT3	p.Arg325Trp		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Arg103Trp		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	intron variant,missense variant	
+STAT3	p.Thr620Ile		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Trp546Arg		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Arg417Gly		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ser636Pro		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Arg13Gln		0.0	Uncertain significance: not provided Likely benign: Hyper-Ige Syndrome 1, Autoso	missense variant	
+STAT3	p.Asn175His		0.0	Uncertain significance: STAT3-related disorder Likely benign: Hyper-Ige Syndrome	missense variant	
+STAT3	p.Arg302Gln		0.0	Uncertain significance: not provided	missense variant	
+STAT3	p.Thr412Ser		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ser521Asn		0.0	Uncertain significance: not provided	missense variant	
+STAT3	p.Ser514Thr		0.0	Uncertain significance: not provided	missense variant	
+STAT3	p.His410Gln		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ala129Thr		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	intron variant,missense variant	
+STAT3	p.Asn400Ile		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Gln635His		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Leu260Pro		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ser465Ala		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ala35Ser		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Trp479Cys		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Glu506Lys		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ser292Cys		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ile665Phe		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ser611Gly		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ala271Val		0.0	Uncertain significance: Inherited Immunodeficiency Diseases	missense variant	
+STAT3	p.Cys259Tyr		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Thr412Ala		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Tyr672Cys		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ala209Val		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Arg262Gln		0.0	Uncertain significance: not provided Likely benign: Hyper-Ige Syndrome 1, Autoso	missense variant	
+STAT3	p.Lys601Thr		0.0	Uncertain significance: not provided	missense variant	
+STAT3	p.Met655Leu		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ile104Thr		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ala123Val		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Val375Ile		0.0	Uncertain significance: not provided Benign: Hyper-Ige Syndrome 1, Autosomal Dom	missense variant	
+STAT3	p.Phe355Cys		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Tyr94Cys		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ser292Thr		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Tyr705His		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Arg414Thr		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Ser194Leu		0.0	Uncertain significance: not provided Likely benign: Hyper-Ige Syndrome 1, Autoso	missense variant	
+STAT3	p.Leu450Phe		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Arg350Met		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Asp661Val		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Arg154Gly		0.0	Uncertain significance: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent	missense variant	
+STAT3	p.Gly422Ser		0.0	Likely benign: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infectio	missense variant	
+STAT3	p.Pro356Thr		0.0	Likely benign: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infectio	intron variant,missense variant	
+STAT3	p.Gly126Glu		0.0	Likely benign: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infectio	intron variant,missense variant	
+STAT3	p.Ile249Thr		0.0	Likely benign: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infectio	missense variant	
+STAT3	p.Arg103Gln		0.0	Likely benign: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infectio	intron variant,missense variant	
+STAT3	p.L371V		0.0	Likely benign: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infectio	intron variant,missense variant	
+STAT3	p.L371P		0.0	Likely benign: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infectio	intron variant,missense variant	
+STAT3	p.Val218Leu		0.0	Likely benign: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infectio	missense variant	
+STAT3	p.Thr600Ser		0.0	Likely benign: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infectio	missense variant	
+STAT3	p.Leu188Met		0.0	Likely benign: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infectio	missense variant	
+STAT3	p.Val310Met		0.0	Likely benign: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infectio	missense variant	
+STAT3	p.Asn485Asp		0.0	Likely benign: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infectio	missense variant	
+STAT3	p.Val507Phe		0.0	Likely benign: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infectio	missense variant	
+STAT3	p.Met143Ile		0.0	Likely benign: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infectio	intron variant,missense variant	
+STAT3	p.Thr121Ser		0.0	Likely benign: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infectio	missense variant	
+STAT3	p.Asp242Glu		0.0	Likely benign: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infectio	missense variant	
+STAT3	p.Ser763Leu		0.0	Likely benign: not specified ; not provided Benign: Hyper-Ige Syndrome 1, Autoso	3 prime UTR variant,missense variant	
+STAT3	p.Ile498Val		0.0	Likely benign: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infectio	missense variant	
+STAT3	p.Asp24Asn		0.0	Likely benign: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infectio	missense variant	
+STAT3	p.Ala766Thr		0.0	Likely benign: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infectio	3 prime UTR variant,missense variant	
+STAT3	p.Ala702Thr		0.0	Likely benign: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infectio	intron variant,missense variant	
+STAT3	p.Ala122Val		0.0	Likely benign: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infectio	missense variant	
+STAT3	p.Val461Leu		0.0	Benign: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections ; ST	missense variant	
+STAT3	p.Val563Ile		0.0	Benign: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections ; ST	missense variant	
+STAT3	p.Pro725Leu		0.0	Benign: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections ; ST	intron variant,missense variant	
+STAT3	p.Cys765Tyr		0.0	Benign: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections ; ST	3 prime UTR variant,missense variant	
+STAT3	p.Thr767Ala		0.0	Benign: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infections ; ST	3 prime UTR variant,missense variant	
+STAT3	p.Arg417Ile		0.0	Not provided: Hyper-Ige Syndrome 1, Autosomal Dominant, With Recurrent Infection	missense variant	

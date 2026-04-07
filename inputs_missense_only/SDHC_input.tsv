@@ -1,0 +1,1197 @@
+gene	hgvs_p	hgvs_g	gnomad_freq	clinical_sig	molecular_consequence	review_status
+SDHC		NC_000001.11:g.161309847G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314368G>A	0.0	Benign	unknown	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314373C>T	0.0	Likely_benign	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314374T>C	0.0	Benign	unknown	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314392G>C	0.0	Likely_benign	utr	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314392G>T	0.0	Uncertain_significance	utr	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314394C>G	0.0	Uncertain_significance	utr	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314401C>A	0.0	Uncertain_significance	utr	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314401C>T	0.0	Uncertain_significance	utr	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314402C>G	0.0	Uncertain_significance	utr	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314402C>T	0.0	Uncertain_significance	utr	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314403A>G	0.0	Uncertain_significance	utr	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314405G>A	0.0	Uncertain_significance	utr	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314406A>C	0.0	Pathogenic	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314406A>G	0.0	Pathogenic	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314406A>T	0.0	Pathogenic	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314407T>A	0.0	Likely_pathogenic	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314407T>C	0.0	Pathogenic	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314407T>G	0.0	Pathogenic	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314408G>A	0.0	Pathogenic	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314409G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314409G>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314409G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314410C>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314410C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314411del	0.0	Pathogenic	frameshift	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314412G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314412G>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314412G>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314413C>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314413C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314415C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314416T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314416T>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314416T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314418T>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314418T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314419T>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314420G>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314422_161314423dup	0.0	Pathogenic/Likely_pathogenic	frameshift	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314421C>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314422T>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314424A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314424A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314425G>A	0.0	Likely_pathogenic	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314426G>A	0.0	Likely_pathogenic	splice_donor	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314426G>T	0.0	Likely_pathogenic	splice_donor	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314427T>A	0.0	Likely_pathogenic	splice_donor	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314427T>G	0.0	Likely_pathogenic	splice_donor	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314428G>A	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314428G>C	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314429del	0.0	Uncertain_significance	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314429A>G	0.0	Uncertain_significance	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314430C>G	0.0	Conflicting_classifications_of_pathogenicity	intronic	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161314430C>T	0.0	Uncertain_significance	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314431T>A	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314431T>G	0.0	Uncertain_significance	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314432T>G	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314433C>A	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314433C>T	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314435_161314436insCG	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314436_161314437dup	0.0	Benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314434A>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314434A>G	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314435G>A	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314435G>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314436_161314437insTT	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314436_161314437insTG	0.0	Benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314437G>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314437_161314438insTA	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314438G>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314439G>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314439G>T	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314440A>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314441C>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314442T>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314443G>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314445G>T	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314447G>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314467G>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314507T>C	0.0	Benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161314523C>T	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314543G>A	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161314736C>T	0.0	Benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161318491C>G	0.0	Conflicting_classifications_of_pathogenicity	intronic	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161323403C>T	0.0	Benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323425A>G	0.0	Benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323518C>T	0.0	Benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323571_161323594dup	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323592_161323623dup	0.0	Uncertain_significance	splice_acceptor	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323596G>T	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323597A>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323597A>G	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323599T>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323600C>T	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323604dup	0.0	Conflicting_classifications_of_pathogenicity	intronic	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161323604T>C	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323605A>G	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323605A>T	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323606T>C	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323607C>T	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323608T>C	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323609T>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323609T>G	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323610G>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323611_161323615del	0.0	Likely_pathogenic	splice_acceptor	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323611C>G	0.0	Pathogenic	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323611C>T	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323612A>G	0.0	Pathogenic/Likely_pathogenic	splice_acceptor	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323613G>A	0.0	Pathogenic	splice_acceptor	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323615C>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323616dup	0.0	Pathogenic	frameshift	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323615C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323616A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323616A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323617C>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323618G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323618G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323618G>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323622G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323622G>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323624C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323625G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323625G>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323627C>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323627C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323628A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323628A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323630T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323630T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323631G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323631G>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323631G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323633C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323636C>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323636C>T	0.0	Pathogenic	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323637G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323639G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323642del	0.0	Pathogenic	frameshift	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323640C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323640C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323642C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323642C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323643A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323643A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323644C>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323647T>G	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161323648A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323649G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323651C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323651C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323652C>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323654C>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323654C>T	0.0	Pathogenic	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323655A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323655A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323656G>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323657C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323659_161323667del	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323660T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323661G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323664T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323666A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323667G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323669A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323670A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323671G>A	0.0	Pathogenic/Likely_pathogenic	splice_donor	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323671G>C	0.0	Pathogenic/Likely_pathogenic	splice_donor	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323672dup	0.0	Conflicting_classifications_of_pathogenicity	splice_donor	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161323673A>G	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323675G>C	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323675G>T	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323678T>G	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323679C>G	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323679C>T	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323680T>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323683G>C	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323696_161323697insAT	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323696_161323697insA	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323698_161323699dup	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323698_161323703del	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323701dup	0.0	Likely_benign	intronic	no_assertion_criteria_provided
+SDHC		NC_000001.11:g.161323699_161323701dup	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323698A>T	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323702_161323703del	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323701T>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323702del	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323713dup	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323702A>G	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323702A>T	0.0	Benign/Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323713del	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323706T>A	0.0	Benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323718C>T	0.0	Benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161323852C>T	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323856T>C	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161323918G>A	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161324014T>C	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161324098T>G	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161324189A>G	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328113A>C	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328203T>C	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328244C>T	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328373C>G	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328377del	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328377C>A	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328377C>T	0.0	Benign/Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328378G>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328379G>A	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328380T>C	0.0	Conflicting_classifications_of_pathogenicity	intronic	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161328381C>T	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328387T>G	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328388T>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328393del	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328394A>G	0.0	Pathogenic/Likely_pathogenic	splice_acceptor	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328395G>A	0.0	Pathogenic/Likely_pathogenic	splice_acceptor	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328395G>T	0.0	Pathogenic/Likely_pathogenic	splice_acceptor	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328398C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328400G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328400G>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328400G>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328404del	0.0	Pathogenic	frameshift	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328403C>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328403C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328404C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328409G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328412A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328413C>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328415_161328416dup	0.0	Pathogenic	frameshift	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328413C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328415A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328416C>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328416C>T	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161328421A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328423AGA[1]	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328422A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328422A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328423A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328424G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328425_161328426del	0.0	Pathogenic	frameshift	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328427G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328427G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328428A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328428A>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328431T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328432G>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328433G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328434A>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328434A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328436dup	0.0	Pathogenic	frameshift	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328436del	0.0	Pathogenic	frameshift	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328436C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328436C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328437G>A	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161328439T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328440T>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328442del	0.0	Pathogenic	frameshift	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328442T>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328445A>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328446A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328446A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328447T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328461_161328462insTGGCCGGGCGCGGTGGCTCACGCCTGTAATCCCAGCACTTTGGGAGGCCGAGGCGGGCGGATCACGANNNNNNNNNNAAAAAAAAAAAAAAAAAAAAAAGAATATAGGTTC	0.0	Pathogenic	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328448A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328451A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328454A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328455T>C	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161328456A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328457G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328458G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328458G>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328461C>G	0.0	Pathogenic	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328461C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328463A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328464A>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328464A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328464A>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328466C>A	0.0	Likely_pathogenic	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328466C>T	0.0	Pathogenic/Likely_pathogenic	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328467G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328467G>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328470C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328472C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328473T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328478C>A	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161328478C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328478C>T	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161328479C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328481C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328482A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328482A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328484A>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328484A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328484A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328487A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328487A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328489_161328512del	0.0	Likely_pathogenic	splice_donor	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328491_161328493dup	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328490A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328491T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328491T>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328493del	0.0	Pathogenic	frameshift	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328493T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328494A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328495C>A	0.0	Pathogenic	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328496A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328497G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328498G>C	0.0	Likely_pathogenic	splice_donor	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328498G>T	0.0	Likely_pathogenic	splice_donor	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328499T>A	0.0	Likely_pathogenic	splice_donor	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328500A>C	0.0	Uncertain_significance	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328500A>G	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328501A>G	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328502G>C	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328507_161328516del	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328505A>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328507del	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328506G>A	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328507G>A	0.0	Benign/Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161328509T>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328513G>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328514G>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328517C>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161328517C>G	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161331902A>G	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340281C>T	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340306del	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340305_161340306del	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340353_161340354insCTTTG	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340459G>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340496G>A	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340547G>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340559C>T	0.0	Likely_benign	intronic	no_assertion_criteria_provided
+SDHC		NC_000001.11:g.161340577del	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340575T>C	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161340577T>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340578G>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340578G>T	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340579T>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340581T>C	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161340581_161340582insA	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340582G>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340583T>G	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340584T>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340584T>G	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340585T>C	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161340588T>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340590A>G	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340591C>T	0.0	Uncertain_significance	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161340592A>G	0.0	Likely_pathogenic	splice_acceptor	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161340597del	0.0	Pathogenic	frameshift	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340597G>A	0.0	Pathogenic	other	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161340597G>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161340597G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340598T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340598T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340599C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340599C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340601C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340605_161340621del	0.0	Likely_pathogenic	frameshift	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340604C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340605C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161340607A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161340607A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340608T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340610G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340610G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340611C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340611C>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161340611C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161340611_161340615delinsTCTCT	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340614T>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161340614T>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161340615G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340616T>C	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161340618dup	0.0	Pathogenic	frameshift	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340617C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340619A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340619A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161340620T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340625C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161340628del	0.0	Pathogenic	frameshift	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340628C>G	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161340628C>T	0.0	Pathogenic/Likely_pathogenic	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161340629del	0.0	Pathogenic	frameshift	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340629G>A	0.0	Pathogenic/Likely_pathogenic	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161340629G>T	0.0	Pathogenic	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340632G>A	0.0	Uncertain_significance	missense	no_assertion_criteria_provided
+SDHC		NC_000001.11:g.161340634dup	0.0	Pathogenic	frameshift	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340634A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161340635C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161340637G>C	0.0	Likely_pathogenic	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340638G>A	0.0	Pathogenic/Likely_pathogenic	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161340640dup	0.0	Pathogenic	frameshift	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340640A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340644C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340647dup	0.0	Pathogenic	frameshift	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161340646T>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161340651T>C	0.0	Likely_benign	splice_donor	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340651T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340652G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161340653C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340655G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340656G>A	0.0	Likely_pathogenic	splice_donor	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340656G>T	0.0	Likely_pathogenic	splice_donor	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340658A>G	0.0	Conflicting_classifications_of_pathogenicity	intronic	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161340659T>C	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340660dup	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340659_161340660delinsAT	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340660G>A	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340661dup	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340662AT[1]	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161340662_161340665del	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340662A>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340662A>G	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161340664A>G	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340666GT[1]	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340667T>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340668G>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340669T>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340670T>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340670T>G	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340672T>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340673T>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340675CA[3]	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340674A>G	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340675C>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340675C>G	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161340729C>T	0.0	Benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161340929C>T	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356484A>G	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356501T>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356503T>C	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356523A>C	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356541G>T	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356637T>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356640T>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356657C>G	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356657C>T	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356660C>T	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356662T>C	0.0	Conflicting_classifications_of_pathogenicity	intronic	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161356664G>C	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356667_161356668dup	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356668del	0.0	Benign/Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356669C>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356669C>T	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356670T>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356671C>A	0.0	Uncertain_significance	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356671C>T	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356674C>T	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356679dup	0.0	Pathogenic	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356675_161356676insT	0.0	Likely_pathogenic	splice_acceptor	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356675A>G	0.0	Likely_pathogenic	splice_acceptor	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356676G>A	0.0	Likely_pathogenic	splice_acceptor	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356677G>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356678G>C	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356678G>T	0.0	Benign/Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356679G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356679G>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356681CT[2]	0.0	Pathogenic	frameshift	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356681CT[1]	0.0	Pathogenic	frameshift	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356682dup	0.0	Pathogenic	frameshift	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356682T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356682T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356682T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356683C>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356685_161356688del	0.0	Pathogenic	frameshift	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356685C>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356685C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356685C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356686T>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356687_161356690inv	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356689T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356689T>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356691G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356692G>A	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161356694A>C	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161356694A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356695T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356696G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356696G>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356698C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356698C>T	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161356700G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356703C>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356706T>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356709C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356713dup	0.0	Pathogenic/Likely_pathogenic	frameshift	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356712C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356713C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356715G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356723dup	0.0	Pathogenic	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356720C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356722T>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356725A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356726G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356727T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356727T>C	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161356727T>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356728C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356730T>C	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161356731A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356731A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356736G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356737A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356739C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356742G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356743T>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356745A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356748T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356751dup	0.0	Pathogenic	frameshift	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356751C>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356752T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356755G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356761G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356761G>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356766_161356768del	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356764C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356766G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356767C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356769C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356772A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356776A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356776A>T	0.0	Benign	missense	no_assertion_criteria_provided
+SDHC		NC_000001.11:g.161356784_161356785del	0.0	Pathogenic	frameshift	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356784A>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356785A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356789dup	0.0	Pathogenic	frameshift	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356787T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356790G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356791C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356793C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356793C>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356793C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356794T>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356797T>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356799T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356799T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356800T>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356801C>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356802C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356802C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356804TC[1]	0.0	Likely_benign	frameshift	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356803C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356805C>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356805C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356811_161356826del	0.0	Pathogenic	frameshift	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356808A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356809T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356809T>G	0.0	Pathogenic/Likely_pathogenic	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356810G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356811dup	0.0	Pathogenic	frameshift	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356812A>G	0.0	Pathogenic/Likely_pathogenic	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356814C>A	0.0	Likely_pathogenic	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356814C>G	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161356814C>T	0.0	Pathogenic	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356815A>G	0.0	Pathogenic/Likely_pathogenic	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356816T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356818C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356818C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356820T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356821G>A	0.0	Pathogenic/Likely_pathogenic	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356822G>A	0.0	Pathogenic/Likely_pathogenic	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356822G>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356823A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356824A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356829A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356832C>T	0.0	Pathogenic	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356833G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356833G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356836A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356838T>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356839T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356841del	0.0	Likely_pathogenic	splice_donor	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356840G>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356840G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356841G>A	0.0	Pathogenic	splice_donor	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356841G>C	0.0	Pathogenic	splice_donor	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356841G>T	0.0	Pathogenic/Likely_pathogenic	splice_donor	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356843A>G	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356846T>G	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356847T>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356851T>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356851T>G	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356852C>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356852C>T	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356853G>A	0.0	Benign/Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161356853G>T	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356854G>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356855G>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356856A>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356858T>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356863C>T	0.0	Conflicting_classifications_of_pathogenicity	intronic	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161356876A>G	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161356944dup	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161357095_161357096insAATT	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161357139C>G	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161357150C>T	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161361921_161366658del	0.0	Pathogenic	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362280A>G	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362286T>G	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362315dup	0.0	Benign/Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362315del	0.0	Benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362314_161362315del	0.0	Benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362315T>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362315T>G	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362316del	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362316G>A	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362316G>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362319T>C	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362319T>G	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362321G>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362321G>T	0.0	Conflicting_classifications_of_pathogenicity	intronic	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161362322T>A	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362322T>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362324del	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362323C>G	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362324C>T	0.0	Conflicting_classifications_of_pathogenicity	intronic	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161362325A>G	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362326C>T	0.0	Uncertain_significance	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362327A>C	0.0	Uncertain_significance	splice_acceptor	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362328G>A	0.0	Likely_pathogenic	splice_acceptor	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362328G>T	0.0	Likely_pathogenic	splice_acceptor	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362330_161362434del	0.0	Pathogenic	stop_lost	no_assertion_criteria_provided
+SDHC		NC_000001.11:g.161362329A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362331G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362332T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362332T>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362333G>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362338C>T	0.0	Benign	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362340A>G	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362342G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362343A>G	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161362345_161362346insT	0.0	Conflicting_classifications_of_pathogenicity	frameshift	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161362345A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362346A>G	0.0	Benign/Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362347G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362347G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362348G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362348G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362349C>T	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161362352G>A	0.0	Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362352G>C	0.0	Benign	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362354A>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362355G>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362357T>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362358T>A	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362358T>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362359C>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362359C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362360C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362361C>A	0.0	Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362362C>T	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161362364G>A	0.0	Benign/Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362364G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362365C>T	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362367A>C	0.0	Benign/Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362367A>G	0.0	Benign/Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362368T>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362370C>T	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362371C>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362371C>T	0.0	Pathogenic	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362373G>A	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161362373G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362374T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362374T>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362375C>A	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161362375C>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362375C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362375_161362378delinsATGA	0.0	Likely_pathogenic	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362376T>C	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362377G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362378G>A	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161362378G>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362378G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362379A>C	0.0	Benign/Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362380G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362380G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362381T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362383del	0.0	Uncertain_significance	frameshift	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362382G>A	0.0	Benign/Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362383G>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362383G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362384T>C	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161362385T>C	0.0	Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362386G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362386G>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362387T>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362388C>G	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362389C>T	0.0	Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362391G>A	0.0	Benign/Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362392G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362393T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362394T>C	0.0	Benign	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362397_161362400del	0.0	Uncertain_significance	frameshift	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362397del	0.0	Uncertain_significance	frameshift	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362396T>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362397T>C	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362397T>G	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362398A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362399C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362400T>A	0.0	Benign/Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362400T>C	0.0	Benign/Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362401G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362403G>T	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362405T>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362405T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362406G>A	0.0	Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362407T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362408C>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362408C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362409C>T	0.0	Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362410T>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362411C>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362411C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362412T>C	0.0	Benign/Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362413A>G	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161362413A>T	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161362414T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362418G>A	0.0	Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362418G>C	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362418G>T	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362420dup	0.0	Uncertain_significance	frameshift	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362419C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362419C>T	0.0	Benign/Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362420T>G	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161362424_161362426dup	0.0	Uncertain_significance	other	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362423C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362425G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362427C>T	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161362428A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362428_161362430delinsTTT	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362429T>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362431T>C	0.0	Uncertain_significance	stop_lost	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362434A>G	0.0	Benign	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362435G>C	0.0	Benign	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362436A>G	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161362438AGG[1]	0.0	Benign	utr	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362443G>C	0.0	Benign	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362446C>G	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362451C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362453T>G	0.0	Uncertain_significance	missense	no_assertion_criteria_provided
+SDHC		NC_000001.11:g.161362467A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362478C>A	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362511G>A	0.0	Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362517G>C	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161362548T>G	0.0	Uncertain_significance	utr	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362556C>G	0.0	Benign	utr	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362607G>A	0.0	Uncertain_significance	utr	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362680C>G	0.0	Benign	utr	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362684C>T	0.0	Uncertain_significance	utr	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362685G>A	0.0	Uncertain_significance	utr	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362818G>A	0.0	Benign	utr	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362830G>A	0.0	Uncertain_significance	utr	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362842G>A	0.0	Conflicting_classifications_of_pathogenicity	utr	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161362902G>A	0.0	Benign	utr	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362951G>A	0.0	Uncertain_significance	utr	criteria_provided,_multiple_submitters,_no_conflicts
+SDHC		NC_000001.11:g.161362960G>T	0.0	Uncertain_significance	utr	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161362973A>G	0.0	Uncertain_significance	utr	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363032A>G	0.0	Benign	utr	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363045C>T	0.0	Benign	utr	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363057A>G	0.0	Benign	utr	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363065A>G	0.0	Uncertain_significance	utr	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363118C>T	0.0	Benign	utr	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363140G>A	0.0	Uncertain_significance	utr	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363161C>G	0.0	Uncertain_significance	utr	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363206A>G	0.0	Uncertain_significance	utr	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363213G>A	0.0	Uncertain_significance	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363288C>T	0.0	Uncertain_significance	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363296G>A	0.0	Uncertain_significance	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363303G>C	0.0	Uncertain_significance	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363401A>G	0.0	Benign	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363445G>T	0.0	Uncertain_significance	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363458G>T	0.0	Benign	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363485G>C	0.0	Uncertain_significance	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363531T>C	0.0	Uncertain_significance	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363592C>T	0.0	Conflicting_classifications_of_pathogenicity	unknown	criteria_provided,_conflicting_classifications
+SDHC		NC_000001.11:g.161363614_161363615insA	0.0	Benign	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363614G>T	0.0	Uncertain_significance	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363623T>A	0.0	Benign	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363624A>T	0.0	Benign	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363747C>A	0.0	Uncertain_significance	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363756G>A	0.0	Benign	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363765C>A	0.0	Uncertain_significance	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363768A>G	0.0	Benign	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363796A>C	0.0	Benign	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363811T>C	0.0	Benign	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363812C>T	0.0	Benign	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363914G>A	0.0	Uncertain_significance	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161363967G>T	0.0	Uncertain_significance	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161364017C>G	0.0	Uncertain_significance	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161364083A>C	0.0	Uncertain_significance	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161364126G>A	0.0	Likely_benign	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161364128G>T	0.0	Uncertain_significance	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161364132A>G	0.0	Uncertain_significance	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161364164G>A	0.0	Benign	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161364217G>C	0.0	Uncertain_significance	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161364233G>C	0.0	Benign	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161364276C>A	0.0	Uncertain_significance	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161364322T>C	0.0	Uncertain_significance	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161364331C>A	0.0	Uncertain_significance	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161364351G>A	0.0	Uncertain_significance	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161364453A>G	0.0	Uncertain_significance	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161364485C>G	0.0	Benign	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161364544C>T	0.0	Benign	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161364574C>A	0.0	Uncertain_significance	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161364589A>C	0.0	Benign	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161364669C>A	0.0	Uncertain_significance	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161364673C>A	0.0	Uncertain_significance	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161364697G>T	0.0	Uncertain_significance	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161364707G>A	0.0	Uncertain_significance	unknown	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161364751del	0.0	Benign	utr	criteria_provided,_single_submitter
+SDHC		NC_000001.11:g.161367196_161370200delinsGTCA	0.0	Pathogenic	unknown	no_assertion_criteria_provided
+SDHC	p.M1L	NC_000001.11:g.161314406A>C	0.0	Pathogenic		
+SDHC	p.M1V	NC_000001.11:g.161314406A>G	0.0	Pathogenic		
+SDHC	p.M1L	NC_000001.11:g.161314406A>T	0.0	Pathogenic		
+SDHC	p.M1K	NC_000001.11:g.161314407T>A	0.0	Likely_pathogenic		
+SDHC	p.M1T	NC_000001.11:g.161314407T>C	0.0	Pathogenic		
+SDHC	p.M1R	NC_000001.11:g.161314407T>G	0.0	Pathogenic		
+SDHC	p.M1I	NC_000001.11:g.161314408G>A	0.0	Pathogenic		
+SDHC	p.A2T	NC_000001.11:g.161314409G>A	0.0	Uncertain_significance		
+SDHC	p.A2P	NC_000001.11:g.161314409G>C	0.0	Uncertain_significance		
+SDHC	p.A2S	NC_000001.11:g.161314409G>T	0.0	Uncertain_significance		
+SDHC	p.A2G	NC_000001.11:g.161314410C>G	0.0	Uncertain_significance		
+SDHC	p.A2V	NC_000001.11:g.161314410C>T	0.0	Uncertain_significance		
+SDHC	p.A3T	NC_000001.11:g.161314412G>A	0.0	Uncertain_significance		
+SDHC	p.A3P	NC_000001.11:g.161314412G>C	0.0	Uncertain_significance		
+SDHC	p.A3S	NC_000001.11:g.161314412G>T	0.0	Uncertain_significance		
+SDHC	p.A3E	NC_000001.11:g.161314413C>A	0.0	Uncertain_significance		
+SDHC	p.A3V	NC_000001.11:g.161314413C>T	0.0	Uncertain_significance		
+SDHC	p.L4V	NC_000001.11:g.161314415C>G	0.0	Uncertain_significance		
+SDHC	p.L4Q	NC_000001.11:g.161314416T>A	0.0	Uncertain_significance		
+SDHC	p.L4P	NC_000001.11:g.161314416T>C	0.0	Uncertain_significance		
+SDHC	p.L4R	NC_000001.11:g.161314416T>G	0.0	Uncertain_significance		
+SDHC	p.L5M	NC_000001.11:g.161314418T>A	0.0	Uncertain_significance		
+SDHC	p.L5V	NC_000001.11:g.161314418T>G	0.0	Uncertain_significance		
+SDHC	p.L5S	NC_000001.11:g.161314419T>C	0.0	Uncertain_significance		
+SDHC	p.L5F	NC_000001.11:g.161314420G>T	0.0	Uncertain_significance		
+SDHC	p.L6V	NC_000001.11:g.161314421C>G	0.0	Uncertain_significance		
+SDHC	p.L6P	NC_000001.11:g.161314422T>C	0.0	Uncertain_significance		
+SDHC	p.R7G	NC_000001.11:g.161314424A>G	0.0	Uncertain_significance		
+SDHC	p.R7K	NC_000001.11:g.161314425G>A	0.0	Likely_pathogenic		
+SDHC	p.H8N	NC_000001.11:g.161323615C>A	0.0	Uncertain_significance		
+SDHC	p.H8Y	NC_000001.11:g.161323615C>T	0.0	Uncertain_significance		
+SDHC	p.H8P	NC_000001.11:g.161323616A>C	0.0	Uncertain_significance		
+SDHC	p.H8R	NC_000001.11:g.161323616A>G	0.0	Uncertain_significance		
+SDHC	p.H8Q	NC_000001.11:g.161323617C>A	0.0	Uncertain_significance		
+SDHC	p.V9I	NC_000001.11:g.161323618G>A	0.0	Uncertain_significance		
+SDHC	p.V9L	NC_000001.11:g.161323618G>C	0.0	Uncertain_significance		
+SDHC	p.V9F	NC_000001.11:g.161323618G>T	0.0	Uncertain_significance		
+SDHC	p.G10D	NC_000001.11:g.161323622G>A	0.0	Uncertain_significance		
+SDHC	p.G10A	NC_000001.11:g.161323622G>C	0.0	Uncertain_significance		
+SDHC	p.R11C	NC_000001.11:g.161323624C>T	0.0	Uncertain_significance		
+SDHC	p.R11H	NC_000001.11:g.161323625G>A	0.0	Uncertain_significance		
+SDHC	p.R11L	NC_000001.11:g.161323625G>T	0.0	Uncertain_significance		
+SDHC	p.H12D	NC_000001.11:g.161323627C>G	0.0	Uncertain_significance		
+SDHC	p.H12Y	NC_000001.11:g.161323627C>T	0.0	Uncertain_significance		
+SDHC	p.H12R	NC_000001.11:g.161323628A>G	0.0	Uncertain_significance		
+SDHC	p.H12L	NC_000001.11:g.161323628A>T	0.0	Uncertain_significance		
+SDHC	p.C13S	NC_000001.11:g.161323630T>A	0.0	Uncertain_significance		
+SDHC	p.C13R	NC_000001.11:g.161323630T>C	0.0	Uncertain_significance		
+SDHC	p.C13Y	NC_000001.11:g.161323631G>A	0.0	Uncertain_significance		
+SDHC	p.C13S	NC_000001.11:g.161323631G>C	0.0	Uncertain_significance		
+SDHC	p.C13F	NC_000001.11:g.161323631G>T	0.0	Uncertain_significance		
+SDHC	p.L14F	NC_000001.11:g.161323633C>T	0.0	Uncertain_significance		
+SDHC	p.R15G	NC_000001.11:g.161323636C>G	0.0	Uncertain_significance		
+SDHC	p.R15*	NC_000001.11:g.161323636C>T	0.0	Pathogenic		
+SDHC	p.R15Q	NC_000001.11:g.161323637G>A	0.0	Uncertain_significance		
+SDHC	p.A16T	NC_000001.11:g.161323639G>A	0.0	Uncertain_significance		
+SDHC	p.A16D	NC_000001.11:g.161323640C>A	0.0	Uncertain_significance		
+SDHC	p.A16V	NC_000001.11:g.161323640C>T	0.0	Uncertain_significance		
+SDHC	p.H17D	NC_000001.11:g.161323642C>G	0.0	Uncertain_significance		
+SDHC	p.H17Y	NC_000001.11:g.161323642C>T	0.0	Uncertain_significance		
+SDHC	p.H17R	NC_000001.11:g.161323643A>G	0.0	Uncertain_significance		
+SDHC	p.H17L	NC_000001.11:g.161323643A>T	0.0	Uncertain_significance		
+SDHC	p.H17Q	NC_000001.11:g.161323644C>A	0.0	Uncertain_significance		
+SDHC	p.F18L	NC_000001.11:g.161323647T>G	0.0	Conflicting_classifications_of_pathogenicity		
+SDHC	p.S19G	NC_000001.11:g.161323648A>G	0.0	Uncertain_significance		
+SDHC	p.S19I	NC_000001.11:g.161323649G>T	0.0	Uncertain_significance		
+SDHC	p.P20A	NC_000001.11:g.161323651C>G	0.0	Uncertain_significance		
+SDHC	p.P20S	NC_000001.11:g.161323651C>T	0.0	Uncertain_significance		
+SDHC	p.P20R	NC_000001.11:g.161323652C>G	0.0	Uncertain_significance		
+SDHC	p.Q21E	NC_000001.11:g.161323654C>G	0.0	Uncertain_significance		
+SDHC	p.Q21*	NC_000001.11:g.161323654C>T	0.0	Pathogenic		
+SDHC	p.Q21P	NC_000001.11:g.161323655A>C	0.0	Uncertain_significance		
+SDHC	p.Q21L	NC_000001.11:g.161323655A>T	0.0	Uncertain_significance		
+SDHC	p.Q21H	NC_000001.11:g.161323656G>C	0.0	Uncertain_significance		
+SDHC	p.L22F	NC_000001.11:g.161323657C>T	0.0	Uncertain_significance		
+SDHC	p.C23R	NC_000001.11:g.161323660T>C	0.0	Uncertain_significance		
+SDHC	p.C23Y	NC_000001.11:g.161323661G>A	0.0	Uncertain_significance		
+SDHC	p.I24N	NC_000001.11:g.161323664T>A	0.0	Uncertain_significance		
+SDHC	p.R25G	NC_000001.11:g.161323666A>G	0.0	Uncertain_significance		
+SDHC	p.R25I	NC_000001.11:g.161323667G>T	0.0	Uncertain_significance		
+SDHC	p.N26D	NC_000001.11:g.161323669A>G	0.0	Uncertain_significance		
+SDHC	p.N26S	NC_000001.11:g.161323670A>G	0.0	Uncertain_significance		
+SDHC	p.Q29E	NC_000001.11:g.161328373C>G	0.0	Benign		
+SDHC	p.T30K	NC_000001.11:g.161328377C>A	0.0	Likely_benign		
+SDHC	p.T30M	NC_000001.11:g.161328377C>T	0.0	Benign/Likely_benign		
+SDHC	p.V31I	NC_000001.11:g.161328379G>A	0.0	Likely_benign		
+SDHC	p.V31A	NC_000001.11:g.161328380T>C	0.0	Conflicting_classifications_of_pathogenicity		
+SDHC	p.F33L	NC_000001.11:g.161328387T>G	0.0	Likely_benign		
+SDHC	p.Y34H	NC_000001.11:g.161328388T>C	0.0	Likely_benign		
+SDHC	p.S36G	NC_000001.11:g.161328394A>G	0.0	Pathogenic/Likely_pathogenic		
+SDHC	p.S36N	NC_000001.11:g.161328395G>A	0.0	Pathogenic/Likely_pathogenic		
+SDHC	p.S36I	NC_000001.11:g.161328395G>T	0.0	Pathogenic/Likely_pathogenic		
+SDHC	p.A37V	NC_000001.11:g.161328398C>T	0.0	Uncertain_significance		
+SDHC	p.V38I	NC_000001.11:g.161328400G>A	0.0	Uncertain_significance		
+SDHC	p.V38L	NC_000001.11:g.161328400G>C	0.0	Uncertain_significance		
+SDHC	p.V38F	NC_000001.11:g.161328400G>T	0.0	Uncertain_significance		
+SDHC	p.P39A	NC_000001.11:g.161328403C>G	0.0	Uncertain_significance		
+SDHC	p.P39S	NC_000001.11:g.161328403C>T	0.0	Uncertain_significance		
+SDHC	p.P39L	NC_000001.11:g.161328404C>T	0.0	Uncertain_significance		
+SDHC	p.G41R	NC_000001.11:g.161328409G>C	0.0	Uncertain_significance		
+SDHC	p.T42A	NC_000001.11:g.161328412A>G	0.0	Uncertain_significance		
+SDHC	p.T42N	NC_000001.11:g.161328413C>A	0.0	Uncertain_significance		
+SDHC	p.T42S	NC_000001.11:g.161328413C>G	0.0	Uncertain_significance		
+SDHC	p.T43A	NC_000001.11:g.161328415A>G	0.0	Uncertain_significance		
+SDHC	p.T43K	NC_000001.11:g.161328416C>A	0.0	Uncertain_significance		
+SDHC	p.T43M	NC_000001.11:g.161328416C>T	0.0	Conflicting_classifications_of_pathogenicity		
+SDHC	p.K45E	NC_000001.11:g.161328421A>G	0.0	Uncertain_significance		
+SDHC	p.K45T	NC_000001.11:g.161328422A>C	0.0	Uncertain_significance		
+SDHC	p.K45R	NC_000001.11:g.161328422A>G	0.0	Uncertain_significance		
+SDHC	p.K45N	NC_000001.11:g.161328423A>C	0.0	Uncertain_significance		
+SDHC	p.E46K	NC_000001.11:g.161328424G>A	0.0	Uncertain_significance		
+SDHC	p.E47K	NC_000001.11:g.161328427G>A	0.0	Uncertain_significance		
+SDHC	p.E47Q	NC_000001.11:g.161328427G>C	0.0	Uncertain_significance		
+SDHC	p.E47G	NC_000001.11:g.161328428A>G	0.0	Uncertain_significance		
+SDHC	p.E47V	NC_000001.11:g.161328428A>T	0.0	Uncertain_significance		
+SDHC	p.M48T	NC_000001.11:g.161328431T>C	0.0	Uncertain_significance		
+SDHC	p.M48I	NC_000001.11:g.161328432G>C	0.0	Uncertain_significance		
+SDHC	p.E49Q	NC_000001.11:g.161328433G>C	0.0	Uncertain_significance		
+SDHC	p.E49A	NC_000001.11:g.161328434A>C	0.0	Uncertain_significance		
+SDHC	p.E49G	NC_000001.11:g.161328434A>G	0.0	Uncertain_significance		
+SDHC	p.R50G	NC_000001.11:g.161328436C>G	0.0	Uncertain_significance		
+SDHC	p.R50W	NC_000001.11:g.161328436C>T	0.0	Uncertain_significance		
+SDHC	p.R50Q	NC_000001.11:g.161328437G>A	0.0	Conflicting_classifications_of_pathogenicity		
+SDHC	p.F51L	NC_000001.11:g.161328439T>C	0.0	Uncertain_significance		
+SDHC	p.F51S	NC_000001.11:g.161328440T>C	0.0	Uncertain_significance		
+SDHC	p.W52R	NC_000001.11:g.161328442T>C	0.0	Uncertain_significance		
+SDHC	p.N53H	NC_000001.11:g.161328445A>C	0.0	Uncertain_significance		
+SDHC	p.N53S	NC_000001.11:g.161328446A>G	0.0	Uncertain_significance		
+SDHC	p.N53I	NC_000001.11:g.161328446A>T	0.0	Uncertain_significance		
+SDHC	p.N53K	NC_000001.11:g.161328447T>A	0.0	Uncertain_significance		
+SDHC	p.K54E	NC_000001.11:g.161328448A>G	0.0	Uncertain_significance		
+SDHC	p.N55D	NC_000001.11:g.161328451A>G	0.0	Uncertain_significance		
+SDHC	p.I56V	NC_000001.11:g.161328454A>G	0.0	Uncertain_significance		
+SDHC	p.I56T	NC_000001.11:g.161328455T>C	0.0	Conflicting_classifications_of_pathogenicity		
+SDHC	p.I56M	NC_000001.11:g.161328456A>G	0.0	Uncertain_significance		
+SDHC	p.G57S	NC_000001.11:g.161328457G>A	0.0	Uncertain_significance		
+SDHC	p.G57D	NC_000001.11:g.161328458G>A	0.0	Uncertain_significance		
+SDHC	p.G57A	NC_000001.11:g.161328458G>C	0.0	Uncertain_significance		
+SDHC	p.S58*	NC_000001.11:g.161328461C>G	0.0	Pathogenic		
+SDHC	p.S58L	NC_000001.11:g.161328461C>T	0.0	Uncertain_significance		
+SDHC	p.N59D	NC_000001.11:g.161328463A>G	0.0	Uncertain_significance		
+SDHC	p.N59T	NC_000001.11:g.161328464A>C	0.0	Uncertain_significance		
+SDHC	p.N59S	NC_000001.11:g.161328464A>G	0.0	Uncertain_significance		
+SDHC	p.N59I	NC_000001.11:g.161328464A>T	0.0	Uncertain_significance		
+SDHC	p.R60S	NC_000001.11:g.161328466C>A	0.0	Likely_pathogenic		
+SDHC	p.R60C	NC_000001.11:g.161328466C>T	0.0	Pathogenic/Likely_pathogenic		
+SDHC	p.R60H	NC_000001.11:g.161328467G>A	0.0	Uncertain_significance		
+SDHC	p.R60L	NC_000001.11:g.161328467G>T	0.0	Uncertain_significance		
+SDHC	p.P61R	NC_000001.11:g.161328470C>G	0.0	Uncertain_significance		
+SDHC	p.L62V	NC_000001.11:g.161328472C>G	0.0	Uncertain_significance		
+SDHC	p.L62P	NC_000001.11:g.161328473T>C	0.0	Uncertain_significance		
+SDHC	p.P64T	NC_000001.11:g.161328478C>A	0.0	Conflicting_classifications_of_pathogenicity		
+SDHC	p.P64A	NC_000001.11:g.161328478C>G	0.0	Uncertain_significance		
+SDHC	p.P64S	NC_000001.11:g.161328478C>T	0.0	Conflicting_classifications_of_pathogenicity		
+SDHC	p.P64L	NC_000001.11:g.161328479C>T	0.0	Uncertain_significance		
+SDHC	p.H65D	NC_000001.11:g.161328481C>G	0.0	Uncertain_significance		
+SDHC	p.H65R	NC_000001.11:g.161328482A>G	0.0	Uncertain_significance		
+SDHC	p.H65L	NC_000001.11:g.161328482A>T	0.0	Uncertain_significance		
+SDHC	p.I66L	NC_000001.11:g.161328484A>C	0.0	Uncertain_significance		
+SDHC	p.I66V	NC_000001.11:g.161328484A>G	0.0	Uncertain_significance		
+SDHC	p.I66F	NC_000001.11:g.161328484A>T	0.0	Uncertain_significance		
+SDHC	p.T67A	NC_000001.11:g.161328487A>G	0.0	Uncertain_significance		
+SDHC	p.T67S	NC_000001.11:g.161328487A>T	0.0	Uncertain_significance		
+SDHC	p.I68L	NC_000001.11:g.161328490A>C	0.0	Uncertain_significance		
+SDHC	p.I68N	NC_000001.11:g.161328491T>A	0.0	Uncertain_significance		
+SDHC	p.I68T	NC_000001.11:g.161328491T>C	0.0	Uncertain_significance		
+SDHC	p.Y69D	NC_000001.11:g.161328493T>G	0.0	Uncertain_significance		
+SDHC	p.Y69S	NC_000001.11:g.161328494A>C	0.0	Uncertain_significance		
+SDHC	p.Y69*	NC_000001.11:g.161328495C>A	0.0	Pathogenic		
+SDHC	p.S70G	NC_000001.11:g.161328496A>G	0.0	Uncertain_significance		
+SDHC	p.S70N	NC_000001.11:g.161328497G>A	0.0	Uncertain_significance		
+SDHC	p.W71*	NC_000001.11:g.161340597G>A	0.0	Pathogenic		
+SDHC	p.W71C	NC_000001.11:g.161340597G>C	0.0	Uncertain_significance		
+SDHC	p.W71C	NC_000001.11:g.161340597G>T	0.0	Uncertain_significance		
+SDHC	p.S72P	NC_000001.11:g.161340598T>C	0.0	Uncertain_significance		
+SDHC	p.S72A	NC_000001.11:g.161340598T>G	0.0	Uncertain_significance		
+SDHC	p.S72C	NC_000001.11:g.161340599C>G	0.0	Uncertain_significance		
+SDHC	p.S72F	NC_000001.11:g.161340599C>T	0.0	Uncertain_significance		
+SDHC	p.L73F	NC_000001.11:g.161340601C>T	0.0	Uncertain_significance		
+SDHC	p.P74S	NC_000001.11:g.161340604C>T	0.0	Uncertain_significance		
+SDHC	p.P74L	NC_000001.11:g.161340605C>T	0.0	Uncertain_significance		
+SDHC	p.M75V	NC_000001.11:g.161340607A>G	0.0	Uncertain_significance		
+SDHC	p.M75L	NC_000001.11:g.161340607A>T	0.0	Uncertain_significance		
+SDHC	p.M75K	NC_000001.11:g.161340608T>A	0.0	Uncertain_significance		
+SDHC	p.A76T	NC_000001.11:g.161340610G>A	0.0	Uncertain_significance		
+SDHC	p.A76P	NC_000001.11:g.161340610G>C	0.0	Uncertain_significance		
+SDHC	p.A76E	NC_000001.11:g.161340611C>A	0.0	Uncertain_significance		
+SDHC	p.A76G	NC_000001.11:g.161340611C>G	0.0	Uncertain_significance		
+SDHC	p.A76V	NC_000001.11:g.161340611C>T	0.0	Uncertain_significance		
+SDHC	p.M77K	NC_000001.11:g.161340614T>A	0.0	Uncertain_significance		
+SDHC	p.M77T	NC_000001.11:g.161340614T>C	0.0	Uncertain_significance		
+SDHC	p.M77I	NC_000001.11:g.161340615G>A	0.0	Uncertain_significance		
+SDHC	p.S78P	NC_000001.11:g.161340616T>C	0.0	Conflicting_classifications_of_pathogenicity		
+SDHC	p.S78F	NC_000001.11:g.161340617C>T	0.0	Uncertain_significance		
+SDHC	p.I79L	NC_000001.11:g.161340619A>C	0.0	Uncertain_significance		
+SDHC	p.I79V	NC_000001.11:g.161340619A>G	0.0	Uncertain_significance		
+SDHC	p.I79T	NC_000001.11:g.161340620T>C	0.0	Uncertain_significance		
+SDHC	p.H81Y	NC_000001.11:g.161340625C>T	0.0	Uncertain_significance		
+SDHC	p.R82G	NC_000001.11:g.161340628C>G	0.0	Conflicting_classifications_of_pathogenicity		
+SDHC	p.R82C	NC_000001.11:g.161340628C>T	0.0	Pathogenic/Likely_pathogenic		
+SDHC	p.R82H	NC_000001.11:g.161340629G>A	0.0	Pathogenic/Likely_pathogenic		
+SDHC	p.R82L	NC_000001.11:g.161340629G>T	0.0	Pathogenic		
+SDHC	p.G83D	NC_000001.11:g.161340632G>A	0.0	Uncertain_significance		
+SDHC	p.T84A	NC_000001.11:g.161340634A>G	0.0	Uncertain_significance		
+SDHC	p.T84I	NC_000001.11:g.161340635C>T	0.0	Uncertain_significance		
+SDHC	p.G85R	NC_000001.11:g.161340637G>C	0.0	Likely_pathogenic		
+SDHC	p.G85D	NC_000001.11:g.161340638G>A	0.0	Pathogenic/Likely_pathogenic		
+SDHC	p.I86V	NC_000001.11:g.161340640A>G	0.0	Uncertain_significance		
+SDHC	p.A87D	NC_000001.11:g.161340644C>A	0.0	Uncertain_significance		
+SDHC	p.L88V	NC_000001.11:g.161340646T>G	0.0	Uncertain_significance		
+SDHC	p.S89R	NC_000001.11:g.161340651T>G	0.0	Uncertain_significance		
+SDHC	p.A90T	NC_000001.11:g.161340652G>A	0.0	Uncertain_significance		
+SDHC	p.A90V	NC_000001.11:g.161340653C>T	0.0	Uncertain_significance		
+SDHC	p.G91W	NC_000001.11:g.161340655G>T	0.0	Uncertain_significance		
+SDHC	p.G91V	NC_000001.11:g.161356677G>T	0.0	Uncertain_significance		
+SDHC	p.V92I	NC_000001.11:g.161356679G>A	0.0	Uncertain_significance		
+SDHC	p.V92F	NC_000001.11:g.161356679G>T	0.0	Uncertain_significance		
+SDHC	p.S93T	NC_000001.11:g.161356682T>A	0.0	Uncertain_significance		
+SDHC	p.S93P	NC_000001.11:g.161356682T>C	0.0	Uncertain_significance		
+SDHC	p.S93A	NC_000001.11:g.161356682T>G	0.0	Uncertain_significance		
+SDHC	p.S93C	NC_000001.11:g.161356683C>G	0.0	Uncertain_significance		
+SDHC	p.L94I	NC_000001.11:g.161356685C>A	0.0	Uncertain_significance		
+SDHC	p.L94V	NC_000001.11:g.161356685C>G	0.0	Uncertain_significance		
+SDHC	p.L94F	NC_000001.11:g.161356685C>T	0.0	Uncertain_significance		
+SDHC	p.L94R	NC_000001.11:g.161356686T>G	0.0	Uncertain_significance		
+SDHC	p.F95S	NC_000001.11:g.161356689T>C	0.0	Uncertain_significance		
+SDHC	p.F95C	NC_000001.11:g.161356689T>G	0.0	Uncertain_significance		
+SDHC	p.G96R	NC_000001.11:g.161356691G>C	0.0	Uncertain_significance		
+SDHC	p.G96D	NC_000001.11:g.161356692G>A	0.0	Conflicting_classifications_of_pathogenicity		
+SDHC	p.M97L	NC_000001.11:g.161356694A>C	0.0	Conflicting_classifications_of_pathogenicity		
+SDHC	p.M97V	NC_000001.11:g.161356694A>G	0.0	Uncertain_significance		
+SDHC	p.M97T	NC_000001.11:g.161356695T>C	0.0	Uncertain_significance		
+SDHC	p.M97I	NC_000001.11:g.161356696G>A	0.0	Uncertain_significance		
+SDHC	p.M97I	NC_000001.11:g.161356696G>T	0.0	Uncertain_significance		
+SDHC	p.S98W	NC_000001.11:g.161356698C>G	0.0	Uncertain_significance		
+SDHC	p.S98L	NC_000001.11:g.161356698C>T	0.0	Conflicting_classifications_of_pathogenicity		
+SDHC	p.A99T	NC_000001.11:g.161356700G>A	0.0	Uncertain_significance		
+SDHC	p.L100V	NC_000001.11:g.161356703C>G	0.0	Uncertain_significance		
+SDHC	p.L101V	NC_000001.11:g.161356706T>G	0.0	Uncertain_significance		
+SDHC	p.L102F	NC_000001.11:g.161356709C>T	0.0	Uncertain_significance		
+SDHC	p.P103S	NC_000001.11:g.161356712C>T	0.0	Uncertain_significance		
+SDHC	p.P103L	NC_000001.11:g.161356713C>T	0.0	Uncertain_significance		
+SDHC	p.G104R	NC_000001.11:g.161356715G>A	0.0	Uncertain_significance		
+SDHC	p.N105K	NC_000001.11:g.161356720C>G	0.0	Uncertain_significance		
+SDHC	p.F106C	NC_000001.11:g.161356722T>G	0.0	Uncertain_significance		
+SDHC	p.E107G	NC_000001.11:g.161356725A>G	0.0	Uncertain_significance		
+SDHC	p.E107D	NC_000001.11:g.161356726G>C	0.0	Uncertain_significance		
+SDHC	p.S108T	NC_000001.11:g.161356727T>A	0.0	Uncertain_significance		
+SDHC	p.S108P	NC_000001.11:g.161356727T>C	0.0	Conflicting_classifications_of_pathogenicity		
+SDHC	p.S108A	NC_000001.11:g.161356727T>G	0.0	Uncertain_significance		
+SDHC	p.S108C	NC_000001.11:g.161356728C>G	0.0	Uncertain_significance		
+SDHC	p.Y109H	NC_000001.11:g.161356730T>C	0.0	Conflicting_classifications_of_pathogenicity		
+SDHC	p.Y109C	NC_000001.11:g.161356731A>G	0.0	Uncertain_significance		
+SDHC	p.Y109F	NC_000001.11:g.161356731A>T	0.0	Uncertain_significance		
+SDHC	p.E111K	NC_000001.11:g.161356736G>A	0.0	Uncertain_significance		
+SDHC	p.E111G	NC_000001.11:g.161356737A>G	0.0	Uncertain_significance		
+SDHC	p.L112F	NC_000001.11:g.161356739C>T	0.0	Uncertain_significance		
+SDHC	p.V113M	NC_000001.11:g.161356742G>A	0.0	Uncertain_significance		
+SDHC	p.V113E	NC_000001.11:g.161356743T>A	0.0	Uncertain_significance		
+SDHC	p.K114E	NC_000001.11:g.161356745A>G	0.0	Uncertain_significance		
+SDHC	p.S115A	NC_000001.11:g.161356748T>G	0.0	Uncertain_significance		
+SDHC	p.L116V	NC_000001.11:g.161356751C>G	0.0	Uncertain_significance		
+SDHC	p.L116P	NC_000001.11:g.161356752T>C	0.0	Uncertain_significance		
+SDHC	p.C117Y	NC_000001.11:g.161356755G>A	0.0	Uncertain_significance		
+SDHC	p.G119E	NC_000001.11:g.161356761G>A	0.0	Uncertain_significance		
+SDHC	p.G119A	NC_000001.11:g.161356761G>C	0.0	Uncertain_significance		
+SDHC	p.P120L	NC_000001.11:g.161356764C>T	0.0	Uncertain_significance		
+SDHC	p.A121T	NC_000001.11:g.161356766G>A	0.0	Uncertain_significance		
+SDHC	p.A121V	NC_000001.11:g.161356767C>T	0.0	Uncertain_significance		
+SDHC	p.L122V	NC_000001.11:g.161356769C>G	0.0	Uncertain_significance		
+SDHC	p.I123V	NC_000001.11:g.161356772A>G	0.0	Uncertain_significance		
+SDHC	p.H124P	NC_000001.11:g.161356776A>C	0.0	Uncertain_significance		
+SDHC	p.H124L	NC_000001.11:g.161356776A>T	0.0	Benign		
+SDHC	p.K127Q	NC_000001.11:g.161356784A>C	0.0	Uncertain_significance		
+SDHC	p.K127R	NC_000001.11:g.161356785A>G	0.0	Uncertain_significance		
+SDHC	p.F128L	NC_000001.11:g.161356787T>C	0.0	Uncertain_significance		
+SDHC	p.A129T	NC_000001.11:g.161356790G>A	0.0	Uncertain_significance		
+SDHC	p.A129V	NC_000001.11:g.161356791C>T	0.0	Uncertain_significance		
+SDHC	p.L130I	NC_000001.11:g.161356793C>A	0.0	Uncertain_significance		
+SDHC	p.L130V	NC_000001.11:g.161356793C>G	0.0	Uncertain_significance		
+SDHC	p.L130F	NC_000001.11:g.161356793C>T	0.0	Uncertain_significance		
+SDHC	p.L130R	NC_000001.11:g.161356794T>G	0.0	Uncertain_significance		
+SDHC	p.V131A	NC_000001.11:g.161356797T>C	0.0	Uncertain_significance		
+SDHC	p.F132L	NC_000001.11:g.161356799T>C	0.0	Uncertain_significance		
+SDHC	p.F132V	NC_000001.11:g.161356799T>G	0.0	Uncertain_significance		
+SDHC	p.F132C	NC_000001.11:g.161356800T>G	0.0	Uncertain_significance		
+SDHC	p.F132L	NC_000001.11:g.161356801C>G	0.0	Uncertain_significance		
+SDHC	p.P133A	NC_000001.11:g.161356802C>G	0.0	Uncertain_significance		
+SDHC	p.P133S	NC_000001.11:g.161356802C>T	0.0	Uncertain_significance		
+SDHC	p.P133L	NC_000001.11:g.161356803C>T	0.0	Uncertain_significance		
+SDHC	p.L134V	NC_000001.11:g.161356805C>G	0.0	Uncertain_significance		
+SDHC	p.L134F	NC_000001.11:g.161356805C>T	0.0	Uncertain_significance		
+SDHC	p.M135V	NC_000001.11:g.161356808A>G	0.0	Uncertain_significance		
+SDHC	p.M135T	NC_000001.11:g.161356809T>C	0.0	Uncertain_significance		
+SDHC	p.M135R	NC_000001.11:g.161356809T>G	0.0	Pathogenic/Likely_pathogenic		
+SDHC	p.M135I	NC_000001.11:g.161356810G>A	0.0	Uncertain_significance		
+SDHC	p.Y136C	NC_000001.11:g.161356812A>G	0.0	Pathogenic/Likely_pathogenic		
+SDHC	p.H137N	NC_000001.11:g.161356814C>A	0.0	Likely_pathogenic		
+SDHC	p.H137D	NC_000001.11:g.161356814C>G	0.0	Conflicting_classifications_of_pathogenicity		
+SDHC	p.H137Y	NC_000001.11:g.161356814C>T	0.0	Pathogenic		
+SDHC	p.H137R	NC_000001.11:g.161356815A>G	0.0	Pathogenic/Likely_pathogenic		
+SDHC	p.H137Q	NC_000001.11:g.161356816T>A	0.0	Uncertain_significance		
+SDHC	p.T138N	NC_000001.11:g.161356818C>A	0.0	Uncertain_significance		
+SDHC	p.T138I	NC_000001.11:g.161356818C>T	0.0	Uncertain_significance		
+SDHC	p.W139R	NC_000001.11:g.161356820T>C	0.0	Uncertain_significance		
+SDHC	p.W139*	NC_000001.11:g.161356821G>A	0.0	Pathogenic/Likely_pathogenic		
+SDHC	p.W139*	NC_000001.11:g.161356822G>A	0.0	Pathogenic/Likely_pathogenic		
+SDHC	p.W139C	NC_000001.11:g.161356822G>C	0.0	Uncertain_significance		
+SDHC	p.N140H	NC_000001.11:g.161356823A>C	0.0	Uncertain_significance		
+SDHC	p.N140S	NC_000001.11:g.161356824A>G	0.0	Uncertain_significance		
+SDHC	p.I142V	NC_000001.11:g.161356829A>G	0.0	Uncertain_significance		
+SDHC	p.R143*	NC_000001.11:g.161356832C>T	0.0	Pathogenic		
+SDHC	p.R143Q	NC_000001.11:g.161356833G>A	0.0	Uncertain_significance		
+SDHC	p.R143P	NC_000001.11:g.161356833G>C	0.0	Uncertain_significance		
+SDHC	p.H144R	NC_000001.11:g.161356836A>G	0.0	Uncertain_significance		
+SDHC	p.L145M	NC_000001.11:g.161356838T>A	0.0	Uncertain_significance		
+SDHC	p.L145S	NC_000001.11:g.161356839T>C	0.0	Uncertain_significance		
+SDHC	p.L145F	NC_000001.11:g.161356840G>C	0.0	Uncertain_significance		
+SDHC	p.L145F	NC_000001.11:g.161356840G>T	0.0	Uncertain_significance		
+SDHC	p.M146L	NC_000001.11:g.161362329A>C	0.0	Uncertain_significance		
+SDHC	p.M146I	NC_000001.11:g.161362331G>A	0.0	Uncertain_significance		
+SDHC	p.W147R	NC_000001.11:g.161362332T>C	0.0	Uncertain_significance		
+SDHC	p.W147G	NC_000001.11:g.161362332T>G	0.0	Uncertain_significance		
+SDHC	p.W147L	NC_000001.11:g.161362333G>T	0.0	Uncertain_significance		
+SDHC	p.G150E	NC_000001.11:g.161362342G>A	0.0	Uncertain_significance		
+SDHC	p.K151R	NC_000001.11:g.161362345A>G	0.0	Uncertain_significance		
+SDHC	p.G152S	NC_000001.11:g.161362347G>A	0.0	Uncertain_significance		
+SDHC	p.G152C	NC_000001.11:g.161362347G>T	0.0	Uncertain_significance		
+SDHC	p.G152D	NC_000001.11:g.161362348G>A	0.0	Uncertain_significance		
+SDHC	p.G152V	NC_000001.11:g.161362348G>T	0.0	Uncertain_significance		
+SDHC	p.K154T	NC_000001.11:g.161362354A>C	0.0	Uncertain_significance		
+SDHC	p.K154N	NC_000001.11:g.161362355G>T	0.0	Uncertain_significance		
+SDHC	p.I155T	NC_000001.11:g.161362357T>C	0.0	Uncertain_significance		
+SDHC	p.I155M	NC_000001.11:g.161362358T>G	0.0	Uncertain_significance		
+SDHC	p.P156T	NC_000001.11:g.161362359C>A	0.0	Uncertain_significance		
+SDHC	p.P156S	NC_000001.11:g.161362359C>T	0.0	Uncertain_significance		
+SDHC	p.P156L	NC_000001.11:g.161362360C>T	0.0	Uncertain_significance		
+SDHC	p.Q157*	NC_000001.11:g.161362362C>T	0.0	Conflicting_classifications_of_pathogenicity		
+SDHC	p.Q157H	NC_000001.11:g.161362364G>T	0.0	Uncertain_significance		
+SDHC	p.Y159H	NC_000001.11:g.161362368T>C	0.0	Uncertain_significance		
+SDHC	p.Q160K	NC_000001.11:g.161362371C>A	0.0	Uncertain_significance		
+SDHC	p.Q160*	NC_000001.11:g.161362371C>T	0.0	Pathogenic		
+SDHC	p.Q160H	NC_000001.11:g.161362373G>T	0.0	Uncertain_significance		
+SDHC	p.S161T	NC_000001.11:g.161362374T>A	0.0	Uncertain_significance		
+SDHC	p.S161P	NC_000001.11:g.161362374T>C	0.0	Uncertain_significance		
+SDHC	p.S161Y	NC_000001.11:g.161362375C>A	0.0	Conflicting_classifications_of_pathogenicity		
+SDHC	p.S161C	NC_000001.11:g.161362375C>G	0.0	Uncertain_significance		
+SDHC	p.S161F	NC_000001.11:g.161362375C>T	0.0	Uncertain_significance		
+SDHC	p.G162R	NC_000001.11:g.161362377G>A	0.0	Uncertain_significance		
+SDHC	p.G162E	NC_000001.11:g.161362378G>A	0.0	Conflicting_classifications_of_pathogenicity		
+SDHC	p.G162A	NC_000001.11:g.161362378G>C	0.0	Uncertain_significance		
+SDHC	p.G162V	NC_000001.11:g.161362378G>T	0.0	Uncertain_significance		
+SDHC	p.V163M	NC_000001.11:g.161362380G>A	0.0	Uncertain_significance		
+SDHC	p.V163L	NC_000001.11:g.161362380G>T	0.0	Uncertain_significance		
+SDHC	p.V163A	NC_000001.11:g.161362381T>C	0.0	Uncertain_significance		
+SDHC	p.V164L	NC_000001.11:g.161362383G>C	0.0	Uncertain_significance		
+SDHC	p.V164F	NC_000001.11:g.161362383G>T	0.0	Uncertain_significance		
+SDHC	p.V164A	NC_000001.11:g.161362384T>C	0.0	Conflicting_classifications_of_pathogenicity		
+SDHC	p.V165L	NC_000001.11:g.161362386G>C	0.0	Uncertain_significance		
+SDHC	p.V165F	NC_000001.11:g.161362386G>T	0.0	Uncertain_significance		
+SDHC	p.V165A	NC_000001.11:g.161362387T>C	0.0	Uncertain_significance		
+SDHC	p.V167I	NC_000001.11:g.161362392G>A	0.0	Uncertain_significance		
+SDHC	p.V167D	NC_000001.11:g.161362393T>A	0.0	Uncertain_significance		
+SDHC	p.L168P	NC_000001.11:g.161362396T>C	0.0	Uncertain_significance		
+SDHC	p.T169P	NC_000001.11:g.161362398A>C	0.0	Uncertain_significance		
+SDHC	p.T169I	NC_000001.11:g.161362399C>T	0.0	Uncertain_significance		
+SDHC	p.V170M	NC_000001.11:g.161362401G>A	0.0	Uncertain_significance		
+SDHC	p.L171S	NC_000001.11:g.161362405T>C	0.0	Uncertain_significance		
+SDHC	p.L171W	NC_000001.11:g.161362405T>G	0.0	Uncertain_significance		
+SDHC	p.S172P	NC_000001.11:g.161362407T>C	0.0	Uncertain_significance		
+SDHC	p.S172C	NC_000001.11:g.161362408C>G	0.0	Uncertain_significance		
+SDHC	p.S172F	NC_000001.11:g.161362408C>T	0.0	Uncertain_significance		
+SDHC	p.S173P	NC_000001.11:g.161362410T>C	0.0	Uncertain_significance		
+SDHC	p.S173C	NC_000001.11:g.161362411C>G	0.0	Uncertain_significance		
+SDHC	p.S173F	NC_000001.11:g.161362411C>T	0.0	Uncertain_significance		
+SDHC	p.M174V	NC_000001.11:g.161362413A>G	0.0	Conflicting_classifications_of_pathogenicity		
+SDHC	p.M174L	NC_000001.11:g.161362413A>T	0.0	Conflicting_classifications_of_pathogenicity		
+SDHC	p.M174T	NC_000001.11:g.161362414T>C	0.0	Uncertain_significance		
+SDHC	p.L176V	NC_000001.11:g.161362419C>G	0.0	Uncertain_significance		
+SDHC	p.L176R	NC_000001.11:g.161362420T>G	0.0	Conflicting_classifications_of_pathogenicity		
+SDHC	p.A177V	NC_000001.11:g.161362423C>T	0.0	Uncertain_significance		
+SDHC	p.A178T	NC_000001.11:g.161362425G>A	0.0	Uncertain_significance		
+SDHC	p.M179V	NC_000001.11:g.161362428A>G	0.0	Uncertain_significance		
+SDHC	p.M179T	NC_000001.11:g.161362429T>C	0.0	Uncertain_significance		

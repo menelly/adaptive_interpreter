@@ -1,0 +1,1151 @@
+gene	hgvs_p	hgvs_g	gnomad_freq	clinical_sig	molecular_consequence	review_status
+EPCAM		NC_000002.12:g.47369005C>G	0.0	Benign	unknown	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47369061A>G	0.0	Likely_benign	unknown	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47369259G>C	0.0	Likely_benign	unknown	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369314G>T	0.0	Uncertain_significance	utr	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369408C>G	0.0	Likely_benign	unknown	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369427C>T	0.0	Uncertain_significance	utr	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369461_47369480del	0.0	Benign	utr	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369503_47369581del	0.0	Uncertain_significance	frameshift	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47369505C>G	0.0	not_provided	utr	no_classification_provided
+EPCAM		NC_000002.12:g.47369506A>G	0.0	Likely_pathogenic	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47369508G>C	0.0	Pathogenic	missense	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47369510C>T	0.0	Benign/Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47369516del	0.0	Pathogenic	frameshift	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47369512C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369512C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369513C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369516C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369516C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369516C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47369518C>T	0.0	Pathogenic/Likely_pathogenic	other	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47369521G>A	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369524C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369524C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369525T>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47369527G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369528C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369533G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369533G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369536C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369539C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369539C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369540T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369542del	0.0	Pathogenic	frameshift	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47369542C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369550_47369570del	0.0	Uncertain_significance	other	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47369543T>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47369546C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369548G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369550GGCGAC[1]	0.0	Uncertain_significance	other	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369549C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369549C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369551G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369552C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369554A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369555C>A	0.0	Benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47369555C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369555C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47369558_47369578del	0.0	Uncertain_significance	other	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47369557G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369557G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369567C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369569G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47369569G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369570C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369572G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369575C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369576A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369576A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369577G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369578G>T	0.0	Pathogenic	other	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369579A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369580A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369581G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369586G>A	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369587G>T	0.0	Benign/Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47369602G>C	0.0	Benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369627_47369628insCGGGG	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369716dup	0.0	Benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47369729C>T	0.0	Likely_benign	intronic	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47370082C>T	0.0	Likely_benign	intronic	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47370192C>T	0.0	Likely_benign	intronic	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47373212A>C	0.0	Benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373215A>C	0.0	Benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373218A>C	0.0	Benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373219A>C	0.0	Benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373221A>C	0.0	Benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373227A>C	0.0	Benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373233_47373234insCAA	0.0	Benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373231A>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373452T>A	0.0	Benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47373461A>G	0.0	Pathogenic	splice_acceptor	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47373469_47373474del	0.0	Likely_pathogenic	other	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373465T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373465T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373466G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373468G>A	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373469T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373471TG[1]	0.0	Pathogenic	other	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47373471T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373474G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373475A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373476A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373479C>G	0.0	Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47373480T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373481A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373486C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373489G>A	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+EPCAM		NC_000002.12:g.47373492G>A	0.0	Benign	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373497C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373501T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373502T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373503T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373504G>A	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373509T>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47373510A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373511A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373514A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373516C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373517G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373519C>T	0.0	Pathogenic	other	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373520A>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47373521A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373522T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373527G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373532C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373534T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373537G>A	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373537G>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47373538T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373540G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373541G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373541G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373541G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373544C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373544C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373546C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373546C>T	0.0	Pathogenic	other	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373547A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47373550A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373553del	0.0	Pathogenic	frameshift	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47373553C>G	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373555G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373558A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373558A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373559T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373561T>A	0.0	Uncertain_significance	missense	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47373562G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373562G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373563C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373565C>G	0.0	Pathogenic	other	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47373565C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47373571G>A	0.0	Uncertain_significance	splice_donor	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373576T>G	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373627T>C	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47373720T>G	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47373799C>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373805C>T	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373807G>C	0.0	Likely_pathogenic	splice_acceptor	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373811C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373813G>T	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373814C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373816A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373817A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373817A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373819T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373820G>A	0.0	Pathogenic	missense	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47373826T>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47373828A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373830G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373831A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373835C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373837G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373839A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373841T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373843A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373847G>A	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+EPCAM		NC_000002.12:g.47373850C>G	0.0	Pathogenic	other	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47373850C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373855C>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47373856T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373858G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373858G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373859G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373861A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373867G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373868C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373870A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373873C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373874C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373878A>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47373880G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373880G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373883C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47373885C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373888C>T	0.0	Pathogenic	other	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47373889A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373890G>C	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+EPCAM		NC_000002.12:g.47373892A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47373894A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373895A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373896T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373897G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373903C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373903C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373904T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373907A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373913C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373915G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373916A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373916A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373916A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373917C>G	0.0	Uncertain_significance	missense	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47373921G>A	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+EPCAM		NC_000002.12:g.47373922A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373922A>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47373925A>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47373926G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373927A>G	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+EPCAM		NC_000002.12:g.47373928G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373929C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373929C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373930G>A	0.0	Pathogenic/Likely_pathogenic	missense	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47373933C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373938dup	0.0	Pathogenic	other	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47373937T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373941G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373941G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373942G>A	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+EPCAM		NC_000002.12:g.47373943C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373945A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373946A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373955A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373958G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373960A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373961C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373964C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373966A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373967T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373967T>C	0.0	Benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47373967_47373968inv	0.0	Benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47373968G>A	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+EPCAM		NC_000002.12:g.47373968G>C	0.0	Benign	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373969T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373970G>A	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+EPCAM		NC_000002.12:g.47373976G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373983C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373984A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373985C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373988C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373993G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373996_47373997insC	0.0	Pathogenic/Likely_pathogenic	frameshift	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47373996A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373996A>T	0.0	Pathogenic	other	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47373997G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47373998A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374000G>A	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+EPCAM		NC_000002.12:g.47374000G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374002A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374003C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374003C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374005G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374005G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374007C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374007C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374009A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374011G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374011G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374012A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374013C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374013C>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47374014A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374015C>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47374015C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374017G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374026T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374027G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374028C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374030C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374032G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374035C>T	0.0	Pathogenic	other	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374036G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47374036G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374038G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374039T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374042G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374042G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374044A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374044A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374067A>G	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47374118T>C	0.0	Benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47374268A>G	0.0	Benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47375039A>T	0.0	Benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375057C>T	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375102T>C	0.0	Benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375214A>G	0.0	Benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47375233G>A	0.0	Uncertain_significance	splice_acceptor	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375237G>A	0.0	Pathogenic	other	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375241A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47375244A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47375246T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375247G>T	0.0	Likely_pathogenic	other	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375249A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375250C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375251T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375251T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375257A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375258C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375259A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375260A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375262G>A	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375263C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375265A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375266G>C	0.0	Benign/Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47375268G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375269A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375274C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47375275C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375277T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375278A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375281A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375283A>G	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375287A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375287A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375288A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375290G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375293T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375295C>T	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+EPCAM		NC_000002.12:g.47375296G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375299C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375300G>A	0.0	Pathogenic	splice_donor	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47375300G>T	0.0	Pathogenic	splice_donor	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375309A>G	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47375318A>T	0.0	Benign/Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47375431C>G	0.0	Benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47376988dup	0.0	Benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377006C>T	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377009T>C	0.0	Benign/Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47377012A>G	0.0	Pathogenic	splice_acceptor	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47377015G>A	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+EPCAM		NC_000002.12:g.47377016C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377018C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377019T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377021dup	0.0	Pathogenic	frameshift	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47377031_47377033del	0.0	Uncertain_significance	other	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47377034C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377036A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47377037C>T	0.0	Benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47377039C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377039C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377039C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47377040G>A	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+EPCAM		NC_000002.12:g.47377043A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377045C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377045C>T	0.0	Pathogenic	other	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377049T>C	0.0	Uncertain_significance	missense	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47377051G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377051G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377054C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377055C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377055C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377058A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377062del	0.0	Pathogenic	frameshift	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377063A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377067C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377067C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377069A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377070G>A	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377070G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377072A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377075T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377084T>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377139A>G	0.0	Benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47377239G>T	0.0	Benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377312A>C	0.0	Benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47377353C>T	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378700C>T	0.0	Benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378786A>T	0.0	Likely_benign	intronic	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47378931ATT[1]	0.0	Benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378933T>C	0.0	Likely_benign	intronic	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47378939A>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378939A>G	0.0	Pathogenic/Likely_pathogenic	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47378939A>T	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378949C>G	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378950_47379342del	0.0	Pathogenic	splice_acceptor	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47378952_47379343del	0.0	Pathogenic	splice_acceptor	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378953_47386613del	0.0	Pathogenic	stop_lost	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378953T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378959A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378960A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378962A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378962A>G	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378963A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47378964T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378964_47378965insAATA	0.0	Likely_pathogenic	frameshift	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378965G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378966T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378969T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378971A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378971A>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47378972C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378974A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47378976del	0.0	Pathogenic	frameshift	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378975T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378977G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378978A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378979T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378980C>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47378980C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378986C>T	0.0	Pathogenic	other	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378987A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378989A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378992TCT[1]	0.0	Uncertain_significance	other	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378991T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378993C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379004dup	0.0	Pathogenic	frameshift	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47378998C>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47378999A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379002A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379002A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379003A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379003A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379004A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379005C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379005C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379007C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379007C>T	0.0	Likely_pathogenic	other	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379009G>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47379011A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47379013G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47379016G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379021C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379022A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379025G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379029A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379031G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379031G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379032T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379032T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379034G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379035C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379037T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379040T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379041A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379043T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379045T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379050A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379050A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379052G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379052G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379053A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379060T>C	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379064A>G	0.0	Benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379223A>G	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379544T>C	0.0	Benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379635A>G	0.0	Benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379746TCCTTTTC[1]	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379760del	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379763A>G	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379766C>G	0.0	Uncertain_significance	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379768G>T	0.0	Uncertain_significance	splice_acceptor	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379769G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379773A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379776G>A	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379778G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379778G>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47379779A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379779A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379781T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379782C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379782C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379786G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379787T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379790C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379790C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379801A>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47379802A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379803T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379806A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379807C>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47379808C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379809T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379811A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379812C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379815T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379818A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379823del	0.0	Pathogenic	frameshift	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379820G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379820G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379825A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379825A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379827A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379828A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379835C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379836T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379840T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379841C>G	0.0	Uncertain_significance	missense	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47379841C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379847C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379850A>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47379850A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379851C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379854T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379855A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379856A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379857T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379863A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379865G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379865G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379869A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379872A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379872A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379875A>C	0.0	Uncertain_significance	missense	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47379877G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379877G>C	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379877G>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47379878C>G	0.0	Uncertain_significance	missense	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47379878C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379880C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379881C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379881C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379883G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379884A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379890C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379893T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379896A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379898G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379898G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379898G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379899G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379908C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379908C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379908C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379911G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379913G>A	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379917T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379918T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379920C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379926T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379928G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379931G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379932T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379934G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379934G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379935T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379937G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379940A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379942A>G	0.0	Benign/Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47379944C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47379946G>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47379947T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379949G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379952G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379953C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379955G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379956G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379960TGT[1]	0.0	Uncertain_significance	other	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379959T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379960T>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47379961G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379961G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379961G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379964G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379965T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47379968T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47380047T>C	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47383704_47388612del	0.0	Pathogenic	unknown	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47383737_47388647del	0.0	not_provided	unknown	no_classification_provided
+EPCAM		NC_000002.12:g.47384974C>T	0.0	Benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47385017A>G	0.0	Benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47385067T>C	0.0	Benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47385085C>T	0.0	Benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47385159C>T	0.0	Benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47385160A>C	0.0	Likely_benign	intronic	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47385160A>G	0.0	Benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47385163C>G	0.0	Uncertain_significance	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47385164_47385253del	0.0	Pathogenic	splice_acceptor	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47385164A>G	0.0	Uncertain_significance	splice_acceptor	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47385165G>A	0.0	Likely_pathogenic	splice_acceptor	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47385166G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47385172T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47385173C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47385173C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47385175A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47385182A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47385185G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47385185G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47385186A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47385190G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47385190G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47385191C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47385193A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47385195G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47385197A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47385200A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47385203A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47385208G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47385211G>A	0.0	Pathogenic	splice_donor	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47385215A>G	0.0	Uncertain_significance	intronic	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47385217G>T	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47385219A>T	0.0	Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47385225T>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47385259T>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47385281C>T	0.0	Benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47385401C>A	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47385442A>G	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47385783T>C	0.0	Likely_benign	intronic	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47386440A>G	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386542A>T	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386560T>C	0.0	Benign/Likely_benign	intronic	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47386565G>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386566T>C	0.0	Likely_benign	intronic	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386571_47386572del	0.0	Likely_pathogenic	splice_acceptor	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47386570A>G	0.0	Likely_pathogenic	splice_acceptor	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386571_47386614del	0.0	Pathogenic	splice_acceptor	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386572A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386572A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386572A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386573T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386574A>G	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+EPCAM		NC_000002.12:g.47386578G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386579A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386579A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386581A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386583G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386583G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386583G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386585G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386587G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386587G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386590A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386591T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386592G>A	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386593C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386594A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386596A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386599G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386602C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386602C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386603T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386605A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386608G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386608G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386616A>G	0.0	Uncertain_significance	utr	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386629A>G	0.0	Likely_benign	utr	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386649G>A	0.0	Benign	unknown	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47386669A>G	0.0	Benign	utr	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386686C>T	0.0	Likely_benign	unknown	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386687G>A	0.0	Likely_benign	utr	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386721T>G	0.0	Likely_benign	utr	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386731T>C	0.0	Benign	unknown	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47386741A>G	0.0	Likely_benign	utr	no_assertion_criteria_provided
+EPCAM		NC_000002.12:g.47386760dup	0.0	Uncertain_significance	utr	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386758A>G	0.0	Likely_benign	utr	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386789A>G	0.0	Likely_benign	utr	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386847T>G	0.0	Likely_benign	utr	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386859G>A	0.0	Likely_benign	utr	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386870T>G	0.0	Likely_benign	utr	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386874G>C	0.0	Likely_benign	unknown	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386878A>T	0.0	Benign/Likely_benign	unknown	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM		NC_000002.12:g.47386915A>G	0.0	Likely_benign	utr	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386949C>A	0.0	Likely_benign	utr	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386952_47386955del	0.0	Likely_benign	utr	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386957T>A	0.0	Likely_benign	utr	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47386975A>G	0.0	Likely_benign	unknown	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47387047CTT[2]	0.0	Benign	unknown	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47387080dup	0.0	Benign	unknown	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47387079_47387080dup	0.0	Benign	unknown	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47387076_47387080dup	0.0	Benign	unknown	criteria_provided,_single_submitter
+EPCAM		NC_000002.12:g.47387064C>T	0.0	Benign	unknown	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369506A>G	NC_000002.12:g.47369506A>G	0.0	Likely_pathogenic	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	NC_000002.12:g.47369508G>C	NC_000002.12:g.47369508G>C	0.0	Pathogenic	missense	no_assertion_criteria_provided
+EPCAM	NC_000002.12:g.47369510C>T	NC_000002.12:g.47369510C>T	0.0	Benign/Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	NC_000002.12:g.47369512C>A	NC_000002.12:g.47369512C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369512C>T	NC_000002.12:g.47369512C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369513C>T	NC_000002.12:g.47369513C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369516C>A	NC_000002.12:g.47369516C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369516C>G	NC_000002.12:g.47369516C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369516C>T	NC_000002.12:g.47369516C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	NC_000002.12:g.47369521G>A	NC_000002.12:g.47369521G>A	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369524C>A	NC_000002.12:g.47369524C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369524C>G	NC_000002.12:g.47369524C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369525T>A	NC_000002.12:g.47369525T>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	NC_000002.12:g.47369527G>A	NC_000002.12:g.47369527G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369528C>G	NC_000002.12:g.47369528C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369533G>A	NC_000002.12:g.47369533G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369533G>C	NC_000002.12:g.47369533G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369536C>G	NC_000002.12:g.47369536C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369539C>A	NC_000002.12:g.47369539C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369539C>G	NC_000002.12:g.47369539C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369540T>G	NC_000002.12:g.47369540T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369542C>G	NC_000002.12:g.47369542C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369543T>C	NC_000002.12:g.47369543T>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	NC_000002.12:g.47369546C>T	NC_000002.12:g.47369546C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369548G>C	NC_000002.12:g.47369548G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369549C>A	NC_000002.12:g.47369549C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369549C>T	NC_000002.12:g.47369549C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369551G>A	NC_000002.12:g.47369551G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369552C>G	NC_000002.12:g.47369552C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369554A>G	NC_000002.12:g.47369554A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369555C>A	NC_000002.12:g.47369555C>A	0.0	Benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	NC_000002.12:g.47369555C>G	NC_000002.12:g.47369555C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369555C>T	NC_000002.12:g.47369555C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	NC_000002.12:g.47369557G>A	NC_000002.12:g.47369557G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369557G>C	NC_000002.12:g.47369557G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369567C>T	NC_000002.12:g.47369567C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369569G>A	NC_000002.12:g.47369569G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	NC_000002.12:g.47369569G>T	NC_000002.12:g.47369569G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369570C>T	NC_000002.12:g.47369570C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369572G>A	NC_000002.12:g.47369572G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369575C>G	NC_000002.12:g.47369575C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369576A>C	NC_000002.12:g.47369576A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369576A>G	NC_000002.12:g.47369576A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369577G>C	NC_000002.12:g.47369577G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369579A>T	NC_000002.12:g.47369579A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369580A>C	NC_000002.12:g.47369580A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47369581G>A	NC_000002.12:g.47369581G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Cys55Arg	NC_000002.12:g.47373465T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Cys55Gly	NC_000002.12:g.47373465T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Cys55Tyr	NC_000002.12:g.47373466G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val56Ile	NC_000002.12:g.47373468G>A	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM	p.Val56Asp	NC_000002.12:g.47373469T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Cys57Arg	NC_000002.12:g.47373471T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Glu58Lys	NC_000002.12:g.47373474G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Glu58Gly	NC_000002.12:g.47373475A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Glu58Asp	NC_000002.12:g.47373476A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asn59Lys	NC_000002.12:g.47373479C>G	0.0	Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Tyr60Asn	NC_000002.12:g.47373480T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Tyr60Cys	NC_000002.12:g.47373481A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Leu62Val	NC_000002.12:g.47373486C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala63Thr	NC_000002.12:g.47373489G>A	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+EPCAM	p.Val64Ile	NC_000002.12:g.47373492G>A	0.0	Benign	missense	criteria_provided,_single_submitter
+EPCAM	p.Asn65Lys	NC_000002.12:g.47373497C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Phe67Leu	NC_000002.12:g.47373501T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Phe67Cys	NC_000002.12:g.47373502T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Phe67Leu	NC_000002.12:g.47373503T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val68Met	NC_000002.12:g.47373504G>A	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM	p.Asn69Lys	NC_000002.12:g.47373509T>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Asn70Asp	NC_000002.12:g.47373510A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asn70Ser	NC_000002.12:g.47373511A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asn71Ser	NC_000002.12:g.47373514A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Arg72Cys	NC_000002.12:g.47373516C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Arg72Leu	NC_000002.12:g.47373517G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gln73Leu	NC_000002.12:g.47373520A>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Gln73His	NC_000002.12:g.47373521A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Cys74Ser	NC_000002.12:g.47373522T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gln75His	NC_000002.12:g.47373527G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Thr77Ser	NC_000002.12:g.47373532C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ser78Thr	NC_000002.12:g.47373534T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val79Ile	NC_000002.12:g.47373537G>A	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM	p.Val79Phe	NC_000002.12:g.47373537G>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Val79Gly	NC_000002.12:g.47373538T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gly80Cys	NC_000002.12:g.47373540G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gly80Asp	NC_000002.12:g.47373541G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gly80Ala	NC_000002.12:g.47373541G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gly80Val	NC_000002.12:g.47373541G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala81Gly	NC_000002.12:g.47373544C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala81Val	NC_000002.12:g.47373544C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gln82Glu	NC_000002.12:g.47373546C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gln82Arg	NC_000002.12:g.47373547A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Asn83Ser	NC_000002.12:g.47373550A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Thr84Ser	NC_000002.12:g.47373553C>G	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM	p.Val85Ile	NC_000002.12:g.47373555G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ile86Val	NC_000002.12:g.47373558A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ile86Phe	NC_000002.12:g.47373558A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ile86Ser	NC_000002.12:g.47373559T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Cys87Ser	NC_000002.12:g.47373561T>A	0.0	Uncertain_significance	missense	no_assertion_criteria_provided
+EPCAM	p.Cys87Tyr	NC_000002.12:g.47373562G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Cys87Phe	NC_000002.12:g.47373562G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Cys87Trp	NC_000002.12:g.47373563C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ser88Leu	NC_000002.12:g.47373565C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Ala91Gly	NC_000002.12:g.47373811C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala92Ser	NC_000002.12:g.47373813G>T	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala92Asp	NC_000002.12:g.47373814C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys93Glu	NC_000002.12:g.47373816A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys93Thr	NC_000002.12:g.47373817A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys93Arg	NC_000002.12:g.47373817A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Cys94Arg	NC_000002.12:g.47373819T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Cys94Tyr	NC_000002.12:g.47373820G>A	0.0	Pathogenic	missense	no_assertion_criteria_provided
+EPCAM	p.Val96Gly	NC_000002.12:g.47373826T>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Met97Val	NC_000002.12:g.47373828A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Met97Ile	NC_000002.12:g.47373830G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys98Glu	NC_000002.12:g.47373831A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala99Gly	NC_000002.12:g.47373835C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Glu100Lys	NC_000002.12:g.47373837G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Glu100Asp	NC_000002.12:g.47373839A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Met101Thr	NC_000002.12:g.47373841T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asn102His	NC_000002.12:g.47373843A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gly103Asp	NC_000002.12:g.47373847G>A	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+EPCAM	p.Ser104Leu	NC_000002.12:g.47373850C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Leu106Val	NC_000002.12:g.47373855C>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Leu106Pro	NC_000002.12:g.47373856T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gly107Arg	NC_000002.12:g.47373858G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gly107Arg	NC_000002.12:g.47373858G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gly107Ala	NC_000002.12:g.47373859G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Arg108Gly	NC_000002.12:g.47373861A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala110Thr	NC_000002.12:g.47373867G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala110Gly	NC_000002.12:g.47373868C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys111Glu	NC_000002.12:g.47373870A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Pro112Ser	NC_000002.12:g.47373873C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Pro112Arg	NC_000002.12:g.47373874C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Glu113Asp	NC_000002.12:g.47373878A>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Gly114Glu	NC_000002.12:g.47373880G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gly114Ala	NC_000002.12:g.47373880G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala115Val	NC_000002.12:g.47373883C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Leu116Phe	NC_000002.12:g.47373885C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gln117Arg	NC_000002.12:g.47373889A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gln117His	NC_000002.12:g.47373890G>C	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+EPCAM	p.Asn118Ser	NC_000002.12:g.47373892A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Asn119Tyr	NC_000002.12:g.47373894A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asn119Ser	NC_000002.12:g.47373895A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asn119Lys	NC_000002.12:g.47373896T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp120Tyr	NC_000002.12:g.47373897G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Leu122Val	NC_000002.12:g.47373903C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Leu122Phe	NC_000002.12:g.47373903C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Leu122Arg	NC_000002.12:g.47373904T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Tyr123Cys	NC_000002.12:g.47373907A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Pro125Leu	NC_000002.12:g.47373913C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp126Asn	NC_000002.12:g.47373915G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp126Ala	NC_000002.12:g.47373916A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp126Gly	NC_000002.12:g.47373916A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp126Val	NC_000002.12:g.47373916A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp126Glu	NC_000002.12:g.47373917C>G	0.0	Uncertain_significance	missense	no_assertion_criteria_provided
+EPCAM	p.Asp128Asn	NC_000002.12:g.47373921G>A	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+EPCAM	p.Asp128Gly	NC_000002.12:g.47373922A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp128Val	NC_000002.12:g.47373922A>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Glu129Ala	NC_000002.12:g.47373925A>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Glu129Asp	NC_000002.12:g.47373926G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ser130Gly	NC_000002.12:g.47373927A>G	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+EPCAM	p.Ser130Asn	NC_000002.12:g.47373928G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ser130Arg	NC_000002.12:g.47373929C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ser130Arg	NC_000002.12:g.47373929C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gly131Arg	NC_000002.12:g.47373930G>A	0.0	Pathogenic/Likely_pathogenic	missense	no_assertion_criteria_provided
+EPCAM	p.Leu132Phe	NC_000002.12:g.47373933C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Phe133Tyr	NC_000002.12:g.47373937T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys134Asn	NC_000002.12:g.47373941G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys134Asn	NC_000002.12:g.47373941G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala135Thr	NC_000002.12:g.47373942G>A	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+EPCAM	p.Ala135Val	NC_000002.12:g.47373943C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys136Glu	NC_000002.12:g.47373945A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys136Arg	NC_000002.12:g.47373946A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asn139Thr	NC_000002.12:g.47373955A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gly140Asp	NC_000002.12:g.47373958G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Thr141Ala	NC_000002.12:g.47373960A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Thr141Ile	NC_000002.12:g.47373961C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ser142Cys	NC_000002.12:g.47373964C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Met143Val	NC_000002.12:g.47373966A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Met143Lys	NC_000002.12:g.47373967T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Met143Thr	NC_000002.12:g.47373967T>C	0.0	Benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	NC_000002.12:g.47373967_47373968inv	NC_000002.12:g.47373967_47373968inv	0.0	Benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Met143Ile	NC_000002.12:g.47373968G>A	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+EPCAM	p.Met143Ile	NC_000002.12:g.47373968G>C	0.0	Benign	missense	criteria_provided,_single_submitter
+EPCAM	p.Cys144Arg	NC_000002.12:g.47373969T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Cys144Tyr	NC_000002.12:g.47373970G>A	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+EPCAM	p.Cys146Phe	NC_000002.12:g.47373976G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asn148Lys	NC_000002.12:g.47373983C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Thr149Ala	NC_000002.12:g.47373984A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Thr149Ser	NC_000002.12:g.47373985C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala150Val	NC_000002.12:g.47373988C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val152Ile	NC_000002.12:g.47373993G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Arg153Gly	NC_000002.12:g.47373996A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Arg153Lys	NC_000002.12:g.47373997G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Arg153Ser	NC_000002.12:g.47373998A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Arg154Lys	NC_000002.12:g.47374000G>A	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+EPCAM	p.Arg154Ile	NC_000002.12:g.47374000G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Thr155Pro	NC_000002.12:g.47374002A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Thr155Arg	NC_000002.12:g.47374003C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Thr155Ile	NC_000002.12:g.47374003C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp156Asn	NC_000002.12:g.47374005G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp156Tyr	NC_000002.12:g.47374005G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp156Glu	NC_000002.12:g.47374007C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp156Glu	NC_000002.12:g.47374007C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys157Arg	NC_000002.12:g.47374009A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp158Asn	NC_000002.12:g.47374011G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp158Tyr	NC_000002.12:g.47374011G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp158Gly	NC_000002.12:g.47374012A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp158Glu	NC_000002.12:g.47374013C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp158Glu	NC_000002.12:g.47374013C>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Thr159Ala	NC_000002.12:g.47374014A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Thr159Asn	NC_000002.12:g.47374015C>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Thr159Ile	NC_000002.12:g.47374015C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Glu160Lys	NC_000002.12:g.47374017G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Cys163Gly	NC_000002.12:g.47374026T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Cys163Tyr	NC_000002.12:g.47374027G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Cys163Trp	NC_000002.12:g.47374028C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ser164Cys	NC_000002.12:g.47374030C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Glu165Gln	NC_000002.12:g.47374032G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Arg166Gln	NC_000002.12:g.47374036G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Arg166Leu	NC_000002.12:g.47374036G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val167Leu	NC_000002.12:g.47374038G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val167Gly	NC_000002.12:g.47374039T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Arg168Lys	NC_000002.12:g.47374042G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Arg168Thr	NC_000002.12:g.47374042G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Thr169Ala	NC_000002.12:g.47374044A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Thr169Ser	NC_000002.12:g.47374044A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ile173Val	NC_000002.12:g.47375241A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Ile174Val	NC_000002.12:g.47375244A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Ile174Met	NC_000002.12:g.47375246T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Glu175Asp	NC_000002.12:g.47375249A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Leu176Val	NC_000002.12:g.47375250C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Leu176Gln	NC_000002.12:g.47375251T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Leu176Arg	NC_000002.12:g.47375251T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.His178Arg	NC_000002.12:g.47375257A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.His178Gln	NC_000002.12:g.47375258C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys179Glu	NC_000002.12:g.47375259A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys179Arg	NC_000002.12:g.47375260A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala180Thr	NC_000002.12:g.47375262G>A	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala180Gly	NC_000002.12:g.47375263C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Arg181Gly	NC_000002.12:g.47375265A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Arg181Thr	NC_000002.12:g.47375266G>C	0.0	Benign/Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Glu182Gln	NC_000002.12:g.47375268G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Glu182Gly	NC_000002.12:g.47375269A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Pro184Ser	NC_000002.12:g.47375274C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Pro184His	NC_000002.12:g.47375275C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Tyr185Asp	NC_000002.12:g.47375277T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Tyr185Phe	NC_000002.12:g.47375278A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp186Gly	NC_000002.12:g.47375281A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ser187Gly	NC_000002.12:g.47375283A>G	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys188Arg	NC_000002.12:g.47375287A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys188Ile	NC_000002.12:g.47375287A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys188Asn	NC_000002.12:g.47375288A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ser189Thr	NC_000002.12:g.47375290G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Leu190Trp	NC_000002.12:g.47375293T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Arg191Trp	NC_000002.12:g.47375295C>T	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+EPCAM	p.Arg191Leu	NC_000002.12:g.47375296G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Thr192Ile	NC_000002.12:g.47375299C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala193Thr	NC_000002.12:g.47377015G>A	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+EPCAM	p.Ala193Val	NC_000002.12:g.47377016C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Leu194Phe	NC_000002.12:g.47377018C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Leu194His	NC_000002.12:g.47377019T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Thr199Ile	NC_000002.12:g.47377034C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Thr200Ala	NC_000002.12:g.47377036A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Thr200Met	NC_000002.12:g.47377037C>T	0.0	Benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Arg201Ser	NC_000002.12:g.47377039C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Arg201Gly	NC_000002.12:g.47377039C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Arg201Cys	NC_000002.12:g.47377039C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Arg201His	NC_000002.12:g.47377040G>A	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+EPCAM	p.Tyr202Cys	NC_000002.12:g.47377043A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gln203Glu	NC_000002.12:g.47377045C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Leu204Pro	NC_000002.12:g.47377049T>C	0.0	Uncertain_significance	missense	no_assertion_criteria_provided
+EPCAM	p.Asp205His	NC_000002.12:g.47377051G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp205Tyr	NC_000002.12:g.47377051G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Pro206Ala	NC_000002.12:g.47377054C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Pro206Arg	NC_000002.12:g.47377055C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Pro206Leu	NC_000002.12:g.47377055C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys207Thr	NC_000002.12:g.47377058A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ile209Phe	NC_000002.12:g.47377063A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Thr210Arg	NC_000002.12:g.47377067C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Thr210Met	NC_000002.12:g.47377067C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ser211Cys	NC_000002.12:g.47377069A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ser211Asn	NC_000002.12:g.47377070G>A	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM	p.Ser211Thr	NC_000002.12:g.47377070G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ile212Val	NC_000002.12:g.47377072A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Leu213Met	NC_000002.12:g.47377075T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	NC_000002.12:g.47378953_47386613del	NC_000002.12:g.47378953_47386613del	0.0	Pathogenic	stop_lost	criteria_provided,_single_submitter
+EPCAM	p.Tyr214His	NC_000002.12:g.47378953T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asn216His	NC_000002.12:g.47378959A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asn216Ser	NC_000002.12:g.47378960A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asn217His	NC_000002.12:g.47378962A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asn217Asp	NC_000002.12:g.47378962A>G	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM	p.Asn217Ser	NC_000002.12:g.47378963A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Asn217Lys	NC_000002.12:g.47378964T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val218Ile	NC_000002.12:g.47378965G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val218Ala	NC_000002.12:g.47378966T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ile219Ser	NC_000002.12:g.47378969T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Thr220Ala	NC_000002.12:g.47378971A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Thr220Ser	NC_000002.12:g.47378971A>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Thr220Ile	NC_000002.12:g.47378972C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ile221Val	NC_000002.12:g.47378974A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Ile221Thr	NC_000002.12:g.47378975T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp222Tyr	NC_000002.12:g.47378977G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp222Ala	NC_000002.12:g.47378978A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp222Glu	NC_000002.12:g.47378979T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Leu223Met	NC_000002.12:g.47378980C>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Leu223Val	NC_000002.12:g.47378980C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gln225Pro	NC_000002.12:g.47378987A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asn226Tyr	NC_000002.12:g.47378989A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asn226Lys	NC_000002.12:g.47378991T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ser227Cys	NC_000002.12:g.47378993C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gln229Glu	NC_000002.12:g.47378998C>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Gln229Arg	NC_000002.12:g.47378999A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys230Thr	NC_000002.12:g.47379002A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys230Arg	NC_000002.12:g.47379002A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys230Asn	NC_000002.12:g.47379003A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys230Asn	NC_000002.12:g.47379003A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Thr231Ala	NC_000002.12:g.47379004A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Thr231Asn	NC_000002.12:g.47379005C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Thr231Ser	NC_000002.12:g.47379005C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gln232Glu	NC_000002.12:g.47379007C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gln232His	NC_000002.12:g.47379009G>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Asn233Ser	NC_000002.12:g.47379011A>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Asp234Asn	NC_000002.12:g.47379013G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Val235Met	NC_000002.12:g.47379016G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp236Glu	NC_000002.12:g.47379021C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ile237Val	NC_000002.12:g.47379022A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala238Thr	NC_000002.12:g.47379025G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp239Val	NC_000002.12:g.47379029A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val240Met	NC_000002.12:g.47379031G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val240Leu	NC_000002.12:g.47379031G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val240Glu	NC_000002.12:g.47379032T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val240Gly	NC_000002.12:g.47379032T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala241Thr	NC_000002.12:g.47379034G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala241Gly	NC_000002.12:g.47379035C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Tyr242His	NC_000002.12:g.47379037T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Tyr243Asn	NC_000002.12:g.47379040T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Tyr243Ser	NC_000002.12:g.47379041A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Phe244Val	NC_000002.12:g.47379043T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Phe244Leu	NC_000002.12:g.47379045T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys246Thr	NC_000002.12:g.47379050A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys246Ile	NC_000002.12:g.47379050A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp247Asn	NC_000002.12:g.47379052G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp247Tyr	NC_000002.12:g.47379052G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp247Val	NC_000002.12:g.47379053A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val248Phe	NC_000002.12:g.47379769G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys249Arg	NC_000002.12:g.47379773A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gly250Asp	NC_000002.12:g.47379776G>A	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM	p.Glu251Lys	NC_000002.12:g.47379778G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Glu251Gln	NC_000002.12:g.47379778G>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Glu251Ala	NC_000002.12:g.47379779A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Glu251Gly	NC_000002.12:g.47379779A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ser252Pro	NC_000002.12:g.47379781T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ser252Cys	NC_000002.12:g.47379782C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ser252Phe	NC_000002.12:g.47379782C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Leu253Phe	NC_000002.12:g.47379786G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Phe254Leu	NC_000002.12:g.47379787T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.His255Asn	NC_000002.12:g.47379790C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.His255Tyr	NC_000002.12:g.47379790C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys258Asn	NC_000002.12:g.47379801A>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Met259Val	NC_000002.12:g.47379802A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Met259Arg	NC_000002.12:g.47379803T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp260Val	NC_000002.12:g.47379806A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp260Glu	NC_000002.12:g.47379807C>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Leu261Val	NC_000002.12:g.47379808C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Leu261Pro	NC_000002.12:g.47379809T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Thr262Ala	NC_000002.12:g.47379811A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Thr262Ile	NC_000002.12:g.47379812C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val263Gly	NC_000002.12:g.47379815T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asn264Ile	NC_000002.12:g.47379818A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gly265Arg	NC_000002.12:g.47379820G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gly265Trp	NC_000002.12:g.47379820G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Glu266Asp	NC_000002.12:g.47379825A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Glu266Asp	NC_000002.12:g.47379825A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gln267Pro	NC_000002.12:g.47379827A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gln267His	NC_000002.12:g.47379828A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Leu270Val	NC_000002.12:g.47379835C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Leu270Arg	NC_000002.12:g.47379836T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp271Glu	NC_000002.12:g.47379840T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Pro272Ala	NC_000002.12:g.47379841C>G	0.0	Uncertain_significance	missense	no_assertion_criteria_provided
+EPCAM	p.Pro272Ser	NC_000002.12:g.47379841C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gln274Glu	NC_000002.12:g.47379847C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Thr275Pro	NC_000002.12:g.47379850A>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Thr275Ser	NC_000002.12:g.47379850A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Thr275Ile	NC_000002.12:g.47379851C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Leu276Ser	NC_000002.12:g.47379854T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Leu276Phe	NC_000002.12:g.47379855A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ile277Val	NC_000002.12:g.47379856A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ile277Thr	NC_000002.12:g.47379857T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Tyr279Phe	NC_000002.12:g.47379863A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val280Ile	NC_000002.12:g.47379865G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val280Leu	NC_000002.12:g.47379865G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asp281Val	NC_000002.12:g.47379869A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Glu282Gly	NC_000002.12:g.47379872A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Glu282Val	NC_000002.12:g.47379872A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys283Thr	NC_000002.12:g.47379875A>C	0.0	Uncertain_significance	missense	no_assertion_criteria_provided
+EPCAM	p.Ala284Thr	NC_000002.12:g.47379877G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala284Pro	NC_000002.12:g.47379877G>C	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala284Ser	NC_000002.12:g.47379877G>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Ala284Gly	NC_000002.12:g.47379878C>G	0.0	Uncertain_significance	missense	no_assertion_criteria_provided
+EPCAM	p.Ala284Val	NC_000002.12:g.47379878C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Pro285Ala	NC_000002.12:g.47379880C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Pro285Arg	NC_000002.12:g.47379881C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Pro285Leu	NC_000002.12:g.47379881C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Glu286Lys	NC_000002.12:g.47379883G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Glu286Gly	NC_000002.12:g.47379884A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ser288Leu	NC_000002.12:g.47379890C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Met289Thr	NC_000002.12:g.47379893T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gln290Arg	NC_000002.12:g.47379896A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gly291Ser	NC_000002.12:g.47379898G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gly291Arg	NC_000002.12:g.47379898G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gly291Cys	NC_000002.12:g.47379898G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gly291Val	NC_000002.12:g.47379899G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala294Asp	NC_000002.12:g.47379908C>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala294Gly	NC_000002.12:g.47379908C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala294Val	NC_000002.12:g.47379908C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gly295Asp	NC_000002.12:g.47379911G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val296Ile	NC_000002.12:g.47379913G>A	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM	p.Ile297Thr	NC_000002.12:g.47379917T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ile297Met	NC_000002.12:g.47379918T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala298Val	NC_000002.12:g.47379920C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ile300Thr	NC_000002.12:g.47379926T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val301Met	NC_000002.12:g.47379928G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val302Ile	NC_000002.12:g.47379931G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val302Ala	NC_000002.12:g.47379932T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val303Met	NC_000002.12:g.47379934G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val303Leu	NC_000002.12:g.47379934G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val303Ala	NC_000002.12:g.47379935T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val304Leu	NC_000002.12:g.47379937G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ile305Val	NC_000002.12:g.47379940A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ile305Met	NC_000002.12:g.47379942A>G	0.0	Benign/Likely_benign	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Ala306Val	NC_000002.12:g.47379944C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Val307Leu	NC_000002.12:g.47379946G>C	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Val307Ala	NC_000002.12:g.47379947T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val308Leu	NC_000002.12:g.47379949G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala309Thr	NC_000002.12:g.47379952G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala309Gly	NC_000002.12:g.47379953C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gly310Arg	NC_000002.12:g.47379955G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gly310Glu	NC_000002.12:g.47379956G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ile311Asn	NC_000002.12:g.47379959T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ile311Met	NC_000002.12:g.47379960T>G	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Val312Ile	NC_000002.12:g.47379961G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val312Leu	NC_000002.12:g.47379961G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val312Phe	NC_000002.12:g.47379961G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val313Met	NC_000002.12:g.47379964G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val313Gly	NC_000002.12:g.47379965T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Leu314Pro	NC_000002.12:g.47379968T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Val315Ile	NC_000002.12:g.47385166G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ser317Ala	NC_000002.12:g.47385172T>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ser317Cys	NC_000002.12:g.47385173C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ser317Phe	NC_000002.12:g.47385173C>T	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Arg318Gly	NC_000002.12:g.47385175A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys320Arg	NC_000002.12:g.47385182A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Arg321Lys	NC_000002.12:g.47385185G>A	0.0	Uncertain_significance	missense	criteria_provided,_multiple_submitters,_no_conflicts
+EPCAM	p.Arg321Ile	NC_000002.12:g.47385185G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Arg321Ser	NC_000002.12:g.47385186A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala323Thr	NC_000002.12:g.47385190G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala323Ser	NC_000002.12:g.47385190G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala323Gly	NC_000002.12:g.47385191C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys324Glu	NC_000002.12:g.47385193A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys324Asn	NC_000002.12:g.47385195G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Tyr325Phe	NC_000002.12:g.47385197A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Glu326Gly	NC_000002.12:g.47385200A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Lys327Thr	NC_000002.12:g.47385203A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Glu329Lys	NC_000002.12:g.47385208G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ile330Leu	NC_000002.12:g.47386572A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ile330Val	NC_000002.12:g.47386572A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ile330Leu	NC_000002.12:g.47386572A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ile330Thr	NC_000002.12:g.47386573T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ile330Met	NC_000002.12:g.47386574A>G	0.0	Conflicting_classifications_of_pathogenicity	missense	criteria_provided,_conflicting_classifications
+EPCAM	p.Glu332Lys	NC_000002.12:g.47386578G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Glu332Ala	NC_000002.12:g.47386579A>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Glu332Val	NC_000002.12:g.47386579A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Met333Val	NC_000002.12:g.47386581A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Met333Ile	NC_000002.12:g.47386583G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Met333Ile	NC_000002.12:g.47386583G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Met333Ile	NC_000002.12:g.47386583G>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Gly334Asp	NC_000002.12:g.47386585G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Glu335Lys	NC_000002.12:g.47386587G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Glu335Gln	NC_000002.12:g.47386587G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Met336Leu	NC_000002.12:g.47386590A>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Met336Thr	NC_000002.12:g.47386591T>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Met336Ile	NC_000002.12:g.47386592G>A	0.0	Likely_benign	missense	criteria_provided,_single_submitter
+EPCAM	p.His337Tyr	NC_000002.12:g.47386593C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.His337Arg	NC_000002.12:g.47386594A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Arg338Gly	NC_000002.12:g.47386596A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Glu339Gln	NC_000002.12:g.47386599G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Leu340Val	NC_000002.12:g.47386602C>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Leu340Phe	NC_000002.12:g.47386602C>T	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Leu340His	NC_000002.12:g.47386603T>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Asn341Asp	NC_000002.12:g.47386605A>G	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala342Thr	NC_000002.12:g.47386608G>A	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter
+EPCAM	p.Ala342Pro	NC_000002.12:g.47386608G>C	0.0	Uncertain_significance	missense	criteria_provided,_single_submitter

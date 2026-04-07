@@ -1,0 +1,240 @@
+gene	hgvs_p	hgvs_g	gnomad_freq	clinical_sig	molecular_consequence	review_status
+STAT1	p.Ser466Arg		0.0	Pathogenic: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodeficiency 31B	missense variant	
+STAT1	p.Thr295Lys		0.0	Pathogenic: Chronic Mucocutaneous Candidiasis	intron variant,missense variant	
+STAT1	p.Asn179Lys		0.0	Pathogenic: Immunodeficiency 31C Pathogenic/Likely pathogenic: Immunodeficiency 	missense variant	
+STAT1	p.Gln285Arg		0.0	Pathogenic: Immunodeficiency 31C Pathogenic/Likely pathogenic: Immunodeficiency 	intron variant,missense variant	
+STAT1	p.Thr385Met		0.0	Pathogenic: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodeficiency 31B ;	missense variant	
+STAT1	p.Tyr701Cys		0.0	Pathogenic: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodeficiency 31B	intron variant,missense variant	
+STAT1	p.Lys673Arg		0.0	Pathogenic: Immunodeficiency 31A Pathogenic/Likely pathogenic: Immunodeficiency 	intron variant,missense variant	
+STAT1	p.Lys637Glu		0.0	Pathogenic: Immunodeficiency 31A Pathogenic/Likely pathogenic: Immunodeficiency 	missense variant	
+STAT1	p.Arg274Gly		0.0	Pathogenic: Immunodeficiency 31C Likely pathogenic: Immunodeficiency 31A ; Immun	intron variant,missense variant	
+STAT1	p.Lys278Glu		0.0	Pathogenic: Immunodeficiency 31C Pathogenic/Likely pathogenic: Immunodeficiency 	intron variant,missense variant	
+STAT1	p.Gly384Asp		0.0	Pathogenic: Immunodeficiency 31C Pathogenic/Likely pathogenic: Immunodeficiency 	missense variant	
+STAT1	p.Gln67Pro		0.0	Pathogenic: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodeficiency 31B	missense variant	
+STAT1	p.Lys388Glu		0.0	Pathogenic: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodeficiency 31B	missense variant	
+STAT1	p.Thr387Ala		0.0	Pathogenic: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodeficiency 31B	missense variant	
+STAT1	p.Arg321Gly		0.0	Pathogenic: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodeficiency 31B	intron variant,missense variant	
+STAT1	p.Glu563Val		0.0	Pathogenic: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodeficiency 31B	missense variant	
+STAT1	p.Lys201Asn		0.0	Pathogenic: Immunodeficiency 31B	intron variant,missense variant	
+STAT1	p.Arg274Trp		0.0	Pathogenic: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodeficiency 31B ;	intron variant,missense variant	
+STAT1	p.Ala267Val		0.0	Pathogenic: Immunodeficiency 31A ; Chronic Mucocutaneous Candidiasis ; Immunodef	intron variant,missense variant	
+STAT1	p.Arg274Gln		0.0	Pathogenic: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodeficiency 31B ;	intron variant,missense variant	
+STAT1	p.Lys286Ile		0.0	Pathogenic: Immunodeficiency 31C Pathogenic/Likely pathogenic: Immunodeficiency 	intron variant,missense variant	
+STAT1	p.Met202Val		0.0	Pathogenic: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodeficiency 31B P	intron variant,missense variant	
+STAT1	p.Asp165Gly		0.0	Pathogenic: Immunodeficiency 31C Pathogenic/Likely pathogenic: Immunodeficiency 	missense variant	
+STAT1	p.Thr288Ala		0.0	Pathogenic: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodeficiency 31B P	intron variant,missense variant	
+STAT1	p.Tyr170Asn		0.0	Pathogenic: Immunodeficiency 31C Pathogenic/Likely pathogenic: Immunodeficiency 	missense variant	
+STAT1	p.Asp165His		0.0	Pathogenic: Immunodeficiency 31C Pathogenic/Likely pathogenic: Immunodeficiency 	missense variant	
+STAT1	p.Met202Ile		0.0	Pathogenic: Immunodeficiency 31C	intron variant,missense variant	
+STAT1	p.Gln271Pro		0.0	Pathogenic: Immunodeficiency 31C Pathogenic/Likely pathogenic: Immunodeficiency 	intron variant,missense variant	
+STAT1	p.Asn658Ser		0.0	Pathogenic: not provided	intron variant,missense variant	
+STAT1	p.Asn355Asp		0.0	Pathogenic: not provided	intron variant,missense variant	
+STAT1	p.Tyr289Cys		0.0	Pathogenic: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodeficiency 31B	intron variant,missense variant	
+STAT1	p.Lys388Gln		0.0	Pathogenic: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodeficiency 31B	missense variant	
+STAT1	p.Val389Leu		0.0	Pathogenic: Immunodeficiency 31C	missense variant	
+STAT1	p.Thr288Ile		0.0	Pathogenic: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodeficiency 31B ;	intron variant,missense variant	
+STAT1	p.Thr437Ile		0.0	Pathogenic: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodeficiency 31B	missense variant	
+STAT1	p.Leu706Ser		0.0	Pathogenic: Immunodeficiency 31A Pathogenic/Likely pathogenic: Immunodeficiency 	intron variant,missense variant	
+STAT1	p.Leu600Pro		0.0	Pathogenic: Immunodeficiency 31B	missense variant	
+STAT1	p.Gln463His		0.0	Pathogenic: Immunodeficiency 31A ; not provided Pathogenic/Likely pathogenic: Im	missense variant	
+STAT1	p.Glu320Gln		0.0	Pathogenic: Immunodeficiency 31A Pathogenic/Likely pathogenic: Immunodeficiency 	intron variant,missense variant	
+STAT1	p.Val339Phe		0.0	Likely pathogenic: Immunodeficiency 31B	intron variant,missense variant	
+STAT1	p.Asp171Asn		0.0	Likely pathogenic: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodeficienc	missense variant	
+STAT1	p.Phe404Val		0.0	Likely pathogenic: Immunodeficiency 31C	missense variant	
+STAT1	p.Met325Lys		0.0	Likely pathogenic: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodeficienc	intron variant,missense variant	
+STAT1	p.Leu400Val		0.0	Likely pathogenic: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodeficienc	missense variant	
+STAT1	p.Tyr289His		0.0	Likely pathogenic: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodeficienc	intron variant,missense variant	
+STAT1	p.Thr437Asn		0.0	Likely pathogenic: not provided	missense variant	
+STAT1	p.Pro329Arg		0.0	Likely pathogenic: STAT1-related disorder	intron variant,missense variant	
+STAT1	p.Tyr356Asp		0.0	Likely pathogenic: Immunodeficiency 31C	intron variant,missense variant	
+STAT1	p.Asp171His		0.0	Likely pathogenic: Immunodeficiency 31C	missense variant	
+STAT1	p.Met392Thr		0.0	Likely pathogenic: STAT1-related disorder	missense variant	
+STAT1	p.Leu400Pro		0.0	Likely pathogenic: Immunodeficiency 31A	missense variant	
+STAT1	p.Leu351Phe		0.0	Likely pathogenic: not provided	intron variant,missense variant	
+STAT1	p.Pro251Leu		0.0	Likely pathogenic: not provided	missense variant	
+STAT1	p.Asp292Glu		0.0	Likely pathogenic: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodeficienc	intron variant,missense variant	
+STAT1	p.Lys173Ile		0.0	Likely pathogenic: not provided	missense variant	
+STAT1	p.Met390Arg		0.0	Likely pathogenic: not provided Uncertain significance: Immunodeficiency 31A ; I	missense variant	
+STAT1	p.Cys324Arg		0.0	Likely pathogenic: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodeficienc	intron variant,missense variant	
+STAT1	p.Met390Val		0.0	Likely pathogenic: STAT1-Related Immunodeficiency Uncertain significance: Immuno	missense variant	
+STAT1	p.Arg70Pro		0.0	Likely pathogenic: Inherited Immunodeficiency Diseases	missense variant	
+STAT1	p.Thr720Ile		0.0	Likely pathogenic: Inherited Immunodeficiency Diseases	missense variant	
+STAT1	p.Leu280Trp		0.0	Likely pathogenic: Inherited Immunodeficiency Diseases	intron variant,missense variant	
+STAT1	p.Glu284Lys		0.0	Likely pathogenic: Inherited Immunodeficiency Diseases Uncertain significance: I	intron variant,missense variant	
+STAT1	p.Tyr287Asp		0.0	Likely pathogenic: Inherited Immunodeficiency Diseases	intron variant,missense variant	
+STAT1	p.Lys286Gln		0.0	Likely pathogenic: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodeficienc	intron variant,missense variant	
+STAT1	p.Arg210Lys		0.0	Likely pathogenic: not provided Uncertain significance: Immunodeficiency 31A ; I	intron variant,missense variant	
+STAT1	p.Val389Gly		0.0	Likely pathogenic: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodeficienc	missense variant	
+STAT1	p.Glu284Gly		0.0	Likely pathogenic: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodeficienc	intron variant,missense variant	
+STAT1	p.Val266Ile		0.0	Conflicting interpretations of pathogenicity: Immunodeficiency 31A ; Immunodefic	intron variant,missense variant	
+STAT1	p.Ile265Val		0.0	Conflicting interpretations of pathogenicity: Immunodeficiency 31A ; Immunodefic	intron variant,missense variant	
+STAT1	p.Val426Ile		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Ala401Glu		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Pro326Ser		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Arg56His		0.0	Uncertain significance: Immunodeficiency 31A	missense variant	
+STAT1	p.Pro725Leu		0.0	Uncertain significance: Immunodeficiency 31C	intron variant,missense variant	
+STAT1	p.Thr540Met		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Ser532Gly		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Thr224Ser		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Asp143Glu		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Asn670Ser		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Val300Leu		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Tyr668Phe		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Leu514Phe		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Tyr356Cys		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Glu563Gln		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Ile446Val		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Leu358Ser		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Ala589Thr		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Asn123Ser		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Thr450Ala		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Leu60Phe		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Asn185Ser		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Pro490Leu		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.His58Tyr		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Met390Thr		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Gln178Arg		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Asn357Asp		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Val445Ile		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Lys145Arg		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.His291Tyr		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Arg331Lys		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Pro293Ala		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Val360Phe		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Gly467Ser		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Ile659Thr		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Leu259Pro		0.0	Uncertain significance: Immunodeficiency 31C	missense variant	
+STAT1	p.Ile313Val		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Pro596Leu		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Asp744Asn		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Gly623Arg		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Val134Leu		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Asp65Gly		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Thr387Pro		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Glu169Val		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Leu383Val		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Val617Met		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Asn48Ser		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Val712Ile		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Tyr701Asn		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Pro538Leu		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Gly384Val		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Ser462Arg		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Asn369Ser		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Ile648Val		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Gln67Arg		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Ala589Pro		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Pro553Ser		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Arg70Cys		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Ala246Thr		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Met390Ile		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Pro293Leu		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Leu221Gln		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+STAT1	p.Asn460Asp		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Gln167His		0.0	Uncertain significance: Immunodeficiency 31C	missense variant	
+STAT1	p.Glu632Gln		0.0	Uncertain significance: Immunodeficiency 31C	missense variant	
+STAT1	p.Gln167Pro		0.0	Uncertain significance: Immunodeficiency 31C	missense variant	
+STAT1	p.Leu488Pro		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+STAT1	p.Arg649His		0.0	Uncertain significance: not provided	missense variant	
+STAT1	p.Asn548Ser		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Pro293Thr		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Ile156Thr		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Ala687Pro		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Met746Val		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Ala119Thr		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Cys155Arg		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Glu290Lys		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Ile99Val		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Arg586Gly		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Thr451Ser		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Lys592Thr		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Glu44Asp		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Ser503Asn		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Glu212Gln		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Glu6Lys		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Tyr68Cys		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Val455Phe		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Asn658Lys		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Asn253Ser		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Trp262Cys		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Arg608Trp		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Glu500Lys		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Gln258Leu		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Lys375Arg		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Ile30Val		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Arg70Gly		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Ser432Phe		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Val501Leu		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Thr305Ser		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Glu563Gly		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Lys13Arg		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Ile671Val		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Asp672Glu		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Val709Gly		0.0	Uncertain significance: Inborn genetic diseases	intron variant,missense variant	
+STAT1	p.Gly580Ser		0.0	Uncertain significance: Immunodeficiency 31C	missense variant	
+STAT1	p.Asp447Glu		0.0	Uncertain significance: Immunodeficiency 31C ; Immunodeficiency 31B ; not specif	missense variant	
+STAT1	p.Phe364Leu		0.0	Uncertain significance: Immunodeficiency 31C ; Immunodeficiency 31B Benign: Immu	intron variant,missense variant	
+STAT1	p.Arg241Gln		0.0	Uncertain significance: Immunodeficiency 31C ; Immunodeficiency 31B ; Inborn gen	missense variant	
+STAT1	p.Asp92Glu		0.0	Uncertain significance: not provided	missense variant	
+STAT1	p.Cys247Tyr		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+STAT1	p.Arg88His		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Phe14Leu		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Met154Ile		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Gln67Lys		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Arg331Gly		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Gln126His		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Gln594His		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Ile156Met		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant,splice acceptor variant	
+STAT1	p.Glu16Gln		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Asn372Ser		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Glu29Ala		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Leu570Phe		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Ser715Cys		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Arg736Trp		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Leu90Val		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Ile671Thr		0.0	Uncertain significance: not provided	intron variant,missense variant	
+STAT1	p.Gly580Asp		0.0	Uncertain significance: not provided	missense variant	
+STAT1	p.Val461Ile		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+STAT1	p.Glu393Gly		0.0	Uncertain significance: not provided	missense variant	
+STAT1	p.Ala589Ser		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Thr342Pro		0.0	Uncertain significance: not provided	intron variant,missense variant	
+STAT1	p.Lys336Met		0.0	Uncertain significance: Inborn genetic diseases	intron variant,missense variant	
+STAT1	p.Leu351Trp		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Leu433Val		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Arg586Gln		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Ser127Leu		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Pro696His		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Ile582Val		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Leu312Phe		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Glu559Gln		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Ile160Leu		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Thr419Arg		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Cys543Trp		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Asp65Asn		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Asn179Ser		0.0	Uncertain significance: Immunodeficiency 31B	missense variant	
+STAT1	p.Leu199Phe		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Leu199Pro		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Asn82Lys		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.His629Leu		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Gln120Glu		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Thr450Met		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Ile248Thr		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Val455Ile		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Arg346Ser		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Ala656Val		0.0	Uncertain significance: Immunodeficiency 31A	intron variant,missense variant	
+STAT1	p.Asn515Ser		0.0	Uncertain significance: Immunodeficiency 31C ; Immunodeficiency 31B Likely benig	missense variant	
+STAT1	p.Glu6Asp		0.0	Uncertain significance: Immunodeficiency 31A	missense variant	
+STAT1	p.Thr427Asn		0.0	Uncertain significance: Immunodeficiency 31B	missense variant	
+STAT1	p.Ile130Thr		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Val319Met		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Arg619Gln		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Ala531Thr		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Lys286Glu		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Gln330Arg		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Asp23Val		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Asn208Ser		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Thr373Ser		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	intron variant,missense variant	
+STAT1	p.Asn650Ser		0.0	Uncertain significance: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodefi	missense variant	
+STAT1	p.Gln63Arg		0.0	Likely benign: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodeficiency 31	missense variant	
+STAT1	p.P54S		0.0	Likely benign: Immunodeficiency 31A ; Immunodeficiency 31C ; Immunodeficiency 31	intron variant,missense variant	
+STAT1	p.Thr327Ala		0.0	Not provided: STAT1-related disorder	intron variant,missense variant	

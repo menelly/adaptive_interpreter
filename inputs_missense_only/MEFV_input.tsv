@@ -1,0 +1,593 @@
+gene	hgvs_p	hgvs_g	gnomad_freq	clinical_sig	molecular_consequence	review_status
+MEFV	p.Met680Ile		0.0	Pathogenic: Familial Mediterranean Fever Pathogenic/Likely pathogenic: Familial 	3 prime UTR variant,missense variant	
+MEFV	p.Met694Val		0.0	Pathogenic: Autoinflammatory Disease ; Neutrophilic Dermatosis, Acute Febrile ; 	3 prime UTR variant,missense variant	
+MEFV	p.Met694Ile		0.0	Pathogenic: Autoinflammatory Disease ; Neutrophilic Dermatosis, Acute Febrile ; 	3 prime UTR variant,missense variant	
+MEFV	p.Val726Ala		0.0	Pathogenic: Autoinflammatory Disease ; Neutrophilic Dermatosis, Acute Febrile ; 	3 prime UTR variant,missense variant	
+MEFV	p.Phe479Leu		0.0	Pathogenic: Neutrophilic Dermatosis, Acute Febrile ; Familial Mediterranean Feve	missense variant	
+MEFV	p.Ala744Ser		0.0	Pathogenic: Autoinflammatory Disease ; Familial Mediterranean Fever, Autosomal D	3 prime UTR variant,missense variant	
+MEFV	p.Arg761His		0.0	Pathogenic: Autoinflammatory Disease ; Neutrophilic Dermatosis, Acute Febrile ; 	3 prime UTR variant,missense variant	
+MEFV	p.Thr577Asn		0.0	Pathogenic: not provided Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.His404Arg		0.0	Pathogenic: Behcet Syndrome Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Leu367Val		0.0	Pathogenic: Behcet Syndrome Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Gly111Glu		0.0	Pathogenic: Behcet Syndrome	intron variant,missense variant	
+MEFV	p.Glu167Asp		0.0	Pathogenic: Familial Mediterranean Fever Pathogenic/Likely pathogenic: Familial 	intron variant,missense variant	
+MEFV	p.Gly687Asp		0.0	Pathogenic: not provided Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Glu244Lys		0.0	Pathogenic: Neutrophilic Dermatosis, Acute Febrile Pathogenic/Likely pathogenic:	intron variant,missense variant	
+MEFV	p.Ser242Arg		0.0	Pathogenic: Neutrophilic Dermatosis, Acute Febrile Pathogenic/Likely pathogenic:	intron variant,missense variant	
+MEFV	p.Leu110Pro		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	intron variant,missense variant	
+MEFV	p.Arg42Trp		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	missense variant	
+MEFV	p.Thr267Ile		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	intron variant,missense variant	
+MEFV	p.Lys695Arg		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	3 prime UTR variant,missense variant	
+MEFV	p.Arg653His		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean Fever ; not provided ; Fami	3 prime UTR variant,missense variant	
+MEFV	p.Glu148Val		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	intron variant,missense variant	
+MEFV	p.Met694Lys		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	3 prime UTR variant,missense variant	
+MEFV	p.Glu474Lys		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	missense variant	
+MEFV	p.Gly632Ser		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	3 prime UTR variant,missense variant	
+MEFV	p.Ile640Met		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	3 prime UTR variant,missense variant	
+MEFV	p.Ile641Phe		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	3 prime UTR variant,missense variant	
+MEFV	p.Pro646Leu		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	3 prime UTR variant,missense variant	
+MEFV	p.Leu649Pro		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	3 prime UTR variant,missense variant	
+MEFV	p.Glu656Ala		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	3 prime UTR variant,missense variant	
+MEFV	p.Asp661Asn		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	3 prime UTR variant,missense variant	
+MEFV	p.Ser675Asn		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	3 prime UTR variant,missense variant	
+MEFV	p.Gly678Glu		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	3 prime UTR variant,missense variant	
+MEFV	p.Met680Leu		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	3 prime UTR variant,missense variant	
+MEFV	p.Thr681Ile		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	3 prime UTR variant,missense variant	
+MEFV	p.Tyr688Cys		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	3 prime UTR variant,missense variant	
+MEFV	p.Met694Leu		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	3 prime UTR variant,missense variant	
+MEFV	p.Lys695Met		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	3 prime UTR variant,missense variant	
+MEFV	p.Val704Ile		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	3 prime UTR variant,missense variant	
+MEFV	p.Pro705Ser		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	3 prime UTR variant,missense variant	
+MEFV	p.Ile720Met		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	3 prime UTR variant,missense variant	
+MEFV	p.Phe743Leu		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	3 prime UTR variant,missense variant	
+MEFV	p.Pro758Ser		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	3 prime UTR variant,missense variant	
+MEFV	p.Pro780Thr		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	3 prime UTR variant,missense variant	
+MEFV	p.Ser108Arg		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	intron variant,missense variant	
+MEFV	p.Glu163Ala		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	intron variant,missense variant	
+MEFV	p.Thr177Ile		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	intron variant,missense variant	
+MEFV	p.Glu230Lys		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	intron variant,missense variant	
+MEFV	p.Glu319Lys		0.0	Pathogenic/Likely pathogenic: Familial Mediterranean fever, autosomal recessive 	missense variant	
+MEFV	p.Asn766His		0.0	Likely pathogenic: not provided Uncertain significance: Familial Mediterranean F	3 prime UTR variant,missense variant	
+MEFV	p.Lys695Asn		0.0	Likely pathogenic: not specified Uncertain significance: Familial Mediterranean 	3 prime UTR variant,missense variant	
+MEFV	p.Pro50Leu		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	missense variant	
+MEFV	p.Gly763Arg		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever, Auto	3 prime UTR variant,missense variant	
+MEFV	p.Arg329Cys		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	missense variant	
+MEFV	p.Met693Thr		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	3 prime UTR variant,missense variant	
+MEFV	p.Arg361Thr		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	missense variant	
+MEFV	p.Ser154Pro		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever, Auto	intron variant,missense variant	
+MEFV	p.Glu148Gln		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever ; not	intron variant,missense variant	
+MEFV	p.Pro369Ser		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever ; not	missense variant	
+MEFV	p.Arg408Gln		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever ; not	missense variant	
+MEFV	p.Ala311Val		0.0	Conflicting interpretations of pathogenicity: not provided Likely benign: Famili	missense variant	
+MEFV	p.Lys447Asn		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	missense variant	
+MEFV	p.Gln440Glu		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	missense variant	
+MEFV	p.Gly304Arg		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever ; not	intron variant,missense variant	
+MEFV	p.Val33Leu		0.0	Conflicting interpretations of pathogenicity: not provided Uncertain significanc	missense variant	
+MEFV	p.Val487Leu		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever ; not	missense variant	
+MEFV	p.Asp391Asn		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	missense variant	
+MEFV	p.Arg408Leu		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	missense variant	
+MEFV	p.Pro633Leu		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	3 prime UTR variant,missense variant	
+MEFV	p.Pro180Leu		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	intron variant,missense variant	
+MEFV	p.Gly111Arg		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	intron variant,missense variant	
+MEFV	p.Glu84Lys		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	missense variant	
+MEFV	p.Thr548Asn		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	missense variant	
+MEFV	p.Ala511Val		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	missense variant	
+MEFV	p.Ser179Asn		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever, Auto	intron variant,missense variant	
+MEFV	p.Pro115Arg		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	intron variant,missense variant	
+MEFV	p.Pro183Leu		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	intron variant,missense variant	
+MEFV	p.Phe451Cys		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	missense variant	
+MEFV	p.Pro115Thr		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	intron variant,missense variant	
+MEFV	p.Arg348His		0.0	Conflicting interpretations of pathogenicity: not provided Uncertain significanc	missense variant	
+MEFV	p.Pro364Leu		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	missense variant	
+MEFV	p.Ala457Val		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	missense variant	
+MEFV	p.Val487Met		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	missense variant	
+MEFV	p.Ile513Thr		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	missense variant	
+MEFV	p.R433H		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Likel	intron variant,missense variant	
+MEFV	p.Val722Met		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	3 prime UTR variant,missense variant	
+MEFV	p.Ile755Val		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	3 prime UTR variant,missense variant	
+MEFV	p.Ile772Val		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	3 prime UTR variant,missense variant	
+MEFV	p.Ser141Ile		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	intron variant,missense variant	
+MEFV	p.Gly196Trp		0.0	Conflicting interpretations of pathogenicity: not provided Uncertain significanc	intron variant,missense variant	
+MEFV	p.Glu251Lys		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	intron variant,missense variant	
+MEFV	p.Ile259Val		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	intron variant,missense variant	
+MEFV	p.Ala289Val		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever Uncer	intron variant,missense variant	
+MEFV	p.Thr309Met		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever ; not	missense variant	
+MEFV	p.Arg329His		0.0	Conflicting interpretations of pathogenicity: Familial Mediterranean Fever ; not	missense variant	
+MEFV	p.Gln343His		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Lys174Glu		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Ser107Ala		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Ser159Gly		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Ser235Leu		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Val67Met		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Gly340Arg		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Tyr135Asn		0.0	Uncertain significance: Familial Mediterranean Fever ; not provided	intron variant,missense variant	
+MEFV	p.Trp655Leu		0.0	Uncertain significance: Familial Mediterranean Fever ; Inborn genetic diseases	3 prime UTR variant,missense variant	
+MEFV	p.Val657Met		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Glu22Lys		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Gly678Arg		0.0	Uncertain significance: Familial Mediterranean Fever ; not specified	3 prime UTR variant,missense variant	
+MEFV	p.Arg280Lys		0.0	Uncertain significance: Autoinflammatory Disease ; Familial Mediterranean Fever 	intron variant,missense variant	
+MEFV	p.Leu484Met		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Lys237Asn		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Glu526Gly		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Asp603Gly		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Thr101Ala		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Ala90Pro		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Cys639Tyr		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Gly222Arg		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Thr735Ile		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Ser11Cys		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Glu520Val		0.0	Uncertain significance: Familial Mediterranean Fever ; not specified	missense variant	
+MEFV	p.His404Gln		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Lys376Arg		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Arg653Ser		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Tyr19Cys		0.0	Uncertain significance: Familial Mediterranean Fever ; not provided	missense variant	
+MEFV	p.Glu418Lys		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Val73Ile		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Val415Leu		0.0	Uncertain significance: not provided	missense variant	
+MEFV	p.Glu148Asp		0.0	Uncertain significance: not provided	intron variant,missense variant	
+MEFV	p.Cys144Tyr		0.0	Uncertain significance: Familial Mediterranean Fever ; not provided Likely benig	intron variant,missense variant	
+MEFV	p.Met490Thr		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Pro306Ser		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Gln778Arg		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Arg278Gln		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Met693Lys		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Asn697Ile		0.0	Uncertain significance: not provided	3 prime UTR variant,missense variant	
+MEFV	p.Gly219Asp		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Glu392Lys		0.0	Uncertain significance: not provided	missense variant	
+MEFV	p.Cys746Arg		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Pro714Ser		0.0	Uncertain significance: not provided	3 prime UTR variant,missense variant	
+MEFV	p.Ala768Gly		0.0	Uncertain significance: Familial Mediterranean Fever ; not provided	3 prime UTR variant,missense variant	
+MEFV	p.Pro342Ser		0.0	Uncertain significance: Familial Mediterranean Fever ; not provided Likely benig	missense variant	
+MEFV	p.Arg155Thr		0.0	Uncertain significance: Familial Mediterranean Fever ; not provided	intron variant,missense variant	
+MEFV	p.Ser273Leu		0.0	Uncertain significance: not provided Not provided: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Gln475His		0.0	Uncertain significance: not specified	missense variant	
+MEFV	p.Arg377His		0.0	Uncertain significance: Familial Mediterranean Fever ; not provided Likely benig	missense variant	
+MEFV	p.Ile674Val		0.0	Uncertain significance: Familial Mediterranean Fever ; Inborn genetic diseases	3 prime UTR variant,missense variant	
+MEFV	p.Pro550Ala		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Val481Leu		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Arg204Leu		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Phe648Leu		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.His419Asn		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Cys746Gly		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Gly286Ala		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Ser145Arg		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Gly325Arg		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Gln555Pro		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Lys422Arg		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Lys23Arg		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.His123Asp		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Ser145Thr		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Lys114Gln		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Tyr61Asn		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Thr249Ala		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.His359Asn		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Leu649Val		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Arg410His		0.0	Uncertain significance: Familial Mediterranean Fever ; not specified	missense variant	
+MEFV	p.Gly131Asp		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Thr760Ile		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Thr577Ile		0.0	Uncertain significance: Familial Mediterranean Fever ; not provided	missense variant	
+MEFV	p.Thr249Ser		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Pro134Leu		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Gln562Arg		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Ala518Thr		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Lys556Asn		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Leu203Pro		0.0	Uncertain significance: Autoinflammatory Disease ; Familial Mediterranean Fever 	intron variant,missense variant	
+MEFV	p.Glu148Lys		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Pro240Ser		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Glu264Lys		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Trp689Leu		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Glu84Gln		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Ser645Pro		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Ala664Val		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.His123Gln		0.0	Uncertain significance: Familial Mediterranean Fever ; not provided ; Inborn gen	intron variant,missense variant	
+MEFV	p.Leu384Gln		0.0	Uncertain significance: Autoinflammatory Disease	missense variant	
+MEFV	p.Glu477Lys		0.0	Uncertain significance: Autoinflammatory Disease	missense variant	
+MEFV	p.Ala744Thr		0.0	Uncertain significance: Autoinflammatory Disease	3 prime UTR variant,missense variant	
+MEFV	p.Cys773Tyr		0.0	Uncertain significance: Autoinflammatory Disease	3 prime UTR variant,missense variant	
+MEFV	p.Arg80Cys		0.0	Uncertain significance: Autoinflammatory Disease ; Familial Mediterranean Fever	missense variant	
+MEFV	p.Gly100Arg		0.0	Uncertain significance: Autoinflammatory Disease ; Familial Mediterranean Fever 	intron variant,missense variant	
+MEFV	p.His123Leu		0.0	Uncertain significance: Autoinflammatory Disease	intron variant,missense variant	
+MEFV	p.Asn127Ser		0.0	Uncertain significance: Autoinflammatory Disease	intron variant,missense variant	
+MEFV	p.Gly137Ser		0.0	Uncertain significance: Autoinflammatory Disease ; Familial Mediterranean Fever 	intron variant,missense variant	
+MEFV	p.Gly196Arg		0.0	Uncertain significance: Autoinflammatory Disease ; not specified	intron variant,missense variant	
+MEFV	p.Ala207Ser		0.0	Uncertain significance: Autoinflammatory Disease	intron variant,missense variant	
+MEFV	p.Pro307Arg		0.0	Uncertain significance: Autoinflammatory Disease	missense variant	
+MEFV	p.Pro221Leu		0.0	Uncertain significance: not specified	intron variant,missense variant	
+MEFV	p.Glu85Met		0.0	Uncertain significance: not provided	missense variant	
+MEFV	p.Arg628Lys		0.0	Uncertain significance: not specified	3 prime UTR variant,missense variant	
+MEFV	p.Leu243Pro		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Gln551Glu		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Thr55Ala		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Leu13Gln		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+MEFV	p.Glu565Gly		0.0	Uncertain significance: Familial Mediterranean Fever ; Inborn genetic diseases	missense variant	
+MEFV	p.Asn586Ser		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+MEFV	p.Leu617Arg		0.0	Uncertain significance: Inborn genetic diseases ; not provided	3 prime UTR variant,missense variant	
+MEFV	p.Ser730Cys		0.0	Uncertain significance: Inborn genetic diseases	3 prime UTR variant,missense variant	
+MEFV	p.Glu98Lys		0.0	Uncertain significance: Inborn genetic diseases	intron variant,missense variant	
+MEFV	p.Glu336Lys		0.0	Uncertain significance: not provided	missense variant	
+MEFV	p.Lys519Met		0.0	Uncertain significance: not specified	missense variant	
+MEFV	p.Glu403Lys		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Gly285Ala		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Val722Leu		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Ser109Phe		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Pro254Ser		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Gly777Arg		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Gly126Glu		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Tyr471Ser		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Gln381Glu		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Phe21Leu		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Asp290Asn		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Gln381His		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Val726Gly		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Ser345Leu		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Thr303Ile		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Arg461Trp		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Thr12Ile		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Arg652His		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Pro322Arg		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Gly340Glu		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Leu260Ile		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Thr4Ala		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Val323Leu		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.S434I		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant,splice acceptor variant	
+MEFV	p.Arg461Pro		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Gln440Lys		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Asp616Asn		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Arg241Gly		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Pro240Ala		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Cys315Arg		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Glu477Asp		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Arg151Trp		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Tyr443Asn		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Ile423Ser		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Gly250Ala		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Ala210Gly		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Glu428Asp		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Pro175Ser		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Gly196Ala		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Pro115Ser		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Pro283Ala		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Ala317Thr		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Lys25Arg		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Trp547Arg		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Lys459Thr		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Glu84Asp		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Tyr61Cys		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Gly764Ala		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Ala344Ser		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Glu128Lys		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Pro183Arg		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Val657Leu		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Met1Leu		0.0	Uncertain significance: Familial Mediterranean Fever	initiator_codon_variant,missense variant	
+MEFV	p.Arg161Gly		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Arg162Lys		0.0	Uncertain significance: Inborn genetic diseases	intron variant,missense variant	
+MEFV	p.Ser108Thr		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Gln476Glu		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+MEFV	p.Ser6Arg		0.0	Uncertain significance: not provided	missense variant	
+MEFV	p.Asn78Ile		0.0	Uncertain significance: not provided	missense variant	
+MEFV	p.Asp103His		0.0	Uncertain significance: not provided	intron variant,missense variant	
+MEFV	p.Asp122Gly		0.0	Uncertain significance: not provided	intron variant,missense variant	
+MEFV	p.Gly136Glu		0.0	Uncertain significance: Familial Mediterranean Fever ; not provided Likely benig	intron variant,missense variant	
+MEFV	p.Pro147Ala		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Glu163Gln		0.0	Uncertain significance: Familial Mediterranean Fever ; not provided ; MEFV-relat	intron variant,missense variant	
+MEFV	p.Ala171Thr		0.0	Uncertain significance: Familial Mediterranean Fever ; not provided Likely benig	intron variant,missense variant	
+MEFV	p.Pro183Thr		0.0	Uncertain significance: Autoinflammatory Disease ; Familial Mediterranean Fever 	intron variant,missense variant	
+MEFV	p.Ala193Thr		0.0	Uncertain significance: Familial Mediterranean Fever ; not provided	intron variant,missense variant	
+MEFV	p.Gly320Ala		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Arg461Gln		0.0	Uncertain significance: not provided Likely benign: Familial Mediterranean Fever	missense variant	
+MEFV	p.Lys716Glu		0.0	Uncertain significance: Familial Mediterranean Fever ; not provided ; not specif	3 prime UTR variant,missense variant	
+MEFV	p.Lys266Glu		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Asn78Ser		0.0	Uncertain significance: Familial Mediterranean Fever ; not provided Likely benig	missense variant	
+MEFV	p.Gln356Glu		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Glu446Ala		0.0	Uncertain significance: Autoinflammatory Disease ; Familial Mediterranean Fever 	missense variant	
+MEFV	p.Pro714Leu		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Ala66Thr		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Gly152Ala		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Pro228Leu		0.0	Uncertain significance: Familial Mediterranean Fever ; MEFV-related disorder	intron variant,missense variant	
+MEFV	p.Ser363Arg		0.0	Uncertain significance: not provided	missense variant	
+MEFV	p.Ala507Thr		0.0	Uncertain significance: not provided	missense variant	
+MEFV	p.Gln551Arg		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Glu418Gln		0.0	Uncertain significance: not provided	missense variant	
+MEFV	p.Asn127Thr		0.0	Uncertain significance: Inborn genetic diseases	intron variant,missense variant	
+MEFV	p.Trp626Arg		0.0	Uncertain significance: not provided	3 prime UTR variant,missense variant	
+MEFV	p.Leu649Phe		0.0	Uncertain significance: not specified	3 prime UTR variant,missense variant	
+MEFV	p.Arg204His		0.0	Uncertain significance: Familial Mediterranean Fever ; not specified ; not provi	intron variant,missense variant	
+MEFV	p.His478Tyr		0.0	Uncertain significance: Familial Mediterranean Fever ; not provided Likely benig	missense variant	
+MEFV	p.Glu128Gln		0.0	Uncertain significance: not specified	intron variant,missense variant	
+MEFV	p.Asn130Lys		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Gln424Pro		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+MEFV	p.Gly632Val		0.0	Uncertain significance: not specified	3 prime UTR variant,missense variant	
+MEFV	p.Val726Asp		0.0	Uncertain significance: not specified	3 prime UTR variant,missense variant	
+MEFV	p.Lys447Met		0.0	Uncertain significance: not provided	missense variant	
+MEFV	p.Pro180Gln		0.0	Uncertain significance: Familial Mediterranean Fever ; not specified	intron variant,missense variant	
+MEFV	p.Val33Gly		0.0	Uncertain significance: not provided	missense variant	
+MEFV	p.Ala83Val		0.0	Uncertain significance: not provided	missense variant	
+MEFV	p.Leu213Pro		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Pro50Ala		0.0	Uncertain significance: not provided	missense variant	
+MEFV	p.Thr267Ser		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Pro183Ser		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Tyr732His		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Thr500Ile		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Pro306Ala		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Arg151Thr		0.0	Uncertain significance: not provided	intron variant,missense variant	
+MEFV	p.Asn697His		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Val690Met		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Arg653Cys		0.0	Uncertain significance: Familial Mediterranean Fever ; not provided Likely benig	3 prime UTR variant,missense variant	
+MEFV	p.Pro335His		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Ala511Thr		0.0	Uncertain significance: not provided ; MEFV-related disorder	missense variant	
+MEFV	p.Lys25Thr		0.0	Uncertain significance: not provided	missense variant	
+MEFV	p.Gly197Asp		0.0	Uncertain significance: not provided	intron variant,missense variant	
+MEFV	p.Ala310Thr		0.0	Uncertain significance: not provided	missense variant	
+MEFV	p.Asp284Glu		0.0	Uncertain significance: MEFV-related disorder	intron variant,missense variant	
+MEFV	p.Ala701Glu		0.0	Uncertain significance: MEFV-related disorder	3 prime UTR variant,missense variant	
+MEFV	p.H394R		0.0	Uncertain significance: MEFV-related disorder	intron variant,missense variant	
+MEFV	p.Asp530Asn		0.0	Uncertain significance: not provided	missense variant	
+MEFV	p.Lys519Asn		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+MEFV	p.Lys625Asn		0.0	Uncertain significance: Inborn genetic diseases	3 prime UTR variant,missense variant	
+MEFV	p.Pro132Thr		0.0	Uncertain significance: Inborn genetic diseases	intron variant,missense variant	
+MEFV	p.Arg579His		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Asp505Tyr		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Val469Ala		0.0	Uncertain significance: Autoinflammatory Disease ; Familial Mediterranean Fever 	missense variant	
+MEFV	p.Glu93Gln		0.0	Uncertain significance: Familial Mediterranean Fever ; not provided Likely benig	missense variant	
+MEFV	p.Thr549Ile		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+MEFV	p.Glu85Lys		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+MEFV	p.Glu85Val		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+MEFV	p.Pro5Arg		0.0	Uncertain significance: Neutrophilic Dermatosis, Acute Febrile	missense variant	
+MEFV	p.Met680Val		0.0	Uncertain significance: not provided	3 prime UTR variant,missense variant	
+MEFV	p.Ala289Thr		0.0	Uncertain significance: not specified	intron variant,missense variant	
+MEFV	p.His419Tyr		0.0	Uncertain significance: MEFV-related disorder	missense variant	
+MEFV	p.L406P		0.0	Uncertain significance: MEFV-related disorder	intron variant,missense variant	
+MEFV	p.Gln374His		0.0	Uncertain significance: not provided	missense variant	
+MEFV	p.Ser368Arg		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Arg717Pro		0.0	Uncertain significance: not specified	3 prime UTR variant,missense variant	
+MEFV	p.Val775Met		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Ala287Val		0.0	Uncertain significance: not specified	intron variant,missense variant	
+MEFV	p.Leu233Met		0.0	Uncertain significance: not provided	intron variant,missense variant	
+MEFV	p.Phe721Leu		0.0	Uncertain significance: not provided	3 prime UTR variant,missense variant	
+MEFV	p.Asn733Ser		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Val734Gly		0.0	Uncertain significance: Inborn genetic diseases	3 prime UTR variant,missense variant	
+MEFV	p.Asp530Val		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+MEFV	p.Ile412Thr		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+MEFV	p.Arg635Ile		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Val382Asp		0.0	Uncertain significance: not provided	missense variant	
+MEFV	p.Asn766Lys		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Arg761Cys		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Gly750Arg		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Ser747Cys		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Tyr741Cys		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Ser738Tyr		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Arg737Lys		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Phe731Val		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Gly660Ala		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Glu583Lys		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Glu552Val		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Thr548Ile		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Gly532Glu		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Leu527Val		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Met490Val		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Phe480Cys		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Arg441Gln		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Glu439Lys		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Lys432Asn		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Ala416Ser		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Ala416Thr		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Ile397Thr		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Leu396Val		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Asp391Glu		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Ser363Asn		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Gly325Asp		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Asp308Asn		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Arg305Ser		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Leu291Val		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Ala279Thr		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Thr275Ile		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Leu263Arg		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Ala255Val		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Glu251Gln		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Glu225Gly		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Ala220Val		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Ala220Pro		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Ala217Val		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Gly189Arg		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Gln172His		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Asp170Asn		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Gly168Val		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Arg151Gly		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Ala139Ser		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Ser95Cys		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Arg88Ser		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Ile77Val		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Leu56Val		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Gln44Lys		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Arg39Gly		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Tyr19Phe		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Ser6Asn		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Gly218Arg		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Gly152Arg		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Glu439Gly		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Ser339Phe		0.0	Uncertain significance: Autoinflammatory Disease ; Familial Mediterranean Fever 	missense variant	
+MEFV	p.Arg314His		0.0	Uncertain significance: Familial Mediterranean Fever ; not provided Likely benig	missense variant	
+MEFV	p.Ile601Leu		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.His341Gln		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Cys521Trp		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Lys625Gln		0.0	Uncertain significance: not specified	3 prime UTR variant,missense variant	
+MEFV	p.Leu400Val		0.0	Uncertain significance: not provided	missense variant	
+MEFV	p.Glu656Lys		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Glu403Asp		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+MEFV	p.Ile77Thr		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+MEFV	p.Ser745Ile		0.0	Uncertain significance: Inborn genetic diseases	3 prime UTR variant,missense variant	
+MEFV	p.Lys25Asn		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+MEFV	p.Ile740Met		0.0	Uncertain significance: Inborn genetic diseases	3 prime UTR variant,missense variant	
+MEFV	p.Pro134Arg		0.0	Uncertain significance: Inborn genetic diseases	intron variant,missense variant	
+MEFV	p.Gly492Arg		0.0	Uncertain significance: Inborn genetic diseases	missense variant	
+MEFV	p.Ser154Trp		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Ser728Arg		0.0	Uncertain significance: not provided	3 prime UTR variant,missense variant	
+MEFV	p.Pro134Gln		0.0	Uncertain significance: not provided	intron variant,missense variant	
+MEFV	p.Glu163Asp		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Ala253Glu		0.0	Uncertain significance: not specified	intron variant,missense variant	
+MEFV	p.Gln97Lys		0.0	Uncertain significance: Autoinflammatory Disease ; Familial Mediterranean Fever 	intron variant,missense variant	
+MEFV	p.Arg178Trp		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Arg408Trp		0.0	Uncertain significance: Autoinflammatory Disease ; Familial Mediterranean Fever 	missense variant	
+MEFV	p.Ser503Cys		0.0	Uncertain significance: Autoinflammatory Disease ; Familial Mediterranean Fever 	missense variant	
+MEFV	p.Arg354Gln		0.0	Uncertain significance: Autoinflammatory Disease ; Familial Mediterranean Fever 	missense variant	
+MEFV	p.Arg39Lys		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Val541Ala		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Val502Ile		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Arg377Cys		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Asp637Gly		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Pro769Ala		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Glu230Gln		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Ser288Tyr		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Ala289Glu		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Pro373Ser		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Gly185Arg		0.0	Uncertain significance: Familial Mediterranean Fever ; not provided	intron variant,missense variant	
+MEFV	p.Lys114Glu		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Asn256Asp		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Ser104Cys		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Glu456Asp		0.0	Uncertain significance: Autoinflammatory Disease ; not specified Likely benign: 	missense variant	
+MEFV	p.Arg80His		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Arg227Gly		0.0	Uncertain significance: not specified	intron variant,missense variant	
+MEFV	p.Asn270Ser		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Leu263Val		0.0	Uncertain significance: not specified	intron variant,missense variant	
+MEFV	p.Arg579Cys		0.0	Uncertain significance: Autoinflammatory Disease ; Familial Mediterranean Fever 	missense variant	
+MEFV	p.Ile692Val		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Arg192Thr		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Gly776Ala		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Ala279Val		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Pro228Ser		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Arg708His		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Asp321Glu		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Pro350Ser		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Leu384Pro		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Leu433Val		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Arg717Cys		0.0	Uncertain significance: Autoinflammatory Disease ; not provided ; not specified 	3 prime UTR variant,missense variant	
+MEFV	p.Ala139Asp		0.0	Uncertain significance: not specified ; not provided Likely benign: Familial Med	intron variant,missense variant	
+MEFV	p.Arg761Ser		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Arg717Leu		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Arg717His		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Lys716Met		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Gly632Ala		0.0	Uncertain significance: Familial Mediterranean Fever ; Familial Mediterranean fe	3 prime UTR variant,missense variant	
+MEFV	p.Pro630Leu		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Lys618Asn		0.0	Uncertain significance: Familial Mediterranean Fever ; not specified	3 prime UTR variant,missense variant	
+MEFV	p.Ser614Phe		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Ile591Met		0.0	Uncertain significance: Familial Mediterranean Fever Likely benign: Neutrophilic	missense variant	
+MEFV	p.Thr577Ser		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Gly488Asp		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Leu372Pro		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Ile247Val		0.0	Uncertain significance: Familial Mediterranean Fever ; Familial Mediterranean fe	intron variant,missense variant	
+MEFV	p.Gly197Arg		0.0	Uncertain significance: Familial Mediterranean Fever ; not specified	intron variant,missense variant	
+MEFV	p.Glu128Val		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Ala193Val		0.0	Uncertain significance: not provided	intron variant,missense variant	
+MEFV	p.Ser43Asn		0.0	Uncertain significance: not provided ; MEFV-related disorder	missense variant	
+MEFV	p.Gln214Pro		0.0	Uncertain significance: not specified	intron variant,missense variant	
+MEFV	p.Ile666Phe		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Lys164Gln		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Lys119Asn		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Gly779Val		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Asp510Glu		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Val704Gly		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Glu276Asp		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Glu195Asp		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Cys332Tyr		0.0	Uncertain significance: Familial Mediterranean Fever ; Inborn genetic diseases	missense variant	
+MEFV	p.Gly325Ser		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Ser32Cys		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Ala595Thr		0.0	Uncertain significance: Familial Mediterranean Fever ; MEFV-related disorder	missense variant	
+MEFV	p.Thr70Ser		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Trp689Arg		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Leu508Val		0.0	Uncertain significance: Familial Mediterranean Fever ; not provided Likely benig	missense variant	
+MEFV	p.Arg75Gln		0.0	Uncertain significance: Familial Mediterranean Fever ; not provided	missense variant	
+MEFV	p.Pro190Ser		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.His561Tyr		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Ser331Phe		0.0	Uncertain significance: not provided	missense variant	
+MEFV	p.Asn270Asp		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Arg133Leu		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Gly126Val		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Ser749Tyr		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Lys435Gln		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Ile720Val		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Val690Leu		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Pro369Thr		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Trp689Ser		0.0	Uncertain significance: not provided	3 prime UTR variant,missense variant	
+MEFV	p.Pro281Ser		0.0	Uncertain significance: not provided	intron variant,missense variant	
+MEFV	p.Arg377Gly		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Val543Leu		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Arg501Cys		0.0	Uncertain significance: Neutrophilic Dermatosis, Acute Febrile ; Familial Medite	missense variant	
+MEFV	p.Phe229Cys		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Ser95Pro		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Val598Ile		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Arg192Gly		0.0	Uncertain significance: Familial Mediterranean Fever ; not provided Likely benig	intron variant,missense variant	
+MEFV	p.Ala268Asp		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Ser683Leu		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Ser442Thr		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Lys662Glu		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Ala2Gly		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Asp308Tyr		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Gly294Val		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Gly189Val		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Gly129Arg		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Asp510Asn		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Ser166Leu		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Glu112Lys		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Gln34Pro		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Pro706Leu		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Ser208Thr		0.0	Uncertain significance: Autoinflammatory Disease ; Familial Mediterranean Fever 	intron variant,missense variant	
+MEFV	p.Arg354Trp		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Ile423Val		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Val469Leu		0.0	Uncertain significance: Familial Mediterranean Fever ; not specified ; not provi	missense variant	
+MEFV	p.Arg501Gly		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Arg501His		0.0	Uncertain significance: Autoinflammatory Disease ; not specified ; not provided 	missense variant	
+MEFV	p.Ile506Val		0.0	Uncertain significance: Neutrophilic Dermatosis, Acute Febrile ; Familial Medite	missense variant	
+MEFV	p.Gly514Glu		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Met582Leu		0.0	Uncertain significance: Autoinflammatory Disease ; Familial Mediterranean Fever 	missense variant	
+MEFV	p.F425Y		0.0	Uncertain significance: Neutrophilic Dermatosis, Acute Febrile ; Familial Medite	intron variant,missense variant	
+MEFV	p.Ser702Cys		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Arg708Cys		0.0	Uncertain significance: Autoinflammatory Disease ; Familial Mediterranean Fever 	3 prime UTR variant,missense variant	
+MEFV	p.Arg717Ser		0.0	Uncertain significance: Familial Mediterranean Fever ; not provided	3 prime UTR variant,missense variant	
+MEFV	p.Ser749Cys		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	3 prime UTR variant,missense variant	
+MEFV	p.Ala89Thr		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	missense variant	
+MEFV	p.Arg143Pro		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Arg151Ser		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Gln172Pro		0.0	Uncertain significance: Familial Mediterranean Fever ; not provided	intron variant,missense variant	
+MEFV	p.Pro175His		0.0	Uncertain significance: Autoinflammatory Disease ; Familial Mediterranean Fever 	intron variant,missense variant	
+MEFV	p.Ser179Ile		0.0	Uncertain significance: Familial Mediterranean Fever ; not provided	intron variant,missense variant	
+MEFV	p.Pro180Arg		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Glu225Asp		0.0	Uncertain significance: Familial Mediterranean Fever ; not provided	intron variant,missense variant	
+MEFV	p.Ala268Val		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Arg278Pro		0.0	Uncertain significance: Autoinflammatory Disease Not provided: Familial Mediterr	intron variant,missense variant	
+MEFV	p.Pro283Arg		0.0	Uncertain significance: Familial Mediterranean Fever ; Familial Mediterranean Fe	intron variant,missense variant	
+MEFV	p.Pro283Leu		0.0	Uncertain significance: Familial Mediterranean Fever ; Neutrophilic Dermatosis, 	intron variant,missense variant	
+MEFV	p.Glu299Gly		0.0	Uncertain significance: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Thr59Ser		0.0	Uncertain significance: not specified	missense variant	
+MEFV	p.Glu685Asp		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Pro633Thr		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Glu467Lys		0.0	Uncertain significance: Familial Mediterranean Fever	missense variant	
+MEFV	p.Ile412Val		0.0	Uncertain significance: not provided	missense variant	
+MEFV	p.Gly150Arg		0.0	Uncertain significance: Familial Mediterranean Fever ; not specified	intron variant,missense variant	
+MEFV	p.Ala744Pro		0.0	Uncertain significance: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.R433C		0.0	Likely benign: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.R433P		0.0	Likely benign: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Y428C		0.0	Likely benign: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.L432I		0.0	Likely benign: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.I430T		0.0	Likely benign: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Lys716Arg		0.0	Likely benign: Inborn genetic diseases	3 prime UTR variant,missense variant	
+MEFV	p.Thr120Ile		0.0	Likely benign: not specified	intron variant,missense variant	
+MEFV	p.L432F		0.0	Likely benign: not provided	intron variant,missense variant	
+MEFV	p.G402E		0.0	Likely benign: Familial Mediterranean Fever ; Familial Mediterranean Fever, Auto	intron variant,missense variant	
+MEFV	p.Leu13Val		0.0	Benign: Familial Mediterranean Fever ; Neutrophilic Dermatosis, Acute Febrile ; 	missense variant	
+MEFV	p.Arg202Gln		0.0	Benign: Autoinflammatory Disease ; Familial Mediterranean Fever ; Familial Medit	intron variant,missense variant	
+MEFV	p.D424E		0.0	Benign: Familial Mediterranean Fever ; Familial Mediterranean Fever, Autosomal D	intron variant,missense variant	
+MEFV	p.Val338Leu		0.0	Not provided: Familial Mediterranean Fever	missense variant	
+MEFV	p.Glu685Lys		0.0	Not provided: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Asp389Val		0.0	Not provided: Familial Mediterranean Fever	missense variant	
+MEFV	p.Ser650Tyr		0.0	Not provided: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Ile666Val		0.0	Not provided: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Ala105Glu		0.0	Not provided: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Gln383Lys		0.0	Not provided: Familial Mediterranean Fever	missense variant	
+MEFV	p.Leu559Phe		0.0	Not provided: Familial Mediterranean Fever	missense variant	
+MEFV	p.Val659Phe		0.0	Not provided: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Met693Ile		0.0	Not provided: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Leu709Arg		0.0	Not provided: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Phe743Tyr		0.0	Not provided: Familial Mediterranean Fever	3 prime UTR variant,missense variant	
+MEFV	p.Tyr232His		0.0	Not provided: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Gly236Val		0.0	Not provided: Familial Mediterranean Fever	intron variant,missense variant	
+MEFV	p.Val328Ala		0.0	Not provided: Familial Mediterranean Fever	missense variant	
