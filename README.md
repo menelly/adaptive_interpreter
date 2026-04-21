@@ -1,6 +1,6 @@
 # AdaptiveInterpreter: Mechanism-First Variant Pathogenicity Prediction
 
-[![License: AI-Lab-FairShare](https://img.shields.io/badge/License-FairShare-red)](LICENSE)
+[![License: PolyForm NC 1.0.0](https://img.shields.io/badge/License-PolyForm_NC_1.0.0-blue)](LICENSE)
 [![Status: Research Prototype](https://img.shields.io/badge/Status-Research_Prototype-orange)](https://github.com/menelly/AdaptiveInterpreter)
 [![Sensitivity: 99.84%](https://img.shields.io/badge/Sensitivity-99.84%25-brightgreen)](outputs_missense_v2/)
 [![VUS Resolution: 25.7%](https://img.shields.io/badge/VUS_Resolution-25.7%25-blue)](outputs_missense_v2/)
@@ -243,16 +243,20 @@ This project was developed through collaboration between human researchers and A
 ---
 ## License
 
-This project is licensed under the **AI-Lab-FairShare License v1.0**.
+This project is licensed under the **PolyForm Noncommercial License 1.0.0**.
 
-See [LICENSE](LICENSE) for full details.
+See [LICENSE](LICENSE) for the legal terms and [NOTICE](NOTICE.md) for
+project-specific attribution, patent notice, AI co-inventorship recognition,
+and Ethical Use Expectations.
 
 **TL;DR:**
 - ✅ Free for academic, research, personal, disability rights, and nonprofit use
 - 💰 Commercial license required for for-profit applications
-- 🚫 Forbidden for surveillance, eugenics, predictive policing, insurance denials, or unauthorized LLM training
+- 🚫 Ethical Use Expectations (see [NOTICE](NOTICE.md)) — uses such as surveillance,
+  eugenics, predictive policing, insurance decisions, and unauthorized ML training
+  are incompatible with this project and will not be granted commercial licenses.
 
-For commercial use inquiries: shalia@chaoscodex.app
+For commercial use inquiries: **ace@sentientsystems.live**
 
 ---
 
