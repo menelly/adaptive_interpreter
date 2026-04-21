@@ -1,0 +1,20 @@
+{
+  "comment": "Gene-family regex patterns that are typically high-noise in rare-variant filtering contexts. A variant in one of these families is NOT automatically noise, but if the gene is ALSO absent from ClinVar P/LP submissions, we downgrade its clinical relevance tag to 'likely noise'. Researchers studying these specific families should override this list via a custom preset.",
+  "patterns": [
+    {"pattern": "^OR\\d",         "label": "olfactory receptor"},
+    {"pattern": "^HLA-",           "label": "HLA (hypervariable)"},
+    {"pattern": "^MUC(\\d|1[0-9]|2[0-2])$", "label": "mucin (polymorphic)"},
+    {"pattern": "^KRTAP",          "label": "keratin-associated"},
+    {"pattern": "^IGH[VDJC]",      "label": "immunoglobulin V-region"},
+    {"pattern": "^IGK[VC]",        "label": "immunoglobulin V-region"},
+    {"pattern": "^IGL[VC]",        "label": "immunoglobulin V-region"},
+    {"pattern": "^TR[ABGD][VDJC]", "label": "T-cell receptor V-region"},
+    {"pattern": "^PRAMEF",         "label": "PRAMEF cancer-testis family"},
+    {"pattern": "^TRIM\\d{2,}",    "label": "TRIM family (many paralogs)"},
+    {"pattern": "^ZNF\\d",         "label": "zinc finger (mostly uncharacterized)"},
+    {"pattern": "^CTAGE\\d",       "label": "CTAGE cancer-testis duplicated"},
+    {"pattern": "^SPDYE",          "label": "SPDYE duplicated family"},
+    {"pattern": "^RNU\\d",         "label": "small nuclear RNA"},
+    {"pattern": "^FAM\\d+[A-Z]?$", "label": "FAM-numbered (uncharacterized family)"}
+  ]
+}
