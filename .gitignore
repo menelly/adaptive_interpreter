@@ -148,3 +148,16 @@ ren_results_*
 
 # Archived files
 archive/
+
+# CumBurSum — data files are large and/or derivatives with own licenses;
+# users download them per cumbursum/data/README.md at install time.
+cumbursum/data/*.txt
+cumbursum/data/*.tsv
+cumbursum/data/*.gmt
+cumbursum/data/*.json
+cumbursum/data/*.gz
+cumbursum/__pycache__/
+
+# Personal design notes / ongoing drafts — NOT for public repo.
+# (The clean public design doc lives at cumbursum/README.md / cumbursum/DESIGN.md)
+CUMBURSUM_DESIGN_THOUGHTS.md
