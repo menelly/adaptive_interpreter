@@ -9,10 +9,22 @@ No more amino acid guessing - this is the missing link to evolutionary constrain
 
 import gzip
 import logging
+import re
 from typing import Dict, List, Optional, Tuple
 import requests
 import json
 from pathlib import Path
+
+# Swiss-Prot canonical ID patterns — UniProt official regex.
+# Canonical Swiss-Prot IDs are 6 characters; TrEMBL IDs (including many
+# isoforms) are typically 10 characters (A0A… style). When a gene has
+# both, we want the 6-char reviewed one.
+_SWISSPROT_CANONICAL = re.compile(
+    r"^([OPQ][0-9][A-Z0-9]{3}[0-9]|[A-NR-Z][0-9]([A-Z][A-Z0-9]{2}[0-9]){1,2})$"
+)
+
+def _is_canonical_swissprot(uniprot_id: str) -> bool:
+    return bool(_SWISSPROT_CANONICAL.match(uniprot_id or ""))
 
 from utils.offline_transcript_mapper import OfflineProteinToGenomicMapper
 
@@ -33,7 +45,7 @@ class UniProtMapper:
         'P25705:130': {'chromosome': '18', 'start': 46089917, 'end': 46089917},  # ATP5F1A I130R (EXACT!)
     }
 
-    def __init__(self, data_path="/mnt/Arcana/genetics_data/conservation"):
+    def __init__(self, data_path="/home/Ace/conservation_data"):
         self.name = "UniProtMapper"
         self.data_path = Path(data_path)
         # Set up logging early
@@ -49,7 +61,11 @@ class UniProtMapper:
         except Exception as e:
             self.logger.warning(f"Offline mapper init failed: {e}")
 
-        self.mapping_file = self.data_path / "wgEncodeGencodeUniProtV48.txt.gz"
+        # UniProt's canonical 3-col idmapping (uniprot_id \t db_type \t db_id) —
+        # matches the parser in _load_uniprot_mappings(). The older code
+        # referenced wgEncodeGencodeUniProtV48.txt.gz which is a 4-col UCSC
+        # track file and silently failed to load any mappings.
+        self.mapping_file = self.data_path / "HUMAN_9606_idmapping.dat.gz"
 
 
         # Mapping caches (loaded lazily)
@@ -107,15 +123,28 @@ class UniProtMapper:
 
                     uniprot_id, db_type, db_id = parts
 
-                    # Map to gene names
+                    # Map to gene names — canonical Swiss-Prot first, then
+                    # only fall back to TrEMBL/isoform if no canonical seen yet.
                     if db_type == 'Gene_Name':
                         self.uniprot_to_gene_dict[uniprot_id] = db_id
-                        self.gene_to_uniprot_dict[db_id] = uniprot_id
+                        existing = self.gene_to_uniprot_dict.get(db_id)
+                        new_is_canonical = _is_canonical_swissprot(uniprot_id)
+                        existing_is_canonical = _is_canonical_swissprot(existing) if existing else False
+                        # Take the new one when:
+                        #   - we have nothing yet, OR
+                        #   - existing is a TrEMBL/isoform and new is canonical
+                        if existing is None or (new_is_canonical and not existing_is_canonical):
+                            self.gene_to_uniprot_dict[db_id] = uniprot_id
+                        # If both canonical, keep first-seen (arbitrary but stable).
 
-                    # Map to Ensembl gene IDs
+                    # Map to Ensembl gene IDs (same canonical preference)
                     elif db_type == 'Ensembl':
                         self.uniprot_to_ensembl_dict[uniprot_id] = db_id
-                        self.ensembl_to_uniprot_dict[db_id] = uniprot_id
+                        existing = self.ensembl_to_uniprot_dict.get(db_id)
+                        new_is_canonical = _is_canonical_swissprot(uniprot_id)
+                        existing_is_canonical = _is_canonical_swissprot(existing) if existing else False
+                        if existing is None or (new_is_canonical and not existing_is_canonical):
+                            self.ensembl_to_uniprot_dict[db_id] = uniprot_id
 
             self.mappings_loaded = True
             self.logger.info(f"✅ Loaded {len(self.uniprot_to_gene_dict):,} UniProt→Gene mappings")

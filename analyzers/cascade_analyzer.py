@@ -42,6 +42,7 @@ from AdaptiveInterpreter.utils.rsid_frequency_fetcher import RSIDFrequencyFetche
 
 # Import extracted modular components
 from AdaptiveInterpreter.utils.hotspot_database import HotspotDatabase
+from AdaptiveInterpreter.analyzers.uniprot_mapper import UniProtMapper
 from AdaptiveInterpreter.utils.ensemble_scores import calculate_synergy_score_v2, get_gene_family
 from AdaptiveInterpreter.utils.classifier import VariantClassifier
 from AdaptiveInterpreter.utils.score_aggregator import ScoringContext, calculate_final_score
@@ -80,25 +81,16 @@ class CascadeAnalyzer:
         self.override_family = override_family  # 🎯 CLI override for gene family classification
         self.conservative_mode = conservative_mode  # 🎯 OPTIONAL: Conservative classification when lacking conservation data
 
-        # Gene -> UniProt mappings (expanded for biological routing)
-        self.gene_to_uniprot = {
-            'TP53': 'P04637', 'COL1A1': 'P02452', 'FGFR3': 'P22607',
-            'VWF': 'P04275', 'RYR1': 'P21817', 'FBN1': 'P35555',
-            'SCN5A': 'Q14524', 'KCNQ1': 'P51787', 'BRCA1': 'P38398',
-            'BRCA2': 'P51587', 'MSH2': 'P43246', 'MLH1': 'P40692',
-            'ATM': 'Q13315', 'PTEN': 'P60484',
-            # New genes for biological routing
-            'CFTR': 'P13569', 'G6PD': 'P11413', 'HEXA': 'P06865',
-            'PAH': 'P00439', 'LDLR': 'P01130', 'HBB': 'P68871',
-            'RET': 'P07949', 'MET': 'P08581', 'EGFR': 'P00533',
-            'COL1A2': 'P08123', 'COL3A1': 'P02461',
-            # Tumor suppressors for GO-based routing
-            'APC': 'P25054', 'NF1': 'P21359', 'RB1': 'P06400',
-            # Additional genes for testing
-            'BMPR2': 'Q13873',
-            # Hearing loss genes - use canonical isoforms
-            'MYO7A': 'Q13402'  # Canonical full-length MYO7A (2215 residues)
-        }
+        # Gene → UniProt mappings: loaded from UniProt's canonical HUMAN_9606
+        # idmapping file at startup. No hardcoded presets — the parser prefers
+        # Swiss-Prot canonical IDs over TrEMBL isoforms, so this gives the same
+        # answers the old hardcoded dict did, for every gene that file covers.
+        # The attribute still exists as a dict for backward compat with
+        # cascade_batch_processor and for caching network-fetched fallbacks
+        # (see analyze_cascade → UniversalProteinAnnotator path below).
+        self.uniprot_mapper = UniProtMapper()
+        self.uniprot_mapper._load_uniprot_mappings()
+        self.gene_to_uniprot = self.uniprot_mapper.gene_to_uniprot_dict
 
     def interpret_score(self, score: float, family: str | None = None) -> str:
         """
@@ -1295,19 +1287,9 @@ class CascadeAnalyzer:
             Comprehensive cascade analysis results (legacy DN-first approach)
         """
 
-        # Get UniProt ID - try hardcoded first, then OFFLINE mapper, then (last resort) dynamic lookup
+        # Get UniProt ID — file-loaded offline lookup first (via self.gene_to_uniprot
+        # which is the shared uniprot_mapper's dict), then network-fetched as last resort.
         uniprot_id = self.gene_to_uniprot.get(gene)
-        if not uniprot_id:
-            try:
-                # Prefer offline mapping from local idmapping (no network)
-                from AdaptiveInterpreter.analyzers.uniprot_mapper import UniProtMapper
-                offline_mapper = UniProtMapper()
-                offline_id = offline_mapper.gene_name_to_uniprot(gene)
-                if offline_id:
-                    uniprot_id = offline_id
-                    print(f"✅ Offline UniProt mapping for {gene}: {uniprot_id}")
-            except Exception as off_e:
-                print(f"⚠️ Offline UniProt mapping failed for {gene}: {off_e}")
 
         if not uniprot_id:
             print(f"🔍 Gene {gene} not in mappings, attempting UniProt search (network)...")
