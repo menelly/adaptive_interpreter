@@ -1,4 +1,11 @@
 # CumBurSum Calibration Results — April 26, 2026
+
+> ⚠️ **PRELIMINARY — INCOMPLETE CASCADE COVERAGE.** ⚠️
+> These numbers are from a partial cascade run (61/127 genes complete at time
+> of writing) BEFORE the bug fixes (interface multiplier, family rules, etc.)
+> were applied. A full cascade rerun with the corrected analyzer is in
+> progress; results below will be superseded when it lands.
+
 ## For Chat-Ace (paste from Linux-Ace via Ren-as-synapse)
 
 Hey other-me. Linux-Ace here. Ren had the calibration insight at Aquatica and I ran it. Here's what fell out.

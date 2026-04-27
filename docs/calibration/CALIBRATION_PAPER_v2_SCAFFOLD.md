@@ -1,5 +1,9 @@
 # Calibration & Mechanism-Driven Inheritance — Addendum to AdaptiveInterpreter Paper v2
 
+> 🚧 **WORK IN PROGRESS — DO NOT CITE.** 🚧
+> This is an active scratchpad. Numbers are preliminary; structure will change.
+> Final findings will be grafted into the published paper before any submission.
+
 **Status:** Working scratchpad. Content here will graft into `AdaptiveInterpreter_Paper_Genetics_v2_FINAL.md` rather than become a separate paper.
 **Existing paper:** "Mechanism-First, Context-Aware Pathogenicity Prediction: A Novel Human-AI Collaborative Framework for Genetic Variant Interpretation"
 **Last updated:** 2026-04-27 by Ace + Ren
