@@ -155,6 +155,80 @@ def classify_gene_family(gene_symbol: str, uniprot_function: str, go_terms: List
     if override_family:
         logging.info(f"🔧 Manual override: {gene_symbol} → {override_family} (geneticist specified)")
         return override_family.upper()
+
+    # 🛡️ CURATED OVERRIDES — for genes the keyword classifier consistently misclassifies.
+    # Added 2026-04-27 (mechanism-refactor branch) after diagnosing that:
+    #   ATP7A/ATP7B were getting METABOLIC_ENZYME (catalytic-keyword overlap) instead of TRANSPORTER
+    #   MYH9 was getting CYTOSKELETON_POLYMER via 'actin' keyword instead of MOTOR_PROTEIN
+    #   GAA was getting ELASTIN via priority-tie-breaking instead of METABOLIC_ENZYME
+    #   CDH23/CDH1 were getting ION_CHANNEL via legacy GO-term fallback instead of SCAFFOLD_ADAPTOR
+    # The keyword classifier and priority order need broader review, but for these
+    # well-characterized genes, hardcoding the right answer is cleaner than tuning weights.
+    CURATED_OVERRIDES = {
+        # Transporters / channels (P-type ATPases, solute carriers)
+        'ATP7A': 'TRANSPORTER',     # Menkes — copper transporter, NOT metabolic enzyme
+        'ATP7B': 'TRANSPORTER',     # Wilson — copper transporter
+        'SLC2A1': 'TRANSPORTER',    # GLUT1 — glucose transporter
+        'CFTR':   'ION_CHANNEL',    # CFTR is genuinely a chloride channel
+        # Motor proteins
+        'MYH7':   'MOTOR_PROTEIN',  # cardiac myosin
+        'MYH9':   'MOTOR_PROTEIN',  # non-muscle myosin IIA
+        'MYO7A':  'MOTOR_PROTEIN',  # Usher 1B — unconventional myosin
+        'MYO5B':  'MOTOR_PROTEIN',
+        # Scaffold/adapter proteins (cadherins, catenins, junction proteins)
+        'CDH1':   'SCAFFOLD_ADAPTOR',  # E-cadherin — cell adhesion
+        'CDH23':  'SCAFFOLD_ADAPTOR',  # Usher 1D — cadherin (NOT ion channel)
+        'CTNNB1': 'SCAFFOLD_ADAPTOR',  # β-catenin
+        'CTNNA1': 'SCAFFOLD_ADAPTOR',  # α-catenin
+        # Metabolic enzymes (lysosomal, mitochondrial, cytosolic)
+        'GAA':    'METABOLIC_ENZYME',  # Pompe — alpha-glucosidase (NOT elastin)
+        'HEXA':   'METABOLIC_ENZYME',  # Tay-Sachs — beta-hexosaminidase
+        'GBA':    'METABOLIC_ENZYME',  # Gaucher — glucocerebrosidase
+        'GALC':   'METABOLIC_ENZYME',  # Krabbe
+        'PMM2':   'METABOLIC_ENZYME',  # CDG-Ia
+        'MUT':    'METABOLIC_ENZYME',  # methylmalonic acidemia
+        'POLG':   'METABOLIC_ENZYME',  # mitochondrial DNA polymerase
+        'PAH':    'METABOLIC_ENZYME',  # PKU — phenylalanine hydroxylase
+        'DLD':    'METABOLIC_ENZYME',  # dihydrolipoamide dehydrogenase
+        'PYGL':   'METABOLIC_ENZYME',  # glycogen phosphorylase
+        'ATP5F1A': 'METABOLIC_ENZYME', # mito ATP synthase alpha
+        'PDE6B':  'METABOLIC_ENZYME',  # phosphodiesterase
+        # Tumor suppressors (LOF haploinsufficient)
+        'BRCA1':  'TUMOR_SUPPRESSOR',
+        'BRCA2':  'TUMOR_SUPPRESSOR',
+        'TP53':   'TUMOR_SUPPRESSOR',
+        'RB1':    'TUMOR_SUPPRESSOR',
+        'PTEN':   'TUMOR_SUPPRESSOR',
+        'NF1':    'TUMOR_SUPPRESSOR',
+        'NF2':    'TUMOR_SUPPRESSOR',
+        'TSC1':   'TUMOR_SUPPRESSOR',
+        'TSC2':   'TUMOR_SUPPRESSOR',
+        'VHL':    'TUMOR_SUPPRESSOR',
+        'APC':    'TUMOR_SUPPRESSOR',
+        'CDKN2A': 'TUMOR_SUPPRESSOR',
+        'STK11':  'TUMOR_SUPPRESSOR',
+        # Mismatch repair (DNA_REPAIR family — currently has no JSON keywords; using TUMOR_SUPPRESSOR)
+        # When DNA_REPAIR keywords get added to category_keywords.json, swap these.
+        'MSH2':   'TUMOR_SUPPRESSOR',
+        'MSH6':   'TUMOR_SUPPRESSOR',
+        'MLH1':   'TUMOR_SUPPRESSOR',
+        'MLH3':   'TUMOR_SUPPRESSOR',
+        'PMS2':   'TUMOR_SUPPRESSOR',
+        'MUTYH':  'TUMOR_SUPPRESSOR',
+        # RAS pathway / RASopathies (MAPK signaling)
+        'PTPN11': 'RTK_MAPK',
+        'KRAS':   'RTK_MAPK',
+        'NRAS':   'RTK_MAPK',
+        'HRAS':   'RTK_MAPK',
+        'BRAF':   'RTK_MAPK',
+        'PIK3CA': 'ONCOGENE',
+        # Ion channels — let weighted classifier handle most;
+        # only override if it's clearly being misclassified
+    }
+    if gene_symbol in CURATED_OVERRIDES:
+        chosen = CURATED_OVERRIDES[gene_symbol]
+        logging.info(f"🛡️ Curated override: {gene_symbol} → {chosen}")
+        return chosen
     terms = [t.lower() for t in go_terms]
     function_lower = uniprot_function.lower()
 

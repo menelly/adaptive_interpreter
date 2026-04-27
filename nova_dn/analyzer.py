@@ -246,7 +246,16 @@ class NovaDNAnalyzer:
                     mech_scores[mechanism] = min(original_score * domain_multiplier, 1.0)
                     print(f"   {mechanism}: {original_score:.3f} → {mech_scores[mechanism]:.3f}")
 
-        top_mech = max(mech_scores.items(), key=lambda kv: kv[1])[0]
+        # 🔄 ACTIVE SITE JAMMING REROUTE (2026-04-27, mechanism-refactor branch):
+        # Exclude active_site_jamming from DN's top_mech selection — disrupting
+        # a catalytic active site is a LOF mechanism (the enzyme stops working),
+        # not a DN mechanism (DN requires the bad protein to ALSO interfere with
+        # the WT protein). Catalytic-site disruption was inflating DN scores for
+        # genes that are clinically pure LOF (CAPN3, HEXA, ATP7A/B, GAA, NF2,
+        # BRCA1, MSH6 all had DN means > LOF means for pathogenics).
+        # Score is preserved in mech_scores for downstream LOF use.
+        dn_relevant = {k: v for k, v in mech_scores.items() if k != 'active_site_jamming'}
+        top_mech = max(dn_relevant.items(), key=lambda kv: kv[1])[0]
         explanation = all_explanations[top_mech]
 
         # Collect contributing features from relevant mechanisms only
