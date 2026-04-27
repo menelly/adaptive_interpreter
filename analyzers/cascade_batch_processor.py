@@ -24,9 +24,24 @@ from AdaptiveInterpreter.nova_dn.mixed_mechanism_resolver import UnifiedMechanis
 from AdaptiveInterpreter.utils.genomic_to_protein import GenomicToProteinConverter
 from AdaptiveInterpreter import config
 
+_CHROM_OK_RE = re.compile(r"^(chr)?(\d+|[XYxy]|[Mm][Tt]?)$")
+
+
+def _is_real_chrom(chr_val: str) -> bool:
+    """True iff chr_val looks like a real chromosome identifier.
+
+    Accepts 'chr7', '7', 'chrX', 'X', 'chrMT', 'MT' etc. Rejects the
+    Franklin metadata-footer junk values ('scv', 'Taya', 'High, Medium,
+    Low', blank, etc.).
+    """
+    return bool(_CHROM_OK_RE.match((chr_val or "").strip()))
+
+
 class CascadeBatchProcessor:
     def __init__(self, alphafold_path: str = "/mnt/Arcana/alphafold_human/structures/",
-                 override_family: str = None, conservative_mode: bool = False):
+                 override_family: str = None, conservative_mode: bool = False,
+                 ignore_quality_floor: bool = False):
+        self.ignore_quality_floor = ignore_quality_floor
         self.cascade_analyzer = CascadeAnalyzer(alphafold_path, override_family, conservative_mode)
         self.csv_processor = CSVBatchProcessor(alphafold_path)
         self.unified_resolver = UnifiedMechanismResolver()
@@ -82,12 +97,37 @@ class CascadeBatchProcessor:
         print("\n🔧 PREP STEP: Scanning input for unique genes...")
         genes = set()
         try:
+            # Auto-detect CSV/TSV and the column name housing the gene symbol.
+            # Discovery/Ren formats use 'gene'; Franklin uses 'Gene' (and the
+            # file may be CSV).
             with open(input_path, 'r') as f:
-                reader = csv.DictReader(f, delimiter='\t')
+                first_line = f.readline()
+            delim = '\t' if '\t' in first_line else ','
+            with open(input_path, 'r') as f:
+                reader = csv.DictReader(f, delimiter=delim)
+                fieldnames = reader.fieldnames or []
+                gene_col = 'gene' if 'gene' in fieldnames else ('Gene' if 'Gene' in fieldnames else None)
+                if gene_col is None:
+                    return genes
                 for row in reader:
-                    gene = row.get('gene', '').strip()
-                    if gene:
-                        genes.add(gene)
+                    gene = (row.get(gene_col) or '').strip()
+                    if not gene:
+                        continue
+                    # Skip mtDNA — unreliable in WGS due to reference drift.
+                    if gene.startswith('MT-'):
+                        continue
+                    # Skip Franklin's metadata footer rows where 'Chr' is blank
+                    # or not a real chromosome (e.g. "scv" on a "Filter logic"
+                    # row, or "Taya" on an "Analysis Name" row), and mtDNA
+                    # by chromosome. Accept both 'chr7' (Dante-source Franklin)
+                    # and '7' (Nebula-source Franklin) styles.
+                    chr_val = (row.get('Chr') or '').strip()
+                    if 'Chr' in fieldnames:
+                        if not _is_real_chrom(chr_val):
+                            continue
+                        if chr_val.lower() in ('chrm', 'chrmt', 'm', 'mt'):
+                            continue
+                    genes.add(gene)
         except Exception as e:
             print(f"⚠️ Could not scan input for genes: {e}")
             return genes
@@ -148,18 +188,32 @@ class CascadeBatchProcessor:
         self.prepare_genes(input_path)
 
         try:
+            # Auto-detect CSV vs TSV — Franklin exports either. Sniff from first line.
             with open(input_path, 'r') as f:
-                reader = csv.DictReader(f, delimiter='\t')
+                first_line = f.readline()
+            delim = '\t' if '\t' in first_line else ','
+            with open(input_path, 'r') as f:
+                reader = csv.DictReader(f, delimiter=delim)
                 fieldnames = reader.fieldnames or []
                 is_discovery_format = 'hgvs_g' in fieldnames and 'hgvs_p' in fieldnames
                 is_ren_format = 'Chrpos' in fieldnames and 'AA Chg' in fieldnames
+                is_franklin_format = 'AA Change' in fieldnames and 'Effect' in fieldnames
 
                 for row in reader:
                     stats['total_variants'] += 1
                     try:
-                        parsed_info = self.parse_variant_row(row, is_discovery_format, is_ren_format, freq_threshold)
+                        parsed_info = self.parse_variant_row(row, is_discovery_format, is_ren_format, freq_threshold, is_franklin_format)
                         if parsed_info.get('skipped'):
-                            stats[parsed_info['skip_reason']] += 1
+                            reason = parsed_info['skip_reason']
+                            stats[reason] = stats.get(reason, 0) + 1
+                            continue
+                        # Universal mtDNA skip — mtDNA alignment in WGS is
+                        # unreliable (aligned to a separate reference in most
+                        # pipelines). Filter regardless of input format.
+                        parsed_gene = (parsed_info.get('gene') or '')
+                        parsed_chrom = (parsed_info.get('chrom') or '').lower()
+                        if parsed_gene.startswith('MT-') or parsed_chrom in ('chrm', 'chrmt', 'm', 'mt'):
+                            stats['skipped_mtdna'] = stats.get('skipped_mtdna', 0) + 1
                             continue
 
                         gene = parsed_info['gene']
@@ -195,6 +249,8 @@ class CascadeBatchProcessor:
                             result['molecular_consequence'] = parsed_info.get('molecular_consequence','')
                             result['rcv'] = parsed_info.get('rcv','')
                             result['variation_id'] = parsed_info.get('variation_id','')
+                            result['zygosity'] = parsed_info.get('zygosity','')
+                            result['confidence'] = parsed_info.get('confidence','')
                             results.append(result)
                             stats['processed'] += 1
                             continue
@@ -218,6 +274,8 @@ class CascadeBatchProcessor:
                         result['molecular_consequence'] = parsed_info.get('molecular_consequence','')
                         result['rcv'] = parsed_info.get('rcv','')
                         result['variation_id'] = parsed_info.get('variation_id','')
+                        result['zygosity'] = parsed_info.get('zygosity','')
+                        result['confidence'] = parsed_info.get('confidence','')
                         results.append(result)
                         stats['processed'] += 1
                     except Exception as e:
@@ -230,12 +288,151 @@ class CascadeBatchProcessor:
         self.finalize_processing(results, output_path, stats)
         return {'stats': stats, 'results_file': output_path}
 
-    def parse_variant_row(self, row, is_discovery, is_ren, freq_threshold):
+    def parse_variant_row(self, row, is_discovery, is_ren, freq_threshold, is_franklin=False):
+        if is_franklin:
+            return self.parse_franklin_format(row)
         if is_discovery:
             return self.parse_discovery_format(row)
         if is_ren:
             return self.parse_ren_format(row)
         return {'skipped': True, 'skip_reason': 'skipped_unparseable'}
+
+    def parse_franklin_format(self, row):
+        """Parse Franklin/Genoox CSV/TSV export row (missense-only).
+
+        Franklin exports both missense and non-missense in the same file.
+        This parser scores ONLY missense — non-missense consequences
+        (frameshift, stop-gain, splice, etc.) are handled downstream by
+        cumbursum.franklin_adapter via consequence-override, which doesn't
+        need AI scoring. The same source file can be fed to both paths.
+
+        Key columns:
+            Gene, Chr, Start Position, Ref, Alt, Transcript, AA Change,
+            Effect, Zygosity, gnomAD (Exome), gnomAD (Genome),
+            Aggregated Frequency, Genoox Classification, ClinVar Classification
+        """
+        gene = (row.get('Gene') or '').strip()
+        effect = (row.get('Effect') or '').strip()
+        aa_change = (row.get('AA Change') or '').strip()
+        chr_val = (row.get('Chr') or '').strip()
+
+        # Franklin appends a metadata footer (Analysis Name, User email, Date
+        # of Export, ...) where Chr is not a real chromosome. Accept both
+        # 'chr7' (Dante-source) and '7' (Nebula-source) styles; reject
+        # everything that isn't clearly a chromosome identifier.
+        if not _is_real_chrom(chr_val):
+            return {'skipped': True, 'skip_reason': 'skipped_metadata_footer'}
+
+        # Skip mtDNA — WGS pipelines (Dante et al) usually align mtDNA to a
+        # different reference than nuclear DNA, so mtDNA calls are riddled
+        # with alignment artifacts. Filter at both chr and gene-symbol level.
+        if chr_val.lower() in ('chrm', 'chrmt', 'm', 'mt') or gene.startswith('MT-'):
+            return {'skipped': True, 'skip_reason': 'skipped_mtdna'}
+
+        # Only missense goes through AI scoring.
+        # Franklin uses 'Missense' (Dante-source title case) OR 'NON_SYNONYMOUS'
+        # (Nebula-source upper_snake) — both mean 'missense variant'.
+        eff_norm = effect.lower().replace('_', ' ').strip()
+        if eff_norm not in ('missense', 'non synonymous'):
+            return {'skipped': True, 'skip_reason': 'skipped_non_missense'}
+
+        if not gene or not aa_change:
+            return {'skipped': True, 'skip_reason': 'skipped_unparseable'}
+
+        # --- Prepass filter ------------------------------------------------
+        # (a) Max population allele frequency > 10%. Floor is 10% not 5% to
+        #     keep pathogenic-but-common variants like AMPD1 Q12* (8% AF,
+        #     frequently tolerated in homs) and similar AR-tolerated alleles.
+        # (b) Technical QUAL < 20 — below GATK's standard reliability floor.
+        # Note: `Internal Sample Count` is NOT used — in Franklin it counts
+        # the uploading user's own samples (family), so high values are an
+        # inheritance signal, opposite of a benign signal.
+        def _f(s):
+            s = (s or '').strip()
+            if not s or s.upper() in ('N/A', 'NA', 'NONE'):
+                return 0.0
+            try:
+                return float(s)
+            except ValueError:
+                return 0.0
+
+        freq_cols = ('gnomAD (Exome)', 'gnomAD (Genome)', 'ExAC (All)',
+                     '1000 genomes', 'ESP 6500', 'UK10K TwinsUK',
+                     'UK10K ALSPAC', 'Aggregated Frequency')
+        max_pop_af = max((_f(row.get(c)) for c in freq_cols), default=0.0)
+        if max_pop_af > 0.10:
+            return {'skipped': True, 'skip_reason': 'skipped_common'}
+
+        qual = _f(row.get('Quality'))
+        if 0 < qual < 20 and not self.ignore_quality_floor:
+            return {'skipped': True, 'skip_reason': 'skipped_low_quality'}
+        # -------------------------------------------------------------------
+
+        # Genomic coords
+        pos = None
+        try:
+            pos_raw = (row.get('Start Position') or '').strip()
+            pos = int(pos_raw) if pos_raw else None
+        except ValueError:
+            pos = None
+        ref = (row.get('Ref') or '').strip()
+        alt = (row.get('Alt') or '').strip()
+        chrom = chr_val  # 'chr1', 'chrX', ...
+
+        # Build a synthetic genomic HGVS (good enough for downstream regex parser)
+        hgvs_g = None
+        if pos and ref and alt and len(ref) == 1 and len(alt) == 1 and set(ref + alt) <= set("ACGT"):
+            cn_raw = chrom.lower().replace('chr', '')
+            cn_map = {'x': 23, 'y': 24, 'm': 25, 'mt': 25}
+            cn = None
+            if cn_raw.isdigit():
+                cn = int(cn_raw)
+            elif cn_raw in cn_map:
+                cn = cn_map[cn_raw]
+            if cn is not None:
+                hgvs_g = f"NC_{cn:06d}.11:g.{pos}{ref}>{alt}"
+
+        # gnomAD freq — prefer exome > genome > aggregated
+        gnomad_freq = 0.0
+        for col in ['gnomAD (Exome)', 'gnomAD (Genome)', 'Aggregated Frequency']:
+            val = (row.get(col) or '').strip()
+            if val and val.upper() not in ('N/A', 'NA', ''):
+                try:
+                    gnomad_freq = float(val)
+                    break
+                except ValueError:
+                    continue
+
+        # Conservation (if available)
+        conservation_score = None
+        if self.conservation_fetcher and pos:
+            conservation_score = self.conservation_fetcher.get_conservation_score(chrom, pos)
+            if conservation_score is not None:
+                print(f"✅ Conservation score for {gene} {aa_change} ({chrom}:{pos}): {conservation_score:.4f}")
+
+        return {
+            'gene': gene,
+            'variant': aa_change,
+            'hgvs': hgvs_g or aa_change,
+            'hgvs_g': hgvs_g,
+            'chrom': chrom,
+            'pos': pos,
+            'ref': ref if len(ref) == 1 else None,
+            'alt': alt if len(alt) == 1 else None,
+            'gnomad_freq': gnomad_freq,
+            'clinical_sig': (row.get('Genoox Classification') or '').strip()[:80],
+            'clinvar_sig': (row.get('ClinVar Classification') or '').strip()[:80],
+            'rsid': (row.get('dbSNP') or '').strip(),
+            'variant_type': 'missense',
+            'review_status': '',
+            'molecular_consequence': effect,
+            'conservation_score': conservation_score,
+            # Franklin-native context so downstream consumers (cumbursum
+            # adapter) can apply zygosity weighting and low-confidence
+            # hom downgrades without re-reading the Franklin CSV.
+            'zygosity': (row.get('Zygosity') or '').strip(),
+            'confidence': (row.get('Confidence') or '').strip(),
+        }
 
     def parse_ren_format(self, row):
         """Parse GeneCards/Ren TSV format with Variation Name and AA Chg columns"""
@@ -316,10 +513,11 @@ class CascadeBatchProcessor:
         # Use protein HGVS when available and informative; otherwise fall back to genomic string for reporting
         variant = (variant_p if (variant_p and not protein_uninformative) else hgvs_g)
 
-        # 🚨 EARLY SKIP: If we don't have protein HGVS and only have genomic, skip it NOW
-        # This prevents wasting time on conversion attempts for non-coding variants
-        if not variant_p or protein_uninformative:
-            # No protein HGVS available - likely intronic/UTR, skip it
+        # 🚨 EARLY SKIP: skip ONLY if we have neither a usable protein HGVS
+        # NOR a genomic HGVS. When hgvs_g is present (e.g. VCF-derived input
+        # via vcf_to_discovery.py), the downstream genomic→protein converter
+        # will try to resolve hgvs_p — don't short-circuit before that runs.
+        if (not variant_p or protein_uninformative) and not hgvs_g:
             return {
                 'skipped': True,
                 'skip_reason': 'skipped_no_protein_consequence'
@@ -495,7 +693,12 @@ class CascadeBatchProcessor:
         self.frequency_fetcher.save_cache()
 
     def write_results_tsv(self, results: List[Dict], output_path: str):
-        if not results: return
+        if not results:
+            # Write header-only file so downstream consumers don't fail
+            # on "file not found" when every row happened to be skipped.
+            Path(output_path).write_text("gene\tvariant\tstatus\n", encoding="utf-8")
+            print(f"⚠️  No rows scored — wrote header-only file: {output_path}")
+            return
 
         def map_clinvar_bucket(sig: str) -> str:
             if not sig: return 'NA'
@@ -560,6 +763,8 @@ class CascadeBatchProcessor:
             # ClinVar context
             'clinical_sig', 'review_status', 'molecular_consequence', 'rcv', 'variation_id',
             'clinvar_bucket',
+            # Franklin-native context (downstream cumbursum adapter needs these)
+            'zygosity', 'confidence',
             # Track 1: RAW MECHANISM (what the molecular analysis actually found)
             'raw_dn', 'raw_lof', 'raw_gof',
             'raw_score', 'raw_classification', 'raw_bucket', 'raw_vs_clinvar',
@@ -576,6 +781,8 @@ class CascadeBatchProcessor:
             'base_lof_score', 'stability_impact', 'structural_impact',
             'functional_impact', 'conservation_impact',
             'smart_multiplier', 'domain_multiplier', 'ml_proline_multiplier',
+            # Evidence-quality confidence (added 2026-04-27 — see CONFIDENCE_SCORE_DESIGN.md)
+            'evidence_confidence', 'evidence_confidence_factors',
             # Explanations
             'explanation', 'review_flags',
         ]
@@ -674,6 +881,9 @@ class CascadeBatchProcessor:
                     'smart_multiplier': lof_details.get('smart_multiplier', ''),
                     'domain_multiplier': lof_details.get('domain_multiplier', ''),
                     'ml_proline_multiplier': lof_details.get('ml_proline_multiplier', ''),
+                    # Evidence-quality confidence (computed in cascade_analyzer)
+                    'evidence_confidence': r.get('evidence_confidence', ''),
+                    'evidence_confidence_factors': r.get('evidence_confidence_factors', ''),
                     # Explanations
                     'explanation': r.get('explanation', ''),
                     'review_flags': r.get('review_flags', ''),
@@ -685,10 +895,14 @@ def main():
     parser = argparse.ArgumentParser(description="🌊 CASCADE BATCH PROCESSOR")
     parser.add_argument('--input', required=True, help='Input CSV/TSV file path')
     parser.add_argument('--output', required=True, help='Output TSV file path')
+    parser.add_argument('--ignore-quality-floor', action='store_true',
+                        help='Keep variants with Quality < 20 (normally dropped as likely sequencing '
+                             'noise). Use for research paths that downweight rather than drop Low-conf '
+                             'variants (e.g. BSZ v2 option-D weighting). Default off — status quo.')
     args = parser.parse_args()
     output_dir = os.path.dirname(args.output)
     if output_dir: os.makedirs(output_dir, exist_ok=True)
-    processor = CascadeBatchProcessor()
+    processor = CascadeBatchProcessor(ignore_quality_floor=args.ignore_quality_floor)
     processor.process_csv(args.input, args.output)
 
 if __name__ == "__main__":

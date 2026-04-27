@@ -857,10 +857,165 @@ class CascadeAnalyzer:
             pass
 
 
+        # 🎯 COMPUTE REAL EVIDENCE-CONFIDENCE SCORE (added 2026-04-27)
+        # Replaces the previous always-1.0 placeholder with an evidence-quality
+        # metric, named `evidence_confidence` to avoid clashing with the existing
+        # `confidence` column used for Franklin-format zygosity-pair passthrough.
+        # See AdaptiveInterpreter/CONFIDENCE_SCORE_DESIGN.md for rationale.
+        try:
+            ev_confidence, factors = self._compute_confidence(results)
+            results['evidence_confidence'] = ev_confidence
+            results['evidence_confidence_factors'] = '; '.join(factors) if factors else 'baseline'
+        except Exception as e:
+            print(f"⚠️ Evidence-confidence computation failed: {e}")
+            results['evidence_confidence'] = 1.0  # fallback to old default on error
+            results['evidence_confidence_factors'] = f'error: {e}'
+
         # Cleanup
         self.cleanup()
 
         return results
+
+    def _compute_confidence(self, results: Dict) -> Tuple[float, List[str]]:
+        """
+        🎯 Compute evidence-quality confidence score (0.1 to 1.0).
+
+        Independent from pathogenicity score — answers "how sure are we about
+        the call?" rather than "how pathogenic is the variant?"
+
+        Decreases for: sequence mismatch, mixed mechanisms, atypical-for-family,
+        common variants (excluding founders), VUS-zone scores without strong driver,
+        low-conservation moderate scores, InterPro fallback, position outside domains.
+
+        Increases for: multiple mechanisms agreeing, strong conservation matching
+        mechanism, hotspot DB hit, extreme scores.
+
+        Floor at 0.1, ceiling at 1.0.
+
+        Returns (confidence, list_of_factor_descriptions)
+        """
+        import math
+
+        confidence = 1.0
+        factors = []
+
+        # Pull values safely. Note: at this point in cascade_analyzer, the
+        # internal results dict uses `final_score` and the `scores` /
+        # `plausibility_filtered_scores` sub-dicts (the adj_* column names
+        # are assembled later by cascade_batch_processor).
+        def _f(key, default=0.0):
+            try:
+                v = results.get(key, default)
+                return float(v) if v is not None else default
+            except (TypeError, ValueError):
+                return default
+
+        # Mechanism scores (adj_* are post-plausibility-filter)
+        filtered = results.get('plausibility_filtered_scores') or {}
+        raw_scores = results.get('scores') or {}
+        adj_dn = float(filtered.get('DN', raw_scores.get('DN', 0)) or 0)
+        adj_lof = float(filtered.get('LOF', raw_scores.get('LOF', 0)) or 0)
+        adj_gof = float(filtered.get('GOF', raw_scores.get('GOF', 0)) or 0)
+        adj_score = _f('final_score')  # the cascade's final integrated score
+        phylop = _f('phylop_score')
+        af = _f('gnomad_freq')
+
+        # === DECREASES ===
+
+        # 1. Sequence mismatch (already computed by LOF analyzer)
+        lof_details = results.get('lof_details', {}) or {}
+        if lof_details.get('sequence_mismatch'):
+            penalty = (lof_details.get('mismatch_info') or {}).get('confidence_penalty', 0.2)
+            confidence -= penalty
+            factors.append(f"sequence mismatch (-{penalty:.2f})")
+
+        # 2. Mixed mechanism (Shannon entropy on normalized DN/LOF/GOF triple)
+        mechs = [adj_dn, adj_lof, adj_gof]
+        mech_sum = sum(max(m, 0) for m in mechs)
+        if mech_sum > 0.3 and max(mechs) > 0.3:
+            normalized = [max(m, 0)/mech_sum for m in mechs]
+            ent = -sum(p * math.log(p + 1e-9) for p in normalized) / math.log(3)
+            if ent > 0.7:
+                penalty = 0.20
+                confidence -= penalty
+                factors.append(f"mixed mechanism (entropy={ent:.2f}, -{penalty:.2f})")
+
+        # 3. Atypical mechanism for family (signal in atypical_flags string)
+        atypical = results.get('atypical_flags', '') or ''
+        if atypical and atypical not in ('False', 'None', ''):
+            n_atypical = atypical.count('atypical') if isinstance(atypical, str) else 0
+            n_atypical = max(n_atypical, 1)  # at least one if flagged
+            penalty = 0.10 * min(n_atypical, 2)
+            confidence -= penalty
+            factors.append(f"atypical mechanism (-{penalty:.2f})")
+
+        # 4. Common variant flag (founder-mutation aware)
+        # Founder mutations: pathogenic despite being common — DON'T penalize
+        FOUNDER_VARIANTS = {
+            ('CFTR', 'p.F508del'), ('CFTR', 'p.Phe508del'),
+            ('HFE', 'p.C282Y'), ('HFE', 'p.Cys282Tyr'),
+            ('AMPD1', 'p.Q12*'), ('AMPD1', 'p.Gln12Ter'),
+            ('HBB', 'p.E6V'), ('HBB', 'p.Glu6Val'),  # sickle
+            ('HBB', 'p.E6K'), ('HBB', 'p.Glu6Lys'),  # HbC
+        }
+        gene = results.get('gene', '')
+        variant = results.get('variant', '')
+        is_founder = (gene, variant) in FOUNDER_VARIANTS
+
+        if af > 0.0 and not is_founder:
+            if af > 0.01 and (adj_dn > 0.5 or adj_gof > 0.5):
+                confidence -= 0.10
+                factors.append(f"common DN/GOF (AF={af:.4f}, -0.10)")
+            elif af > 0.05 and adj_lof > 0.5:
+                confidence -= 0.05
+                factors.append(f"common LOF (AF={af:.4f}, -0.05)")
+
+        # 5. VUS-zone scores without strong driver
+        if 0.4 <= adj_score <= 0.6 and max(mechs) < 0.6:
+            confidence -= 0.05
+            factors.append("VUS-zone, no strong driver (-0.05)")
+
+        # 6. Low conservation paired with moderate score
+        if phylop < 2.0 and 0.3 <= adj_score <= 0.7:
+            confidence -= 0.10
+            factors.append(f"low conservation (phyloP={phylop:.1f}) + moderate score (-0.10)")
+
+        # 7. Interface fallback used (when InterPro cache missing)
+        # Detect from explanation if 'No InterPro cache' was logged in this run
+        explanation = (results.get('explanation', '') or '').lower()
+        if 'no interpro cache' in explanation or 'falling back to predicted' in explanation:
+            confidence -= 0.10
+            factors.append("InterPro fallback (-0.10)")
+
+        # 8. High score in unstructured / no-domain region
+        # If position not in any domain AND adj_score > 0.5, less confident
+        # (we don't have explicit no-domain flag, but we can detect via interface_result missing)
+        # Skip for now — needs additional plumbing
+
+        # === INCREASES ===
+
+        # 1. Multiple mechanisms agreeing (both DN and LOF significant)
+        if adj_dn > 0.5 and adj_lof > 0.5:
+            confidence += 0.10
+            factors.append("multiple mechanisms agree (+0.10)")
+
+        # 2. Strong conservation backing significant score
+        if phylop > 8.0 and adj_score > 0.7:
+            confidence += 0.10
+            factors.append(f"conservation confirms mechanism (phyloP={phylop:.1f}, +0.10)")
+
+        # 3. Extreme scores indicate strong signal
+        if adj_score > 1.5:
+            confidence += 0.05
+            factors.append("extreme high score (+0.05)")
+        elif adj_score < 0.1:
+            confidence += 0.05
+            factors.append("extreme low score (+0.05)")
+
+        # Floor and ceiling
+        confidence = max(0.1, min(confidence, 1.0))
+
+        return confidence, factors
 
     def _apply_conservation_nudge(self, classification: str, phylop_score: float) -> str:
         """

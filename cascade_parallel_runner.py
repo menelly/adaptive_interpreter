@@ -47,7 +47,7 @@ def run_single_gene(gene: str, input_file: str, output_file: str) -> tuple:
     try:
         proc = subprocess.run(
             cmd, cwd=str(ROOT), env=env,
-            timeout=1800,  # 30 min per gene
+            timeout=7200,  # 2 hours per gene (big ones like BRCA2/MSH2/RYR1/CFTR need it)
         )
         elapsed = time.time() - start
 
