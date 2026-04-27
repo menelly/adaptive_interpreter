@@ -152,39 +152,49 @@ class UniversalProteinAnnotator:
         if not start:
             return
             
-        # Map UniProt feature types to our categories
-        if feature_type == "DOMAIN":
+        # Map UniProt feature types to our categories.
+        # 🐛 BUGFIX 2026-04-27 (mechanism-refactor branch):
+        # Old code expected legacy XML codes ("ACT_SITE", "BINDING", "TRANSMEM",
+        # "SIGNAL", "COILED", "DISULFID", "CARBOHYD", "MOD_RES") but the modern
+        # UniProt REST/JSON API returns spelled-out type strings ("Active site",
+        # "Binding site", etc.). 0% of cached annotations had active or binding
+        # sites populated as a result. Updated to the modern strings so the
+        # functional_disruption scorer (mechanism refactor) actually has data
+        # to work with.
+        if feature_type == "Domain":
             features["domains"].append({
                 "start": start, "end": end or start,
                 "type": "domain", "description": description
             })
-        elif feature_type == "ACT_SITE":
+        elif feature_type == "Active site":
             features["active_sites"].append(start)
-        elif feature_type == "BINDING":
+        elif feature_type == "Binding site":
             features["binding_sites"].append({
                 "position": start, "description": description
             })
-        elif feature_type == "TRANSMEM":
+        elif feature_type == "Transmembrane":
             features["transmembrane"].append({
                 "start": start, "end": end or start
             })
-        elif feature_type == "SIGNAL":
+        elif feature_type == "Signal":
             features["signal_peptide"].append({
                 "start": start, "end": end or start
             })
-        elif feature_type == "COILED":
+        elif feature_type == "Coiled coil":
             features["coiled_coil"].append({
                 "start": start, "end": end or start
             })
-        elif feature_type == "DISULFID":
-            # Parse disulfide bond positions
-            if ";" in description:
+        elif feature_type == "Disulfide bond":
+            # Disulfide bonds connect two positions: store both endpoints
+            if end and end != start:
+                features["disulfide_bonds"].append([int(start), int(end)])
+            elif ";" in description:
                 positions = re.findall(r'\d+', description)
                 if len(positions) >= 2:
                     features["disulfide_bonds"].append([int(positions[0]), int(positions[1])])
-        elif feature_type == "CARBOHYD":
+        elif feature_type == "Glycosylation":
             features["glycosylation"].append(start)
-        elif feature_type == "MOD_RES" and "phospho" in description.lower():
+        elif feature_type == "Modified residue" and "phospho" in description.lower():
             features["phosphorylation"].append(start)
         # 🎯 NEW! Parse the critical domain features we were missing
         elif feature_type == "Propeptide":  # Fixed case!
