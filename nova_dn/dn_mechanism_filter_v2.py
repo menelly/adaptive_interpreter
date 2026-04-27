@@ -23,25 +23,43 @@ class DNMechanismFilterV2:
         
         # Patterns that EXCLUDE specific mechanisms (biologically impossible)
         self.exclusion_patterns = {
-            # EXCLUDE interface poisoning for monomeric proteins
+            # EXCLUDE generic interface poisoning for monomeric proteins
+            # AND for ion channels / receptors / transporters — for these the
+            # channel-specific lattice_disruption analyzer handles structural
+            # disruption properly (pore loops, selectivity filter, voltage
+            # sensor, gating). Generic interface_poisoning was firing on every
+            # TM-domain edge and producing identical scores for benign and
+            # pathogenic channel variants (P/LP DN mean 0.588 vs B/LB DN mean
+            # 0.594 — uninformative). 2026-04-27 fix.
             'exclude_interface_poisoning': [
                 'monomeric enzyme', 'single subunit', 'monomeric protein',
-                'does not form complexes', 'functions as monomer'
+                'does not form complexes', 'functions as monomer',
+                # Channel/receptor/transporter: use channel-specific analyzer instead
+                'voltage-gated', 'ion channel', 'sodium channel', 'potassium channel',
+                'calcium channel', 'chloride channel', 'cation channel',
+                'g protein-coupled receptor', 'gpcr',
+                'solute carrier', 'p-type atpase'
             ],
-            
+
             # EXCLUDE active site jamming for non-catalytic proteins
             'exclude_active_site_jamming': [
                 'structural protein', 'extracellular matrix', 'collagen',
                 'no catalytic activity', 'non-enzymatic', 'scaffold protein',
                 'purely structural'
             ],
-            
-            # EXCLUDE lattice disruption for non-structural proteins
+
+            # EXCLUDE lattice disruption for non-structural proteins.
+            # Note: removed 'channel', 'receptor', 'transporter' from this list
+            # because lattice_disruption's universal_router dispatches to
+            # family-specific analyzers (ion_channel_analyzer.py etc.) — the
+            # channel-specific scoring uses pore loops, selectivity filter,
+            # voltage sensor, and gating mechanisms rather than generic
+            # structural lattice analysis. 2026-04-27 fix.
             'exclude_lattice_disruption': [
                 'enzyme', 'kinase', 'phosphatase', 'transferase', 'hydrolase',
                 'transcription factor', 'DNA binding', 'nuclear protein',
                 'cytoplasmic enzyme', 'metabolic enzyme', 'catalytic',
-                'channel', 'receptor', 'transporter', 'calcium-activated'
+                'calcium-activated'  # KEEP excluded: these are kinase-like, not channel-like
             ],
             
             # EXCLUDE trafficking for cytoplasmic/nuclear proteins
