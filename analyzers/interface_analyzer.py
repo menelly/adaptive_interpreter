@@ -340,18 +340,23 @@ class InterfaceAnalyzer:
         details['base_score'] = score
         
         # Distance penalty (closer to boundary = worse)
+        # BUGFIX 2026-04-26 (Ace): old formula `1.0 + (5 - distance) * 0.1` went
+        # NEGATIVE for distance > 15, silently zeroing out interface boosts for
+        # variants in long linker regions (e.g. POLG A467T in the 414→785 linker).
+        # New formula plateaus at 0.5x for far-from-boundary positions instead of
+        # going negative, so linker-region interface variants still get a boost.
         distance = interface_info.get('distance_from_boundary', 5)
-        distance_multiplier = 1.0 + (5 - distance) * 0.1  # 1.0 to 1.5x
+        distance_multiplier = max(0.5, 1.0 + (5 - distance) * 0.1)  # 0.5x to 1.5x
         score *= distance_multiplier
         details['distance_multiplier'] = distance_multiplier
-        
+
         # Amino acid property change
         aa_change_score = self._score_aa_property_change(ref_aa, alt_aa)
         score *= (1.0 + aa_change_score * 0.5)  # Up to 1.5x more
         details['aa_change_score'] = aa_change_score
-        
-        # Cap at 1.0
-        score = min(score, 1.0)
+
+        # Clamp to [0.0, 1.0] — defense-in-depth in case any factor goes negative
+        score = max(0.0, min(score, 1.0))
         
         return {
             'score': score,

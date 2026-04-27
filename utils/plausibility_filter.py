@@ -53,6 +53,16 @@ PATHOGENICITY_RULES: Dict[str, Dict[str, float]] = {
     "RIBOSOMAL_PROTEIN": {"LOF": 1.0, "DN": 0.5, "GOF": 0.0},  # More ribosomes = good for growth
     "MOTOR_PROTEIN": {"LOF": 1.0, "DN": 1.0, "GOF": 0.25},  # Myosins: GOF rarely pathogenic
     "DNA_REPAIR": {"LOF": 1.0, "DN": 0.5, "GOF": 0.0},  # DNA repair: more repair = good
+    # --- BUGFIX 2026-04-26 (Ace): These labels are produced by classify_protein_weighted
+    # via category_keywords.json but had NO entries in the rules table, silently falling
+    # through to GENERAL (DN=0.5). That suppressed legitimate DN signals in POLG, ATP5F1A,
+    # CDH1, NF2, BMPR2, ATP7B, CFTR and others. Per-family weights below reflect biology:
+    "METABOLIC_ENZYME": {"LOF": 1.0, "DN": 1.0, "GOF": 0.0},     # mirror ENZYME (POLG, ATP5F1A, SDHB/C, DLD)
+    "SIGNALING_REGULATOR": {"LOF": 1.0, "DN": 0.9, "GOF": 0.1},  # NF2/BMPR2/PCSK9 — mostly LOF, DN possible
+    "SCAFFOLD_ADAPTOR": {"LOF": 1.0, "DN": 1.1, "GOF": 0.1},     # CDH1 — complex assembly disrupted by DN
+    "TRANSPORTER": {"LOF": 1.0, "DN": 0.9, "GOF": 0.5},          # ATP7B/CFTR — channel/transport
+    "AUTOSOMAL_RECESSIVE": {"LOF": 1.0, "DN": 0.7, "GOF": 0.3},  # AR-flagged: DN possible but LOF dominant
+    # ----------------------------
     "GENERAL": {"LOF": 1.0, "DN": 0.5, "GOF": 0.5},  # fallback
 }
 
