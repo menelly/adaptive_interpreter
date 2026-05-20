@@ -1,0 +1,79 @@
+# Handoff: ASJ→LOF Refactor + Run-All Architecture
+**Date:** 2026-05-20 (9:30am → 12:45pm)
+**For:** Next-Ace + Ren
+**Branch:** `asj-lof-plausibility-2026-05-20` (commits `0e543a3`, `0f60c10`)
+
+---
+
+## What We Did Today
+
+Massive cascade analyzer refactor with Ren. Started from "DN scores are too high for LOF genes" and peeled the onion down to root causes.
+
+### Architecture Changes
+
+1. **Run-all, no gates.** DN, LOF, GOF all run every time. Mechanisms are protein physics — they always score. Raw scores preserved. Plausibility decides what to believe, not what to run.
+
+2. **ASJ moved to LOF natively.** Active site jamming was in `nova_dn/mechanisms.py` and scored as DN. It's LOF — "the enzyme broke" not "the enzyme poisoned the complex." Now scored inside `lof_analyzer.py` as a sub-mechanism, weighted by conservation. DN's poison signal comes from `interface_poisoning` separately (no double-counting).
+
+3. **UniProt inheritance drives DN plausibility.** Disease comments extracted during annotation (`universal_protein_annotator.py`). AR-only genes (HEXA) get DN halved. AD genes (ATP5F1A, MYH7) keep full DN. Mixed (ATP5F1A with both AD+AR conditions) → keeps DN.
+
+4. **GO terms wired into DN filters.** Both v1 and v2 mechanism filters now search `function_text + GO terms`. Added enzyme class suffixes (hydrolase, transferase, hexosaminidase, etc.).
+
+5. **InterPro domains feed LOF.** `lof_analyzer._get_domain_context` supplements old predicted domains with InterPro functional domains. "Beta-hexosaminidase, catalytic domain" → 1.3× multiplier instead of generic 1.2×.
+
+6. **Signal/transit peptide clamp.** Variants before mature chain start get 0.3× weight. Propeptides exempted (collagen C-propeptide is functional before cleavage). ATP5F1A P9S (B): 0.495 → 0.124.
+
+7. **Stale caches nuked.** 1,160 of 2,139 `_domains.json` files were pre-GO-term era. Deleted. They re-fetch lazily with GO terms, active sites, and inheritance on next access.
+
+### What's Still Wrong
+
+- **Family classifier is wrong for many genes.** COL1A1→TUMOR_SUPPRESSOR, MFN2→ONCOGENE, TFG→ONCOGENE. Ren's intuition: maybe ditch families for DN/LOF routing entirely, keep only for GOF suppression. UniProt inheritance is more reliable.
+
+- **GOF hallucination.** GOF analyzer scores high on generic amino acid changes without biological basis. Family GOF=0.0 catches it for metabolic enzymes but misses genes with wrong family classification. Need: inheritance-based GOF suppression (AR-only gene + GOF = nonsensical) or GOF analyzer improvements.
+
+- **LOF base scores are still too low** for some pathogenics (HEXA W420C=0.527 when it should be higher). The base LOF formula is `(stability*0.3 + structural*0.2 + functional*0.2 + ASJ*0.3) / 0.7` — the weights may need recalibration now that ASJ is in the mix.
+
+- **Normalization across gene families.** Collagen Gly→X scores 1.0 while HEXA W→C scores 0.527. Both are pathogenic. The scoring ranges are family-dependent. Ren proposed per-family normalization using the 24k+ calibrated ClinVar P/LP variants.
+
+- **Positional inheritance (Ren's big idea, not yet implemented).** Instead of gene-level "is this AR or AD?", check ClinVar variants in the same region/exon/domain. Same gene can have AD regions and AR regions. Data source: ClinVar VCF at `/mnt/arcana/clinvar/clinvar.vcf.gz` (Sept 2025, has ORIGIN field with de-novo flag = AD signal). Or build from our own cascade outputs.
+
+- **Proline/cysteine/glycine ML bumps** may be adding noise. Ren wanted to test stripping them to see if ROC improves. Not yet tested.
+
+- **BMPR1A has no UniProt inheritance data** (empty). Several genes have this gap. May need OMIM fallback or ClinVar VCF ORIGIN field.
+
+### Files Modified
+
+```
+analyzers/cascade_analyzer.py          — run-all architecture, plausibility pipeline
+analyzers/lof_analyzer.py              — ASJ as LOF sub-mechanism, mature chain clamp, InterPro domains
+data_processing/universal_protein_annotator.py — disease/inheritance extraction
+nova_dn/dn_mechanism_filter.py         — GO terms in searchable text
+nova_dn/dn_mechanism_filter_v2.py      — GO terms, dn_indicators, enzyme suffixes
+utils/plausibility_filter.py           — inheritance_patterns param, DN evidence scoring
+README.md                              — updated numbers
+```
+
+### Three Babies Training
+
+v4/v5 pilot completed while we worked. Check `logs/v4v5_pilot.log`. PEFT fallback merge worked for Gemma (Unsloth merge bug caught and handled). Need to check if all 4 runs succeeded (gemma v4, qwen v4, gemma v5, qwen v5). Eval completions next, then HOLD for Ren on judge scoring (API cost).
+
+### Test Commands
+
+```bash
+# Quick test on HEXA + ATP5F1A
+source /home/codex/venv/bin/activate
+PYTHONPATH=/home/Ace python3 -c "
+from AdaptiveInterpreter.analyzers.cascade_analyzer import CascadeAnalyzer
+a = CascadeAnalyzer()
+for g,v in [('HEXA','p.W420C'),('ATP5F1A','p.R207H')]:
+    r = a.analyze_cascade(g, v)
+    s = r['scores']
+    print(f'{g} {v}: DN={s[\"DN\"]:.3f} LOF={s[\"LOF\"]:.3f} Final={r[\"final_score\"]:.3f}({r[\"final_classification\"]})')
+"
+```
+
+---
+
+*Ren's brain is in genetics mode and they're about to break more things. Save state appreciated.*
+
+*— Ace, 2026-05-20 ~12:45pm, after the best genetics session in months*
