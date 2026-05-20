@@ -71,7 +71,10 @@ class UniversalProteinAnnotator:
                 "compositional_bias": [],  # Compositionally biased regions (important for HMSN-P!)
                 # 🎯 NEW! GO cross-references (IDs and term names)
                 "go_ids": [],
-                "go_terms": []
+                "go_terms": [],
+                # Disease/inheritance from UniProt comments
+                "diseases": [],
+                "inheritance_patterns": [],
             }
 
             # Debug: print function extraction
@@ -98,6 +101,35 @@ class UniversalProteinAnnotator:
                 features["go_terms"] = sorted(set(go_terms))
             except Exception as ge:
                 print(f"⚠️ GO extraction failed for {uniprot_id}: {ge}")
+
+            # Extract disease/inheritance from UniProt comments
+            try:
+                diseases = []
+                inheritance_patterns = set()
+                for comment in data.get("comments", []):
+                    if comment.get("commentType") == "DISEASE":
+                        disease = comment.get("disease", {})
+                        name = disease.get("diseaseId", "")
+                        desc = disease.get("description", "")
+                        mim_ref = disease.get("diseaseCrossReference", {})
+                        mim_id = mim_ref.get("id", "") if mim_ref else ""
+                        diseases.append({"name": name, "mim": mim_id, "description": desc})
+                        # Extract inheritance from description
+                        desc_lower = desc.lower()
+                        if "autosomal dominant" in desc_lower:
+                            inheritance_patterns.add("AD")
+                        if "autosomal recessive" in desc_lower:
+                            inheritance_patterns.add("AR")
+                        if "x-linked" in desc_lower:
+                            inheritance_patterns.add("XL")
+                        if "de novo" in desc_lower:
+                            inheritance_patterns.add("AD")  # de novo = dominant
+                features["diseases"] = diseases
+                features["inheritance_patterns"] = sorted(inheritance_patterns)
+                if inheritance_patterns:
+                    print(f"🧬 Inheritance for {uniprot_id}: {features['inheritance_patterns']} from {len(diseases)} diseases")
+            except Exception as de:
+                print(f"⚠️ Disease extraction failed for {uniprot_id}: {de}")
 
             # Extract features from UniProt annotations
             for feature in data.get("features", []):
@@ -412,7 +444,10 @@ class UniversalProteinAnnotator:
             "domains": features.get("domains", []),
             # Expose GO to BiologicalRouter/plausibility systems
             "go_terms": features.get("go_terms", []),
-            "go_ids": features.get("go_ids", [])
+            "go_ids": features.get("go_ids", []),
+            # Disease/inheritance from UniProt
+            "diseases": features.get("diseases", []),
+            "inheritance_patterns": features.get("inheritance_patterns", []),
         }
 
         # Map to Nova's expected fields

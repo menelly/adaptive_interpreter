@@ -75,6 +75,29 @@ class LOFAnalyzer:
             domain_info = self.domain_annotator.get_uniprot_features(uniprot_id)
 
             if "error" not in domain_info:
+                # Supplement with InterPro domains (better than predicted domains)
+                try:
+                    from nova_dn.universal_context import UniversalContext
+                    uc = UniversalContext()
+                    interpro_data = uc._load_interpro_domains(uniprot_id)
+                    if interpro_data and interpro_data.get('domains'):
+                        for ipd in interpro_data['domains']:
+                            desc = ipd.get('description', '').lower()
+                            # Add InterPro catalytic/enzyme domains as proper DOMAIN features
+                            if any(kw in desc for kw in [
+                                'catalytic', 'active site', 'enzyme', 'ase',
+                                'kinase', 'binding', 'substrate'
+                            ]):
+                                domain_info.setdefault('domains', []).append({
+                                    'start': ipd['start'],
+                                    'end': ipd['end'],
+                                    'type': 'interpro_functional',
+                                    'description': ipd['description'],
+                                })
+                                print(f"   🧬 InterPro functional domain: {ipd['description']} ({ipd['start']}-{ipd['end']})")
+                except Exception as e:
+                    print(f"   ⚠️ InterPro supplement failed: {e}")
+
                 self.domain_cache[cache_key] = domain_info
                 return domain_info
             else:
@@ -270,6 +293,24 @@ class LOFAnalyzer:
         conservation_impact = self._assess_conservation_impact(orig_props, new_props)
         structural_impact = self._assess_structural_impact(orig_props, new_props, position, len(sequence))
         functional_impact = self._assess_functional_impact(mutation, sequence)
+
+        # Active site jamming as LOF sub-mechanism: variant disrupts catalytic
+        # function. Scored natively in LOF with conservation/domain context.
+        asj_impact = 0.0
+        try:
+            from nova_dn.mechanisms import score_active_site_jamming
+            from nova_dn.universal_context import UniversalContext
+            uc = UniversalContext()
+            asj_context = uc.build_position_context(gene_symbol, position, uniprot_id) if gene_symbol else {}
+            asj_score, asj_feats, asj_expl = score_active_site_jamming(
+                sequence, position, original_aa, new_aa, asj_context
+            )
+            if asj_score > 0:
+                # Weight by conservation — ASJ without conservation context is noise
+                asj_impact = asj_score * conservation_impact
+                print(f"   🔧 ASJ-as-LOF: raw={asj_score:.3f} × conservation={conservation_impact:.2f} = {asj_impact:.3f}")
+        except Exception as e:
+            print(f"   ⚠️ ASJ scoring failed: {e}")
         
         # Get smart protein context multiplier
         smart_multiplier, smart_confidence = 1.0, 0.0
@@ -313,9 +354,10 @@ class LOFAnalyzer:
         # Calculate mechanistic LOF base WITHOUT conservation
         # Fold ML proline into the functional component (bounded), and include domain/smart in base.
         functional_adj = min(functional_impact * ml_proline_multiplier, 1.0)
-        # Original weights: stability 0.3, conservation 0.3, structural 0.2, functional 0.2
+        # Original weights: stability 0.3, structural 0.2, functional 0.2, ASJ 0.3
+        # ASJ captures active-site-specific damage; stability captures generic instability.
         # Drop conservation from base and renormalize by 0.7 to preserve scale.
-        base_no_cons = (stability_impact * 0.3) + (structural_impact * 0.2) + (functional_adj * 0.2)
+        base_no_cons = (stability_impact * 0.3) + (structural_impact * 0.2) + (functional_adj * 0.2) + (asj_impact * 0.3)
         base_lof_score = min(base_no_cons / 0.7, 1.0)
 
         # Mechanistic base multiplies in domain and smart context; exclude conservation from multipliers here.

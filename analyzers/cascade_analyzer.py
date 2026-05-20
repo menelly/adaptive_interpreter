@@ -369,6 +369,8 @@ class CascadeAnalyzer:
             # 🔥 REN'S BRILLIANT FIX: No conservation boost here - apply at the end!
             analyzer_results['DN'] = self._run_dn_analysis(gene, variant, sequence, uniprot_id, conservation_multiplier=1.0)
 
+            # ASJ is now scored natively in LOF analyzer — no rerouting needed
+
             # 🔗 Apply interface multiplier to DN!
             if analyzer_results['DN']['success'] and interface_multiplier > 1.0:
                 dn_score = analyzer_results['DN']['score']
@@ -1402,11 +1404,12 @@ class CascadeAnalyzer:
                        sequence: Optional[str] = None, variant_type: str = 'missense',
                        expected_clinvar: str = "") -> Dict:
         """
-        🧬 BIOLOGICALLY-GUIDED CASCADE ANALYSIS (Updated to use biological routing by default!)
+        🧬 STEPPED CASCADE: DN → LOF (+ synergy check) → GOF
 
-        Uses BiologicalRouter to determine optimal analysis strategy based on gene function,
-        GO terms, and variant type. This replaces the old "DN first" approach with
-        intelligent biological routing.
+        Biological logic follows mechanism hierarchy:
+          1. DN ≥ pathogenic → AD mechanism, done
+          2. LOF (with ASJ reroute for monomers) + synergy check → if sufficient, done
+          3. GOF only if protein isn't definitively broken (LOF < 0.5)
 
         Args:
             gene: Gene symbol (e.g., 'TP53')
@@ -1417,33 +1420,31 @@ class CascadeAnalyzer:
             expected_clinvar: Expected ClinVar classification for disagreement handling
 
         Returns:
-            Comprehensive biologically-guided analysis results
+            Stepped cascade analysis results
         """
 
-        # 🚀 NEW: Use biological routing by default!
-        print(f"🧬 BIOLOGICAL ROUTING: Analyzing {gene} {variant} ({variant_type})")
-        return self.analyze_cascade_biological(gene, variant, gnomad_freq, variant_type, sequence)
+        print(f"🧬 STEPPED CASCADE: Analyzing {gene} {variant} ({variant_type})")
+        return self.analyze_cascade_legacy(gene, variant, gnomad_freq, sequence)
 
     def analyze_cascade_legacy(self, gene: str, variant: str, gnomad_freq: float = 0.0,
                               sequence: Optional[str] = None) -> Dict:
         """
-        🏛️ LEGACY: Old DN-first cascade analysis (kept for compatibility)
+        🧬 RUN-ALL + CLAMP: Score all mechanisms, let UniProt inheritance decide.
 
-        This is the original "DN → (LOF + GOF if needed)" approach.
-        Use analyze_cascade() for the new biologically-guided approach.
+        1. Run DN, LOF, GOF — always, no gates. These are protein physics.
+        2. Output raw scores for all three.
+        3. Use UniProt disease inheritance to clamp:
+           - AR-only gene → final = max(LOF, weighted-DN)
+           - Has AD → DN/LOF synergy considered
+           - GOF weighted by gene family plausibility
 
         Args:
-            gene: Gene symbol (e.g., 'TP53')
-            variant: Variant in p.RefPosAlt format (e.g., 'p.R273H')
-            gnomad_freq: Population frequency (0.0-1.0)
-            sequence: Optional protein sequence (will fetch if not provided)
-
-        Returns:
-            Comprehensive cascade analysis results (legacy DN-first approach)
+            gene: Gene symbol
+            variant: p.RefPosAlt format
+            gnomad_freq: Population frequency
+            sequence: Optional protein sequence
         """
 
-        # Get UniProt ID — file-loaded offline lookup first (via self.gene_to_uniprot
-        # which is the shared uniprot_mapper's dict), then network-fetched as last resort.
         uniprot_id = self.gene_to_uniprot.get(gene)
 
         if not uniprot_id:
@@ -1492,8 +1493,7 @@ class CascadeAnalyzer:
             'variant': variant,
             'gnomad_freq': gnomad_freq,
             'uniprot_id': uniprot_id,
-            'cascade_triggered': False,
-            'analyzers_run': ['DN'],
+            'analyzers_run': ['DN', 'LOF', 'GOF'],
             'scores': {},
             'classifications': {},
             'final_classification': None,
@@ -1502,10 +1502,15 @@ class CascadeAnalyzer:
             'status': 'SUCCESS'
         }
 
-        # STEP 1: Run DN Analysis
-        print(f"🧬 Running DN analysis for {gene} {variant}")
+
+        # ============================================================
+        # RUN ALL THREE MECHANISMS — no gates, pure protein physics
+        # ============================================================
+
+        # DN
+        print(f"🧬 Running DN for {gene} {variant}")
+        dn_score = 0.0
         try:
-            # Load annotations for DN analyzer
             annotations_path = Path(__file__).parent / "resources" / "protein_annotations.json"
             context = None
             if annotations_path.exists():
@@ -1514,115 +1519,122 @@ class CascadeAnalyzer:
                     anns = load_annotations_json(str(annotations_path))
                     pos_match = re.search(r'p\.[A-Z](\d+)[A-Z]', variant)
                     if pos_match:
-                        pos = int(pos_match.group(1))
-                        context = build_position_context(anns, gene, pos)
+                        context = build_position_context(anns, gene, int(pos_match.group(1)))
                 except:
                     pass
+            dn_result = self.dn_analyzer.analyze(sequence, variant, context, gene, uniprot_id)
+            dn_score = dn_result['mechanism_scores'][dn_result['top_mechanism']]
+            results['dn_details'] = dn_result
+            print(f"   DN: {dn_score:.3f}")
+        except Exception as e:
+            print(f"   DN failed: {e}")
 
-            dn_result = self.dn_analyzer.analyze(
-                sequence, variant, context, gene, uniprot_id
+        # LOF (with ASJ as native sub-mechanism)
+        print(f"🔬 Running LOF for {gene} {variant}")
+        lof_score = 0.0
+        try:
+            lof_result = self.lof_analyzer.analyze_lof(
+                variant.replace('p.', ''), sequence, uniprot_id, gene
+            )
+            lof_score = lof_result.get('lof_score', 0.0)
+            results['lof_details'] = lof_result
+            print(f"   LOF: {lof_score:.3f}")
+        except Exception as e:
+            print(f"   LOF failed: {e}")
+
+        # GOF
+        print(f"🔥 Running GOF for {gene} {variant}")
+        gof_score = 0.0
+        try:
+            gof_result = self.gof_analyzer.analyze_gof(
+                variant.replace('p.', ''), sequence, uniprot_id
+            )
+            gof_score = gof_result.get('gof_score', 0.0)
+            results['gof_details'] = gof_result
+            print(f"   GOF: {gof_score:.3f}")
+        except Exception as e:
+            print(f"   GOF failed: {e}")
+
+        # Raw scores
+        results['scores'] = {
+            'DN_raw': dn_score, 'LOF_raw': lof_score, 'GOF_raw': gof_score,
+            'DN': dn_score, 'LOF': lof_score, 'GOF': gof_score,
+        }
+        for m in ('DN', 'LOF', 'GOF'):
+            results['classifications'][m] = self.interpret_score(results['scores'][m])
+        print(f"   📊 Raw: DN={dn_score:.3f}  LOF={lof_score:.3f}  GOF={gof_score:.3f}")
+
+        # Hotspot detection
+        hotspot_result = self._apply_hotspot_boost(gene, variant, results['scores'])
+        if hotspot_result['hotspot_info']:
+            results['scores'].update(hotspot_result['scores'])
+            results['hotspot_info'] = hotspot_result['hotspot_info']
+            for m in ('DN', 'LOF', 'GOF'):
+                results['classifications'][m] = self.interpret_score(results['scores'].get(m, 0))
+        else:
+            results['hotspot_info'] = None
+
+        # ============================================================
+        # PLAUSIBILITY: UniProt inheritance + gene family weighting
+        # ============================================================
+        try:
+            from AdaptiveInterpreter.utils.plausibility_filter import plausibility_pipeline
+            from nova_dn.universal_context import UniversalContext
+            uc = UniversalContext()
+            prot_ctx = uc.get_context_for_protein(gene, uniprot_id)
+
+            inheritance = prot_ctx.get('inheritance_patterns', [])
+            plaus = plausibility_pipeline(
+                gene_symbol=gene,
+                raw_scores={'DN': dn_score, 'LOF': lof_score, 'GOF': gof_score},
+                uniprot_function=prot_ctx.get('function', ''),
+                go_terms=prot_ctx.get('go_terms', []),
+                use_advisory_mode=False,
+                inheritance_patterns=inheritance,
             )
 
-            # Extract DN score (use top mechanism score)
-            dn_score = dn_result['mechanism_scores'][dn_result['top_mechanism']]
-            results['scores']['DN'] = dn_score
-            results['classifications']['DN'] = self.interpret_score(dn_score)
-            results['dn_details'] = dn_result
+            weighted = plaus['final_scores']
+            results['gene_family'] = plaus['gene_family']
+            results['plausibility_filtered_scores'] = weighted
+            results['atypical_mechanisms'] = plaus.get('atypical_mechanisms', [])
+            results['plausibility_filter_detail'] = plaus.get('filtered_scores', {})
+            results['inheritance_patterns'] = inheritance
 
-            print(f"   DN score: {dn_score:.3f} ({results['classifications']['DN']})")
+            results['scores']['DN'] = weighted.get('DN', 0.0)
+            results['scores']['LOF'] = weighted.get('LOF', 0.0)
+            results['scores']['GOF'] = weighted.get('GOF', 0.0)
+            for m in ('DN', 'LOF', 'GOF'):
+                results['classifications'][m] = self.interpret_score(results['scores'][m])
+
+            print(f"   🧬 Family: {plaus['gene_family']}  Inheritance: {inheritance}")
+            print(f"      Raw:      DN={dn_score:.3f}  LOF={lof_score:.3f}  GOF={gof_score:.3f}")
+            print(f"      Weighted: DN={weighted['DN']:.3f}  LOF={weighted['LOF']:.3f}  GOF={weighted['GOF']:.3f}")
+            for am in plaus.get('atypical_mechanisms', []):
+                print(f"      {am['flag']}")
 
         except Exception as e:
-            return {
-                'error': f'DN analysis failed: {e}',
-                'gene': gene,
-                'variant': variant,
-                'status': 'FAILED'
-            }
+            print(f"   ⚠️ Plausibility failed: {e}")
+            import traceback; traceback.print_exc()
 
-        # STEP 2: Cascade Decision Logic
-        cascade_threshold = 0.3
-        freq_threshold = 0.001  # 0.1%
-
-        if dn_score < cascade_threshold and gnomad_freq < freq_threshold:
-            print(f"🌊 CASCADE TRIGGERED: DN={dn_score:.3f} < {cascade_threshold}, freq={gnomad_freq:.4f} < {freq_threshold}")
-            results['cascade_triggered'] = True
-            results['analyzers_run'].extend(['LOF', 'GOF'])
-
-            # STEP 3: Run LOF Analysis
-            print(f"🔬 Running LOF analysis...")
-            try:
-                lof_result = self.lof_analyzer.analyze_lof(
-                    variant.replace('p.', ''), sequence, uniprot_id, gene
-                )
-                lof_score = lof_result.get('lof_score', 0.0)
-                results['scores']['LOF'] = lof_score
-                results['classifications']['LOF'] = self.interpret_score(lof_score)
-                results['lof_details'] = lof_result
-
-                print(f"   LOF score: {lof_score:.3f} ({results['classifications']['LOF']})")
-
-            except Exception as e:
-                print(f"   LOF analysis failed: {e}")
-                results['scores']['LOF'] = 0.0
-                results['classifications']['LOF'] = 'ERROR'
-
-            # STEP 4: Run GOF Analysis
-            print(f"🔥 Running GOF analysis...")
-            try:
-                gof_result = self.gof_analyzer.analyze_gof(
-                    variant.replace('p.', ''), sequence, uniprot_id
-                )
-                gof_score = gof_result.get('gof_score', 0.0)
-                results['scores']['GOF'] = gof_score
-                results['classifications']['GOF'] = self.interpret_score(gof_score)
-                results['gof_details'] = gof_result
-
-                print(f"   GOF score: {gof_score:.3f} ({results['classifications']['GOF']})")
-
-            except Exception as e:
-                print(f"   GOF analysis failed: {e}")
-                results['scores']['GOF'] = 0.0
-                results['classifications']['GOF'] = 'ERROR'
-
+        # Final classification
+        classifiable = {k: v for k, v in results['scores'].items()
+                        if k in ('DN', 'LOF', 'GOF') and v > 0}
+        if classifiable:
+            best = max(classifiable, key=classifiable.get)
+            results['final_score'] = classifiable[best]
+            results['final_classification'] = self.interpret_score(classifiable[best])
+            results['explanation'] = f"Highest plausibility-weighted: {best}"
         else:
-            print(f"🚫 CASCADE NOT TRIGGERED: DN={dn_score:.3f} >= {cascade_threshold} OR freq={gnomad_freq:.4f} >= {freq_threshold}")
-            # Use DN result only
-            results['scores']['LOF'] = 0.0
-            results['scores']['GOF'] = 0.0
-            results['classifications']['LOF'] = 'NOT_RUN'
-            results['classifications']['GOF'] = 'NOT_RUN'
+            results['final_score'] = 0.0
+            results['final_classification'] = 'VUS'
+            results['explanation'] = "No mechanism above threshold"
 
-        # STEP 5: Determine Final Classification
-        all_scores = [score for score in results['scores'].values() if score > 0]
-        if all_scores:
-            results['final_score'] = max(all_scores)
-            # Find which analyzer gave the max score
-            max_analyzer = max(results['scores'].items(), key=lambda x: x[1])[0]
-            results['final_classification'] = results['classifications'][max_analyzer]
-            results['explanation'] = f"Highest score from {max_analyzer} analyzer"
-        else:
-            results['final_score'] = dn_score
-            results['final_classification'] = results['classifications']['DN']
-            results['explanation'] = "DN analysis only"
+        parts = [f"{m}:{results['scores'].get(m,0):.2f}" for m in ('DN','LOF','GOF') if results['scores'].get(m,0) > 0]
+        results['summary'] = f"{' '.join(parts)} FINAL:{results['final_classification']}"
+        print(f"🎯 {results['summary']}")
 
-        # Create summary string
-        summary_parts = []
-        for analyzer in ['DN', 'LOF', 'GOF']:
-            if analyzer in results['scores']:
-                score = results['scores'][analyzer]
-                classification = results['classifications'][analyzer]
-                if classification not in ['NOT_RUN', 'ERROR']:
-                    summary_parts.append(f"{analyzer}:{score:.2f}({classification})")
-
-        results['summary'] = f"{' '.join(summary_parts)} FINAL:{results['final_classification']}"
-
-        print(f"🎯 FINAL RESULT: {results['summary']}")
-
-        # Cleanup
         self.cleanup()
-
         return results
-
     def _run_dn_analysis(self, gene: str, variant: str, sequence: str, uniprot_id: str, conservation_multiplier: float = 1.0) -> Dict:
         """Run DN analysis and return standardized result"""
         try:

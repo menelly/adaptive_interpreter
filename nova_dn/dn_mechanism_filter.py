@@ -72,22 +72,26 @@ class DNMechanismFilter:
             "go_terms": []  # Will be populated from function text
         }
         
-        # Extract GO-like terms from function description
+        # Search function text AND GO terms for mechanism indicators
         function_text = annotations.get("function", "").lower()
-        
+        go_terms = [t.lower() for t in annotations.get("go_terms", [])]
+        # Combine into single searchable string so patterns match either source
+        searchable_text = function_text + " " + " ".join(go_terms)
+        evidence["go_terms"] = annotations.get("go_terms", [])
+
         # Check for DN-indicating patterns
         dn_score = 0.0
         for category, patterns in self.dn_indicating_patterns.items():
             for pattern in patterns:
-                if pattern in function_text:
+                if pattern in searchable_text:
                     evidence["dn_indicators"].append(f"{category}: {pattern}")
                     dn_score += 1.0
-        
-        # Check for LOF-indicating patterns  
+
+        # Check for LOF-indicating patterns
         lof_score = 0.0
         for category, patterns in self.lof_indicating_patterns.items():
             for pattern in patterns:
-                if pattern in function_text:
+                if pattern in searchable_text:
                     evidence["lof_indicators"].append(f"{category}: {pattern}")
                     lof_score += 1.0
         
@@ -119,10 +123,12 @@ class DNMechanismFilter:
         }
         
         function_text = annotations.get("function", "").lower()
+        go_terms = [t.lower() for t in annotations.get("go_terms", [])]
+        searchable_text = function_text + " " + " ".join(go_terms)
         sequence = annotations.get("sequence", "")
-        
+
         # Interface poisoning - for oligomeric/complex proteins (Nova's enhanced patterns)
-        if any(pattern in function_text for pattern in
+        if any(pattern in searchable_text for pattern in
                self.dn_indicating_patterns['oligomerization'] +
                self.dn_indicating_patterns['complex_assembly'] +
                self.dn_indicating_patterns['signaling'] +
@@ -131,30 +137,32 @@ class DNMechanismFilter:
             evidence["reasoning"].append("Interface poisoning: protein complex/oligomer/receptor detected")
         
         # Active site jamming - for enzymes and DNA-binding proteins (Nova's enhanced patterns)
-        if (any(pattern in function_text for pattern in
-                ["enzyme", "catalytic", "kinase", "phosphatase", "DNA binding", "nuclease"]) or
-            any(pattern in function_text for pattern in
+        if (any(pattern in searchable_text for pattern in
+                ["enzyme", "catalytic", "kinase", "phosphatase", "dna binding", "nuclease",
+                 "hexosaminidase", "hydrolase", "synthase", "dehydrogenase", "reductase",
+                 "protease", "peptidase", "ligase", "lyase"]) or
+            any(pattern in searchable_text for pattern in
                 self.dn_indicating_patterns['kinase_signaling']) or
-            any(pattern in function_text for pattern in
+            any(pattern in searchable_text for pattern in
                 self.dn_indicating_patterns['chaperones'])):
             mechanisms.append("active_site_jamming")
             evidence["reasoning"].append("Active site jamming: catalytic/binding/chaperone activity detected")
-        
+
         # Lattice disruption - for structural proteins
-        if any(pattern in function_text for pattern in 
+        if any(pattern in searchable_text for pattern in
                self.dn_indicating_patterns['structural']):
             mechanisms.append("lattice_disruption")
             evidence["reasoning"].append("Lattice disruption: structural protein detected")
-        
+
         # Detect collagen specifically (sequence-based)
         if sequence and self._detect_collagen_motif(sequence):
             if "lattice_disruption" not in mechanisms:
                 mechanisms.append("lattice_disruption")
             evidence["sequence_motifs"]["collagen_repeats"] = True
             evidence["reasoning"].append("Lattice disruption: collagen Gly-X-Y repeats detected")
-        
+
         # Trafficking/maturation - Nova's enhanced membrane protein disambiguation
-        if any(pattern in function_text for pattern in
+        if any(pattern in searchable_text for pattern in
                self.dn_indicating_patterns['secreted'] +
                ["glycosylation", "folding"]):
             mechanisms.append("trafficking_maturation")
@@ -162,11 +170,11 @@ class DNMechanismFilter:
 
         # Nova's membrane protein disambiguation logic
         transporter_detected = False
-        if "membrane" in function_text or "transmembrane" in function_text:
-            if any(w in function_text for w in ["receptor", "channel", "gpcr"]):
+        if "membrane" in searchable_text or "transmembrane" in searchable_text:
+            if any(w in searchable_text for w in ["receptor", "channel", "gpcr"]):
                 mechanisms.append("trafficking_maturation")
                 evidence["reasoning"].append("Membrane receptor/channel → DN trafficking possible")
-            elif any(w in function_text for w in ["transporter", "carrier", "antiporter", "symporter"]):
+            elif any(w in searchable_text for w in ["transporter", "carrier", "antiporter", "symporter"]):
                 transporter_detected = True
                 evidence["reasoning"].append("Membrane transporter → likely LOF, not DN")
             else:

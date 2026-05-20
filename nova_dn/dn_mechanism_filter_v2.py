@@ -59,7 +59,11 @@ class DNMechanismFilterV2:
                 'enzyme', 'kinase', 'phosphatase', 'transferase', 'hydrolase',
                 'transcription factor', 'DNA binding', 'nuclear protein',
                 'cytoplasmic enzyme', 'metabolic enzyme', 'catalytic',
-                'calcium-activated'  # KEEP excluded: these are kinase-like, not channel-like
+                'calcium-activated',  # KEEP excluded: these are kinase-like, not channel-like
+                # Enzyme class suffixes (match GO terms)
+                'oxidoreductase', 'lyase', 'isomerase', 'ligase',
+                'synthase', 'reductase', 'dehydrogenase', 'protease',
+                'peptidase', 'hexosaminidase', 'lysosomal lumen',
             ],
             
             # EXCLUDE trafficking for cytoplasmic/nuclear proteins
@@ -74,7 +78,21 @@ class DNMechanismFilterV2:
         self.lof_indicators = [
             'metabolic enzyme', 'housekeeping', 'ribosomal protein',
             'proteasome', 'translation factor', 'transporter',
-            'carrier protein', 'antiporter', 'symporter'
+            'carrier protein', 'antiporter', 'symporter',
+            # Enzyme class suffixes (match GO terms like "hexosaminidase activity")
+            'hydrolase', 'transferase', 'oxidoreductase', 'lyase',
+            'isomerase', 'ligase', 'synthase', 'reductase',
+            'dehydrogenase', 'protease', 'peptidase', 'hexosaminidase',
+            'lysosomal lumen', 'lysosome',
+        ]
+
+        # Strong indicators for DN likelihood (complex/oligomer)
+        self.dn_indicators = [
+            'complex', 'oligomer', 'dimer', 'trimer', 'tetramer', 'hexamer',
+            'multimer', 'subunit', 'heterodimer', 'homodimer',
+            'channel', 'receptor', 'signal transduction',
+            'structural protein', 'collagen', 'extracellular matrix',
+            'cytoskeleton', 'filament',
         ]
     
     def assess_dn_likelihood(self, gene_name: str, uniprot_id: Optional[str] = None) -> Tuple[float, Dict]:
@@ -90,32 +108,47 @@ class DNMechanismFilterV2:
         
         evidence = {
             "lof_indicators": [],
+            "dn_indicators": [],
             "function": annotations.get("function", ""),
             "domains": annotations.get("domains", []),
             "reasoning": []
         }
-        
-        # Extract function description
+
+        # Search function text AND GO terms
         function_text = annotations.get("function", "").lower()
-        
-        # Check for strong LOF indicators
+        go_terms = [t.lower() for t in annotations.get("go_terms", [])]
+        searchable_text = function_text + " " + " ".join(go_terms)
+
+        # Check for LOF indicators
         lof_score = 0
         for pattern in self.lof_indicators:
-            if pattern in function_text:
+            if pattern in searchable_text:
                 evidence["lof_indicators"].append(pattern)
                 lof_score += 1
-        
-        # Calculate likelihood (optimistic unless strong LOF indicators)
-        if lof_score >= 2:
-            likelihood = 0.2  # Strong LOF evidence
-            evidence["reasoning"].append(f"Multiple LOF indicators: {evidence['lof_indicators']}")
-        elif lof_score == 1:
-            likelihood = 0.4  # Some LOF evidence
-            evidence["reasoning"].append(f"Some LOF indicators: {evidence['lof_indicators']}")
+
+        # Check for DN indicators
+        dn_score = 0
+        for pattern in self.dn_indicators:
+            if pattern in searchable_text:
+                evidence["dn_indicators"].append(pattern)
+                dn_score += 1
+
+        # Calculate likelihood from the balance of evidence
+        if dn_score == 0 and lof_score == 0:
+            likelihood = 0.8  # Default optimistic when unknown
+            evidence["reasoning"].append("No indicators found — default optimistic")
+        elif dn_score == 0:
+            likelihood = 0.2  # LOF only
+            evidence["reasoning"].append(f"LOF indicators only: {evidence['lof_indicators']}")
+        elif lof_score == 0:
+            likelihood = 0.9  # DN only
+            evidence["reasoning"].append(f"DN indicators only: {evidence['dn_indicators']}")
         else:
-            likelihood = 0.8  # Default optimistic
-            evidence["reasoning"].append("No strong LOF indicators - DN possible")
-        
+            # Both present — ratio determines likelihood
+            likelihood = dn_score / (dn_score + lof_score)
+            evidence["reasoning"].append(
+                f"Mixed: DN={evidence['dn_indicators']} vs LOF={evidence['lof_indicators']} → {likelihood:.2f}")
+
         return likelihood, evidence
     
     def select_relevant_mechanisms(self, gene_name: str, uniprot_id: Optional[str] = None) -> Tuple[List[str], Dict]:
@@ -142,35 +175,37 @@ class DNMechanismFilterV2:
         }
         
         function_text = annotations.get("function", "").lower()
+        go_terms = [t.lower() for t in annotations.get("go_terms", [])]
+        searchable_text = function_text + " " + " ".join(go_terms)
         sequence = annotations.get("sequence", "")
-        
+
         # EXCLUDE interface poisoning for monomeric proteins
-        if any(pattern in function_text for pattern in self.exclusion_patterns['exclude_interface_poisoning']):
+        if any(pattern in searchable_text for pattern in self.exclusion_patterns['exclude_interface_poisoning']):
             if "interface_poisoning" in mechanisms:
                 mechanisms.remove("interface_poisoning")
                 excluded.append("interface_poisoning")
                 evidence["reasoning"].append("EXCLUDED interface poisoning: monomeric protein detected")
         
         # EXCLUDE active site jamming for purely structural proteins
-        if any(pattern in function_text for pattern in self.exclusion_patterns['exclude_active_site_jamming']):
+        if any(pattern in searchable_text for pattern in self.exclusion_patterns['exclude_active_site_jamming']):
             if "active_site_jamming" in mechanisms:
                 mechanisms.remove("active_site_jamming")
                 excluded.append("active_site_jamming")
                 evidence["reasoning"].append("EXCLUDED active site jamming: purely structural protein")
-        
+
         # EXCLUDE lattice disruption for non-structural proteins
-        if any(pattern in function_text for pattern in self.exclusion_patterns['exclude_lattice_disruption']):
+        if any(pattern in searchable_text for pattern in self.exclusion_patterns['exclude_lattice_disruption']):
             if "lattice_disruption" in mechanisms:
                 mechanisms.remove("lattice_disruption")
                 excluded.append("lattice_disruption")
                 evidence["reasoning"].append("EXCLUDED lattice disruption: non-structural protein")
-        
+
         # EXCLUDE trafficking for cytoplasmic/nuclear proteins (BUT check for membrane proteins first!)
         membrane_indicators = ["membrane", "transmembrane", "channel", "receptor", "transporter",
                               "sarcoplasmic reticulum", "endoplasmic reticulum", "mitochondrial"]
-        is_membrane_protein = any(indicator in function_text for indicator in membrane_indicators)
+        is_membrane_protein = any(indicator in searchable_text for indicator in membrane_indicators)
 
-        if not is_membrane_protein and any(pattern in function_text for pattern in self.exclusion_patterns['exclude_trafficking_maturation']):
+        if not is_membrane_protein and any(pattern in searchable_text for pattern in self.exclusion_patterns['exclude_trafficking_maturation']):
             if "trafficking_maturation" in mechanisms:
                 mechanisms.remove("trafficking_maturation")
                 excluded.append("trafficking_maturation")
@@ -183,7 +218,7 @@ class DNMechanismFilterV2:
             evidence["reasoning"].append("INCLUDED lattice disruption: collagen Gly-X-Y repeats detected")
         
         # Special case: Membrane proteins likely need trafficking (if not already included)
-        if is_membrane_protein and "trafficking_maturation" not in mechanisms:
+        if is_membrane_protein and "trafficking_maturation" not in mechanisms:  # noqa: uses searchable_text-derived flag
             # Only add back if not explicitly excluded
             if "trafficking_maturation" not in excluded:
                 mechanisms.append("trafficking_maturation")

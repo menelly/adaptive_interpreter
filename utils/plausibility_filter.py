@@ -318,18 +318,24 @@ def classify_gene_family(gene_symbol: str, uniprot_function: str, go_terms: List
 # STEP 2 + 4: PLAUSIBILITY FILTER
 # ======================================================
 
-def _dn_evidence_score(gene_symbol: str, uniprot_function: str = "", go_terms: List[str] | None = None) -> tuple[float, list[str]]:
-    """Heuristic dominant-negative evidence score from local text signals.
-    - Searches UniProt function text for phrases like 'dominant negative'.
-    - Optionally looks at GO terms (rare direct hits expected).
-    Returns (score, hits).
+def _dn_evidence_score(gene_symbol: str, uniprot_function: str = "", go_terms: List[str] | None = None,
+                       inheritance_patterns: List[str] | None = None) -> tuple[float, list[str]]:
+    """Dominant-negative evidence score from UniProt data.
+    Sources:
+    - UniProt function text ("dominant negative" phrases)
+    - GO terms (rare)
+    - UniProt disease inheritance patterns (AD = DN evidence, AR-only = counter-evidence)
+    Returns (score, hits). Positive = DN evidence, negative = AR-only counter-evidence.
     """
     if go_terms is None:
         go_terms = []
+    if inheritance_patterns is None:
+        inheritance_patterns = []
     score = 0.0
     hits: list[str] = []
     func = (uniprot_function or "").lower()
-    # Core phrases
+
+    # Core phrases in function text
     patterns = [
         "dominant negative",
         "dominant-negative",
@@ -339,28 +345,41 @@ def _dn_evidence_score(gene_symbol: str, uniprot_function: str = "", go_terms: L
     for p in patterns:
         if p in func:
             score += 1.0
-            hits.append(f"uniprot:{p}")
+            hits.append(f"uniprot_function:{p}")
             break
-    # GO rarely encodes this explicitly; keep very conservative
+
+    # GO terms (rare direct hits)
     for term in go_terms:
         t = (term or "").lower()
         if "dominant-negative" in t or "dominant negative" in t:
             score += 0.5
             hits.append("go:dominant-negative")
             break
+
+    # UniProt disease inheritance — the strongest signal
+    if "AD" in inheritance_patterns:
+        score += 1.5  # Strong: gene has known AD disease
+        hits.append(f"uniprot_disease:AD_inheritance")
+    if "AR" in inheritance_patterns and "AD" not in inheritance_patterns:
+        score -= 0.5  # Counter-evidence: AR-only gene, DN less likely
+        hits.append(f"uniprot_disease:AR_only_inheritance")
+
     return score, hits
 
 
 def _adjust_dn_weight(base_weight: float, evidence_score: float) -> float:
-    """Map evidence score → adjusted DN weight conservatively.
-    - strong (>=1.0): at least 1.0
-    - moderate (>=0.5): at least 0.9
+    """Map evidence score → adjusted DN weight.
+    - strong positive (>=1.0): at least 1.0 (AD disease known)
+    - moderate positive (>=0.5): at least 0.9
+    - negative (<0): halve the weight (AR-only, DN unlikely)
     - else: unchanged
     """
     if evidence_score >= 1.0:
         return max(base_weight, 1.0)
     if evidence_score >= 0.5:
         return max(base_weight, 0.9)
+    if evidence_score < 0:
+        return base_weight * 0.5  # AR-only counter-evidence
     return base_weight
 
 
@@ -370,6 +389,7 @@ def apply_pathogenicity_filter(
     gene_symbol: str = "",
     uniprot_function: str = "",
     go_terms: List[str] | None = None,
+    inheritance_patterns: List[str] | None = None,
 ) -> Dict[str, Dict[str, Any]]:
     """
     Apply gene-family-specific plausibility rules to raw mechanism scores.
@@ -393,8 +413,8 @@ def apply_pathogenicity_filter(
     rules = PATHOGENICITY_RULES.get(gene_family, PATHOGENICITY_RULES["GENERAL"])
     filtered: Dict[str, Dict[str, Any]] = {}
 
-    # Compute DN evidence once per gene
-    dn_ev_score, dn_ev_hits = _dn_evidence_score(gene_symbol, uniprot_function, go_terms)
+    # Compute DN evidence once per gene (now includes inheritance patterns)
+    dn_ev_score, dn_ev_hits = _dn_evidence_score(gene_symbol, uniprot_function, go_terms, inheritance_patterns)
 
     for mech, score in raw_scores.items():
         base_weight = rules.get(mech, 0.0)
@@ -457,6 +477,7 @@ def plausibility_pipeline(
     go_terms: List[str] = None,
     override_family: str = None,
     use_advisory_mode: bool = True,  # 🧬 NEW: Ren's elegant refactor!
+    inheritance_patterns: List[str] = None,
 ) -> Dict[str, Any]:
     """
     Full plausibility pipeline: classify → filter → return explainable scores.
@@ -489,13 +510,14 @@ def plausibility_pipeline(
     # Step 2: classify gene family (with optional override)
     gene_family = classify_gene_family(gene_symbol, uniprot_function, go_terms, override_family)
 
-    # Step 3-4: apply plausibility filter (now includes atypical_flag)
+    # Step 3-4: apply plausibility filter (now includes atypical_flag + inheritance)
     filtered = apply_pathogenicity_filter(
         raw_scores,
         gene_family,
         gene_symbol=gene_symbol,
         uniprot_function=uniprot_function,
         go_terms=go_terms,
+        inheritance_patterns=inheritance_patterns,
     )
 
     # 🧬 REN'S ADVISORY MODE: Trust the analyzer, flag atypical mechanisms
