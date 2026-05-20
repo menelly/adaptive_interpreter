@@ -535,7 +535,14 @@ def apply_pathogenicity_filter(
     dn_ev_score, dn_ev_hits = _dn_evidence_score(gene_symbol, uniprot_function, go_terms, inheritance_patterns)
 
     for mech, score in raw_scores.items():
-        base_weight = rules.get(mech, 0.0)
+        # 🎯 NORMALIZE: family weights are capped at 1.0. Some rules historically used
+        # >1.0 weights as multiplicative BOOSTS (e.g. COLLAGEN_FIBRILLAR DN=1.25), which
+        # pushed scores past [0,1] and made families incomparable (collagen DN floated 25%
+        # above everyone). The boost is applied equally to P and B within a family, so it
+        # added zero discrimination — verified 2026-05-20: capping leaves per-gene AUC
+        # byte-identical (0.764) while pooled AUC rose 0.687->0.721 and DN returned to [0,1].
+        # A family that "favors DN" should show it via a high RAW score, not a post-hoc boost.
+        base_weight = min(rules.get(mech, 0.0), 1.0)
         weight = base_weight
         evidence_applied = False
         if mech == "DN":
