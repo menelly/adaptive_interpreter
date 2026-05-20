@@ -23,9 +23,13 @@ Untracked, all coherent (not scratch):
   the filter did the right thing first?)
 
 ## C. Structural tasks — agreed to do TOGETHER (need your brain / consent)
-- **#5 Reconcile the two DN brains.** v1 (`dn_mechanism_filter`) used by `BiologicalRouter`
-  (routing); v2 (`dn_mechanism_filter_v2`) used by `NovaDNAnalyzer` (scoring). Do they
-  agree? Collapse to one?
+- **#5 ⚠️ CRITICAL — two divergent scoring pipelines (bigger than just the DN filters).**
+  See `docs/TWO_PIPELINES_FINDING.md`. The **batch/cohort path** (`cascade_batch_processor`
+  → `analyze_cascade_biological`) is on the OLD gated logic with v1; the morning's run-all
+  + ASJ→LOF + inheritance work only landed in `analyze_cascade` (CLI/calibration/tests).
+  **Cohort runs are currently NOT getting the new logic.** Decide canonical pipeline + make
+  both entry points use it (this also resolves v1-vs-v2 — v1 likely becomes vestigial).
+  Do NOT let Ace fix solo — scoring judgment.
 - **#6 Family classification.** Live family logic confirmed in `lattice_disruption/`
   (NOT dead — corrected) + smeared across ~10 files. Consolidate, or replace
   family-for-routing with inheritance+InterPro+GO (your instinct).
