@@ -161,3 +161,12 @@ cumbursum/__pycache__/
 # Personal design notes / ongoing drafts — NOT for public repo.
 # (The clean public design doc lives at cumbursum/README.md / cumbursum/DESIGN.md)
 CUMBURSUM_DESIGN_THOUGHTS.md
+
+# Regenerable cascade outputs (rerun scratch dirs — outputs_missense_v2 stays tracked intentionally)
+
+# Cascade outputs are all regenerable — pipeline is being reworked, everything reruns.
+outputs_*/
+# Input scratch / chunked / pre-filter backups (canonical corpus stays in inputs_missense_only/)
+inputs_chunked/
+inputs_for_rerun/
+inputs_missense_only_PREFILTER_BACKUP/
