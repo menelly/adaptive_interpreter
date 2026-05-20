@@ -18,6 +18,8 @@ Walk this list with Ren and either delete for real or restore.
 | `utils/logging_and_errors.py` | `utils/logging_and_errors.py` | no importers |
 | `utils/protein_modeling.py` | `utils/protein_modeling.py` | no importers |
 | `utils/variant_filters.py` | `utils/variant_filters.py` | no importers |
+| `data_processing/clinvar_inheritance_cache.py` | `data_processing/clinvar_inheritance_cache.py` | orphaned — nothing imports it; was the only reader of the corrupt `comprehensive_gene_cache.json` |
+| `comprehensive_gene_cache.json` | repo root | **corrupt data** (4 genes, HEXA mislabeled AD with LDLR/KCNQ1 variants). Only consumer was the orphaned reader above → not poisoning live scoring. |
 
 ## NOT fossils — flagged by static graph, proven LIVE by smoke test, RESTORED
 

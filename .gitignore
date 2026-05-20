@@ -170,3 +170,6 @@ outputs_*/
 inputs_chunked/
 inputs_for_rerun/
 inputs_missense_only_PREFILTER_BACKUP/
+
+# Runtime write-through cache (populates on use)
+gnomad_frequency_cache.json

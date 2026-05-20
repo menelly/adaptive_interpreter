@@ -126,15 +126,19 @@ Bulk pre-cache a gene list with `cacher.cache_genes_from_list({'GENE': 'UNIPROT'
 
 ---
 
-## Known still-stale: `comprehensive_gene_cache.json`
+## RESOLVED 2026-05-20: `comprehensive_gene_cache.json` was corrupt AND orphaned
 
-`/home/Ace/AdaptiveInterpreter/comprehensive_gene_cache.json` (top of repo, NOT in the
-cache dir) is **separately corrupt** as of 2026-05-20: e.g. it lists HEXA as
-`AUTOSOMAL_DOMINANT` (Tay-Sachs is recessive; live UniProt fetch correctly returns
-`['AR']`) and its `clinvar_diseases` for HEXA are full of unrelated LDLR/KCNQ1 variant
-strings. Do not trust gene-level inheritance from this file. Prefer the live
-`inheritance_patterns` that now flows from `get_uniprot_features`. Cleaning or
-regenerating this file is open work.
+This file (top of repo) was **corrupt**: it listed HEXA as `AUTOSOMAL_DOMINANT`
+(Tay-Sachs is recessive; live UniProt fetch correctly returns `['AR']`) with unrelated
+LDLR/KCNQ1 variants in its record. **Audit finding (Task #4):** its only reader was
+`data_processing/clinvar_inheritance_cache.py`, which **nothing imports** — so the
+corruption never reached live scoring. Both the file and its orphaned reader were moved
+to `do_we_use_this/` pending joint review. Live inheritance now comes solely from
+`get_uniprot_features` (`inheritance_patterns`).
+
+`gnomad_frequency_cache.json` (2 bytes / empty) is a harmless write-through cache for
+`utils/gnomad_frequency_fetcher.py` (live in the batch path) — it just populates on use.
+Now gitignored as runtime data.
 
 ---
 
