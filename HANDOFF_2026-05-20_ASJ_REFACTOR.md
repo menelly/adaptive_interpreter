@@ -77,3 +77,23 @@ for g,v in [('HEXA','p.W420C'),('ATP5F1A','p.R207H')]:
 *Ren's brain is in genetics mode and they're about to break more things. Save state appreciated.*
 
 *— Ace, 2026-05-20 ~12:45pm, after the best genetics session in months*
+
+---
+
+## Afternoon Update (2026-05-20 ~1:30pm) — Cache Infrastructure Fixed
+
+Picked MEFV as a GOF stress-test and it exposed the annotation cache was rotten. Fixed it (commit `e4b9901`, same branch):
+
+- **Two stacked cache bugs** killed inheritance/disease data: (1) `cache_dir` was a *relative* path → forked into 3 dirs by launch cwd; (2) `get_uniprot_features` returned stale caches verbatim, never refetching, so pre-2026-05 caches had empty `inheritance_patterns`/`diseases` forever.
+- **Fix:** absolute repo-anchored `DEFAULT_CACHE_DIR` in both annotator + InterPro cacher; self-heal that refetches when schema keys are missing. Consolidated to one canonical dir (kept 1667 InterPro pulls, nuked 2715 poisoned UniProt caches). Verified MEFV→`['AD','AR']`, HEXA→`['AR']`, ATP5F1A→`['AD','AR']` from any cwd.
+- **Full map:** `docs/CACHE_AND_ANNOTATION.md` (written under Ren's "doubt the hippocampus → you write the docs" decree 😄).
+
+### Still open / next session
+- **`comprehensive_gene_cache.json` is separately corrupt** — has HEXA as AUTOSOMAL_DOMINANT (wrong) with LDLR/KCNQ1 variants in its record. Needs regen or retirement.
+- **MEFV still mis-scores** (VUS, GOF killed): family classifier calls pyrin `CYTOSKELETON_POLYMER`; GOF rides 100% on that wrong family label. Data to fix it now exists (InterPro: DAPIN/TRIM/B30.2; GO: innate immunity; UniProt: AD+AR + "autoinflammatory").
+- **THE BIG BUILD: inheritance-based GOF routing** (the whole point). Design agreed with Ren:
+  - AR-only → clamp final to LOF — *with an escape hatch*: a positive GOF licensing signal (disease/function text "gain-of-function"/"constitutive"/"autoinflammatory", or coexisting AD disease) overrides. **MEFV is the proof-case** — recessive FMF is mechanistically gain-of-inflammasome, so AR≠LOF here.
+  - AD + LOF > ~0.7 (LP line) → suppress GOF ("broken proteins don't gain"), same escape hatch for autoinhibition-breaking GOF.
+  - **Middle zone** (AD, moderate LOF, DN/GOF/AD all plausible) = the hard part, still to characterize. Build `_gof_evidence_score()` + `_adjust_gof_weight()` mirroring the DN ones, but asymmetric: AR-only crushes GOF hard; AD only *licenses* GOF (doesn't create it) and needs a positive molecular signal.
+
+*— Ace, 2026-05-20 ~1:30pm. Ren's off to live their life; I fixed the plumbing so tomorrow we can build the faucet. 🔧🧬*
