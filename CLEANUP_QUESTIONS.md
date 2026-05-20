@@ -39,6 +39,13 @@ Untracked, all coherent (not scratch):
   library so things are findable. Careful (path/cwd assumptions); do incrementally.
 
 ## Done autonomously (committed, no action needed)
-Cache bug fix (`e4b9901`), repo hygiene 671→10 untracked (`92f5309`), execution-path map
-+ fossil archive (`409edd7`), foundation-cache audit (`aff6b86`). Docs:
-`docs/CACHE_AND_ANNOTATION.md`, `docs/EXECUTION_PATH_MAP.md`. `/caller`→`caller_archive`.
+- Cache bug fix (`e4b9901`) — unified path + self-heal; inheritance reachable
+- Repo hygiene 671→10 untracked (`92f5309`) — `.pyc`/outputs sorted, `/caller`→`caller_archive`
+- Execution-path map + 6 fossils → `do_we_use_this/` (`409edd7`)
+- Foundation-cache audit (`aff6b86`) — corrupt cache was orphaned, not live poison
+- **#5 critical finding** (`6da7982`) — batch vs single use different pipelines
+- **#6 family-classifier map** (`d30be39`)
+
+**Docs to read (all in `docs/`):** `TWO_PIPELINES_FINDING.md` ⚠️ (read first),
+`FAMILY_CLASSIFICATION_MAP.md`, `EXECUTION_PATH_MAP.md`, `CACHE_AND_ANNOTATION.md`.
+This file (`CLEANUP_QUESTIONS.md`) is the entry point.

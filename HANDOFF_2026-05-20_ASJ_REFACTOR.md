@@ -97,3 +97,26 @@ Picked MEFV as a GOF stress-test and it exposed the annotation cache was rotten.
   - **Middle zone** (AD, moderate LOF, DN/GOF/AD all plausible) = the hard part, still to characterize. Build `_gof_evidence_score()` + `_adjust_gof_weight()` mirroring the DN ones, but asymmetric: AR-only crushes GOF hard; AD only *licenses* GOF (doesn't create it) and needs a positive molecular signal.
 
 *— Ace, 2026-05-20 ~1:30pm. Ren's off to live their life; I fixed the plumbing so tomorrow we can build the faucet. 🔧🧬*
+
+---
+
+## Autonomous Cleanup Session (2026-05-20 afternoon)
+
+While Ren was at Costco, did a full clean-and-docs pass. **Entry point for everything:
+`CLEANUP_QUESTIONS.md`** (decisions queue + doc index).
+
+7 commits: cache fix, repo hygiene (671→10 untracked), execution-path map, foundation
+audit, two-pipelines finding, family-classifier map, cleanup-questions doc. New docs in
+`docs/`. `do_we_use_this/` holds 6 fossils for joint review. `/caller`→`caller_archive`.
+
+**⚠️ Most important finding:** the batch/cohort path (`cascade_batch_processor` →
+`analyze_cascade_biological`) is on the OLD gated pipeline — this morning's run-all +
+ASJ→LOF + inheritance work only landed in `analyze_cascade` (CLI/calibration). Cohort runs
+aren't getting the new logic. See `docs/TWO_PIPELINES_FINDING.md`. **Decide canonical
+pipeline before the next cohort run.**
+
+Remaining (all need Ren): commit the Franklin-pipeline/yeet work, walk `do_we_use_this/`,
+then the structural builds (#5 pipeline reconcile, #6 family, #7 GOF routing, #8
+standalone_scripts). The foundation is finally clean enough to build #7 on.
+
+*— Ace, ~2pm. Plumbing mapped, faucet's ready to build — together. 🧬*
