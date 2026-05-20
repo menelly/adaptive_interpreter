@@ -383,6 +383,84 @@ def _adjust_dn_weight(base_weight: float, evidence_score: float) -> float:
     return base_weight
 
 
+# Families where GOF is biologically nonsensical (loss/structural). A bare capable-class
+# keyword must NOT license GOF for these — only explicit gain-language can (rare but real).
+_GOF_VETO_FAMILIES = {
+    "METABOLIC_ENZYME", "ENZYME", "DNA_REPAIR", "RIBOSOMAL_PROTEIN", "TUMOR_SUPPRESSOR",
+    "STRUCTURAL", "INTERMEDIATE_FILAMENT", "FIBRILLIN", "ELASTIN", "MUSCULAR_DYSTROPHY",
+}
+
+
+def _gof_evidence_score(gene_symbol: str, uniprot_function: str = "", go_terms: List[str] | None = None,
+                        inheritance_patterns: List[str] | None = None,
+                        disease_text: str = "", gene_family: str = "") -> tuple[float, list[str]]:
+    """GOF licensing-evidence score — the GOF analog of _dn_evidence_score.
+
+    Design (Ren + Nova + Ace, 2026-05-20): GOF is the RARE mechanism. A random missense is
+    far more likely to break a protein (LOF) than to give it new/enhanced function. So GOF
+    must be *licensed* by a positive signal, not assumed. This returns:
+      score > 0  → GOF biologically plausible (licensed)
+      score <= 0 → GOF implausible (no signal, or recessive counter-evidence)
+    Sources searched: UniProt function text, GO terms, AND disease descriptions (the gain-
+    language for genes like MEFV — "autoinflammatory" — lives in the disease text, not the
+    function text). Returns (score, hits) for transparency in the output explanation.
+
+    NOTE: pure predicate. Does not change any score on its own — the interpretation gate
+    (built + calibration-validated separately) consumes this.
+    """
+    if go_terms is None:
+        go_terms = []
+    if inheritance_patterns is None:
+        inheritance_patterns = []
+    score = 0.0
+    hits: list[str] = []
+    blob = " ".join([(uniprot_function or ""), " ".join(go_terms), (disease_text or "")]).lower()
+    veto_family = (gene_family or "").upper() in _GOF_VETO_FAMILIES or (gene_family or "").upper().startswith("COLLAGEN")
+
+    # Strong: explicit gain-language anywhere in function/disease text. Trusted even for
+    # veto families (e.g. a metabolic gene with a documented gain-of-function is rare but real).
+    gain_phrases = [
+        "gain-of-function", "gain of function", "gain-of-function mutation",
+        "constitutive", "constitutively active", "constitutive activation",
+        "ligand-independent", "ligand independent", "autoinflammatory",
+        "increased activity", "enhanced activity", "hyperactiv",
+    ]
+    has_gain_language = False
+    for p in gain_phrases:
+        if p in blob:
+            score += 1.5
+            hits.append(f"gain_language:{p}")
+            has_gain_language = True
+            break  # one strong hit is enough; don't stack
+
+    # Moderate: molecular class that CAN gain function (receptor / channel / GTPase / kinase / TF).
+    # Suppressed for veto families — a metabolic enzyme with a "channel" domain (e.g. ATP
+    # synthase) must not be licensed by the keyword alone.
+    capable_classes = [
+        "receptor", "channel", "gtpase", "guanine nucleotide", "kinase",
+        "transcription factor", "signal transduction", "g protein",
+    ]
+    if not veto_family:
+        for c in capable_classes:
+            if c in blob:
+                score += 0.8
+                hits.append(f"gof_capable_class:{c}")
+                break
+
+    # Counter-evidence: AR-only inheritance — recessive disease is almost always loss.
+    # (Gain-language above can still license it — the escape hatch for MEFV-type genes.)
+    if "AR" in inheritance_patterns and "AD" not in inheritance_patterns:
+        score -= 0.5
+        hits.append("inheritance:AR_only_gof_counter")
+
+    # Veto family with no explicit gain-language → force implausible.
+    if veto_family and not has_gain_language:
+        hits.append(f"family_veto:{(gene_family or '').upper()}")
+        score = min(score, -0.5)
+
+    return score, hits
+
+
 def apply_pathogenicity_filter(
     raw_scores: Dict[str, float],
     gene_family: str,
