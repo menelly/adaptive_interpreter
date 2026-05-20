@@ -64,14 +64,28 @@ def main():
         print("  ⚠️ low overlap → pooled AUC is confounded by cross-family score ranges")
 
     if both:
-        print("\nwithin-gene separation (genes with both P and B):")
-        deltas = []
+        print("\nper-gene P-vs-B (normalization confound removed — pure discrimination):")
+        print(f"  {'gene':8} {'nP':>3} {'nB':>3} {'AUC':>5} {'ΔP-B':>7}  verdict")
+        deltas, aucs = [], []
         for g in sorted(both):
-            pm, bm = st.mean(byg[g]["P"]), st.mean(byg[g]["B"])
+            P, B = byg[g]["P"], byg[g]["B"]
+            ga = auc(P + B, [1] * len(P) + [0] * len(B))
+            pm, bm = st.mean(P), st.mean(B)
             deltas.append(pm - bm)
-            print(f"  {g:8} ΔP-B={pm - bm:+.3f}  {'✓' if pm > bm else '✗ INVERTED'}")
-        print(f"  → P>B in {sum(d > 0 for d in deltas)}/{len(deltas)}, "
-              f"mean Δ={st.mean(deltas):+.3f}")
+            aucs.append(ga)
+            if ga >= 0.8:
+                verdict = "✓ discriminates"
+            elif ga >= 0.6:
+                verdict = "~ weak"
+            elif ga >= 0.45:
+                verdict = "✗ no signal (coin flip)"
+            else:
+                verdict = "✗✗ INVERTED"
+            print(f"  {g:8} {len(P):>3} {len(B):>3} {ga:>5.2f} {pm - bm:>+7.3f}  {verdict}")
+        print(f"  → mean per-gene AUC={st.mean(aucs):.3f}, P>B in "
+              f"{sum(d > 0 for d in deltas)}/{len(deltas)} genes, mean Δ={st.mean(deltas):+.3f}")
+        print("  (per-gene AUC ~0.5 => scorer can't read biology even within a gene = "
+              "FUNDAMENTAL, deeper than normalization)")
 
 
 if __name__ == "__main__":
