@@ -461,6 +461,46 @@ def _gof_evidence_score(gene_symbol: str, uniprot_function: str = "", go_terms: 
     return score, hits
 
 
+def _adjust_gof_weight(base_weight: float, evidence_score: float) -> float:
+    """Map GOF evidence score → adjusted GOF weight (mirror of _adjust_dn_weight).
+    - strong positive (>=1.0, licensed): at least 1.0 — OVERRIDES a low family weight,
+      so a mislabeled gene (MEFV → CYTOSKELETON_POLYMER, base ~0.1) can still gain.
+    - moderate positive (>=0.5): at least 0.8
+    - negative (implausible / veto): suppress to <=0.1
+    - else (no signal): unchanged (defer to family weight)
+    """
+    if evidence_score >= 1.0:
+        return max(base_weight, 1.0)
+    if evidence_score >= 0.5:
+        return max(base_weight, 0.8)
+    if evidence_score < 0:
+        return min(base_weight, 0.1)
+    return base_weight
+
+
+def _annotation_desert(go_terms: List[str] | None, inheritance_patterns: List[str] | None,
+                       disease_text: str = "") -> bool:
+    """True when we have NO biological context to reason from — no GO terms, no disease,
+    no inheritance. The interpretation gate is then "tossing paint at a wall" and confidence
+    must be floored (~0.25) with an honest explanation. (Ren, 2026-05-20.)"""
+    return (not go_terms) and (not inheritance_patterns) and (not (disease_text or "").strip())
+
+
+def _is_negative_regulator(uniprot_function: str = "", go_terms: List[str] | None = None) -> bool:
+    """True when the protein's job is to inhibit/repress/negatively-regulate. This is the
+    'brakes' case: a dominant-negative hit on a brake RELEASES it = functional gain, so DN
+    synergy is licensed in the GOF branch only for these genes (not for plain receptors)."""
+    if go_terms is None:
+        go_terms = []
+    blob = " ".join([(uniprot_function or ""), " ".join(go_terms)]).lower()
+    neg_phrases = [
+        "negative regulation", "negative regulator", "negatively regulat",
+        "inhibitor of", "inhibits", "repressor", "represses", "suppressor of",
+        "down-regulat", "downregulat", "antagonist",
+    ]
+    return any(p in blob for p in neg_phrases)
+
+
 def apply_pathogenicity_filter(
     raw_scores: Dict[str, float],
     gene_family: str,
