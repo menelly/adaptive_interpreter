@@ -16,11 +16,15 @@ import requests
 from pathlib import Path
 from typing import Dict, List, Optional
 
+# 🎯 CANONICAL cache dir — shared with UniversalProteinAnnotator. Absolute, repo-anchored,
+# cwd-independent. See universal_protein_annotator.DEFAULT_CACHE_DIR for the why.
+DEFAULT_CACHE_DIR = str(Path(__file__).resolve().parent.parent / "protein_annotations_cache")
+
 class InterProDomainCacher:
     """Pre-cache InterPro domain data for genes"""
     
-    def __init__(self, cache_dir: str = "protein_annotations_cache"):
-        self.cache_dir = Path(cache_dir)
+    def __init__(self, cache_dir: str = None):
+        self.cache_dir = Path(cache_dir) if cache_dir else Path(DEFAULT_CACHE_DIR)
         self.cache_dir.mkdir(parents=True, exist_ok=True)
         self.interpro_base = "https://www.ebi.ac.uk/interpro/api"
         

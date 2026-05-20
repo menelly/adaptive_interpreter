@@ -8,17 +8,24 @@ import requests
 import re
 import json
 import os
+from pathlib import Path
 from typing import Dict, List, Tuple, Optional
 import time
 
+# 🎯 CANONICAL cache dir — absolute, repo-anchored, cwd-independent.
+# Before 2026-05-20 this defaulted to the relative string "protein_annotations_cache",
+# which silently forked into one cache dir PER launch directory (/home/Ace,
+# /home/Ace/AdaptiveInterpreter, /home/Ace/analysis ...). Anchoring to the repo
+# root (this file lives in <repo>/data_processing/) gives one source of truth.
+DEFAULT_CACHE_DIR = str(Path(__file__).resolve().parent.parent / "protein_annotations_cache")
+
 class UniversalProteinAnnotator:
-    def __init__(self, cache_dir="protein_annotations_cache"):
+    def __init__(self, cache_dir=None):
         self.uniprot_base = "https://rest.uniprot.org"
         self.pfam_base = "https://pfam.xfam.org"
 
         # 🎯 CACHING SYSTEM - Save domain data locally!
-        self.cache_dir = cache_dir
-        import os
+        self.cache_dir = cache_dir if cache_dir is not None else DEFAULT_CACHE_DIR
         os.makedirs(self.cache_dir, exist_ok=True)
         print(f"🔍 Protein annotation cache: {self.cache_dir}")
 
@@ -33,8 +40,15 @@ class UniversalProteinAnnotator:
             try:
                 with open(cache_file, 'r') as f:
                     cached_data = json.load(f)
-                print(f"🔍 Using cached domain data for {uniprot_id}")
-                return cached_data
+                # 🩹 SELF-HEAL stale caches. Disease/inheritance extraction was added
+                # 2026-05; any cache written before that lacks these keys. Returning it
+                # verbatim is the bug that hid MEFV's AD+AR inheritance. If the schema is
+                # missing, DON'T return — fall through to a fresh UniProt fetch.
+                if "inheritance_patterns" not in cached_data or "diseases" not in cached_data:
+                    print(f"♻️  Stale cache for {uniprot_id} (pre-inheritance schema) — refetching")
+                else:
+                    print(f"🔍 Using cached domain data for {uniprot_id}")
+                    return cached_data
             except Exception as e:
                 print(f"⚠️ Cache read error for {uniprot_id}: {e}")
 
