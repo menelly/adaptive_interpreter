@@ -112,6 +112,23 @@ class LOFAnalyzer:
     def _get_domain_multiplier(self, position: int, domain_context: Dict[str, Any]) -> float:
         """🚀 NOVA'S FUNCTIONAL DOMAIN WEIGHTING - Biological intelligence!"""
 
+        # Signal/transit peptides get cleaved and are gone — variants there
+        # rarely break the mature protein. Propeptides are NOT clamped because
+        # they can be functional before cleavage (e.g., collagen C-propeptide).
+        for sp in domain_context.get("signal_peptide", []):
+            if sp.get("start", 0) <= position <= sp.get("end", 0):
+                print(f"   ✂️ Position {position} in signal peptide — cleaved, weight 0.3")
+                return 0.3
+        # Transit peptides (mito targeting): before mature chain, not in propeptide
+        mature_chains = domain_context.get("mature_chain", [])
+        propeptides = domain_context.get("propeptides", [])
+        if mature_chains:
+            in_mature = any(ch["start"] <= position <= ch.get("end", 99999) for ch in mature_chains)
+            in_propeptide = any(pp["start"] <= position <= pp.get("end", 99999) for pp in propeptides)
+            if not in_mature and not in_propeptide:
+                print(f"   ✂️ Position {position} in transit/targeting peptide — cleaved, weight 0.3")
+                return 0.3
+
         # Extract UniProt features from domain context
         uniprot_features = []
 
