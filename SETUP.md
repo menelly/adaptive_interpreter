@@ -67,7 +67,7 @@ wget http://hgdownload.cse.ucsc.edu/goldenPath/hg38/phyloP100way/hg38.phyloP100w
 Size: ~8.6GB  
 Source: UCSC Genome Browser
 
-#### OPTIONAL: AlphaFold Structures
+#### RECOMMENDED: AlphaFold Structures (required for GOF mechanism scoring)
 
 ```bash
 mkdir -p ~/alphafold_human/structures
@@ -76,8 +76,20 @@ wget https://ftp.ebi.ac.uk/pub/databases/alphafold/latest/UP000005640_9606_HUMAN
 tar -xvf UP000005640_9606_HUMAN_v4.tar
 ```
 
-Size: ~100GB uncompressed  
-Only needed for detailed structural analysis
+Size: ~100GB uncompressed (the `.pdb.gz` files are ~5GB and are what's used).
+
+The mechanism-first **GOF scorer** (`analyzers/gof_mechanisms.py` +
+`analyzers/structure_features.py`) reads these structures directly — numpy-only,
+no Biopython — for per-residue burial, contacts, secondary structure, and pLDDT.
+Without them the GOF mechanism bank degrades gracefully (annotation-only) but
+loses its structural discrimination. Paths are env-overridable:
+
+```bash
+export ADAPTIVE_AF_STRUCTURES=/path/to/alphafold_human/structures   # PDBs to read
+export ADAPTIVE_STRUCT_CACHE=/path/with/space/structure_features     # parsed-feature cache (.npz)
+```
+The cache is written on first access per protein (a few MB each) and reused; put
+it on a disk with room. Defaults target the Consortium's mounts.
 
 #### OPTIONAL: gnomAD Data
 

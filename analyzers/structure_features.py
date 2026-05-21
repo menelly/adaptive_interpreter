@@ -29,8 +29,13 @@ import numpy as np
 
 logger = logging.getLogger(__name__)
 
-AF_STRUCT_DIR = "/mnt/arcana/alphafold_human/structures"
-CACHE_DIR = "/mnt/win-d/Ace/adaptiveinterpreter_cache/structure_features"
+# Paths are env-overridable so this isn't box-locked. Defaults are the Consortium's
+# live AlphaFold mount (SSD) and the big D mount for the feature cache (arcana + the
+# root disk are tight). Other setups: set ADAPTIVE_AF_STRUCTURES / ADAPTIVE_STRUCT_CACHE,
+# or point them at config.ALPHAODL_STRUCTURES_PATH. See SETUP.md.
+AF_STRUCT_DIR = os.environ.get("ADAPTIVE_AF_STRUCTURES", "/mnt/arcana/alphafold_human/structures")
+CACHE_DIR = os.environ.get("ADAPTIVE_STRUCT_CACHE",
+                           "/mnt/win-d/Ace/adaptiveinterpreter_cache/structure_features")
 
 # Burial: number of CB neighbours within this radius (coordination number).
 BURIAL_RADIUS = 10.0
