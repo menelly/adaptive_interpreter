@@ -1629,6 +1629,25 @@ class CascadeAnalyzer:
             results['final_classification'] = 'VUS'
             results['explanation'] = "No mechanism above threshold"
 
+        # 🧬 ISOFORM/SEQUENCE MISMATCH BANDAID (Ren, 2026-05-21):
+        # If the ref residue doesn't match the canonical sequence at this position, we scored
+        # the WRONG residue — usually a variant numbered in a non-canonical isoform (e.g. PTEN
+        # "R188" is PTEN-L numbering; canonical pos 188 is Tyr, not Arg). We cannot call that
+        # Benign. Mismatch → VUS. Pathogenic calls are left as-is.
+        lof_mm = results.get('lof_details', {}) or {}
+        if lof_mm.get('sequence_mismatch') and results.get('final_classification') in ('B', 'LB'):
+            mminfo = lof_mm.get('mismatch_info') or {}
+            exp, act = mminfo.get('expected_aa', '?'), mminfo.get('actual_aa', '?')
+            cause = mminfo.get('likely_cause', 'sequence_mismatch')
+            pre = results['final_classification']
+            results['final_classification'] = 'VUS'
+            results['isoform_mismatch_vus'] = True
+            results['explanation'] = (results.get('explanation', '') +
+                f" | Sequence mismatch: expected {exp} here but canonical residue is {act} "
+                f"({cause}) — variant likely numbered in a non-canonical isoform; cannot assess "
+                f"as missense, NOT benign. Clamped {pre} → VUS")
+            print(f"🧬 ISOFORM/SEQ MISMATCH: {pre} → VUS (expected {exp}, canonical {act}, {cause})")
+
         parts = [f"{m}:{results['scores'].get(m,0):.2f}" for m in ('DN','LOF','GOF') if results['scores'].get(m,0) > 0]
         results['summary'] = f"{' '.join(parts)} FINAL:{results['final_classification']}"
         print(f"🎯 {results['summary']}")
