@@ -17,6 +17,14 @@ Hard lines (Ren, non-negotiable):
 - **No hardcoded genes.** Every signal comes per-protein from annotation/structure.
 - **Frequency and conservation are NOT mechanics.** They may apply a bounded
   final nudge; they never gate, score, or drive a mechanism.
+  - **Operational note (2026-05-21):** frequency is currently OFF entirely —
+    `gnomad_freq: 0.0` on every variant (incl. benign) is **intended, not a
+    yeeted-cache bug.** "Frequency doesn't unbreak proteins" — a rare variant
+    isn't more broken; a common one isn't less. When a benign variant out-ranks
+    a pathogenic one, the fix lives in the MECHANISM scorers (LOF/DN/GOF/
+    structure), never in re-enabling frequency. The only place frequency may
+    ever re-enter is the bounded final nudge (TODO §4), and even there it can
+    only nudge, never drive.
 
 ## Why families fail (keep, as the cautionary record)
 

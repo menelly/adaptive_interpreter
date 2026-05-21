@@ -305,11 +305,16 @@ class LOFAnalyzer:
         orig_props = self.aa_properties.get(original_aa, self._default_props())
         new_props = self.aa_properties.get(new_aa, self._default_props())
         
+        # Structure-gated special-residue context: decides whether the flat Gly/Cys
+        # identity boosts are warranted for THIS substitution, and detects buried-charge
+        # introduction (real core destabilization). No hardcoded genes — pure biophysics.
+        special_gate = self._special_residue_gate(original_aa, new_aa, position, uniprot_id)
+
         # Analyze different LOF mechanisms (now with Grantham distance!)
-        stability_impact = self._assess_stability_impact(orig_props, new_props, mutation)
+        stability_impact = self._assess_stability_impact(orig_props, new_props, mutation, special_gate)
         conservation_impact = self._assess_conservation_impact(orig_props, new_props)
         structural_impact = self._assess_structural_impact(orig_props, new_props, position, len(sequence))
-        functional_impact = self._assess_functional_impact(mutation, sequence)
+        functional_impact = self._assess_functional_impact(mutation, sequence, special_gate)
 
         # Active site jamming as LOF sub-mechanism: variant disrupts catalytic
         # function. Scored natively in LOF with conservation/domain context.
@@ -643,7 +648,58 @@ class LOFAnalyzer:
             'confidence': 0.0
         }
     
-    def _assess_stability_impact(self, orig_props: Dict, new_props: Dict, mutation: str = None) -> float:
+    # Side-chain charge / size context for the structure-gated special-residue logic.
+    _CHARGED = set("DEKR")               # H left out: weakly/conditionally charged
+    _GLY_CONSERVATIVE_ALT = set("AS")    # Ala/Ser are the only residues nearly as small as Gly
+
+    def _special_residue_gate(self, ref_aa: str, alt_aa: str, position: int,
+                              uniprot_id: str = None) -> Dict:
+        """Decide whether the flat Gly/Cys identity boosts are warranted for THIS
+        substitution, plus a structure-gated buried-charge penalty.
+
+        Biology:
+          - Glycine's special roles are small size + backbone flexibility. Losing it to
+            Ala/Ser (nearly as small) is conservative — NOT the same as losing it to a
+            charged/bulky residue. The legacy code applied the same flat boost regardless
+            of destination; that over-called benign Gly->Ala (e.g. B3GLCT G57A).
+          - Cysteine matters in LOF when it forms a disulfide. We approximate "has a
+            disulfide partner" as another Cys among its 3D contacts.
+          - Burying a charge (Gly->Glu in a packed core, etc.) is real destabilization;
+            gate that on AlphaFold burial.
+
+        Fails OPEN: if no structure is available, fall back to legacy behaviour
+        (boosts warranted) so we never silently lose signal on unmodelled proteins.
+        """
+        gate = {"gly_warranted": True, "cys_warranted": True, "buried_charge": 0.0}
+
+        # Destination-aware glycine rule needs no structure: Gly->Ala/Ser is conservative.
+        if ref_aa == "G" and alt_aa in self._GLY_CONSERVATIVE_ALT:
+            gate["gly_warranted"] = False
+
+        if not uniprot_id:
+            return gate
+        try:
+            from AdaptiveInterpreter.analyzers.structure_features import get_structure_features
+            sf = get_structure_features(uniprot_id)
+            if not sf.has(position):
+                return gate
+            burial = sf.burial(position)
+            buried = burial in ("buried", "intermediate")
+
+            # Buried charge introduction → core destabilization (catches Gly->Glu et al.)
+            if buried and alt_aa in self._CHARGED and ref_aa not in self._CHARGED:
+                gate["buried_charge"] = 0.3
+
+            # Cysteine-loss only warrants the disulfide boost if a partner Cys is in contact.
+            if ref_aa == "C":
+                has_partner = any(sf.aa.get(j) == "C" for j in sf.contacts(position))
+                gate["cys_warranted"] = has_partner
+        except Exception as e:
+            print(f"   ⚠️ special-residue gate failed: {e}")
+        return gate
+
+    def _assess_stability_impact(self, orig_props: Dict, new_props: Dict, mutation: str = None,
+                                 special_gate: Dict = None) -> float:
         """Assess impact on protein stability using REAL amino acid science!"""
 
         # If we have mutation string, use Grantham distance
@@ -668,13 +724,15 @@ class LOFAnalyzer:
                 else:
                     base_score = 0.1  # Very conservative change
 
-                # Add special case modifiers
+                # Add special case modifiers — Gly/Cys now structure/substitution gated
+                g = special_gate or {"gly_warranted": True, "cys_warranted": True, "buried_charge": 0.0}
                 if 'P' in mutation:  # Proline introduction/removal
                     base_score += 0.2
-                if 'G' in mutation:  # Glycine flexibility
+                if 'G' in mutation and g.get("gly_warranted", True):  # Glycine flexibility (if warranted)
                     base_score += 0.15
-                if 'C' in mutation:  # Cysteine disulfide bonds
+                if 'C' in mutation and g.get("cys_warranted", True):  # Cysteine disulfide (if partner present)
                     base_score += 0.25
+                base_score += g.get("buried_charge", 0.0)  # burying a charge = core destabilization
 
                 return min(base_score, 1.0)
 
@@ -731,18 +789,25 @@ class LOFAnalyzer:
         
         return min(score, 1.0)
     
-    def _assess_functional_impact(self, mutation: str, sequence: str) -> float:
-        """Assess functional impact based on known patterns"""
+    def _assess_functional_impact(self, mutation: str, sequence: str,
+                                  special_gate: Dict = None) -> float:
+        """Assess functional impact based on known patterns.
+
+        Gly/Cys losses are now gated: Gly->Ala/Ser is conservative (not boosted),
+        and Cys-loss only counts when a disulfide partner is present (see
+        _special_residue_gate). Fails open when no gate is supplied.
+        """
         score = 0.0
-        
-        # Known highly disruptive changes
-        if mutation[0] == 'C':  # Cysteine loss (disulfide bonds)
+        g = special_gate or {"gly_warranted": True, "cys_warranted": True}
+
+        # Known highly disruptive changes (ref-residue loss)
+        if mutation[0] == 'C' and g.get("cys_warranted", True):  # Cysteine loss (disulfide)
             score += 0.5
         if mutation[0] == 'P':  # Proline loss (structural rigidity)
             score += 0.3
-        if mutation[0] == 'G':  # Glycine loss (flexibility)
+        if mutation[0] == 'G' and g.get("gly_warranted", True):  # Glycine loss (flexibility)
             score += 0.4
-        
+
         return min(score, 1.0)
     
     def _calculate_lof_score(self, stability: float, conservation: float, structural: float, functional: float) -> float:
