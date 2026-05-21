@@ -383,6 +383,45 @@ def _adjust_dn_weight(base_weight: float, evidence_score: float) -> float:
     return base_weight
 
 
+def _self_association_score(uniprot_function: str = "", go_terms: List[str] | None = None) -> tuple[float, list[str]]:
+    """Self-association / oligomerization evidence — the DN PRECONDITION.
+
+    A dominant-negative variant works by co-assembling with its own wild-type copies and
+    poisoning the shared assembly. That is IMPOSSIBLE for an obligate monomer — so DN must
+    be gated on evidence that the protein self-associates (homo-oligomer, structural polymer,
+    coiled-coil). We read this from GO terms (the cleanest available signal): homo-binding
+    molecular functions and structural-unit COMPONENTS (collagen trimer, intermediate
+    filament, microtubule). We deliberately exclude PROCESS terms ("regulation of...",
+    "...organization") — those mean the protein ACTS ON a polymer (e.g. PIK3CA regulating
+    actin), not that it IS one. Gene-agnostic; no hardcoding.
+
+    Returns (score, hits): score > 0 == self-association evidence (DN mechanistically possible).
+    """
+    if go_terms is None:
+        go_terms = []
+    strong = ("identical protein binding", "homodimer", "homotetramer", "homotrimer",
+              "homo-oligomer", "homooligomer", "homodimerization", "homotetramerization",
+              "homo-oligomerization", "protein tetramerization", "tetramerization",
+              "oligomerization", "intermediate filament", "microtubule", "collagen type",
+              "collagen trimer", "myosin filament", "homophilic")
+    disq = ("regulation", "organization", "depolymeriz", "based movement", "signaling",
+            "biosynth", "catabolic", "transport", "binding to")
+    score = 0.0
+    hits: list[str] = []
+    for t in go_terms:
+        tl = (t or "").lower()
+        if any(k in tl for k in strong):
+            if tl == "identical protein binding" or not any(d in tl for d in disq):
+                score += 0.5
+                hits.append(f"go:{t}")
+    fl = (uniprot_function or "").lower()
+    if any(k in fl for k in ("homodimer", "homotrimer", "homotetramer", "homo-oligomer",
+                             "self-assembl", "forms a coiled coil", "triple helix")):
+        score += 0.5
+        hits.append("function:self_association_language")
+    return min(score, 1.5), hits
+
+
 def _adjust_gof_weight(base_weight: float, evidence_score: float) -> float:
     """Map GOF licensing-evidence score → adjusted GOF weight (mirror of _adjust_dn_weight).
 
@@ -559,6 +598,9 @@ def apply_pathogenicity_filter(
     dn_ev_score, dn_ev_hits = _dn_evidence_score(gene_symbol, uniprot_function, go_terms, inheritance_patterns)
     gof_ev_score, gof_ev_hits = _gof_evidence_score(gene_symbol, uniprot_function, go_terms,
                                                     inheritance_patterns, gene_family=gene_family)
+    # DN precondition: can this protein even self-assemble? (DN poisons a shared assembly;
+    # an obligate monomer cannot.) Soft-gates DN below, overridable by explicit DN text.
+    self_assoc_score, self_assoc_hits = _self_association_score(uniprot_function, go_terms)
 
     for mech, score in raw_scores.items():
         # 🎯 NORMALIZE: family weights are capped at 1.0. Some rules historically used
@@ -573,6 +615,13 @@ def apply_pathogenicity_filter(
         evidence_applied = False
         if mech == "DN":
             new_weight = _adjust_dn_weight(base_weight, dn_ev_score)
+            # Oligomerization precondition (SOFT, overridable): DN needs self-assembly to
+            # poison. If there's no self-association evidence AND no explicit "dominant
+            # negative" text licensing it, halve the DN weight — don't zero it, because
+            # absent annotation != confirmed monomer (Ren's soft-branch rule).
+            explicit_dn = any(h.startswith("uniprot_function:") for h in dn_ev_hits)
+            if self_assoc_score <= 0 and not explicit_dn:
+                new_weight = new_weight * 0.5
             if new_weight != base_weight:
                 weight = new_weight
                 evidence_applied = True
@@ -615,6 +664,8 @@ def apply_pathogenicity_filter(
                 "dn_evidence_score": dn_ev_score,
                 "dn_evidence_hits": dn_ev_hits,
                 "dn_evidence_applied": evidence_applied,
+                "self_association_score": self_assoc_score,
+                "self_association_hits": self_assoc_hits,
             })
         elif mech == "GOF":
             entry.update({
