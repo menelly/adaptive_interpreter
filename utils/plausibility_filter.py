@@ -383,6 +383,28 @@ def _adjust_dn_weight(base_weight: float, evidence_score: float) -> float:
     return base_weight
 
 
+def _adjust_gof_weight(base_weight: float, evidence_score: float) -> float:
+    """Map GOF licensing-evidence score → adjusted GOF weight (mirror of _adjust_dn_weight).
+
+    GOF is the rare mechanism, so the coarse family weight stands UNLESS the protein's own
+    molecular evidence licenses it. This is what lets a protein whose disease mechanism is
+    atypical for its structural family (e.g. CTNNB1 — a SCAFFOLD_ADAPTOR that GOFs via
+    degron-loss stabilization) express a real GOF signal that the family bucket would mute.
+    Scale matches _gof_evidence_score: gain-language=+1.5, capable-class=+0.8, AR-only=-0.5.
+    - strong gain-language (>=1.5): at least 1.0
+    - moderate capable-class (>=0.5): at least 0.9
+    - negative (veto family / AR-only, no gain): halve the weight
+    - else: unchanged
+    """
+    if evidence_score >= 1.5:
+        return max(base_weight, 1.0)
+    if evidence_score >= 0.5:
+        return max(base_weight, 0.9)
+    if evidence_score < 0:
+        return base_weight * 0.5
+    return base_weight
+
+
 # Families where GOF is biologically nonsensical (loss/structural). A bare capable-class
 # keyword must NOT license GOF for these — only explicit gain-language can (rare but real).
 _GOF_VETO_FAMILIES = {
@@ -531,8 +553,12 @@ def apply_pathogenicity_filter(
     rules = PATHOGENICITY_RULES.get(gene_family, PATHOGENICITY_RULES["GENERAL"])
     filtered: Dict[str, Dict[str, Any]] = {}
 
-    # Compute DN evidence once per gene (now includes inheritance patterns)
+    # Compute DN + GOF licensing-evidence once per gene (includes inheritance patterns).
+    # These let a mechanism that is atypical for the structural family still express when the
+    # protein's OWN molecular evidence supports it — gene-agnostic, no hardcoding.
     dn_ev_score, dn_ev_hits = _dn_evidence_score(gene_symbol, uniprot_function, go_terms, inheritance_patterns)
+    gof_ev_score, gof_ev_hits = _gof_evidence_score(gene_symbol, uniprot_function, go_terms,
+                                                    inheritance_patterns, gene_family=gene_family)
 
     for mech, score in raw_scores.items():
         # 🎯 NORMALIZE: family weights are capped at 1.0. Some rules historically used
@@ -547,6 +573,11 @@ def apply_pathogenicity_filter(
         evidence_applied = False
         if mech == "DN":
             new_weight = _adjust_dn_weight(base_weight, dn_ev_score)
+            if new_weight != base_weight:
+                weight = new_weight
+                evidence_applied = True
+        elif mech == "GOF":
+            new_weight = _adjust_gof_weight(base_weight, gof_ev_score)
             if new_weight != base_weight:
                 weight = new_weight
                 evidence_applied = True
@@ -584,6 +615,14 @@ def apply_pathogenicity_filter(
                 "dn_evidence_score": dn_ev_score,
                 "dn_evidence_hits": dn_ev_hits,
                 "dn_evidence_applied": evidence_applied,
+            })
+        elif mech == "GOF":
+            entry.update({
+                "gof_weight_base": base_weight,
+                "gof_weight_final": weight,
+                "gof_evidence_score": gof_ev_score,
+                "gof_evidence_hits": gof_ev_hits,
+                "gof_evidence_applied": evidence_applied,
             })
 
         filtered[mech] = entry
