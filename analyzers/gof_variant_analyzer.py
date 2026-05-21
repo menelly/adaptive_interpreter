@@ -149,6 +149,11 @@ class GOFVariantAnalyzer:
         # Run the core GOF analysis
         result = self._analyze_gof_core(mutation, sequence, uniprot_id, **kwargs)
 
+        # The mechanism engine already incorporates domain/structure context —
+        # skip the legacy domain/proline multipliers so they don't distort it.
+        if result.get('mechanism_engine'):
+            return result
+
         # Apply domain awareness to the final result
         if 'gof_score' in result and 'error' not in result:
             try:
@@ -254,6 +259,34 @@ class GOFVariantAnalyzer:
             # Validate position
             if position < 1 or position > len(sequence):
                 return {'error': f'Position {position} out of range for sequence length {len(sequence)}', 'gof_score': 0.0}
+
+            # ── MECHANISM-FIRST GOF ENGINE (2026-05-21 rebuild) ─────────────────
+            # Structure-driven, gene-agnostic mechanism bank. Replaces the old
+            # backwards GATE-1 chemistry filter (which zeroed chemically-mild
+            # changes — exactly the class that GOFs). Frequency and conservation
+            # do NOT gate or score here; they only nudge the final score (TODO,
+            # bounded). The legacy triple-gate code below remains as a fallback.
+            try:
+                from AdaptiveInterpreter.analyzers.gof_mechanisms import score_gof_mechanisms
+                mech = score_gof_mechanisms(original_aa, mutant_aa, position, uniprot_id, sequence)
+                gof = mech['gof_score']
+                pred = ('GOF_LIKELY' if gof > 0.6 else
+                        'GOF_POSSIBLE' if gof > 0.3 else 'GOF_UNLIKELY')
+                return {
+                    'mutation': f'{original_aa}{position}{mutant_aa}',
+                    'gof_score': gof,
+                    'prediction': pred,
+                    'confidence': 0.9 if mech['top_mechanism'] else 0.7,
+                    'analysis_level': 'MECHANISM_ENGINE_V2',
+                    'mechanism_engine': True,
+                    'top_mechanism': mech['top_mechanism'],
+                    'gof_mechanisms': mech['mechanisms'],
+                    'structure_context': mech['structure_context'],
+                    'reason': mech['explanation'],
+                }
+            except Exception as _mech_err:
+                logger.warning(f"Mechanism engine failed ({_mech_err}); falling back to legacy gates")
+            # ── end mechanism engine; legacy triple-gate fallback below ─────────
 
             # 🎯 NOVA'S EARLY MOTIF DETECTION - Check for canonical GOF variants first!
             # try:
