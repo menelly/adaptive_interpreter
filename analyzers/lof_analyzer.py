@@ -670,7 +670,8 @@ class LOFAnalyzer:
         Fails OPEN: if no structure is available, fall back to legacy behaviour
         (boosts warranted) so we never silently lose signal on unmodelled proteins.
         """
-        gate = {"gly_warranted": True, "cys_warranted": True, "buried_charge": 0.0}
+        gate = {"gly_warranted": True, "cys_warranted": True,
+                "buried_charge": 0.0, "salt_bridge_loss": 0.0}
 
         # Destination-aware glycine rule needs no structure: Gly->Ala/Ser is conservative.
         if ref_aa == "G" and alt_aa in self._GLY_CONSERVATIVE_ALT:
@@ -689,6 +690,15 @@ class LOFAnalyzer:
             # Buried charge introduction → core destabilization (catches Gly->Glu et al.)
             if buried and alt_aa in self._CHARGED and ref_aa not in self._CHARGED:
                 gate["buried_charge"] = 0.3
+
+            # Salt-bridge disruption: losing a charged residue that forms a salt bridge,
+            # unless the substitution preserves the same-sign charge. Structure-gated, so
+            # benign surface (CpG-hypermutable) Args without a bridge are NOT boosted.
+            if ref_aa in self._CHARGED and sf.salt_bridge_partners(position):
+                same_sign = ((ref_aa in "KR" and alt_aa in "KR") or
+                             (ref_aa in "DE" and alt_aa in "DE"))
+                if not same_sign:
+                    gate["salt_bridge_loss"] = 0.25
 
             # Cysteine-loss only warrants the disulfide boost if a partner Cys is in contact.
             if ref_aa == "C":
@@ -732,7 +742,8 @@ class LOFAnalyzer:
                     base_score += 0.15
                 if 'C' in mutation and g.get("cys_warranted", True):  # Cysteine disulfide (if partner present)
                     base_score += 0.25
-                base_score += g.get("buried_charge", 0.0)  # burying a charge = core destabilization
+                base_score += g.get("buried_charge", 0.0)    # burying a charge = core destabilization
+                base_score += g.get("salt_bridge_loss", 0.0)  # breaking a salt bridge = destabilization
 
                 return min(base_score, 1.0)
 
